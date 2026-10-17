@@ -93,3 +93,47 @@ def test_title_only_record():
     msgs = build_messages("CRITERIA", {"record_id": "a", "title": "Only a title", "abstract": float("nan")})
     assert "CRITERIA" in msgs[0]["content"] and '"decision"' in msgs[0]["content"]
     assert "Only a title" in msgs[1]["content"] and "None" not in msgs[1]["content"] and "nan" not in msgs[1]["content"]
+
+
+from tools.screen import parse_contrast, pdf_text
+
+CON = {"eligible": True, "table": "Table 2", "contrast": "hits > correct rejections",
+       "contrast_type": "success", "n": 24, "reason": "whole-brain, MNI"}
+
+
+def test_parse_contrast_valid():
+    import json
+    assert parse_contrast(json.dumps(CON)) == CON
+
+
+def test_parse_contrast_bad_type():
+    import json
+    assert parse_contrast(json.dumps(CON | {"contrast_type": "encoding"})) is None
+
+
+def test_parse_contrast_n_not_int():
+    import json
+    assert parse_contrast(json.dumps(CON | {"n": "24 (12F)"})) is None
+    assert parse_contrast(json.dumps(CON | {"n": True})) is None
+
+
+def test_pdf_text(tmp_path):
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    fig = plt.figure()
+    fig.text(0.1, 0.5, "Table 2 hits versus correct rejections")
+    fig.savefig(tmp_path / "p.pdf")
+    assert "correct rejections" in pdf_text(tmp_path / "p.pdf")
+
+
+def test_run_full_text_skips_missing_pdf_and_resumes(tmp_path):
+    import json
+    from tools.screen import run_full_text
+    test_pdf_text(tmp_path)  # writes p.pdf
+    (tmp_path / "p.pdf").rename(tmp_path / "pmid_1.pdf")
+    out = tmp_path / "proposals.csv"
+    c = FakeClient([json.dumps(CON)])
+    assert run_full_text(["pmid:1", "pmid:2"], tmp_path, c, "m", "crit", out) == 1
+    assert run_full_text(["pmid:1", "pmid:2"], tmp_path, c, "m", "crit", out) == 0
+    assert len(c.calls) == 1 and "correct rejections" in c.calls[0]["messages"][1]["content"]

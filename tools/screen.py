@@ -5,6 +5,7 @@ Every decision is logged with model, prompt hash, timestamp and the raw reply.
 CLI:
   python -m tools.screen rq1 --stage title_abstract --rater qwen [--limit 5]
   python -m tools.screen rq1 --stage title_abstract --merge
+  python -m tools.screen rq1 --stage full_text --rater gemini   # contrast-table proposals; author confirms each
 """
 import argparse
 import datetime
@@ -26,6 +27,18 @@ INSTRUCTION = (
     "You screen records for a systematic review. Apply the eligibility criteria above to the record "
     "the user gives you. Answer with JSON only, exactly in this form: "
     '{"decision": "include" | "exclude" | "unsure", "reason": "<one sentence>"}'
+)
+
+
+CONTRAST_TYPES = {"success", "recollection", "familiarity"}
+CONTRAST_COLUMNS = ["record_id", "rater", "model", "timestamp", "eligible", "table", "contrast",
+                    "contrast_type", "n", "reason", "raw"]
+CONTRAST_INSTRUCTION = (
+    "You read the full text of an fMRI/PET paper for a coordinate-based meta-analysis. Using the criteria "
+    "above, say whether the paper is eligible and which table reports the retrieval-success contrast in "
+    "healthy adults, and the sample size of that analysis. Do not list coordinates. Answer with JSON only: "
+    '{"eligible": true | false, "table": "<table label>", "contrast": "<contrast as written>", '
+    '"contrast_type": "success" | "recollection" | "familiarity", "n": <integer>, "reason": "<one sentence>"}'
 )
 
 
@@ -51,6 +64,20 @@ def parse_reply(text):
     if not isinstance(d, dict) or d.get("decision") not in DECISIONS:
         return None
     return {"decision": d["decision"], "reason": str(d.get("reason", ""))}
+
+
+def parse_contrast(text):
+    d = _json(text)
+    if not isinstance(d, dict) or not isinstance(d.get("eligible"), bool):
+        return None
+    if d.get("contrast_type") not in CONTRAST_TYPES or type(d.get("n")) is not int:
+        return None
+    return {k: d.get(k, "") for k in ("eligible", "table", "contrast", "contrast_type", "n", "reason")}
+
+
+def pdf_text(path):
+    from pypdf import PdfReader
+    return "\n".join(page.extract_text() or "" for page in PdfReader(path).pages)
 
 
 def _ask(client, model, messages):
@@ -89,6 +116,25 @@ def run_rater(records, rater, client, model, criteria, log_path, limit=None):
     return n
 
 
+def run_full_text(record_ids, pdf_dir, client, model, criteria, out_path):
+    """Propose the contrast table and N for each paper with a PDF; resumable. Returns the count."""
+    out_path = Path(out_path)
+    done = set(pd.read_csv(out_path, dtype=str).record_id) if out_path.exists() else set()
+    n = 0
+    for rid in record_ids:
+        pdf = Path(pdf_dir) / f"{rid.replace(':', '_').replace('/', '_')}.pdf"
+        if rid in done or not pdf.exists():
+            continue
+        messages = [{"role": "system", "content": f"{criteria}\n\n{CONTRAST_INSTRUCTION}"},
+                    {"role": "user", "content": pdf_text(pdf)}]
+        out = screen_record(client, model, messages, parse=parse_contrast)
+        row = {"record_id": rid, "rater": "full_text", "model": model,
+               "timestamp": datetime.datetime.now().isoformat(timespec="seconds")} | out
+        pd.DataFrame([row], columns=CONTRAST_COLUMNS).to_csv(out_path, mode="a", header=not out_path.exists(), index=False)
+        n += 1
+    return n
+
+
 def merge(a, b, seed, frac):
     """Both include -> include (human verifies); both exclude -> exclude, a seeded `frac` sample
     (rounded up) to the human; anything else -> unsure (human decides)."""
@@ -114,7 +160,7 @@ def client_for(cfg):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("rq", choices=["rq1", "rq3"])
-    ap.add_argument("--stage", default="title_abstract", choices=["title_abstract"])
+    ap.add_argument("--stage", default="title_abstract", choices=["title_abstract", "full_text"])
     ap.add_argument("--rater", choices=["gemini", "qwen"])
     ap.add_argument("--limit", type=int)
     ap.add_argument("--merge", action="store_true")
@@ -123,6 +169,15 @@ def main():
     scr = base / "screening"
     cfg = load_config("screening")
     records = pd.read_csv(base / "search" / "records.csv", dtype=str).fillna("")
+    if a.stage == "full_text":
+        from tools.common import data_dir
+        from tools.prisma import title_abstract_decisions
+        ta = title_abstract_decisions(base)
+        r = cfg["raters"][a.rater or "gemini"]
+        n = run_full_text(list(ta.index[ta != "exclude"]), data_dir(a.rq, "pdfs"), client_for(r), r["model"],
+                          (scr / "criteria.md").read_text(), scr / "contrast_proposals.csv")
+        print(f"full text: {n} proposals written; the author confirms each in experiments.csv")
+        return
     if a.rater:
         r = cfg["raters"][a.rater]
         n = run_rater(records, a.rater, client_for(r), r["model"], (scr / "criteria.md").read_text(),
