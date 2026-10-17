@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<PubmedArticleSet>
+  <PubmedArticle>
+    <MedlineCitation>
+      <PMID Version="1">11111111</PMID>
+      <Article>
+        <Journal><JournalIssue><PubDate><Year>2012</Year></PubDate></JournalIssue></Journal>
+        <ArticleTitle>Hippocampal activity during <i>recollection</i>.</ArticleTitle>
+        <Abstract>
+          <AbstractText Label="BACKGROUND">First part.</AbstractText>
+          <AbstractText Label="RESULTS">Second part.</AbstractText>
+        </Abstract>
+      </Article>
+    </MedlineCitation>
+    <PubmedData>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">11111111</ArticleId>
+        <ArticleId IdType="doi">10.1000/ABC.123</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation>
+      <PMID Version="1">22222222</PMID>
+      <Article>
+        <Journal><JournalIssue><PubDate><MedlineDate>2015 Jan-Feb</MedlineDate></PubDate></JournalIssue></Journal>
+        <ArticleTitle>Source memory without an abstract</ArticleTitle>
+      </Article>
+    </MedlineCitation>
+    <PubmedData><ArticleIdList><ArticleId IdType="pubmed">22222222</ArticleId></ArticleIdList></PubmedData>
+  </PubmedArticle>
+</PubmedArticleSet>

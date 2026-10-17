@@ -8,3 +8,8 @@ setup:
 
 test:
 	.venv/bin/pytest -q
+
+.PHONY: rq1-search
+rq1-search:
+	$(PY) -m tools.pubmed_search rq1
+	$(PY) -m checks.check_search rq1
