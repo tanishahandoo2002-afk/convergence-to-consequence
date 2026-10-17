@@ -101,6 +101,10 @@ def main():
     changed = verify_frozen()
     if changed:
         sys.exit(f"frozen masks changed or missing: {changed}")
+    if not a.pilot:
+        # Spec §9: image order must be checked against the experimental design before full extraction.
+        sys.exit("full extraction needs the design-file image-order check (added in the data-access plan); "
+                 "only --pilot can run now")
     subjects = [cfg["pilot"]["subject"]] if a.pilot else (a.subjects or cfg["subjects"])
     out_dir = data_dir("rq2", "pilot" if a.pilot else a.beta)
     manifest = out_dir / "manifest.csv"

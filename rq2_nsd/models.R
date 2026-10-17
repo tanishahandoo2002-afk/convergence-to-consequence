@@ -2,6 +2,7 @@
 # Functions are sourced by tests/R/test_rq2_models.R; `Rscript rq2_nsd/models.R --run --input DIR --output DIR`
 # fits everything on the extracted session tables.
 suppressPackageStartupMessages(library(lme4))
+`%||%` <- function(a, b) if (is.null(a)) b else a
 
 # Pre-registered simplification order (pooled models); per-participant models drop the subject terms.
 h2_formulas <- function(outcome, terms, slope) {
@@ -16,7 +17,10 @@ subject_formulas <- function(outcome, terms) {
 }
 
 # Try each formula in order; the first that fits without a convergence warning or singular fit is used.
+# Singular fits move on to the next (simpler) formula; if every warning-free fit is singular, the last one is
+# kept as a boundary estimate and flagged `singular`, rather than dropping the model.
 fit_simplified <- function(formulas, data, family = binomial) {
+  boundary <- NULL
   for (f in formulas) {
     warned <- FALSE
     fit <- tryCatch(suppressMessages(withCallingHandlers(
@@ -25,21 +29,25 @@ fit_simplified <- function(formulas, data, family = binomial) {
       warning = function(w) { warned <<- TRUE; invokeRestart("muffleWarning") })),
       error = function(e) NULL)
     if (is.null(fit) || warned) next
-    if (inherits(fit, "merMod") && isSingular(fit)) next
-    return(list(fit = fit, formula_used = paste(deparse(f), collapse = ""), converged = TRUE))
+    used <- paste(deparse(f), collapse = "")
+    if (inherits(fit, "merMod") && isSingular(fit)) {
+      boundary <- list(fit = fit, formula_used = used, converged = TRUE, singular = TRUE)
+      next
+    }
+    return(list(fit = fit, formula_used = used, converged = TRUE, singular = FALSE))
   }
-  list(fit = NULL, formula_used = NA_character_, converged = FALSE)
+  boundary %||% list(fit = NULL, formula_used = NA_character_, converged = FALSE, singular = NA)
 }
 
 tidy_fit <- function(res, model, subject) {
   if (is.null(res$fit)) {
     return(data.frame(model = model, subject = subject, term = NA, estimate = NA, se = NA, or = NA, ci_low = NA,
-                      ci_high = NA, p = NA, formula_used = NA, converged = FALSE))
+                      ci_high = NA, p = NA, formula_used = NA, converged = FALSE, singular = NA))
   }
   co <- coef(summary(res$fit))
   data.frame(model = model, subject = subject, term = rownames(co), estimate = co[, 1], se = co[, 2],
              or = exp(co[, 1]), ci_low = co[, 1] - 1.96 * co[, 2], ci_high = co[, 1] + 1.96 * co[, 2],
-             p = co[, 4], formula_used = res$formula_used, converged = TRUE, row.names = NULL)
+             p = co[, 4], formula_used = res$formula_used, converged = TRUE, singular = res$singular, row.names = NULL)
 }
 
 prepare <- function(trials) {
@@ -49,11 +57,16 @@ prepare <- function(trials) {
   d
 }
 
-# Long format for H2b: trials answered "old" (hits and false alarms), one row per network.
+zscore <- function(x) (x - mean(x, na.rm = TRUE)) / sd(x, na.rm = TRUE)
+
+# Long format for H2b: trials answered "old" (hits and false alarms), one row per network. Each network's
+# signal is z-scored within participant so the interaction compares associations, not predictor scales.
 h2b_data <- function(d, control = "sig_control_md") {
   old_resp <- d[d$outcome %in% c("hit", "fa"), ]
-  long <- rbind(transform(old_resp, sig = sig_memory, network = "memory"),
-                transform(old_resp, sig = old_resp[[control]], network = "control_md"))
+  old_resp$z_memory <- ave(old_resp$sig_memory, old_resp$subject, FUN = zscore)
+  old_resp$z_control <- ave(old_resp[[control]], old_resp$subject, FUN = zscore)
+  long <- rbind(transform(old_resp, sig = z_memory, network = "memory"),
+                transform(old_resp, sig = z_control, network = "control_md"))
   long$network <- factor(long$network, levels = c("memory", "control_md"))
   long$correct <- as.integer(long$outcome == "hit")
   long
@@ -95,7 +108,7 @@ robustness <- function(trials) {
 perm_test <- function(trials, n_perm = 1000, seed = 20261019) {
   set.seed(seed)
   d <- prepare(trials)
-  d <- d[d$is_old == 1, ]
+  d <- d[d$is_old == 1 & is.finite(d$sig_memory), ]
   slope <- function(y, x) coef(glm.fit(cbind(1, x), y, family = binomial()))[2]
   do.call(rbind, lapply(levels(droplevels(d$subject)), function(s) {
     ds <- d[d$subject == s, ]
@@ -103,6 +116,33 @@ perm_test <- function(trials, n_perm = 1000, seed = 20261019) {
     null <- replicate(n_perm, slope(ave(ds$hit, ds$session, FUN = sample), ds$sig_memory))
     data.frame(subject = s, slope = obs, p = (1 + sum(abs(null) >= abs(obs))) / (n_perm + 1), n_perm = n_perm)
   }))
+}
+
+# Spec §9 check: trials per participant and outcome (missing responses counted as "missing").
+trial_counts <- function(trials) {
+  o <- ifelse(is.na(trials$outcome), "missing", trials$outcome)
+  setNames(as.data.frame(table(trials$subject, o), stringsAsFactors = FALSE), c("subject", "outcome", "n"))
+}
+
+# Binned residual plot for a logistic (mixed) model: mean residual per bin of fitted probability, +/- 2 SE.
+binned_residuals <- function(fit, png_path, n_bins = NULL) {
+  p <- fitted(fit); y <- if (inherits(fit, "merMod")) getME(fit, "y") else fit$y
+  n_bins <- n_bins %||% max(10, floor(sqrt(length(p))))
+  bin <- cut(rank(p, ties.method = "first"), n_bins, labels = FALSE)
+  mp <- tapply(p, bin, mean); mr <- tapply(y - p, bin, mean); se <- tapply(p, bin, function(q) sqrt(mean(q * (1 - q)) / length(q)))
+  png(png_path, width = 1400, height = 1100, res = 200)
+  plot(mp, mr, pch = 19, cex = 0.6, xlab = "Mean fitted probability", ylab = "Mean residual", main = "Binned residuals")
+  lines(mp, 2 * se, col = "grey50"); lines(mp, -2 * se, col = "grey50"); abline(h = 0, lty = 2)
+  dev.off()
+}
+
+diagnostics <- function(trials, out_dir) {
+  d <- prepare(trials)
+  for (m in names(sp <- specs(d))) {
+    s <- sp[[m]]
+    f <- fit_simplified(h2_formulas(s$outcome, s$terms, s$slope), s$data)
+    if (!is.null(f$fit)) binned_residuals(f$fit, file.path(out_dir, sprintf("diagnostics_%s.png", m)))
+  }
 }
 
 main <- function() {
@@ -114,6 +154,8 @@ main <- function() {
   write.csv(fit_h2(trials), file.path(output, "h2_results.csv"), row.names = FALSE)
   write.csv(robustness(trials), file.path(output, "h2_robustness.csv"), row.names = FALSE)
   write.csv(perm_test(trials), file.path(output, "permutation.csv"), row.names = FALSE)
+  write.csv(trial_counts(trials), file.path(output, "trial_counts.csv"), row.names = FALSE)
+  diagnostics(trials, output)
   cat("RQ2 models written to", output, "\n")
 }
 

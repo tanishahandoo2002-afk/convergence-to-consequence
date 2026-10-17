@@ -92,3 +92,9 @@ def test_is_old_must_match_viewing():
 def test_short_session_reported():
     from checks.check_rq2 import check_behaviour
     assert any("session 1" in e and "749" in e for e in check_behaviour(session_behav().iloc[:749], COLS))
+
+
+def test_missing_response_with_nan_correct_does_not_crash():
+    out = label_trials(behav([(1, 1, 1, 5, 100.0, 0, 1, 800, 0, 0),
+                              (1, 1, 2, 6, 100.1, 0, np.nan, np.nan, 1, 0)]), COLS)
+    assert pd.isna(out.outcome[1]) and out.outcome[0] == "cr"

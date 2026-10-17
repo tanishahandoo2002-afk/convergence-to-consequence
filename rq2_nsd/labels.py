@@ -16,7 +16,8 @@ def label_trials(behav, cols):
     prev = df.groupby("image")["time"].shift()
     df["log_delay_s"] = np.log10((df.time - prev) * 86400)  # NaN on first viewing
     missing = (df["missing"] == 1) | df.rt.isna()
-    old, correct = df.is_old.astype(int), df.is_correct.astype(int)
+    # missing responses may carry NaN accuracy; they are masked below, so fill before casting
+    old, correct = df.is_old.fillna(0).astype(int), df.is_correct.fillna(0).astype(int)
     df["response_old"] = (old == correct).astype("Int64").mask(missing)
     df["outcome"] = pd.Series([OUTCOMES[(o, c)] for o, c in zip(old, correct)], dtype="object").mask(missing)
     return df[["session", "run", "trial", "image", "viewing", "is_old", "response_old", "outcome", "rt",

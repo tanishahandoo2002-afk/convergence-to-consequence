@@ -92,3 +92,11 @@ def test_check_tables_quality_report(tmp_path):
     errors, q = check_tables(tmp_path, CFG)
     assert any("subj01_sess02" in e and "749" in e for e in errors)
     assert q.set_index("file").loc["subj01_sess01.csv", "n_nan_signal"] == 3
+
+
+def test_full_extraction_refused_until_design_check_exists(monkeypatch):
+    import rq2_nsd.extract_trials as et
+    monkeypatch.setattr(et, "verify_frozen", lambda: [])
+    monkeypatch.setattr("sys.argv", ["extract_trials", "--beta", "b3"])
+    with pytest.raises(SystemExit, match="design"):
+        et.main()
