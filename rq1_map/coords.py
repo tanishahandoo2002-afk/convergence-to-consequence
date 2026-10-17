@@ -23,3 +23,10 @@ def outside_brain(coords_mni, mask_img):
     out = ~inside
     out[inside] = data[tuple(ijk[inside].T)] == 0
     return out
+
+
+def random_in_brain(rng, k, mask_img):
+    """k distinct random voxel centres inside the mask, as an (k, 3) MNI array."""
+    ijk = np.argwhere(np.asarray(mask_img.dataobj) > 0)
+    pick = ijk[rng.choice(len(ijk), k, replace=False)]
+    return (mask_img.affine @ np.c_[pick, np.ones(k)].T)[:3].T

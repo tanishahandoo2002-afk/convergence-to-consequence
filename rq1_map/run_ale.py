@@ -16,10 +16,10 @@ from nilearn.reporting import get_clusters_table
 from nimare.correct import FWECorrector
 from nimare.dataset import Dataset
 from nimare.diagnostics import Jackknife
-from nimare.meta.cbma.ale import ALE
+from nimare.meta.cbma.ale import ALE, ALESubtraction
 
 from checks.check_rq1_extraction import validate
-from rq1_map.coords import to_mni
+from rq1_map.coords import random_in_brain, to_mni
 from rq1_map.import_sleuth import SHEETS
 from tools.common import load_config, record_versions
 
@@ -101,6 +101,56 @@ def jackknife(cres, alpha):
     return t
 
 
+def noise_experiments(k, template_n, foci_per_exp, seed):
+    """k null experiments with random in-brain foci and sample sizes drawn from the real ones."""
+    rng = np.random.default_rng(seed)
+    mask = datasets.load_mni152_brain_mask(resolution=2)
+    exps, rows = [], []
+    for i in range(k):
+        eid = f"noise{i:03d}"
+        exps.append({"exp_id": eid, "n": str(int(rng.choice(template_n)))})
+        rows += [{"exp_id": eid, "x": x, "y": y, "z": z} for x, y, z in random_in_brain(rng, foci_per_exp, mask)]
+    return pd.DataFrame(exps), pd.DataFrame(rows)
+
+
+def failsafe(experiments, coordinates_mni, clusters, cfg):
+    """Does each cluster's peak survive adding N null experiments (Acar et al., 2018 approach)?"""
+    # Simplification: fixed counts, not a search for the exact break point; add bisection if a reviewer asks for an exact FSN.
+    rows = []
+    foci = int(coordinates_mni.groupby("exp_id").size().median())
+    ale_cfg = cfg["ale"] | {"n_iters": cfg["failsafe_n_iters"]}
+    for count in cfg["failsafe_counts"]:
+        ne, nc = noise_experiments(count, experiments.n.astype(int).tolist(), foci, cfg["seed"] + count)
+        cres = run(build_dataset(pd.concat([experiments[["exp_id", "n"]], ne]), pd.concat([coordinates_mni, nc])),
+                   ale_cfg, cfg["seed"])
+        sig = significant_map(cres, cfg["ale"]["cluster_alpha"])
+        inv, data = np.linalg.inv(sig.affine), np.asarray(sig.dataobj)
+        for c in clusters.itertuples():
+            ijk = np.rint(inv @ np.r_[c.peak_x, c.peak_y, c.peak_z, 1])[:3].astype(int)
+            rows.append({"cluster": c.cluster, "noise_experiments": count, "survives": bool(data[tuple(ijk)] > 0)})
+    return pd.DataFrame(rows, columns=["cluster", "noise_experiments", "survives"]).astype({"survives": bool})
+
+
+def h1b(experiments, coordinates_mni, cfg, out_dir=RESULTS):
+    """Recollection vs familiarity ALE subtraction, run only if each group is large enough."""
+    k = {t: int((experiments.contrast_type == t).sum()) for t in ("recollection", "familiarity")}
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    if min(k.values()) < cfg["h1b_min_per_group"]:
+        status = (f"not run: recollection k={k['recollection']}, familiarity k={k['familiarity']} "
+                  f"(each needs >= {cfg['h1b_min_per_group']})")
+        (out_dir / "h1b_status.txt").write_text(status)
+        return status
+    groups = [experiments[experiments.contrast_type == t] for t in ("recollection", "familiarity")]
+    dsets = [build_dataset(g, coordinates_mni[coordinates_mni.exp_id.isin(g.exp_id)]) for g in groups]
+    res = ALESubtraction(n_iters=cfg["ale"]["n_iters"], n_cores=cfg["ale"]["n_cores"],
+                         random_state=cfg["seed"]).fit(*dsets)
+    res.get_map("z_desc-group1MinusGroup2").to_filename(out_dir / "h1b_subtraction_z.nii.gz")
+    status = f"run: recollection k={k['recollection']} minus familiarity k={k['familiarity']}"
+    (out_dir / "h1b_status.txt").write_text(status)
+    return status
+
+
 def main():
     cfg = load_config("rq1")
     exps = pd.read_csv(SHEETS / "experiments.csv", dtype=str).fillna("")
@@ -117,6 +167,11 @@ def main():
     clusters = cluster_table(cres, alpha)
     clusters.to_csv(RESULTS / "clusters.csv", index=False)
     jackknife(cres, alpha).to_csv(RESULTS / "jackknife.csv", index=False)
+    if len(clusters):
+        failsafe(exps, coords_mni, clusters, cfg).to_csv(RESULTS / "failsafe.csv", index=False)
+    else:
+        pd.DataFrame(columns=["cluster", "noise_experiments", "survives"]).to_csv(RESULTS / "failsafe.csv", index=False)
+    print(h1b(exps, coords_mni, cfg))
     params = {"date": datetime.date.today().isoformat(), "seed": cfg["seed"], "ale": cfg["ale"],
               "n_experiments": len(exps), "n_foci": len(coords), "nimare": nimare.__version__}
     (RESULTS / "params.json").write_text(json.dumps(params, indent=2))

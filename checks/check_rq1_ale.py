@@ -10,7 +10,8 @@ import pandas as pd
 from rq1_map.import_sleuth import SHEETS
 from tools.common import ROOT, load_config
 
-OUTPUTS = ["ale_stat.nii.gz", "ale_cluster_fwe_z.nii.gz", "clusters.csv", "jackknife.csv", "params.json"]
+OUTPUTS = ["ale_stat.nii.gz", "ale_cluster_fwe_z.nii.gz", "clusters.csv", "jackknife.csv", "params.json",
+           "failsafe.csv", "h1b_status.txt"]
 
 
 def check(results, cfg, experiments, versions=ROOT / "results" / "versions.txt"):
@@ -26,6 +27,8 @@ def check(results, cfg, experiments, versions=ROOT / "results" / "versions.txt")
     absent = sorted(set(experiments.exp_id) - set(jk.exp_id))
     if absent:
         errors.append(f"jackknife lacks experiments {absent}")
+    if (results / "h1b_status.txt").read_text().startswith("run") and not (results / "h1b_subtraction_z.nii.gz").exists():
+        errors.append("H1b reported as run but h1b_subtraction_z.nii.gz is missing")
     if not versions.exists() or " rq1_ale " not in versions.read_text():
         errors.append("results/versions.txt has no rq1_ale entry")
     return errors

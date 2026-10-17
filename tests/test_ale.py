@@ -72,7 +72,7 @@ def test_labels_cortical_and_subcortical():
 def test_check_ale_flags_param_mismatch_and_missing_jackknife(tmp_path):
     import json
     from checks.check_rq1_ale import check
-    for f in ["ale_stat.nii.gz", "ale_cluster_fwe_z.nii.gz", "clusters.csv"]:
+    for f in ["ale_stat.nii.gz", "ale_cluster_fwe_z.nii.gz", "clusters.csv", "failsafe.csv", "h1b_status.txt"]:
         (tmp_path / f).write_text("x")
     (tmp_path / "params.json").write_text(json.dumps({"ale": ALE_CFG | {"n_iters": 5000}}))
     pd.DataFrame({"exp_id": ["e0"]}).to_csv(tmp_path / "jackknife.csv", index=False)
@@ -80,3 +80,42 @@ def test_check_ale_flags_param_mismatch_and_missing_jackknife(tmp_path):
     errors = check(tmp_path, {"ale": ALE_CFG}, pd.DataFrame({"exp_id": ["e0", "e1"]}), tmp_path / "versions.txt")
     assert any("n_iters" in e for e in errors)
     assert any("e1" in e and "jackknife" in e for e in errors)
+
+
+def test_noise_experiments_in_brain():
+    from rq1_map.coords import outside_brain
+    from rq1_map.run_ale import noise_experiments
+    e1, c1 = noise_experiments(7, [12, 20, 30], foci_per_exp=6, seed=5)
+    e2, c2 = noise_experiments(7, [12, 20, 30], foci_per_exp=6, seed=5)
+    assert len(e1) == 7 and len(c1) == 42 and set(e1.n) <= {"12", "20", "30"}
+    assert not outside_brain(c1, load_mni152_brain_mask(resolution=2)).any()
+    pd.testing.assert_frame_equal(c1, c2)
+
+
+def test_failsafe_reports_each_cluster(planted):
+    from rq1_map.run_ale import failsafe
+    exps, cres = planted
+    clusters = cluster_table(cres, alpha=0.05)
+    coords = synth(True)[1]
+    cfg = {"ale": ALE_CFG, "failsafe_counts": [5], "failsafe_n_iters": 50, "seed": 1}
+    fs = failsafe(exps, coords, clusters, cfg)
+    assert len(fs) == len(clusters) and set(fs.columns) == {"cluster", "noise_experiments", "survives"}
+    assert fs.survives.dtype == bool
+
+
+def test_h1b_gate(tmp_path):
+    from rq1_map.run_ale import h1b
+    exps = pd.DataFrame({"exp_id": [f"e{i}" for i in range(30)], "n": "20",
+                         "contrast_type": ["recollection"] * 10 + ["familiarity"] * 20})
+    coords = pd.DataFrame({"exp_id": exps.exp_id, "x": 0.0, "y": -20.0, "z": 10.0})
+    status = h1b(exps, coords, {"h1b_min_per_group": 17, "ale": ALE_CFG, "seed": 1}, out_dir=tmp_path)
+    assert status.startswith("not run") and "k=10" in status and "k=20" in status
+    assert (tmp_path / "h1b_status.txt").read_text() == status
+
+
+def test_h1b_runs_when_groups_large_enough(tmp_path):
+    from rq1_map.run_ale import h1b
+    exps, coords = synth(True, k=34)
+    exps["contrast_type"] = ["recollection"] * 17 + ["familiarity"] * 17
+    status = h1b(exps, coords, {"h1b_min_per_group": 17, "ale": ALE_CFG | {"n_iters": 10}, "seed": 1}, out_dir=tmp_path)
+    assert status.startswith("run") and (tmp_path / "h1b_subtraction_z.nii.gz").exists()
