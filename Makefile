@@ -52,3 +52,18 @@ rq2:
 	$(PY) -m rq2_nsd.extract_trials --beta b3
 	$(PY) -m checks.check_rq2 --dir b3
 	Rscript rq2_nsd/models.R --run --input $$C2C_DATA/rq2/b3 --output rq2_nsd/results
+
+.PHONY: rq3-search rq3-screen rq3-check-screen
+rq3-search:
+	$(PY) -m tools.pubmed_search rq3
+	$(PY) -m checks.check_search rq3
+
+rq3-screen:
+	$(PY) -m tools.screen rq3 --stage title_abstract --rater gemini
+	$(PY) -m tools.screen rq3 --stage title_abstract --rater qwen
+	$(PY) -m tools.screen rq3 --stage title_abstract --merge
+
+rq3-check-screen:
+	$(PY) -m tools.kappa rq3
+	$(PY) -m tools.prisma rq3
+	$(PY) -m checks.check_screening rq3

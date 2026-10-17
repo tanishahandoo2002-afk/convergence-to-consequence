@@ -1,0 +1,14 @@
+# RQ3: stimulation meta-analysis (plan §8.3). Draft values; finalise before registration 2.
+seed: 20261019
+
+# PubMed search (plan §8.3 step 3, no date limit). Draft string: the author reviews it before registering.
+pubmed_query: >-
+  ("transcranial direct current stimulation"[tiab] OR tDCS[tiab] OR "transcranial alternating current stimulation"[tiab]
+  OR tACS[tiab] OR "transcranial electrical stimulation"[tiab])
+  AND ("episodic memory"[tiab] OR "Memory, Episodic"[MeSH] OR recall[tiab] OR recognition[tiab]
+  OR "source memory"[tiab] OR "associative memory"[tiab] OR "verbal memory"[tiab] OR "word list"[tiab]
+  OR RAVLT[tiab] OR CVLT[tiab] OR "ADAS-Cog"[tiab])
+  AND (sham[tiab] OR placebo[tiab])
+
+r_values: {primary: 0.5, sensitivity: [0.3, 0.7]}   # assumed pre-post correlation for crossover designs
+min_clinical_trials: 8                               # below this the clinical arm is descriptive
