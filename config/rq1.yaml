@@ -25,4 +25,7 @@ failsafe_n_iters: 1000
 
 parcels:
   md_url: "https://evlab.squarespace.com/s/allParcels-MD-HE197.nii"
-  md_sha256: null   # filled in on first download (Task 10), verified afterwards
+  md_sha256: null   # set after first download; masks/sources.csv records every source hash either way
+  # Yeo 2011 7 networks, official CBIG repository (nilearn's FTP source no longer answers)
+  yeo_url: "https://raw.githubusercontent.com/ThomasYeoLab/CBIG/master/stable_projects/brain_parcellation/Yeo2011_fcMRI_clustering/1000subjects_reference/Yeo_JNeurophysiol11_SplitLabels/MNI152/Yeo2011_7Networks_N1000.split_components.FSL_MNI152_2mm.nii.gz"
+  yeo_lut_url: "https://raw.githubusercontent.com/ThomasYeoLab/CBIG/master/stable_projects/brain_parcellation/Yeo2011_fcMRI_clustering/1000subjects_reference/Yeo_JNeurophysiol11_SplitLabels/MNI152/7Networks_ColorLUT_freeview.txt"

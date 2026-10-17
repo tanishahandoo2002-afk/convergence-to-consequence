@@ -1,0 +1,4 @@
+file,url,sha256,date
+allParcels-MD-HE197.nii,https://evlab.squarespace.com/s/allParcels-MD-HE197.nii,da21d000bf7ad6c1db9ef0a09f1878922202a2dd0e9b7db11984913c53b6a5ea,2026-10-18
+Yeo2011_7Networks_N1000.split_components.FSL_MNI152_2mm.nii.gz,https://raw.githubusercontent.com/ThomasYeoLab/CBIG/master/stable_projects/brain_parcellation/Yeo2011_fcMRI_clustering/1000subjects_reference/Yeo_JNeurophysiol11_SplitLabels/MNI152/Yeo2011_7Networks_N1000.split_components.FSL_MNI152_2mm.nii.gz,8a6f08d3fff52a9ba0ef952fe51b2de1660acf15e3dc13dc016c57ea57ca7444,2026-10-18
+7Networks_ColorLUT_freeview.txt,https://raw.githubusercontent.com/ThomasYeoLab/CBIG/master/stable_projects/brain_parcellation/Yeo2011_fcMRI_clustering/1000subjects_reference/Yeo_JNeurophysiol11_SplitLabels/MNI152/7Networks_ColorLUT_freeview.txt,ef2717f63dce424b046c65caa6f0179427e59ed836c854bbe672536962922fc1,2026-10-18

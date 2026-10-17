@@ -34,3 +34,10 @@ rq1-extract-check:
 rq1: rq1-extract-check
 	$(PY) -m rq1_map.run_ale
 	$(PY) -m checks.check_rq1_ale
+
+.PHONY: masks all
+masks:
+	$(PY) -m masks.build_masks
+	$(PY) -m checks.check_masks
+
+all: test rq1 masks
