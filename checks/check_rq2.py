@@ -7,7 +7,39 @@ from pathlib import Path
 
 import pandas as pd
 
+from scipy.stats import spearmanr
+
+from rq2_nsd.labels import label_trials
 from tools.common import ROOT, data_dir, load_config
+
+
+def check_behaviour(behav, cols, expected_images=None, trials_per_session=750):
+    """responses.tsv sanity: configured columns exist, 750 trials per session, image order matches the
+    experimental design, is_old agrees with viewing history, delay agrees with NSD's memory_recent."""
+    absent = [v for v in cols.values() if v not in behav.columns]
+    if absent:
+        return [f"responses.tsv lacks configured columns {absent}; real columns: {list(behav.columns)} "
+                f"(fix behav_columns in config/rq2.yaml)"]
+    errors = []
+    lab = label_trials(behav, cols)
+    for ss, n in lab.groupby("session").size().items():
+        if n != trials_per_session:
+            errors.append(f"session {ss}: {n} trials, expected {trials_per_session}")
+    if expected_images is not None:
+        diff = (lab.image.to_numpy() != pd.Series(expected_images).to_numpy())
+        if diff.any():
+            r = lab[diff].iloc[0]
+            errors.append(f"image order differs from the design at session {r.session} run {r.run} trial {r.trial}")
+    wrong_old = lab.is_old.astype(int) != (lab.viewing > 1).astype(int)
+    if wrong_old.any():
+        errors.append(f"is_old disagrees with viewing history on {int(wrong_old.sum())} trials")
+    prev_session = lab.groupby("image").session.shift()
+    within = lab[(prev_session == lab.session) & lab.log_delay_s.notna()]
+    if len(within) >= 10:
+        rho = spearmanr(within.log_delay_s, within.memory_recent).statistic
+        if not rho >= 0.9:
+            errors.append(f"computed delay and memory_recent disagree within sessions (Spearman rho = {rho:.2f})")
+    return errors
 
 
 def check_tables(out_dir, cfg):

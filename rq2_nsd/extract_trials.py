@@ -18,6 +18,7 @@ import numpy as np
 import pandas as pd
 import requests
 
+from checks.check_rq2 import check_behaviour
 from masks.build_masks import verify_frozen
 from rq2_nsd.labels import label_trials
 from tools.common import data_dir, load_config, record_versions
@@ -111,6 +112,9 @@ def main():
             sys.exit(f"native masks for subject {s} missing in {native} (built by the nsdcode step)")
         masks = {m: np.asarray(nib.load(p).dataobj) > 0 for m, p in paths.items()}
         behav = pd.read_csv(io.BytesIO(fetch(cfg["s3_base"] + f"nsddata/ppdata/subj{s:02d}/behav/responses.tsv")), sep="\t")
+        problems = check_behaviour(behav, cfg["behav_columns"], trials_per_session=cfg["trials_per_session"])
+        if problems:
+            sys.exit(f"subject {s} responses.tsv fails the behaviour check:\n  " + "\n  ".join(problems))
         labels = label_trials(behav, cfg["behav_columns"])
         sessions = cfg["pilot"]["sessions"] if a.pilot else sorted(labels.session.unique())
         for ss in sessions:

@@ -41,3 +41,54 @@ def test_chronological_order():
     rows = [(2, 1, 1, 7, 105.0, 0, 1, 800, 0, 0), (1, 2, 1, 6, 100.5, 0, 1, 800, 0, 0), (1, 1, 2, 5, 100.1, 0, 1, 800, 0, 0)]
     out = label_trials(behav(rows), COLS)
     assert list(zip(out.session, out.run, out.trial)) == [(1, 1, 2), (1, 2, 1), (2, 1, 1)]
+
+
+def session_behav(seed=0, n=750):
+    """One synthetic session: images drawn from a pool so some repeat within the session."""
+    rng = np.random.default_rng(seed)
+    images = rng.integers(0, 300, n)
+    last, gaps, old = {}, [], []
+    for i, im in enumerate(images):
+        gaps.append(i - last[im] if im in last else 0)
+        old.append(int(im in last))
+        last[im] = i
+    return behav([(1, 1 + i // 63, i % 63 + 1, int(images[i]), 100 + i * 4 / 86400, old[i], 1, 800, 0, gaps[i])
+                  for i in range(n)])
+
+
+def test_missing_column_lists_real_columns():
+    from checks.check_rq2 import check_behaviour
+    b = session_behav().drop(columns=[COLS["time"]])
+    errors = check_behaviour(b, COLS)
+    assert len(errors) == 1 and COLS["time"] in errors[0] and COLS["session"] in errors[0]
+
+
+def test_image_order_mismatch_reported():
+    from checks.check_rq2 import check_behaviour
+    b = session_behav()
+    labelled = label_trials(b, COLS)
+    expected = labelled.image.copy()
+    assert check_behaviour(b, COLS, expected_images=expected) == []
+    expected.iloc[[10, 11]] = expected.iloc[[11, 10]].to_numpy()
+    errors = check_behaviour(b, COLS, expected_images=expected)
+    assert any("trial" in e and "session 1" in e and "image order" in e for e in errors)
+
+
+def test_delay_agrees_with_memory_recent():
+    from checks.check_rq2 import check_behaviour
+    b = session_behav()
+    assert check_behaviour(b, COLS) == []
+    b[COLS["memory_recent"]] = -b[COLS["memory_recent"]]
+    assert any("memory_recent" in e for e in check_behaviour(b, COLS))
+
+
+def test_is_old_must_match_viewing():
+    from checks.check_rq2 import check_behaviour
+    b = session_behav()
+    b.loc[0, COLS["is_old"]] = 1
+    assert any("is_old" in e for e in check_behaviour(b, COLS))
+
+
+def test_short_session_reported():
+    from checks.check_rq2 import check_behaviour
+    assert any("session 1" in e and "749" in e for e in check_behaviour(session_behav().iloc[:749], COLS))
