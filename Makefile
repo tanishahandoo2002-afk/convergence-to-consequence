@@ -36,12 +36,12 @@ rq1: rq1-extract-check
 	$(PY) -m rq1_map.run_ale
 	$(PY) -m checks.check_rq1_ale
 
-.PHONY: masks all
+.PHONY: masks all rq3-es rq3
 masks:
 	$(PY) -m masks.build_masks
 	$(PY) -m checks.check_masks
 
-all: test rq1 masks
+all: test rq1 masks rq2 rq3
 
 .PHONY: rq2-pilot rq2
 rq2-pilot:
@@ -67,3 +67,10 @@ rq3-check-screen:
 	$(PY) -m tools.kappa rq3
 	$(PY) -m tools.prisma rq3
 	$(PY) -m checks.check_screening rq3
+
+rq3-es:
+	$(PY) -m checks.check_rq3_extraction
+	Rscript rq3_stimulation/effect_sizes.R --run
+
+rq3: rq3-es
+	Rscript rq3_stimulation/models.R --run
