@@ -1,0 +1,4 @@
+// Reference=Talairach
+// Lee et al., 2008: Source correct > incorrect
+// Subjects=18
+30	-20	10

@@ -18,3 +18,9 @@ def has_signoff(step, item, path=SIGNOFFS):
 def missing(step, items, path=SIGNOFFS):
     done = _passed(step, path)
     return [i for i in items if i not in done]
+
+
+def has_error(step, path=SIGNOFFS):
+    """True if any sign-off row for this step recorded an error."""
+    df = pd.read_csv(path, dtype=str).fillna("")
+    return bool(((df.step == step) & (df.result == "error")).any())

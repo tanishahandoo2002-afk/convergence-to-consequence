@@ -25,3 +25,7 @@ rq1-check-screen:
 	$(PY) -m tools.kappa rq1
 	$(PY) -m tools.prisma rq1
 	$(PY) -m checks.check_screening rq1
+
+.PHONY: rq1-extract-check
+rq1-extract-check:
+	$(PY) -m checks.check_rq1_extraction

@@ -1,0 +1,9 @@
+// Reference=MNI
+// Smith et al., 2010: Hits > CR
+// Subjects=16
+-24	-18	-18
+40	-60	40
+
+// Jones et al., 2014: Remember > Know
+// Subjects=22
+-4	-56	30
