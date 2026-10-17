@@ -75,11 +75,15 @@ def _labeller():
 
 
 def cluster_table(cres, alpha):
+    """Significant clusters with their ALE peak: the voxel-level z maximum inside each cluster
+    (the cluster-FWE map is flat within a cluster, so peaks are taken from the ALE z map)."""
     sig = significant_map(cres, alpha)
     cols = ["cluster", "peak_x", "peak_y", "peak_z", "peak_z_value", "size_mm3", "label"]
     if not np.any(np.asarray(sig.dataobj) > 0):
         return pd.DataFrame(columns=cols)
-    t = get_clusters_table(sig, stat_threshold=1e-6, min_distance=1e6, two_sided=False)
+    z = cres.get_map("z")
+    peaks = nib.Nifti1Image(np.where(np.asarray(sig.dataobj) > 0, np.asarray(z.dataobj), 0).astype("float32"), z.affine)
+    t = get_clusters_table(peaks, stat_threshold=1e-6, min_distance=1e6, two_sided=False)
     label = _labeller()
     return pd.DataFrame({
         "cluster": t["Cluster ID"].astype(str), "peak_x": t.X, "peak_y": t.Y, "peak_z": t.Z,

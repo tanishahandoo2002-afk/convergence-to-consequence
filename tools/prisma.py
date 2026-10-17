@@ -30,7 +30,7 @@ def counts(base):
     assessed = ta.index[ta != "exclude"]
     ft = human(base, "author", stage="full_text").reindex(assessed).dropna()
     return {
-        "identified": int(log.loc[log.source != "dedupe", "hits"].sum()),
+        "identified": int(log[log.source != "dedupe"].drop_duplicates("file", keep="last").hits.sum()),
         "duplicates_removed": int(log.loc[log.source == "dedupe", "hits"].iloc[-1]),
         "screened": len(records),
         "excluded_title_abstract": int((ta == "exclude").sum()),

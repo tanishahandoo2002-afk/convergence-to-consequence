@@ -119,3 +119,13 @@ def test_h1b_runs_when_groups_large_enough(tmp_path):
     exps["contrast_type"] = ["recollection"] * 17 + ["familiarity"] * 17
     status = h1b(exps, coords, {"h1b_min_per_group": 17, "ale": ALE_CFG | {"n_iters": 10}, "seed": 1}, out_dir=tmp_path)
     assert status.startswith("run") and (tmp_path / "h1b_subtraction_z.nii.gz").exists()
+
+
+def test_cluster_peak_is_ale_peak_not_centroid(planted):
+    _, cres = planted
+    t = cluster_table(cres, alpha=0.05)
+    sig = np.asarray(significant_map(cres, 0.05).dataobj) > 0
+    z = np.asarray(cres.get_map("z").dataobj)
+    top = t.sort_values("peak_z_value").iloc[-1]
+    assert top.peak_z_value == pytest.approx(z[sig].max(), rel=1e-4)
+    assert value_at(cres.get_map("z"), (top.peak_x, top.peak_y, top.peak_z)) == pytest.approx(z[sig].max(), rel=1e-4)

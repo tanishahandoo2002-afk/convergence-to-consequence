@@ -50,7 +50,8 @@ def _sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def freeze(paths, refreeze, frozen_path=FROZEN, changelog=CHANGELOG):
+def refreeze_allowed(refreeze, frozen_path=FROZEN, changelog=CHANGELOG):
+    """Raise unless masks are unfrozen, or --refreeze is given with a CHANGELOG line dated today."""
     frozen_path = Path(frozen_path)
     if frozen_path.exists():
         if not refreeze:
@@ -59,7 +60,11 @@ def freeze(paths, refreeze, frozen_path=FROZEN, changelog=CHANGELOG):
         log = Path(changelog).read_text() if Path(changelog).exists() else ""
         if not any(line.startswith(today) for line in log.splitlines()):
             raise RuntimeError(f"--refreeze needs a CHANGELOG.md line starting with {today} explaining why")
-    frozen_path.write_text("".join(f"{_sha(p)}  {Path(p).name}\n" for p in paths))
+
+
+def freeze(paths, refreeze, frozen_path=FROZEN, changelog=CHANGELOG):
+    refreeze_allowed(refreeze, frozen_path, changelog)
+    Path(frozen_path).write_text("".join(f"{_sha(p)}  {Path(p).name}\n" for p in paths))
 
 
 def verify_frozen(frozen_path=FROZEN):
@@ -125,8 +130,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--refreeze", action="store_true")
     a = ap.parse_args()
-    if FROZEN.exists() and not a.refreeze:
-        raise SystemExit(f"masks are frozen ({FROZEN}); rebuilding needs --refreeze and a dated CHANGELOG entry")
+    refreeze_allowed(a.refreeze, FROZEN, CHANGELOG)  # before anything is overwritten
     masks = build(load_config("rq1"))
     (MASKS / "qc").mkdir(exist_ok=True)
     paths = []

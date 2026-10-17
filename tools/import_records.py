@@ -83,7 +83,7 @@ def append_log(search_dir, source, query, hits, file):
 def build_records(search_dir):
     search_dir = Path(search_dir)
     log = pd.read_csv(search_dir / "search_log.csv", dtype=str).fillna("")
-    files = log.loc[log.source != "dedupe", "file"]
+    files = log.loc[log.source != "dedupe", "file"].drop_duplicates()  # a same-day re-run logs a file twice
     records = []
     for f in files:
         records += pd.read_csv(search_dir / f, dtype=str).fillna("").to_dict("records")

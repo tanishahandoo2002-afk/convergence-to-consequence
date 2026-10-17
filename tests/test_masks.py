@@ -97,3 +97,18 @@ def test_yeo_label_ids_selects_ventral_attention_and_control():
            "  6  7Networks_LH_SalVentAttn_ParOper 196 58 250 0\n 14  7Networks_LH_Cont_Par 230 148 34 0\n"
            " 23  7Networks_LH_Default_Par 205 62 78 0\n 40  7Networks_RH_Cont_Temp 230 148 35 0\n")
     assert yeo_label_ids(lut) == [6, 14, 40]
+
+
+def test_refreeze_without_changelog_leaves_masks_untouched(tmp_path, monkeypatch):
+    import masks.build_masks as bm
+    frozen = tmp_path / "FROZEN.sha256"
+    frozen.write_text("x  memory.nii.gz\n")
+    (tmp_path / "CHANGELOG.md").write_text("# Changelog\n")
+    monkeypatch.setattr(bm, "FROZEN", frozen)
+    monkeypatch.setattr(bm, "CHANGELOG", tmp_path / "CHANGELOG.md")
+    built = []
+    monkeypatch.setattr(bm, "build", lambda cfg: built.append(1))
+    monkeypatch.setattr("sys.argv", ["build_masks", "--refreeze"])
+    with pytest.raises((RuntimeError, SystemExit)):
+        bm.main()
+    assert built == []
