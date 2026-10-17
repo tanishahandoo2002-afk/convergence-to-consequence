@@ -1,0 +1,25 @@
+# RQ2: single-trial prediction in NSD (plan §8.2).
+seed: 20261019
+subjects: [1, 2, 3, 4, 5, 6, 7, 8]
+beta_dirs:
+  b3: betas_fithrf_GLMdenoise_RR   # primary (most reliable single-trial estimates)
+  b2: betas_fithrf                 # robustness
+trials_per_session: 750
+s3_base: "https://natural-scenes-dataset.s3.amazonaws.com/"
+masks: [memory, memory_top50, control_md, control_yeo]
+extreme_z: 6
+pilot: {subject: 1, sessions: [1, 2, 3]}
+
+# responses.tsv column names. They are documented only in the NSD Data Manual: check them against
+# the manual once access is granted; check_rq2 fails and lists the real columns if any differ.
+behav_columns:
+  session: SESSION
+  run: RUN
+  trial: TRIAL
+  image: 73KID
+  time: TIME            # MATLAB datenum (days)
+  is_old: ISOLD
+  is_correct: ISCORRECT
+  rt: RT
+  missing: MISSINGDATA
+  memory_recent: MEMORYRECENT
