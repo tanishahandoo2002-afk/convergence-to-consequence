@@ -29,3 +29,8 @@ rq1-check-screen:
 .PHONY: rq1-extract-check
 rq1-extract-check:
 	$(PY) -m checks.check_rq1_extraction
+
+.PHONY: rq1
+rq1: rq1-extract-check
+	$(PY) -m rq1_map.run_ale
+	$(PY) -m checks.check_rq1_ale
