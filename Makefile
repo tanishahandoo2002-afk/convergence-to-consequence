@@ -19,3 +19,9 @@ rq1-screen:
 	$(PY) -m tools.screen rq1 --stage title_abstract --rater gemini
 	$(PY) -m tools.screen rq1 --stage title_abstract --rater qwen
 	$(PY) -m tools.screen rq1 --stage title_abstract --merge
+
+.PHONY: rq1-check-screen
+rq1-check-screen:
+	$(PY) -m tools.kappa rq1
+	$(PY) -m tools.prisma rq1
+	$(PY) -m checks.check_screening rq1
