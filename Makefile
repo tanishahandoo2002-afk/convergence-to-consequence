@@ -42,3 +42,13 @@ masks:
 	$(PY) -m checks.check_masks
 
 all: test rq1 masks
+
+.PHONY: rq2-pilot rq2
+rq2-pilot:
+	$(PY) -m rq2_nsd.extract_trials --pilot
+	$(PY) -m checks.check_rq2 --dir pilot
+
+rq2:
+	$(PY) -m rq2_nsd.extract_trials --beta b3
+	$(PY) -m checks.check_rq2 --dir b3
+	Rscript rq2_nsd/models.R --run --input $$C2C_DATA/rq2/b3 --output rq2_nsd/results
