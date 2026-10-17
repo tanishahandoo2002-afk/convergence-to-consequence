@@ -1,0 +1,14 @@
+# AI-assisted screening (plan §8.1 step 4, §8.6). Both raters screen every record blind to each other.
+seed: 20261019
+human_exclude_sample: 0.20   # share of agreed AI excludes the author checks
+second_rater_sample: 0.20    # share of all records the second rater screens blind
+kappa_min: 0.6               # below this, the author screens every record (plan §12)
+raters:
+  gemini:
+    base_url: "https://generativelanguage.googleapis.com/v1beta/openai/"
+    model: "gemini-2.5-flash"
+    api_key_env: GEMINI_API_KEY
+  qwen:
+    base_url: "http://localhost:11434/v1"
+    model: "qwen2.5:7b-instruct"
+    api_key_env: null

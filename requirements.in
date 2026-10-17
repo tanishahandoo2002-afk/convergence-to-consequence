@@ -1,0 +1,11 @@
+nimare~=0.22
+nilearn~=0.13
+nibabel
+pandas
+scikit-learn
+openai
+pypdf
+pyyaml
+requests
+matplotlib
+pytest

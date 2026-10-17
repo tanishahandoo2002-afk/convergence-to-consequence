@@ -1,0 +1,28 @@
+# RQ1: the curated ALE map (plan §8.1). Draft values; finalise before the RQ1 OSF registration.
+seed: 20261019
+
+# PubMed top-up search (plan §8.1 step 3). Draft string: the author reviews it before registering.
+pubmed_query: >-
+  ("fMRI"[tiab] OR "functional magnetic resonance"[tiab] OR "functional MRI"[tiab]
+  OR "positron emission tomography"[tiab] OR "PET"[tiab])
+  AND ("episodic memory"[tiab] OR "Memory, Episodic"[MeSH] OR "recognition memory"[tiab]
+  OR "source memory"[tiab] OR "associative memory"[tiab] OR recall[tiab])
+  AND (retrieval[tiab] OR remember*[tiab] OR recollection[tiab] OR "old/new"[tiab])
+
+ale:
+  voxel_thresh: 0.001   # cluster-forming threshold
+  cluster_alpha: 0.05   # cluster-level FWE
+  n_iters: 5000
+  n_cores: 1
+
+min_experiments: 20       # target (ALE power)
+hard_min_experiments: 17  # below this the check fails
+h1b_min_per_group: 17     # recollection vs familiarity subtraction gate
+spotcheck_frac: 0.20
+
+failsafe_counts: [10, 20, 40]
+failsafe_n_iters: 1000
+
+parcels:
+  md_url: "https://evlab.squarespace.com/s/allParcels-MD-HE197.nii"
+  md_sha256: null   # filled in on first download (Task 10), verified afterwards
