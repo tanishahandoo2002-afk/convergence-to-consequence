@@ -8,6 +8,7 @@ setup:
 
 test:
 	.venv/bin/pytest -q
+	Rscript tests/R/run_all.R
 
 .PHONY: rq1-search
 rq1-search:

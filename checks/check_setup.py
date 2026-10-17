@@ -26,6 +26,11 @@ def main():
     if not (hook.exists() and os.access(hook, os.X_OK)):
         errors.append("commit-msg hook missing or not executable in .git/hooks")
 
+    r = subprocess.run(["Rscript", "-e", "suppressMessages({library(lme4); library(metafor); library(clubSandwich)})"],
+                       cwd=ROOT, capture_output=True, text=True)
+    if r.returncode != 0:
+        errors.append("R packages missing: Rscript -e 'renv::restore()'")
+
     raters = load_config("screening")["raters"]
     qwen = raters["qwen"]
     try:
