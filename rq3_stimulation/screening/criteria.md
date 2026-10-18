@@ -15,3 +15,5 @@ Exclude:
 - Other clinical groups (e.g., depression, schizophrenia).
 
 At title/abstract stage, a record that may meet the criteria but lacks the detail to decide (for example, outcome measures not named) is "unsure", not "exclude".
+
+Title/abstract stage: abstracts rarely report means, SDs or the randomisation scheme. Never exclude a record for not reporting these; they are checked in the full text. Exclude only when the title or abstract shows a clear exclusion (for example, TMS, no sham condition, working memory only, a non-eligible clinical group, or a review).
