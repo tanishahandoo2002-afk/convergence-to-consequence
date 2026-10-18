@@ -10,5 +10,5 @@ raters:
     api_key_env: GEMINI_API_KEY
   qwen:
     base_url: "http://localhost:11434/v1"
-    model: "qwen2.5:3b-instruct"   # 7B swapped on an 8 GB Mac (~2 min/record); 3B fits in memory
+    model: "qwen2.5:7b-instruct"   # calibration: 7B kappa 0.376 vs 3B 0.006 (rq1_map/screening/calibration/kappa.csv); ~42 s/record on an 8 GB Mac
     api_key_env: null
