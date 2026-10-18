@@ -137,3 +137,26 @@ def test_run_full_text_skips_missing_pdf_and_resumes(tmp_path):
     assert run_full_text(["pmid:1", "pmid:2"], tmp_path, c, "m", "crit", out) == 1
     assert run_full_text(["pmid:1", "pmid:2"], tmp_path, c, "m", "crit", out) == 0
     assert len(c.calls) == 1 and "correct rejections" in c.calls[0]["messages"][1]["content"]
+
+
+def test_run_rater_throttles_between_requests(tmp_path):
+    recs = pd.DataFrame({"record_id": ["a", "b", "c"], "title": ["T1", "T2", "T3"], "abstract": ["", "", ""]})
+    now, slept = [0.0], []
+
+    def clock():
+        return now[0]
+
+    def sleep(s):
+        slept.append(s)
+        now[0] += s
+
+    c = FakeClient([INC] * 3)
+    run_rater(recs, "gemini", c, "m", "crit", tmp_path / "log.csv", min_interval=13, clock=clock, sleep=sleep)
+    assert len(c.calls) == 3 and slept == [13, 13]          # no wait before the first request
+
+
+def test_run_rater_no_throttle_by_default(tmp_path):
+    recs = pd.DataFrame({"record_id": ["a", "b"], "title": ["T1", "T2"], "abstract": ["", ""]})
+    slept = []
+    run_rater(recs, "qwen", FakeClient([INC] * 2), "m", "crit", tmp_path / "log.csv", sleep=slept.append)
+    assert slept == []

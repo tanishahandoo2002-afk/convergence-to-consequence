@@ -96,7 +96,7 @@ def main():
         criteria = (base.parent / "criteria.md").read_text()
         log = base / f"ai_{a.rater}_{re.sub(r'[^A-Za-z0-9.]+', '-', model)}.csv"
         recs = pd.read_csv(base / "records.csv", dtype=str).fillna("")
-        print(f"{a.rater} ({model}): screened {run_rater(recs, a.rater, client_for(r), model, criteria, log)} records")
+        print(f"{a.rater} ({model}): screened {run_rater(recs, a.rater, client_for(r), model, criteria, log, min_interval=r.get("min_interval_s", 0))} records")
     if a.report:
         print(report(base).to_string(index=False))
 

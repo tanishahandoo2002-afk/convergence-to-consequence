@@ -14,6 +14,7 @@ import json
 import math
 import os
 import re
+import time
 from pathlib import Path
 
 import numpy as np
@@ -97,15 +98,22 @@ def screen_record(client, model, messages, parse=parse_reply):
     return {"decision": "unsure", "reason": "invalid reply", "raw": raw}
 
 
-def run_rater(records, rater, client, model, criteria, log_path, limit=None):
-    """Screen every record not yet in log_path, appending one row per decision. Returns the count."""
+def run_rater(records, rater, client, model, criteria, log_path, limit=None, min_interval=0,
+              clock=time.monotonic, sleep=time.sleep):
+    """Screen every record not yet in log_path, appending one row per decision. Returns the count.
+    min_interval (seconds) spaces requests to respect an API's per-minute quota."""
     log_path = Path(log_path)
     done = set(pd.read_csv(log_path, dtype=str).record_id) if log_path.exists() else set()
     todo = records[~records.record_id.isin(done)]
     if limit:
         todo = todo.head(limit)
-    n = 0
+    n, last = 0, None
     for rec in todo.to_dict("records"):
+        if min_interval and last is not None:
+            wait = min_interval - (clock() - last)
+            if wait > 0:
+                sleep(wait)
+        last = clock()
         messages = build_messages(criteria, rec)
         out = screen_record(client, model, messages)
         row = {"record_id": rec["record_id"], "rater": rater, "model": model,
@@ -181,7 +189,7 @@ def main():
     if a.rater:
         r = cfg["raters"][a.rater]
         n = run_rater(records, a.rater, client_for(r), r["model"], (scr / "criteria.md").read_text(),
-                      scr / f"ai_{a.rater}.csv", a.limit)
+                      scr / f"ai_{a.rater}.csv", a.limit, min_interval=r.get("min_interval_s", 0))
         record_versions(f"{a.rq}_screen_{a.rater}")
         print(f"{a.rater}: screened {n} records")
     if a.merge:

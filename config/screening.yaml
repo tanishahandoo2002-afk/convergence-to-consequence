@@ -6,8 +6,9 @@ kappa_min: 0.6               # below this, the author screens every record (plan
 raters:
   gemini:
     base_url: "https://generativelanguage.googleapis.com/v1beta/openai/"
-    model: "gemini-2.5-flash"
+    model: "gemini-3.8-flash"   # gemini-2.5-flash is no longer served to new API keys (404, 2026-10-19)
     api_key_env: GEMINI_API_KEY
+    min_interval_s: 13           # free tier allows 5 requests/minute per model
   qwen:
     base_url: "http://localhost:11434/v1"
     model: "qwen2.5:7b-instruct"   # calibration: 7B kappa 0.376 vs 3B 0.006 (rq1_map/screening/calibration/kappa.csv); ~42 s/record on an 8 GB Mac

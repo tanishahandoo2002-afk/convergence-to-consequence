@@ -1,0 +1,58 @@
+record_id,rater,model,prompt_sha256,timestamp,decision,reason,raw
+pmid:32609778,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:36:24,exclude,"The study does not examine an eligible contrast for successful episodic retrieval (e.g., hits vs. correct rejections or remembered vs. forgotten), comparing instead congruent versus incongruent cue conditions and words versus pseudowords.","```json
+{""decision"": ""exclude"", ""reason"": ""The study does not examine an eligible contrast for successful episodic retrieval (e.g., hits vs. correct rejections or remembered vs. forgotten), comparing instead congruent versus incongruent cue conditions and words versus pseudowords.""}
+```"
+pmid:23961907,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:36:28,exclude,The study investigates motor sequence learning using a serial reaction time task rather than episodic memory retrieval.,"```json
+{""decision"": ""exclude"", ""reason"": ""The study investigates motor sequence learning using a serial reaction time task rather than episodic memory retrieval.""}
+```"
+pmid:39765133,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:36:31,include,The study investigates recollection-related fMRI effects during an episodic associative recognition memory task in healthy older adults.,"```json
+{""decision"": ""include"", ""reason"": ""The study investigates recollection-related fMRI effects during an episodic associative recognition memory task in healthy older adults.""}
+```"
+pmid:16839301,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:36:33,exclude,The study is a meta-analysis rather than an original empirical neuroimaging study.,"```json
+{""decision"": ""exclude"", ""reason"": ""The study is a meta-analysis rather than an original empirical neuroimaging study.""}
+```"
+pmid:20408236,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:36:36,include,The study uses PET in healthy adults to examine episodic memory retrieval across conditions differing in retrieval success.,"```json
+{""decision"": ""include"", ""reason"": ""The study uses PET in healthy adults to examine episodic memory retrieval across conditions differing in retrieval success.""}
+```"
+pmid:28029355,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:37:59,include,The study uses fMRI in healthy adults to examine successful episodic source retrieval.,"```json
+{""decision"": ""include"", ""reason"": ""The study uses fMRI in healthy adults to examine successful episodic source retrieval.""}
+```"
+pmid:30621794,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:38:01,exclude,"The study is a protocol involving only amnestic mild cognitive impairment patients, with no healthy adult control group.","```json
+{""decision"": ""exclude"", ""reason"": ""The study is a protocol involving only amnestic mild cognitive impairment patients, with no healthy adult control group.""}
+```"
+pmid:23254143,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:38:03,exclude,The study uses resting-state fMRI rather than a task-based episodic retrieval paradigm with an eligible contrast.,"```json
+{""decision"": ""exclude"", ""reason"": ""The study uses resting-state fMRI rather than a task-based episodic retrieval paradigm with an eligible contrast.""}
+```"
+pmid:22539776,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:38:09,unsure,"The study includes healthy controls and an fMRI autobiographical memory retrieval task, but it is unclear from the abstract whether an eligible contrast for successful retrieval (e.g., remembered vs. forgotten) was reported.","```json
+{""decision"": ""unsure"", ""reason"": ""The study includes healthy controls and an fMRI autobiographical memory retrieval task, but it is unclear from the abstract whether an eligible contrast for successful retrieval (e.g., remembered vs. forgotten) was reported.""}
+```"
+pmid:39332662,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:38:14,include,The study uses fMRI to examine successful episodic memory retrieval in an old/new recognition task and includes a healthy control group.,"```json
+{""decision"": ""include"", ""reason"": ""The study uses fMRI to examine successful episodic memory retrieval in an old/new recognition task and includes a healthy control group.""}
+```"
+pmid:11352616,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:38:16,include,The study uses event-related fMRI in adults and investigates an eligible episodic retrieval success contrast (correct recognition vs. correct rejection).,"```json
+{""decision"": ""include"", ""reason"": ""The study uses event-related fMRI in adults and investigates an eligible episodic retrieval success contrast (correct recognition vs. correct rejection).""}
+```"
+pmid:24615858,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:38:22,exclude,"The study scanned participants during encoding only (subsequent memory effects) with an unscanned retrieval test, and encoding contrasts are excluded.","```json
+{""decision"": ""exclude"", ""reason"": ""The study scanned participants during encoding only (subsequent memory effects) with an unscanned retrieval test, and encoding contrasts are excluded.""}
+```"
+pmid:17604348,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:38:26,include,The study uses fMRI in healthy young adults to investigate successful episodic recognition memory retrieval.,"```json
+{""decision"": ""include"", ""reason"": ""The study uses fMRI in healthy young adults to investigate successful episodic recognition memory retrieval.""}
+```"
+pmid:10371535,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:38:31,unsure,"The study uses PET in healthy older adults to examine episodic cued recall versus a stem completion baseline, but it is unclear from the abstract whether a contrast isolating successful retrieval (rather than retrieval attempt versus baseline) is reported.","```json
+{""decision"": ""unsure"", ""reason"": ""The study uses PET in healthy older adults to examine episodic cued recall versus a stem completion baseline, but it is unclear from the abstract whether a contrast isolating successful retrieval (rather than retrieval attempt versus baseline) is reported.""}
+```"
+pmid:39829135,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:40:57,exclude,fMRI scanning was performed during the encoding phase rather than during episodic memory retrieval.,"```json
+{""decision"": ""exclude"", ""reason"": ""fMRI scanning was performed during the encoding phase rather than during episodic memory retrieval.""}
+```"
+pmid:30816784,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:41:00,exclude,The study utilized resting-state fMRI rather than a task-based fMRI measuring successful episodic retrieval contrasts.,"```json
+{""decision"": ""exclude"", ""reason"": ""The study utilized resting-state fMRI rather than a task-based fMRI measuring successful episodic retrieval contrasts.""}
+```"
+pmid:23287568,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:41:15,include,The study uses fMRI in healthy adults to investigate successful episodic memory retrieval.,"```json
+{""decision"": ""include"", ""reason"": ""The study uses fMRI in healthy adults to investigate successful episodic memory retrieval.""}
+```"
+pmid:27155127,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:41:29,include,The study uses fMRI in healthy adults to examine successful episodic memory retrieval (correctly recognized intact pairs vs. incorrectly endorsed rearranged pairs) with whole-brain analyses.,"```json
+{""decision"": ""include"", ""reason"": ""The study uses fMRI in healthy adults to examine successful episodic memory retrieval (correctly recognized intact pairs vs. incorrectly endorsed rearranged pairs) with whole-brain analyses.""}
+```"
+pmid:34942648,gemini,gemini-3.8-flash,05f2620e9f221e16c04dd7ac73a82a70ac9a8f1c3356a329c7dc13b9384fd7ab,2026-10-19T00:41:44,unsure,"The study uses fMRI during an episodic recall task in healthy adults, but it is unclear from the abstract whether an eligible contrast for successful episodic retrieval (e.g., remembered vs. forgotten) was analyzed.","```json
+{""decision"": ""unsure"", ""reason"": ""The study uses fMRI during an episodic recall task in healthy adults, but it is unclear from the abstract whether an eligible contrast for successful episodic retrieval (e.g., remembered vs. forgotten) was analyzed.""}
+```"
