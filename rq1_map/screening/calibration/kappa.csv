@@ -1,0 +1,2 @@
+log,model,n_labelled,kappa,agreement,unsure_rate,agree_or_unsure,wrong_exclude
+ai_qwen_qwen2.5-3b-instruct.csv,qwen2.5:3b-instruct,30,0.006,0.467,0.333,0.8,3
