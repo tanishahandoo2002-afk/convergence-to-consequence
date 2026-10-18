@@ -1,3 +1,4 @@
+-include local.mk
 PY := .venv/bin/python
 
 .PHONY: setup test
@@ -74,3 +75,7 @@ rq3-es:
 
 rq3: rq3-es
 	Rscript rq3_stimulation/models.R --run
+
+.PHONY: check-setup
+check-setup:
+	$(PY) -m checks.check_setup
