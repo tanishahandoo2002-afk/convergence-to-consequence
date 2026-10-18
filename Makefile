@@ -79,3 +79,8 @@ rq3: rq3-es
 .PHONY: check-setup
 check-setup:
 	$(PY) -m checks.check_setup
+
+.PHONY: rq1-calibrate
+rq1-calibrate:   # needs Tanisha's labels in rq1_map/screening/calibration/labels.csv
+	$(PY) -m tools.calibrate rq1 --rater qwen
+	$(PY) -m tools.calibrate rq1 --report
