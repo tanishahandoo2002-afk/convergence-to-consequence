@@ -7,6 +7,25 @@ import pandas as pd
 from tools.common import ROOT, load_config
 from tools.kappa import human, kappa
 from tools.prisma import counts, reconcile
+from tools.second_look import RESOLUTIONS
+
+
+def check_second_look(base):
+    """Every second-look record is resolved, and an 'include' resolution is reflected in the author's
+    latest title/abstract decision."""
+    path = base / "screening" / "second_look.csv"
+    if not path.exists():
+        return []
+    sl = pd.read_csv(path, dtype=str, keep_default_na=False)
+    errors = []
+    unresolved = sorted(sl.record_id[~sl.resolution.isin(RESOLUTIONS)])
+    if unresolved:
+        errors.append(f"second_look.csv records without a resolution (exclude_confirmed/include): {unresolved[:10]}")
+    author = human(base, "author")
+    stale = sorted(r for r in sl.record_id[sl.resolution == "include"] if author.get(r) != "include")
+    if stale:
+        errors.append(f"resolved as include but the author's latest decision in human_decisions.csv is not include: {stale[:10]}")
+    return errors
 
 
 def check(base, kappa_min):
@@ -33,6 +52,7 @@ def check(base, kappa_min):
                 if rest:
                     errors.append(f"{ai}-author kappa {k:.2f} < {kappa_min} (n={n}): plan §12 requires the author "
                                   f"to screen every record; {len(rest)} remain")
+    errors += check_second_look(base)
     errors += reconcile(counts(base))
     return errors
 

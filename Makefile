@@ -26,6 +26,7 @@ rq1-screen:
 rq1-check-screen:
 	$(PY) -m tools.kappa rq1
 	$(PY) -m tools.prisma rq1
+	$(PY) -m tools.second_look rq1
 	$(PY) -m checks.check_screening rq1
 
 .PHONY: rq1-extract-check
@@ -67,6 +68,7 @@ rq3-screen:
 rq3-check-screen:
 	$(PY) -m tools.kappa rq3
 	$(PY) -m tools.prisma rq3
+	$(PY) -m tools.second_look rq3
 	$(PY) -m checks.check_screening rq3
 
 rq3-es:
