@@ -1,3 +1,4 @@
 log,model,n_labelled,kappa,agreement,unsure_rate,agree_or_unsure,wrong_exclude
+ai_gemini_gemini-3.8-flash.csv,gemini-3.8-flash,30,0.441,0.667,0.133,0.8,0
 ai_qwen_qwen2.5-3b-instruct.csv,qwen2.5:3b-instruct,30,0.006,0.467,0.333,0.8,3
 ai_qwen_qwen2.5-7b-instruct.csv,qwen2.5:7b-instruct,30,0.376,0.667,0.1,0.767,1
