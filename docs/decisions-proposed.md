@@ -1,6 +1,6 @@
-# Proposed decisions (2026-10-27), awaiting the author's sign-off
+# Decisions (2026-10-27): proposed, then agreed in full
 
-These were prepared on request by an AI assistant, using the judgement a neuroimaging meta-analyst would apply. They are **proposals**: none takes effect in the data until the author confirms or changes it. The pipeline enforces this, because every extraction row needs `contrast_verified_by` filled in by her. Code changes some of them need are listed but not yet made.
+These were prepared on request by an AI assistant, using the judgement a neuroimaging meta-analyst would apply. They were **proposals** until the author agreed to all of them, without changes, on 2026-10-27. The pipeline enforces this, because every extraction row needs `contrast_verified_by` filled in by her. Code changes some of them need are listed but not yet made.
 
 ## 1. BrainMap eligibility review (RQ1)
 
@@ -83,7 +83,7 @@ Keep the eligibility table, and add the three interpretation rules this review n
 
 ## Sign-off
 
-Author: ____________ Date: ________. Note any change from the proposals here, and in `CHANGELOG.md` if the protocol was already fixed.
+**Agreed: all proposals in sections 1–5, without changes.** Date: 2026-10-27. Any later change goes in `CHANGELOG.md`.
 
 ## Applied so far (2026-10-27)
 
