@@ -32,7 +32,7 @@ No focus was typed in by hand.
 | bm023 | Yonelinas et al. 2005, J Neurosci | PMC6725129 | Keep, recollection. R > high-confidence familiarity at test (Table 2, 26 foci match). |
 | bm024 | Johnson S C et al. 2006, Neurobiol Aging | PMC2627778 | Keep, success. Previously learned > novel drawings in the 77-person healthy reference group (Table 3, 7 foci match). **N = 77 is right**; the 14 in the review was the age-matched control group. **Flag:** only 5 items, each trained 30 times, presented in short runs, so this is an overlearned, block-like old > new contrast. |
 
-## Changes waiting on the author's yes
+## Changes (approved by the author, 2026-10-27)
 
 1. **Kensinger 2007: use the plain success contrast.**
    - *What BrainMap gave us:* the two "successful recognition" contrasts are hits > misses *exclusively masked* by false recognition (Tables 3 and 4: "successful but not false"). That masking removes every region that also responds to false alarms, so neither is a plain success contrast.
@@ -42,11 +42,11 @@ No focus was typed in by hand.
 2. **Dobbins 2003: drop the recency contrast.** "Recency hit > miss" compares correct and incorrect choices of which of two *studied* words came later. It is none of the accepted contrast types, so its 3 foci were removed and the source contrast stays.
 3. **Duzel 2001 removed** as a duplicate, and the N corrections above.
 
-Items 2 and 3 are already applied in the sheets and the review CSV, and are easy to revert. Item 1 needs the export.
+Items 2 and 3 are applied in the sheets and the review CSV. Item 1 is applied once `kensinger_fix.txt` is exported.
 
 ## Foci outside the brain mask (5 of 7 checked)
 
-Each checked one matches its paper. They are real peaks near the edge of the brain that the Talairach-to-MNI conversion moves just outside the 2 mm mask, so the proposal is to sign each one off as "pass":
+Each checked one matches its paper. They are real peaks near the edge of the brain that the Talairach-to-MNI conversion moves just outside the 2 mm mask, and each is signed off as "pass" in `checks/human_signoffs.csv` (approved 2026-10-27):
 
 | Focus | Paper's value | Region |
 | --- | --- | --- |

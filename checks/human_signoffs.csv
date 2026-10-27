@@ -1,1 +1,6 @@
 date,step,item,who,result,note
+2026-10-27,rq1_outlier_focus,"bm009:44,40,31",author,pass,"Kensinger 2007 Table 4, R superior frontal BA9: matches paper; edge-of-brain peak; checked by AI assistant, approved by author (docs/paper-check-rq1.md)"
+2026-10-27,rq1_outlier_focus,"bm009:-49,44,-6",author,pass,"Kensinger 2007 Table 4, L middle frontal BA11: matches paper; edge-of-brain peak; checked by AI assistant, approved by author (docs/paper-check-rq1.md)"
+2026-10-27,rq1_outlier_focus,"bm009:50,38,22",author,pass,"Kensinger 2007 Tables 2 and 4, R middle frontal BA46: matches paper; edge-of-brain peak; checked by AI assistant, approved by author (docs/paper-check-rq1.md)"
+2026-10-27,rq1_outlier_focus,"bm016:-56.73,21.85,24.31",author,pass,"Henson 1999 Table 2 (-60,27,21 SPM), L middle frontal BA46: matches after mni2tal; edge-of-brain peak; checked by AI assistant, approved by author (docs/paper-check-rq1.md)"
+2026-10-27,rq1_outlier_focus,"bm024:5.87,41.93,57",author,pass,"Johnson SC 2006 Table 3 (8,52,54 MNI), R medial prefrontal: matches after mni2tal; edge-of-brain peak; checked by AI assistant, approved by author (docs/paper-check-rq1.md)"
