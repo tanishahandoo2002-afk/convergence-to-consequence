@@ -1,34 +1,16 @@
-"""Screening check (plan §8.1 step 4, §12): human decisions complete, kappa rule, PRISMA reconciles."""
+"""Screening check (plan §8.1 step 4): the author decided every record routed to her, the second rater
+did the sample, and PRISMA reconciles. Kappa is reported by tools.kappa, not enforced (CHANGELOG 2026-10-27)."""
 import argparse
 import sys
 
 import pandas as pd
 
-from tools.common import ROOT, load_config
-from tools.kappa import human, kappa
+from tools.common import ROOT
+from tools.kappa import human
 from tools.prisma import counts, reconcile
-from tools.second_look import RESOLUTIONS
 
 
-def check_second_look(base):
-    """Every second-look record is resolved, and an 'include' resolution is reflected in the author's
-    latest title/abstract decision."""
-    path = base / "screening" / "second_look.csv"
-    if not path.exists():
-        return []
-    sl = pd.read_csv(path, dtype=str, keep_default_na=False)
-    errors = []
-    unresolved = sorted(sl.record_id[~sl.resolution.isin(RESOLUTIONS)])
-    if unresolved:
-        errors.append(f"second_look.csv records without a resolution (exclude_confirmed/include): {unresolved[:10]}")
-    author = human(base, "author")
-    stale = sorted(r for r in sl.record_id[sl.resolution == "include"] if author.get(r) != "include")
-    if stale:
-        errors.append(f"resolved as include but the author's latest decision in human_decisions.csv is not include: {stale[:10]}")
-    return errors
-
-
-def check(base, kappa_min):
+def check(base):
     errors = []
     merged = pd.read_csv(base / "screening" / "merged.csv", dtype=str)
     author = human(base, "author")
@@ -43,16 +25,6 @@ def check(base, kappa_min):
         miss2 = sorted(set(pd.read_csv(sample_path, dtype=str).record_id) - set(human(base, "second").index))
         if miss2:
             errors.append(f"{len(miss2)} records in the sample lack a second rater decision: {miss2[:10]}")
-    m = merged.set_index("record_id")
-    for ai in ("gemini", "qwen"):
-        if len(m.index.intersection(author.index)) >= 2:
-            k, n = kappa(m[ai], author)
-            if k < kappa_min:
-                rest = sorted(set(m.index) - set(author.index))
-                if rest:
-                    errors.append(f"{ai}-author kappa {k:.2f} < {kappa_min} (n={n}): plan §12 requires the author "
-                                  f"to screen every record; {len(rest)} remain")
-    errors += check_second_look(base)
     errors += reconcile(counts(base))
     return errors
 
@@ -61,7 +33,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("rq", choices=["rq1", "rq3"])
     base = ROOT / {"rq1": "rq1_map", "rq3": "rq3_stimulation"}[ap.parse_args().rq]
-    errors = check(base, load_config("screening")["kappa_min"])
+    errors = check(base)
     for e in errors:
         print("FAIL:", e)
     if errors:

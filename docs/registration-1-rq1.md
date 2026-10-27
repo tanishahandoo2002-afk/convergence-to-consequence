@@ -81,11 +81,13 @@ AND (retrieval[tiab] OR remember*[tiab] OR recollection[tiab] OR "old/new"[tiab]
 ## 6. Screening
 
 **6.1 Title/abstract stage.**
-- **The author screens every record herself, blind to the AI decisions.** Plan §12 says that if AI–author agreement is below κ 0.6, the author screens everything. A pre-registration calibration (§6.3) put both AI raters below 0.6.
+- **The AI raters screen first; the author reviews.** Plan §12 would have the author screen everything, because both AI raters were below κ 0.6 in the calibration (§6.3). The author chose instead to review the AI output. This is logged in `CHANGELOG.md` (2026-10-27).
+  - She reviews every record either rater marked include or unsure, which includes every disagreement.
+  - She also reviews a seeded random 20% of the records both raters excluded.
+  - The other agreed excludes stay excluded on the AI decision.
 - **Two AI raters screen every record independently:** gemini-3.8-flash via the Gemini API, and qwen2.5:7b-instruct run locally via Ollama.
   - Settings: temperature 0, the eligibility criteria above as the prompt (`rq1_map/screening/criteria.md`), and JSON output.
   - Each decision is logged with the model identifier, a SHA-256 hash of the prompt, a timestamp and the raw reply.
-- **Second look.** Every record the author excluded that either AI marked include or unsure is listed (`tools/second_look.py`). The author re-reads each one and records a resolution (exclusion confirmed, or included). The pipeline check refuses to continue until every listed record is resolved.
 - **Second rater.** A second rater (**[OPEN]** name) screens a seeded random 20% of all records, blind to the author's and the AIs' decisions. Disagreements are resolved by discussion.
 - **Agreement reported:** Cohen's κ for Gemini–Qwen, each AI–author, and author–second rater.
 
@@ -185,7 +187,7 @@ Every change from this registration will be logged with its date and reason in `
 
 ## 14. Use of AI tools
 
-Title/abstract screening and contrast identification were assisted by large language models (two independent raters). All inclusions and extracted contrasts were verified by the author; AI–author agreement was κ = [to be filled after screening]. An AI assistant also helped draft analysis code; the author ran, read and checked every script. Coordinates were never transcribed by an AI.
+Title/abstract screening and contrast identification were assisted by large language models (two independent raters). All inclusions and extracted contrasts were verified by the author, who also checked a random 20% of the records both raters excluded; AI–author agreement was κ = [to be filled after screening]. An AI assistant also helped draft analysis code; the author ran, read and checked every script. Coordinates were never transcribed by an AI.
 
 ## 15. Data and code
 

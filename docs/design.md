@@ -81,7 +81,7 @@ Merge rule: both include → include (human verifies); both exclude → exclude,
 Full-text stage: the same script proposes the contrast table and sample size from paper text; the human confirms each in the extraction sheet.
 
 **`tools/kappa.py`** — Cohen's κ for Gemini–Qwen, each AI–human, human–second rater (on the overlapping records).
-*Check:* every include/unsure has a human decision; the 20% exclude sample is fully reviewed; second-rater overlap ≥ 20% of records; if AI–human κ < 0.6, the check fails until every record has a human decision (plan §12 rule).
+*Check:* every include/unsure has a human decision; the 20% exclude sample is fully reviewed; second-rater overlap ≥ 20% of records. κ is reported, not enforced: the author reviews AI includes, unsures and the exclude sample whatever κ is (CHANGELOG 2026-10-27).
 
 **`tools/prisma.py`** — PRISMA 2020 counts computed from search and screening logs, drawn as a figure.
 *Check:* counts reconcile at every box.

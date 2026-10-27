@@ -1,8 +1,8 @@
 # Proposal: a safety-based gate for AI-assisted screening
 
-> **Status: considered, not adopted (2026-10-19).** The registered κ ≥ 0.6 rule stays. Both AI raters fall below it, so the author screens every title and abstract herself. The proposal below would have saved only about a quarter of that work, at the cost of 100 extra blind labels, paid API use and a non-standard rule to defend. The PubMed top-up will instead be limited to the years BrainMap covers thinly, which cuts the pile far more.
+> **Status: partly adopted (2026-10-27).** On 2026-10-19 this was considered and not adopted, and the author screened every record under the registered κ ≥ 0.6 rule. On 2026-10-27 the author changed the rule: the AI raters screen first, and she reviews their includes, unsures and a 20% sample of the agreed excludes. See `CHANGELOG.md`.
 >
-> The AI raters still run, as a safety net: any record the author excludes that an AI kept (include or unsure) gets a second look (`tools/second_look.py`, enforced by `checks/check_screening.py`). κ is reported as plan §8.1 asks. This document is kept as a record of the reasoning.
+> What was taken from this proposal: routing by AI output instead of the κ gate, and the 20% spot-check of agreed excludes. What was not: the extra 100 blind calibration labels, the 95% miss-rate bound and the escalation rule. The second-look step described in the earlier note was removed with the κ gate.
 
 *Original draft follows.*
 

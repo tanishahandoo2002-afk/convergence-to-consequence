@@ -56,9 +56,18 @@ def test_check_screening_flags_missing_human(tmp_path):
     from checks.check_screening import check
     write_rq(tmp_path, [["a", "title_abstract", "author", "include", "", ""]])
     pd.DataFrame({"record_id": ["a"]}).to_csv(tmp_path / "screening" / "second_rater_sample.csv", index=False)
-    errors = check(tmp_path, kappa_min=0.6)
+    errors = check(tmp_path)
     assert any("b" in e and "author decision" in e for e in errors)
     assert any("second rater" in e for e in errors)
+
+
+def test_low_kappa_does_not_make_the_author_screen_everything(tmp_path):
+    """The author reviews AI includes, unsures and a sample of excludes (CHANGELOG 2026-10-27); kappa is reported only."""
+    from checks.check_screening import check
+    write_rq(tmp_path, [[r, "title_abstract", "author", "exclude", "", ""] for r in "abc"])  # disagrees with the AIs on a and b
+    pd.DataFrame({"record_id": ["a"]}).to_csv(tmp_path / "screening" / "second_rater_sample.csv", index=False)
+    errors = check(tmp_path)
+    assert not any("kappa" in e for e in errors)
 
 
 def test_rerun_search_logged_twice_counts_once(tmp_path):
