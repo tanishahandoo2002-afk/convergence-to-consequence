@@ -2,7 +2,9 @@
 
 Format: first line '// Reference=MNI|TAL|Talairach'; each experiment is a block of '//' header lines
 ('// Author, Year: contrast', '// Subjects=N') followed by tab-separated x y z lines.
-CLI: python -m rq1_map.import_sleuth <export.txt>   (appends to experiments.csv / coordinates.csv)
+CLI: python -m rq1_map.import_sleuth <export.txt> [<export.txt> ...]
+     Appends to experiments.csv / coordinates.csv. A block that repeats another exactly (same study, N,
+     contrasts and foci, e.g. found by two Sleuth searches) is kept once.
 """
 import re
 import sys
@@ -51,14 +53,34 @@ def read_sleuth(path, start=0):
     return pd.DataFrame(rows).reindex(columns=EXP_COLUMNS).fillna(""), pd.DataFrame(coords, columns=["exp_id", "x", "y", "z"])
 
 
+def drop_duplicate_blocks(experiments, coordinates):
+    """Remove experiments identical to an earlier one in study, N, contrasts and foci. Returns
+    (experiments, coordinates, removed exp_ids). Different groups with the same N are kept for the author."""
+    foci = coordinates.assign(xyz=list(zip(coordinates.x.astype(float).round(1), coordinates.y.astype(float).round(1),
+                                           coordinates.z.astype(float).round(1))))
+    foci = foci.groupby("exp_id").xyz.apply(frozenset)
+    key = experiments.apply(lambda r: (r.study_id, str(r.n), frozenset(r.contrast.split(" | ")), foci.get(r.exp_id)), axis=1)
+    dup = key.duplicated()
+    removed = list(experiments.exp_id[dup])
+    return (experiments[~dup].reset_index(drop=True), coordinates[~coordinates.exp_id.isin(removed)].reset_index(drop=True),
+            removed)
+
+
 def main():
     exp_path, coord_path = SHEETS / "experiments.csv", SHEETS / "coordinates.csv"
-    old_e = pd.read_csv(exp_path, dtype=str).fillna("")
-    old_c = pd.read_csv(coord_path, dtype=str)
-    e, c = read_sleuth(sys.argv[1], start=int(old_e.exp_id.str.startswith("bm").sum()))
-    pd.concat([old_e, e]).to_csv(exp_path, index=False)
-    pd.concat([old_c, c]).to_csv(coord_path, index=False)
-    print(f"added {len(e)} experiments, {len(c)} foci; set subject_group, contrast_type and contrast_verified_by by hand")
+    all_e = [pd.read_csv(exp_path, dtype=str).fillna("")]
+    all_c = [pd.read_csv(coord_path)]
+    start = int(all_e[0].exp_id.str.startswith("bm").sum())
+    for f in sys.argv[1:]:
+        e, c = read_sleuth(f, start=start)
+        start += len(e)
+        all_e.append(e)
+        all_c.append(c)
+    e, c, removed = drop_duplicate_blocks(pd.concat(all_e, ignore_index=True), pd.concat(all_c, ignore_index=True))
+    e.to_csv(exp_path, index=False)
+    c.to_csv(coord_path, index=False)
+    print(f"{len(e)} experiments, {len(c)} foci in the sheets; {len(removed)} exact duplicate blocks dropped: {removed}")
+    print("Next by hand: confirm subject groups, set contrast_type and contrast_verified_by, exclude ineligible rows")
 
 
 if __name__ == "__main__":

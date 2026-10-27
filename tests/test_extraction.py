@@ -120,3 +120,13 @@ def test_read_sleuth_joins_wrapped_and_pooled_contrasts():
     assert e.contrast.iloc[1] == "Hits vs. Correct Rejections"
     assert list(e.n) == ["6", "12"] and list(e.space) == ["TAL", "TAL"]
     assert c.groupby("exp_id").size().tolist() == [2, 1]
+
+
+def test_drop_duplicate_blocks_keeps_distinct_groups():
+    from rq1_map.import_sleuth import drop_duplicate_blocks
+    exps = pd.DataFrame({"exp_id": ["a", "b", "c"], "study_id": ["S, 2003"] * 3, "n": ["12", "12", "12"],
+                         "contrast": ["Hits > CR", "Hits > CR", "Older Normals"]})
+    coords = pd.DataFrame({"exp_id": ["a", "a", "b", "b", "c"], "x": [1.0, 2, 1, 2, 9], "y": [0.0] * 5, "z": [0.0] * 5})
+    e, c, removed = drop_duplicate_blocks(exps, coords)
+    assert list(e.exp_id) == ["a", "c"] and removed == ["b"]          # b repeats a exactly; c is a different group
+    assert sorted(c.exp_id.unique()) == ["a", "c"] and len(c) == 3
