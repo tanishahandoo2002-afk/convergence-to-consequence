@@ -89,5 +89,5 @@ Keep the eligibility table, and add the three interpretation rules this review n
 
 - **The review is in the data.** The reviewed contrasts were exported from Sleuth with every ineligible contrast hidden: `/Volumes/C2C/reviewed_{main,recollection,familiarity}_v2.txt`. Each file holds exactly the reviewed contrasts: 35 main (26 subject groups, 397 foci); 21 recollection (16 groups, 276 foci); 9 familiarity (8 groups, 76 foci).
 - **Main map in the sheets.** The main export is imported into `rq1_map/experiments.csv` and `coordinates.csv`. `contrast_type` is pre-filled from the review (14 recollection, 12 success). `contrast_verified_by` is blank until the author checks each row.
-- **To check: Johnson S C, 2006.** Sleuth labels this group "Normals" with N = 77. The review recorded N = 14. There may be two Johnson 2006 papers using the same drawings task; confirm which paper this is and its N.
+- **Johnson S C, 2006: resolved.** N = 77 is right: it is the healthy reference group. The 14 in the review was the age-matched control group. See `docs/paper-check-rq1.md`.
 - **Still open for the author:** the 7 foci outside the brain mask; and drawing the 20% spot-check sample once the set is final.
