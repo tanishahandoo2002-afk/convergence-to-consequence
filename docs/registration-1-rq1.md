@@ -1,9 +1,9 @@
 # OSF Registration 1 (draft): RQ1, a curated ALE meta-analysis of successful episodic retrieval
 
-> **Draft for Tanisha to review, edit and submit herself. Not yet registered.**
+> **Protocol, kept in the repo. Not submitted to OSF:** this is a personal project, not a publication (decided 2026-10-27).
+> The [OPEN] items below were settled by `docs/decisions-proposed.md` (all proposals agreed, 2026-10-27).
 > Items marked **[OPEN]** need her decision. Each comes with a proposed default she can accept or change.
 > Section numbers like "plan §8.1" refer to `From_Convergence_to_Consequence.md`; "spec" is `docs/design.md`.
-> Suggested OSF template: *Generalized Systematic Review Registration*. The sections below map onto it.
 
 ---
 
@@ -189,8 +189,7 @@ Title/abstract screening and contrast identification were assisted by large lang
 
 ## 15. Data and code
 
-- **Code:** public on GitHub, archived on Zenodo with a DOI at the preprint.
-- **Extraction sheets, screening logs, PRISMA flow and the ALE maps:** public on OSF. They contain only published information.
+- **Code, extraction sheets, screening logs, PRISMA flow and the ALE maps:** public in the GitHub repo. They contain only published information.
 
 ## 16. References to cite
 

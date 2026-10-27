@@ -2,6 +2,8 @@
 
 Source plan: `From_Convergence_to_Consequence.md` (research questions, hypotheses, eligibility and models are defined there and not repeated here). This document fixes **how** the plan is implemented and **how each step is validated**. Dates in the plan are ignored; work proceeds at its own pace.
 
+**Scope (2026-10-27):** this is a personal project for the author's CV and applications, not a publication. The plan's preprint, OSF registration and Zenodo steps are dropped. The protocol is written down in `docs/registration-1-rq1.md` and kept in the repo; changes to it are logged in `CHANGELOG.md`. The SHA-256 mask freeze before any NSD or trial data are accessed stays, because it protects the analysis, not a submission.
+
 ## 1. Decisions
 
 | Topic | Decision |
@@ -188,4 +190,4 @@ Each step gets its own implementation plan and is only started after the previou
 
 ## 13. Out of scope for the code
 
-Writing the registrations, preprints and README narrative; screening and extraction judgements; access applications. The code supports and records these; the author does them.
+Writing the protocol and README narrative; screening and extraction judgements; access applications. The code supports and records these; the author does them.

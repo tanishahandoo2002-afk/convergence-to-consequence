@@ -12,7 +12,8 @@ with electric-field modelling (RQ3).
 ## Status
 
 RQ1 pipeline built; RQ2 and RQ3 analysis code built and tested on simulated data, waiting for data access.
-Registrations: to be added.
+A personal project, not a publication: no preprint or OSF registration. The protocol is in
+[`docs/registration-1-rq1.md`](docs/registration-1-rq1.md).
 
 ## How to run
 
@@ -36,7 +37,7 @@ make test     # known-answer tests on synthetic data (Python and R)
 Requires Python 3.12 and R 4.5.
 
 Every stage target runs its check script afterwards and stops if the check fails.
-Design: [`docs/design.md`](docs/design.md). Deviations from the registrations: [`CHANGELOG.md`](CHANGELOG.md).
+Design: [`docs/design.md`](docs/design.md). Deviations from the protocol: [`CHANGELOG.md`](CHANGELOG.md).
 
 ## Data access
 
