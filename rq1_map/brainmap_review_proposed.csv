@@ -80,9 +80,9 @@ c077,cued_episodic,8050122,"Daselaar S M, 2006",14,Brain Regions Associated with
 c078,cued_episodic,8050122,"Daselaar S M, 2006",14,Brain Regions Associated with Novelty,X,,not an accuracy-conditioned retrieval-success contrast
 c079,cued_episodic,8050123,"Dobbins I G, 2003",11,Source > Recency,X,,not an accuracy-conditioned retrieval-success contrast
 c080,cued_episodic,8050123,"Dobbins I G, 2003",11,Recency > Source,X,,not an accuracy-conditioned retrieval-success contrast
-c081,cued_episodic,8050123,"Dobbins I G, 2003",11,"Source, Hit > Source, Miss",R,,source hit > source miss at retrieval
+c081,cued_episodic,8050123,"Dobbins I G, 2003",11,"Source, Hit > Source, Miss",R,checked,source hit > source miss at test (Table 2)
 c082,cued_episodic,8050123,"Dobbins I G, 2003",11,"Source, Miss > Source, Hit",X,,reverse direction
-c083,cued_episodic,8050123,"Dobbins I G, 2003",11,"Recency, Hit > Recency, Miss",S,,recency judgement hit > miss at retrieval
+c083,cued_episodic,8050123,"Dobbins I G, 2003",11,"Recency, Hit > Recency, Miss",X,checked,correct vs incorrect relative-recency choice between two studied words; not an accepted contrast type
 c084,cued_episodic,8050123,"Dobbins I G, 2003",11,"Recency, Miss > Recency, Hit",X,,reverse direction
 c085,cued_episodic,30379,"Dolan R J, 2000",10,Emotional vs. Neutral Memory,X,,emotion contrast
 c086,cued_episodic,30379,"Dolan R J, 2000",10,High vs. Low Target In Emotional vs. Neutral Memory,X,,emotion contrast
@@ -92,7 +92,7 @@ c089,cued_episodic,7060144,"Dupont S, 2002",10,"Immediate Retrieval vs. Fixation
 c090,cued_episodic,7060144,"Dupont S, 2002",10,"Delayed Retrieval vs. Fixation, Day 1",X,,vs baseline
 c091,cued_episodic,30019,"Duzel E, 1999",11,Episodic - Semantic,X,,semantic task/contrast
 c092,cued_episodic,30019,"Duzel E, 1999",11,Semantic - Episodic,X,,semantic task/contrast
-c093,cued_episodic,30019,"Duzel E, 1999",11,Episodic Retrieval Old - New,S,yes,episodic retrieval old > new; check correct trials only
+c093,cued_episodic,30019,"Duzel E, 1999",11,Episodic Retrieval Old - New,S,checked,"old > new in the episodic task; PET blocks of 85% old vs 85% new items, all trials (block-level, flagged)"
 c094,cued_episodic,30019,"Duzel E, 1999",11,Episodic Retrieval Living - Non-Living,X,,not an accuracy-conditioned retrieval-success contrast
 c095,cued_episodic,30019,"Duzel E, 1999",11,Semantic Retrieval Old - New,X,,semantic task/contrast
 c096,cued_episodic,30019,"Duzel E, 1999",11,Semantic Retrieval New - Old,X,,semantic task/contrast
@@ -100,13 +100,13 @@ c097,cued_episodic,30019,"Duzel E, 1999",11,Semantic Retrieval Living - Non-Livi
 c098,cued_episodic,30019,"Duzel E, 1999",11,Semantic Retrieval Non-Living - Living,X,,semantic task/contrast
 c099,cued_episodic,30018,"Duzel E, 2001",11,Episodic > Semantic,X,,semantic task/contrast
 c100,cued_episodic,30018,"Duzel E, 2001",11,Semantic > Episodic,X,,semantic task/contrast
-c101,cued_episodic,30018,"Duzel E, 2001",11,"Episodic, Old > New",S,yes,episodic retrieval old > new; check correct trials only; may share participants with Duzel 1999
+c101,cued_episodic,30018,"Duzel E, 2001",11,"Episodic, Old > New",X,checked,"duplicate: re-reports the Duzel 1999 PET data (same 11 subjects, same peaks)"
 c102,cued_episodic,30018,"Duzel E, 2001",11,"Episodic, Living > Non-living",X,,not an accuracy-conditioned retrieval-success contrast
 c103,cued_episodic,30018,"Duzel E, 2001",11,"Semantic, Old > New",X,,semantic task/contrast
 c104,cued_episodic,30018,"Duzel E, 2001",11,"Semantic, New > Old",X,,semantic task/contrast
 c105,cued_episodic,30018,"Duzel E, 2001",11,"Semantic, Living > Non-living",X,,semantic task/contrast
 c106,cued_episodic,30018,"Duzel E, 2001",11,"Semantic, Non-living > Living",X,,semantic task/contrast
-c107,cued_episodic,30277,"Eldridge L L, 2000",12,Remember > Know,R,,remember > know
+c107,cued_episodic,30277,"Eldridge L L, 2000",12,Remember > Know,R,checked,correct remember > correct know at test; N = 11 after one motion exclusion
 c108,cued_episodic,30277,"Eldridge L L, 2000",12,Know > Remember,X,,reverse direction
 c109,cued_episodic,8060164,"Eldridge L L, 2000",12,Know > Remember,X,,reverse direction
 c110,cued_episodic,8060140,"Fenker D B, 2005",20,"Emotional, Remember vs. Emotional, Know",R,,remember > know (emotional items)
@@ -169,9 +169,9 @@ c166,paired_episodic,6050052,"Henke K, 1997",12,"Single Item Learning - Perceptu
 c167,paired_episodic,6050052,"Henke K, 1997",12,Recall Old - Associative Learning,X,,encoding
 c168,paired_episodic,6050052,"Henke K, 1997",12,Recall Old - Recall New,S,yes,cued recall of old > new pairs at retrieval; check design
 c169,paired_episodic,6050052,"Henke K, 1997",12,Recall New - Recall Old,X,,not an accuracy-conditioned retrieval-success contrast
-c170,cued_episodic,8060145,"Henson R N A, 1999",12,"Remember > New Responses, (Retrieval + Encoding)",R,yes,"remember > new; label says retrieval + encoding, check this is the test phase"
+c170,cued_episodic,8060145,"Henson R N A, 1999",12,"Remember > New Responses, (Retrieval + Encoding)",R,checked,correct remember > correct new at test (Table 2); the 'Retrieval + Encoding' label is wrong
 c171,cued_episodic,8060145,"Henson R N A, 1999",12,"New > Remember Responses, (Retrieval + Encoding)",X,,encoding phase
-c172,cued_episodic,8060145,"Henson R N A, 1999",12,"Know > New Responses, (Retrieval + Encoding)",F,yes,"know > new (H1b only); label says retrieval + encoding, check"
+c172,cued_episodic,8060145,"Henson R N A, 1999",12,"Know > New Responses, (Retrieval + Encoding)",F,checked,"correct know > correct new at test (Table 3, H1b only)"
 c173,cued_episodic,8060145,"Henson R N A, 1999",12,"New > Know Responses, (Retrieval + Encoding)",X,,encoding phase
 c174,cued_episodic,8060145,"Henson R N A, 1999",12,"Remember > Know Responses, Retrieval",R,,remember > know at retrieval
 c175,cued_episodic,8060145,"Henson R N A, 1999",12,"Know > Remember Responses, Retrieval",X,,reverse direction
@@ -239,18 +239,18 @@ c236,cued_episodic,8050131,"Johnson J D, 2007",16,"Recognition, Scene > Fixation
 c237,cued_episodic,8050131,"Johnson J D, 2007",16,"Recognition, Sentence > Fixation",X,,vs baseline
 c238,cued_episodic,8050131,"Johnson J D, 2007",16,Content Independent Recollection Related Activity,R,yes,content-independent recollection effect at test; check comparison condition
 c239,cued_episodic,10030036,"Johnson S C, 2006",14,"Activations in Novel Drawings Relative to Previously Learned, Normals",X,,not an accuracy-conditioned retrieval-success contrast
-c240,cued_episodic,10030036,"Johnson S C, 2006",14,"Previously Learned vs. Novel Drawings, Normals",S,yes,"previously learned > novel drawings, healthy older adults (block old > new); check design"
+c240,cued_episodic,10030036,"Johnson S C, 2006",14,"Previously Learned vs. Novel Drawings, Normals",S,checked,"previously learned > novel drawings in the 77-person healthy reference group (Table 3); 5 overtrained items, epoch design (block-level, flagged)"
 c241,cued_episodic,10030036,"Johnson S C, 2006",14,"Elderly Normals vs. Mild Cognitive Impairment, Novel Drawings",X,,patient comparison
 c242,cued_episodic,10030036,"Johnson S C, 2006",14,"Elderly Normals vs. Mild Cognitive Impairment, Previously Learned",X,,patient comparison
-c243,cued_episodic,7110325,"Kensinger E A, 2007",19,"Overall Recognition, Neutral + Negative",X,,emotion/valence contrast
+c243,cued_episodic,7110325,"Kensinger E A, 2007",19,"Overall Recognition, Neutral + Negative",S,checked,"hits > misses, conjunction of negative and neutral items (Table 2 top)"
 c244,cued_episodic,7110325,"Kensinger E A, 2007",19,"Overall Recognition, Negative",X,,emotion/valence contrast
 c245,cued_episodic,7110325,"Kensinger E A, 2007",19,"Overall Recognition, Neutral",X,,not an accuracy-conditioned retrieval-success contrast
-c246,cued_episodic,7110325,"Kensinger E A, 2007",19,"Successful Recognition, Negative",S,yes,successful recognition (negative items); check comparison is misses/CR
+c246,cued_episodic,7110325,"Kensinger E A, 2007",19,"Successful Recognition, Negative",X,checked,"hits > misses exclusively masked by false recognition (interaction), not a plain success contrast; Table 2 top used instead"
 c247,cued_episodic,7110325,"Kensinger E A, 2007",19,"False Recognition, Negative",X,,emotion/valence contrast
 c248,cued_episodic,7110325,"Kensinger E A, 2007",19,"Successful Recognition + False Recognition, Neutral",X,,not an accuracy-conditioned retrieval-success contrast
-c249,cued_episodic,7110325,"Kensinger E A, 2007",19,"Successful Recognition, Neutral",S,yes,successful recognition (neutral items); check comparison is misses/CR
+c249,cued_episodic,7110325,"Kensinger E A, 2007",19,"Successful Recognition, Neutral",X,checked,"hits > misses exclusively masked by false recognition (interaction), not a plain success contrast; Table 2 top used instead"
 c250,cued_episodic,7110325,"Kensinger E A, 2007",19,"False Recognition, Neutral",X,,not an accuracy-conditioned retrieval-success contrast
-c251,cued_episodic,7110325,"Kensinger E A, 2007",19,"Visually Specific Recognition, Negative + Neutral",R,yes,visually specific > general recognition (detail recollection); check
+c251,cued_episodic,7110325,"Kensinger E A, 2007",19,"Visually Specific Recognition, Negative + Neutral",R,checked,"same > similar responses to studied items (visually specific recognition, Table 5)"
 c252,cued_episodic,7110325,"Kensinger E A, 2007",19,"Visually Specific Recognition, Negative",X,,emotion/valence contrast
 c253,cued_episodic,7110325,"Kensinger E A, 2007",19,"Visually Specific Recognition, Neutral",X,,not an accuracy-conditioned retrieval-success contrast
 c254,paired_episodic,8020067,"Kikyo H, 2004",15,"Brain Regions Parametrically Modulated by the ""Feeling of Knowing""",X,,not an accuracy-conditioned retrieval-success contrast
@@ -435,8 +435,8 @@ c432,cued_episodic,30071,"Tsukiura T, 2002",16,Picture Recognition - Visual Iden
 c433,cued_episodic,30181,"Vaidya C J, 2002",8,Encoding - Pictures vs. Words,X,,encoding phase
 c434,cued_episodic,30181,"Vaidya C J, 2002",8,Recognition - Words Encoded as Pictures vs. Words Encoded as Words,X,,not an accuracy-conditioned retrieval-success contrast
 c435,cued_episodic,30181,"Vaidya C J, 2002",8,Pictures vs. Words,X,,not an accuracy-conditioned retrieval-success contrast
-c436,cued_episodic,8060162,"Vilberg K L, 2007",14,Regions Selectively Sensitive to Familiarity,F,yes,regions selectively sensitive to familiarity (H1b only)
-c437,cued_episodic,8060162,"Vilberg K L, 2007",14,Regions Selectively Sensitive to Recollection,R,yes,regions selectively sensitive to recollection; check comparison
+c436,cued_episodic,8060162,"Vilberg K L, 2007",14,Regions Selectively Sensitive to Familiarity,F,checked,"familiarity-selective regions (Table 3 top, H1b only); N = 28 across two experiments"
+c437,cued_episodic,8060162,"Vilberg K L, 2007",14,Regions Selectively Sensitive to Recollection,R,checked,"R1 + R2 > K, exclusively masked (Table 3); N = 28 across two experiments"
 c438,cued_episodic,8060162,"Vilberg K L, 2007",14,Recollection Sensitive Regions Which are Also Sensitive to Amount of Information Recollected,X,,not an accuracy-conditioned retrieval-success contrast
 c439,cued_episodic,30185,"Wagner A D, 1998",9,Encoding Words > Textures,X,,encoding phase
 c440,cued_episodic,30185,"Wagner A D, 1998",9,Encoding Textures > Words,X,,encoding phase
@@ -452,7 +452,7 @@ c449,paired_episodic,30074,"Wheeler M E, 2000",18,Sound Recall - Fixation,X,,vs 
 c450,cued_episodic,8060165,"Woodruff C C, 2005",17,Old/New Effects Common to Remembering Words and Pictures,R,yes,old/new effects for 'remember' responses common to words and pictures; check
 c451,cued_episodic,8060165,"Woodruff C C, 2005",17,Words > Pictures,X,,not an accuracy-conditioned retrieval-success contrast
 c452,cued_episodic,8060165,"Woodruff C C, 2005",17,Pictures > Words,X,,not an accuracy-conditioned retrieval-success contrast
-c453,cued_episodic,8060166,"Yonelinas A P, 2005",16,Remember Responses > High Confidence Familiarity Responses,R,,remember > high-confidence familiarity
+c453,cued_episodic,8060166,"Yonelinas A P, 2005",16,Remember Responses > High Confidence Familiarity Responses,R,checked,remember > high-confidence familiarity at test (Table 2)
 c454,cued_episodic,8060166,"Yonelinas A P, 2005",16,"Familiarity Confidence, Increasing with Familiarity 1 to 4",F,,parametric increase with familiarity confidence (H1b only)
 c455,cued_episodic,8060166,"Yonelinas A P, 2005",16,"Familiarity Confidence, Decreasing with Familiarity 4 to 1",X,,not an accuracy-conditioned retrieval-success contrast
 c456,cued_episodic,30462,"Zysset S, 2001",9,Long vs. Short Lists,X,,not an accuracy-conditioned retrieval-success contrast
