@@ -110,3 +110,13 @@ def test_read_sleuth():
     assert list(e1.n) == ["16", "22"] and e1.contrast.iloc[1] == "Remember > Know"
     assert c1.groupby("exp_id").size().tolist() == [2, 1] and len(c2) == 1
     assert (e1.source == "brainmap").all() and (e1.contrast_verified_by == "").all()
+
+
+def test_read_sleuth_joins_wrapped_and_pooled_contrasts():
+    e, c = read_sleuth(FIX / "sleuth_wrapped.txt")
+    assert list(e.study_id) == ["Lee T M C, 2002", "Smith A, 1999"]
+    assert e.contrast.iloc[0] == ("Digit Memory Task - Answer Correctly vs. Feign Memory Impairment | "
+                                  "Autobiographic Memory Task-Answer Correctly vs. Feign Memory Impairment")
+    assert e.contrast.iloc[1] == "Hits vs. Correct Rejections"
+    assert list(e.n) == ["6", "12"] and list(e.space) == ["TAL", "TAL"]
+    assert c.groupby("exp_id").size().tolist() == [2, 1]

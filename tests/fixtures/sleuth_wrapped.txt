@@ -1,0 +1,12 @@
+// Reference=Talairach
+// Lee T M C, 2002: Digit Memory Task - Answer Correctly vs. Feign Memory 
+// Impairment
+// Lee T M C, 2002: Autobiographic Memory Task-Answer Correctly vs. Feign 
+// Memory Impairment
+// Subjects=6
+19	-9	57
+35	-10	57
+
+// Smith A, 1999: Hits vs. Correct Rejections
+// Subjects=12
+-24	-18	-18

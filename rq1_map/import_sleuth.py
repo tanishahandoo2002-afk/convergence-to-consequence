@@ -28,22 +28,26 @@ def read_sleuth(path, start=0):
         if ln.startswith("//"):
             body = ln[2:].strip()
             if cur is None or cur["_has_foci"]:
-                cur = {"exp_id": f"bm{start + len(exps) + 1:03d}", "_has_foci": False, "n": "", "label": ""}
+                cur = {"exp_id": f"bm{start + len(exps) + 1:03d}", "_has_foci": False, "n": "", "labels": []}
                 exps.append(cur)
             m = re.match(r"Subjects\s*=\s*(\d+)", body)
             if m:
                 cur["n"] = m.group(1)
-            else:
-                cur["label"] = body
+            elif re.match(r"^.+?, \d{4}[a-z]?:", body) or not cur["labels"]:
+                cur["labels"].append(body)
+            else:  # Sleuth wraps long contrast names onto the next // line
+                cur["labels"][-1] = f"{cur['labels'][-1]} {body}"
         else:
             x, y, z = (float(v) for v in re.split(r"[\s,]+", ln)[:3])
             coords.append({"exp_id": cur["exp_id"], "x": x, "y": y, "z": z})
             cur["_has_foci"] = True
     rows = []
     for e in exps:
-        study, _, contrast = e["label"].partition(":")
-        rows.append({"exp_id": e["exp_id"], "study_id": study.strip(), "subject_group": study.strip(),
-                     "contrast": contrast.strip(), "n": e["n"], "space": space, "source": "brainmap"})
+        parts = [label.partition(":") for label in e["labels"]]
+        study = parts[0][0].strip()
+        contrast = " | ".join(" ".join(c.split()) for _, _, c in parts)  # several contrasts = one pooled subject group
+        rows.append({"exp_id": e["exp_id"], "study_id": study, "subject_group": study,
+                     "contrast": contrast, "n": e["n"], "space": space, "source": "brainmap"})
     return pd.DataFrame(rows).reindex(columns=EXP_COLUMNS).fillna(""), pd.DataFrame(coords, columns=["exp_id", "x", "y", "z"])
 
 
