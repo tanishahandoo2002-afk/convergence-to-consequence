@@ -38,11 +38,11 @@ No focus was typed in by hand.
    - *What BrainMap gave us:* the two "successful recognition" contrasts are hits > misses *exclusively masked* by false recognition (Tables 3 and 4: "successful but not false"). That masking removes every region that also responds to false alarms, so neither is a plain success contrast.
    - *The plain contrast:* hits > misses as a conjunction across negative and neutral items (Table 2 top), which BrainMap calls "Overall Recognition, Neutral + Negative". The first review wrongly excluded it as an emotion contrast.
    - *Proposed:* use it, plus the visually specific contrast (same > similar, recollection-like).
-   - *To apply:* open `/Volumes/C2C/kensinger_fix.work` in Sleuth (only those two contrasts are shown), export it as `/Volumes/C2C/kensinger_fix.txt` (GingerALE text, Talairach), and its foci replace bm009's.
+   - *Applied:* exported from `/Volumes/C2C/kensinger_fix.work` as `kensinger_fix.txt` and swapped into bm009.
 2. **Dobbins 2003: drop the recency contrast.** "Recency hit > miss" compares correct and incorrect choices of which of two *studied* words came later. It is none of the accepted contrast types, so its 3 foci were removed and the source contrast stays.
 3. **Duzel 2001 removed** as a duplicate, and the N corrections above.
 
-Items 2 and 3 are applied in the sheets and the review CSV. Item 1 is applied once `kensinger_fix.txt` is exported.
+Items 2 and 3 are applied in the sheets and the review CSV. Item 1 is applied: the export gave 24 foci (23 from Table 2, 1 from Table 5), N = 19.
 
 ## Foci outside the brain mask (5 of 7 checked)
 
@@ -85,8 +85,6 @@ No free copy was found on PubMed Central, OpenAlex, Google Scholar or the labs' 
 ## What the author does
 
 1. Read this file and say yes or no to changes 1–3.
-2. Export `kensinger_fix.work` from Sleuth (change 1).
-3. Get the PDFs above. With the PDFs in `/Volumes/C2C/papers/`, the assistant can run the same check on them.
-4. Confirm the 5 outlier sign-offs.
+2. Get the PDFs above. With the PDFs in `/Volumes/C2C/papers/`, the assistant can run the same check on them.
 
 Then `contrast_verified_by` and the sign-off rows are filled in her name, and `python -m checks.check_rq1_extraction` is rerun.
