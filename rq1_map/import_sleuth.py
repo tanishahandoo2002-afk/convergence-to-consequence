@@ -44,7 +44,7 @@ def read_sleuth(path, start=0):
             coords.append({"exp_id": cur["exp_id"], "x": x, "y": y, "z": z})
             cur["_has_foci"] = True
     rows = []
-    for e in exps:
+    for e in (e for e in exps if e["_has_foci"]):  # Sleuth writes an empty block for each hidden contrast
         parts = [label.partition(":") for label in e["labels"]]
         study = parts[0][0].strip()
         contrast = " | ".join(" ".join(c.split()) for _, _, c in parts)  # several contrasts = one pooled subject group

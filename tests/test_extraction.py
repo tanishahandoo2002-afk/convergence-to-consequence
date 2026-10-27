@@ -122,6 +122,14 @@ def test_read_sleuth_joins_wrapped_and_pooled_contrasts():
     assert c.groupby("exp_id").size().tolist() == [2, 1]
 
 
+def test_read_sleuth_ignores_empty_blocks():
+    """Sleuth writes an empty 'Subjects=0' block for each hidden contrast."""
+    e, c = read_sleuth(FIX / "sleuth_empty_blocks.txt", start=8)
+    assert list(e.exp_id) == ["bm009"] and list(e.n) == ["19"]
+    assert e.contrast.iloc[0] == "Overall Recognition | Visually Specific Recognition"
+    assert len(c) == 2 and set(c.exp_id) == {"bm009"}
+
+
 def test_drop_duplicate_blocks_keeps_distinct_groups():
     from rq1_map.import_sleuth import drop_duplicate_blocks
     exps = pd.DataFrame({"exp_id": ["a", "b", "c"], "study_id": ["S, 2003"] * 3, "n": ["12", "12", "12"],

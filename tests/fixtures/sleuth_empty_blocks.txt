@@ -1,0 +1,14 @@
+// Reference=Talairach
+// Subjects=0
+
+// Subjects=0
+
+// Kensinger E A, 2007: Overall Recognition
+// Kensinger E A, 2007: Visually Specific Recognition
+// Subjects=19
+-46	31	28
+-42	22	21
+
+// Subjects=0
+
+// Subjects=0

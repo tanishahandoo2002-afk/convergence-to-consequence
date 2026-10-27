@@ -6,7 +6,7 @@ bm005,"Cansino S, 2002",10.1093/cercor/12.10.1048,"Cansino S, 2002",,Correct vs.
 bm006,"Daselaar S M, 2001",10.1006/nimg.2001.0758,"Daselaar S M, 2001",,Retrieval Success vs. Retrieval Attempt,success,13,,TAL,brainmap,
 bm007,"Fliessbach K, 2006",10.1016/j.neuroimage.2006.06.007,"Fliessbach K, 2006",,"Recognition, Old/New Effect",success,21,,TAL,brainmap,
 bm008,"Hofer A, 2007",10.1016/j.bandc.2006.11.005,"Hofer A, 2007",,"Correct Recognition, Learned Faces > Correct Rejection, Distractor Faces",success,21,,TAL,brainmap,
-bm009,"Kensinger E A, 2007",10.1016/j.neuropsychologia.2007.05.024,"Kensinger E A, 2007",Tables 2 and 5,"Successful Recognition, Negative | Successful Recognition, Neutral | Visually Specific Recognition, Negative + Neutral",success,19,,TAL,brainmap,
+bm009,"Kensinger E A, 2007",10.1016/j.neuropsychologia.2007.05.024,"Kensinger E A, 2007",Tables 2 and 5,"Overall Recognition, Neutral + Negative | Visually Specific Recognition, Negative + Neutral",success,19,,TAL,brainmap,
 bm010,"Watanabe T, 2008",10.1016/j.neuroimage.2007.08.024,"Watanabe T, 2008",,Hits - Correct Rejection (Retrieval Success),success,18,,TAL,brainmap,
 bm011,"Daselaar S M, 2006",10.1152/jn.01029.2005,"Daselaar S M, 2006",,Brain Regions Associated with Recollection,recollection,14,,TAL,brainmap,
 bm012,"Dobbins I G, 2003",10.1016/s0028-3932(02)00164-1,"Dobbins I G, 2003",Table 2,"Source, Hit > Source, Miss",recollection,11,,TAL,brainmap,
