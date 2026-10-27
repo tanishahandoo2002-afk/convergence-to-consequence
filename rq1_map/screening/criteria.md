@@ -12,6 +12,11 @@ A record is eligible only if it meets every "Include" criterion and no "Exclude"
 Accepted contrast types: hits > correct rejections; remembered > forgotten; source-correct > source-incorrect; "remember" > "know".
 
 Patient studies that also report a separate healthy-adult group with an eligible contrast are eligible for that group.
+
+Interpretation rules:
+- "Remembered > forgotten" counts only when measured at retrieval (test phase). Subsequent-memory effects measured at study are encoding contrasts and are excluded.
+- Hits > false alarms is excluded: it contrasts true and false memory, not successful and unsuccessful retrieval.
+- Retrieval-success designs that vary the proportion of old items across blocks are eligible. They are flagged, and a sensitivity analysis leaves them out.
 At title/abstract stage, a record that may meet the criteria but lacks the detail to decide (for example, whole-brain analysis or coordinates not mentioned) is "unsure", not "exclude".
 
 Title/abstract stage: abstracts almost never report coordinates, the coordinate space, or whether the analysis was whole-brain, so these three are NOT assessed at this stage; they are checked in the full text. Do not answer "unsure" or "exclude" because of them. Judge only population, imaging method (fMRI or PET) and task/contrast:
