@@ -152,7 +152,7 @@ Full-text stage: the same script proposes the contrast table and sample size fro
 - `montages.csv`: `montage_id, electrodes (10-10 names), sizes_cm, current_mA, type (tDCS|tACS)`; each effect references a `montage_id`.
 - `rob2.csv`: one row per study, one column per RoB 2 domain.
 
-**`effect_sizes.R`** (metafor `escalc`): Hedges' g for parallel designs; change-score standardised mean difference for crossover/within designs at r = .5, re-run at .3 and .7; sign set so positive g = better memory.
+**`effect_sizes.R`** (metafor `escalc`): Hedges' g for parallel designs; for crossover/within designs, the mean difference over the raw-score SD pooled across conditions (`SMCRP`), with sampling variance at r = .5, re-run at .3 and .7; sign set so positive g = better memory.
 *Known-answer test:* g for hand-worked examples matches to 3 decimals.
 *Check:* SD > 0; Ns consistent; recomputed g matches any reported g within tolerance (else flagged); every study fully rated in RoB 2; second-rater 20% sign-off present.
 

@@ -1,6 +1,8 @@
 # RQ3 effect sizes (plan §8.3 step 7): Hedges' g for active vs sham, positive = better memory.
 # Parallel designs: SMD from means/SDs, or from t when only t is reported.
-# Crossover designs: change-score SMD (SMCC) with an assumed correlation r (.5 primary; .3/.7 sensitivity).
+# Crossover designs: SMD standardised by the raw-score SD pooled across conditions (SMCRP, i.e. d_av), so they
+# are on the same scale as parallel designs (docs/decisions-proposed.md §4.2). The assumed correlation r
+# (.5 primary; .3/.7 sensitivity) enters the sampling variance and, slightly, the small-sample correction.
 # `Rscript rq3_stimulation/effect_sizes.R --run` writes results/effect_sizes_r<r>.csv and reported-g flags.
 suppressPackageStartupMessages(library(metafor))
 
@@ -15,7 +17,7 @@ compute_es <- function(effects, r) {
     sd1i = sd_active, n1i = n_active, m2i = m_sham, sd2i = sd_sham, n2i = n_sham)))[, c("yi", "vi")]
   if (any(par_t)) e[par_t, c("yi", "vi")] <- as.data.frame(with(e[par_t, ], escalc("SMD", ti = t_value,
     n1i = n_active, n2i = n_sham)))[, c("yi", "vi")]
-  if (any(cross)) e[cross, c("yi", "vi")] <- as.data.frame(with(e[cross, ], escalc("SMCC", m1i = m_active,
+  if (any(cross)) e[cross, c("yi", "vi")] <- as.data.frame(with(e[cross, ], escalc("SMCRP", m1i = m_active,
     m2i = m_sham, sd1i = sd_active, sd2i = sd_sham, ni = n_active, ri = rep(r, sum(cross)))))[, c("yi", "vi")]
   flip <- e$higher_is_better == 0
   e$yi[flip] <- -e$yi[flip]

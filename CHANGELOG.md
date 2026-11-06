@@ -2,6 +2,12 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-06: agreed design decisions, applied in code
+
+The author agreed these on 2026-10-27 (`docs/decisions-proposed.md` §4).
+
+- **RQ3 crossover effect size. Was:** change-score SMD (`SMCC`). **Now:** raw-score SD pooled across conditions (`SMCRP`, d_av). **Why:** `SMCC` inflates crossover g relative to parallel designs, which would bias any moderator that differs between designs. The assumed r (.5, with .3 and .7) still enters the sampling variance, and slightly affects the small-sample correction.
+
 ## 2026-10-27: title/abstract screening, AI first (RQ1 and RQ3)
 
 **Was (plan §12):** if AI–author agreement is below κ 0.6, the author screens every record herself. A second look covered records she excluded that an AI had kept.
