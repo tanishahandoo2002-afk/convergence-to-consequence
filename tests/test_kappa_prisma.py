@@ -30,7 +30,7 @@ def write_rq(base, human_rows):
         "date,source,query,hits,file\n2026-10-18,pubmed,q,5,p.csv\n2026-10-18,scopus,q,2,s.csv\n"
         "2026-10-18,dedupe,,1,records.csv\n")
     pd.DataFrame({"record_id": list("abcdef")}).to_csv(base / "search" / "records.csv", index=False)
-    pd.DataFrame({"record_id": list("abcdef"), "gemini": ["include"] * 2 + ["exclude"] * 4,
+    pd.DataFrame({"record_id": list("abcdef"), "asi": ["include"] * 2 + ["exclude"] * 4,
                   "qwen": ["include"] * 2 + ["exclude"] * 4, "merged": ["include"] * 2 + ["exclude"] * 4,
                   "needs_human": [True, True, True, False, False, False]}).to_csv(base / "screening" / "merged.csv", index=False)
     pd.DataFrame(human_rows, columns=["record_id", "stage", "rater", "decision", "reason", "date"]).to_csv(

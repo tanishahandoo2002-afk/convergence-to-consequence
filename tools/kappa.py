@@ -1,4 +1,4 @@
-"""Cohen's kappa between raters (plan §8.1 step 4): Gemini–Qwen, each AI–author, author–second rater.
+"""Cohen's kappa between raters (plan §8.1 step 4): ASI–Qwen, each AI–author, author–second rater.
 
 CLI:
   python -m tools.kappa rq1 --make-second-rater-sample   # seeded 20% of records, never overwritten
@@ -31,7 +31,7 @@ def human(base, rater, stage="title_abstract"):
 def report(base):
     merged = pd.read_csv(base / "screening" / "merged.csv", dtype=str).set_index("record_id")
     author, second = human(base, "author"), human(base, "second")
-    pairs = {"gemini-qwen": (merged.gemini, merged.qwen), "gemini-author": (merged.gemini, author),
+    pairs = {"asi-qwen": (merged.asi, merged.qwen), "asi-author": (merged.asi, author),
              "qwen-author": (merged.qwen, author), "author-second": (author, second)}
     rows = []
     for name, (a, b) in pairs.items():

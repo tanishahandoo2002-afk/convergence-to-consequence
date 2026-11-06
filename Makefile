@@ -18,7 +18,7 @@ rq1-search:
 
 .PHONY: rq1-screen
 rq1-screen:
-	$(PY) -m tools.screen rq1 --stage title_abstract --rater gemini
+	$(PY) -m tools.screen rq1 --stage title_abstract --rater asi
 	$(PY) -m tools.screen rq1 --stage title_abstract --rater qwen
 	$(PY) -m tools.screen rq1 --stage title_abstract --merge
 
@@ -60,7 +60,7 @@ rq3-search:
 	$(PY) -m checks.check_search rq3
 
 rq3-screen:
-	$(PY) -m tools.screen rq3 --stage title_abstract --rater gemini
+	$(PY) -m tools.screen rq3 --stage title_abstract --rater asi
 	$(PY) -m tools.screen rq3 --stage title_abstract --rater qwen
 	$(PY) -m tools.screen rq3 --stage title_abstract --merge
 

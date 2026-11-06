@@ -20,7 +20,7 @@ A personal project, not a publication: no preprint or OSF registration. The prot
 ```bash
 export C2C_DATA=/Volumes/<drive>/c2c_data      # large and non-shareable data
 export NCBI_EMAIL=<contact email for NCBI E-utilities>
-export GEMINI_API_KEY=<key>                     # AI screening rater 1
+export ASI_API_KEY=<key>                        # AI screening rater 1 (asi1-mini)
 OLLAMA_MODELS=$C2C_DATA/ollama ollama serve     # AI screening rater 2 (qwen2.5:7b-instruct)
 make setup    # environment + setup check (Python venv via uv, R packages via renv::restore())
 make test     # known-answer tests on synthetic data (Python and R)
@@ -28,10 +28,10 @@ make test     # known-answer tests on synthetic data (Python and R)
 
 | Stage | Command | Needs |
 | --- | --- | --- |
-| RQ1 search, screening, ALE | `make rq1-search`, `make rq1-screen`, `make rq1-check-screen`, `make rq1` | PubMed, Gemini key, Ollama |
+| RQ1 search, screening, ALE | `make rq1-search`, `make rq1-screen`, `make rq1-check-screen`, `make rq1` | PubMed, ASI key, Ollama |
 | Masks (frozen) | `make masks` | RQ1 results |
 | RQ2 blind pilot, extraction, models | `make rq2-pilot`, `make rq2` | NSD access, native masks |
-| RQ3 search, screening | `make rq3-search`, `make rq3-screen`, `make rq3-check-screen` | PubMed, Gemini key, Ollama |
+| RQ3 search, screening | `make rq3-search`, `make rq3-screen`, `make rq3-check-screen` | PubMed, ASI key, Ollama |
 | RQ3 effect sizes, models | `make rq3-es`, `make rq3` | extraction sheets, field values |
 
 Requires Python 3.12 and R 4.5.

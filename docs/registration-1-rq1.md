@@ -85,15 +85,16 @@ AND (retrieval[tiab] OR remember*[tiab] OR recollection[tiab] OR "old/new"[tiab]
   - She reviews every record either rater marked include or unsure, which includes every disagreement.
   - She also reviews a seeded random 20% of the records both raters excluded.
   - The other agreed excludes stay excluded on the AI decision.
-- **Two AI raters screen every record independently:** gemini-3.8-flash via the Gemini API, and qwen2.5:7b-instruct run locally via Ollama.
+- **Two AI raters screen every record independently:** asi1-mini via the ASI:One API, and qwen2.5:7b-instruct run locally via Ollama. asi1-mini replaced gemini-3.8-flash (`CHANGELOG.md`, 2026-11-07).
   - Settings: temperature 0, the eligibility criteria above as the prompt (`rq1_map/screening/criteria.md`), and JSON output.
   - Each decision is logged with the model identifier, a SHA-256 hash of the prompt, a timestamp and the raw reply.
+  - ASI:One offers no pinned model version and no documented seed, and its replies vary between runs. The logged replies are the record of its decisions; a rerun would not reproduce them exactly.
 - **Second rater.** A second rater (**[OPEN]** name) screens a seeded random 20% of all records, blind to the author's and the AIs' decisions. Disagreements are resolved by discussion.
-- **Agreement reported:** Cohen's κ for Gemini–Qwen, each AI–author, and author–second rater.
+- **Agreement reported:** Cohen's κ for ASI–Qwen, each AI–author, and author–second rater.
 
 **6.2 Full-text stage.**
 - The author assesses each remaining full text against §4.
-- An AI (gemini-3.8-flash) proposes which table holds the retrieval-success contrast and the sample size. The author confirms or corrects every proposal against the paper; the sheet records who verified each one.
+- An AI (asi1-mini, not calibrated on full texts) proposes which table holds the retrieval-success contrast and the sample size. The author confirms or corrects every proposal against the paper; the sheet records who verified each one.
 - The AI is never used to read or transcribe coordinates.
 - Reasons for full-text exclusion are recorded for the PRISMA 2020 flow diagram, which is generated from the logs, not typed by hand.
 
@@ -106,6 +107,7 @@ AND (retrieval[tiab] OR remember*[tiab] OR recollection[tiab] OR "old/new"[tiab]
   | gemini-3.8-flash | 0.441 | 0 of 7 |
   | qwen2.5:7b-instruct | 0.376 | 1 of 7 |
   | qwen2.5:3b-instruct | 0.006 | 3 of 7 (dropped) |
+  | asi1-mini (added later, on the current criteria wording) | 0.292 | 0 of 7 |
 
 - **Caveat:** the reference labels were AI-proposed and then reviewed and confirmed by the team, so they are not blind (`LABELS_PROVENANCE.md`).
 - **Effect on the procedure:** the calibration changed the choice of model and the wording of the criteria; no eligibility criterion changed.

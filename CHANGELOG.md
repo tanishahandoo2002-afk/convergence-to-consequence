@@ -2,6 +2,21 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: AI rater changed from Gemini to asi1-mini (RQ1 and RQ3)
+
+**Was:** gemini-3.8-flash and qwen2.5:7b-instruct screened titles and abstracts, and gemini-3.8-flash proposed the contrast table and sample size from full texts.
+
+**Now:** asi1-mini (ASI:One API) replaces gemini-3.8-flash in both roles. The merge rule and what the author reviews are unchanged.
+
+**Why:** the team has an ASI subscription, and a full Gemini run needs billing that was not set up. In the 30-record calibration asi1-mini excluded 0 of 7 eligible records, with κ 0.292 and 47% unsure (`rq1_map/screening/calibration/kappa.csv`).
+
+**Limits:**
+- asi1-mini's κ is the lowest of the three raters kept in the calibration table, and its unsure rate is the highest, so more records reach the author.
+- It was calibrated on the current criteria wording. The Gemini and Qwen figures come from the earlier wording, so the comparison is not like for like.
+- ASI:One offers no pinned model version and no documented seed. A repeat calibration run at temperature 0 changed some decisions. The logged replies are the record; a rerun would not reproduce them exactly.
+- asi1-mini was not calibrated on full texts. The author still confirms every proposal against the paper.
+- The limits of the 2026-10-27 entry still apply: seven eligible records cannot bound the miss rate, and the 20% sample of agreed excludes is the working check.
+
 ## 2026-11-06: agreed design decisions, applied in code
 
 The author agreed these on 2026-10-27 (`docs/decisions-proposed.md` §4).

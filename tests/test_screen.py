@@ -57,6 +57,7 @@ def test_merge_rule():
     a = pd.Series(["include", "exclude", "include", "unsure"], index=idx)
     b = pd.Series(["include", "exclude", "exclude", "exclude"], index=idx)
     m = merge(a, b, seed=1, frac=1.0)
+    assert list(m.asi) == list(a) and list(m.qwen) == list(b)
     assert list(m.merged) == ["include", "exclude", "unsure", "unsure"]
     assert m.needs_human.all()
 

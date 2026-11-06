@@ -13,7 +13,7 @@ Source plan: `From_Convergence_to_Consequence.md` (research questions, hypothese
 | Large data | Under `$C2C_DATA` (external drive); never committed |
 | NSD access | Stream each session file from the public S3 bucket `natural-scenes-dataset` into RAM; keep only the trial table. Only after the NSD Data Access Agreement form is submitted |
 | SimNIBS | Local install on the external drive |
-| Screening AI | Two independent raters: Gemini API and a local Qwen model via Ollama, both through the OpenAI-compatible chat endpoint; disagreement = "unsure" |
+| Screening AI | Two independent raters: ASI:One API (asi1-mini) and a local Qwen model via Ollama, both through the OpenAI-compatible chat endpoint; disagreement = "unsure" |
 | Control network | Multiple-demand parcels (Fedorenko et al., 2013) primary; Yeo 2011 frontoparietal + ventral attention as registered sensitivity mask |
 | RQ2 permutation | Within-session label shuffles (1,000) on a fast statistic: per-participant fixed-effects logistic slope, not a full glmer refit. Stated in registration 2 |
 | Commits | Author `Tanisha Handoo <tanishahandoo2002@gmail.com>` (repo-local config); local `commit-msg` hook rejects AI attribution lines; contributors verified via GitHub API after first push |
@@ -76,11 +76,11 @@ convergence-to-consequence/
 **`tools/pubmed_search.py`** — NCBI E-utilities (esearch + efetch) with the query from config. Writes `search/pubmed_<date>.csv` (PMID, DOI, title, abstract, year) and appends query, date and hit count to `search/search_log.csv`. Importers for BrainMap Sleuth exports (GingerALE text) and Scopus/PsycINFO (RIS/CSV) write the same columns.
 *Check:* log row exists for every search file; row count equals logged hit count; no duplicate PMID/DOI after de-duplication (duplicates removed are counted for PRISMA).
 
-**`tools/screen.py`** — for each record, sends title + abstract and the RQ's `criteria.md` (eligibility table verbatim) to each configured rater, temperature 0, requests JSON `{"decision": "include|exclude|unsure", "reason": "..."}`. Both raters use the OpenAI-compatible chat API (Gemini base URL; Ollama `localhost:11434/v1`), so one code path with `base_url` and `model` from `config/screening.yaml`. Logs per record: rater, exact model id (Ollama tag + digest), prompt SHA-256, timestamp, raw reply. Resumable (skips records already decided). Invalid JSON is retried once, then recorded as "unsure".
+**`tools/screen.py`** — for each record, sends title + abstract and the RQ's `criteria.md` (eligibility table verbatim) to each configured rater, temperature 0, requests JSON `{"decision": "include|exclude|unsure", "reason": "..."}`. Both raters use the OpenAI-compatible chat API (ASI:One base URL; Ollama `localhost:11434/v1`), so one code path with `base_url` and `model` from `config/screening.yaml`. Logs per record: rater, exact model id (Ollama tag + digest), prompt SHA-256, timestamp, raw reply. Resumable (skips records already decided). Invalid JSON is retried once, then recorded as "unsure".
 Merge rule: both include → include (human verifies); both exclude → exclude, with a seeded random 20% sent to the human; any disagreement → unsure (human decides).
 Full-text stage: the same script proposes the contrast table and sample size from paper text; the human confirms each in the extraction sheet.
 
-**`tools/kappa.py`** — Cohen's κ for Gemini–Qwen, each AI–human, human–second rater (on the overlapping records).
+**`tools/kappa.py`** — Cohen's κ for ASI–Qwen, each AI–human, human–second rater (on the overlapping records).
 *Check:* every include/unsure has a human decision; the 20% exclude sample is fully reviewed; second-rater overlap ≥ 20% of records. κ is reported, not enforced: the author reviews AI includes, unsures and the exclude sample whatever κ is (CHANGELOG 2026-10-27).
 
 **`tools/prisma.py`** — PRISMA 2020 counts computed from search and screening logs, drawn as a figure.

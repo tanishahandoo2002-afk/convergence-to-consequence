@@ -41,18 +41,18 @@ def main():
     except requests.RequestException:
         errors.append("Ollama is not running: start it with OLLAMA_MODELS=$C2C_DATA/ollama ollama serve")
 
-    gemini = raters["gemini"]
-    key = os.environ.get(gemini["api_key_env"])
+    asi = raters["asi"]
+    key = os.environ.get(asi["api_key_env"])
     if not key:
-        warnings.append(f"{gemini['api_key_env']} not set: Gemini screening will not run")
+        warnings.append(f"{asi['api_key_env']} not set: ASI screening will not run")
     else:
         from openai import OpenAI
         try:
-            ids = {m.id.removeprefix("models/") for m in OpenAI(base_url=gemini["base_url"], api_key=key).models.list()}
-            if gemini["model"] not in ids:
-                errors.append(f"Gemini model {gemini['model']} not offered; pick one of the current models in config/screening.yaml")
+            ids = {m.id for m in OpenAI(base_url=asi["base_url"], api_key=key).models.list()}
+            if asi["model"] not in ids:
+                errors.append(f"ASI model {asi['model']} not offered; pick one of the current models in config/screening.yaml")
         except Exception as e:  # network or auth failure
-            errors.append(f"Gemini API not reachable: {e}")
+            errors.append(f"ASI API not reachable: {e}")
 
     for w in warnings:
         print("WARNING:", w)

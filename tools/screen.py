@@ -1,11 +1,11 @@
 """AI-assisted screening with two independent raters (plan §8.1 step 4, §8.6).
 
-Both raters use the OpenAI-compatible chat API (Gemini and Ollama), temperature 0.
+Both raters use the OpenAI-compatible chat API (ASI:One and Ollama), temperature 0.
 Every decision is logged with model, prompt hash, timestamp and the raw reply.
 CLI:
   python -m tools.screen rq1 --stage title_abstract --rater qwen [--limit 5]
   python -m tools.screen rq1 --stage title_abstract --merge
-  python -m tools.screen rq1 --stage full_text --rater gemini   # contrast-table proposals; author confirms each
+  python -m tools.screen rq1 --stage full_text --rater asi   # contrast-table proposals; author confirms each
 """
 import argparse
 import datetime
@@ -146,8 +146,8 @@ def run_full_text(record_ids, pdf_dir, client, model, criteria, out_path):
 def merge(a, b, seed, frac):
     """Both include -> include (human verifies); both exclude -> exclude, a seeded `frac` sample
     (rounded up) to the human; anything else -> unsure (human decides)."""
-    m = pd.DataFrame({"gemini": a, "qwen": b})
-    m["merged"] = np.where(m.gemini == m.qwen, m.gemini, "unsure")
+    m = pd.DataFrame({"asi": a, "qwen": b})
+    m["merged"] = np.where(m.asi == m.qwen, m.asi, "unsure")
     m["needs_human"] = m.merged != "exclude"
     excl = m.index[m.merged == "exclude"]
     k = math.ceil(len(excl) * frac)
@@ -181,7 +181,7 @@ def main():
         from tools.common import data_dir
         from tools.prisma import title_abstract_decisions
         ta = title_abstract_decisions(base)
-        r = cfg["raters"][a.rater or "gemini"]
+        r = cfg["raters"][a.rater or "asi"]
         n = run_full_text(list(ta.index[ta != "exclude"]), data_dir(a.rq, "pdfs"), client_for(r), r["model"],
                           (scr / "criteria.md").read_text(), scr / "contrast_proposals.csv")
         print(f"full text: {n} proposals written; the author confirms each in experiments.csv")
@@ -193,11 +193,11 @@ def main():
         record_versions(f"{a.rq}_screen_{a.rater}")
         print(f"{a.rater}: screened {n} records")
     if a.merge:
-        logs = {k: pd.read_csv(scr / f"ai_{k}.csv", dtype=str).set_index("record_id").decision for k in ("gemini", "qwen")}
+        logs = {k: pd.read_csv(scr / f"ai_{k}.csv", dtype=str).set_index("record_id").decision for k in ("asi", "qwen")}
         missing = {k: len(set(records.record_id) - set(v.index)) for k, v in logs.items()}
         if any(missing.values()):
             raise SystemExit(f"not every record screened yet: {missing}")
-        m = merge(logs["gemini"].loc[records.record_id], logs["qwen"].loc[records.record_id],
+        m = merge(logs["asi"].loc[records.record_id], logs["qwen"].loc[records.record_id],
                   cfg["seed"], cfg["human_exclude_sample"])
         m.to_csv(scr / "merged.csv")
         print(m.merged.value_counts().to_string(), f"\nneeds human: {int(m.needs_human.sum())}")
