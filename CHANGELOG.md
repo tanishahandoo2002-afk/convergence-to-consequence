@@ -2,6 +2,25 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: AI check of the full-text proposals before the author reviews them (RQ1)
+
+**Was:** the author would check each asi1-mini proposal against its paper with no intermediate step.
+
+**Now:** an AI assistant checked all 136 proposals first, and the author reviews its check on `rq1_map/screening/full_text_check.csv`. She answers yes or no for each paper. Yes keeps the suggestion and no reverses it. The sheet gives the suggested table, contrast, type and N, with reasons and a PMC link. Her answers count for PRISMA.
+
+**Results:** the check suggests 48 include (22 high, 20 medium, 6 low confidence) and 88 exclude (47 high, 41 medium). Of the 86 proposed eligible, it agrees with 45 and rejects 41. Of the 49 proposed ineligible, it keeps 3, and it rejects the 1 invalid reply. It differs from the proposal on N for 5 papers.
+
+**Why:** the team asked for it, to reduce the author's work. The disagreement with asi1-mini also shows that its proposals could not be used unchecked.
+
+**Limits:**
+- The assistant read excerpts, not whole papers: participants, analysis methods, sentences on retrieval contrasts, and table captions, headers and subheadings without values.
+- Supplements were not read, and tables published only as images were not seen. Nine suggested includes depend on a supplement, and these need her direct check.
+- The assistant saw asi1-mini's proposal for each paper, so the check was not independent of it.
+- The judgments were written by hand in one pass, not by a committed script, so they cannot be regenerated. The sheet is the record of them.
+- A yes on this sheet decides eligibility only. It does not verify a contrast, so `contrast_verified_by` stays blank until she confirms each contrast in the paper, and nothing enters `experiments.csv` until then.
+- No coordinate was recorded. Coordinates are still entered by hand from the paper, and are not transcribed by an AI.
+- 154 records were not retrieved, so these results cover open-access papers only.
+
 ## 2026-11-07: full-text proposals read from PMC instead of PDFs (RQ1)
 
 **Was:** asi1-mini proposed the contrast table and N from PDFs stored in `$C2C_DATA/rq1/pdfs`.
