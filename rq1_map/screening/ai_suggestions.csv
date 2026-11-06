@@ -1,0 +1,722 @@
+record_id,ai_suggestion,ai_confidence,ai_reasoning
+pmid:28733247,include,low,"Young and older adults did a spatial source task with fMRI at retrieval, so source-correct vs incorrect should be computable. The reported analysis is DCM on a chosen network; check the full text for a whole-brain GLM map."
+pmid:24948034,exclude,high,"Word-list encoding in late-life depression vs controls; recall and recognition happened after scanning, so there is no retrieval contrast."
+pmid:28077714,exclude,high,Locomotor adaptation with resting-state connectivity. Motor memory is not episodic retrieval and there is no task contrast of remembered vs forgotten items.
+pmid:35552744,exclude,medium,"Compares modified with original episode videos to study prediction errors. This is not a remembered vs not-remembered contrast, and the memory test was outside the scanner."
+pmid:29084981,exclude,medium,"Video recall in the scanner analysed with RSA reinstatement, correlated with later recall outside the scanner. There is no trial-level successful vs unsuccessful contrast and RSA gives no activation foci."
+pmid:24828546,include,low,"Retrieval-phase event-related fMRI in healthy young and older adults, contrasting trials by recollected detail. It is graded recollection rather than a listed contrast, so check whether a remembered vs forgotten map exists."
+pmid:25868676,include,medium,"Recognition memory fMRI with an oldness effect separated from confidence. Hits > correct rejections is likely available, though the focus on striatum means whole-brain reporting needs checking."
+pmid:24872520,include,high,"Object source memory at test with source-accuracy effects in healthy adults. This is a source-correct > source-incorrect contrast, and reward can be collapsed across."
+pmid:31904899,include,low,"Faces were scanned at both encoding and retrieval, but the abstract reports only encoding results. Keep it only to check whether a retrieval hits contrast is tabled; the odor manipulation complicates pooling."
+pmid:27683911,exclude,high,fMRI during verbal encoding only; the retrieval test was related to the scan afterwards. This is an encoding contrast.
+pmid:40567561,include,low,"Old/new word recognition with hits > correct rejection effects, N = 53, healthy adults. The abstract says analyses focused on ROIs, so it fails if no whole-brain map is reported."
+pmid:25143600,exclude,medium,High-resolution CA1 connectivity across task blocks; retrieval success enters as a between-subject correlation. Limited coverage and no retrieval-success activation contrast.
+pmid:28159685,include,low,"Compares detailed episodic retrieval with generalized recognition, which resembles a recollection contrast. The abstract is vague on design and stresses connectivity, so confirm task and contrast in the full text."
+pmid:28494223,exclude,high,"Face-name subsequent-memory design: activity during formation predicts later memory. This is encoding, not retrieval."
+pmid:32469308,include,low,"Cognitively normal older adults (N = 100) scanned during associative retrieval with hit vs miss information. Focus is hippocampal ROI and reinstatement, so whole-brain retrieval-success results must be confirmed."
+pmid:30364307,include,medium,"Explicitly reports Hits > Correct Rejections during fMRI recognition in healthy adults, used to set TMS targets. Baseline scan is eligible if group coordinates are reported rather than only individual peaks."
+pmid:30137255,include,low,"Cued retrieval practice in the scanner with a vividness contrast and parietal pattern analyses. Vivid vs non-vivid is close to, but not exactly, a listed contrast, and it may report only pattern results."
+pmid:25698731,exclude,low,Free recall with a model-based BOLD analysis in MTL. It tracks retrieval dynamics rather than comparing remembered with forgotten items; worth a glance because item retrieval success is mentioned.
+pmid:26892860,exclude,high,Encoding during social competition; retrieval only behavioural. All reported contrasts are at encoding.
+pmid:23110678,include,high,"Event-related recognition in healthy adults with recollection effects for targets and nontargets against new items, including the angular gyrus. A hits > correct rejections type contrast is central."
+pmid:26315458,include,medium,OCD patients plus healthy controls during source retrieval fMRI. Eligible only if the control group's correct-source or object-recognition contrast is reported separately.
+pmid:33524573,exclude,high,Subsequent-memory paradigm modelling encoding activity; a methods comparison of first-level models. Explicitly encoding.
+pmid:33762219,exclude,high,"Item-method directed forgetting with MVPA of the instruction period. It studies intentional forgetting at encoding, not retrieval success."
+pmid:33443075,exclude,high,Developmental sample and hippocampal voxel granularity during post-encoding rest. Children and no retrieval-success contrast.
+pmid:20484652,include,medium,"Continuous recognition with correct vs incorrect lag judgments in 17 healthy adults. Accuracy for when an item occurred works like source-correct > incorrect, and old vs new is available."
+pmid:23607935,exclude,medium,"Testing-effect design: activity during initial retrieval is sorted by later memory. That is a subsequent-memory effect, so it behaves as encoding under the interpretation rules."
+pmid:23804111,exclude,medium,"MVPA of familiarity in perirhinal and parahippocampal ROIs. Pattern decoding gives no activation foci, and familiarity would be H1b only at best."
+pmid:26200928,include,medium,"Schizophrenia vs controls, but states retrieval success (hits > misses) in healthy controls explicitly. Eligible for the control group; check that analyses go beyond the a priori MTL and PFC regions."
+pmid:19383503,include,high,"Source memory fMRI in healthy adults with studied > unstudied effects. An old/new contrast is available from the source task, though the semantic comparison task should not be pooled."
+pmid:22557957,exclude,medium,"PET in AD and elderly controls comparing stem-cued recall with a control task and rest. There is no successful vs unsuccessful retrieval contrast, even for controls."
+pmid:33723033,exclude,medium,"Sequence retrieval comparing ordinal and temporal-context conditions. The contrasts are between retrieval modes, not successful vs unsuccessful retrieval."
+pmid:35176553,exclude,medium,Age differences in neural selectivity (dedifferentiation) by stimulus category across memory stages. No retrieval-success contrast is described.
+pmid:35073239,include,medium,"Old/new recognition in the scanner with confidence, N = 21, memories 1 hour to 1 month old. Effects focus on memory age, but a hits > correct rejections map should be obtainable."
+pmid:24666132,exclude,medium,"Temporal order judgements with distractors; imaging effects track distractor relatedness and probe distance, not whether retrieval succeeded."
+pmid:25834046,exclude,high,"Scanned during associative encoding with source testing later. A subsequent-memory design, so encoding."
+pmid:31301590,include,high,States the contrast directly: item memory hits vs misses at retrieval in healthy females and males. A clean remembered > forgotten retrieval effect.
+pmid:22640391,exclude,medium,Vivid recall of videos with MVPA similarity to perception. Well-rehearsed clips and no forgotten condition; pattern results give no foci.
+pmid:28093279,include,low,"Lean vs obese adults on a what-where-when retrieval task. Lean group could qualify as healthy, but it is unclear whether contrast is successful recollection or task vs baseline."
+pmid:25728695,exclude,high,"EEG and tDCS during encoding. No fMRI or PET, and it studies subsequent memory."
+pmid:40849412,exclude,medium,"Movie recall with gaze and neural reinstatement. Shared patterns across viewing and recall, with no remembered vs forgotten contrast."
+pmid:24214215,exclude,high,Prospective memory in healthy adults. Remembering intentions and monitoring is a different construct from episodic retrieval success.
+pmid:22807028,exclude,medium,"Autobiographical recall vs semantic generation, by sex and valence. Retrieval vs a control task only; no failed-retrieval condition."
+pmid:23175849,exclude,high,MVPA decoding of individual autobiographical memories in ROIs. No success contrast and no activation foci.
+pmid:26972485,exclude,medium,High-resolution encoding-retrieval pattern similarity in hippocampus and perirhinal cortex. Limited coverage and reinstatement measures rather than a retrieval-success map.
+pmid:21334445,exclude,medium,Compares spatial and temporal retrieval tasks after navigation. A between-task comparison; nothing separates correct from incorrect source decisions.
+pmid:32609778,exclude,high,"Autobiographical cueing with emoji congruency. Contrasts are about emotional incongruity and pseudowords, not memory success."
+pmid:39765133,include,low,"Healthy older adults, associative recognition in the scanner, with recollection effects (likely associative hits vs misses or item hits). The analysis centres on MTL ROIs, so whole-brain reporting decides this."
+pmid:28625660,exclude,high,"Remembering vs imagining the future, plus resting-state. The contrast is between tasks; no retrieval-success effect."
+pmid:24492058,exclude,high,"fMRI during encoding of emotional items, recognition tested 48 hours later outside the scanner."
+pmid:37596054,include,low,"Recognition task with successful recognition effects in parietal and occipitotemporal cortex. It uses voxel-wise encoding models, so check whether conventional old/new coordinates are reported."
+pmid:42818524,include,low,"Healthy adults, intact vs recombined associative recognition. Framed as monitoring (Recombined > Intact), but correct intact vs correct recombined can act as a recollection contrast; check whether tabled."
+pmid:33765433,include,low,"Young and older adults, scanned during background and location source tasks. Reported work focuses on reinstatement, but source-correct effects may be tabled in the univariate analyses."
+pmid:31254060,exclude,medium,"TMS over precuneus and meta-memory efficiency, with BOLD related to metacognition. Not a retrieval-success contrast."
+pmid:33831650,exclude,high,Resting-state connectivity related to childhood trauma and a behavioural autobiographical test. No task fMRI.
+pmid:29999561,include,low,"Young and older adults during associative recognition, focused on hippocampus and perirhinal cortex. Contrasts concern visual integration; check for associative hits vs misses and whole-brain results."
+pmid:19109984,exclude,medium,"Compares overtrained with once-seen face-name pairs. It is memory strength and semantic/episodic mode, not remembered vs forgotten."
+pmid:19413478,include,low,"Event-related source monitoring with criterial recollection tests in healthy adults. Contrasts focus on rejection strategy, but recollection-based correct responses may give an eligible source contrast."
+pmid:28499558,include,medium,"Recognition with successful retrieval (hits > CR) as the core measure. Blocks vary the proportion of old items, so flag it for the sensitivity analysis, and check whether analysis is parietal only."
+pmid:27102656,exclude,high,Activity and pattern information at encoding predict later recall. A subsequent-memory analysis.
+pmid:21799211,exclude,medium,"Genotype effect on episodic encoding and retrieval in healthy adults. Reported contrast is genetic, with no stated hits vs misses map; worth a quick look only if the full text is already available."
+pmid:29718333,exclude,high,"Patients with depression only, randomized to ECT or sham. No healthy group to extract."
+pmid:42555909,exclude,medium,"Recognition patterns decoded by prior semantic access for remembered items. Searchlight decoding of history, not a remembered vs forgotten activation map."
+pmid:30297400,exclude,medium,"RSA reactivation comparing retrieval practice with restudy. Tests memory enhancement, with no contrast of successful against failed retrieval."
+pmid:19405148,exclude,medium,"Episodic vs semantic relational judgments, spatial vs nonspatial. Differences are between conditions; correct and failed retrieval are not compared."
+pmid:32001370,exclude,high,"Creative association generation. Semantic and creative cognition, no episodic retrieval task."
+pmid:34190976,exclude,medium,"Paired-associate recognition, but the measures are neural differentiation and reinstatement in superagers and young adults, not retrieval-success activation."
+pmid:29780861,exclude,high,"Behavioural recall of famous names related to amyloid status. PET here measures amyloid, not task activation, and famous-name recall is semantic."
+pmid:33189928,exclude,high,"Stroop task scanned during encoding, recognition afterwards. Encoding and patient comparison; no retrieval scan."
+pmid:28633886,exclude,high,"Repeated autobiographical retrieval vs counterfactuals with fMRI adaptation. Tests perspective and simulation, not memory success."
+pmid:23815458,exclude,high,"Hippocampal offset responses at encoding of clips, cued recall outside the scanner. Subsequent-memory design."
+pmid:40800509,exclude,medium,"7T autobiographical retrieval vs a control, focused on hippocampal subfields. No unsuccessful retrieval condition."
+pmid:24949554,include,high,"Directly compares remember/know and source tests of recollection and familiarity in the scanner. Remember > know and source contrasts should both be reported, though parietal focus needs a whole-brain check."
+pmid:21976506,exclude,medium,"KIBRA genotype effect on hippocampal activity during retrieval. Between-genotype comparison, and the task effect is unlikely to be hits vs misses; check only if a healthy-group success contrast is mentioned in full text."
+pmid:40143852,include,low,aMCI patients plus 54 cognitively normal controls during old/new word recognition. Eligible only if controls have their own retrieval contrast; abstract reports only group differences by stage.
+pmid:38937077,include,medium,"Healthy young and older adults at associative retrieval; compares durable with transient source memories. Those contrasts are among correct trials, but source-correct vs incorrect is very likely available as well."
+pmid:25019676,exclude,high,"Visuomotor adaptation learning and recall. Procedural memory, not episodic retrieval."
+pmid:41578130,exclude,high,"Tactile working memory with retro-cues, analysed by connectivity. Working memory is an explicit exclusion."
+pmid:41137744,exclude,medium,"VR objects with MVPA of semantic bias and a cortisol manipulation. Pattern similarity results, no standard remembered vs forgotten map."
+pmid:36314151,exclude,high,Episodic counterfactual generation from remembered events. Compares types of simulation; not memory success.
+pmid:19301994,exclude,medium,"Recall-classify vs classify with active and passive baselines. Task vs baseline for retrieval and post-retrieval processing, with no accuracy contrast."
+pmid:19428409,exclude,high,"ALE meta-analysis, so not primary data. Its reference list is useful for finding eligible 1998 to 2007 studies, though."
+pmid:29348512,exclude,high,High-resolution subfield pattern similarity during recollection. Limited coverage and no activation contrast.
+pmid:33365002,exclude,high,fMRI measures encoding-related hippocampal activity; the test contrast is behavioural. Encoding.
+pmid:25499146,include,high,"N = 95 with hits vs correct rejections in the scanner across criterion conditions. Old-item likelihood varies across tests, so flag it for the sensitivity analysis."
+pmid:29440386,exclude,high,"Imagined events decoded with MVPA by person, place and object. Imagination, not retrieval success."
+pmid:19501072,include,high,"Recognition analysis of high- and low-confidence hits and high-confidence correct rejections in healthy adults. The hits vs correct rejections comparison is central, though results are conjunction-based."
+pmid:37327954,exclude,high,Four densely sampled subjects with semantic encoding models. Reconstruction of content rather than group-level retrieval-success effects.
+pmid:22783175,exclude,high,Conceptual review of parietal memory activations. No primary data.
+pmid:23805114,include,medium,Healthy participants scanned during word recognition after learning under spatial conditions. Correct recognition effects are reported; check that the baseline is correct rejections or misses.
+pmid:42888042,exclude,medium,Emotional video recall with activity scaled by recalled details and valence. A parametric content analysis with no forgotten condition.
+pmid:27280153,exclude,medium,"Five tasks parcellated with ICA in the TPJ. Memory is only one task, and results are ICA components, not retrieval-success foci."
+pmid:20829453,exclude,high,Pattern similarity across study repetitions predicting later memory. Subsequent-memory encoding effect.
+pmid:34413723,exclude,medium,"Odor-evoked autobiographical memory in older adults, with subjective vividness related to BOLD. No unsuccessful retrieval comparison."
+pmid:32769969,exclude,high,"Movie viewing and event boundaries, with memory tested separately. No retrieval during scanning."
+pmid:27215795,exclude,high,Resting-state connectivity predicts later recollection. No task retrieval contrast.
+pmid:31989161,include,medium,"fMRI recognition for objects, faces and scenes separating recollection and familiarity. Likely recollection > familiarity effects; focus on thalamus and MTL means whole-brain reporting needs checking."
+pmid:25519874,exclude,high,"Working-memory retro-cue task with decoding, followed by surprise recognition. Encoding-like analysis, not retrieval."
+pmid:25260708,exclude,high,"Remembered vs imagined events in ROIs. Compares two forms of construction, not successful with failed retrieval."
+pmid:30290213,include,medium,"Healthy adults, whole-brain, with amygdala activity to picture cues predicting successful clip recall. Cues appear at recall, so this can be a retrieval-phase remembered > forgotten contrast; check the timing of the contrast."
+pmid:29391248,include,low,"fMRI retrieval of recently studied known and unknown statements. Recollection and familiarity regions are inferred, so check for a real old vs new or remembered contrast."
+pmid:18294660,include,medium,"Event-related source recollection (perceived vs imagined, list 1 vs 2), plus errors. Source contrast may be against a baseline, so confirm correct vs incorrect is reported."
+pmid:40799570,exclude,medium,"Continuous recognition using voxelwise encoding models of temporal context. Reinstatement measures, not retrieval-success activation foci."
+pmid:24244264,include,low,"BDNF genotype study in which ""successful retrieval"" contrasts were run. Eligible if the overall healthy-sample contrast is tabled, not only genotype differences."
+pmid:27345167,exclude,high,"VR object-location memory across morphed environments, analysed by attractor-like pattern change. No retrieval-success contrast."
+pmid:31201985,exclude,high,Neurofeedback on mental context reinstatement before out-of-scanner free recall. No retrieval-success fMRI contrast.
+pmid:35196706,exclude,medium,"Episodic vs semantic retrieval and task difficulty across lateral parietal cortex. Task comparison, not remembered vs forgotten."
+pmid:32829396,exclude,medium,"Source task scanned at test, but results are pattern-similarity reinstatement by age. Include only if the full text also tables univariate source effects."
+pmid:31393233,include,low,"Adults 21 to 76 during spatial context encoding and retrieval, analysed with multivariate PLS. Retrieval accuracy relates to activity, but PLS may not give a discrete correct vs incorrect contrast."
+pmid:32474466,include,low,"327 healthy older adults at risk (family history), with source recollection vs object recognition at retrieval. PLS analysis and focus on APOE4 could block extraction; also consider whether this at-risk group counts as healthy."
+pmid:23962957,exclude,medium,Learning novel words and lexicalization. Mainly word learning with semantic and lexical measures rather than episodic retrieval success.
+pmid:26562053,exclude,high,Meta-analysis of default network in episodic and semantic retrieval. Not primary data.
+pmid:19492301,exclude,medium,"Test-retest reliability of task conditions in healthy older adults and MCI, n = 10 each. Condition vs control contrast with no retrieval-success effect."
+pmid:24275829,exclude,high,Autobiographical construction vs elaboration with connectivity. No failed-retrieval condition.
+pmid:19803685,exclude,high,Autobiographical memory vs theory of mind. A task comparison.
+pmid:24917798,include,medium,"Event-related retrieval success for emotional and neutral items in healthy adults, separated from incidental encoding. Directly relevant contrast, but emphasis on MTL means checking the analysis extent."
+pmid:25584461,include,medium,Immediate and delayed recognition with recollection-related activity in hippocampus and neocortex. An item-and-context contrast seems available; pattern analyses are secondary.
+pmid:20371815,include,low,Studied targets detected among new words in fMRI plus a separate lesion group. Hits vs new may exist but contrasts emphasize cue validity; keep for a full-text check.
+pmid:22144982,include,low,"Recognition task comparing BOLD to previously heard words by attention level against novel words. Old > new should exist, but the incidental, perceptual framing needs checking for correct responses only."
+pmid:41815491,exclude,high,"aMCI patients only, correlating dementia risk scores with brain activity. No healthy group."
+pmid:23483523,exclude,high,"PTSD vs controls during autobiographical recall, with ICA network measures. No success contrast."
+pmid:27996964,exclude,high,"Data descriptor for autobiographical remembering, imagining and mentalizing. No retrieval-success contrast."
+pmid:31306118,exclude,medium,"Adults 50 to 74 with varying dementia risk, relating risk score to activity during associative forced-choice retrieval. A risk correlation rather than correct vs incorrect retrieval."
+pmid:34711830,exclude,high,High-resolution RSA of reinstatement in learned spatial environments. Representational measures; no success contrast.
+pmid:20350587,include,low,Healthy older adults with item recognition and spatial context retrieval success effects. Results are between genotype groups of 8 and 10; eligible only if a whole-group success contrast is tabled.
+pmid:36898662,include,medium,"26 healthy young adults; correct recognition of old items activates the recollection network, likely hits vs correct rejections. RSA is secondary, and category verification at encoding should be ignored."
+pmid:39332662,include,medium,"SCD vs controls in old/new recognition, with successful recognition and novelty contrasts. Eligible for the control group if reported separately; SCD itself is not a healthy group."
+pmid:23287568,include,low,"Retrieval success framing, but the main comparison is recently learned vs personally familiar locations. Check whether recent-location hits were contrasted with correct rejections or misses rather than familiar-location retrieval."
+pmid:28161030,include,medium,"Scanned source test in young and older adults, relating activity to source accuracy. A correct vs incorrect contrast is probable, but analysis may be between-subject correlations; check the tables."
+pmid:29732578,include,medium,"Explicit recognition of repeated vs novel scenes, in the condition relevant to retrieval. Check that the contrast uses correct trials, and that the implicit-task condition is excluded."
+pmid:39061378,exclude,high,Self-talk and emotion regulation with own-voice manipulation. Not a memory paradigm.
+pmid:26541580,include,high,Title and abstract describe neural correlates of successful retrieval in young and two older groups during recognition. Hits vs correct rejections almost certain; use groups separately according to the one-experiment rule.
+pmid:21409716,include,high,"Remember/know procedure on real-life events with recollection compared with familiarity and new responses. Directly matches remember > know. Cameras and long delays suit it, though stimuli are personal."
+pmid:28179554,include,high,Recognition of studied vs nonstudied scenes with hits in a picture memory test. The picture test gives old > new; use that condition rather than the life-memory test.
+pmid:38527809,include,low,"7T precision recognition data with recognition decision effects in medial parietal cortex. Results may be individual-level and without group coordinates. Check if the dataset is NSD, because that would overlap with RQ2."
+pmid:23734122,include,medium,"Recollection vs recognition confidence at test in healthy adults. Recollection effects are the key measure, but high-resolution acquisition may limit coverage, so confirm whole-brain."
+pmid:25152237,include,high,"Associative and source recognition, with successful associative and source effects at test. Directly relevant, and it reports activity beyond MTL."
+pmid:30125219,exclude,high,"Remembering, future simulation and divergent thinking vs a semantic control. Retrieval vs control only."
+pmid:39059393,exclude,high,Threat conditioning with representational change. Recognition memory is behavioural; the imaging addresses conditioning and category generalization.
+pmid:25583615,include,low,"Source memory test with confidence, focused on modality-selective reinstatement among correct judgments. Eligible only if source-correct vs incorrect or old vs new effects are also tabled."
+pmid:19400677,include,high,Source memory fMRI reporting greater parietal activity for correct than incorrect source responses and hits vs correct rejections background. A clean match.
+pmid:19173228,include,high,States the contrast outright: recollection hits vs correct rejections for faces in healthy adults. Pre-experimental familiarity should be collapsed or taken from unfamiliar faces.
+pmid:29078387,exclude,medium,"Older adults across a cognitive spectrum, with subfield ROIs at high resolution. Activity is regressed on memory scores, no whole-brain success contrast."
+pmid:30715236,exclude,high,"Blind vs sighted, with an incidental memory task used to segment visual cortex. No retrieval-success analysis in the sighted sample."
+pmid:22982586,exclude,high,"Finger sequence learning and replay in pianists. Motor memory, not episodic retrieval."
+pmid:20012682,exclude,medium,"fMRI-guided rTMS comparing abstract and concrete words. Imaging is used for targeting and word type, with no stated remembered vs forgotten contrast; check only if tables are easily available."
+pmid:19199423,exclude,high,High-resolution incidental encoding with subsequent memory. Encoding only.
+pmid:27713000,include,low,"Middle-aged and older adults with activity during successful associative retrieval. Focus is the anterior hippocampus, so eligibility depends on whole-brain reporting."
+pmid:21430142,include,low,"Episodic retrieval activates angular gyrus and precuneus, with response profiles. The precise contrast is not stated, so confirm whether it is successful retrieval or memory vs a control task."
+pmid:24904386,include,medium,"Successful retrieval of face or scene context with event-related fMRI. Source-correct vs incorrect is implied, though the emphasis on overlap with encoding means tables must be checked."
+pmid:23578576,exclude,medium,"Vocabulary testing effect: practice retrieval vs restudy, with activity predicting later recall. Testing vs restudy and subsequent memory; not an eligible contrast."
+pmid:31811557,exclude,high,Graph-theory analysis of network reorganization across control and memory tasks. No activation contrast for retrieval success.
+pmid:27217115,exclude,high,Combined subsequent-memory and fear-conditioning study; recognition tested 24 hours later. Encoding effects only.
+pmid:21145314,include,high,"Young adults scanned at study and test, with source memory effects common to words, objects and scenes. Test-phase source-correct > incorrect is a direct match; ignore study-phase effects."
+pmid:38092333,exclude,high,"Specific vs general autobiographical memories vs semantic knowledge. A gradient of memory type, with no failed-retrieval condition."
+pmid:26262779,include,low,"Scanned memory test after Internet or book searching, with novel vs remembered trials reported. Unusual learning manipulation; check that remembered vs new is tabled for the healthy group, not only the group difference."
+pmid:24380867,include,medium,"Healthy adults, recognition two days after encoding, with recollection and familiarity activations reported in emotional memory. Recollection effects look extractable; check whether whole-brain tables exist, given amygdala and hippocampal focus."
+pmid:28697998,exclude,high,"Autobiographical recall in MDD vs controls. No unsuccessful retrieval condition, so controls do not provide an eligible contrast."
+pmid:33978552,exclude,high,"ERP study of subsequent memory for self-referenced adjectives. EEG at encoding, not fMRI or PET at retrieval."
+pmid:27923474,include,medium,Encoding and remember/know/new retrieval both scanned in healthy adults. Remember effects appear in conjunctions; confirm a remember > know or remember > new retrieval table.
+pmid:27167400,exclude,high,Simultaneous EEG-fMRI of word generation across episodic and semantic fluency tasks. No remembered vs forgotten comparison; gamma is the focus.
+pmid:27785632,exclude,high,Informatics paper on a database of nuclear medicine images. Unrelated to memory.
+pmid:32812492,exclude,high,"ALE meta-analysis of sex differences. Not primary data, though its eight included papers may be worth checking."
+pmid:20035018,exclude,medium,"Music encoding and excerpt recognition compared across cultures. Results describe cultural unfamiliarity, not recognized vs unrecognized music."
+pmid:18614265,include,low,"Old vs new recognition in PTSD, depression and trauma-exposed controls. Controls are not a clean healthy group and results pool across groups, so eligibility needs checking."
+pmid:19755111,exclude,medium,"MVPA classifiers measuring reinstatement during recollection and familiarity. Decoding results rather than activation foci, unless a univariate table also appears."
+pmid:32538553,exclude,medium,"DCM of autobiographical memory search with hits as the modulator. Connectivity in six preselected regions, no retrieval-success activation map."
+pmid:19706549,include,medium,"Old/new word recognition with confidence, separating old/new status from choice in MTL. Old and new item trials are compared; check for hits > correct rejections and whole-brain tables."
+pmid:25848685,exclude,medium,"Match-to-sample under interference, analysed with PLS. Short-delay perceptual memory rather than episodic retrieval of studied items."
+pmid:18381770,exclude,high,Meta-analysis of social cognition. Not primary data or memory.
+pmid:37581985,exclude,medium,"Judgments of whether objects were simultaneous, consecutive or farther apart. Compares correct conditions by temporal relation, rather than correct against incorrect."
+pmid:39874716,exclude,high,"Lifespan sample from age 7 with connectivity and segregation measures. Includes children, and no activation contrast."
+pmid:35069141,exclude,medium,"Original vs modified videos, by agency and perspective. Mismatch processing rather than remembered vs forgotten, and memory tested after the scan."
+pmid:41188354,exclude,high,"Longitudinal connectivity related to amyloid and tau PET. PET measures pathology, and no retrieval-success contrast."
+pmid:24647122,exclude,medium,Activity during a first cued-recall test predicts a second test. This subsequent-memory analysis acts as encoding; check for initial correct vs incorrect recall only if the full text is at hand.
+pmid:27845034,exclude,high,Prospective memory and working memory with MVPA. Not episodic retrieval success.
+pmid:19909817,include,low,"Reanalysis of three recency-judgment fMRI datasets, N = 73. Possibly a correct-judgment contrast, but samples overlap with earlier papers, so count each group once and prefer the original reports."
+pmid:30411437,include,medium,"Cued recall and familiarity with confidence, separating accuracy and amount recollected. Recollection effects compared with weaker memory should be available, though parametric confidence contrasts may complicate extraction."
+pmid:42061891,exclude,high,"ALE meta-analysis of source memory, recollection and familiarity. Not primary data, but its 48 studies are a useful cross-check for missed papers."
+pmid:31279324,exclude,high,"Hydrocortisone crossover in PTSD, BPD and controls during autobiographical retrieval. No failed-retrieval contrast."
+pmid:36343706,exclude,high,"Scanned at study with the test outside the scanner, using a subsequent-memory analysis. Encoding only."
+pmid:18476766,exclude,medium,"Visual or haptic learning with parametric fan effects at retrieval, n = 10 per group. Reactivation load rather than successful vs unsuccessful retrieval."
+pmid:23934234,exclude,high,Review of fMRI in non-CNS cancer survivors. Not primary data and not a healthy sample.
+pmid:32290772,exclude,medium,Flashbulb vs ordinary event recall in a block design. No failed-retrieval comparison; retrieval success is only a self-rated modulator.
+pmid:26401811,include,medium,Free recall and source recognition with recollection and familiarity contrasts in the scanner. The source recognition contrast should be eligible; free recall should not be pooled.
+pmid:32022387,include,medium,"Associative recognition with correct old pairs and rejected new pairs in the scanner. Hits vs correct rejections likely exist, but reported effects are between spacing groups, so check within-group tables."
+pmid:23834024,exclude,high,High-resolution RSA during reward-cued encoding. Encoding only.
+pmid:30240315,exclude,high,Hippocampal pattern analyses of item-context overlap. No activation contrast for retrieval success.
+pmid:18649352,include,high,Remember/Know recognition in fMRI with recollection- and familiarity-related networks. Directly matches remember > know. Use only the fMRI experiment; the ERP experiment is separate.
+pmid:25313657,exclude,medium,"Single-word recall after a 10 s delay within a working-memory framework. Recall success effects exist, but the paradigm is short-delay rather than long-term retrieval."
+pmid:23049503,include,high,"Recognition after 1 and 3 weeks in young and older adults, with hits vs misses reported. Use hits vs misses; the hits vs false alarms contrast is excluded under the rules."
+pmid:17932973,include,high,Explicit recollection vs correct rejection contrast at three delays. Check that participants are the same across time points so one experiment per group is used.
+pmid:19702458,include,high,"Event-related fMRI in healthy subjects with successful item and source retrieval effects. The amnesic patients are in a separate behavioural study, so use the healthy fMRI group."
+pmid:27338616,exclude,high,Autobiographical recall with parametric value and significance in vmPFC. No failed-retrieval comparison.
+pmid:19642880,include,medium,"Healthy young adults, successful temporal and spatial context memory at encoding and retrieval. Retrieval source-correct effects fit, but focus on OFC may mean no whole-brain table."
+pmid:38154592,exclude,high,Viewpoint on naturalistic memory paradigms. No primary data.
+pmid:31379536,exclude,high,Multiple-cue judgment learning. Not episodic retrieval success.
+pmid:24634661,include,high,"Old/new music recognition in 18 healthy adults, with old vs new and recognized vs not recognized contrasts stated. Nonverbal material, but contrasts match."
+pmid:40800785,exclude,high,ROI multivariate decoding of perspective and embodiment during recall. No activation contrast or whole-brain analysis.
+pmid:27373768,include,low,"Source memory with query format manipulated. Contrasts focus on format, but source-correct vs incorrect effects may be available; check whether they appear collapsed across format."
+pmid:26578525,exclude,high,"Meta-analysis of familiarity. Not primary data, though its reference list could be checked."
+pmid:33826665,include,low,"Memory encoding and retrieval both scanned, with delayed reward. Reports overlap with a retrieval-success network, but a clean hits vs correct rejections table is not confirmed in the abstract."
+pmid:30356095,include,low,Pharmacological fMRI (haloperidol) in healthy adults during recognition. The placebo session could give an unconfounded retrieval-success contrast; eligible only if reported for placebo.
+pmid:21671743,exclude,medium,"Autobiographical, episodic and semantic retrieval vs control, analysed with PLS. Compares memory types rather than success."
+pmid:29149767,include,low,"High-resolution whole-brain mnemonic similarity task with sleep and delay manipulations. Old/new effects may exist, but the focus is lure discrimination and pattern separation; check for a baseline hits contrast."
+pmid:23190328,include,low,"Cued recall of word pairs with strength and search effects. Strength-dependent activity may not include forgotten trials, so confirm if recalled vs not-recalled is tested."
+pmid:28548462,exclude,high,"Review of wearable-camera memory studies. No primary data, but it may point to eligible remember/know work."
+pmid:18958245,include,high,"Remember/Know/New test in healthy adults, with recollection vs familiarity contrasted. Matches remember > know and is event-related. Well worth full-text review."
+pmid:40800358,exclude,high,Meta-analysis of subsequent memory. Encoding-focused and not primary data.
+pmid:21111514,exclude,medium,"Item vs source tasks and difficulty in younger and older adults, with data-driven multivariate analyses. The contrast is by task, not correct vs incorrect."
+pmid:26205911,include,low,"Healthy older adults during associative retrieval; hippocampal activity on successful events correlates with memory and circadian rhythm. Likely ROI-focused, so needs a full-text check for a whole-brain success map."
+pmid:19835893,include,high,Continuous recognition with explicit retrieval-success regions and study-test delays. Hits vs correct rejections should be central; delay can be collapsed or the shared contrast used.
+pmid:20433244,exclude,high,"High-resolution delayed match-to-sample in MTL. Short-delay match effects and limited coverage, not long-term retrieval success."
+pmid:33819531,include,medium,"1,410 healthy young adults, whole-brain, picture recognition with old vs new contrast. Very relevant in size, but results are ICA networks and the contrast may not be correct-only; check for peak coordinates."
+pmid:23376052,exclude,high,"Episodic counterfactual thinking compared with past-event recall. Simulation, no retrieval-success contrast."
+pmid:33432734,include,low,"48 healthy adults, whole-brain high-resolution mnemonic discrimination. Focus is lure discrimination, so include only if a target hit vs correct rejection or similar table is available."
+pmid:26351995,include,low,"Scanned source memory tasks with studied and unstudied words. Reports reinstatement by background rather than source-correct vs incorrect, so success effects need to be confirmed."
+pmid:42647123,exclude,high,"NSD analysis of network-level reinstatement. Representational measures, and any NSD data would overlap with RQ2."
+pmid:27082832,exclude,high,"Reactivation during viewing predicts later discrimination, with the test after scanning. Encoding-phase analysis."
+pmid:24329012,exclude,medium,"Thirteen men judged time or place of autobiographical events. Compares content and recency, without an incorrect retrieval contrast."
+pmid:29045587,exclude,high,"Memory for internal thoughts vs external elements compared with semantic tasks. Task and content comparison, not success."
+pmid:28581478,exclude,high,Decisions guided by reinstated episodic context. A value-based decision study with no retrieval-success contrast.
+pmid:42923931,exclude,high,Behavioural study only. The abstract says fMRI remains future work.
+pmid:26244278,exclude,high,Value-directed encoding of words. Encoding only.
+pmid:25982488,exclude,medium,"BPD vs controls across several tasks, with retrieval analysed as negative vs positive pictures. Valence comparison, not retrieval success."
+pmid:35051582,include,high,Defines recollection effects as correct intact vs rearranged pairs in young and older adults. Associative recognition contrast fits source/recollection logic; use the single-task condition if possible.
+pmid:40029336,exclude,medium,"Valence effects across exposure, encoding and retrieval in young and old adults. Effects concern valence and age; no success contrast stated."
+pmid:21134473,include,low,"Cued recall with fMRI and MEG in the same paradigm. Recall vs a comparison condition is unclear, so check whether correct recall is compared with failed recall."
+pmid:40425790,exclude,high,Rats with deep brain stimulation. Not human.
+pmid:38527810,exclude,medium,"Holistic reinstatement and hippocampal pattern completion at retrieval after 24 hours. Pattern measures, without a standard retrieval-success map."
+pmid:25988228,include,low,"Yes/no word recognition with simultaneous EEG-fMRI, EEG-informed analysis in 12 subjects. Conventional hits vs correct rejections may be secondary; check for a plain fMRI table."
+pmid:21520350,exclude,high,"FDG-PET at rest in frontotemporal dementia, related to behavioural remember responses. No task activation."
+pmid:22967731,exclude,medium,"Encoding-retrieval similarity at item level, with emotional and neutral scenes. Memory success tracks RSA rather than a univariate map; a quick full-text check could reveal a table."
+pmid:34782605,exclude,high,"Positive reappraisal updating negative memories, with hippocampal pattern dissimilarity. Reappraisal rather than retrieval success."
+pmid:25523347,exclude,high,EEG during autobiographical recollection. No fMRI or PET.
+pmid:21600991,include,low,Recognition of learned vs novel words in the scanner. Reported activation is for social context and self-generation; check whether a plain old > new contrast is tabled.
+pmid:32623010,exclude,high,Reanalysis of bottom-up attention datasets compared with memory regions. Not primary retrieval-success data.
+pmid:30794059,exclude,high,"Multi-element encoding in young and older adults, tested after scanning. Encoding only."
+pmid:20501508,exclude,high,Autobiographical memory by content and remoteness in young and older adults. No failed-retrieval contrast.
+pmid:27194327,exclude,medium,"Rehearsed audio-visual memories in angular gyrus, comparing multimodal and unimodal content. No remembered vs forgotten contrast."
+pmid:23499722,exclude,high,"Think/no-think with classifier evidence predicting later memory. Suppression and later forgetting, not a retrieval-success contrast."
+pmid:31826947,exclude,high,Activity during learning predicts later recall of event features. Encoding only.
+pmid:29670138,include,medium,"Memory judgments about real-life photo sequences, with recollection compared with correct rejection of novel events. Fits the contrast, but pooled data from two studies and MTL and parietal ROIs need checking."
+pmid:33747545,exclude,medium,Ketamine effects on metacognition during encoding and retrieval. Drug and confidence effects are the focus; the placebo session is not stated to provide a success contrast.
+pmid:25855004,exclude,high,MVPA of category representations linked to vividness. No activation contrast for retrieval success.
+pmid:36512503,exclude,high,"Smartphone memory intervention in older adults, with hippocampal differentiation. Intervention study, not retrieval success."
+pmid:40742119,include,medium,"Associative recognition with correct retrieval and correct rejection under spaced and massed learning. Retrieval contrast is likely extractable; effects are reported by learning condition, so check for an overall success table."
+pmid:25264353,exclude,high,"Encoding-related negative subsequent memory effects, with memory tested after scanning. Encoding only."
+pmid:19146963,include,high,"Event-related source memory with correct and incorrect source judgments, N = 18. Directly relevant, and old/new ratio varies across blocks, so flag for the sensitivity analysis."
+pmid:38955872,exclude,high,Emotional music during story recollection and later false emotional memory. Compares music conditions; no retrieval-success contrast.
+pmid:23201236,exclude,high,Behavioural validation of an odor memory protocol. fMRI is proposed for future work.
+pmid:31155678,exclude,high,"Reanalysis of video recall by repetition and reinstatement. Pattern measures, not retrieval success."
+pmid:26303198,exclude,high,Learning-related representational change in hippocampus and PFC. No retrieval-success activation contrast.
+pmid:26041920,include,medium,Standard recognition of studied and novel faces plus a concealment task. Use only the standard condition; univariate memory effects in hippocampus and angular gyrus suggest hits vs correct rejections.
+pmid:36481776,exclude,medium,VR word learning with reinstatement of encoding context during retrieval. Reinstatement measures and interference framing rather than an activation contrast.
+pmid:22937055,include,medium,"Healthy adults, Remember/Know recognition at 3 days and 3 months. Compares consistently episodic and later-semantic memories, but remember-based contrasts look available. Check new-item baseline."
+pmid:22162145,exclude,high,Creative writing fMRI. Not a memory retrieval paradigm.
+pmid:36610736,exclude,medium,Free recall of intensively rehearsed word lists under different encoding associations. Compares strategy types; no forgotten items.
+pmid:21846300,include,medium,"Retrieval-success paradigm with old and new vibrotactile rhythms in blind and sighted adults. Use the sighted group. Tactile material is unusual, but the contrast is exact."
+pmid:27076433,exclude,high,"Reactivation during AB/AC encoding predicts later memory. Encoding analysis, with the test after scanning."
+pmid:30467476,include,low,"38 healthy elderly, face-name task with successful recognition regressed on ICA networks. Likely no conventional foci, but check if a GLM table exists."
+pmid:27710766,exclude,high,"Neural similarity scaling with remembered distance in a virtual city. Representational structure, not retrieval success."
+pmid:23292620,exclude,medium,"Only studied pictures appear to be tested, comparing encoding with or without odor. No new or forgotten comparison is described."
+pmid:31280012,exclude,medium,"Retrieval vs restudy across sessions, with generalisation patterns. Compares practice modes, not correct vs failed retrieval."
+pmid:32282812,exclude,high,Childhood autobiographical recollection by parent and valence. No retrieval-success contrast.
+pmid:20123026,include,high,"Combined self-reference and episodic memory fMRI, with retrieval success contrasted. Directly relevant; confirm the contrast form and that it is not pooled with self-relatedness."
+pmid:31305238,exclude,high,"Recall of familiar people and places by category. Familiarity-based recall, no failed-retrieval comparison."
+pmid:28242796,exclude,high,"Graph-theoretical modularity during retrieval vs other tasks. Connectivity measure, no success contrast."
+pmid:24608131,include,low,Self-referential fMRI with encoding and retrieval in 30 healthy adults. Compared with a semantic condition rather than clearly by memory success; check for a hits contrast at retrieval.
+pmid:25800211,exclude,high,Pharmacological MVPA of memory specificity. Pattern reinstatement rather than retrieval-success foci.
+pmid:26142352,exclude,high,ALE meta-analysis of episodic memory and simulation. Not primary data.
+pmid:38450223,include,medium,"Older adults with normal cognition, old/new sentence recognition in the scanner, whole-brain retrieval activity by memory age. Hits vs correct rejections likely available, but main results focus on age of memory."
+pmid:18817791,exclude,high,Meta-analysis of MTL memory strength. Not primary data.
+pmid:32569610,include,low,"Healthy older adults with associative recognition effects (recollection) estimated from fMRI. Reported analysis is hippocampal ROI, so needs a whole-brain table to qualify."
+pmid:41000789,exclude,medium,"Parafoveal tuning in V1 to V3 during recognition and location recall. Retinotopic ROI analysis, not whole-brain retrieval success."
+pmid:40844330,exclude,high,Reinstatement index in three scene regions related to cortical volume and age. No activation contrast.
+pmid:26969864,include,medium,"Encoding and retrieval both scanned, with correct associative retrieval of paired images. A retrieval-phase success contrast is likely; check that correct associative vs item-only or failed recall is tabled."
+pmid:28951163,exclude,high,"Moving-window connectivity during autobiographical retrieval. Graph measures, no failed-retrieval condition."
+pmid:27776631,include,high,Explicitly compares successful with unsuccessful retrieval using continuous memory judgments. Clean contrast and paradigm; precision and vividness are extra measures.
+pmid:20045478,exclude,medium,"Self vs friend judgments with source memory, analysed as self vs other reference. Focus on self-reference rather than correct vs incorrect source."
+pmid:20194514,include,high,"States hits vs correct rejections for faces and scenes in event-related fMRI, whole-brain. PLS analysis needs a check for extractable coordinates; otherwise a direct match."
+pmid:33334870,exclude,high,Reward prediction errors during learning predict later memory. Encoding only.
+pmid:30303447,exclude,high,EEG of spontaneous thoughts. No fMRI or PET and no memory task.
+pmid:24899726,exclude,medium,"Cued visual recall with MVPA reactivation, and vividness scaling. Pattern focus rather than remembered vs forgotten map; check only if tables are available."
+pmid:34813732,exclude,high,Fear and extinction reinstatement with MVPA. Conditioning paradigm with no retrieval-success contrast.
+pmid:17548799,exclude,high,Autobiographical access vs elaboration with reliving and emotion ratings. No failed-retrieval contrast.
+pmid:19647800,include,high,"States retrieval success as old > new in an encoding and retrieval fMRI study. Use the test-phase contrast, not encoding success."
+pmid:33354206,include,low,"Healthy older adults, scanned source memory before and after tDCS. Pre-stimulation baseline could give a success contrast, but results emphasize stimulation effects."
+pmid:33837220,exclude,medium,"Compares controlled and automatic retrieval across semantic and weakly encoded episodic traces. Control demand, not correct vs failed episodic retrieval."
+pmid:21492743,exclude,medium,"Cued recall tested twice, comparing first and second test. A repetition effect rather than recalled vs forgotten."
+pmid:23986252,include,medium,"Object and scene cued recall with analysis during successful memory retrieval. Remembered vs forgotten is likely reported, though DCM and MTL focus may limit whole-brain results."
+pmid:31209116,exclude,high,Behavioural mnemonic discrimination task with amyloid and tau PET in older adults. No task-based retrieval imaging.
+pmid:26741803,exclude,medium,"Wearable-camera photos, n = 16, with MVPA decoding of memory states. Correct old vs novel contrast is decoded rather than mapped; include only if univariate foci are provided."
+pmid:41659620,exclude,high,"Encoding-retrieval similarity by feature and colour names. Reinstatement measures, not retrieval success."
+pmid:30297824,exclude,high,Nine participants reliving their own events with RSA. Too small and no retrieval-success contrast.
+pmid:41446077,include,medium,"Studied and new images with location recall, categorizing location hits and guesses. Hits vs guesses works like source-correct vs incorrect, but check whether whole-brain BOLD maps are tabled."
+pmid:32447040,include,low,"Young and older adults during recognition, focused on encoding/retrieval flip regions linked to executive function. Whole-brain retrieval-success results may appear when defining regions."
+pmid:38102949,include,low,"Dancers and matched controls, dance action recognition with accuracy and confidence. Controls might give a correct recognition contrast, but videos and expertise make it atypical."
+pmid:38575698,include,high,"Objects from a virtual town, with recollection, familiarity and new responses. Recollection vs new (and vs familiar) matches the criteria, and whole-brain activation appears to accompany DCM."
+pmid:33548865,include,medium,"aMCI plus 29 healthy controls, word recognition with retrieval success patterns in simultaneous EEG-fMRI. Eligible only for healthy controls, if tabled separately."
+pmid:24177990,include,low,"Source monitoring with memory strength varied. Controlled-retrieval contrast compares weak and strong memories, so check for source-correct vs incorrect."
+pmid:39809735,exclude,high,"Hippocampal neural subspaces during movie viewing and narrative recall. Population geometry, no retrieval-success contrast."
+pmid:38527069,exclude,high,Autobiographical memories classified by type of self-representation with MVPA. No failed-retrieval condition.
+pmid:22711646,exclude,high,EEG-fMRI subsequent memory. Encoding only.
+pmid:21945849,exclude,high,PIB-PET and fMRI during memory encoding in elderly and young adults. Encoding-related contrast only.
+pmid:37944517,exclude,high,Connectivity at event boundaries during encoding predicts recall. Encoding only.
+pmid:34414371,exclude,medium,"Feature-specific reactivation in hippocampus and visual cortex correlated with accuracy. Reactivation model, not a retrieval-success map."
+pmid:19755103,include,medium,"Associative recognition with greater activity on correct than incorrect trials, plus eye-movement memory measures. Correct vs incorrect at retrieval is relevant; check whether the analysis goes beyond MTL and PFC."
+pmid:41659689,exclude,high,N-back working memory in the striatum. Working memory is an explicit exclusion.
+pmid:22079660,include,low,"Schizophrenia patients and 37 healthy controls in yes/no recognition. Control-group retrieval contrast may be available, but the abstract does not state a hits vs correct rejections comparison."
+pmid:20433856,exclude,high,"Word repetition during a semantic category task in AD and controls. Incidental repetition rather than episodic retrieval, and treated as encoding."
+pmid:30447076,exclude,high,TMS with resting-state connectivity related to memory change. No task-based retrieval imaging.
+pmid:19481155,exclude,high,Grief elicitation and inflammation. Not a memory retrieval paradigm.
+pmid:25504854,exclude,medium,"Free viewing of massed and distributed scene repetitions. Spontaneous retrieval is inferred, with no explicit memory response or success contrast."
+pmid:34476462,exclude,high,"Delayed orientation recall in visual working memory, decoded in visual cortex. Explicit exclusion."
+pmid:24800631,include,medium,Source memory at study and test in young and older adults. Test-phase effects are framed as monitoring by attention at encoding; check for source-correct vs incorrect tables.
+pmid:41230417,include,low,"Location memory with retrieval precision, combined across two datasets. Focus is precision rather than success; hits vs guess or new may be reported, and overlap with the other dataset must be handled."
+pmid:35148666,include,low,"Reanalysis of source and remember/know data, with accurate > inaccurate source in the hippocampus. Likely ROI-only; prefer the original report for whole-brain results and count the sample once."
+pmid:34710508,exclude,high,Autobiographical recall cued by personally linked music. No failed-retrieval condition.
+pmid:35428729,exclude,medium,High-resolution MTL reinstatement during high-confidence word recognition. Category-sensitive reinstatement rather than whole-brain old vs new effects.
+pmid:42733717,exclude,high,"RSA of temporal distance with brain stimulation. Representation of time, not retrieval success."
+pmid:21811449,include,low,"Verbal recognition memory with parietal recency effects. Old vs new effects may be present, but contrasts emphasize recency and could be short-lag, so check task details."
+pmid:41519954,exclude,medium,"Memory after short vs long video viewing, between groups. Group comparison during recall rather than remembered vs forgotten."
+pmid:34356144,exclude,medium,"Subvocal free recall of a single story, n = 14, with covariation by performance. No trial-level failure contrast."
+pmid:42242348,exclude,high,"Meta-analysis of verbal and visual recollection. Not primary data, but its 43 studies are useful for cross-checking."
+pmid:38915680,include,high,"Title and design directly address retrieval success and precision, with healthy young adults and studied and new items. Even if success effects are small, it qualifies for full-text review."
+pmid:23864663,exclude,high,"Activity during a final study phase following testing. Encoding-like analysis, not retrieval."
+pmid:27288317,exclude,medium,"Noun cues retrieve sounds and pictures, with encoding activity predicting reinstatement. Reinstatement design without a stated success contrast at retrieval."
+pmid:23770536,include,medium,Children and adults during spatial source recall. Only the adult group (18 to 25) can be used; correct source effects appear to be reported by group.
+pmid:34942648,exclude,high,Recall of learned chat-show events with pattern reinstatement. No retrieval-success contrast.
+pmid:30902869,include,medium,"Cued recall with vividness ratings, with activity greatest for vivid recall. Whether non-recalled trials form a baseline should be confirmed, but the retrieval phase is relevant."
+pmid:21182968,exclude,high,Operation span working-memory task. Explicit exclusion.
+pmid:37745317,include,low,"Same title and data as pmid:38527809: 7T recognition with decision effects in medial parietal cortex. Treat as one study, and check whether the dataset is NSD, which would overlap with RQ2."
+pmid:18282558,exclude,medium,"Recognition vs recency vs alphabetizing, analysed with PLS in young and older adults. Task comparison, not correct vs failed retrieval."
+pmid:38544780,include,low,Young and elderly adults with face-name retrieval after incidental learning. Encoding/retrieval flip contrasts may include successful retrieval vs baseline; confirm that a correct vs incorrect contrast exists.
+pmid:29994967,exclude,high,Hormone treatment with a verbal discrimination task. No episodic retrieval-success contrast.
+pmid:40036194,exclude,medium,"Divided attention and elaboration during learning of word pairs. Effects are at encoding, with connectivity tied to elaboration."
+pmid:26139105,exclude,high,"Dietary intervention in overweight postmenopausal women, with pre/post changes during a memory task. Treatment effect, not a retrieval-success contrast."
+pmid:28077212,include,medium,Remember/know/new test in healthy adults with MVPA and univariate recollection effects mentioned. Remember > know or new should be tabled; MVPA results themselves are not usable.
+pmid:24486613,include,medium,"Source recognition with test-phase retrieval effects and novelty contrasts. Fits source-correct, but focus on MTL means the whole-brain status needs checking."
+pmid:40800904,exclude,high,RSA of reinstatement and transformation under reward. Pattern measures only.
+pmid:33229530,exclude,high,Movie replay and pattern reinstatement in change detection. No retrieval-success activation contrast.
+pmid:27665526,exclude,medium,"Perceptually rich film clips vs narratives, with mTLE patients. Compares material types among retrieved events, without a failed-retrieval contrast."
+pmid:33637559,exclude,high,Dedifferentiation and item stability during incidental encoding. Recognition is behavioural.
+pmid:40580627,exclude,medium,Scene retrieval gating in PPA and MPA ROIs. Reinstatement selectivity rather than whole-brain retrieval success.
+pmid:23357375,include,low,"Source tests for format and task plus old/new recognition in young and older adults. Reported effects are agenda-driven, so check for correct source or old vs new retrieval contrasts."
+pmid:22945619,exclude,high,"Fear extinction memory in schizophrenia. Conditioning paradigm, not episodic retrieval."
+pmid:29965966,exclude,high,Multivariate vmPFC representation of autobiographical memories by age. No failed-retrieval contrast.
+pmid:19428399,include,high,Explicit old > new retrieval effects in 18 young-old and 18 old-old adults during picture recognition. Direct match. Ages 64 to 96 are healthy adults under the criteria.
+pmid:42569323,exclude,high,"Lifespan sample aged 6 to 81, with dLPFC to DMN connectivity. Children included and no activation contrast."
+pmid:21093970,exclude,high,"Older adults remembering vs envisioning personal events. A comparison of past and future, with no retrieval-success contrast."
+pmid:26845110,exclude,high,Task-unrelated thoughts and subsequent source misses at encoding. Encoding only.
+pmid:17913256,exclude,medium,"PET in 12 healthy adults, comparing voluntary and involuntary recall with a control. Retrieval vs control, not successful vs failed; correct-only trials do not create a success contrast."
+pmid:40557126,exclude,medium,"Recent and remote face-name retrieval using famous and non-famous pairs. Famous pairs are partly semantic, and the contrast is by memory age, not success."
+pmid:29341344,exclude,high,"Connectivity reanalysis comparing autobiographical, spatial and conceptual tasks. No success contrast."
+pmid:37903593,include,low,"Spatial context memory in middle-aged women with PLS analysis of retrieval accuracy. PLS may not provide a correct vs incorrect table, and menopause grouping complicates pooling."
+pmid:18234685,exclude,high,Activation tracks repeated contexts subsequently remembered or forgotten. A learning-phase subsequent-memory analysis.
+pmid:23154929,include,low,"Documentary movie memory scanned hours to months later, with correctly remembered events. Comparison baseline is not stated and may be a task contrast; delays are between-groups, so use one per group."
+pmid:38096981,exclude,medium,"Negative arousal effect on episodic and semantic retrieval. Compares valence and arousal, without a stated failed-retrieval contrast."
+pmid:18589510,exclude,medium,"Retrieval-induced forgetting, with successful retrieval of selected-against items compared with controls. Addresses competition rather than retrieved vs forgotten."
+pmid:32934326,exclude,high,"Meta-analysis of inferior parietal contributions. Not primary data, though its 121 reports could be cross-checked."
+pmid:25514656,exclude,medium,7T hippocampal subfield activity during associative learning and retrieval. Restricted coverage and no stated retrieval-success contrast.
+pmid:38865077,include,low,"Word recognition in the scanner after drawing or writing, voxel-wise. Reported contrast is by encoding type, so check for old > new or hits vs correct rejections."
+pmid:28387588,exclude,high,Intracranial EEG in epilepsy patients. Not fMRI or PET and not a healthy sample.
+pmid:39884411,exclude,medium,Verifying sentences about a TV show across memory dimensions. Compares dimensions and does not contrast correct with incorrect retrieval.
+pmid:21736454,include,medium,Item and source memory with confidence levels in healthy adults. High vs low confidence contrasts are close to recollection effects; check whether source-correct vs incorrect or hits vs correct rejections are tabled.
+pmid:35311643,exclude,high,"Mind-wandering and reading, with autobiographical conflict. Not a retrieval-success study."
+pmid:32040518,exclude,high,"Twelve cognitive tasks and latent factors. A structural model, not a retrieval-success contrast."
+pmid:30783198,exclude,high,tDCS with resting-state connectivity in older adults. No task retrieval imaging.
+pmid:29894904,exclude,medium,Item and source retrieval analysed as functional network components. Graph measures rather than source-correct vs incorrect foci.
+pmid:25505319,exclude,medium,"Schema-related object-location retrieval, comparing schema-defining and new associations. Schema effect rather than retrieval success."
+pmid:27989780,exclude,high,Visual perspective shifting during autobiographical retrieval. No failed-retrieval contrast.
+pmid:41488356,exclude,high,RSA of building context in MTL during cued recall. Representational measures only.
+pmid:22539776,exclude,high,Autobiographical retrieval in schizophrenia vs controls. No failed-retrieval contrast in either group.
+pmid:28843046,exclude,high,"Subsequent memory for simulated future events. Encoding and simulation, not retrieval."
+pmid:36166300,exclude,high,High-resolution pattern similarity in hippocampal subfields during recognition. No activation contrast.
+pmid:29921865,exclude,high,"rTMS during picture encoding, testing protocol reproducibility. Encoding interference study."
+pmid:21692147,exclude,high,Face-name subsequent-memory analysis at learning. Encoding only.
+pmid:27453565,exclude,high,Narrative review of memory decline in ageing. No primary data.
+pmid:26418396,include,medium,"Associative recognition in the scanner showing increases in recollection-linked regions. Likely eligible for associative recognition contrasts, separate from the priming session."
+pmid:31881356,exclude,high,Fear extinction contexts and amygdala responses. Conditioning paradigm.
+pmid:18675034,exclude,high,"Narrative review, in French, of imaging in healthy ageing and Alzheimer's disease. No primary data."
+pmid:24119792,include,low,Schizophrenia and 26 healthy controls in picture recognition. Control-group recognized vs new may be available; reported analysis focuses on social content.
+pmid:26054305,include,high,"States correct vs incorrect source judgments at retrieval across young, middle-aged and old adults. Direct match to source-correct > incorrect; use age groups by the extraction rule."
+pmid:18437279,include,high,"29 healthy elderly with hits, misses and correct rejections, reporting retrieval success. Direct match; use the retrieval contrast and ignore encoding success."
+pmid:33619210,exclude,high,Parietal pattern representations of colour memory distortions. No retrieval-success contrast.
+pmid:28637289,include,low,"Longitudinal sample of children plus adults during retrieval with uncertainty responses. Only adult data could qualify, and contrasts focus on uncertainty and development."
+pmid:29654876,exclude,medium,MVPA of personally experienced vs previewed photos. Decoding by source and history; no activation foci for retrieval success.
+pmid:35579493,exclude,high,Commentary on vmPFC and memory remoteness. No primary data.
+pmid:42016559,exclude,high,"Whole-brain subsequent memory of emotional pictures, n = 1,006. Encoding analysis, with free recall outside the scanner."
+pmid:19720072,exclude,high,"Single patient with semantic dementia, followed longitudinally. Not a healthy group."
+pmid:20303392,exclude,medium,"Silent word recall vs pitch judgment in musicians and non-musicians. Retrieval vs a control task, without a failed-retrieval condition."
+pmid:37348623,exclude,high,Pattern similarity across encoding repetitions predicting later memory. Encoding only.
+pmid:24778623,exclude,high,Review of distractibility during retrieval across four studies. Not primary reporting of an eligible contrast.
+pmid:37609262,exclude,high,"Individual face-selective reinstatement in VTC, partly with intracranial recordings. No retrieval-success contrast."
+pmid:32965760,include,low,"Film clip retrieval with successful retrieval and reminders at a week's delay. Successful vs failed retrieval may be reported, but cued recall after reminders makes this atypical; check the tables."
+pmid:37343998,include,medium,"Associative recognition of Chinese characters in the scanner, with hippocampal effects under unitization. Hit-based associative contrast likely; check for a recollection-type contrast and whole-brain results."
+pmid:29244638,exclude,high,"Faces with backgrounds scanned at encoding, recognition later. A subsequent-memory analysis."
+pmid:26845069,exclude,medium,Time-dependent activity patterns linked to later recency judgments. Encoding pattern analysis rather than retrieval-phase contrast.
+pmid:27488631,exclude,high,Subsequent memory in medical students during encoding. Encoding only.
+pmid:28112460,include,low,"Event-related retrieval comparing remembered and forgotten words, but analysed with graph theory and connectivity. Include only if the underlying activation contrast has coordinates."
+pmid:22161969,exclude,high,"Subsequent memory for self-referenced traits, with the test outside the scanner. Encoding only."
+pmid:38709432,include,medium,"Faces and words, with recognition memory in the scanner and memory-related activation reported. Hits vs correct rejections likely exists; individual differences are extra, and this appears in the retrieval phase."
+pmid:26961943,exclude,high,Reactivation of reward-related patterns from past episodes. Decision-focused pattern analysis.
+pmid:22664323,exclude,medium,Free recall dynamics using inter-response time and learning parameters. Parametric search effects; no forgotten-item contrast.
+pmid:26167149,include,low,"Recognition of self- and other-referenced words, with correct recognition compared across reference. Check for old vs new; self vs other among correct items is not eligible on its own."
+pmid:23219676,exclude,high,Lifespan subsequent-memory analysis at encoding. Encoding only.
+pmid:37633119,include,high,"Young and older adults with transient and sustained recollection effects, at test with old/new judgments and image recall. Age-invariant effects are likely reported as a recollection contrast. Strong candidate."
+pmid:35168499,exclude,high,Across-participant pattern similarity during encoding and retrieval. No retrieval-success activation contrast.
+pmid:42554301,exclude,high,"Encoding-related activity and locus coeruleus contrast, with memory tested after. Encoding only."
+pmid:21736453,include,medium,"Recognition with hippocampal activity for strong targets and lures vs missed items. Hits vs misses appears available; lures complicate it, so use target hits only."
+pmid:23466350,include,medium,"Event-related cued recall of items and contexts with successful retrieval effects. Likely recalled vs not-recalled contrasts, though MTL focus needs a whole-brain check."
+pmid:28803854,include,low,"Combined analysis of three fMRI datasets (N = 88), with recollection and familiarity effects in the striatum. Samples overlap with original papers; prefer those and count each group once."
+pmid:27856312,exclude,high,Methods validation of directed connectivity. No retrieval-success contrast.
+pmid:24084128,exclude,high,"ICA of network interactions during free recall. Network dynamics, no coordinates for retrieval success."
+pmid:20150400,exclude,high,DTI in multiple sclerosis. No functional imaging.
+pmid:34894424,exclude,high,Resting-state connectivity related to memory bias. No task retrieval imaging.
+pmid:27315266,exclude,high,Repetition suppression and subsequent memory during encoding. Encoding only.
+pmid:36506797,exclude,high,Data descriptor for movie watching and spoken recall. No analysed retrieval-success contrast.
+pmid:26511235,exclude,high,Pattern reinstatement during rehearsal of video clips predicting later memory. Rehearsal and consolidation rather than retrieval success.
+pmid:25463451,exclude,high,EEG pattern classification of reactivation at recognition. No fMRI or PET.
+pmid:24283400,include,high,"Test phase with old/new judgments and recollected associates, with recollection-related effects across the core network. Recollected items vs unsuccessful or new items should be tabled; a good match."
+pmid:25564288,exclude,high,Smokers viewing warning labels. Emotional encoding and craving rather than retrieval.
+pmid:30520271,exclude,high,Prospective memory across phases. Not a retrieval-success contrast.
+pmid:25064431,include,medium,"Recognition with recollected details at test, and duration-related retrieval activity in parietal cortex. Univariate recollection effects are likely alongside MVPA; use only the retrieval contrast."
+pmid:26135908,exclude,high,Prestimulus activity at study predicting later recollection. Encoding only.
+pmid:25477369,exclude,high,Pattern differentiation after interleaved study and retrieval practice. No retrieval-success contrast.
+pmid:23313012,include,low,"AD patients and healthy controls in word-pair recognition with process dissociation. Controls may give a recollection-like contrast, though it is an estimated associative retrieval rather than remember/know or source."
+pmid:35468212,exclude,high,Facial expression encoding with subsequent memory connectivity. Encoding only.
+pmid:19144851,exclude,medium,"MVPA of targeted vs actual source during monitoring. Classifier evidence, not source-correct foci."
+pmid:28263928,exclude,high,Event-related ICA during autobiographical recollection. No failed-retrieval contrast.
+pmid:24486981,include,low,"Mix of a primary episodic retrieval task, connectivity and large-scale meta-analyses. Only the task contrast could qualify, so check whether it reports recollection vs familiarity or hits."
+pmid:21172325,exclude,high,Resting-state connectivity of hippocampus and TPJ. No task retrieval.
+pmid:32761343,exclude,medium,"Protocol mapping language and memory with recognition and recall tasks in 20 adults. Task vs baseline network mapping, with no stated retrieval-success contrast."
+pmid:34464439,exclude,high,Method of loci with RSA in hippocampal subfields. Representational measures only.
+pmid:23026757,include,medium,"Remember/know recognition with masked conceptual primes and increased activity in recollection regions. Remember > know may be tabled, but contrasts emphasize prime type, so check."
+pmid:30143571,exclude,medium,Lifespan sample aged 6 to 80 with posteromedial encoding-retrieval flip. ROI-based and includes children; adults not separately reported in the abstract.
+pmid:20060480,exclude,medium,"Part-list cueing vs no part-list retrieval by encoding condition. Compares retrieval conditions, not recalled vs forgotten."
+pmid:20428498,include,low,"Accept/reject statements about a documentary, with correct vs incorrect responses. Activity correlates with confidence, and accuracy with coactivation, so check for correct vs incorrect activation tables."
+pmid:28755853,exclude,medium,"Laboratory word-chain recall vs autobiographical recall, by search and recovery. Task comparison without forgotten items."
+pmid:35869083,exclude,high,"Movie narrative network centrality, with recall related to event centrality. No failed-retrieval activation contrast."
+pmid:25631058,include,high,"Recollected, familiar and novel responses, with recollection success effects in young and older adults. Direct match, and ignore reinstatement analyses."
+pmid:20928828,exclude,high,Conceptual review of recollection and familiarity in MTL. No primary data.
+pmid:41647265,exclude,high,Meta-analysis of subsequent memory. Encoding-focused and not primary data.
+pmid:33613206,include,high,"Cued recall after retrieval practice, with remembered vs forgotten word pairs at test. Direct match. Keep groups separate if the contrast differs by training condition."
+pmid:33224020,include,low,"Recognition with study repetition and retrieval goals, in the scanner. Hits and rejections are analysed by goal, so check whether plain old vs new is tabled."
+pmid:30060134,include,low,Stress effects on retrieval with recollection-related hippocampal and cortical measures. The control group could give a remembered vs forgotten contrast; MVPA and stress effects are the focus.
+pmid:33815075,exclude,medium,"Retrieval of appointments after writing on paper or devices, by group. Retrieval activity vs baseline across groups, not correct vs incorrect."
+pmid:39150234,exclude,high,ALE meta-analysis of spatial memory. Not primary data.
+pmid:33203742,exclude,high,Overt autobiographical recall with detail-related activity. No failed-retrieval contrast.
+pmid:34637904,exclude,high,Resting-state reconfiguration after encoding. No task retrieval imaging.
+pmid:31637339,exclude,high,Network community structure across spatial and temporal memory tasks. No activation contrast for retrieval success.
+pmid:23378272,include,low,"Word recognition with incidental picture encoding during retrieval. Memory strength effects are likely available, but the focus is on background encoding, so check for hits vs correct rejections."
+pmid:23147501,exclude,high,"Odor- and word-cued autobiographical memories. Compares cue types, with no failed-retrieval condition."
+pmid:36349596,exclude,high,Hormone effects on hippocampal responses during encoding. Recognition took place days later outside the scanner.
+pmid:24946317,include,medium,"Associative recognition under sentence or unitization encoding, between groups. The sentence group may show recollection effects for correct intact pairs; check that a success contrast is tabled."
+pmid:34573159,exclude,high,Resting-state connectivity in dementia after cognitive stimulation. Patient-only and no task.
+pmid:25206552,exclude,high,Subsequent source memory by encoding orientation. Encoding only.
+pmid:22288393,include,high,"Stem-cued recall with successful vs failed recall and correct vs incorrect source, n = 18. Both contrasts match the criteria, and activity across parietal and posterior midline regions is reported."
+pmid:38561734,exclude,medium,"Childhood urbanicity and genetics during encoding and retrieval. Group comparison, with no stated hits vs misses contrast in a clearly usable form."
+pmid:32289455,exclude,high,"Counterfactual and perspective shifts in autobiographical recall. Simulation contrasts, not retrieval success."
+pmid:18980949,exclude,high,"Past and future personal events in familiar or unfamiliar contexts. Context and simulation, no retrieval-success contrast."
+pmid:32739553,exclude,high,Repeated retrieval and suppression with pattern reinstatement. No correct vs failed retrieval contrast.
+pmid:31405925,exclude,high,7T hippocampal subfield activity related across participants to holistic recollection. Restricted coverage and no group retrieval-success map.
+pmid:22038783,exclude,medium,"MTLE patients and nine controls during encoding and immediate recall. Recall vs baseline, with no failed-retrieval contrast."
+pmid:27155127,include,high,"Defines recollection effects as correct intact > incorrectly rearranged, in young, middle-aged and older adults, with whole-brain analyses. A direct, well-specified match."
+pmid:35789905,exclude,high,Data descriptor for a VR spatial task. No episodic retrieval-success contrast.
+pmid:33302180,exclude,medium,"Fractal dimensionality and compensation, with retrieval activity as a correlate. Structure-function relationship rather than a memory-success map."
+pmid:22645250,exclude,high,Reanalysis of pattern similarity during encoding. Subsequent memory only.
+pmid:27492601,exclude,medium,"Intranasal insulin during 3D maze cue-location recall. Feasibility and drug focus, with no retrieval-success contrast."
+pmid:19110014,exclude,medium,Reasoning vs episodic retrieval vs memory-based reasoning. A task comparison rather than retrieval success.
+pmid:29544726,include,medium,Postpartum women vs matched controls using Remember/Know. Control group could give remember > know or new; check whether controls' tables are separate from the group comparison.
+pmid:19433739,exclude,high,"HIV-positive and at-risk women, with fMRI in a subset of 11. Clinical group comparison, with no eligible healthy contrast."
+pmid:27311641,include,low,"Successful context retrieval across the adult lifespan, analysed with B-PLS. Contrast is age and phase interaction, so eligible only if success effects at retrieval yield coordinates."
+pmid:30054390,exclude,high,Feature information in parietal and occipitotemporal cortex during memory. Pattern-based representations only.
+pmid:22102296,exclude,medium,"APOE groups in a cross-modal odor recognition task, using structural equation modeling of connectivity. No activation table for correct vs incorrect is stated."
+pmid:27863445,exclude,medium,"High-resolution CA1 and CA3/DG responses to targets vs novels during associative retrieval. Restricted coverage, so fails on whole-brain criteria."
+pmid:34052683,exclude,high,"Valuation at encoding and retrieval. Value contrasts, with memory tested afterwards."
+pmid:42213517,include,medium,"Appears to be the same study as pmid:41446077: location hits vs guesses with fMRI during test. Treat as one study, and check which report tables whole-brain maps."
+pmid:35966994,exclude,high,Single epilepsy case with stereo-EEG stimulation. No fMRI or PET and not a healthy group.
+pmid:28013352,include,low,"Healthy males with object-location retrieval scanned after methylphenidate or placebo. Placebo group may give a retrieval contrast, but abstract reports group and catecholamine effects."
+pmid:32712148,include,high,"Remember/know plus source test a week after encoding, with correct retrieval and recollection-sensitive regions. Direct match; collapse or take neutral condition depending on what is tabled."
+pmid:19803690,exclude,high,Methods paper on design efficiency of free recall events. Not an eligible episodic retrieval contrast.
+pmid:25012141,exclude,medium,"True vs false memory for context with shapes. It compares true with false responses, which the criteria treat as hits vs false alarms and exclude."
+pmid:23049621,include,high,Remember/Know/New plus source judgment with recollection effects in ventral parietal cortex. Direct match; check coverage beyond the parietal focus.
+pmid:22251836,exclude,medium,"Word recognition in early blind participants only, with Braille or spoken words. No sighted comparison, and a specialized sample for this map."
+pmid:23314939,exclude,high,"Reward and punishment during encoding of source memories, with activity predicting retrieval success. Encoding analysis."
+pmid:27859925,include,medium,"Recognition for objects, faces and scenes, with recollection contrasted against equally strong familiarity. Good recollection contrast, but focus on MTL means whole-brain reporting needs checking."
+pmid:27315268,include,medium,Word pairs with recalled vs forgotten effects in hippocampus at study and recall. Recall-phase contrast fits; check for whole-brain results and whether the phase is separately reported.
+pmid:22751037,include,medium,Healthy controls in fMRI recognition with item recognition and source retrieval; intracranial EEG is a separate patient group. Use the fMRI source and item contrasts only.
+pmid:38697557,include,medium,"Word recognition fMRI with recollection effects across abstract and concrete words. Recollection contrast seems available; check whole-brain tables, given the hippocampal focus."
+pmid:41346434,exclude,high,"Choral singing intervention in older adults. Intervention-related changes, with no retrieval-success contrast."
+pmid:36124666,include,low,"Healthy adults across lifespan in associative recognition, with successful recollection effects in striatum. May be a striatal ROI analysis of a dataset reported elsewhere, so check for overlap."
+pmid:33239402,exclude,high,Reactivation during overlapping learning and subfield pattern changes. No retrieval-success contrast.
+pmid:39227732,exclude,high,Dynamic connectivity and memory performance across subjects. No activation contrast.
+pmid:24171732,exclude,high,Editorial introducing a special issue. No primary data.
+pmid:34694424,exclude,high,"Episodic future thinking in cannabis users, with past recall as control. No retrieval-success contrast."
+pmid:22524296,exclude,medium,"High-resolution MTL and midbrain during reward-related associative encoding and cued recall. Focus on encoding, with limited coverage."
+pmid:24647939,exclude,high,Video mental replay with multivariate reinstatement in young and older adults. No failed-retrieval contrast.
+pmid:33347912,exclude,high,Social competition during face encoding. Encoding only.
+pmid:20146605,include,low,"Recognition after sleep or deprivation with accurate and false recollection, 3 days later. Accurate recollection vs new may be tabled; false-memory contrasts should not be used."
+pmid:20420925,include,medium,"Cued recall one day after encoding, with remembered items contrasted with non-available items via PLS. Close to remembered > forgotten; check that PLS results can provide coordinates."
+pmid:25646149,exclude,high,MTL-only multivoxel classification of source memory types. Limited coverage and no activation contrast.
+pmid:23019246,include,medium,Episodic retrieval paradigm with item memory strength and recollection tracked in parietal subregions. Retrieval outcomes appear contrasted; whole-brain tables need checking given parcellation focus.
+pmid:20018180,exclude,medium,"Object-location retrieval by encoding support and age. Conditions are compared across encoding support, not by correct vs failed retrieval."
+pmid:27592810,exclude,medium,"High-confidence recognition split by retrieved context, arousing vs neutral. Compares retrieved content rather than retrieved vs not retrieved."
+pmid:34121270,exclude,high,Empathy and autobiographical reactivation with EEG and fMRI. Not a retrieval-success study.
+pmid:24828652,include,medium,"Recognition of pictures with evidence accumulation; older > newer strength and memory accuracy effects. Old vs new and accuracy contrasts are likely usable, though effector manipulation is extra."
+pmid:31918237,exclude,high,Behavioural studies of scene recall ability. No imaging.
+pmid:37645450,exclude,high,Data descriptor with timestamped recall transcripts. No analysed contrast.
+pmid:23440064,exclude,high,"Theoretical perspective on memory, imagination and empathy. No primary data."
+pmid:39585108,exclude,high,Seed connectivity from MVPA by age and valence during detail retrieval. No activation contrast for retrieval success.
+pmid:23435209,include,medium,"Item recognition in the scanner, classified by later recall into recognition with or without recall. This separates recollection-like hits from weaker recognition; thalamic focus means checking cortical tables."
+pmid:36948584,exclude,high,Layer-specific entorhinal fMRI with encoding and retrieval conditions. Restricted to entorhinal cortex.
+pmid:37673674,exclude,high,RSA during object encoding predicting vividness at retrieval. Encoding analysis.
+pmid:38610134,exclude,high,ALE meta-analysis of happy autobiographical memories. Not primary data.
+pmid:26060325,exclude,high,Nostalgia from childhood-related images. No retrieval-success contrast.
+pmid:28190516,include,low,"Spatial and temporal source encoding and retrieval across the adult lifespan, using B-PLS. Performance enters across participants, so a correct vs incorrect map may not be available."
+pmid:24607234,exclude,high,"MVPA of object sequence positions in MTL. Pattern similarity, not retrieval success."
+pmid:22076964,include,medium,"Remember/Know and source judgments with hippocampal activity tracking context retrieval. Directly relevant, though hippocampal focus raises the question of whole-brain tables."
+pmid:31034858,exclude,high,"Meta-analysis of explicit and implicit memory, including hits vs correct rejections. Not primary data, but useful as a source of candidate studies."
+pmid:24828637,exclude,high,High-resolution MTL pattern similarity for spatiotemporal context. Limited coverage and pattern measures.
+pmid:29914377,exclude,high,"Single hypermnestic individual vs reference group, recalling famous events. Semantic content and a task vs baseline contrast."
+pmid:20573901,exclude,medium,"Cued recall with eyes open or closed, with distraction effects on connectivity. Network effects under distraction rather than remembered vs forgotten."
+pmid:23580061,include,low,"7T movie memory with true and false statements, and memory accuracy effects. Correct vs incorrect may exist, but monitoring and control phases make the contrast complex."
+pmid:22584225,exclude,high,Autobiographical memory vs theory of mind with familiar and unfamiliar others. Task comparison.
+pmid:19301996,include,low,"Incidental recognition of old and new words after comprehension, with response suppression for successfully retrieved items. MTL-focused; check for an old vs new whole-brain table."
+pmid:20350181,exclude,medium,"Continuous recognition at 2.5 to 30 s lags, spanning short-term memory. Short delays make this mainly short-term repetition rather than episodic long-term retrieval."
+pmid:38958281,exclude,high,Autobiographical memory and theory of mind in individualized parcels. No retrieval-success contrast.
+pmid:24009565,exclude,high,Autobiographical recollection by retrieval focus and valence in MTL. No failed-retrieval contrast.
+pmid:31601634,exclude,high,Prospective memory strategies. Not an episodic retrieval-success contrast.
+pmid:26523034,exclude,medium,"Vivid vs dim retrieval, analysed with graph theory. Connectivity measures, though the contrast is relevant; a check is worthwhile only if univariate results are reported."
+pmid:18923030,exclude,high,"Activity predicts subsequent item and source memory strength. Encoding analysis, despite being a source memory study."
+pmid:40276704,exclude,high,Prospective memory with n-back at 7T. Explicitly not episodic retrieval success.
+pmid:21616984,include,high,"Event-related source memory for words and objects in young and older adults, with source accuracy effects. Direct match, and shows whole-brain parietal, prefrontal and hippocampal effects."
+pmid:39651289,exclude,high,VR memory palace with room reliability predicting object reinstatement. Representation study.
+pmid:38017050,exclude,high,Dopamine and extinction learning with eye tracking. Not episodic retrieval success.
+pmid:19524090,exclude,high,"Field vs observer autobiographical memories. Perspective effect, no failed-retrieval contrast."
+pmid:40800356,exclude,high,"Autobiographical speech production contrasted with semantic tasks, plus a meta-analysis. Not retrieval success."
+pmid:24564467,include,high,"Cued recognition of target words with whole-brain analyses of successful and confident retrieval. Directly relevant, though recognition is split by context congruency."
+pmid:31181431,include,low,"33 healthy adults rating old and new pictures as novel, familiar or recollected. Main result is a group difference (deja vu or not); check for task contrasts across all participants."
+pmid:38012107,exclude,high,Body ownership at encoding and pattern reinstatement of videos. Encoding manipulation and reinstatement measures.
+pmid:25409187,exclude,high,"Viewing health ads during scanning, with recognition afterwards. Encoding only."
+pmid:33367761,exclude,high,Memory encoding in traumatic brain injury and controls. Encoding contrast.
+pmid:18201127,include,low,"19 older adults scanned during word recognition, with response-time variability linked to parietal retrieval activity. Hits vs correct rejections may underlie it, but the reported effect is individual differences."
+pmid:33730163,exclude,medium,"Temporal lobe epilepsy and controls during lure discrimination, with topographic gradients. Pattern separation analysis rather than remembered vs forgotten foci."
+pmid:31561745,exclude,high,Behavioural misinformation study. No imaging.
+pmid:27666968,exclude,high,Single case with dentate gyrus lesions. Not a healthy group or activation study.
+pmid:28202612,exclude,high,High-resolution encoding-retrieval pattern reinstatement. Representational analysis only.
+pmid:37090506,include,high,"Same recollection study as pmid:37633119, with transient and sustained recollection effects in young and older adults. Direct match; include only one version."
+pmid:18817883,include,high,"States correctly identified old items vs correctly rejected new items for words and faces, two experiments, N = 38. Direct hits > correct rejections, though parietal focus means confirming whole-brain reporting."
+pmid:18704371,exclude,medium,"Cortisol responses in young and older adults during spatial context retrieval. Reported as cortisol correlations, not correct vs incorrect retrieval."
+pmid:19199424,include,high,"Correct and incorrect source judgments, each compared with forgotten items, among high-confidence hits. Direct contrasts, with prefrontal findings suggesting beyond-MTL coverage."
+pmid:27695361,exclude,high,Pain imagination and pain memory for tooth pain. Autobiographical sensory recall with no failed-retrieval contrast.
+pmid:30779457,exclude,high,"Pre-encoding hippocampal patterns predicting memory. Rest and encoding patterns, not retrieval success."
+pmid:24427267,exclude,medium,"Integrative imagery at encoding and associative recognition, with parametric imagery success. Parametric imagery rather than remembered vs forgotten contrast."
+pmid:29964023,exclude,high,EEG replication of frequency-tagged reactivation. No fMRI or PET.
+pmid:19732835,exclude,high,Encoding of future intentions predicting prospective memory. Encoding only and not episodic retrieval.
+pmid:25773646,exclude,medium,"Very short delay (1.5 to 2.5 s) judgments of when, where and what. Short-delay task and compares judgment types, not correct vs incorrect."
+pmid:22877840,exclude,medium,"Temporal, spatial and object judgments about a TV episode. Compares retrieval domains rather than successful with unsuccessful retrieval."
+pmid:24345398,exclude,high,MDMA and autobiographical memories. No failed-retrieval contrast.
+pmid:32535380,include,low,"Large lifespan sample (N = 154) with spatial and temporal context retrieval, using B-PLS. PLS and reserve framing may leave no correct vs incorrect table."
+pmid:25476566,exclude,high,Subsequent source memory during encoding across age groups. Encoding only.
+pmid:41833890,include,low,"20 healthy women, recognition of seen vs unseen portraits with HF-rTMS or sham. The sham session could give old vs new, but the reported effect is the stimulation interaction."
+pmid:23407277,include,medium,"Spatial source memory with confidence, with accurate old-left shapes producing hippocampal activation. Source-correct vs incorrect contrast exists; only one laterality may be tabled."
+pmid:39096199,include,low,"Temporal order judgment with correct vs incorrect trials, and scene-related hippocampal measures. A correct vs incorrect contrast may exist, but analyses centre on hippocampal patterns."
+pmid:34398213,exclude,high,Movie-viewing activation and connectivity patterns predicting recall. Encoding analysis.
+pmid:22200724,exclude,medium,Effective connectivity among MTL regions during recall and recognition. Connectivity dynamics rather than retrieval-success foci.
+pmid:26378005,include,medium,"Old/new judgments with successful vs failed destination memory. Destination works as a source contrast, but parahippocampal focus needs a whole-brain check."
+pmid:22910274,exclude,high,"Spatial and episodic judgments about familiar city landmarks, with PLS. Mostly long-term spatial and semantic knowledge, with no failed retrieval."
+pmid:20014387,include,high,"Paired-associate retrieval with high-confidence hits vs forgotten pairs, by associative memory availability. Direct remembered > forgotten comparison, and cortical effects are also reported."
+pmid:41997927,exclude,high,"Method of loci training with conjunctive neural patterns. Representational learning study, no retrieval-success contrast."
+pmid:31383256,exclude,high,Sequence structure representations in lateral entorhinal cortex. Multivoxel patterns only.
+pmid:42874852,include,medium,"Word-picture cued recall in two tests, with successful recall and memory specificity. Striatal focus, but successful vs failed recall appears central, so check for whole-brain tables."
+pmid:39763745,exclude,high,"Neural states in posterior medial cortex during movie encoding and recall. Pattern reactivation, not a success contrast."
+pmid:32387627,exclude,high,Individual and shared RSA across encoding and retrieval. Representational analysis only.
+pmid:36520501,include,medium,"Adults (18 to 25) and children during cued recall, with successful recall activations in core recollection regions. Use only the adult group; contrast likely recalled vs forgotten."
+pmid:28544904,exclude,medium,Cushing's syndrome patients vs controls in memory testing. Group difference focused and no stated remembered vs forgotten contrast in controls.
+pmid:26219923,exclude,high,Prospective thinking during intertemporal choice. Not episodic retrieval success.
+pmid:30742981,exclude,medium,High-resolution hippocampal subfield activity during encoding and retrieval. Restricted to hippocampus and focused on subfields.
+pmid:21677158,exclude,high,Encoding activity predicting later source memory. Encoding only.
+pmid:28029355,exclude,medium,"MTL pattern classification of source reinstatement. Pattern evidence restricted to MTL, with no activation foci for retrieval success."
+pmid:23677007,exclude,high,"MDD, high-risk and control groups during autobiographical recall vs example generation. No failed-retrieval contrast."
+pmid:22001264,exclude,high,"Direct vs generative autobiographical retrieval. Compares retrieval routes, not success."
+pmid:23904335,include,medium,"Young and older adults in object-scene source memory, with source accuracy supported by regions including precuneus at test. Source-correct contrast appears usable; self-reference effects are additional."
+pmid:23778789,exclude,high,Review of left lateral parietal contributions to retrieval. Not primary data.
+pmid:24825621,include,medium,"Old/new word recognition with five-point confidence, with lateral IPS tracking oldness. Old vs new effects should be extractable, though connectivity and uncertainty are the main focus."
+pmid:18165283,include,medium,Recognition memory with parietal activation for successful retrieval used to define pathways. Hits vs correct rejections likely tabled; DTI is a separate analysis.
+pmid:32916120,exclude,high,7T hippocampal subfields by APOE during spatial discrimination. Restricted coverage and pattern separation.
+pmid:40139518,exclude,medium,"Interference during reactivation, with outcomes on a later test. Memory updating, not retrieval-success contrast."
+pmid:41260923,exclude,high,RSA of emotional context during retrieval. Pattern signature rather than activation contrast.
+pmid:25381653,include,low,"Young, elderly and MCI during face-name recognition, with associative retrieval activation. Controls could provide a contrast if tabled separately; focus is on group differences."
+pmid:39656650,exclude,high,"Skydiving recollection vs imagination. Compares memory with imagery, with no failed retrieval."
+pmid:22732490,exclude,medium,Summary of eight fMRI studies from one laboratory. Use the original papers rather than this overview.
+pmid:37499792,exclude,high,"Past tense production and inhibition. Language, not episodic memory."
+pmid:40667041,include,low,"Cognitively unimpaired older adults during associative retrieval, with hippocampal activity on successful events. Focus on APOE and biomarkers, and it may overlap with pmid:32469308; prefer whichever tables whole-brain effects."
+pmid:18829694,include,low,"Cognitively normal middle-aged adults at varied genetic risk, with previously viewed vs novel faces. Old vs new may be tabled overall, but the abstract reports risk-group effects."
+pmid:24009657,include,low,"Relational and item-based recency judgments, with connectivity to temporo-parietal regions. Activation is by judgment type; correct vs incorrect may need checking."
+pmid:23206590,exclude,high,Review of episodic retrieval networks. No primary data.
+pmid:22996310,include,high,"States hits > correct rejections with names of odors and objects, in healthy subjects. Use the object condition or both, depending on tables, and confirm whole-brain reporting."
+pmid:19741141,include,high,"Schizophrenia patients and 18 controls in old/new recognition, with controls showing successful old vs new effects. Eligible for the control group only, with fMRI rather than MEG."
+pmid:26102224,exclude,high,"Mental replay of rehearsed videos with MVPA. Vividness-related reactivation, without a forgotten condition."
+pmid:31996453,exclude,medium,Temporal order judgments across same or different storylines. Contextual and temporal distance effects rather than correct vs incorrect.
+pmid:41324503,exclude,high,"RSA of hippocampal similarity by choice context during recognition. Pattern overlap, not retrieval success."
+pmid:30731244,exclude,high,Across-participant MVPA of reinstatement by age. Classifier performance rather than activation foci.
+pmid:20097295,exclude,high,"Meta-analysis of Remember-Know fMRI studies. Not primary data, but its included studies can be cross-checked."
+pmid:28984525,include,medium,"Simultaneous EEG-fMRI during source recognition, with greater fMRI activity for old than new words. Old > new contrast appears usable; check that EEG-informed analyses are separate."
+pmid:41764048,include,low,"Old/new picture recognition after affect labeling, 37 participants. Prior labeling effect on the amygdala is the focus, so check whether old vs new is tabled."
+pmid:37121268,exclude,medium,"Consistent and inconsistent word pairs re-presented in the scanner, with recognition outside it. Knowledge assimilation rather than a retrieval-success contrast at test."
+pmid:35397137,include,low,"Multimodal associative learning and recollection, with angular gyrus effects. Recollection contrast may exist, but incidental multimodal association needs a look at the test design."
+pmid:19295153,exclude,medium,"Movie scene ordering vs logical inference, with hippocampal activity correlated with accuracy. Retrieval vs inference, not trial-level success."
+pmid:18973817,exclude,high,"Real or imagined, self or non-self events. Dissociates self and realness, not retrieval success."
+pmid:42872632,exclude,high,Methods paper optimizing VASO at 7T in hippocampus with an autobiographical task. Not an eligible contrast.
+pmid:20036336,exclude,medium,"NRG1 genotype effects on episodic encoding and retrieval, n = 94. Genotype correlation, with no remembered vs forgotten contrast stated."
+pmid:20981611,exclude,high,Autobiographical memory by gender and cue type. No failed-retrieval contrast.
+pmid:30610842,include,medium,"Old/new recognition of named objects with repetition enhancement in the parietal memory network. Use recognition task contrasts of old vs new, and check whether trials are correct-only."
+pmid:36166073,exclude,high,Autobiographical retrieval and self-reference in angular gyrus. No failed-retrieval contrast.
+pmid:21640981,include,low,"Personal vs other people's photographs, with successful recognition in a factorial design. Autobiographical stimuli and transient effects make it atypical; check for correct old vs new at test."
+pmid:23937182,exclude,medium,Activity during context reinstatement before the probe predicts later item recollection. Pre-retrieval cue period rather than a retrieval-success contrast.
+pmid:28855865,exclude,high,Concurrent TMS-fMRI during associative encoding. Encoding only.
+pmid:17948888,exclude,medium,"Object-location recall compared by spatial vs temporal encoding strategy. Strategy comparison, not recalled vs forgotten."
+pmid:35579987,exclude,high,"Connectivity related to age, sex and memory. No activation contrast."
+pmid:20638394,exclude,medium,"PET with incidental repetition of pictures during classification. No intentional retrieval or behavioural memory decision, so not a retrieval-success contrast."
+pmid:34738276,exclude,high,Newborn infants with resting-state connectivity after music. Not adults.
+pmid:20146612,exclude,high,"Primed and unprimed words at encoding, with later recollection. Encoding analysis."
+pmid:23391557,exclude,high,"rTMS over parietal cortex, with behavioural memory measures. No imaging contrast."
+pmid:22129757,include,low,"Propranolol and placebo reactivation, with recognition 24 hours later in the scanner. Placebo group could offer a correct recognition contrast, but drug effects dominate the abstract."
+pmid:28917664,include,medium,"143 adults with item-context retrieval scanned at first test, durable vs transient memories. Compares retained memories, but source-correct vs incorrect is likely present; check the tables."
+pmid:22305991,include,low,"Test phase for scenes previously paired with faces, words or none, with functionally defined reactivation. Reinstatement focus; check for correct associative vs new tables."
+pmid:36257949,exclude,high,"Population receptive fields during spatial memory in visual cortex. Tuning analysis, not retrieval success."
+pmid:22238671,include,medium,"Item-method directed forgetting, scanned at encoding and recognition, with successful retrieval of to-be-remembered items. Use to-remember hits vs a suitable baseline; check that this contrast is tabled."
+pmid:39732509,exclude,medium,"Early ovarian removal vs controls with hippocampal activity during face-name encoding and retrieval. ROI group comparison, without a stated retrieval-success table."
+pmid:23732887,exclude,high,Parietal activity during encoding and cue phase predicts later memory. Encoding only.
+pmid:27534393,exclude,high,Conference abstract collection for a computational neuroscience meeting. Not a single eligible study.
+pmid:34875018,exclude,high,Naming of newly learned vocabulary. Language and consolidation rather than episodic retrieval success.
+pmid:29161358,exclude,high,"Episodic specificity induction before divergent thinking. Creativity study, not retrieval success."
+pmid:26057929,exclude,medium,"Temporal order judgments with distractors after movie viewing. Attention-related parietal effects, not correct vs incorrect retrieval."
+pmid:25989444,exclude,high,"Spaced and massed learning with subsequent memory. Encoding, with the test 24 hours later."
+pmid:31704294,include,low,"Young and older adults recalling pictures from labels with vividness ratings. Vivid vs less vivid may not be remembered vs forgotten, and RSA is a main analysis."
+pmid:23206530,include,high,"Remember/Know recognition in young and older adults, with recollection and familiarity networks. Direct match for remember > know; easy and hard conditions need separating."
+pmid:24055687,exclude,high,Genetic association study of true and false memory with behaviour only. No imaging.
+pmid:23796945,exclude,medium,"Final cued recall after restudy or retest, compared across conditions and delay. Learning-history effect rather than recalled vs forgotten."
+pmid:18284351,exclude,high,"Novel scene exposure before word study, with activity during exposure predicting memory. No retrieval-phase contrast."
+pmid:21561699,include,high,"Healthy undergraduates with Remember/Know judgments on real-life SenseCam images, with remember > know reported. Direct match, though stimuli are personal rather than laboratory."
+pmid:35393941,exclude,high,"Schema representations during story encoding and recall. Representational analysis, not retrieval success."
+pmid:20505108,exclude,high,"Navigation through overlapping vs non-overlapping mazes. Well-learned spatial routes, no failed retrieval."
+pmid:20869446,exclude,high,Meta-analysis of subsequent memory. Encoding-focused and not primary data.
+pmid:27013686,include,medium,"Simultaneous EEG-fMRI with a remember/know task, recollection-specific effects. fMRI recollection contrast should exist, though connectivity is the emphasis; check for a whole-brain table."
+pmid:25623847,include,medium,"Continuous recognition with old and new items across context manipulations. Hippocampal novelty effects are the focus, but old vs new maps should be extractable; delays may be short."
+pmid:26209802,exclude,high,Multivoxel patterns of temporal position in the recollection network. Pattern measures only.
+pmid:35690114,exclude,high,Electrophysiology of recognition memory. No fMRI or PET.
+pmid:26610181,exclude,high,Personality and resting-state network efficiency. No memory task.
+pmid:32772167,exclude,medium,MVPA of old/new choice and action during recognition. Classifier measures rather than conventional retrieval-success foci.
+pmid:31405927,include,low,"Haloperidol vs placebo in 53 healthy adults during cued associative recall and recognition. Placebo group might give a usable contrast, but the reported effects are drug-related."
+pmid:23761770,exclude,high,"Emotional distraction during working memory, with memory tested after scanning. Encoding and working memory."
+pmid:27458542,exclude,medium,Cued-recall study and test trials back-sorted by later performance. Testing-effect subsequent memory analysis rather than a current retrieval-success contrast.
+pmid:38940726,exclude,medium,"Repeated and varying prediction errors in videos. Mismatch and learning effects, with memory tested afterward."
+pmid:28624645,exclude,high,"Word identification in noise, with activity predicting delayed recognition. Encoding analysis."
+pmid:25014407,exclude,high,Scalp EEG in an auditory oddball task. No fMRI or PET and not episodic retrieval.
+pmid:24219614,exclude,high,Prospective memory in schizotypal participants and controls. Not an episodic retrieval-success contrast.
+pmid:23921785,exclude,medium,MVPA of encoding strength and reinstatement in source memory. Path analysis of patterns; no conventional source-correct table stated.
+pmid:26004057,include,low,"Two-step source memory with reactivation and core recollection network activity. MVPA is central, but confidence-based source effects may be tabled; check for a source-correct contrast."
+pmid:30044019,exclude,high,Single patient with dissociative amnesia. Not a healthy group.
+pmid:24367516,exclude,high,Specific vs general autobiographical retrieval in young and older adults. No failed-retrieval contrast.
+pmid:25952962,include,low,"ERP and follow-up fMRI of item and source memory, with sensory activity localized to BA17 to 19. The fMRI contrast may be accurate vs inaccurate but looks focused on sensory cortex."
+pmid:32663930,exclude,high,"Subsequent memory in borderline personality disorder and controls. Encoding, with the test outside the scanner."
+pmid:37321360,exclude,high,MVPA of encoding similarity and later reinstatement for videos. Pattern analysis only.
+pmid:24379766,exclude,high,Autobiographical recollection focused on emotion or context in inferior frontal cortex. No failed-retrieval contrast.
+pmid:27818626,include,high,"Surprise recognition after six months, with significant activation for remembered vs forgotten images stated. Direct remembered > forgotten match; emotional stimuli are not a barrier."
+pmid:19028591,exclude,high,Review of parietal encoding effects. No primary data and encoding-focused.
+pmid:23363413,exclude,high,Thalamic lesion patients with a semantic retrieval task. Patient study without functional imaging contrast.
+pmid:21935483,include,low,"Encoding and retrieval of word-face pairs with emotional words, with hippocampal retrieval activity. Check whether retrieval success is contrasted rather than retrieval vs baseline."
+pmid:42691502,exclude,high,"PPI connectivity of category-selective regions by age. Connectivity measures, not retrieval-success foci."
+pmid:36441240,include,high,"Remember-Know with faces, reporting recollected > non-recollected or correctly rejected non-famous faces. Direct match for non-famous items, with left angular gyrus as a focus."
+pmid:19895564,include,high,"Remember-Know in 30 healthy adults with correct Remember, Know, Rejection and missed responses. Direct match, though the emphasis is on PPI; confirm the base GLM contrast is tabled."
+pmid:23238729,exclude,medium,Reinstatement of word-scene patterns in parahippocampal cortex during recollection. Pattern measures within MTL rather than whole-brain success foci.
+pmid:20363808,include,medium,"Face-name encoding and successful retrieval, with overlap in posteromedial cortex. Successful retrieval contrast likely, and use only the retrieval contrast rather than the conjunction."
+pmid:30050418,include,low,Associative recognition at delays up to a month after one or six learning repetitions. Reported comparisons are by repetition; check for correct vs incorrect or hits vs correct rejections.
+pmid:21925190,exclude,high,Classifier evidence during encoding predicts later memory. Encoding only.
+pmid:22420742,exclude,medium,"Alcohol and blackout history with a block-design contextual memory task. Block task vs baseline and clinical-style groups, with no trial-level success contrast."
+pmid:32341981,exclude,medium,"Source memory confidence modulating category-selective regions, masked by a localizer. Restricted, parametric analysis rather than source-correct vs incorrect."
+pmid:28957671,exclude,high,MVPA of overlapping memories across a week. Representation study.
+pmid:26973167,exclude,high,Cortisol and extinction memory in a predictive learning task. Not episodic retrieval success.
+pmid:39994939,exclude,high,Autobiographical significance with recall and counterfactual simulation. No failed-retrieval contrast.
+pmid:28112261,exclude,high,Choice-induced preference change with fMRI and intracranial recordings. Not a study of retrieval-success activation.
+pmid:18033765,include,high,"Cued recall classified as remembered, inaccessible or forgotten, with MTL, parietal and frontal retrieval effects. Direct remembered > forgotten contrast at retrieval; encoding effects are separate."
+pmid:19680466,include,high,"Across five fMRI experiments, retrieval activity is greater for hits than misses in posterior midline and ventral parietal regions. Contrast is direct, but samples may overlap with original papers, so count each once."
+pmid:25632149,include,low,"Three experiments with successful vs unsuccessful recollection, focused on connectivity. The samples may be previously reported, so prefer primary reports and check for activation tables."
+pmid:18243736,include,high,"Correct old vs correct new with spoken words, eyes closed. Direct hits > correct rejections match, though parietal emphasis means confirming whole-brain reporting."
+pmid:39702727,include,low,"Middle-aged and older adults in a visual paired-associate task, with successful retrieval activity related to cognitive reserve and stress. Effects are correlates; check for a task-level success contrast."
+pmid:32017430,include,low,"Healthy young adults, whole-brain Mnemonic Similarity Task with targets, lures and novels. Contrast is a step function across lure similarity, so it may not provide hits vs correct rejections."
+pmid:31748377,include,medium,High-resolution fMRI at test with source memory signals in angular gyrus and whole-brain voxelwise analysis. Source-correct vs incorrect is reported; check coverage and coordinate space.
+pmid:26663572,include,low,"Source memory trials with accurately retrieved details, compared with reasoning trials. Source-correct vs incorrect may exist, but contrast appears aimed at overlap with reasoning."
+pmid:32818916,exclude,high,"Object and action naming practice. Language training, not episodic retrieval."
+pmid:28456521,exclude,high,"Visual integration during encoding of object-scene pairs. Encoding only, with testing later."
+pmid:30225283,exclude,high,Short data report of connectivity classification in postpartum women. Companion to pmid:29544726; no separate eligible contrast.
+pmid:26042501,exclude,high,"Imagined scenarios and value in mPFC. Imagination, with memory tested outside the scanner."
+pmid:31036762,exclude,high,Resting-state connectivity and face memory ability. No task retrieval imaging.
+pmid:26459096,include,medium,"Recognition of line drawings after emotional or neutral study, with hits > misses at retrieval. Contrast fits, but reported as recapitulation in visual cortex, so check for whole-brain tables."
+pmid:34566597,include,medium,"Young and older adults judging old words by which age group they were encoded with, and new words. Successful retrieval activation appears; check for a source-correct or old vs new table."
+pmid:32890598,include,low,"Retrieval of colour and size details under unitized or relational encoding. Compares encoding strategies, with MTL focus; check for source-correct vs incorrect."
+pmid:27291335,exclude,high,"Learning of novel spoken words and consolidation. Word learning and recognition across delays, with semantic emphasis."
+pmid:20457911,exclude,medium,MVPA decoding of old/new and memory states for faces. Classifier results rather than coordinates; include only if univariate maps are provided.
+pmid:22046159,include,low,"Cued recall of word pairs, with search and successful recall effects. Relevant retrieval phase, but activation is framed around deactivation during search; check for recalled vs not recalled."
+pmid:40147936,exclude,medium,"Thalamic subdivisions and connectivity related to memory across individuals. Individual-difference modeling, with no retrieval-success activation table described."
+pmid:29875370,exclude,high,"Reanalysis of a face recognition dataset for memorability with RSA. Pattern similarity, and the primary report would take precedence."
+pmid:42435825,exclude,high,"ALE meta-analysis of relational memory. Not primary data, though its 70 studies can be cross-checked."
+pmid:39242212,exclude,high,Decoding of object feature reinstatement with EEG-fMRI fusion. No retrieval-success contrast.
+pmid:36345329,exclude,high,"Temporal dynamics during recall of real-life events. Static vs dynamic representations, no failed retrieval."
+pmid:39778088,exclude,high,Review of post-encoding consolidation. No primary data.
+pmid:32717407,exclude,high,Review of Alzheimer's risk and fMRI during memory. Not primary data.
+pmid:27601666,exclude,high,Episodic specificity induction before imagining future events. Not memory retrieval success.
+pmid:20720103,exclude,medium,Free recall with semantic clustering and encoding effects. Emphasis on clustering and subsequent recall rather than retrieval-phase recalled vs forgotten.
+pmid:33094555,exclude,medium,"Retrieval practice effects at delayed test, with hippocampal activity by number of earlier retrievals. Compares practice history rather than success."
+pmid:34419811,include,medium,"Modified remember-know with young and older adults, and recollection and familiarity effects. Contrast matches, but regions were defined a priori, so check whether whole-brain results are given."
+pmid:22984367,include,medium,"Parallel ERP and fMRI in the same subjects, with recognition and recollection effects for pictures and orientation. Use fMRI contrasts; check which one reflects recollection."
+pmid:19896380,exclude,medium,"Early vs later odor associations, with hippocampal activation at memory test. Compares order of association rather than remembered vs forgotten."
+pmid:25002463,exclude,high,CA3 volume predicting interference and retrieval confusion. Anatomical and pattern study.
+pmid:37365853,exclude,high,"Neural distinctiveness by pattern similarity at encoding, retrieval and reinstatement. Pattern analysis only."
+pmid:19505443,include,medium,"Young and older adults identifying names of previously smelled odors vs foils at test. Old vs new retrieval appears usable; a small and unusual cross-modal design, so check correct-only contrasts."
+pmid:31926178,exclude,high,"Focused attention during emotional encoding, with subsequent recollection days later. Encoding analysis."
+pmid:21190759,exclude,high,"Autobiographical search and elaboration by age. Richness of memories, with no failed-retrieval contrast."
