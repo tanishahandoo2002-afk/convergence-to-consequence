@@ -2,6 +2,17 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: RQ2 keeps the main memory map, with a verified-only sensitivity check
+
+**Now:** RQ2's primary memory mask stays the main ALE map, which includes the 17 unverified BrainMap experiments, as planned. Two masks are added and frozen with the others: `memory_verified`, from the ALE without those experiments, and `control_md_verified`, its paired control. `rq2_nsd/models.R` refits H2a, H2b and H2c with them as a `verified_only` robustness variant.
+
+**Why:** the team chose this. The left hippocampus, paracingulate and middle temporal clusters appear only in the main map, so RQ2 needs to show whether its results depend on them.
+
+**Limits:**
+- A difference between the two fits cannot say whether the unverified experiments add signal or error.
+- `control_md` and `control_md_verified` differ slightly, because each excludes its own memory mask, so H2b is not an identical comparison across the two fits.
+- These variants are not run yet, because RQ2 needs the NSD data and native-space masks.
+
 ## 2026-11-07: sign-offs accepted as one decision (RQ1)
 
 **Now:** the team relayed the author's acceptance of 13 suggested sign-offs on `rq1_map/pmc_draft/signoff_review.csv`: 5 foci outside the brain mask and the 8 spot-checked experiments. They are in `checks/human_signoffs.csv` with `who = author`, and each note says it was checked by an AI assistant and accepted in bulk.
