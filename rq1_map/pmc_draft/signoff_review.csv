@@ -1,14 +1,14 @@
 step,item,ai_suggestion,ai_reason,agree,reason,date
-rq1_outlier_focus,"pm002:44,38,44",pass,"Yoo 2021 Table 2: right middle frontal gyrus, at the edge of the brain. Value as printed.",,,
-rq1_outlier_focus,"pm002:46,48,38",pass,"Yoo 2021 Table 2: right superior frontal gyrus, at the edge of the brain. Value as printed.",,,
-rq1_outlier_focus,"pm010:58,20,-3",pass,"Marchewka 2016 Table 1: right inferior frontal gyrus, orbital part, at the edge of the brain. Value as printed.",,,
-rq1_outlier_focus,"pm020:66,-57,36",pass,"Diana 2010 Table 2: right supramarginal gyrus, at the edge of the brain. Value as printed.",,,
-rq1_outlier_focus,"pm037:57,24,27",pass,"Hayama 2009 Table 2: right dorsolateral prefrontal cortex, at the edge of the brain. Value as printed.",,,
-rq1_spotcheck,bm002,pass,Duzel 1999: 2 foci compared with the paper in docs/paper-check-rq1.md; they match.,,,
-rq1_spotcheck,bm003,pass,Eldridge 2000: 15 foci compared with the paper in docs/paper-check-rq1.md; identical.,,,
-rq1_spotcheck,bm012,pass,"Dobbins 2003: 24 foci compared with the paper in docs/paper-check-rq1.md; they match, after 3 recency foci were removed.",,,
-rq1_spotcheck,bm020,pass,Vilberg 2007: 13 foci compared with the paper in docs/paper-check-rq1.md; they match.,,,
-rq1_spotcheck,pm001,pass,"Foudil 2024: 11 foci read again by script from Table 1 and identical. Check the chosen rows, because a script cannot judge those.",,,
-rq1_spotcheck,pm005,pass,"Tibon 2019: 18 foci read again by script from Table 2 and identical. Check the chosen rows, because a script cannot judge those.",,,
-rq1_spotcheck,pm013,pass,"Leshikar 2014: 3 foci read again by script from Table 4 and identical. Check the chosen rows, because a script cannot judge those.",,,
-rq1_spotcheck,pm021,pass,"Wang 2009: 14 foci read again by script from Table 3 and identical. Check the chosen rows, because a script cannot judge those.",,,
+rq1_outlier_focus,"pm002:44,38,44",pass,"Yoo 2021 Table 2: right middle frontal gyrus, at the edge of the brain. Value as printed.",yes,"Bulk: accepted every AI suggestion, relayed by the team",2026-11-07
+rq1_outlier_focus,"pm002:46,48,38",pass,"Yoo 2021 Table 2: right superior frontal gyrus, at the edge of the brain. Value as printed.",yes,"Bulk: accepted every AI suggestion, relayed by the team",2026-11-07
+rq1_outlier_focus,"pm010:58,20,-3",pass,"Marchewka 2016 Table 1: right inferior frontal gyrus, orbital part, at the edge of the brain. Value as printed.",yes,"Bulk: accepted every AI suggestion, relayed by the team",2026-11-07
+rq1_outlier_focus,"pm020:66,-57,36",pass,"Diana 2010 Table 2: right supramarginal gyrus, at the edge of the brain. Value as printed.",yes,"Bulk: accepted every AI suggestion, relayed by the team",2026-11-07
+rq1_outlier_focus,"pm037:57,24,27",pass,"Hayama 2009 Table 2: right dorsolateral prefrontal cortex, at the edge of the brain. Value as printed.",yes,"Bulk: accepted every AI suggestion, relayed by the team",2026-11-07
+rq1_spotcheck,bm002,pass,Duzel 1999: 2 foci compared with the paper in docs/paper-check-rq1.md; they match.,yes,"Bulk: accepted every AI suggestion, relayed by the team",2026-11-07
+rq1_spotcheck,bm003,pass,Eldridge 2000: 15 foci compared with the paper in docs/paper-check-rq1.md; identical.,yes,"Bulk: accepted every AI suggestion, relayed by the team",2026-11-07
+rq1_spotcheck,bm012,pass,"Dobbins 2003: 24 foci compared with the paper in docs/paper-check-rq1.md; they match, after 3 recency foci were removed.",yes,"Bulk: accepted every AI suggestion, relayed by the team",2026-11-07
+rq1_spotcheck,bm020,pass,Vilberg 2007: 13 foci compared with the paper in docs/paper-check-rq1.md; they match.,yes,"Bulk: accepted every AI suggestion, relayed by the team",2026-11-07
+rq1_spotcheck,pm001,pass,"Foudil 2024: 11 foci read again by script from Table 1 and identical. Check the chosen rows, because a script cannot judge those.",yes,"Bulk: accepted every AI suggestion, relayed by the team",2026-11-07
+rq1_spotcheck,pm005,pass,"Tibon 2019: 18 foci read again by script from Table 2 and identical. Check the chosen rows, because a script cannot judge those.",yes,"Bulk: accepted every AI suggestion, relayed by the team",2026-11-07
+rq1_spotcheck,pm013,pass,"Leshikar 2014: 3 foci read again by script from Table 4 and identical. Check the chosen rows, because a script cannot judge those.",yes,"Bulk: accepted every AI suggestion, relayed by the team",2026-11-07
+rq1_spotcheck,pm021,pass,"Wang 2009: 14 foci read again by script from Table 3 and identical. Check the chosen rows, because a script cannot judge those.",yes,"Bulk: accepted every AI suggestion, relayed by the team",2026-11-07

@@ -2,6 +2,15 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: sign-offs accepted as one decision (RQ1)
+
+**Now:** the team relayed the author's acceptance of 13 suggested sign-offs on `rq1_map/pmc_draft/signoff_review.csv`: 5 foci outside the brain mask and the 8 spot-checked experiments. They are in `checks/human_signoffs.csv` with `who = author`, and each note says it was checked by an AI assistant and accepted in bulk.
+
+**Limits:**
+- `human_signoffs.csv` records no human check of these items. The spot-check does not act as a human check on coordinates or row choices.
+- For the 4 PMC experiments, the assistant only reread the numbers by script, which cannot catch a wrong choice of rows.
+- The 4 BrainMap experiments rest on the assistant's earlier comparison with the papers.
+
 ## 2026-11-07: 17 BrainMap experiments kept unverified (RQ1)
 
 **Was:** the extraction check failed unless every experiment had a verified contrast, every focus outside the brain mask had a sign-off, and the spot-check could reach any experiment.
