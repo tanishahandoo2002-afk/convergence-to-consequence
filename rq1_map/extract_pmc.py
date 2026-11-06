@@ -127,7 +127,8 @@ def main():
     missing = pd.DataFrame([{"record_id": m["record_id"], "study_id": "", "pmc": screened.loc[m["record_id"], "pmc"], "n_foci": 0,
                              "what_to_check": m["reason"]} for m in spec["not_extracted"]])
     sheet = pd.concat([review, missing], ignore_index=True).reindex(columns=REVIEW_COLUMNS)
-    sheet["outside_brain_mask"] = sheet.outside_brain_mask.astype("Int64")
+    for column in ("n", "n_foci", "outside_brain_mask"):  # unextracted rows leave blanks, which would turn these into floats
+        sheet[column] = sheet[column].astype("Int64")
     DRAFT.mkdir(exist_ok=True)
     exps.to_csv(DRAFT / "experiments.csv", index=False)
     coords.to_csv(DRAFT / "coordinates.csv", index=False)
