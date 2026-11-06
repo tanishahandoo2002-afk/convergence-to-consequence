@@ -1,0 +1,132 @@
+# Which table rows hold each contrast, for rq1_map/extract_pmc.py. Rows count from 0 in the table body.
+# col is where x sits (negative counts from the right). mode: sep = x, y, z in three cells; joint = all in one cell.
+# Each choice is an AI assistant's and is for the author to review. See CHANGELOG.md, 2026-11-07.
+experiments:
+  - {record_id: "pmid:38575698", contrast: "Remember vs Familiar (correct old/seen); Old vs New (correct)", contrast_type: recollection, n: 19, space: MNI,
+     tables: [{table: "Table 1", rows: "1-6,10-14", col: 3, mode: sep}],
+     check: "Two contrasts pooled for one group. Rows 7 and 8 left out because the footnote marks them as below the cluster size. Check what the (*) on the cerebellum row means."}
+  - {record_id: "pmid:33826665", contrast: "HIT vs correct rejection, remote retrieval runs", contrast_type: success, n: 22, space: MNI,
+     tables: [{table: "Table 2", rows: "0-11", col: -3, mode: sep}],
+     check: "Recognition one week after encoding, with reward at encoding. Check you accept this."}
+  - {record_id: "pmid:33613206", group: "Study group", contrast: "Remembered > Forgotten, Study group", contrast_type: success, n: 20, space: MNI,
+     tables: [{table: "Table 1", rows: "10-14", col: 2, mode: sep}],
+     check: "Randomized Study group, entered as its own experiment. Check you accept two experiments from this paper."}
+  - {record_id: "pmid:33613206", group: "Test group", contrast: "Remembered > Forgotten, Test group", contrast_type: success, n: 21, space: MNI,
+     tables: [{table: "Table 1", rows: "16-18", col: 2, mode: sep}],
+     check: "Randomized Test group, which had retrieval practice. Check you accept two experiments from this paper."}
+  - {record_id: "pmid:30902869", contrast: "Recall success (vivid + nonvivid) > failure at test", contrast_type: success, n: 21, space: MNI,
+     tables: [{table: "Table 2", rows: "10-27", col: 2, mode: joint}],
+     check: "Test section only; the Study section is encoding."}
+  - {record_id: "pmid:30610842", contrast: "Recognition Old > New, correct items", contrast_type: success, n: 40, space: TAL,
+     tables: [{table: "Table 1", rows: "1-6", col: 1, mode: sep}],
+     check: "Recognition table only, not Second Naming."}
+  - {record_id: "pmid:30687046", contrast: "R_C > R_F, correct > forgotten object-location at retrieval", contrast_type: success, n: 16, space: MNI,
+     tables: [{table: "Table 1", rows: "16-32", col: 2, mode: sep}],
+     check: "Section B only. N of 16 is stated for retrieval. Many peaks have peak p-FWE above .05, so check the cluster-level threshold in the table note."}
+  - {record_id: "pmid:30364307", contrast: "Hits > Correct Rejections, conservative criterion", contrast_type: success, n: 36, space: MNI,
+     tables: [{table: "Table 1", rows: "0-56", col: 3, mode: sep}],
+     check: "Participants were preselected for shifting their criteria. Check you accept this."}
+  - {record_id: "pmid:29391248", contrast: "Hit > Correct Rejection, Known and Unknown conjunction; Unknown", contrast_type: success, n: 24, space: MNI,
+     tables: [{table: "Table 1", rows: "1-4,6-11", col: 2, mode: sep}],
+     check: "Two sections pooled for one group. Check whether to keep only the conjunction."}
+  - {record_id: "pmid:27818626", contrast: "Correctly recognized vs forgotten images", contrast_type: success, n: 14, space: MNI,
+     tables: [{table: "Table 1", rows: "0-24", col: 2, mode: sep}],
+     check: "Recognition 6 months after encoding. N is 17 eligible minus 3 with very low recognition."}
+  - {record_id: "pmid:25583615", group: "source memory", contrast: "Modality-independent source memory effects", contrast_type: recollection, n: 17, space: MNI,
+     tables: [{table: "Table 2", rows: "1-13", col: 0, mode: sep}],
+     check: "Read how the paper defines this contrast. I took it as accurate source judgments vs inaccurate, and did not confirm the exact definition."}
+  - {record_id: "pmid:24904386", contrast: "Context hits > context misses, non-selective", contrast_type: recollection, n: 18, space: MNI,
+     tables: [{table: "Table 2", rows: "21-31", col: 0, mode: sep}],
+     check: "Non-selective section only. The threshold in the note is P < .005 with cluster size > 44."}
+  - {record_id: "pmid:23904335", contrast: "Source correct > no source, task-invariant at test", contrast_type: recollection, n: 38, space: MNI,
+     tables: [{table: "Table 4", rows: "17,19,21", col: 2, mode: joint}],
+     check: "Part B only; part A is study phase. Young and older adults pooled, with performance matched."}
+  - {record_id: "pmid:23026757", contrast: "R Hit > K Hit", contrast_type: recollection, n: 18, space: MNI,
+     tables: [{table: "Table 2", rows: "1-7", col: -4, mode: sep}],
+     check: "N is 18 for fMRI: 22 took part and 4 were excluded. My earlier check said 22, which was wrong."}
+  - {record_id: "pmid:23110678", contrast: "Old > new, targets, common to picture and word tasks", contrast_type: success, n: 18, space: MNI,
+     tables: [{table: "Table 2", rows: "1,3-6,8-10", col: 0, mode: joint}],
+     check: "Targets section only. The cingulate row has no coordinates in the XML, so it is missing here. Check the paper for that peak, and confirm correct trials."}
+  - {record_id: "pmid:22984367", contrast: "original[correct] > old[incorrect]", contrast_type: recollection, n: 16, space: MNI,
+     tables: [{table: "Table 4", rows: "0-7,10,12-29", col: 4, mode: joint}],
+     check: "Rows 8, 9 and 11 left out because their Z is negative. The table shades negative contrasts, and shading is not in the XML, so check no other row is shaded."}
+  - {record_id: "pmid:22937055", contrast: "RR responses > correct rejections at 3 days", contrast_type: recollection, n: 18, space: MNI,
+     tables: [{table: "Table 1", rows: "0-10,12-14", col: 3, mode: sep}],
+     check: "Rows 11, 15 and 16 left out because they are small-volume corrected. Only the 3-day delay is used for this group; Table 2 is 3 months."}
+  - {record_id: "pmid:22288393", contrast: "Successful > unsuccessful recall", contrast_type: success, n: 18, space: MNI,
+     tables: [{table: "Table 2", rows: "1-13", col: -4, mode: joint}],
+     check: "Successful > unsuccessful section only."}
+  - {record_id: "pmid:21145314", contrast: "Source > No Source, common to all materials, at test", contrast_type: recollection, n: 15, space: MNI,
+     tables: [{table: "Table 4", rows: "0-14", col: -4, mode: joint}],
+     check: "Rows 15 to 23 left out because they come from anatomical ROI analyses. Row 10 is labelled right but printed with a negative x; check it against the paper."}
+  - {record_id: "pmid:19702458", contrast: "Recollection/strong memory: most confident correct vs incorrect", contrast_type: recollection, n: 12, space: MNI,
+     tables: [{table: "Table 2", rows: "1-3,5-17", col: 1, mode: sep}],
+     check: "Context-detail and item-detail sections pooled for one group. Check you accept the strength element of this contrast."}
+  - {record_id: "pmid:19428399", contrast: "Hits > correct rejections, common to both groups", contrast_type: success, n: 36, space: MNI,
+     tables: [{table: "Table 3", rows: "0-13", col: 0, mode: joint}],
+     check: "Two older groups together, using a sample-specific template based on MNI. Check MNI is right."}
+  - {record_id: "pmid:19146963", contrast: "Hits > CRs, insensitive to old/new ratio", contrast_type: success, n: 18, space: MNI,
+     tables: [{table: "Table 3", rows: "1-22", col: -2, mode: joint}],
+     check: "Old/new ratio varies by block, so flag this for the sensitivity analysis."}
+  - {record_id: "pmid:18294660", contrast: "Correct source recollection > correct rejection of new items", contrast_type: success, n: 16, space: MNI,
+     tables: [{table: "Table 2", rows: "0-12", col: 1, mode: sep}],
+     check: "Participants were selected for at least 70% practice accuracy. Check you accept this."}
+  - {record_id: "pmid:37633119", contrast: "Associative hit > item hit, transient, age-invariant", contrast_type: recollection, n: 45, space: MNI,
+     tables: [{table: "Table 4", rows: "1-3", col: 1, mode: sep}],
+     check: "Rows 4 and 5 left out because their size points to small-volume correction in the hippocampus. Sustained effects are not used. The effects are masked. Same study as pmid:37090506."}
+  - {record_id: "pmid:30411437", contrast: "Parametric increase across recollection levels R0 to R3", contrast_type: recollection, n: 17, space: MNI,
+     tables: [{table: "Table 1", rows: "0-6,8-10", col: 4, mode: joint}],
+     check: "Rows 7 and 11 to 14 left out because they are uncorrected. It is parametric rather than two conditions, so decide whether it counts."}
+  - {record_id: "pmid:28046076", contrast: "PP > PW, pictures remembered as pictures vs as words", contrast_type: recollection, n: 24, space: MNI,
+     tables: [{table: "Table 3", rows: "0-5", col: -2, mode: joint}],
+     check: "Uses the MNI column, not SRI24. Check the mapping is what the paper intends."}
+  - {record_id: "pmid:28013352", contrast: "Correct > incorrect, all subjects", contrast_type: success, n: 53, space: MNI,
+     tables: [{table: "Table 1", rows: "1-10", col: 1, mode: sep}],
+     check: "Pools methylphenidate and placebo, which did not differ. Decide if this is acceptable, given drug exposure 72 h earlier."}
+  - {record_id: "pmid:27155127", contrast: "Associative hits > associative misses, across participants", contrast_type: success, n: 136, space: MNI,
+     tables: [{table: "Table 4", rows: "0-6", col: 0, mode: sep}],
+     check: "Important: this lists core network peaks only, not a full whole-brain result, and at N = 136 it would weigh heavily. I would leave it out unless the paper shows the list is complete."}
+  - {record_id: "pmid:25623847", group: "continuous recognition", contrast: "Old > new, context-independent", contrast_type: success, n: 24, space: MNI,
+     tables: [{table: "Table 2", rows: "0-16", col: 0, mode: sep}],
+     check: "Confirm these rows are old > new only and use correct trials. Some region labels do not match the sign of x as printed."}
+  - {record_id: "pmid:24634661", contrast: "Recognized > not recognized target pieces", contrast_type: success, n: 18, space: TAL,
+     tables: [{table: "Table 1", rows: "13-14", col: 2, mode: joint}],
+     check: "Music recognition at p < .001 uncorrected, with only two foci. Two participants are left-handed. Decide if this is acceptable."}
+  - {record_id: "pmid:23805114", contrast: "Hits vs correct rejections, new words", contrast_type: success, n: 20, space: TAL,
+     tables: [{table: "Table 2", rows: "0-4", col: -4, mode: sep}],
+     check: "Age range starts at 17, while the criteria require 18 or over. Decide whether this rules it out."}
+  - {record_id: "pmid:23734122", contrast: "Rscene/Rsentence > 4/3/2/1, recollection effects", contrast_type: recollection, n: 16, space: MNI,
+     tables: [{table: "Table 2", rows: "1-16", col: -2, mode: joint}],
+     check: "High-resolution fMRI, so check coverage is whole-brain. One peak is labelled white matter. Effects are masked to be exclusive to recollection."}
+  - {record_id: "pmid:23049503", group: "younger", contrast: "Hits > misses main effect, younger group", contrast_type: success, n: 19, space: MNI,
+     tables: [{table: "Table A2", rows: "10-23", col: 2, mode: sep}],
+     check: "Whole-brain rows only; ROI rows 2 to 9 are left out. Check you accept two experiments from this paper."}
+  - {record_id: "pmid:23049503", group: "older", contrast: "Hits > misses main effect, older group", contrast_type: success, n: 15, space: MNI,
+     tables: [{table: "Table A2", rows: "61,63-79", col: 2, mode: sep}],
+     check: "Whole-brain rows only; ROI rows 59 and 60 are left out. Check you accept two experiments from this paper."}
+  - {record_id: "pmid:22238671", contrast: "TBR-R > TBR-F, masked by TBF-R > TBF-F, at retrieval", contrast_type: success, n: 17, space: MNI,
+     tables: [{table: "Table 3", rows: "0,1,4-7,12,18", col: 2, mode: sep}],
+     check: "Starred peaks only (p < .001); the rest are p < .005 uncorrected. The contrast is exclusively masked. Decide if this is acceptable."}
+  - {record_id: "pmid:19647800", contrast: "High-confidence hit > high-confidence correct rejection", contrast_type: success, n: 12, space: TAL,
+     tables: [{table: "Table 4", rows: "19-24", col: 5, mode: sep}],
+     check: "Section C only. SPM2 MNI coordinates converted to Talairach, so TAL is entered. Same data as pmid:19501072, which stays excluded."}
+  - {record_id: "pmid:19383503", contrast: "Old > New, common to source and semantic tasks", contrast_type: success, n: 16, space: MNI,
+     tables: [{table: "Table 2", rows: "1-10,12-17", col: 2, mode: sep}],
+     check: "Early and late HRF sections pooled, with a repeated peak kept once. Effects are common with a semantic task, so decide if this is acceptable."}
+  - {record_id: "pmid:23580061", contrast: "Correct > incorrect answers (RP)", contrast_type: success, n: 29, space: MNI,
+     tables: [{table: "Table 1", rows: "1-6", col: 2, mode: sep}],
+     check: "Correct pools hits and correct rejections, and incorrect pools misses and false alarms, at p < .001 uncorrected. I would leave it out unless you accept that."}
+
+not_extracted:
+  - {record_id: "pmid:33548865", reason: "Not extracted: peaks are in supplementary Table S2, which I did not read. Provide it, or set this paper to no."}
+  - {record_id: "pmid:31989161", reason: "Not extracted: peaks are in Supplementary Table 6, which I did not read. Provide it, or set this paper to no."}
+  - {record_id: "pmid:26200928", reason: "Not extracted: peaks are in Supplementary Table 5, which I did not read. Provide it, or set this paper to no."}
+  - {record_id: "pmid:24486981", reason: "Not extracted: peaks are in supplementary Table S2, which I did not read. Provide it, or set this paper to no."}
+  - {record_id: "pmid:19199424", reason: "Not extracted: peaks are in supplementary Table S1, which I did not read. Provide it, or set this paper to no."}
+  - {record_id: "pmid:29670138", reason: "Not extracted: any R > CR peaks would be in the supplement, which I did not read. Provide it, or set this paper to no."}
+  - {record_id: "pmid:26969864", reason: "Not extracted: whole-brain effects are in the supplementary tables, which I did not read. Provide them, or set this paper to no."}
+  - {record_id: "pmid:19755103", reason: "Not extracted: any accuracy peaks would be in the supplement, which I did not read. Provide it, or set this paper to no."}
+  - {record_id: "pmid:24283400", reason: "Not extracted: the peak tables are not in the PMC XML, only a behaviour table. Check the paper, or set this paper to no."}
+  - {record_id: "pmid:34419811", reason: "Not extracted: the XML gives only ROIs and ROI statistics, with no whole-brain peak table. My note said to exclude if none. I suggest setting this paper to no."}
+  - {record_id: "pmid:23092213", reason: "Not extracted: Table 3 mixes target > foil regions with four reversed regions and does not say which. I suggest setting this paper to no unless the figures settle it."}
+  - {record_id: "pmid:19524092", reason: "Not extracted: Table 3 pools encoding and retrieval, and no retrieval-only table exists. My note said to use it only if one could be found. I suggest setting this paper to no."}

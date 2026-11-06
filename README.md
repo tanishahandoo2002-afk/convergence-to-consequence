@@ -56,4 +56,5 @@ decision, so these decisions equal the AI suggestions (`CHANGELOG.md`, 2026-11-0
 No second human rater took part, so no human reliability measure is reported for screening.
 Extracted contrasts are proposed by an AI and verified by the author against each paper.
 An AI assistant also helped draft code; the author ran, read and checked every script.
-Coordinates were never transcribed by an AI.
+Coordinates came from BrainMap exports or were read by a script from PMC tables, from rows chosen
+by an AI assistant for the author to review (`CHANGELOG.md`, 2026-11-07). No person or model typed them.

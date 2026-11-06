@@ -2,6 +2,24 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: coordinates read from PMC tables by script, for the author to review (RQ1)
+
+**Was:** the author typed coordinates from each paper, and the protocol said an AI was never used to read or transcribe them. The entry on the AI check below repeats that.
+
+**Now:** `rq1_map/extract_pmc.py` reads coordinates directly from each paper's PMC table XML. An AI assistant chose the table rows for each contrast (`rq1_map/extraction_spec.yaml`), and read those tables to do so. No person or model typed a number. The result is in `rq1_map/pmc_draft/`, and it is not yet part of the analysis: `experiments.csv` and `coordinates.csv` are unchanged, and `contrast_verified_by` is blank until she reviews each row of `rq1_map/pmc_draft/review.csv`.
+
+**Why:** the team asked for the assistant to do this work, with the author reviewing it. Reading from XML removes typing errors, and the extraction can be rerun.
+
+**Results:** 38 experiments and 495 foci from 36 of the 48 included papers (25 success, 13 recollection). Six foci fall outside the brain mask and need outlier sign-offs. Twelve papers could not be extracted: eight have their peaks in supplements, one has no peak table in the XML, one has only ROI statistics, one does not say which regions are reversed, and one pools encoding with retrieval. They still count as included in PRISMA until she decides.
+
+**Limits:**
+- This departs from the rule that no AI handles coordinates. The script only copies numbers, but the choice of rows is an AI judgment, and a wrong choice gives correct numbers for the wrong contrast.
+- Choices made on the assistant's judgment are stated row by row on the review sheet, including peaks left out as small-volume corrected, uncorrected or negative. Other reviewers might choose differently.
+- The XML can lose formatting. Table shading and italics are not visible, so rows marked only that way may be misread.
+- `pmid:27155127` lists selected peaks only and has N = 136, so including it could bias the map. The sheet says so.
+- The H1b sheets are not extended, because familiarity has 8 experiments, below the gate of 17, and none of the new contrasts is familiarity.
+- Of the 25 BrainMap experiments, 17 have no free full text, including both unchecked outlier foci, so the assistant could not check them. `rq1_map/pmc_draft/brainmap_review.csv` lists what she must confirm from her own access.
+
 ## 2026-11-07: second rater dropped (RQ1)
 
 **Was:** a blind second rater screened a seeded 20% of records, and author-second κ was reported. The entry below recorded them as anonymous.
@@ -34,7 +52,7 @@ Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project
 
 **Now:** an AI assistant checked all 136 proposals first, and the author reviews its check on `rq1_map/screening/full_text_check.csv`. She answers yes or no for each paper. Yes keeps the suggestion and no reverses it. The sheet gives the suggested table, contrast, type and N, with reasons and a PMC link. Her answers count for PRISMA.
 
-**Results:** the check suggests 48 include (22 high, 20 medium, 6 low confidence) and 88 exclude (47 high, 41 medium). Of the 86 proposed eligible, it agrees with 45 and rejects 41. Of the 49 proposed ineligible, it keeps 3, and it rejects the 1 invalid reply. It differs from the proposal on N for 5 papers.
+**Results:** the check suggests 48 include (22 high, 20 medium, 6 low confidence) and 88 exclude (47 high, 41 medium). Of the 86 proposed eligible, it agrees with 45 and rejects 41. Of the 49 proposed ineligible, it keeps 3, and it rejects the 1 invalid reply. It differs from the proposal on N for 4 papers. It first differed on a fifth, `pmid:23026757`, but the extraction pass showed the check was wrong and the proposal's N of 18 was right, so the sheet was corrected.
 
 **Why:** the team asked for it, to reduce the author's work. The disagreement with asi1-mini also shows that its proposals could not be used unchecked.
 
