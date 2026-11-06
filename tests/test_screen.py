@@ -112,6 +112,12 @@ def test_parse_contrast_bad_type():
     assert parse_contrast(json.dumps(CON | {"contrast_type": "encoding"})) is None
 
 
+def test_parse_contrast_ineligible_needs_no_contrast():
+    import json
+    reply = {"eligible": False, "table": "N/A", "contrast": "N/A", "contrast_type": "N/A", "n": 0, "reason": "ROI only"}
+    assert parse_contrast(json.dumps(reply)) == reply
+
+
 def test_parse_contrast_n_not_int():
     import json
     assert parse_contrast(json.dumps(CON | {"n": "24 (12F)"})) is None
@@ -138,6 +144,34 @@ def test_run_full_text_skips_missing_pdf_and_resumes(tmp_path):
     assert run_full_text(["pmid:1", "pmid:2"], tmp_path, c, "m", "crit", out) == 1
     assert run_full_text(["pmid:1", "pmid:2"], tmp_path, c, "m", "crit", out) == 0
     assert len(c.calls) == 1 and "correct rejections" in c.calls[0]["messages"][1]["content"]
+
+
+def test_run_full_text_falls_back_to_fetch_and_skips_none(tmp_path):
+    import json
+    from tools.screen import run_full_text
+    out = tmp_path / "proposals.csv"
+    c = FakeClient([json.dumps(CON)])
+    fetched = []
+
+    def fetch(rid):
+        fetched.append(rid)
+        return "Table 2 from PMC" if rid == "pmid:1" else None
+
+    assert run_full_text(["pmid:1", "pmid:2"], tmp_path, c, "m", "crit", out, fetch=fetch) == 1
+    assert "Table 2 from PMC" in c.calls[0]["messages"][1]["content"]
+    fetched.clear()
+    assert run_full_text(["pmid:1", "pmid:2"], tmp_path, c, "m", "crit", out, fetch=fetch) == 0
+    # a done record is not fetched again; a record with no text is retried, as it may have been added
+    assert fetched == ["pmid:2"]
+
+
+def test_article_text_keeps_floating_tables_and_drops_empty_articles():
+    from tools.screen import article_text
+    body = "<p>" + "Methods. " * 400 + "</p>"
+    xml = f"<pmc-articleset><article><body>{body}</body><floats-group><table-wrap><label>Table 2</label></table-wrap></floats-group></article></pmc-articleset>"
+    assert "Methods." in article_text(xml.encode()) and "Table 2" in article_text(xml.encode())
+    assert article_text(b"<pmc-articleset><article><front>abstract only</front></article></pmc-articleset>") is None
+    assert article_text(b"<pmc-articleset><article><body><p>Too short.</p></body></article></pmc-articleset>") is None
 
 
 def test_run_rater_throttles_between_requests(tmp_path):

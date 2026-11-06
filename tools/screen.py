@@ -16,10 +16,12 @@ import math
 import os
 import re
 import time
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import requests
 
 from tools.common import ROOT, load_config, record_versions
 from tools.kappa import SECOND_LOOK_SHEET
@@ -33,6 +35,9 @@ INSTRUCTION = (
 )
 
 
+EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+EUTILS_TOOL = "convergence-to-consequence"
+MIN_ARTICLE_CHARS = 3000  # shorter bodies are stubs that point to the publisher, not the paper
 CONTRAST_TYPES = {"success", "recollection", "familiarity"}
 CONTRAST_COLUMNS = ["record_id", "rater", "model", "timestamp", "eligible", "table", "contrast",
                     "contrast_type", "n", "reason", "raw"]
@@ -73,7 +78,8 @@ def parse_contrast(text):
     d = _json(text)
     if not isinstance(d, dict) or not isinstance(d.get("eligible"), bool):
         return None
-    if d.get("contrast_type") not in CONTRAST_TYPES or type(d.get("n")) is not int:
+    # an ineligible paper has no contrast to report, so only an eligible one must give a type and N
+    if d["eligible"] and (d.get("contrast_type") not in CONTRAST_TYPES or type(d.get("n")) is not int):
         return None
     return {k: d.get(k, "") for k in ("eligible", "table", "contrast", "contrast_type", "n", "reason")}
 
@@ -126,17 +132,49 @@ def run_rater(records, rater, client, model, criteria, log_path, limit=None, min
     return n
 
 
-def run_full_text(record_ids, pdf_dir, client, model, criteria, out_path):
-    """Propose the contrast table and N for each paper with a PDF; resumable. Returns the count."""
+def article_text(xml):
+    """Body and floating tables of a PMC article, or None when PMC holds no real body for it."""
+    article = ET.fromstring(xml).find(".//article")
+    body = None if article is None else article.find("body")
+    if body is None:
+        return None
+    parts = [body] + article.findall("floats-group")
+    text = "\n".join("".join(part.itertext()) for part in parts)
+    return text if len(text) >= MIN_ARTICLE_CHARS else None
+
+
+def pmc_text(rid):
+    """Open-access full text through NCBI's API, for records with a PMID. It is read here and not saved."""
+    if not rid.startswith("pmid:"):
+        return None
+    link = requests.get(f"{EUTILS}/elink.fcgi", params={"dbfrom": "pubmed", "db": "pmc", "linkname": "pubmed_pmc",
+                                                        "id": rid[5:], "tool": EUTILS_TOOL}, timeout=60)
+    link.raise_for_status()
+    pmc = ET.fromstring(link.content).findtext("LinkSet/LinkSetDb/Link/Id")
+    time.sleep(0.4)  # NCBI allows 3 requests a second without a key
+    if not pmc:
+        return None
+    r = requests.get(f"{EUTILS}/efetch.fcgi", params={"db": "pmc", "id": pmc, "retmode": "xml", "tool": EUTILS_TOOL}, timeout=120)
+    r.raise_for_status()
+    time.sleep(0.4)
+    return article_text(r.content)
+
+
+def run_full_text(record_ids, pdf_dir, client, model, criteria, out_path, fetch=lambda rid: None):
+    """Propose the contrast table and N for each paper with a PDF, or else with text from `fetch`; resumable.
+    Returns the count."""
     out_path = Path(out_path)
     done = set(pd.read_csv(out_path, dtype=str).record_id) if out_path.exists() else set()
     n = 0
     for rid in record_ids:
+        if rid in done:
+            continue
         pdf = Path(pdf_dir) / f"{rid.replace(':', '_').replace('/', '_')}.pdf"
-        if rid in done or not pdf.exists():
+        text = pdf_text(pdf) if pdf.exists() else fetch(rid)
+        if not text:
             continue
         messages = [{"role": "system", "content": f"{criteria}\n\n{CONTRAST_INSTRUCTION}"},
-                    {"role": "user", "content": pdf_text(pdf)}]
+                    {"role": "user", "content": text}]
         out = screen_record(client, model, messages, parse=parse_contrast)
         row = {"record_id": rid, "rater": "full_text", "model": model,
                "timestamp": datetime.datetime.now().isoformat(timespec="seconds")} | out
@@ -201,9 +239,15 @@ def main():
         from tools.prisma import title_abstract_decisions
         ta = title_abstract_decisions(base)
         r = cfg["raters"][a.rater or "asi"]
-        n = run_full_text(list(ta.index[ta != "exclude"]), data_dir(a.rq, "pdfs"), client_for(r), r["model"],
-                          (scr / "criteria.md").read_text(), scr / "contrast_proposals.csv")
+        kept = list(ta.index[ta != "exclude"])[:a.limit]
+        out = scr / "contrast_proposals.csv"
+        n = run_full_text(kept, data_dir(a.rq, "pdfs"), client_for(r), r["model"],
+                          (scr / "criteria.md").read_text(), out, fetch=pmc_text)
+        record_versions(f"{a.rq}_full_text_{a.rater or 'asi'}")
         print(f"full text: {n} proposals written; the author confirms each in experiments.csv")
+        no_text = sorted(set(kept) - set(pd.read_csv(out, dtype=str).record_id if out.exists() else []))
+        pd.DataFrame({"record_id": no_text}).to_csv(scr / "full_text_not_retrieved.csv", index=False)
+        print(f"no full text found for {len(no_text)} of {len(kept)}; listed in full_text_not_retrieved.csv")
         return
     if a.rater:
         r = cfg["raters"][a.rater]
