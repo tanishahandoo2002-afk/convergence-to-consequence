@@ -2,6 +2,20 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: the author accepted every AI suggestion as one decision (RQ1)
+
+**Was:** the protocol and the entries below describe the author deciding each routed record with the AI suggestion as support.
+
+**Now:** the team relayed her decision as yes to every suggestion on both sheets, 768 records in all. It was entered as one decision, with the same reason and date on each row. Of these, 290 go on to full text and 478 are excluded.
+
+**What this changes:**
+- Title/abstract decisions now equal the AI suggestions on every reviewed record. Whether she read each record first is not recorded, so they should not be described as a record-by-record human review.
+- `asi-author` and `qwen-author` in `kappa.csv` now measure agreement between AIs. They say nothing about AI-human agreement and should not be reported as if they did.
+- The 20% sample of agreed excludes no longer works as a human check on missed records, because its answers also equal the AI suggestions.
+- Unsure records and rater disagreements were settled by the third AI suggestion alone. So was `pmid:25773646`, which both raters included and the suggestion excluded.
+- The second rater, once named, becomes the only independent human reading at this stage, on a random 20% of records.
+- The author still confirms every contrast against its paper at full text.
+
 ## 2026-11-07: second look at the agreed excludes the author does not review (RQ1)
 
 **Was:** agreed excludes outside the 20% sample stayed excluded on the ASI and Qwen decision, and no one read them. The 2026-10-27 entry set no escalation rule, and the entry below said its suggestions were not a further screen.
