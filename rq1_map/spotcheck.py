@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from rq1_map.import_sleuth import UNVERIFIED
 from tools.common import load_config
 
 SAMPLE = Path(__file__).resolve().parent / "spotcheck_sample.csv"
@@ -23,4 +24,5 @@ def make_sample(experiments, seed, frac, path=SAMPLE):
 if __name__ == "__main__":
     cfg = load_config("rq1")
     exps = pd.read_csv(Path(__file__).resolve().parent / "experiments.csv", dtype=str)
-    print(make_sample(exps, cfg["seed"], cfg["spotcheck_frac"]))
+    # an experiment whose paper cannot be read cannot be spot-checked against it
+    print(make_sample(exps[exps.contrast_verified_by != UNVERIFIED], cfg["seed"], cfg["spotcheck_frac"]))

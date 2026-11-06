@@ -9,7 +9,7 @@ from nilearn.datasets import load_mni152_brain_mask
 
 from checks.signoffs import SIGNOFFS, has_error, missing
 from rq1_map.coords import outside_brain, to_mni
-from rq1_map.import_sleuth import EXP_COLUMNS, SHEETS, read_h1b_sheets
+from rq1_map.import_sleuth import EXP_COLUMNS, SHEETS, UNVERIFIED, read_h1b_sheets
 from rq1_map.spotcheck import SAMPLE
 from tools.common import load_config
 
@@ -58,11 +58,19 @@ def validate(experiments, coordinates, cfg, signoff_path=SIGNOFFS, sample_path=S
     elif k < cfg["min_experiments"]:
         warnings.append(f"{k} experiments: below the target of {cfg['min_experiments']}")
 
+    # Their papers cannot be read, so they cannot be signed off or spot-checked; say so instead of blocking (CHANGELOG 2026-11-07)
+    unverified = set(exps.exp_id[exps.contrast_verified_by == UNVERIFIED])
+    if unverified:
+        warnings.append(f"{len(unverified)} experiments are not verified against their papers: {sorted(unverified)}")
+
     coords = coordinates[coordinates.exp_id.isin(exps.exp_id)].reset_index(drop=True)
     if len(coords):
         out = outside_brain(to_mni(exps, coords), load_mni152_brain_mask(resolution=2))
         items = [f"{r.exp_id}:{_fmt(r.x)},{_fmt(r.y)},{_fmt(r.z)}" for r in coords[out].itertuples()]
-        unsigned = missing("rq1_outlier_focus", items, path=signoff_path)
+        unchecked = [i for i in items if i.split(":")[0] in unverified]
+        if unchecked:
+            warnings.append(f"foci outside the brain left unchecked in unverified experiments: {unchecked}")
+        unsigned = missing("rq1_outlier_focus", [i for i in items if i not in unchecked], path=signoff_path)
         if unsigned:
             errors.append(f"foci outside the brain need an rq1_outlier_focus sign-off (check against the PDF): {unsigned}")
 
@@ -70,7 +78,8 @@ def validate(experiments, coordinates, cfg, signoff_path=SIGNOFFS, sample_path=S
     if sample is None:
         errors.append("spot-check sample not drawn: python -m rq1_map.spotcheck")
     else:
-        need = list(exps.exp_id) if has_error("rq1_spotcheck", path=signoff_path) else sample
+        checkable = [e for e in exps.exp_id if e not in unverified]
+        need = checkable if has_error("rq1_spotcheck", path=signoff_path) else sample
         unsigned = missing("rq1_spotcheck", need, path=signoff_path)
         if unsigned:
             scope = "every experiment (an error was found in the sample)" if len(need) > len(sample) else "the sample"

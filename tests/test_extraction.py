@@ -83,6 +83,24 @@ def test_unverified_contrast_error(tmp_path):
     assert any("contrast_verified_by" in e and "e4" in e for e in errors)
 
 
+def test_unverified_experiment_warns_and_needs_no_signoff(tmp_path):
+    from rq1_map.import_sleuth import UNVERIFIED
+    exps, coords = sheets()
+    exps.loc[0, "contrast_verified_by"] = UNVERIFIED
+    coords.loc[0, ["x", "y", "z"]] = [90.0, 90.0, 90.0]
+    errors, warnings = run(exps, coords, tmp_path)
+    assert not any("contrast_verified_by" in e or "outside the brain" in e for e in errors)
+    assert any("e0" in w and "not verified" in w for w in warnings)
+    assert any("e0:90,90,90" in w and "unchecked" in w for w in warnings)
+
+
+def test_outside_brain_still_needs_signoff_when_verified(tmp_path):
+    exps, coords = sheets()
+    coords.loc[0, ["x", "y", "z"]] = [90.0, 90.0, 90.0]
+    errors, _ = run(exps, coords, tmp_path)
+    assert any("e0:90,90,90" in e for e in errors)
+
+
 def test_spotcheck_error_requires_all(tmp_path):
     exps, coords = sheets()
     ok = "".join(f"2026-10-18,rq1_spotcheck,e{i},TH,pass,\n" for i in range(4))

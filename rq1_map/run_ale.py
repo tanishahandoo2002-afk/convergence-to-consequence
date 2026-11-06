@@ -20,7 +20,7 @@ from nimare.meta.cbma.ale import ALE, ALESubtraction
 
 from checks.check_rq1_extraction import validate, validate_h1b
 from rq1_map.coords import random_in_brain, to_mni
-from rq1_map.import_sleuth import H1B_TYPES, SHEETS, read_h1b_sheets
+from rq1_map.import_sleuth import H1B_TYPES, SHEETS, UNVERIFIED, read_h1b_sheets
 from tools.common import load_config, record_versions
 
 CLUSTER_MAP = "z_desc-size_level-cluster_corr-FWE_method-montecarlo"
@@ -176,8 +176,13 @@ def main():
         failsafe(exps, coords_mni, clusters, cfg).to_csv(RESULTS / "failsafe.csv", index=False)
     else:
         pd.DataFrame(columns=["cluster", "noise_experiments", "survives"]).to_csv(RESULTS / "failsafe.csv", index=False)
+    verified = exps[exps.contrast_verified_by != UNVERIFIED]
+    if len(verified) < len(exps):  # shows whether the unverified experiments change the map
+        vres = run(build_dataset(verified, coords_mni[coords_mni.exp_id.isin(verified.exp_id)]), cfg["ale"], cfg["seed"])
+        significant_map(vres, alpha).to_filename(RESULTS / "ale_cluster_fwe_z_verified_only.nii.gz")
+        cluster_table(vres, alpha).to_csv(RESULTS / "clusters_verified_only.csv", index=False)
     print(h1b(sheets, cfg))
-    params = {"date": datetime.date.today().isoformat(), "seed": cfg["seed"], "ale": cfg["ale"],
+    params ={"date": datetime.date.today().isoformat(), "seed": cfg["seed"], "ale": cfg["ale"],
               "n_experiments": len(exps), "n_foci": len(coords), "nimare": nimare.__version__}
     (RESULTS / "params.json").write_text(json.dumps(params, indent=2))
     record_versions("rq1_ale")

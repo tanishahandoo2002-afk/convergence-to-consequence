@@ -16,6 +16,7 @@ EXP_COLUMNS = ["exp_id", "study_id", "doi", "subject_group", "table_or_figure", 
                "n", "mean_age", "space", "source", "contrast_verified_by"]
 SHEETS = Path(__file__).resolve().parent
 H1B_TYPES = ("recollection", "familiarity")
+UNVERIFIED = "Not verified (paper not accessible)"
 
 
 def read_h1b_sheets(sheets=SHEETS):
