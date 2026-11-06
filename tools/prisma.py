@@ -27,13 +27,18 @@ def counts(base):
     log.hits = log.hits.astype(int)
     records = pd.read_csv(base / "search" / "records.csv", dtype=str)
     ta = title_abstract_decisions(base).reindex(records.record_id)
-    assessed = ta.index[ta != "exclude"]
+    sought = ta.index[ta != "exclude"]
+    not_retrieved_path = base / "screening" / "full_text_not_retrieved.csv"
+    not_retrieved = pd.read_csv(not_retrieved_path, dtype=str).record_id if not_retrieved_path.exists() else []
+    assessed = sought.difference(not_retrieved)
     ft = human(base, "author", stage="full_text").reindex(assessed).dropna()
     return {
         "identified": int(log[log.source != "dedupe"].drop_duplicates("file", keep="last").hits.sum()),
         "duplicates_removed": int(log.loc[log.source == "dedupe", "hits"].iloc[-1]),
         "screened": len(records),
         "excluded_title_abstract": int((ta == "exclude").sum()),
+        "full_text_sought": len(sought),
+        "not_retrieved": len(sought) - len(assessed),
         "full_text_assessed": len(assessed),
         "excluded_full_text": int((ft == "exclude").sum()),
         "included": int((ft == "include").sum()),
@@ -44,8 +49,10 @@ def reconcile(c):
     errors = []
     if c["identified"] - c["duplicates_removed"] != c["screened"]:
         errors.append(f"identified {c['identified']} - duplicates {c['duplicates_removed']} != screened {c['screened']}")
-    if c["screened"] - c["excluded_title_abstract"] != c["full_text_assessed"]:
-        errors.append("screened - title/abstract exclusions != full texts assessed")
+    if c["screened"] - c["excluded_title_abstract"] != c["full_text_sought"]:
+        errors.append("screened - title/abstract exclusions != full texts sought")
+    if c["full_text_sought"] - c["not_retrieved"] != c["full_text_assessed"]:
+        errors.append("full texts sought - not retrieved != full texts assessed")
     if c["full_text_assessed"] - c["excluded_full_text"] != c["included"]:
         errors.append(f"full texts assessed {c['full_text_assessed']} - excluded {c['excluded_full_text']} "
                       f"!= included {c['included']} (full-text decisions missing?)")
@@ -54,17 +61,18 @@ def reconcile(c):
 
 def draw(c, out):
     boxes = [("Records identified", c["identified"]), ("Records screened", c["screened"]),
-             ("Full texts assessed", c["full_text_assessed"]), ("Studies included", c["included"])]
+             ("Full texts sought", c["full_text_sought"]), ("Full texts assessed", c["full_text_assessed"]),
+             ("Studies included", c["included"])]
     side = [("Duplicates removed", c["duplicates_removed"]), ("Excluded (title/abstract)", c["excluded_title_abstract"]),
-            ("Excluded (full text)", c["excluded_full_text"])]
-    fig, ax = plt.subplots(figsize=(7, 6))
+            ("Not retrieved", c["not_retrieved"]), ("Excluded (full text)", c["excluded_full_text"])]
+    fig, ax = plt.subplots(figsize=(7, 7.5))
     ax.axis("off")
     for i, (label, n) in enumerate(boxes):
-        y = 0.9 - i * 0.27
+        y = 0.92 - i * 0.21
         ax.text(0.3, y, f"{label}\n(n = {n})", ha="center", va="center", bbox=dict(boxstyle="round", fc="white"))
         if i < len(side):
-            ax.annotate("", (0.3, y - 0.19), (0.3, y - 0.06), arrowprops=dict(arrowstyle="->"))
-            ax.text(0.78, y - 0.13, f"{side[i][0]}\n(n = {side[i][1]})", ha="center", va="center",
+            ax.annotate("", (0.3, y - 0.15), (0.3, y - 0.06), arrowprops=dict(arrowstyle="->"))
+            ax.text(0.78, y - 0.105, f"{side[i][0]}\n(n = {side[i][1]})", ha="center", va="center",
                     bbox=dict(boxstyle="round", fc="#f2f2f2"))
     fig.savefig(out, dpi=200, bbox_inches="tight")
     plt.close(fig)

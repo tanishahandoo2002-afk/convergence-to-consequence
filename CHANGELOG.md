@@ -15,7 +15,8 @@ Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project
 **Limits:**
 - These are proposals from a model not calibrated on full texts. Several proposed contrasts do not look eligible from their labels alone. Nothing has been entered in `experiments.csv`.
 - The accepted bulk yes covers title/abstract only. It does not verify any contrast, and `contrast_verified_by` stays blank until the author confirms each one against its paper.
-- Open-access papers are not a random subset, and 154 of 290 is a large share with no full text. How to handle them is not yet decided, and PRISMA has no "not retrieved" count yet.
+- The team decided to count the 154 records with no text as "reports not retrieved". No one will seek them through a library or the authors, and PRISMA reports them as their own count. They are not assessed, so an eligible study among them is lost to the map.
+- Open-access papers are not a random subset. Availability can track journal, funder and year, so the map may not represent the whole literature, and more than half of the records sought were not read.
 - The proposals include known overlaps that need one experiment per subject group, and a possible NSD study that would overlap with RQ2.
 
 ## 2026-11-07: the author accepted every AI suggestion as one decision (RQ1)

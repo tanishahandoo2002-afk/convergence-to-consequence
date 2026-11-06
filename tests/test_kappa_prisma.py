@@ -52,6 +52,19 @@ def test_prisma_reconciles(tmp_path):
     assert c["full_text_assessed"] - c["excluded_full_text"] == c["included"]
 
 
+def test_prisma_counts_not_retrieved_apart_from_assessed(tmp_path):
+    from tools.prisma import reconcile
+    write_rq(tmp_path, [
+        ["a", "title_abstract", "author", "include", "", ""], ["b", "title_abstract", "author", "include", "", ""],
+        ["c", "title_abstract", "author", "include", "", ""],
+        ["a", "full_text", "author", "include", "", ""], ["b", "full_text", "author", "exclude", "no coords", ""]])
+    pd.DataFrame({"record_id": ["c"]}).to_csv(tmp_path / "screening" / "full_text_not_retrieved.csv", index=False)
+    c = counts(tmp_path)
+    assert c["full_text_sought"] == 3 and c["not_retrieved"] == 1 and c["full_text_assessed"] == 2
+    assert c["excluded_full_text"] == 1 and c["included"] == 1
+    assert reconcile(c) == []
+
+
 def test_check_screening_flags_missing_human(tmp_path):
     from checks.check_screening import check
     write_rq(tmp_path, [["a", "title_abstract", "author", "include", "", ""]])

@@ -246,8 +246,9 @@ def main():
         record_versions(f"{a.rq}_full_text_{a.rater or 'asi'}")
         print(f"full text: {n} proposals written; the author confirms each in experiments.csv")
         no_text = sorted(set(kept) - set(pd.read_csv(out, dtype=str).record_id if out.exists() else []))
-        pd.DataFrame({"record_id": no_text}).to_csv(scr / "full_text_not_retrieved.csv", index=False)
-        print(f"no full text found for {len(no_text)} of {len(kept)}; listed in full_text_not_retrieved.csv")
+        print(f"no full text found for {len(no_text)} of {len(kept)}")
+        if not a.limit:  # PRISMA counts this list, so a partial run must not replace it
+            pd.DataFrame({"record_id": no_text}).to_csv(scr / "full_text_not_retrieved.csv", index=False)
         return
     if a.rater:
         r = cfg["raters"][a.rater]
