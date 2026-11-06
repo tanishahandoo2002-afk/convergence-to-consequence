@@ -24,6 +24,11 @@ def human(base, rater, stage="title_abstract"):
     if not p.exists():
         return pd.Series(dtype=str)
     h = pd.read_csv(p, dtype=str)
+    if "agree" in h:
+        # yes keeps the AI suggestion and no reverses it; a typed decision wins, and anything else counts as unanswered
+        agree = h.agree.str.strip().str.lower()
+        flipped = h.ai_suggestion.map({"include": "exclude", "exclude": "include"})
+        h["decision"] = h.decision.fillna(h.ai_suggestion.where(agree == "yes", flipped.where(agree == "no")))
     h = h[(h.rater == rater) & (h.stage == stage) & h.decision.notna()]
     return h.drop_duplicates("record_id", keep="last").set_index("record_id").decision
 

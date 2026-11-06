@@ -2,6 +2,22 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: AI suggestion on each record the author reviews (RQ1)
+
+**Was:** the author decided each routed record from its title and abstract alone.
+
+**Now:** each record on her sheet carries an AI suggestion (include or exclude), a confidence level and the reasoning (`rq1_map/screening/ai_suggestions.csv`). She answers yes or no to it: yes keeps the suggestion and no reverses it. Include means the record goes on to full text. She still does not see the ASI or Qwen decisions, or why a record reached her.
+
+**Why:** the team asked for a reasoned suggestion on each record, to support her review.
+
+**How they were made:** an AI assistant read the criteria, title and abstract of each record, without seeing the ASI or Qwen decisions. It applied the reasoning of a neuroimaging meta-analyst: is the sample or a separate group healthy adults, is the imaging fMRI or PET, is the contrast measured at retrieval, and does it separate successful from unsuccessful retrieval? When an abstract could not settle a record that looked possibly eligible, it suggested include with low confidence.
+
+**Limits:**
+- These are AI suggestions that imitate expert reasoning. They are not an expert's judgment, and the author decides every record.
+- Seeing a suggestion can anchor her, so author decisions are not independent of it. AI-author κ is no longer an independent measure of agreement, and it should be read that way.
+- The suggestions were written by hand in one sitting, not by a committed script, so they cannot be regenerated. The committed file is the record of them.
+- The suggestions are not a further screen. Records she does not see are still decided by the ASI and Qwen merge.
+
 ## 2026-11-07: AI rater changed from Gemini to asi1-mini (RQ1 and RQ3)
 
 **Was:** gemini-3.8-flash and qwen2.5:7b-instruct screened titles and abstracts, and gemini-3.8-flash proposed the contrast table and sample size from full texts.

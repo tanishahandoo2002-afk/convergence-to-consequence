@@ -61,24 +61,52 @@ def test_check_screening_flags_missing_human(tmp_path):
     assert any("second rater" in e for e in errors)
 
 
-def test_review_sheet_is_blind_and_kept(tmp_path):
-    from checks.check_screening import check
+def review_sheet(tmp_path):
     from tools.screen import merge, write_review_sheet
     write_rq(tmp_path, [])
     records = pd.DataFrame({"record_id": list("abcdef"), "title": list("ABCDEF"), "abstract": "x", "year": "2020", "doi": ""})
+    suggestions = pd.DataFrame({"record_id": list("abcdef"), "ai_suggestion": ["include"] * 3 + ["exclude"] * 3,
+                                "ai_confidence": "low", "ai_reasoning": "why"})
     a = pd.Series(["include"] * 2 + ["exclude"] * 4, index=list("abcdef"))
     m = merge(a, a, seed=1, frac=0.25)
     path = tmp_path / "screening" / "human_decisions.csv"
     path.unlink()
-    assert write_review_sheet(m, records, path, seed=1)
+    assert write_review_sheet(m, records, suggestions, path, seed=1)
+    return m, records, suggestions, path
+
+
+def test_review_sheet_shows_suggestions_not_raters_and_is_kept(tmp_path):
+    from checks.check_screening import check
+    from tools.screen import write_review_sheet
+    m, records, suggestions, path = review_sheet(tmp_path)
     sheet = pd.read_csv(path, dtype=str)
     assert set(sheet.record_id) == set(m.index[m.needs_human])
+    assert sheet.ai_reasoning.notna().all()
     assert not {"asi", "qwen", "merged", "needs_human"} & set(sheet.columns)
     # a blank row is not a decision, so the check still asks for it
     pd.DataFrame({"record_id": ["a"]}).to_csv(tmp_path / "screening" / "second_rater_sample.csv", index=False)
     assert any(f"{len(sheet)} records need an author decision" in e for e in check(tmp_path))
-    # a rerun of the merge must not wipe her decisions
-    assert not write_review_sheet(m, records, path, seed=1)
+    # a rerun of the merge must not wipe her answers
+    assert not write_review_sheet(m, records, suggestions, path, seed=1)
+
+
+def test_yes_keeps_the_suggestion_and_no_reverses_it(tmp_path):
+    from tools.kappa import human
+    _, _, _, path = review_sheet(tmp_path)
+    sheet = pd.read_csv(path, dtype=str)
+    answers = {"a": "yes", "b": " No ", "c": "maybe"}
+    sheet["agree"] = sheet.record_id.map(answers)
+    sheet.to_csv(path, index=False)
+    assert human(tmp_path, "author").to_dict() == {"a": "include", "b": "exclude"}
+
+
+def test_review_sheet_refuses_a_missing_suggestion(tmp_path):
+    from tools.screen import merge, write_review_sheet
+    records = pd.DataFrame({"record_id": ["a"], "title": "A", "abstract": "x", "year": "2020", "doi": ""})
+    a = pd.Series(["include"], index=["a"])
+    empty = pd.DataFrame(columns=["record_id", "ai_suggestion", "ai_confidence", "ai_reasoning"], dtype=str)
+    with pytest.raises(SystemExit):
+        write_review_sheet(merge(a, a, seed=1, frac=0.2), records, empty, tmp_path / "h.csv", seed=1)
 
 
 def test_low_kappa_does_not_make_the_author_screen_everything(tmp_path):

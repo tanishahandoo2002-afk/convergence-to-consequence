@@ -85,7 +85,7 @@ AND (retrieval[tiab] OR remember*[tiab] OR recollection[tiab] OR "old/new"[tiab]
   - She reviews every record either rater marked include or unsure, which includes every disagreement.
   - She also reviews a seeded random 20% of the records both raters excluded.
   - The other agreed excludes stay excluded on the AI decision.
-  - Her review sheet is in a seeded random order and does not show the AI decisions.
+  - Her review sheet is in a seeded random order and does not show the two raters' decisions. Each record carries a third AI suggestion with its reasoning, and she answers yes or no to it (`CHANGELOG.md`, 2026-11-07).
 - **Two AI raters screen every record independently:** asi1-mini via the ASI:One API, and qwen2.5:7b-instruct run locally via Ollama. asi1-mini replaced gemini-3.8-flash (`CHANGELOG.md`, 2026-11-07).
   - Settings: temperature 0, the eligibility criteria above as the prompt (`rq1_map/screening/criteria.md`), and JSON output.
   - Each decision is logged with the model identifier, a SHA-256 hash of the prompt, a timestamp and the raw reply.

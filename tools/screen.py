@@ -157,14 +157,19 @@ def merge(a, b, seed, frac):
     return m
 
 
-def write_review_sheet(m, records, path, seed):
-    """The author's sheet, in the human_decisions format: shuffled and without the AI decisions, so
-    neither can anchor her. Never overwritten, because it holds her decisions. Returns whether it wrote."""
+def write_review_sheet(m, records, suggestions, path, seed):
+    """The author's sheet, in the human_decisions format: shuffled, with an AI suggestion per record and
+    without the raters' decisions. She answers yes or no in `agree`. Never overwritten, because it holds
+    her answers. Returns whether it wrote."""
     if path.exists():
         return False
     sheet = records[records.record_id.isin(m.index[m.needs_human])].sample(frac=1, random_state=seed)
-    sheet = sheet.assign(stage="title_abstract", rater="author", decision="", reason="", date="")
-    sheet[["record_id", "stage", "rater", "decision", "reason", "date", "title", "abstract", "year", "doi"]].to_csv(path, index=False)
+    sheet = sheet.merge(suggestions, on="record_id", how="left")
+    if sheet.ai_suggestion.isna().any():
+        raise SystemExit(f"no AI suggestion for: {list(sheet.record_id[sheet.ai_suggestion.isna()])[:10]}")
+    sheet = sheet.assign(stage="title_abstract", rater="author", agree="", reason="", decision="", date="")
+    sheet[["record_id", "stage", "rater", "year", "doi", "title", "abstract", "ai_suggestion", "ai_confidence",
+           "ai_reasoning", "agree", "reason", "decision", "date"]].to_csv(path, index=False)
     return True
 
 
@@ -212,7 +217,10 @@ def main():
                   cfg["seed"], cfg["human_exclude_sample"])
         m.to_csv(scr / "merged.csv")
         print(m.merged.value_counts().to_string(), f"\nneeds human: {int(m.needs_human.sum())}")
-        if not write_review_sheet(m, records, scr / "human_decisions.csv", cfg["seed"]):
+        if not (scr / "ai_suggestions.csv").exists():
+            print("ai_suggestions.csv missing; review sheet not written")
+        elif not write_review_sheet(m, records, pd.read_csv(scr / "ai_suggestions.csv", dtype=str),
+                                    scr / "human_decisions.csv", cfg["seed"]):
             print("human_decisions.csv exists; left as it is")
 
 
