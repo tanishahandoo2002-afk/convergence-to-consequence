@@ -84,14 +84,14 @@ AND (retrieval[tiab] OR remember*[tiab] OR recollection[tiab] OR "old/new"[tiab]
 - **The AI raters screen first; the author reviews.** Plan §12 would have the author screen everything, because both AI raters were below κ 0.6 in the calibration (§6.3). The author chose instead to review the AI output. This is logged in `CHANGELOG.md` (2026-10-27).
   - She reviews every record either rater marked include or unsure, which includes every disagreement.
   - She also reviews a seeded random 20% of the records both raters excluded.
-  - The other agreed excludes stay excluded on the AI decision.
+  - An AI assistant read the other agreed excludes once, not blind to the two raters' decisions. She also reviews the ones it would keep, on a separate sheet. The rest stay excluded on the AI decision (`CHANGELOG.md`, 2026-11-07).
   - Her review sheet is in a seeded random order and does not show the two raters' decisions. Each record carries a third AI suggestion with its reasoning, and she answers yes or no to it (`CHANGELOG.md`, 2026-11-07).
 - **Two AI raters screen every record independently:** asi1-mini via the ASI:One API, and qwen2.5:7b-instruct run locally via Ollama. asi1-mini replaced gemini-3.8-flash (`CHANGELOG.md`, 2026-11-07).
   - Settings: temperature 0, the eligibility criteria above as the prompt (`rq1_map/screening/criteria.md`), and JSON output.
   - Each decision is logged with the model identifier, a SHA-256 hash of the prompt, a timestamp and the raw reply.
   - ASI:One offers no pinned model version and no documented seed, and its replies vary between runs. The logged replies are the record of its decisions; a rerun would not reproduce them exactly.
 - **Second rater.** A second rater (**[OPEN]** name) screens a seeded random 20% of all records, blind to the author's and the AIs' decisions. Disagreements are resolved by discussion.
-- **Agreement reported:** Cohen's κ for ASI–Qwen, each AI–author, and author–second rater.
+- **Agreement reported:** Cohen's κ for ASI–Qwen, each AI–author, and author–second rater. AI–author κ leaves out the second-look sheet, because those records were chosen for being excluded by both AIs.
 
 **6.2 Full-text stage.**
 - The author assesses each remaining full text against §4.

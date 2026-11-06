@@ -2,6 +2,25 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: second look at the agreed excludes the author does not review (RQ1)
+
+**Was:** agreed excludes outside the 20% sample stayed excluded on the ASI and Qwen decision, and no one read them. The 2026-10-27 entry set no escalation rule, and the entry below said its suggestions were not a further screen.
+
+**Now:** an AI assistant read all 585 of those records once. The 47 it would keep go to the author on a separate sheet (`rq1_map/screening/human_decisions_second_look.csv`, written by `python -m tools.screen rq1 --second-look`). She answers yes or no, as on the main sheet. A yes sends the record on to full text, and a no leaves it excluded. The other 538 stay excluded. `merged.csv` and the main sheet are unchanged. All judgments are in `rq1_map/screening/ai_suggestions_unseen.csv`.
+
+**Why:** on the 147 sampled agreed excludes, the AI suggestions kept 17, many of them patient or developmental studies with a healthy-adult group. The author has not confirmed any of the 17, so this is a reason to look, not evidence of missed studies. The change was made before any author decision was recorded.
+
+**How they were made:** by the method in the entry below, with the same criteria and format. Of the 47, 1 has high confidence, 13 medium and 33 low.
+
+**Limits:**
+- The assistant knew both raters had excluded these records, so the second look was not blind, unlike the suggestions on the main sheet. This could bias it in either direction.
+- Every suggestion on this sheet is include. The author can see that, and it may anchor her towards yes. A high yes rate here does not validate the second look.
+- These suggestions come from abstracts only, and most are low confidence because the abstract could not settle the record.
+- The judgments were written by hand in one pass, not by a committed script, so they cannot be regenerated. The committed file is the record of them.
+- No person reads the 538. An AI reading is not a human check, and the 20% sample is still the only human check on agreed excludes.
+- Her answers on this sheet count towards the PRISMA flow but not towards AI-author κ, because these records were chosen for being excluded by both AIs.
+- This was one second look, not a standing rule. It does not apply to RQ3, and it sets no rule for escalating to all agreed excludes.
+
 ## 2026-11-07: AI suggestion on each record the author reviews (RQ1)
 
 **Was:** the author decided each routed record from its title and abstract alone.
