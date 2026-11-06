@@ -1,5 +1,5 @@
-"""Screening check (plan §8.1 step 4): the author decided every record routed to her, the second rater
-did the sample, and PRISMA reconciles. Kappa is reported by tools.kappa, not enforced (CHANGELOG 2026-10-27)."""
+"""Screening check (plan §8.1 step 4): the author decided every record routed to her, any second rater
+did their sample, and PRISMA reconciles. Kappa is reported by tools.kappa, not enforced (CHANGELOG 2026-10-27)."""
 import argparse
 import sys
 
@@ -23,9 +23,7 @@ def check(base):
     if missing:
         errors.append(f"{len(missing)} records need an author decision: {missing[:10]}")
     sample_path = base / "screening" / "second_rater_sample.csv"
-    if not sample_path.exists():
-        errors.append("second_rater_sample.csv missing: python -m tools.kappa <rq> --make-second-rater-sample")
-    else:
+    if sample_path.exists():  # RQ1 has no second rater (CHANGELOG 2026-11-07)
         miss2 = sorted(set(pd.read_csv(sample_path, dtype=str).record_id) - set(human(base, "second").index))
         if miss2:
             errors.append(f"{len(miss2)} records in the sample lack a second rater decision: {miss2[:10]}")

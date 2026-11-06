@@ -53,7 +53,7 @@ Design: [`docs/design.md`](docs/design.md). Deviations from the protocol: [`CHAN
 Title/abstract screening used two independent large language model raters, plus a third AI
 suggestion on each record routed to the author. The author accepted every suggestion as one
 decision, so these decisions equal the AI suggestions (`CHANGELOG.md`, 2026-11-07).
-Author–second rater agreement on a random 20% sample was κ = [to be filled after screening].
+No second human rater took part, so no human reliability measure is reported for screening.
 Extracted contrasts are proposed by an AI and verified by the author against each paper.
 An AI assistant also helped draft code; the author ran, read and checked every script.
 Coordinates were never transcribed by an AI.

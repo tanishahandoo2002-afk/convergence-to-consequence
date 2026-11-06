@@ -2,6 +2,19 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: second rater dropped (RQ1)
+
+**Was:** a blind second rater screened a seeded 20% of records, and author-second κ was reported. The entry below recorded them as anonymous.
+
+**Now:** there is no second rater for RQ1 screening. `second_rater_sample.csv` and the blank `second_rater_decisions.csv` are removed, and the screening check asks for second-rater decisions only where a sample exists.
+
+**Why:** the planned rater gave their answers together with the author, so they were not independent, and they could not cover the 106 sampled records she never answered. The team chose to drop the step rather than report a κ of 1.0.
+
+**Limits:**
+- No independent human reading of title/abstract decisions exists. Those decisions come from the AI raters and AI suggestions, accepted by the author.
+- The screening check now passes without a second rater, so a pass does not show human reliability.
+- RQ3 is not decided by this entry.
+
 ## 2026-11-07: second rater anonymous, and the author accepted the 48 suggested includes (RQ1)
 
 **Second rater. Was:** to be named in the registration. **Now:** they take part anonymously and are not named in the project's records or on GitHub. Their decisions appear only under `rater = second`. **Why:** the rater asked for this. **Limits:** readers cannot verify who they are or what experience they have. They have not yet screened any record, and to stay blind they should not open this repository, which holds the AI and author decisions, until they finish.

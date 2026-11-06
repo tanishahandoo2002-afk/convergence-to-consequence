@@ -65,6 +65,12 @@ def test_prisma_counts_not_retrieved_apart_from_assessed(tmp_path):
     assert reconcile(c) == []
 
 
+def test_check_screening_needs_no_second_rater_without_a_sample(tmp_path):
+    from checks.check_screening import check
+    write_rq(tmp_path, [["a", "title_abstract", "author", "include", "", ""]])
+    assert not any("second" in e for e in check(tmp_path))
+
+
 def test_full_text_check_answers_reach_prisma(tmp_path):
     from tools.kappa import FULL_TEXT_SHEET
     write_rq(tmp_path, [[r, "title_abstract", "author", "include", "", ""] for r in "abc"])
