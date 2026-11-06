@@ -17,3 +17,4 @@ date,step,item,who,result,note
 2026-11-07,rq1_spotcheck,pm005,author,pass,"Tibon 2019: 18 foci read again by script from Table 2 and identical. Check the chosen rows, because a script cannot judge those. Checked by AI assistant; accepted by author in bulk."
 2026-11-07,rq1_spotcheck,pm013,author,pass,"Leshikar 2014: 3 foci read again by script from Table 4 and identical. Check the chosen rows, because a script cannot judge those. Checked by AI assistant; accepted by author in bulk."
 2026-11-07,rq1_spotcheck,pm021,author,pass,"Wang 2009: 14 foci read again by script from Table 3 and identical. Check the chosen rows, because a script cannot judge those. Checked by AI assistant; accepted by author in bulk."
+2026-11-07,masks_frozen,all,author,pass,Six masks built from the ALE maps. An AI assistant viewed 3 of the 6 QC images and ran the mask check; accepted by author in bulk.

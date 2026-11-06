@@ -12,6 +12,7 @@ Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project
 - A difference between the two fits cannot say whether the unverified experiments add signal or error.
 - `control_md` and `control_md_verified` differ slightly, because each excludes its own memory mask, so H2b is not an identical comparison across the two fits.
 - These variants are not run yet, because RQ2 needs the NSD data and native-space masks.
+- The team relayed the author's acceptance of the freeze sign-off. Its note says an AI assistant viewed 3 of the 6 QC images and ran the mask check, and that she accepted this in bulk. Each image shows only a few slices.
 
 ## 2026-11-07: sign-offs accepted as one decision (RQ1)
 
