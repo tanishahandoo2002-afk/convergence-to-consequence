@@ -5,6 +5,7 @@ Every decision is logged with model, prompt hash, timestamp and the raw reply.
 CLI:
   python -m tools.screen rq1 --stage title_abstract --rater qwen [--limit 5]
   python -m tools.screen rq1 --stage title_abstract --merge
+  python -m tools.screen rq1 --second-look                   # the author's sheet for rescued agreed excludes
   python -m tools.screen rq1 --stage full_text --rater asi   # contrast-table proposals; author confirms each
 """
 import argparse
@@ -21,6 +22,7 @@ import numpy as np
 import pandas as pd
 
 from tools.common import ROOT, load_config, record_versions
+from tools.kappa import SECOND_LOOK_SHEET
 
 DECISIONS = {"include", "exclude", "unsure"}
 LOG_COLUMNS = ["record_id", "rater", "model", "prompt_sha256", "timestamp", "decision", "reason", "raw"]
@@ -157,13 +159,13 @@ def merge(a, b, seed, frac):
     return m
 
 
-def write_review_sheet(m, records, suggestions, path, seed):
+def write_review_sheet(record_ids, records, suggestions, path, seed):
     """The author's sheet, in the human_decisions format: shuffled, with an AI suggestion per record and
     without the raters' decisions. She answers yes or no in `agree`. Never overwritten, because it holds
     her answers. Returns whether it wrote."""
     if path.exists():
         return False
-    sheet = records[records.record_id.isin(m.index[m.needs_human])].sample(frac=1, random_state=seed)
+    sheet = records[records.record_id.isin(record_ids)].sample(frac=1, random_state=seed)
     sheet = sheet.merge(suggestions, on="record_id", how="left")
     if sheet.ai_suggestion.isna().any():
         raise SystemExit(f"no AI suggestion for: {list(sheet.record_id[sheet.ai_suggestion.isna()])[:10]}")
@@ -188,6 +190,7 @@ def main():
     ap.add_argument("--rater", choices=["asi", "gemini", "qwen"])
     ap.add_argument("--limit", type=int)
     ap.add_argument("--merge", action="store_true")
+    ap.add_argument("--second-look", action="store_true")
     a = ap.parse_args()
     base = ROOT / {"rq1": "rq1_map", "rq3": "rq3_stimulation"}[a.rq]
     scr = base / "screening"
@@ -219,9 +222,15 @@ def main():
         print(m.merged.value_counts().to_string(), f"\nneeds human: {int(m.needs_human.sum())}")
         if not (scr / "ai_suggestions.csv").exists():
             print("ai_suggestions.csv missing; review sheet not written")
-        elif not write_review_sheet(m, records, pd.read_csv(scr / "ai_suggestions.csv", dtype=str),
+        elif not write_review_sheet(m.index[m.needs_human], records, pd.read_csv(scr / "ai_suggestions.csv", dtype=str),
                                     scr / "human_decisions.csv", cfg["seed"]):
             print("human_decisions.csv exists; left as it is")
+    if a.second_look:
+        s = pd.read_csv(scr / "ai_suggestions_unseen.csv", dtype=str)
+        print(s.groupby(["ai_suggestion", "ai_confidence"]).size().to_string())
+        if not write_review_sheet(s.record_id[s.ai_suggestion == "include"], records, s,
+                                  scr / SECOND_LOOK_SHEET, cfg["seed"]):
+            print(f"{SECOND_LOOK_SHEET} exists; left as it is")
 
 
 if __name__ == "__main__":

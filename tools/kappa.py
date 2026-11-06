@@ -12,6 +12,9 @@ from sklearn.metrics import cohen_kappa_score
 
 from tools.common import ROOT, load_config
 
+SECOND_LOOK_SHEET = "human_decisions_second_look.csv"
+SHEETS = ("human_decisions.csv", SECOND_LOOK_SHEET)
+
 
 def kappa(a, b):
     """Kappa on the records both raters decided ('unsure' is its own category). Returns (kappa, n)."""
@@ -19,11 +22,11 @@ def kappa(a, b):
     return float(cohen_kappa_score(a.loc[idx].astype(str), b.loc[idx].astype(str))), len(idx)
 
 
-def human(base, rater, stage="title_abstract"):
-    p = base / "screening" / "human_decisions.csv"
-    if not p.exists():
+def human(base, rater, stage="title_abstract", sheets=SHEETS):
+    paths = [base / "screening" / s for s in sheets if (base / "screening" / s).exists()]
+    if not paths:
         return pd.Series(dtype=str)
-    h = pd.read_csv(p, dtype=str)
+    h = pd.concat([pd.read_csv(p, dtype=str) for p in paths], ignore_index=True)
     if "agree" in h:
         # yes keeps the AI suggestion and no reverses it; a typed decision wins, and anything else counts as unanswered
         agree = h.agree.str.strip().str.lower()
@@ -36,8 +39,10 @@ def human(base, rater, stage="title_abstract"):
 def report(base):
     merged = pd.read_csv(base / "screening" / "merged.csv", dtype=str).set_index("record_id")
     author, second = human(base, "author"), human(base, "second")
-    pairs = {"asi-qwen": (merged.asi, merged.qwen), "asi-author": (merged.asi, author),
-             "qwen-author": (merged.qwen, author), "author-second": (author, second)}
+    # second-look records were picked because both AIs excluded them, which would bias AI-author kappa
+    routed = human(base, "author", sheets=SHEETS[:1])
+    pairs = {"asi-qwen": (merged.asi, merged.qwen), "asi-author": (merged.asi, routed),
+             "qwen-author": (merged.qwen, routed), "author-second": (author, second)}
     rows = []
     for name, (a, b) in pairs.items():
         k, n = kappa(a, b) if len(a.index.intersection(b.index)) else (math.nan, 0)

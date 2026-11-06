@@ -14,8 +14,12 @@ def check(base):
     errors = []
     merged = pd.read_csv(base / "screening" / "merged.csv", dtype=str)
     author = human(base, "author")
-    need = merged.loc[merged.needs_human.str.lower() == "true", "record_id"]
-    missing = sorted(set(need) - set(author.index))
+    need = set(merged.loc[merged.needs_human.str.lower() == "true", "record_id"])
+    second_look = base / "screening" / "ai_suggestions_unseen.csv"
+    if second_look.exists():
+        s = pd.read_csv(second_look, dtype=str)
+        need |= set(s.record_id[s.ai_suggestion == "include"])
+    missing = sorted(need - set(author.index))
     if missing:
         errors.append(f"{len(missing)} records need an author decision: {missing[:10]}")
     sample_path = base / "screening" / "second_rater_sample.csv"

@@ -71,7 +71,7 @@ def review_sheet(tmp_path):
     m = merge(a, a, seed=1, frac=0.25)
     path = tmp_path / "screening" / "human_decisions.csv"
     path.unlink()
-    assert write_review_sheet(m, records, suggestions, path, seed=1)
+    assert write_review_sheet(m.index[m.needs_human], records, suggestions, path, seed=1)
     return m, records, suggestions, path
 
 
@@ -87,7 +87,7 @@ def test_review_sheet_shows_suggestions_not_raters_and_is_kept(tmp_path):
     pd.DataFrame({"record_id": ["a"]}).to_csv(tmp_path / "screening" / "second_rater_sample.csv", index=False)
     assert any(f"{len(sheet)} records need an author decision" in e for e in check(tmp_path))
     # a rerun of the merge must not wipe her answers
-    assert not write_review_sheet(m, records, suggestions, path, seed=1)
+    assert not write_review_sheet(m.index[m.needs_human], records, suggestions, path, seed=1)
 
 
 def test_yes_keeps_the_suggestion_and_no_reverses_it(tmp_path):
@@ -105,8 +105,49 @@ def test_review_sheet_refuses_a_missing_suggestion(tmp_path):
     records = pd.DataFrame({"record_id": ["a"], "title": "A", "abstract": "x", "year": "2020", "doi": ""})
     a = pd.Series(["include"], index=["a"])
     empty = pd.DataFrame(columns=["record_id", "ai_suggestion", "ai_confidence", "ai_reasoning"], dtype=str)
+    m = merge(a, a, seed=1, frac=0.2)
     with pytest.raises(SystemExit):
-        write_review_sheet(merge(a, a, seed=1, frac=0.2), records, empty, tmp_path / "h.csv", seed=1)
+        write_review_sheet(m.index[m.needs_human], records, empty, tmp_path / "h.csv", seed=1)
+
+
+def second_look(tmp_path, agree):
+    """Record f is an agreed exclude outside the author's sample that the second look suggests keeping."""
+    write_rq(tmp_path, [[r, "title_abstract", "author", "include", "", ""] for r in "abc"])
+    pd.DataFrame({"record_id": ["a"]}).to_csv(tmp_path / "screening" / "second_rater_sample.csv", index=False)
+    scr = tmp_path / "screening"
+    pd.DataFrame({"record_id": ["e", "f"], "ai_suggestion": ["exclude", "include"]}).to_csv(
+        scr / "ai_suggestions_unseen.csv", index=False)
+    pd.DataFrame({"record_id": ["f"], "stage": "title_abstract", "rater": "author", "ai_suggestion": "include",
+                  "agree": [agree], "decision": [""]}).to_csv(scr / "human_decisions_second_look.csv", index=False)
+
+
+def test_second_look_yes_goes_on_to_full_text(tmp_path):
+    from tools.prisma import title_abstract_decisions
+    second_look(tmp_path, "yes")
+    assert title_abstract_decisions(tmp_path)["f"] == "include"
+    assert title_abstract_decisions(tmp_path)["e"] == "exclude"
+
+
+def test_second_look_no_stays_excluded(tmp_path):
+    from tools.prisma import title_abstract_decisions
+    second_look(tmp_path, "no")
+    assert title_abstract_decisions(tmp_path)["f"] == "exclude"
+
+
+def test_second_look_answers_stay_out_of_ai_author_kappa(tmp_path):
+    from tools.kappa import report
+    second_look(tmp_path, "yes")
+    out = report(tmp_path).set_index("pair").n
+    assert out["asi-author"] == 3 and out["qwen-author"] == 3
+
+
+def test_check_asks_for_second_look_decisions(tmp_path):
+    from checks.check_screening import check
+    second_look(tmp_path, "")
+    assert any("f" in e and "author decision" in e for e in check(tmp_path))
+    second_look_answered = tmp_path / "answered"
+    second_look(second_look_answered, "yes")
+    assert not any("author decision" in e for e in check(second_look_answered))
 
 
 def test_low_kappa_does_not_make_the_author_screen_everything(tmp_path):
