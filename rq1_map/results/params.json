@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-07",
+  "seed": 20261019,
+  "ale": {
+    "voxel_thresh": 0.001,
+    "cluster_alpha": 0.05,
+    "n_iters": 5000,
+    "n_cores": 1
+  },
+  "n_experiments": 57,
+  "n_foci": 826,
+  "nimare": "0.22.1"
+}

@@ -1,0 +1,1 @@
+not run: recollection k=16, familiarity k=8 (each needs >= 17)

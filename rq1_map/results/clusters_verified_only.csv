@@ -1,0 +1,7 @@
+cluster,peak_x,peak_y,peak_z,peak_z_value,size_mm3,label
+1,-8.0,-48.0,32.0,7.0180473,2160,"Cingulate Gyrus, posterior division"
+2,-2.0,-26.0,30.0,5.751693,2080,"Cingulate Gyrus, posterior division"
+3,-48.0,-58.0,34.0,5.5770273,6576,Angular Gyrus
+4,-10.0,12.0,-2.0,5.457163,1184,Left Caudate
+5,-6.0,-74.0,42.0,5.008508,1656,Precuneous Cortex
+6,-4.0,36.0,40.0,4.385959,824,Superior Frontal Gyrus
