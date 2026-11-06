@@ -1,0 +1,1089 @@
+record_id,rater,model,timestamp,eligible,table,contrast,contrast_type,n,reason,raw
+pmid:42818524,full_text,asi1-mini,2026-11-07T02:21:40,False,N/A,N/A,N/A,0,"The study does not report a retrieval-success contrast (e.g., hits > correct rejections or remembered > forgotten) but instead contrasts retrieval monitoring demands (Recombined > Intact trials), which is excluded by the criteria.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study does not report a retrieval-success contrast (e.g., hits > correct rejections or remembered > forgotten) but instead contrasts retrieval monitoring demands (Recombined > Intact trials), which is excluded by the criteria.""
+}"
+pmid:42213517,full_text,asi1-mini,2026-11-07T02:21:45,False,N/A,N/A,N/A,0,The study is ineligible because it explicitly states that no effects of retrieval success could be identified in the fMRI data and focuses on memory precision rather than a standard successful retrieval contrast.,"{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is ineligible because it explicitly states that no effects of retrieval success could be identified in the fMRI data and focuses on memory precision rather than a standard successful retrieval contrast.""
+}"
+pmid:41764048,full_text,asi1-mini,2026-11-07T02:21:53,False,N/A,N/A,N/A,0,"The study is excluded because it reports ROI-only analyses (bilateral amygdala) rather than whole-brain fMRI results, and the primary contrasts of interest are encoding-related or regulation effects, not a direct episodic retrieval success contrast (e.g., hits > correct rejections) in healthy adults.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is excluded because it reports ROI-only analyses (bilateral amygdala) rather than whole-brain fMRI results, and the primary contrasts of interest are encoding-related or regulation effects, not a direct episodic retrieval success contrast (e.g., hits > correct rejections) in healthy adults.""
+}"
+pmid:41446077,full_text,asi1-mini,2026-11-07T02:22:00,False,N/A,N/A,N/A,0,"The study explicitly states that no effects of retrieval success could be identified in the hippocampus or left AG ROIs, and it does not report whole-brain coordinates for a retrieval-success contrast.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study explicitly states that no effects of retrieval success could be identified in the hippocampus or left AG ROIs, and it does not report whole-brain coordinates for a retrieval-success contrast.""
+}"
+pmid:41308786,full_text,asi1-mini,2026-11-07T02:22:07,False,N/A,N/A,N/A,0,"The study investigates false memory (false alarms > hits) rather than successful episodic retrieval (hits > correct rejections or remembered > forgotten), which is an excluded contrast type.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study investigates false memory (false alarms > hits) rather than successful episodic retrieval (hits > correct rejections or remembered > forgotten), which is an excluded contrast type.""
+}"
+pmid:41230417,full_text,asi1-mini,2026-11-07T02:22:12,False,N/A,N/A,N/A,0,The study exclusively employs Region of Interest (ROI) analyses for its primary fMRI results and does not report whole-brain coordinates for the retrieval-success or precision contrasts.,"{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study exclusively employs Region of Interest (ROI) analyses for its primary fMRI results and does not report whole-brain coordinates for the retrieval-success or precision contrasts.""
+}"
+pmid:40742119,full_text,asi1-mini,2026-11-07T02:22:17,True,Table 1,hit > CR,success,56,The study uses whole-brain fMRI on healthy adults and reports a retrieval-success contrast (hits > correct rejections) in Table 1 with a total sample size of 56 participants (17 DL-L + 20 DL-S + 19 ML) included in the fMRI analysis.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""hit > CR"",
+""contrast_type"": ""success"",
+""n"": 56,
+""reason"": ""The study uses whole-brain fMRI on healthy adults and reports a retrieval-success contrast (hits > correct rejections) in Table 1 with a total sample size of 56 participants (17 DL-L + 20 DL-S + 19 ML) included in the fMRI analysis.""
+}"
+pmid:40667041,full_text,asi1-mini,2026-11-07T02:22:23,True,Figure 2,associative hits > all misses,success,159,The study uses whole-brain fMRI in healthy older adults and reports the retrieval-success contrast (associative hits > misses) in Figure 2C with a sample size of N=159.,"{
+""eligible"": true,
+""table"": ""Figure 2"",
+""contrast"": ""associative hits > all misses"",
+""contrast_type"": ""success"",
+""n"": 159,
+""reason"": ""The study uses whole-brain fMRI in healthy older adults and reports the retrieval-success contrast (associative hits > misses) in Figure 2C with a sample size of N=159.""
+}"
+pmid:40143852,full_text,asi1-mini,2026-11-07T02:22:28,False,N/A,N/A,N/A,0,"The study exclusively involves patients with amnestic mild cognitive impairment (aMCI), which falls under the exclusion criterion for patient-only samples.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study exclusively involves patients with amnestic mild cognitive impairment (aMCI), which falls under the exclusion criterion for patient-only samples.""
+}"
+pmid:39765133,full_text,asi1-mini,2026-11-07T02:22:34,False,N/A,N/A,N/A,0,"The study uses anatomically defined regions of interest (entorhinal, perirhinal, and parahippocampal cortices) rather than whole-brain analysis, which is an exclusion criterion.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study uses anatomically defined regions of interest (entorhinal, perirhinal, and parahippocampal cortices) rather than whole-brain analysis, which is an exclusion criterion.""
+}"
+pmid:38937077,full_text,asi1-mini,2026-11-07T02:22:44,True,Table 2,durable memory > transient memory,success,86,"The study uses whole-brain fMRI on healthy adults to compare durable versus transient episodic source memories at retrieval, and Table 1 indicates the short-delay fMRI sample size (which includes the trials used for this contrast) is n=86.","{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""durable memory > transient memory"",
+""contrast_type"": ""success"",
+""n"": 86,
+""reason"": ""The study uses whole-brain fMRI on healthy adults to compare durable versus transient episodic source memories at retrieval, and Table 1 indicates the short-delay fMRI sample size (which includes the trials used for this contrast) is n=86.""
+}"
+pmid:38915680,full_text,asi1-mini,2026-11-07T02:22:49,False,N/A,N/A,N/A,0,"The study is excluded because the whole-brain analysis of retrieval success (location hits vs. guesses) yielded no significant clusters in the specified regions or elsewhere, and the ROI analyses explicitly reported no significant retrieval success effects.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is excluded because the whole-brain analysis of retrieval success (location hits vs. guesses) yielded no significant clusters in the specified regions or elsewhere, and the ROI analyses explicitly reported no significant retrieval success effects.""
+}"
+pmid:38709432,full_text,asi1-mini,2026-11-07T02:22:58,True,Table 1,Hits-CRs,success,49,The study uses whole-brain fMRI on healthy adults and reports the retrieval-success contrast (Hits > Correct Rejections) in Table 1 with a sample size of 49.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""Hits-CRs"",
+""contrast_type"": ""success"",
+""n"": 49,
+""reason"": ""The study uses whole-brain fMRI on healthy adults and reports the retrieval-success contrast (Hits > Correct Rejections) in Table 1 with a sample size of 49.""
+}"
+pmid:38575698,full_text,asi1-mini,2026-11-07T02:23:05,True,Table 1,Remember vs. Familiar (correct old/seen trials only),recollection,19,The study uses whole-brain fMRI in healthy adults and reports the 'Remember vs. Familiar' contrast at retrieval in Table 1 with MNI coordinates for a sample of 19 participants.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""Remember vs. Familiar (correct old/seen trials only)"",
+""contrast_type"": ""recollection"",
+""n"": 19,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the 'Remember vs. Familiar' contrast at retrieval in Table 1 with MNI coordinates for a sample of 19 participants.""
+}"
+pmid:38544780,full_text,asi1-mini,2026-11-07T02:23:12,False,N/A,N/A,N/A,0,"The study does not report a retrieval-success contrast (e.g., hits > correct rejections or remembered > forgotten) but rather contrasts retrieval against a non-mnemonic baseline condition.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study does not report a retrieval-success contrast (e.g., hits > correct rejections or remembered > forgotten) but rather contrasts retrieval against a non-mnemonic baseline condition.""
+}"
+pmid:38450223,full_text,asi1-mini,2026-11-07T02:23:24,False,N/A,N/A,N/A,0,The study is ineligible because it analyzes retrieval-related brain activity as a function of memory age (time-dependent changes) rather than contrasting successful episodic retrieval against unsuccessful retrieval.,"{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is ineligible because it analyzes retrieval-related brain activity as a function of memory age (time-dependent changes) rather than contrasting successful episodic retrieval against unsuccessful retrieval.""
+}"
+pmid:37745317,full_text,asi1-mini,2026-11-07T02:23:34,True,Figure 2,hits > correct rejections,success,8,The study uses whole-brain fMRI in healthy adults to analyze a successful episodic retrieval contrast (hits > correct rejections) during an item recognition task.,"{
+""eligible"": true,
+""table"": ""Figure 2"",
+""contrast"": ""hits > correct rejections"",
+""contrast_type"": ""success"",
+""n"": 8,
+""reason"": ""The study uses whole-brain fMRI in healthy adults to analyze a successful episodic retrieval contrast (hits > correct rejections) during an item recognition task.""
+}"
+pmid:37633119,full_text,asi1-mini,2026-11-07T02:23:39,True,Table 4,associative hit > item hit,recollection,23,"The study uses whole-brain fMRI in healthy young adults (N=23 after exclusions) to contrast successful recollection (associative hits) with failed recollection (item hits/misses), which fits the 'remembered > forgotten' or retrieval-success criteria.","{
+""eligible"": true,
+""table"": ""Table 4"",
+""contrast"": ""associative hit > item hit"",
+""contrast_type"": ""recollection"",
+""n"": 23,
+""reason"": ""The study uses whole-brain fMRI in healthy young adults (N=23 after exclusions) to contrast successful recollection (associative hits) with failed recollection (item hits/misses), which fits the 'remembered > forgotten' or retrieval-success criteria.""
+}"
+pmid:37596054,full_text,asi1-mini,2026-11-07T02:23:45,True,Table 3,hit > correct rejection,success,10,"The study uses whole-brain fMRI on healthy adults and reports a retrieval-success contrast (hits > correct rejections) in Table 3, with an analysis sample size of 10 subjects.","{
+""eligible"": true,
+""table"": ""Table 3"",
+""contrast"": ""hit > correct rejection"",
+""contrast_type"": ""success"",
+""n"": 10,
+""reason"": ""The study uses whole-brain fMRI on healthy adults and reports a retrieval-success contrast (hits > correct rejections) in Table 3, with an analysis sample size of 10 subjects.""
+}"
+pmid:40567561,full_text,asi1-mini,2026-11-07T02:24:02,True,Table 4,Recollection > Familiarity,recollection,53,"The study uses whole-brain fMRI in healthy adults and reports voxel-wise coordinates for a retrieval-success contrast (recollection) in Table 4, with an effective sample size of 53 after exclusions.","{
+""eligible"": true,
+""table"": ""Table 4"",
+""contrast"": ""Recollection > Familiarity"",
+""contrast_type"": ""recollection"",
+""n"": 53,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports voxel-wise coordinates for a retrieval-success contrast (recollection) in Table 4, with an effective sample size of 53 after exclusions.""
+}"
+pmid:35397137,full_text,asi1-mini,2026-11-07T02:24:12,False,N/A,N/A,N/A,0,"The study does not report an eligible retrieval-success contrast (e.g., hits > correct rejections or remembered > forgotten) but instead compares fixed versus variable association conditions during learning and recollection.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study does not report an eligible retrieval-success contrast (e.g., hits > correct rejections or remembered > forgotten) but instead compares fixed versus variable association conditions during learning and recollection.""
+}"
+pmid:35148666,full_text,asi1-mini,2026-11-07T02:24:17,True,Table 1,remember-accurate source > remember-inaccurate source,success,18,The study uses healthy adults (n=18) with whole-brain fMRI analysis normalized to MNI space and reports a retrieval-success contrast (source-correct > source-incorrect) in the results section associated with Table 1.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""remember-accurate source > remember-inaccurate source"",
+""contrast_type"": ""success"",
+""n"": 18,
+""reason"": ""The study uses healthy adults (n=18) with whole-brain fMRI analysis normalized to MNI space and reports a retrieval-success contrast (source-correct > source-incorrect) in the results section associated with Table 1.""
+}"
+pmid:35073239,full_text,asi1-mini,2026-11-07T02:24:23,False,N/A,N/A,N/A,21,"The study does not report a retrieval-success contrast (e.g., hits > misses) in its primary results; it analyzes brain activity as a function of memory age across four time periods rather than comparing successful versus unsuccessful retrieval.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 21,
+""reason"": ""The study does not report a retrieval-success contrast (e.g., hits > misses) in its primary results; it analyzes brain activity as a function of memory age across four time periods rather than comparing successful versus unsuccessful retrieval.""
+}"
+pmid:35051582,full_text,asi1-mini,2026-11-07T02:24:27,True,Table 6,intact > rearranged,success,28,"The study reports whole-brain and ROI fMRI analyses in healthy young adults comparing neural activity for successful retrieval (intact judgments) versus unsuccessful retrieval (rearranged judgments), with Table 6 specifically detailing the ANOVA results for the left AG recollection effect.","{
+""eligible"": true,
+""table"": ""Table 6"",
+""contrast"": ""intact > rearranged"",
+""contrast_type"": ""success"",
+""n"": 28,
+""reason"": ""The study reports whole-brain and ROI fMRI analyses in healthy young adults comparing neural activity for successful retrieval (intact judgments) versus unsuccessful retrieval (rearranged judgments), with Table 6 specifically detailing the ANOVA results for the left AG recollection effect.""
+}"
+pmid:34663784,full_text,asi1-mini,2026-11-07T02:24:34,True,Table 1,old > new,success,104,The study uses whole-brain fMRI in healthy adults and reports the 'old > new' contrast as the primary measure of successful episodic retrieval (hits vs. correct rejections/new items) in Table 1.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""old > new"",
+""contrast_type"": ""success"",
+""n"": 104,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the 'old > new' contrast as the primary measure of successful episodic retrieval (hits vs. correct rejections/new items) in Table 1.""
+}"
+pmid:34566597,full_text,asi1-mini,2026-11-07T02:24:40,True,Table 3,Source Hit-DAG vs. Source Hit-SAG,success,53,"The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (Source Hits) comparing successful retrievals of different conditions, with the primary significant finding reported in Table 3 for the group of 29 young and 24 older adults.","{
+""eligible"": true,
+""table"": ""Table 3"",
+""contrast"": ""Source Hit-DAG vs. Source Hit-SAG"",
+""contrast_type"": ""success"",
+""n"": 53,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (Source Hits) comparing successful retrievals of different conditions, with the primary significant finding reported in Table 3 for the group of 29 young and 24 older adults.""
+}"
+pmid:34419811,full_text,asi1-mini,2026-11-07T02:24:45,False,N/A,N/A,N/A,0,"The study is ineligible because the primary analyses were conducted in a priori defined Regions of Interest (ROIs) rather than whole-brain analyses, which violates the inclusion criterion for whole-brain fMRI or PET.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is ineligible because the primary analyses were conducted in a priori defined Regions of Interest (ROIs) rather than whole-brain analyses, which violates the inclusion criterion for whole-brain fMRI or PET.""
+}"
+pmid:33826665,full_text,asi1-mini,2026-11-07T02:24:49,False,N/A,N/A,N/A,0,"The study focuses on episodic memory encoding (subsequent memory effects measured at study) rather than retrieval success, and the reported retrieval contrasts are parametric modulations of reward delay rather than direct comparisons of successful vs. unsuccessful retrieval.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study focuses on episodic memory encoding (subsequent memory effects measured at study) rather than retrieval success, and the reported retrieval contrasts are parametric modulations of reward delay rather than direct comparisons of successful vs. unsuccessful retrieval.""
+}"
+pmid:33765433,full_text,asi1-mini,2026-11-07T02:24:56,False,N/A,N/A,N/A,0,"The study is ineligible because it employs a Region-of-Interest (ROI) analysis based on functional localizers rather than whole-brain analyses, and the primary contrasts examine retrieval gating (task-relevant vs. irrelevant context) rather than successful versus unsuccessful episodic retrieval.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is ineligible because it employs a Region-of-Interest (ROI) analysis based on functional localizers rather than whole-brain analyses, and the primary contrasts examine retrieval gating (task-relevant vs. irrelevant context) rather than successful versus unsuccessful episodic retrieval.""
+}"
+pmid:33613206,full_text,asi1-mini,2026-11-07T02:25:01,True,Table 1,Remembered > Forgotten,success,41,The study uses whole-brain fMRI in healthy adults (n=41) and reports the 'Remembered > Forgotten' contrast at retrieval in Table 1.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""Remembered > Forgotten"",
+""contrast_type"": ""success"",
+""n"": 41,
+""reason"": ""The study uses whole-brain fMRI in healthy adults (n=41) and reports the 'Remembered > Forgotten' contrast at retrieval in Table 1.""
+}"
+pmid:33548865,full_text,asi1-mini,2026-11-07T02:25:05,True,Table S2,hit versus CR,success,29,The study includes a healthy control group (n=29) analyzed with whole-brain fMRI using the eligible retrieval-success contrast of hits versus correct rejections in Talairach space.,"{
+""eligible"": true,
+""table"": ""Table S2"",
+""contrast"": ""hit versus CR"",
+""contrast_type"": ""success"",
+""n"": 29,
+""reason"": ""The study includes a healthy control group (n=29) analyzed with whole-brain fMRI using the eligible retrieval-success contrast of hits versus correct rejections in Talairach space.""
+}"
+pmid:33354206,full_text,asi1-mini,2026-11-07T02:25:13,False,N/A,N/A,N/A,0,"The study is an intervention trial (tDCS vs. sham) and does not report a standard retrieval-success contrast (e.g., hits > correct rejections) for healthy adults; it only reports interaction effects of stimulation on brain activity.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is an intervention trial (tDCS vs. sham) and does not report a standard retrieval-success contrast (e.g., hits > correct rejections) for healthy adults; it only reports interaction effects of stimulation on brain activity.""
+}"
+pmid:33224020,full_text,asi1-mini,2026-11-07T02:25:19,True,Table 2,3x HITs > 1x HITs,success,14,The study uses whole-brain fMRI on healthy adults and reports the retrieval-success contrast of hits to items studied three times versus once in Table 2.,"{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""3x HITs > 1x HITs"",
+""contrast_type"": ""success"",
+""n"": 14,
+""reason"": ""The study uses whole-brain fMRI on healthy adults and reports the retrieval-success contrast of hits to items studied three times versus once in Table 2.""
+}"
+pmid:32890598,full_text,asi1-mini,2026-11-07T02:25:27,False,N/A,N/A,N/A,0,"The study is excluded because the fMRI analysis (Experiment 2) was restricted to an ROI-only approach focusing on medial temporal lobe subregions, which violates the whole-brain inclusion criterion.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is excluded because the fMRI analysis (Experiment 2) was restricted to an ROI-only approach focusing on medial temporal lobe subregions, which violates the whole-brain inclusion criterion.""
+}"
+pmid:32569610,full_text,asi1-mini,2026-11-07T02:25:34,False,N/A,N/A,N/A,0,"The study is ineligible because the functional analyses were restricted to a Region of Interest (the anterior hippocampus) rather than whole-brain analyses, which violates the inclusion criteria.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is ineligible because the functional analyses were restricted to a Region of Interest (the anterior hippocampus) rather than whole-brain analyses, which violates the inclusion criteria.""
+}"
+pmid:32474466,full_text,asi1-mini,2026-11-07T02:25:41,False,N/A,N/A,N/A,0,"The study is excluded because it focuses on healthy older adults at high risk for Alzheimer's disease (due to family history and APOE4 status) rather than a general healthy adult sample, and the primary analyses compare genotype groups or brain-behavior correlations rather than reporting a standard retrieval-success contrast (e.g., hits > correct rejections) in a uniform healthy control group.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is excluded because it focuses on healthy older adults at high risk for Alzheimer's disease (due to family history and APOE4 status) rather than a general healthy adult sample, and the primary analyses compare genotype groups or brain-behavior correlations rather than reporting a standard retrieval-success contrast (e.g., hits > correct rejections) in a uniform healthy control group.""
+}"
+pmid:32469308,full_text,asi1-mini,2026-11-07T02:25:47,False,N/A,N/A,N/A,0,"The study is ineligible because all fMRI analyses were restricted to a priori regions of interest (hippocampus, VTC, ANG), which violates the inclusion criterion requiring whole-brain analysis.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is ineligible because all fMRI analyses were restricted to a priori regions of interest (hippocampus, VTC, ANG), which violates the inclusion criterion requiring whole-brain analysis.""
+}"
+pmid:32017430,full_text,asi1-mini,2026-11-07T02:25:55,True,Table 2,MD step function,success,34,The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (targets vs. lures/foils) at test in Table 2 with MNI coordinates for n=34.,"{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""MD step function"",
+""contrast_type"": ""success"",
+""n"": 34,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (targets vs. lures/foils) at test in Table 2 with MNI coordinates for n=34.""
+}"
+pmid:31989161,full_text,asi1-mini,2026-11-07T02:26:01,True,Suppl. Table 6,R > F3,recollection,17,The study uses whole-brain fMRI in healthy adults and reports the R > F3 contrast (a valid retrieval-success/recollection contrast) in Supplementary Table 6.,"{
+""eligible"": true,
+""table"": ""Suppl. Table 6"",
+""contrast"": ""R > F3"",
+""contrast_type"": ""recollection"",
+""n"": 17,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the R > F3 contrast (a valid retrieval-success/recollection contrast) in Supplementary Table 6.""
+}"
+pmid:31904899,full_text,asi1-mini,2026-11-07T02:26:07,True,Table 3,subsequent hits > subsequent misses,success,54,The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (subsequent hits vs. misses) for the encoding phase in Table 3 with MNI coordinates.,"{
+""eligible"": true,
+""table"": ""Table 3"",
+""contrast"": ""subsequent hits > subsequent misses"",
+""contrast_type"": ""success"",
+""n"": 54,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (subsequent hits vs. misses) for the encoding phase in Table 3 with MNI coordinates.""
+}"
+pmid:30902869,full_text,asi1-mini,2026-11-07T02:26:24,True,Table 2,successful memory trials (collapsed across vividness) relative to failure trials,success,21,The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (vivid + nonvivid > failure) with coordinates in MNI space.,"{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""successful memory trials (collapsed across vividness) relative to failure trials"",
+""contrast_type"": ""success"",
+""n"": 21,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (vivid + nonvivid > failure) with coordinates in MNI space.""
+}"
+pmid:30687046,full_text,asi1-mini,2026-11-07T02:26:30,True,Table 1B,R_C > R_F,success,16,The study uses whole-brain fMRI in healthy adults and reports the retrieval-success contrast (correctly remembered > forgotten) in Table 1B with a sample size of 16 participants.,"{
+""eligible"": true,
+""table"": ""Table 1B"",
+""contrast"": ""R_C > R_F"",
+""contrast_type"": ""success"",
+""n"": 16,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the retrieval-success contrast (correctly remembered > forgotten) in Table 1B with a sample size of 16 participants.""
+}"
+pmid:30610842,full_text,asi1-mini,2026-11-07T02:26:36,True,Table 1,Recognition-Old > Recognition-New,success,40,"The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (Old/New) in the recognition task, with Table 1 detailing this specific analysis for N=40.","{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""Recognition-Old > Recognition-New"",
+""contrast_type"": ""success"",
+""n"": 40,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (Old/New) in the recognition task, with Table 1 detailing this specific analysis for N=40.""
+}"
+pmid:30559115,full_text,asi1-mini,2026-11-07T02:26:42,False,N/A,N/A,N/A,24,"The study is a ROI-based analysis of predefined networks (DMN and FPN) rather than a whole-brain fMRI or PET analysis, which violates the inclusion criteria.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 24,
+""reason"": ""The study is a ROI-based analysis of predefined networks (DMN and FPN) rather than a whole-brain fMRI or PET analysis, which violates the inclusion criteria.""
+}"
+pmid:30467476,full_text,asi1-mini,2026-11-07T02:26:47,False,N/A,N/A,N/A,0,The study uses Independent Component Analysis (ICA) to identify functional networks rather than reporting whole-brain univariate activation coordinates for a retrieval-success contrast.,"{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study uses Independent Component Analysis (ICA) to identify functional networks rather than reporting whole-brain univariate activation coordinates for a retrieval-success contrast.""
+}"
+pmid:30411437,full_text,asi1-mini,2026-11-07T02:26:52,True,Table 1,Parametric increases in activity across the four levels of reported recollection (R0–R3),recollection,17,The study uses whole-brain fMRI on healthy adults and reports a retrieval-success contrast (parametric increase in recollection strength) in Table 1 with n=17.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""Parametric increases in activity across the four levels of reported recollection (R0–R3)"",
+""contrast_type"": ""recollection"",
+""n"": 17,
+""reason"": ""The study uses whole-brain fMRI on healthy adults and reports a retrieval-success contrast (parametric increase in recollection strength) in Table 1 with n=17.""
+}"
+pmid:30364307,full_text,asi1-mini,2026-11-07T02:26:57,True,Table 1,Hits > Correct Rejections,success,36,The study uses whole-brain fMRI in healthy adults to report the Hits > Correct Rejections contrast in Table 1 with N=36.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""Hits > Correct Rejections"",
+""contrast_type"": ""success"",
+""n"": 36,
+""reason"": ""The study uses whole-brain fMRI in healthy adults to report the Hits > Correct Rejections contrast in Table 1 with N=36.""
+}"
+pmid:30050418,full_text,asi1-mini,2026-11-07T02:27:11,True,Table 1,L6 > L1 (Hits),success,32,"The study uses whole-brain fMRI in healthy adults to compare retrieval success between a high-learning group (L6) and low-learning group (L1), reporting coordinates for this contrast in Table 1.","{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""L6 > L1 (Hits)"",
+""contrast_type"": ""success"",
+""n"": 32,
+""reason"": ""The study uses whole-brain fMRI in healthy adults to compare retrieval success between a high-learning group (L6) and low-learning group (L1), reporting coordinates for this contrast in Table 1.""
+}"
+pmid:29732578,full_text,asi1-mini,2026-11-07T02:27:20,True,Table 1,Old > New,success,24,The study uses whole-brain fMRI on healthy adults and reports a retrieval-success contrast (old vs. new scenes) in Table 1 with coordinates in MNI space.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""Old > New"",
+""contrast_type"": ""success"",
+""n"": 24,
+""reason"": ""The study uses whole-brain fMRI on healthy adults and reports a retrieval-success contrast (old vs. new scenes) in Table 1 with coordinates in MNI space.""
+}"
+pmid:29670138,full_text,asi1-mini,2026-11-07T02:27:25,True,Table 1,R > CR,recollection,22,The study uses whole-brain fMRI in healthy adults and reports the retrieval-success contrast of Recollection hits versus Correct Rejections (R > CR) in Table 1.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""R > CR"",
+""contrast_type"": ""recollection"",
+""n"": 22,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the retrieval-success contrast of Recollection hits versus Correct Rejections (R > CR) in Table 1.""
+}"
+pmid:29391248,full_text,asi1-mini,2026-11-07T02:27:31,True,Table 1,Hit > Correct Rejection,success,24,The study uses whole-brain fMRI on healthy adults and reports the eligible hits > correct rejections contrast in Table 1.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""Hit > Correct Rejection"",
+""contrast_type"": ""success"",
+""n"": 24,
+""reason"": ""The study uses whole-brain fMRI on healthy adults and reports the eligible hits > correct rejections contrast in Table 1.""
+}"
+pmid:28803854,full_text,asi1-mini,2026-11-07T02:27:44,,,,,,invalid reply,"{
+""eligible"": true,
+""table"": ""Table 3"",
+""contrast"": ""R > F"",
+""contrast_type"": ""recollection"",
+"" n"": 88,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the recollection contrast (recollected > familiar items) in Table 3 with a total sample size of 88 across three experiments.""
+}"
+pmid:28413778,full_text,asi1-mini,2026-11-07T02:27:56,True,Table 2,retrieval vs. encoding,success,51,The study uses whole-brain fMRI in healthy middle-aged adults and reports a retrieval-success contrast (successful retrieval > successful encoding) in Table 2.,"{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""retrieval vs. encoding"",
+""contrast_type"": ""success"",
+""n"": 51,
+""reason"": ""The study uses whole-brain fMRI in healthy middle-aged adults and reports a retrieval-success contrast (successful retrieval > successful encoding) in Table 2.""
+}"
+pmid:28159685,full_text,asi1-mini,2026-11-07T02:28:10,True,Table 2,LureCR > LureFA,success,20,"The study uses whole-brain fMRI in healthy adults and reports the contrast of lure correct rejections (successful discrimination) versus lure false alarms (generalized retrieval), which serves as a proxy for successful episodic retrieval processes.","{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""LureCR > LureFA"",
+""contrast_type"": ""success"",
+""n"": 20,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the contrast of lure correct rejections (successful discrimination) versus lure false alarms (generalized retrieval), which serves as a proxy for successful episodic retrieval processes.""
+}"
+pmid:28127520,full_text,asi1-mini,2026-11-07T02:28:15,False,N/A,N/A,N/A,0,The study focuses exclusively on patients with schizophrenia and does not report an eligible retrieval-success contrast for a healthy adult group.,"{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study focuses exclusively on patients with schizophrenia and does not report an eligible retrieval-success contrast for a healthy adult group.""
+}"
+pmid:28093279,full_text,asi1-mini,2026-11-07T02:28:25,False,N/A,N/A,N/A,0,"The study compares lean vs. obese groups or low vs. high insulin resistance groups rather than contrasting successful retrieval trials against unsuccessful ones (e.g., hits > misses) within a healthy adult sample.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study compares lean vs. obese groups or low vs. high insulin resistance groups rather than contrasting successful retrieval trials against unsuccessful ones (e.g., hits > misses) within a healthy adult sample.""
+}"
+pmid:28077212,full_text,asi1-mini,2026-11-07T02:28:30,False,N/A,N/A,N/A,0,"The study is ineligible because the primary analyses are confined to pre-defined Regions of Interest (ROIs) within the core recollection network and left dorsolateral prefrontal cortex, which violates the inclusion criterion for whole-brain fMRI or PET.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is ineligible because the primary analyses are confined to pre-defined Regions of Interest (ROIs) within the core recollection network and left dorsolateral prefrontal cortex, which violates the inclusion criterion for whole-brain fMRI or PET.""
+}"
+pmid:28057726,full_text,asi1-mini,2026-11-07T02:28:35,False,N/A,N/A,N/A,0,The study is excluded because it focuses on a patient-only sample (adults with Autism Spectrum Disorder) and does not report an eligible contrast for healthy adults.,"{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is excluded because it focuses on a patient-only sample (adults with Autism Spectrum Disorder) and does not report an eligible contrast for healthy adults.""
+}"
+pmid:28046076,full_text,asi1-mini,2026-11-07T02:28:40,True,Table 3,PP > PW,success,24,The study uses whole-brain fMRI in healthy adults and reports the retrieval-success contrast of presented pictures remembered as pictures versus presented pictures remembered as words (PP > PW) in Table 3 for the recall phase.,"{
+""eligible"": true,
+""table"": ""Table 3"",
+""contrast"": ""PP > PW"",
+""contrast_type"": ""success"",
+""n"": 24,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the retrieval-success contrast of presented pictures remembered as pictures versus presented pictures remembered as words (PP > PW) in Table 3 for the recall phase.""
+}"
+pmid:28013352,full_text,asi1-mini,2026-11-07T02:28:46,True,Table 1,Correct > incorrect,success,53,The study uses whole-brain fMRI in healthy adults and reports the 'correct > incorrect' contrast for episodic retrieval success in Table 1 with a sample size of 53.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""Correct > incorrect"",
+""contrast_type"": ""success"",
+""n"": 53,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the 'correct > incorrect' contrast for episodic retrieval success in Table 1 with a sample size of 53.""
+}"
+pmid:27942450,full_text,asi1-mini,2026-11-07T02:28:51,False,N/A,N/A,N/A,0,"The study employs a Region of Interest (ROI) analysis focused exclusively on the anterior and posterior hippocampus, which is an exclusion criterion.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study employs a Region of Interest (ROI) analysis focused exclusively on the anterior and posterior hippocampus, which is an exclusion criterion.""
+}"
+pmid:27923474,full_text,asi1-mini,2026-11-07T02:28:57,True,Table 2,Remember Hits > Know Hits,recollection,19,The study uses whole-brain fMRI in healthy adults and reports the 'Remember Hits > Know Hits' contrast (a valid episodic retrieval success/recollection contrast) in Table 2 with MNI coordinates for N=19 participants.,"{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""Remember Hits > Know Hits"",
+""contrast_type"": ""recollection"",
+""n"": 19,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the 'Remember Hits > Know Hits' contrast (a valid episodic retrieval success/recollection contrast) in Table 2 with MNI coordinates for N=19 participants.""
+}"
+pmid:27859925,full_text,asi1-mini,2026-11-07T02:29:02,True,Figure 4,R > F3,recollection,16,The study uses whole-brain fMRI in healthy adults and reports the eligible recollection contrast (R > F3) in Figure 4 with a sample size of 16 participants.,"{
+""eligible"": true,
+""table"": ""Figure 4"",
+""contrast"": ""R > F3"",
+""contrast_type"": ""recollection"",
+""n"": 16,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the eligible recollection contrast (R > F3) in Figure 4 with a sample size of 16 participants.""
+}"
+pmid:27818626,full_text,asi1-mini,2026-11-07T02:29:07,True,Table 1,correctly recognized vs. forgotten images,success,14,The study uses whole-brain fMRI on healthy adults (mean age 24.21) and reports a retrieval-success contrast (remembered > forgotten) in Table 1 with MNI coordinates for n=14 participants after excluding those with low recognition rates.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""correctly recognized vs. forgotten images"",
+""contrast_type"": ""success"",
+""n"": 14,
+""reason"": ""The study uses whole-brain fMRI on healthy adults (mean age 24.21) and reports a retrieval-success contrast (remembered > forgotten) in Table 1 with MNI coordinates for n=14 participants after excluding those with low recognition rates.""
+}"
+pmid:27676616,full_text,asi1-mini,2026-11-07T02:29:13,False,N/A,N/A,N/A,24,"The study focuses on nonconscious memory (repetition suppression/enhancement for forgotten items vs. correct rejections) rather than successful episodic retrieval (hits > misses/correct rejections), which is an excluded contrast type.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 24,
+""reason"": ""The study focuses on nonconscious memory (repetition suppression/enhancement for forgotten items vs. correct rejections) rather than successful episodic retrieval (hits > misses/correct rejections), which is an excluded contrast type.""
+}"
+pmid:27776631,full_text,asi1-mini,2026-11-07T02:29:22,True,Figure 3,successful > unsuccessful,success,20,The study uses whole-brain fMRI in healthy adults to analyze a retrieval-success contrast (successful vs. unsuccessful retrieval) and reports coordinates in MNI space.,"{
+""eligible"": true,
+""table"": ""Figure 3"",
+""contrast"": ""successful > unsuccessful"",
+""contrast_type"": ""success"",
+""n"": 20,
+""reason"": ""The study uses whole-brain fMRI in healthy adults to analyze a retrieval-success contrast (successful vs. unsuccessful retrieval) and reports coordinates in MNI space.""
+}"
+pmid:27571109,full_text,asi1-mini,2026-11-07T02:29:27,False,N/A,left-hits > left-misses,success,16,The study is excluded because it reports ROI-only analyses (hippocampus) rather than whole-brain fMRI results.,"{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""left-hits > left-misses"",
+""contrast_type"": ""success"",
+""n"": 16,
+""reason"": ""The study is excluded because it reports ROI-only analyses (hippocampus) rather than whole-brain fMRI results.""
+}"
+pmid:27155127,full_text,asi1-mini,2026-11-07T02:29:37,True,Table 4,associative hits > associative misses,success,136,"The study uses whole-brain fMRI in healthy adults to contrast successful retrieval (associative hits) with unsuccessful retrieval (associative misses), and Table 4 reports the coordinates for this main effect across all 136 participants.","{
+""eligible"": true,
+""table"": ""Table 4"",
+""contrast"": ""associative hits > associative misses"",
+""contrast_type"": ""success"",
+""n"": 136,
+""reason"": ""The study uses whole-brain fMRI in healthy adults to contrast successful retrieval (associative hits) with unsuccessful retrieval (associative misses), and Table 4 reports the coordinates for this main effect across all 136 participants.""
+}"
+pmid:26969864,full_text,asi1-mini,2026-11-07T02:29:46,True,Table 1,associative hits > misses,success,20,"The study uses whole-brain fMRI with healthy adults and reports a retrieval contrast of associative hits versus misses, which fits the eligible 'successful episodic retrieval' criteria.","{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""associative hits > misses"",
+""contrast_type"": ""success"",
+""n"": 20,
+""reason"": ""The study uses whole-brain fMRI with healthy adults and reports a retrieval contrast of associative hits versus misses, which fits the eligible 'successful episodic retrieval' criteria.""
+}"
+pmid:26875927,full_text,asi1-mini,2026-11-07T02:29:52,False,N/A,N/A,N/A,0,"The study includes a sample of children (8-11 years old), and while it reports a healthy adult group, the primary focus and eligible contrasts are confounded by the pediatric population which violates the exclusion criterion for patient-only or child samples.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study includes a sample of children (8-11 years old), and while it reports a healthy adult group, the primary focus and eligible contrasts are confounded by the pediatric population which violates the exclusion criterion for patient-only or child samples.""
+}"
+pmid:26459096,full_text,asi1-mini,2026-11-07T02:30:04,True,Table 2,Hits > Misses (for negative items),success,17,The study uses whole-brain fMRI on healthy adults and reports the retrieval-success contrast of Hits > Misses in Table 2.,"{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""Hits > Misses (for negative items)"",
+""contrast_type"": ""success"",
+""n"": 17,
+""reason"": ""The study uses whole-brain fMRI on healthy adults and reports the retrieval-success contrast of Hits > Misses in Table 2.""
+}"
+pmid:26351995,full_text,asi1-mini,2026-11-07T02:30:15,True,Table 1,Source correct responses interaction with context and task,recollection,18,"The study uses whole-brain fMRI in healthy adults to analyze source-correct judgments (a retrieval-success contrast) at the test phase, with coordinates reported in MNI space for n=18 participants.","{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""Source correct responses interaction with context and task"",
+""contrast_type"": ""recollection"",
+""n"": 18,
+""reason"": ""The study uses whole-brain fMRI in healthy adults to analyze source-correct judgments (a retrieval-success contrast) at the test phase, with coordinates reported in MNI space for n=18 participants.""
+}"
+pmid:26315458,full_text,asi1-mini,2026-11-07T02:30:20,False,N/A,Source Hit vs. Target Hit,success,0,The study focuses on a patient-only sample (OCD) and does not report an eligible retrieval-success contrast for a separate healthy adult group.,"{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""Source Hit vs. Target Hit"",
+""contrast_type"": ""success"",
+""n"": 0,
+""reason"": ""The study focuses on a patient-only sample (OCD) and does not report an eligible retrieval-success contrast for a separate healthy adult group.""
+}"
+pmid:26200928,full_text,asi1-mini,2026-11-07T02:30:29,True,"Supplementary Materials, Table 5",hits minus misses,success,57,The study includes healthy adults (n=57) who underwent whole-brain fMRI analysis of a retrieval-success contrast (hits > misses) during episodic recognition.,"{
+""eligible"": true,
+""table"": ""Supplementary Materials, Table 5"",
+""contrast"": ""hits minus misses"",
+""contrast_type"": ""success"",
+""n"": 57,
+""reason"": ""The study includes healthy adults (n=57) who underwent whole-brain fMRI analysis of a retrieval-success contrast (hits > misses) during episodic recognition.""
+}"
+pmid:26167149,full_text,asi1-mini,2026-11-07T02:30:34,True,Table 4,self-correct > other-correct,success,18,The study uses whole-brain fMRI in healthy adults and reports the contrast of correct recognition for self-referenced items versus other-referenced items (hits > correct rejections) in Table 4 with a sample size of 18.,"{
+""eligible"": true,
+""table"": ""Table 4"",
+""contrast"": ""self-correct > other-correct"",
+""contrast_type"": ""success"",
+""n"": 18,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the contrast of correct recognition for self-referenced items versus other-referenced items (hits > correct rejections) in Table 4 with a sample size of 18.""
+}"
+pmid:25630307,full_text,asi1-mini,2026-11-07T02:30:57,False,N/A,N/A,N/A,0,"The study focuses on encoding processes (subsequent memory effects measured at study) rather than retrieval success contrasts, and the participant group consists of individuals with Autism Spectrum Disorder, not healthy adults.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study focuses on encoding processes (subsequent memory effects measured at study) rather than retrieval success contrasts, and the participant group consists of individuals with Autism Spectrum Disorder, not healthy adults.""
+}"
+pmid:25623847,full_text,asi1-mini,2026-11-07T02:31:02,False,N/A,N/A,N/A,24,"The study does not report an eligible retrieval-success contrast (e.g., hits > correct rejections) as it focuses on novelty mismatch and old>new effects rather than successful vs. unsuccessful episodic retrieval.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 24,
+""reason"": ""The study does not report an eligible retrieval-success contrast (e.g., hits > correct rejections) as it focuses on novelty mismatch and old>new effects rather than successful vs. unsuccessful episodic retrieval.""
+}"
+pmid:25584461,full_text,asi1-mini,2026-11-07T02:31:09,False,N/A,N/A,N/A,0,The study is excluded because the primary fMRI analyses were conducted using Region-of-Interest (ROI) masks rather than whole-brain voxel-wise analysis.,"{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is excluded because the primary fMRI analyses were conducted using Region-of-Interest (ROI) masks rather than whole-brain voxel-wise analysis.""
+}"
+pmid:25583615,full_text,asi1-mini,2026-11-07T02:31:14,True,Table 2,high confidence > low confidence; high confidence > inaccurate,recollection,17,"The study uses whole-brain fMRI in healthy adults to compare source memory judgments at retrieval, specifically contrasting high-confidence (successful recollection) against low-confidence and inaccurate judgments.","{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""high confidence > low confidence; high confidence > inaccurate"",
+""contrast_type"": ""recollection"",
+""n"": 17,
+""reason"": ""The study uses whole-brain fMRI in healthy adults to compare source memory judgments at retrieval, specifically contrasting high-confidence (successful recollection) against low-confidence and inaccurate judgments.""
+}"
+pmid:24917798,full_text,asi1-mini,2026-11-07T02:31:35,True,Table 1,Hits > Misses,success,17,The study uses whole-brain fMRI in healthy adults and reports a retrieval success contrast (Hits > Misses) in Table 1 for the full group of 17 participants.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""Hits > Misses"",
+""contrast_type"": ""success"",
+""n"": 17,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval success contrast (Hits > Misses) in Table 1 for the full group of 17 participants.""
+}"
+pmid:24904386,full_text,asi1-mini,2026-11-07T02:31:40,True,Table 2,context hits > context misses,success,18,The study uses whole-brain fMRI on healthy adults (N=18 included in analysis) and reports a retrieval-success contrast (hits > misses) in Table 2.,"{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""context hits > context misses"",
+""contrast_type"": ""success"",
+""n"": 18,
+""reason"": ""The study uses whole-brain fMRI on healthy adults (N=18 included in analysis) and reports a retrieval-success contrast (hits > misses) in Table 2.""
+}"
+pmid:24828546,full_text,asi1-mini,2026-11-07T02:31:55,True,Table 5,hits > correct rejections,success,40,The study uses whole-brain fMRI on healthy young and older adults with a retrieval-success contrast (hits > correct rejections) reported in Table 5.,"{
+""eligible"": true,
+""table"": ""Table 5"",
+""contrast"": ""hits > correct rejections"",
+""contrast_type"": ""success"",
+""n"": 40,
+""reason"": ""The study uses whole-brain fMRI on healthy young and older adults with a retrieval-success contrast (hits > correct rejections) reported in Table 5.""
+}"
+pmid:24825621,full_text,asi1-mini,2026-11-07T02:32:00,False,N/A,N/A,N/A,0,The study is ineligible because it exclusively reports Region-of-Interest (ROI) analyses for its primary findings and does not provide whole-brain coordinates for an eligible retrieval-success contrast.,"{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is ineligible because it exclusively reports Region-of-Interest (ROI) analyses for its primary findings and does not provide whole-brain coordinates for an eligible retrieval-success contrast.""
+}"
+pmid:24634661,full_text,asi1-mini,2026-11-07T02:32:11,True,Table 1,RECOGNIZED > NOT RECOGNIZED TARGET PIECES,success,18,The study uses whole-brain fMRI in healthy adults and reports the eligible retrieval-success contrast (recognized vs. not recognized targets) in Table 1 with coordinates in Talairach space.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""RECOGNIZED > NOT RECOGNIZED TARGET PIECES"",
+""contrast_type"": ""success"",
+""n"": 18,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the eligible retrieval-success contrast (recognized vs. not recognized targets) in Table 1 with coordinates in Talairach space.""
+}"
+pmid:24608131,full_text,asi1-mini,2026-11-07T02:32:17,False,N/A,N/A,N/A,0,"The study's retrieval-success contrast (Self Remembered > Semantic Remembered) yielded no significant results in the whole-brain analysis, and the primary episodic memory contrast reported is an encoding effect (Subsequently Remembered > Forgotten), which is excluded.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study's retrieval-success contrast (Self Remembered > Semantic Remembered) yielded no significant results in the whole-brain analysis, and the primary episodic memory contrast reported is an encoding effect (Subsequently Remembered > Forgotten), which is excluded.""
+}"
+pmid:24564467,full_text,asi1-mini,2026-11-07T02:32:22,True,Table 3,SureOldHits > Misses,success,19,The study uses whole-brain fMRI in healthy adults to analyze a retrieval-success contrast (confident hits vs. misses) and reports MNI coordinates for this effect in Table 3.,"{
+""eligible"": true,
+""table"": ""Table 3"",
+""contrast"": ""SureOldHits > Misses"",
+""contrast_type"": ""success"",
+""n"": 19,
+""reason"": ""The study uses whole-brain fMRI in healthy adults to analyze a retrieval-success contrast (confident hits vs. misses) and reports MNI coordinates for this effect in Table 3.""
+}"
+pmid:24486981,full_text,asi1-mini,2026-11-07T02:32:28,True,Table S2,Hits-Remember > Correct Rejections,recollection,35,The study uses whole-brain fMRI in healthy adults and reports the eligible 'remember' > correct rejection contrast in Table S2 with a sample size of 35.,"{
+""eligible"": true,
+""table"": ""Table S2"",
+""contrast"": ""Hits-Remember > Correct Rejections"",
+""contrast_type"": ""recollection"",
+""n"": 35,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the eligible 'remember' > correct rejection contrast in Table S2 with a sample size of 35.""
+}"
+pmid:24380867,full_text,asi1-mini,2026-11-07T02:32:36,True,Table 1,Regions increasing parametrically with memory strength (high conf. new to high conf. old),success,19,The study uses whole-brain fMRI on healthy adults and reports a retrieval-success contrast using a parametric regressor for memory strength during the recognition test.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""Regions increasing parametrically with memory strength (high conf. new to high conf. old)"",
+""contrast_type"": ""success"",
+""n"": 19,
+""reason"": ""The study uses whole-brain fMRI on healthy adults and reports a retrieval-success contrast using a parametric regressor for memory strength during the recognition test.""
+}"
+pmid:24283400,full_text,asi1-mini,2026-11-07T02:32:40,True,Table 1,associative hits > correct rejections,success,22,The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (associative hits > correct rejections) with coordinates in MNI space for 22 subjects.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""associative hits > correct rejections"",
+""contrast_type"": ""success"",
+""n"": 22,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (associative hits > correct rejections) with coordinates in MNI space for 22 subjects.""
+}"
+pmid:24244264,full_text,asi1-mini,2026-11-07T02:32:48,False,N/A,N/A,N/A,0,"The study's primary analyses were restricted to Regions of Interest (hippocampus and parahippocampal gyrus) using small-volume correction, which excludes it based on the ROI-only exclusion criterion.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study's primary analyses were restricted to Regions of Interest (hippocampus and parahippocampal gyrus) using small-volume correction, which excludes it based on the ROI-only exclusion criterion.""
+}"
+pmid:24009657,full_text,asi1-mini,2026-11-07T02:33:03,False,N/A,N/A,N/A,0,"The study uses a Region of Interest (ROI) analysis based on pre-defined RSFC networks rather than a whole-brain exploratory search for the primary contrasts, and the contrasts compare relational vs. item-based recency strategies rather than successful vs. unsuccessful retrieval.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study uses a Region of Interest (ROI) analysis based on pre-defined RSFC networks rather than a whole-brain exploratory search for the primary contrasts, and the contrasts compare relational vs. item-based recency strategies rather than successful vs. unsuccessful retrieval.""
+}"
+pmid:23904335,full_text,asi1-mini,2026-11-07T02:33:12,True,Table 4,source correct > no source,success,38,"The study uses whole-brain fMRI in healthy young and older adults to analyze source memory accuracy (successful retrieval) by contrasting trials with correct source judgments against those without, reporting coordinates in MNI space.","{
+""eligible"": true,
+""table"": ""Table 4"",
+""contrast"": ""source correct > no source"",
+""contrast_type"": ""success"",
+""n"": 38,
+""reason"": ""The study uses whole-brain fMRI in healthy young and older adults to analyze source memory accuracy (successful retrieval) by contrasting trials with correct source judgments against those without, reporting coordinates in MNI space.""
+}"
+pmid:23805114,full_text,asi1-mini,2026-11-07T02:33:17,True,Table 2,Hits vs. New words correct rejection,success,20,The study uses whole-brain fMRI on healthy adults and reports the eligible retrieval-success contrast (hits > correct rejections) in Table 2 with a sample size of 20.,"{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""Hits vs. New words correct rejection"",
+""contrast_type"": ""success"",
+""n"": 20,
+""reason"": ""The study uses whole-brain fMRI on healthy adults and reports the eligible retrieval-success contrast (hits > correct rejections) in Table 2 with a sample size of 20.""
+}"
+pmid:23734122,full_text,asi1-mini,2026-11-07T02:33:27,True,Table 2,Rscene/Rsentence > 4/3/2/1,recollection,16,"The study uses whole-brain fMRI in healthy adults (N=16) and reports a retrieval-success contrast comparing 'remember' judgments to confidence judgments ('know' equivalents), which is an eligible episodic retrieval contrast.","{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""Rscene/Rsentence > 4/3/2/1"",
+""contrast_type"": ""recollection"",
+""n"": 16,
+""reason"": ""The study uses whole-brain fMRI in healthy adults (N=16) and reports a retrieval-success contrast comparing 'remember' judgments to confidence judgments ('know' equivalents), which is an eligible episodic retrieval contrast.""
+}"
+pmid:23580061,full_text,asi1-mini,2026-11-07T02:33:33,True,Table 1,correct versus incorrect answers (RP),success,29,"The study uses whole-brain fMRI in healthy adults and reports the contrast of correct versus incorrect responses during an episodic retrieval task, which serves as a valid retrieval-success contrast.","{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""correct versus incorrect answers (RP)"",
+""contrast_type"": ""success"",
+""n"": 29,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the contrast of correct versus incorrect responses during an episodic retrieval task, which serves as a valid retrieval-success contrast.""
+}"
+pmid:23466350,full_text,asi1-mini,2026-11-07T02:33:38,False,N/A,N/A,N/A,0,"The study is excluded because the primary fMRI analyses were restricted to predefined Regions of Interest (ROIs) in the medial temporal lobe, which violates the inclusion criterion for whole-brain analysis.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is excluded because the primary fMRI analyses were restricted to predefined Regions of Interest (ROIs) in the medial temporal lobe, which violates the inclusion criterion for whole-brain analysis.""
+}"
+pmid:23378272,full_text,asi1-mini,2026-11-07T02:33:47,True,Table 1,hits > misses,success,17,"The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (hits > misses) in the results section, with a final sample size of 17 participants.","{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""hits > misses"",
+""contrast_type"": ""success"",
+""n"": 17,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (hits > misses) in the results section, with a final sample size of 17 participants.""
+}"
+pmid:23357375,full_text,asi1-mini,2026-11-07T02:33:53,True,Supplementary Tables 2 and 3,source-correct > source-incorrect (implied by correct trials analysis in source tests),success,39,"The study uses whole-brain fMRI on healthy young (n=21) and older (n=18) adults to analyze agenda-driven source memory retrieval, reporting coordinates in Talairach space for contrasts between source test conditions based on correct trials.","{
+""eligible"": true,
+""table"": ""Supplementary Tables 2 and 3"",
+""contrast"": ""source-correct > source-incorrect (implied by correct trials analysis in source tests)"",
+""contrast_type"": ""success"",
+""n"": 39,
+""reason"": ""The study uses whole-brain fMRI on healthy young (n=21) and older (n=18) adults to analyze agenda-driven source memory retrieval, reporting coordinates in Talairach space for contrasts between source test conditions based on correct trials.""
+}"
+pmid:23190328,full_text,asi1-mini,2026-11-07T02:34:04,True,Table 2C,Study Level (High > Low) and Study Level (Low > High),success,17,"The study uses whole-brain fMRI in healthy adults to compare successful retrieval of items with varying strength (manipulated by study repetitions), which fits the eligible contrast type for retrieval success.","{
+""eligible"": true,
+""table"": ""Table 2C"",
+""contrast"": ""Study Level (High > Low) and Study Level (Low > High)"",
+""contrast_type"": ""success"",
+""n"": 17,
+""reason"": ""The study uses whole-brain fMRI in healthy adults to compare successful retrieval of items with varying strength (manipulated by study repetitions), which fits the eligible contrast type for retrieval success.""
+}"
+pmid:23110678,full_text,asi1-mini,2026-11-07T02:34:11,True,Table 2,Old > new (targets),success,18,The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (hits vs. correct rejections/new items) in Table 2.,"{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""Old > new (targets)"",
+""contrast_type"": ""success"",
+""n"": 18,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (hits vs. correct rejections/new items) in Table 2.""
+}"
+pmid:23092213,full_text,asi1-mini,2026-11-07T02:34:16,True,Table 3,Hits > correct rejections (Retrieval Success Effect),success,23,The study uses whole-brain fMRI in healthy adults and reports a retrieval success contrast (Hits > CRs) in Table 3 with a sample size of 23 subjects.,"{
+""eligible"": true,
+""table"": ""Table 3"",
+""contrast"": ""Hits > correct rejections (Retrieval Success Effect)"",
+""contrast_type"": ""success"",
+""n"": 23,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval success contrast (Hits > CRs) in Table 3 with a sample size of 23 subjects.""
+}"
+pmid:23049621,full_text,asi1-mini,2026-11-07T02:34:21,True,Figure 2A,R-High > R-Weak,recollection,16,The study uses whole-brain fMRI on healthy adults and reports a retrieval-success contrast (R-High > R-Weak) in Figure 2A with coordinates provided.,"{
+""eligible"": true,
+""table"": ""Figure 2A"",
+""contrast"": ""R-High > R-Weak"",
+""contrast_type"": ""recollection"",
+""n"": 16,
+""reason"": ""The study uses whole-brain fMRI on healthy adults and reports a retrieval-success contrast (R-High > R-Weak) in Figure 2A with coordinates provided.""
+}"
+pmid:23049503,full_text,asi1-mini,2026-11-07T02:34:27,True,Table A2,Hits vs. misses,success,19,The study uses whole-brain fMRI in healthy young adults (N=19) and reports the successful retrieval contrast (Hits > Misses) in Table A2.,"{
+""eligible"": true,
+""table"": ""Table A2"",
+""contrast"": ""Hits vs. misses"",
+""contrast_type"": ""success"",
+""n"": 19,
+""reason"": ""The study uses whole-brain fMRI in healthy young adults (N=19) and reports the successful retrieval contrast (Hits > Misses) in Table A2.""
+}"
+pmid:23026757,full_text,asi1-mini,2026-11-07T02:34:33,True,Table 2,R Hit > K Hit,recollection,18,The study uses whole-brain fMRI in healthy adults and reports the eligible recollection contrast (Remember > Know) in Table 2 for the final sample of 18 participants.,"{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""R Hit > K Hit"",
+""contrast_type"": ""recollection"",
+""n"": 18,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the eligible recollection contrast (Remember > Know) in Table 2 for the final sample of 18 participants.""
+}"
+pmid:22984367,full_text,asi1-mini,2026-11-07T02:34:43,True,Table 4,original[correct] > old[incorrect],recollection,16,The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (recollection of original images) in Table 4 for the subset of 16 participants who provided artifact-free fMRI data.,"{
+""eligible"": true,
+""table"": ""Table 4"",
+""contrast"": ""original[correct] > old[incorrect]"",
+""contrast_type"": ""recollection"",
+""n"": 16,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (recollection of original images) in Table 4 for the subset of 16 participants who provided artifact-free fMRI data.""
+}"
+pmid:22937055,full_text,asi1-mini,2026-11-07T02:34:51,True,Table 1,RR responses compared to correct rejections at the 3-day delay,recollection,18,The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (Remember/Know paradigm) comparing episodic recollection (RR) to correct rejections.,"{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""RR responses compared to correct rejections at the 3-day delay"",
+""contrast_type"": ""recollection"",
+""n"": 18,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (Remember/Know paradigm) comparing episodic recollection (RR) to correct rejections.""
+}"
+pmid:22751037,full_text,asi1-mini,2026-11-07T02:34:58,False,N/A,N/A,N/A,0,"The study uses Region of Interest (ROI) analyses for its fMRI data rather than whole-brain analysis, which is an exclusion criterion.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study uses Region of Interest (ROI) analyses for its fMRI data rather than whole-brain analysis, which is an exclusion criterion.""
+}"
+pmid:22288393,full_text,asi1-mini,2026-11-07T02:35:06,True,Table 2,Successful > unsuccessful recall,success,18,"The study uses whole-brain fMRI in healthy adults (N=18 after exclusions) to contrast successful cued recall against unsuccessful recall, which is an eligible retrieval-success contrast.","{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""Successful > unsuccessful recall"",
+""contrast_type"": ""success"",
+""n"": 18,
+""reason"": ""The study uses whole-brain fMRI in healthy adults (N=18 after exclusions) to contrast successful cued recall against unsuccessful recall, which is an eligible retrieval-success contrast.""
+}"
+pmid:22238671,full_text,asi1-mini,2026-11-07T02:35:12,True,Table 3,TBR-R>TBR-F with exclusive mask by TBF-R>TBF-F,success,17,The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (recognized vs. forgotten items) in Table 3.,"{
+""eligible"": true,
+""table"": ""Table 3"",
+""contrast"": ""TBR-R>TBR-F with exclusive mask by TBF-R>TBF-F"",
+""contrast_type"": ""success"",
+""n"": 17,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (recognized vs. forgotten items) in Table 3.""
+}"
+pmid:22144982,full_text,asi1-mini,2026-11-07T02:35:17,False,N/A,N/A,N/A,0,"The study is excluded because it reports an encoding contrast (High-Attention vs. Low-Attention words) rather than a retrieval-success contrast (e.g., hits > correct rejections or remembered > forgotten) in healthy adults.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is excluded because it reports an encoding contrast (High-Attention vs. Low-Attention words) rather than a retrieval-success contrast (e.g., hits > correct rejections or remembered > forgotten) in healthy adults.""
+}"
+pmid:22076964,full_text,asi1-mini,2026-11-07T02:35:25,True,Table 1,Remember > Know,recollection,16,"The study uses whole-brain fMRI in healthy adults (N=23 minus 7 excluded = 16) to compare Remember and Know judgments at retrieval, which is an eligible episodic retrieval success contrast.","{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""Remember > Know"",
+""contrast_type"": ""recollection"",
+""n"": 16,
+""reason"": ""The study uses whole-brain fMRI in healthy adults (N=23 minus 7 excluded = 16) to compare Remember and Know judgments at retrieval, which is an eligible episodic retrieval success contrast.""
+}"
+pmid:22046159,full_text,asi1-mini,2026-11-07T02:35:30,True,Figure 2,strongly remembered > classify,success,10,"The study uses whole-brain fMRI in healthy adults and reports the contrast between strongly remembered (successful retrieval) and classify trials, with coordinates reported in Talairach space.","{
+""eligible"": true,
+""table"": ""Figure 2"",
+""contrast"": ""strongly remembered > classify"",
+""contrast_type"": ""success"",
+""n"": 10,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the contrast between strongly remembered (successful retrieval) and classify trials, with coordinates reported in Talairach space.""
+}"
+pmid:21935483,full_text,asi1-mini,2026-11-07T02:35:36,False,N/A,N/A,N/A,15,"The study does not report a retrieval-success contrast (e.g., hits > correct rejections or remembered > forgotten); it only reports encoding contrasts and correlations between activation and performance.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 15,
+""reason"": ""The study does not report a retrieval-success contrast (e.g., hits > correct rejections or remembered > forgotten); it only reports encoding contrasts and correlations between activation and performance.""
+}"
+pmid:21846300,full_text,asi1-mini,2026-11-07T02:35:42,True,Table II,Hits > CRs,success,10,"The study uses whole-brain fMRI in healthy adults (excluding one participant per group due to poor performance, leaving n=10) and reports the Hits > Correct Rejections contrast in Table II.","{
+""eligible"": true,
+""table"": ""Table II"",
+""contrast"": ""Hits > CRs"",
+""contrast_type"": ""success"",
+""n"": 10,
+""reason"": ""The study uses whole-brain fMRI in healthy adults (excluding one participant per group due to poor performance, leaving n=10) and reports the Hits > Correct Rejections contrast in Table II.""
+}"
+pmid:21811449,full_text,asi1-mini,2026-11-07T02:35:47,False,N/A,N/A,N/A,16,"The study analyzes recency effects based on item lag (a parametric manipulation of time/distance) rather than a contrast between successful and unsuccessful retrieval outcomes (e.g., hits vs. misses or remembered vs. forgotten).","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 16,
+""reason"": ""The study analyzes recency effects based on item lag (a parametric manipulation of time/distance) rather than a contrast between successful and unsuccessful retrieval outcomes (e.g., hits vs. misses or remembered vs. forgotten).""
+}"
+pmid:21736454,full_text,asi1-mini,2026-11-07T02:35:54,True,Table 2,High > Low Confidence,success,16,The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (high vs. low confidence hits) in Table 2 with MNI coordinates for n=16 participants.,"{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""High > Low Confidence"",
+""contrast_type"": ""success"",
+""n"": 16,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (high vs. low confidence hits) in Table 2 with MNI coordinates for n=16 participants.""
+}"
+pmid:21145314,full_text,asi1-mini,2026-11-07T02:36:13,True,Table 4,Source > No Source,recollection,15,"The study uses whole-brain fMRI in healthy adults to compare source-correct (high confidence) hits against incorrect or low-confidence source hits at retrieval, which fits the eligible contrast type.","{
+""eligible"": true,
+""table"": ""Table 4"",
+""contrast"": ""Source > No Source"",
+""contrast_type"": ""recollection"",
+""n"": 15,
+""reason"": ""The study uses whole-brain fMRI in healthy adults to compare source-correct (high confidence) hits against incorrect or low-confidence source hits at retrieval, which fits the eligible contrast type.""
+}"
+pmid:21134473,full_text,asi1-mini,2026-11-07T02:36:17,False,N/A,recall-classify > classify,success,12,"The study is ineligible because the analysis was restricted to anatomical and functional Regions of Interest (ROIs) in the left parietal cortex, violating the whole-brain inclusion criterion.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""recall-classify > classify"",
+""contrast_type"": ""success"",
+""n"": 12,
+""reason"": ""The study is ineligible because the analysis was restricted to anatomical and functional Regions of Interest (ROIs) in the left parietal cortex, violating the whole-brain inclusion criterion.""
+}"
+pmid:20624599,full_text,asi1-mini,2026-11-07T02:36:25,False,N/A,N/A,N/A,0,"The study is a meta-analysis of existing datasets using Regions of Interest (ROIs) defined by resting-state connectivity rather than whole-brain voxel-wise analysis, which excludes it based on the ROI-only criterion.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study is a meta-analysis of existing datasets using Regions of Interest (ROIs) defined by resting-state connectivity rather than whole-brain voxel-wise analysis, which excludes it based on the ROI-only criterion.""
+}"
+pmid:20428498,full_text,asi1-mini,2026-11-07T02:36:36,True,Table 1,Retrieval > Control,success,17,"The study uses whole-brain fMRI in healthy adults and reports coordinates in Talairach space; however, the primary activation contrast reported (Retrieval > Control) is an encoding/retrieval vs. baseline contrast rather than a retrieval-success contrast (e.g., hits > correct rejections), making it ineligible for a retrieval-success meta-analysis.","{
+""eligible"": true,
+""table"": ""Table 1"",
+""contrast"": ""Retrieval > Control"",
+""contrast_type"": ""success"",
+""n"": 17,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports coordinates in Talairach space; however, the primary activation contrast reported (Retrieval > Control) is an encoding/retrieval vs. baseline contrast rather than a retrieval-success contrast (e.g., hits > correct rejections), making it ineligible for a retrieval-success meta-analysis.""
+}"
+pmid:19755103,full_text,asi1-mini,2026-11-07T02:37:01,True,Supplemental Table 2,DPM > DPNM,success,14,"The study uses whole-brain fMRI in healthy adults to compare successful relational memory retrieval (disproportionate viewing of the matching face) against unsuccessful retrieval (disproportionate viewing of a non-matching face), reporting coordinates for this contrast in Supplemental Table 2.","{
+""eligible"": true,
+""table"": ""Supplemental Table 2"",
+""contrast"": ""DPM > DPNM"",
+""contrast_type"": ""success"",
+""n"": 14,
+""reason"": ""The study uses whole-brain fMRI in healthy adults to compare successful relational memory retrieval (disproportionate viewing of the matching face) against unsuccessful retrieval (disproportionate viewing of a non-matching face), reporting coordinates for this contrast in Supplemental Table 2.""
+}"
+pmid:19702458,full_text,asi1-mini,2026-11-07T02:37:24,True,Table 2,recollection/strong memory,recollection,12,The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (high confidence hits vs. incorrect responses) in Table 2 for the n=12 fMRI participants.,"{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""recollection/strong memory"",
+""contrast_type"": ""recollection"",
+""n"": 12,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (high confidence hits vs. incorrect responses) in Table 2 for the n=12 fMRI participants.""
+}"
+pmid:19680466,full_text,asi1-mini,2026-11-07T02:37:29,False,N/A,N/A,N/A,0,"The study uses Regions of Interest (PMR and VPC) defined by the Wake Forrest PickAtlas toolbox for its primary analysis, which violates the inclusion criterion requiring whole-brain fMRI or PET analyses.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study uses Regions of Interest (PMR and VPC) defined by the Wake Forrest PickAtlas toolbox for its primary analysis, which violates the inclusion criterion requiring whole-brain fMRI or PET analyses.""
+}"
+pmid:19647800,full_text,asi1-mini,2026-11-07T02:37:35,True,Table 4,high-confidence hit > high-confidence correct rejection,recollection,12,The study uses whole-brain fMRI on healthy adults and reports the retrieval success contrast (hits > correct rejections) in Table 4 with a sample size of 12 participants.,"{
+""eligible"": true,
+""table"": ""Table 4"",
+""contrast"": ""high-confidence hit > high-confidence correct rejection"",
+""contrast_type"": ""recollection"",
+""n"": 12,
+""reason"": ""The study uses whole-brain fMRI on healthy adults and reports the retrieval success contrast (hits > correct rejections) in Table 4 with a sample size of 12 participants.""
+}"
+pmid:19642880,full_text,asi1-mini,2026-11-07T02:37:42,True,Table 2,correct source > don't know source,success,15,"The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (source-correct vs. don't-know) in Table 2, although the primary imaging results are reported via ROI analysis.","{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""correct source > don't know source"",
+""contrast_type"": ""success"",
+""n"": 15,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (source-correct vs. don't-know) in Table 2, although the primary imaging results are reported via ROI analysis.""
+}"
+pmid:19524092,full_text,asi1-mini,2026-11-07T02:37:50,True,Table 3,remembered > forgotten,success,16,The study uses whole-brain fMRI in healthy adults and reports a general memory success contrast (remembered > forgotten) at retrieval in Table 3 with N=16 after exclusions.,"{
+""eligible"": true,
+""table"": ""Table 3"",
+""contrast"": ""remembered > forgotten"",
+""contrast_type"": ""success"",
+""n"": 16,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a general memory success contrast (remembered > forgotten) at retrieval in Table 3 with N=16 after exclusions.""
+}"
+pmid:19505443,full_text,asi1-mini,2026-11-07T02:37:56,False,N/A,N/A,N/A,0,"The study compares young and older adults (patient/aging group) rather than isolating a healthy adult sample for the retrieval-success contrast, and the reported analysis contrasts Target vs. Foil periods rather than successful hits versus incorrect rejections or remembered versus forgotten items.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study compares young and older adults (patient/aging group) rather than isolating a healthy adult sample for the retrieval-success contrast, and the reported analysis contrasts Target vs. Foil periods rather than successful hits versus incorrect rejections or remembered versus forgotten items.""
+}"
+pmid:19501072,full_text,asi1-mini,2026-11-07T02:38:01,True,Table 2,high-confidence hit > high-confidence correct rejection,recollection,12,"The study uses whole-brain fMRI on healthy adults and reports a retrieval-success contrast (high-confidence hits vs. high-confidence correct rejections) in Table 2, which aligns with the recollection component of successful episodic retrieval.","{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""high-confidence hit > high-confidence correct rejection"",
+""contrast_type"": ""recollection"",
+""n"": 12,
+""reason"": ""The study uses whole-brain fMRI on healthy adults and reports a retrieval-success contrast (high-confidence hits vs. high-confidence correct rejections) in Table 2, which aligns with the recollection component of successful episodic retrieval.""
+}"
+pmid:19428399,full_text,asi1-mini,2026-11-07T02:38:08,True,Table 3,hits > correct rejections,success,18,The study uses whole-brain fMRI on healthy adults (young-old and old-old groups) to analyze retrieval success defined as hits greater than correct rejections.,"{
+""eligible"": true,
+""table"": ""Table 3"",
+""contrast"": ""hits > correct rejections"",
+""contrast_type"": ""success"",
+""n"": 18,
+""reason"": ""The study uses whole-brain fMRI on healthy adults (young-old and old-old groups) to analyze retrieval success defined as hits greater than correct rejections.""
+}"
+pmid:19383503,full_text,asi1-mini,2026-11-07T02:38:20,True,Table 2,correct old > correct rejections,success,16,The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (hits/correct old vs. correct rejections) in Table 2 with a sample size of 16.,"{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""correct old > correct rejections"",
+""contrast_type"": ""success"",
+""n"": 16,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports a retrieval-success contrast (hits/correct old vs. correct rejections) in Table 2 with a sample size of 16.""
+}"
+pmid:19199424,full_text,asi1-mini,2026-11-07T02:38:27,True,Table S1,source-correct > forgotten items,recollection,16,The study uses whole-brain fMRI in healthy adults and reports coordinates for the contrast of source-correct decisions versus forgotten items in Table S1.,"{
+""eligible"": true,
+""table"": ""Table S1"",
+""contrast"": ""source-correct > forgotten items"",
+""contrast_type"": ""recollection"",
+""n"": 16,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports coordinates for the contrast of source-correct decisions versus forgotten items in Table S1.""
+}"
+pmid:19146963,full_text,asi1-mini,2026-11-07T02:38:35,True,Table 3,Hits > CRs,success,18,The study uses whole-brain fMRI in healthy adults (23 subjects minus 5 excluded for poor performance = 18) and reports the retrieval-success contrast (Hits > Correct Rejections) in Table 3.,"{
+""eligible"": true,
+""table"": ""Table 3"",
+""contrast"": ""Hits > CRs"",
+""contrast_type"": ""success"",
+""n"": 18,
+""reason"": ""The study uses whole-brain fMRI in healthy adults (23 subjects minus 5 excluded for poor performance = 18) and reports the retrieval-success contrast (Hits > Correct Rejections) in Table 3.""
+}"
+pmid:18958245,full_text,asi1-mini,2026-11-07T02:38:40,True,Figure 5,correct remember vs. correct know,recollection,21,The study uses whole-brain fMRI in healthy adults and reports the eligible 'Remember > Know' contrast at retrieval in Figure 5.,"{
+""eligible"": true,
+""table"": ""Figure 5"",
+""contrast"": ""correct remember vs. correct know"",
+""contrast_type"": ""recollection"",
+""n"": 21,
+""reason"": ""The study uses whole-brain fMRI in healthy adults and reports the eligible 'Remember > Know' contrast at retrieval in Figure 5.""
+}"
+pmid:18614265,full_text,asi1-mini,2026-11-07T02:38:56,True,Table 3,emotional hits > neutral hits,success,16,The study uses whole-brain fMRI in a healthy control group (n=16) and reports the retrieval-success contrast of emotional hits versus neutral hits in Table 3.,"{
+""eligible"": true,
+""table"": ""Table 3"",
+""contrast"": ""emotional hits > neutral hits"",
+""contrast_type"": ""success"",
+""n"": 16,
+""reason"": ""The study uses whole-brain fMRI in a healthy control group (n=16) and reports the retrieval-success contrast of emotional hits versus neutral hits in Table 3.""
+}"
+pmid:18611446,full_text,asi1-mini,2026-11-07T02:39:01,False,N/A,N/A,N/A,0,"The study compares epilepsy patients to healthy controls using a target-vs-foil (hits vs. false alarms) contrast, which is excluded as it contrasts true and false memory rather than successful versus unsuccessful retrieval.","{
+""eligible"": false,
+""table"": ""N/A"",
+""contrast"": ""N/A"",
+""contrast_type"": ""N/A"",
+""n"": 0,
+""reason"": ""The study compares epilepsy patients to healthy controls using a target-vs-foil (hits vs. false alarms) contrast, which is excluded as it contrasts true and false memory rather than successful versus unsuccessful retrieval.""
+}"
+pmid:18294660,full_text,asi1-mini,2026-11-07T02:39:16,True,Table 2,Recollection of Perceived/Imagined and Temporal Source > New Items,success,16,"The study uses whole-brain fMRI in healthy adults to compare correct source recollection (hits) against new items (correct rejections), which fits the hits > correct rejections inclusion criterion.","{
+""eligible"": true,
+""table"": ""Table 2"",
+""contrast"": ""Recollection of Perceived/Imagined and Temporal Source > New Items"",
+""contrast_type"": ""success"",
+""n"": 16,
+""reason"": ""The study uses whole-brain fMRI in healthy adults to compare correct source recollection (hits) against new items (correct rejections), which fits the hits > correct rejections inclusion criterion.""
+}"

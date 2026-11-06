@@ -2,6 +2,22 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: full-text proposals read from PMC instead of PDFs (RQ1)
+
+**Was:** asi1-mini proposed the contrast table and N from PDFs stored in `$C2C_DATA/rq1/pdfs`.
+
+**Now:** a stored PDF is still used if there is one. Otherwise the text comes from PMC's open-access XML through NCBI's API, and it is read and not saved. This gave text for 136 of the 290 records. The other 154 are listed in `rq1_map/screening/full_text_not_retrieved.csv`.
+
+**Why:** no PDFs exist and the team does not want stored copies. Publisher sites show bot checks, which are not bypassed.
+
+**Results:** `rq1_map/screening/contrast_proposals.csv` holds 86 proposed eligible, 49 proposed ineligible and 1 invalid reply (`pmid:28803854`, a malformed key in an otherwise readable reply, left for the author).
+
+**Limits:**
+- These are proposals from a model not calibrated on full texts. Several proposed contrasts do not look eligible from their labels alone. Nothing has been entered in `experiments.csv`.
+- The accepted bulk yes covers title/abstract only. It does not verify any contrast, and `contrast_verified_by` stays blank until the author confirms each one against its paper.
+- Open-access papers are not a random subset, and 154 of 290 is a large share with no full text. How to handle them is not yet decided, and PRISMA has no "not retrieved" count yet.
+- The proposals include known overlaps that need one experiment per subject group, and a possible NSD study that would overlap with RQ2.
+
 ## 2026-11-07: the author accepted every AI suggestion as one decision (RQ1)
 
 **Was:** the protocol and the entries below describe the author deciding each routed record with the AI suggestion as support.

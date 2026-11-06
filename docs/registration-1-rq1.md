@@ -97,6 +97,7 @@ AND (retrieval[tiab] OR remember*[tiab] OR recollection[tiab] OR "old/new"[tiab]
 **6.2 Full-text stage.**
 - The author assesses each remaining full text against §4.
 - An AI (asi1-mini, not calibrated on full texts) proposes which table holds the retrieval-success contrast and the sample size. The author confirms or corrects every proposal against the paper; the sheet records who verified each one.
+- The text comes from a stored PDF if there is one, otherwise from PMC's open-access XML, which is read and not saved (`CHANGELOG.md`, 2026-11-07).
 - The AI is never used to read or transcribe coordinates.
 - Reasons for full-text exclusion are recorded for the PRISMA 2020 flow diagram, which is generated from the logs, not typed by hand.
 
