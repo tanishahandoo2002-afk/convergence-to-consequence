@@ -11,7 +11,7 @@
 
 **Title:** From convergence to consequence (part 1): a curated activation likelihood estimation meta-analysis of successful episodic retrieval
 
-**Authors:** Tanisha Handoo (Amity University). **[OPEN]** Add the supervisor (and second rater, if they will be a co-author) with affiliations and ORCID iDs.
+**Authors:** Tanisha Handoo (Amity University). **[OPEN]** Add the supervisor with affiliation and ORCID iD. The second rater is anonymous, so is not listed.
 
 **Project repository:** https://github.com/tanishahandoo2002-afk/convergence-to-consequence
 
@@ -91,7 +91,7 @@ AND (retrieval[tiab] OR remember*[tiab] OR recollection[tiab] OR "old/new"[tiab]
   - Settings: temperature 0, the eligibility criteria above as the prompt (`rq1_map/screening/criteria.md`), and JSON output.
   - Each decision is logged with the model identifier, a SHA-256 hash of the prompt, a timestamp and the raw reply.
   - ASI:One offers no pinned model version and no documented seed, and its replies vary between runs. The logged replies are the record of its decisions; a rerun would not reproduce them exactly.
-- **Second rater.** A second rater (**[OPEN]** name) screens a seeded random 20% of all records, blind to the author's and the AIs' decisions. Disagreements are resolved by discussion.
+- **Second rater.** A second rater, who takes part anonymously (`CHANGELOG.md`, 2026-11-07), screens a seeded random 20% of all records, blind to the author's and the AIs' decisions. Disagreements are resolved by discussion.
 - **Agreement reported:** Cohen's κ for ASI–Qwen, each AI–author, and author–second rater. AI–author κ leaves out the second-look sheet, because those records were chosen for being excluded by both AIs.
 
 **6.2 Full-text stage.**
@@ -215,7 +215,7 @@ Eickhoff et al. (2009, 2012, 2016); Turkeltaub et al. (2012); Acar et al. (2018)
 6. Final PubMed string (§5.2)
 7. PubMed year cutoff, from BrainMap coverage (§5.2)
 8. Scopus, if library access allows (§5.2)
-9. Second rater's name (§6.1)
+9. ~~Second rater's name (§6.1)~~ Settled: anonymous, 2026-11-07
 10. Pooling rule for H1b (§7.3)
 11. H1b subtraction threshold (§9.4)
 12. Status of the data on the submission date (§12)

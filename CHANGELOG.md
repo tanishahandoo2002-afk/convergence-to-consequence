@@ -2,6 +2,18 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: second rater anonymous, and the author accepted the 48 suggested includes (RQ1)
+
+**Second rater. Was:** to be named in the registration. **Now:** they take part anonymously and are not named in the project's records or on GitHub. Their decisions appear only under `rater = second`. **Why:** the rater asked for this. **Limits:** readers cannot verify who they are or what experience they have. They have not yet screened any record, and to stay blind they should not open this repository, which holds the AI and author decisions, until they finish.
+
+**Full-text sheet. Now:** the team relayed the author's yes to all 48 suggested includes on `rq1_map/screening/full_text_check.csv`. It was entered as one decision, with the same reason and date on each row. The 88 suggested excludes remain unanswered.
+
+**Limits:**
+- These decisions equal the AI suggestions. Whether she read each paper first is not recorded, so they should not be described as a paper-by-paper human full-text review.
+- The 48 include 26 with medium or low confidence, some of which the sheet says to exclude if no peaks are found, or which depend on a supplement that the AI did not read.
+- The "included" count in PRISMA can fall. A paper with no usable coordinates, or one sharing a subject group with another, cannot enter the map, and any such change needs its decision corrected.
+- This yes does not verify a contrast. `contrast_verified_by` stays blank and nothing enters `experiments.csv` until she confirms each contrast against its paper.
+
 ## 2026-11-07: AI check of the full-text proposals before the author reviews them (RQ1)
 
 **Was:** the author would check each asi1-mini proposal against its paper with no intermediate step.
