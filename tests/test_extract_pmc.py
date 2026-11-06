@@ -1,8 +1,9 @@
 import xml.etree.ElementTree as ET
 
+import pandas as pd
 import pytest
 
-from rq1_map.extract_pmc import find_table, foci_in_row, row_numbers, table_foci
+from rq1_map.extract_pmc import dropped_records, find_table, foci_in_row, merge_accepted, row_numbers, table_foci
 
 
 def test_separate_cells_handle_printed_minus_signs_and_commas():
@@ -43,6 +44,25 @@ def test_chosen_rows_only_and_repeats_count_once():
     t = find_table(table(), "Table 2")
     assert table_foci(t, "1,3-4", 1, "sep") == [(1.0, 2.0, 3.0), (4.0, 5.0, 6.0)]
     assert table_foci(t, "4", 1, "sep") == [(4.0, 5.0, 6.0)]
+
+
+def review_rows():
+    return pd.DataFrame({"exp_id": ["pm001", "pm002", "pm003", ""], "record_id": ["a", "a", "b", "c"], "agree": ["no", "yes", "no", "no"]})
+
+
+def test_only_accepted_experiments_are_merged_and_named():
+    draft = pd.DataFrame({"exp_id": ["pm001", "pm002", "pm003"], "contrast_verified_by": ""})
+    draft_coords = pd.DataFrame({"exp_id": ["pm001", "pm002"], "x": ["1", "2"]})
+    exps, coords = merge_accepted(review_rows(), draft, draft_coords, pd.DataFrame({"exp_id": ["bm001"], "contrast_verified_by": ""}),
+                                  pd.DataFrame({"exp_id": ["bm001"], "x": ["0"]}), "Someone")
+    assert list(exps.exp_id) == ["bm001", "pm002"] and exps.contrast_verified_by.iloc[1] == "Someone" and exps.contrast_verified_by.iloc[0] == ""
+    assert list(coords.exp_id) == ["bm001", "pm002"]
+    with pytest.raises(SystemExit):  # running it twice must not add rows twice
+        merge_accepted(review_rows(), draft, draft_coords, exps, coords, "Someone")
+
+
+def test_a_paper_stays_if_either_of_its_groups_is_accepted():
+    assert dropped_records(review_rows()) == ["b", "c"]
 
 
 def test_missing_table_raises():

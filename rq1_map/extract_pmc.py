@@ -1,9 +1,11 @@
 """Read coordinates straight from PMC article tables into draft sheets, for the author to review.
 
 Which rows hold each contrast is chosen in extraction_spec.yaml. The numbers come only from the table XML, so
-no person or model retypes them. Nothing reaches experiments.csv until the author has confirmed the contrast.
+no person or model retypes them. Nothing reaches experiments.csv until the author has answered the review sheet.
 CLI: python -m rq1_map.extract_pmc
+     python -m rq1_map.extract_pmc --apply "<who accepted>" <date>   # after the review sheets are answered
 """
+import argparse
 import re
 import time
 import xml.etree.ElementTree as ET
@@ -117,7 +119,47 @@ def extract(spec, screened):
     return pd.DataFrame(exps, columns=EXP_COLUMNS), pd.DataFrame(coords), pd.DataFrame(review)
 
 
+def merge_accepted(review, draft_exps, draft_coords, exps, coords, verified_by):
+    """Add the experiments answered yes to the analysis sheets, naming who accepted them. Returns the new sheets."""
+    accepted = review.exp_id[(review.agree == "yes") & (review.exp_id != "")]
+    already = set(accepted) & set(exps.exp_id)
+    if already:
+        raise SystemExit(f"already in experiments.csv: {sorted(already)}")
+    new = draft_exps[draft_exps.exp_id.isin(accepted)].assign(contrast_verified_by=verified_by)
+    return pd.concat([exps, new], ignore_index=True), pd.concat([coords, draft_coords[draft_coords.exp_id.isin(accepted)]], ignore_index=True)
+
+
+def dropped_records(review):
+    """Records with no accepted experiment. A paper giving two groups stays if either is accepted."""
+    answered = review.groupby("record_id").agree.agg(lambda a: (a == "yes").any())
+    return list(answered.index[~answered])
+
+
+def apply_review(verified_by, date):
+    """Move accepted experiments into the analysis sheets and mark dropped papers as excluded at full text."""
+    read = lambda path: pd.read_csv(path, dtype=str, keep_default_na=False)
+    review = read(DRAFT / "review.csv")
+    exps, coords = merge_accepted(review, read(DRAFT / "experiments.csv"), read(DRAFT / "coordinates.csv"),
+                                  read(HERE / "experiments.csv"), read(HERE / "coordinates.csv"), verified_by)
+    brain = read(DRAFT / "brainmap_review.csv")
+    exps.loc[exps.exp_id.isin(brain.exp_id[brain.agree == "yes"]), "contrast_verified_by"] = verified_by
+    screened_path = HERE / "screening" / "full_text_check.csv"
+    screened = read(screened_path)
+    dropped = screened.record_id.isin(dropped_records(review))
+    screened.loc[dropped, ["agree", "reason", "date"]] = ["no", "Dropped at extraction; see rq1_map/pmc_draft/review.csv", date]
+    exps.to_csv(HERE / "experiments.csv", index=False)
+    coords.to_csv(HERE / "coordinates.csv", index=False)
+    screened.to_csv(screened_path, index=False)
+    print(f"{len(exps)} experiments, {len(coords)} foci, {int(dropped.sum())} papers dropped")
+
+
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--apply", nargs=2, metavar=("VERIFIED_BY", "DATE"), help="move accepted rows into the analysis sheets")
+    a = ap.parse_args()
+    if a.apply:
+        apply_review(*a.apply)
+        return
     spec = yaml.safe_load((HERE / "extraction_spec.yaml").read_text())
     screened = pd.read_csv(HERE / "screening" / "full_text_check.csv", dtype=str, keep_default_na=False).set_index("record_id")
     exps, coords, review = extract(spec, screened)
