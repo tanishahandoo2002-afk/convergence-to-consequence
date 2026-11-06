@@ -1,26 +1,58 @@
 exp_id,study_id,doi,subject_group,table_or_figure,contrast,contrast_type,n,mean_age,space,source,contrast_verified_by
-bm002,"Duzel E, 1999",10.1073/pnas.96.4.1794,"Duzel E, 1999",Table 3,Episodic Retrieval Old - New,success,11,,TAL,brainmap,
-bm003,"Eldridge L L, 2000",10.1038/80671,"Eldridge L L, 2000",Table 1,Remember > Know,recollection,11,,TAL,brainmap,
+bm002,"Duzel E, 1999",10.1073/pnas.96.4.1794,"Duzel E, 1999",Table 3,Episodic Retrieval Old - New,success,11,,TAL,brainmap,Tanisha Handoo (accepted AI check)
+bm003,"Eldridge L L, 2000",10.1038/80671,"Eldridge L L, 2000",Table 1,Remember > Know,recollection,11,,TAL,brainmap,Tanisha Handoo (accepted AI check)
 bm004,"Dolan R J, 2000",10.1006/nimg.2000.0538,"Dolan R J, 2000",,Recognition Memory With High vs. Low Target,success,10,,TAL,brainmap,
 bm005,"Cansino S, 2002",10.1093/cercor/12.10.1048,"Cansino S, 2002",,Correct vs. Incorrect Source Memory During Retrieval,recollection,17,,TAL,brainmap,
 bm006,"Daselaar S M, 2001",10.1006/nimg.2001.0758,"Daselaar S M, 2001",,Retrieval Success vs. Retrieval Attempt,success,13,,TAL,brainmap,
 bm007,"Fliessbach K, 2006",10.1016/j.neuroimage.2006.06.007,"Fliessbach K, 2006",,"Recognition, Old/New Effect",success,21,,TAL,brainmap,
 bm008,"Hofer A, 2007",10.1016/j.bandc.2006.11.005,"Hofer A, 2007",,"Correct Recognition, Learned Faces > Correct Rejection, Distractor Faces",success,21,,TAL,brainmap,
-bm009,"Kensinger E A, 2007",10.1016/j.neuropsychologia.2007.05.024,"Kensinger E A, 2007",Tables 2 and 5,"Overall Recognition, Neutral + Negative | Visually Specific Recognition, Negative + Neutral",success,19,,TAL,brainmap,
+bm009,"Kensinger E A, 2007",10.1016/j.neuropsychologia.2007.05.024,"Kensinger E A, 2007",Tables 2 and 5,"Overall Recognition, Neutral + Negative | Visually Specific Recognition, Negative + Neutral",success,19,,TAL,brainmap,Tanisha Handoo (accepted AI check)
 bm010,"Watanabe T, 2008",10.1016/j.neuroimage.2007.08.024,"Watanabe T, 2008",,Hits - Correct Rejection (Retrieval Success),success,18,,TAL,brainmap,
 bm011,"Daselaar S M, 2006",10.1152/jn.01029.2005,"Daselaar S M, 2006",,Brain Regions Associated with Recollection,recollection,14,,TAL,brainmap,
-bm012,"Dobbins I G, 2003",10.1016/s0028-3932(02)00164-1,"Dobbins I G, 2003",Table 2,"Source, Hit > Source, Miss",recollection,11,,TAL,brainmap,
+bm012,"Dobbins I G, 2003",10.1016/s0028-3932(02)00164-1,"Dobbins I G, 2003",Table 2,"Source, Hit > Source, Miss",recollection,11,,TAL,brainmap,Tanisha Handoo (accepted AI check)
 bm013,"Johnson J D, 2007",10.1093/cercor/bhl156,"Johnson J D, 2007",,Content Independent Recollection Related Activity,recollection,16,,TAL,brainmap,
 bm014,"Montaldi D, 2006",10.1002/hipo.20178,"Montaldi D, 2006",,Recollected > F3,recollection,13,,TAL,brainmap,
 bm015,"Fenker D B, 2005",10.1111/j.1460-9568.2005.04033.x,"Fenker D B, 2005",,"Emotional, Remember vs. Emotional, Know | Neutral, Remember vs. Neutral, Know | Remember vs. New",recollection,20,,TAL,brainmap,
-bm016,"Henson R N A, 1999",10.1523/JNEUROSCI.19-10-03962.1999,"Henson R N A, 1999",Tables 2 and 4,"Remember > New Responses, (Retrieval + Encoding) | Remember > Know Responses, Retrieval",recollection,12,,TAL,brainmap,
+bm016,"Henson R N A, 1999",10.1523/JNEUROSCI.19-10-03962.1999,"Henson R N A, 1999",Tables 2 and 4,"Remember > New Responses, (Retrieval + Encoding) | Remember > Know Responses, Retrieval",recollection,12,,TAL,brainmap,Tanisha Handoo (accepted AI check)
 bm017,"Peters J, 2007",10.1111/j.1460-9568.2007.05752.x,"Peters J, 2007",,"Correct > Incorrect Source Encoding, Auditory Retrieval | Correct > Incorrect Source Encoding, Picture Retrieval",recollection,14,,TAL,brainmap,
 bm018,"Sharot T, 2004",10.1038/nn1353,"Sharot T, 2004",,"Neutral, Remember > Neutral, Know | Emotional, Remember > Emotional, Know",recollection,13,,TAL,brainmap,
 bm019,"Suchan B, 2008",10.1002/hipo.20371,"Suchan B, 2008",,Recollection vs. Correct Rejection,recollection,10,,TAL,brainmap,
-bm020,"Vilberg K L, 2007",10.1016/j.neuropsychologia.2007.02.027,"Vilberg K L, 2007",Table 3,Regions Selectively Sensitive to Recollection,recollection,28,,TAL,brainmap,
+bm020,"Vilberg K L, 2007",10.1016/j.neuropsychologia.2007.02.027,"Vilberg K L, 2007",Table 3,Regions Selectively Sensitive to Recollection,recollection,28,,TAL,brainmap,Tanisha Handoo (accepted AI check)
 bm021,"Weis S, 2004",PMID:15597043,"Weis S, 2004",,"Hit, Correct Source Judgment vs. Hit, Wrong Source Judgment",recollection,12,,TAL,brainmap,
 bm022,"Woodruff C C, 2005",10.1016/j.neuropsychologia.2004.10.013,"Woodruff C C, 2005",,Old/New Effects Common to Remembering Words and Pictures,recollection,17,,TAL,brainmap,
-bm023,"Yonelinas A P, 2005",10.1523/JNEUROSCI.5295-04.2005,"Yonelinas A P, 2005",Table 2,Remember Responses > High Confidence Familiarity Responses,recollection,16,,TAL,brainmap,
-bm024,"Johnson S C, 2006",10.1016/j.neurobiolaging.2005.09.017,"Johnson S C, 2006",Table 3,Normals,success,77,,TAL,brainmap,
+bm023,"Yonelinas A P, 2005",10.1523/JNEUROSCI.5295-04.2005,"Yonelinas A P, 2005",Table 2,Remember Responses > High Confidence Familiarity Responses,recollection,16,,TAL,brainmap,Tanisha Handoo (accepted AI check)
+bm024,"Johnson S C, 2006",10.1016/j.neurobiolaging.2005.09.017,"Johnson S C, 2006",Table 3,Normals,success,77,,TAL,brainmap,Tanisha Handoo (accepted AI check)
 bm025,"Henke K, 1997",10.1002/(SICI)1098-1063(1997)7:3<249::AID-HIPO1>3.0.CO;2-G,"Henke K, 1997",,Recall Old - Recall New,success,12,,TAL,brainmap,
 bm026,"de Zubicaray G I, 2007",10.1016/j.neuropsychologia.2006.08.013,"de Zubicaray G I, 2007",,Hit > Correct Rejection | Hit > Miss,success,16,,TAL,brainmap,
+pm001,"Foudil S, 2024",10.1038/s41598-024-58298-y,"Foudil S, 2024",Table 1,Remember vs Familiar (correct old/seen); Old vs New (correct),recollection,19,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm002,"Yoo J, 2021",10.1371/journal.pone.0249290,"Yoo J, 2021",Table 2,"HIT vs correct rejection, remote retrieval runs",success,22,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm003,"Marin-Garcia E, 2021",10.3389/fnhum.2021.584560,"Marin-Garcia E, 2021 (Study group)",Table 1,"Remembered > Forgotten, Study group",success,20,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm004,"Marin-Garcia E, 2021",10.3389/fnhum.2021.584560,"Marin-Garcia E, 2021 (Test group)",Table 1,"Remembered > Forgotten, Test group",success,21,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm005,"Tibon R, 2019",10.1523/JNEUROSCI.2102-18.2018,"Tibon R, 2019",Table 2,Recall success (vivid + nonvivid) > failure at test,success,21,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm006,"Gilmore A, 2019",10.1016/j.neuropsychologia.2018.12.023,"Gilmore A, 2019",Table 1,"Recognition Old > New, correct items",success,40,,TAL,pmc,Tanisha Handoo (accepted AI check)
+pm007,"Risius O, 2018",10.3389/fnhum.2018.00528,"Risius O, 2018",Table 1,"R_C > R_F, correct > forgotten object-location at retrieval",success,16,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm008,"Layher E, 2018",10.3389/fnins.2018.00705,"Layher E, 2018",Table 1,"Hits > Correct Rejections, conservative criterion",success,36,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm009,"Wang W, 2018",10.1016/j.neuropsychologia.2018.01.019,"Wang W, 2018",Table 1,"Hit > Correct Rejection, Known and Unknown conjunction; Unknown",success,24,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm010,"Marchewka A, 2016",10.3389/fnbeh.2016.00198,"Marchewka A, 2016",Table 1,Correctly recognized vs forgotten images,success,14,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm011,"Thakral P, 2015",10.1016/j.neuroimage.2015.01.003,"Thakral P, 2015 (source memory)",Table 2,Modality-independent source memory effects,recollection,17,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm012,"Morcom A, 2014",10.3389/fnhum.2014.00351,"Morcom A, 2014",Table 2,"Context hits > context misses, non-selective",recollection,18,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm013,"Leshikar E, 2014",10.3758/s13415-013-0198-y,"Leshikar E, 2014",Table 4,"Source correct > no source, task-invariant at test",recollection,38,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm014,"Taylor J, 2013",10.1016/j.cortex.2012.08.008,"Taylor J, 2013",Table 2,R Hit > K Hit,recollection,18,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm015,"Morcom A, 2012",10.1162/jocn_a_00299,"Morcom A, 2012",Table 2,"Old > new, targets, common to picture and word tasks",success,18,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm016,"Herzmann G, 2012",10.1080/17588928.2012.669364,"Herzmann G, 2012",Table 4,original[correct] > old[incorrect],recollection,16,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm017,"Harand C, 2012",10.1371/journal.pone.0043495,"Harand C, 2012",Table 1,RR responses > correct rejections at 3 days,recollection,18,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm018,"Hayama H, 2012",10.1162/jocn_a_00202,"Hayama H, 2012",Table 2,Successful > unsuccessful recall,success,18,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm019,"Duarte A, 2011",10.1016/j.brainres.2010.11.086,"Duarte A, 2011",Table 4,"Source > No Source, common to all materials, at test",recollection,15,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm020,"Diana R, 2010",10.1162/jocn.2009.21335,"Diana R, 2010",Table 2,Recollection/strong memory: most confident correct vs incorrect,recollection,12,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm021,"Wang T, 2009",10.1016/j.neuropsychologia.2009.01.030,"Wang T, 2009",Table 3,"Hits > correct rejections, common to both groups",success,36,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm022,"Vilberg K, 2009",10.1016/j.neuroimage.2008.12.020,"Vilberg K, 2009",Table 3,"Hits > CRs, insensitive to old/new ratio",success,18,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm023,"Turner M, 2008",10.1016/j.neuropsychologia.2007.12.029,"Turner M, 2008",Table 2,Correct source recollection > correct rejection of new items,success,16,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm024,"Hou M, 2023",10.1016/j.neurobiolaging.2023.07.001,"Hou M, 2023",Table 4,"Associative hit > item hit, transient, age-invariant",recollection,45,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm026,"Stephan-Otto C, 2017",10.1371/journal.pone.0169551,"Stephan-Otto C, 2017",Table 3,"PP > PW, pictures remembered as pictures vs as words",recollection,24,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm027,"Wagner I, 2017",10.1007/s00213-016-4502-8,"Wagner I, 2017",Table 1,"Correct > incorrect, all subjects",success,53,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm029,"Thakral P, 2015",10.1016/j.brainres.2015.01.033,"Thakral P, 2015 (continuous recognition)",Table 2,"Old > new, context-independent",success,24,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm032,"Johnson J, 2013",10.3389/fnhum.2013.00219,"Johnson J, 2013",Table 2,"Rscene/Rsentence > 4/3/2/1, recollection effects",recollection,16,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm033,"Kalpouzos G, 2012",10.3389/fnint.2012.00074,"Kalpouzos G, 2012 (younger)",Table A2,"Hits > misses main effect, younger group",success,19,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm034,"Kalpouzos G, 2012",10.3389/fnint.2012.00074,"Kalpouzos G, 2012 (older)",Table A2,"Hits > misses main effect, older group",success,15,,MNI,pmc,Tanisha Handoo (accepted AI check)
+pm036,"Kim H, 2010",10.1016/j.neuroimage.2009.07.058,"Kim H, 2010",Table 4,High-confidence hit > high-confidence correct rejection,success,12,,TAL,pmc,Tanisha Handoo (accepted AI check)
+pm037,"Hayama H, 2009",10.1016/j.neuropsychologia.2009.04.010,"Hayama H, 2009",Table 2,"Old > New, common to source and semantic tasks",success,16,,MNI,pmc,Tanisha Handoo (accepted AI check)

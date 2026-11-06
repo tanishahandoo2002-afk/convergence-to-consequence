@@ -54,7 +54,8 @@ Title/abstract screening used two independent large language model raters, plus 
 suggestion on each record routed to the author. The author accepted every suggestion as one
 decision, so these decisions equal the AI suggestions (`CHANGELOG.md`, 2026-11-07).
 No second human rater took part, so no human reliability measure is reported for screening.
-Extracted contrasts are proposed by an AI and verified by the author against each paper.
+Extracted contrasts were chosen by an AI assistant, and the author accepted its suggestions as one
+decision, without a recorded paper-by-paper check.
 An AI assistant also helped draft code; the author ran, read and checked every script.
-Coordinates came from BrainMap exports or were read by a script from PMC tables, from rows chosen
-by an AI assistant for the author to review (`CHANGELOG.md`, 2026-11-07). No person or model typed them.
+Coordinates came from BrainMap exports or were read by a script from PMC tables, from those same
+AI-chosen rows (`CHANGELOG.md`, 2026-11-07). No person or model typed them.

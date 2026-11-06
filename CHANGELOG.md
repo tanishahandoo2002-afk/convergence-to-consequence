@@ -2,6 +2,18 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: the author accepted the extraction suggestions as one decision (RQ1)
+
+**Was:** the entries below say the author would confirm each contrast against its paper before it entered `experiments.csv`.
+
+**Now:** the team relayed that she went with every AI suggestion on the extraction sheets. It was entered as one decision. 32 PMC experiments are added to `experiments.csv` and `coordinates.csv`, and 8 BrainMap experiments are accepted. 18 included papers are dropped at this stage, 6 by a suggested no and 12 that could not be extracted, which changes PRISMA to 106 excluded at full text and 30 included. All are marked `Tanisha Handoo (accepted AI check)` in `contrast_verified_by`.
+
+**Limits:**
+- That label means she accepted an AI check. Whether she read each paper is not recorded, so these contrasts should not be described as verified by a human against the paper.
+- Her answers now equal the AI suggestions at every stage: title/abstract, full text and extraction. No independent human decision exists for any included or excluded record.
+- The 17 BrainMap experiments whose papers she cannot access stay unverified, with blank `contrast_verified_by`. The extraction check fails until that is resolved.
+- The five new outlier foci, the spot-check and these 17 are not signed off.
+
 ## 2026-11-07: AI suggestions on the extraction review sheets (RQ1)
 
 **Now:** each row of `rq1_map/pmc_draft/review.csv` and `brainmap_review.csv` carries an AI suggestion (yes or no), a confidence level and a reason, added at the team's request to make review easier. The `agree` column stays blank for the reviewer's own answer, and a suggestion alone changes nothing.
