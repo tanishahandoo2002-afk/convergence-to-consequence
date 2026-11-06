@@ -55,7 +55,8 @@ suggestion on each record routed to the author. The author accepted every sugges
 decision, so these decisions equal the AI suggestions (`CHANGELOG.md`, 2026-11-07).
 No second human rater took part, so no human reliability measure is reported for screening.
 Extracted contrasts were chosen by an AI assistant, and the author accepted its suggestions as one
-decision, without a recorded paper-by-paper check.
+decision, without a recorded paper-by-paper check. 17 BrainMap experiments stay in unverified,
+because their papers could not be accessed, and a verified-only map is produced alongside the main one.
 An AI assistant also helped draft code; the author ran, read and checked every script.
 Coordinates came from BrainMap exports or were read by a script from PMC tables, from those same
 AI-chosen rows (`CHANGELOG.md`, 2026-11-07). No person or model typed them.

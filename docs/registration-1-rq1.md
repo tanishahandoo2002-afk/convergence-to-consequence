@@ -96,10 +96,11 @@ AND (retrieval[tiab] OR remember*[tiab] OR recollection[tiab] OR "old/new"[tiab]
 
 **6.2 Full-text stage.**
 - The author assesses each remaining full text against §4.
-- An AI (asi1-mini, not calibrated on full texts) proposes which table holds the retrieval-success contrast and the sample size. The author confirms or corrects every proposal against the paper; the sheet records who verified each one.
+- An AI (asi1-mini, not calibrated on full texts) proposes which table holds the retrieval-success contrast and the sample size. The author accepted an AI check of these proposals as one decision, and the sheet records this (`CHANGELOG.md`, 2026-11-07).
 - The text comes from a stored PDF if there is one, otherwise from PMC's open-access XML, which is read and not saved. Records with neither count as reports not retrieved and are not assessed (`CHANGELOG.md`, 2026-11-07).
 - An AI assistant checks each proposal against excerpts of the paper first, and the author reviews that check on `rq1_map/screening/full_text_check.csv` (`CHANGELOG.md`, 2026-11-07).
-- Coordinates for papers found through PubMed are read by a script from the PMC table XML, from rows chosen by an AI assistant, and the author reviews each choice (`CHANGELOG.md`, 2026-11-07). No person or model types them.
+- Coordinates for papers found through PubMed are read by a script from the PMC table XML, from rows chosen by an AI assistant, and the author accepted those choices as one decision (`CHANGELOG.md`, 2026-11-07). No person or model types them.
+- 17 BrainMap experiments stay in the analysis unverified, because the author cannot access their papers. A verified-only ALE is run alongside the main one (`CHANGELOG.md`, 2026-11-07).
 - Reasons for full-text exclusion are recorded for the PRISMA 2020 flow diagram, which is generated from the logs, not typed by hand.
 
 **6.3 Calibration done before registration (disclosed).**

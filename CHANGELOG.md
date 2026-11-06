@@ -2,6 +2,21 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: 17 BrainMap experiments kept unverified (RQ1)
+
+**Was:** the extraction check failed unless every experiment had a verified contrast, every focus outside the brain mask had a sign-off, and the spot-check could reach any experiment.
+
+**Now:** the 17 BrainMap experiments whose papers the author cannot access stay in the analysis, marked `Not verified (paper not accessible)`. For these only, the check gives warnings instead of errors, outlier sign-offs are not required, and the spot-check leaves them out. `rq1_map/run_ale.py` also writes a verified-only map and cluster table next to the main results.
+
+**Why:** the team chose to keep the data rather than drop it.
+
+**Limits:**
+- Nobody has compared these contrasts, sample sizes or foci with their papers. They rest on BrainMap's coding, and the review of the 9 papers that could be read found errors in BrainMap's labels, N and contrasts.
+- They make up 17 of 57 experiments and 242 of 826 foci.
+- Two foci outside the brain mask stay unchecked: `bm007` (-3, 65, 34) and `bm017` (-20, -16, -32).
+- `bm017`'s label is unclear about encoding vs retrieval, so it may not be an eligible contrast.
+- The main map should be read next to the verified-only map. A result that appears only in the main map depends on unverified data.
+
 ## 2026-11-07: the author accepted the extraction suggestions as one decision (RQ1)
 
 **Was:** the entries below say the author would confirm each contrast against its paper before it entered `experiments.csv`.
