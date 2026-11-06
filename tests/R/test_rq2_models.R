@@ -9,6 +9,8 @@ sim_trials <- function(slope = 0.4, inter = 0, seed = 1, n_subj = 8, n_trials = 
                   sig_memory = rnorm(n_subj * n_trials), sig_control_md = rnorm(n_subj * n_trials),
                   sig_control_yeo = rnorm(n_subj * n_trials))
   d$sig_memory_top50 <- d$sig_memory + rnorm(nrow(d), sd = 0.3)
+  d$sig_memory_verified <- d$sig_memory + rnorm(nrow(d), sd = 0.3)
+  d$sig_control_md_verified <- d$sig_control_md + rnorm(nrow(d), sd = 0.3)
   d$is_old <- rbinom(nrow(d), 1, 0.6)
   d$log_delay_s <- ifelse(d$is_old == 1, runif(nrow(d), 1, 7), NA)
   u_s <- rnorm(n_subj, sd = 0.3); b_s <- slope + rnorm(n_subj, sd = 0.1); v_i <- rnorm(n_img, sd = 0.3)
@@ -59,9 +61,10 @@ bad <- data.frame(y = rbinom(50, 1, 0.5), x = rnorm(50), g = factor("only"))
 f <- fit_simplified(list(y ~ x + (1 | g)), bad)
 stopifnot(is.null(f$fit), identical(f$converged, FALSE))
 
-# robustness: 8 leave-one-participant-out rows plus top-50% and Yeo variants
+# robustness: 8 leave-one-participant-out rows plus top-50%, Yeo and verified-only variants
 rob <- robustness(sim_trials(slope = 0.4, seed = 5, n_trials = 500, n_img = 800))
-stopifnot(sum(grepl("^lopo_", unique(rob$variant))) == 8, all(c("top50", "yeo") %in% rob$variant))
+stopifnot(sum(grepl("^lopo_", unique(rob$variant))) == 8, all(c("top50", "yeo", "verified_only") %in% rob$variant))
+stopifnot(all(c("H2a", "H2b", "H2c") %in% rob$model[rob$variant == "verified_only"]))
 
 # permutation: planted -> p < .05 for every participant; null -> mostly not significant
 p1 <- perm_test(planted, n_perm = 200, seed = 1)

@@ -34,9 +34,9 @@ def check(masks_dir=MASKS, signoff_path=SIGNOFFS):
         elif (on & brain).sum() / on.sum() < MIN_INSIDE:
             errors.append(f"{n}: only {(on & brain).sum() / on.sum():.0%} of voxels inside the MNI brain mask")
         data[n] = on
-    for ctrl in ("control_md", "control_yeo"):
-        if (data["memory"] & data[ctrl]).any():
-            errors.append(f"memory and {ctrl} overlap in {int((data['memory'] & data[ctrl]).sum())} voxels")
+    for mem, ctrl in (("memory", "control_md"), ("memory", "control_yeo"), ("memory_verified", "control_md_verified")):
+        if (data[mem] & data[ctrl]).any():
+            errors.append(f"{mem} and {ctrl} overlap in {int((data[mem] & data[ctrl]).sum())} voxels")
     if not (masks_dir / "FROZEN.sha256").exists():
         errors.append("masks are not frozen (FROZEN.sha256 missing)")
     else:

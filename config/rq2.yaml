@@ -6,7 +6,7 @@ beta_dirs:
   b2: betas_fithrf                 # robustness
 trials_per_session: 750
 s3_base: "https://natural-scenes-dataset.s3.amazonaws.com/"
-masks: [memory, memory_top50, control_md, control_yeo]
+masks: [memory, memory_top50, control_md, control_yeo, memory_verified, control_md_verified]
 extreme_z: 6
 pilot: {subject: 1, sessions: [1, 2, 3]}
 

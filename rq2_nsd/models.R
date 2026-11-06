@@ -117,6 +117,9 @@ robustness <- function(trials) {
     pick(fit_h2(droplevels(d[d$subject != s, ]), per_subject = FALSE), "H2a", paste0("lopo_", s)))
   out[[length(out) + 1]] <- pick(fit_h2(d, memory = "sig_memory_top50", per_subject = FALSE), "H2a", "top50")
   out[[length(out) + 1]] <- pick(fit_h2(d, control = "sig_control_yeo", per_subject = FALSE), "H2b", "yeo")
+  # the map without unverified experiments, with its own control so the two masks stay disjoint
+  out[[length(out) + 1]] <- pick(fit_h2(d, memory = "sig_memory_verified", control = "sig_control_md_verified",
+                                        per_subject = FALSE), c("H2a", "H2b", "H2c"), "verified_only")
   do.call(rbind, out)
 }
 

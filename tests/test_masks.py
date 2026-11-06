@@ -81,13 +81,15 @@ def test_check_masks_flags_overlap_and_missing_signoff(tmp_path):
     region = np.zeros(on.shape, bool)
     region[40:50, 50:60, 40:50] = True
     region &= on
-    for name in ["memory", "memory_top50", "control_md", "control_yeo"]:
+    names = ["memory", "memory_top50", "control_md", "control_yeo", "memory_verified", "control_md_verified"]
+    for name in names:
         nib.Nifti1Image(region.astype("uint8"), brain.affine).to_filename(tmp_path / f"{name}.nii.gz")
-    freeze([tmp_path / f"{n}.nii.gz" for n in ["memory", "memory_top50", "control_md", "control_yeo"]],
+    freeze([tmp_path / f"{n}.nii.gz" for n in names],
            refreeze=False, frozen_path=tmp_path / "FROZEN.sha256", changelog=tmp_path / "CHANGELOG.md")
     (tmp_path / "s.csv").write_text("date,step,item,who,result,note\n")
     errors = check(tmp_path, signoff_path=tmp_path / "s.csv")
-    assert any("control_md" in e and "overlap" in e for e in errors)
+    assert any("memory and control_md overlap" in e for e in errors)
+    assert any("memory_verified and control_md_verified overlap" in e for e in errors)
     assert any("masks_frozen" in e for e in errors)
 
 

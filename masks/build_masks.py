@@ -5,6 +5,8 @@
   control_md.nii.gz      multiple-demand parcels (Fedorenko lab, allParcels-MD-HE197) minus memory  [primary]
   control_yeo.nii.gz     Yeo 2011 7-network salience/ventral attention + control (frontoparietal) minus memory
                          [sensitivity]; from the CBIG split-component 2 mm volume and its lookup table
+  memory_verified.nii.gz        significant clusters of the ALE without unverified experiments [sensitivity]
+  control_md_verified.nii.gz    multiple-demand parcels minus memory_verified, its paired control [sensitivity]
 
 Once frozen, hashes in masks/FROZEN.sha256 guard every downstream stage.
 CLI: python -m masks.build_masks [--refreeze]
@@ -26,7 +28,7 @@ from tools.common import ROOT, data_dir, load_config
 MASKS = Path(__file__).resolve().parent
 FROZEN = MASKS / "FROZEN.sha256"
 CHANGELOG = ROOT / "CHANGELOG.md"
-NAMES = ["memory", "memory_top50", "control_md", "control_yeo"]
+NAMES = ["memory", "memory_top50", "control_md", "control_yeo", "memory_verified", "control_md_verified"]
 
 
 def _binary(data, ref):
@@ -122,8 +124,11 @@ def build(cfg):
                                 interpolation="nearest", force_resample=True, copy_header=True)
     ids = yeo_label_ids(fetch_source(p["yeo_lut_url"]).read_text())
     yeo_net = _binary(np.isin(np.rint(np.asarray(yeo.dataobj)), ids), sig)
+    verified_sig = image.load_img(RESULTS / "ale_cluster_fwe_z_verified_only.nii.gz")
+    verified = _binary(_on(verified_sig), verified_sig)
     return {"memory": memory, "memory_top50": top_half(stat, memory),
-            "control_md": subtract(_binary(_on(md), sig), memory), "control_yeo": subtract(yeo_net, memory)}
+            "control_md": subtract(_binary(_on(md), sig), memory), "control_yeo": subtract(yeo_net, memory),
+            "memory_verified": verified, "control_md_verified": subtract(_binary(_on(md), sig), verified)}
 
 
 def main():
