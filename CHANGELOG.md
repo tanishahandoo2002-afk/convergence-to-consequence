@@ -8,6 +8,7 @@ The author agreed these on 2026-10-27 (`docs/decisions-proposed.md` §4).
 
 - **RQ3 crossover effect size. Was:** change-score SMD (`SMCC`). **Now:** raw-score SD pooled across conditions (`SMCRP`, d_av). **Why:** `SMCC` inflates crossover g relative to parallel designs, which would bias any moderator that differs between designs. The assumed r (.5, with .3 and .7) still enters the sampling variance, and slightly affects the small-sample correction.
 - **RQ2 H2b model form. Was:** long format, each trial stacked once per network, tested by a signal × network interaction. **Now:** one row per trial, `correct ~ z_memory + z_control` plus random effects, with a Wald test of β_memory − β_control. **Why:** same hypothesis, without the duplicated rows that make the interaction's standard error too small. Random slopes for both signals come first in the simplification order.
+- **RQ2 H2c delay. Was:** `log_delay_s` uncentred, so the memory-signal main effect meant the effect at a delay of 1 s. **Now:** centred at the median log delay of old trials, pooled across participants and written to `h2c_delay_centre.txt`. **Why:** the main effect then means the effect at a typical delay, and centring avoids rescaling warnings that would force needless simplification.
 
 ## 2026-10-27: title/abstract screening, AI first (RQ1 and RQ3)
 

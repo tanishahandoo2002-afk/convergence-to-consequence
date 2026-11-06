@@ -82,13 +82,18 @@ h2b_data <- function(d, control = "sig_control_md") {
   old_resp
 }
 
+# H2c centres delay at this value, so the memory-signal main effect is the effect at a typical delay, not at 1 s
+# (docs/decisions-proposed.md §4.4). Pooled across participants; per-participant fits use the same value.
+delay_centre <- function(d) median(d$log_delay_s[d$is_old == 1], na.rm = TRUE)
+
 specs <- function(d, memory = "sig_memory", control = "sig_control_md") {
   old <- d[d$is_old == 1, ]
+  old$log_delay_c <- old$log_delay_s - delay_centre(d)
   list(H2a = list(data = old, outcome = "hit", terms = memory, slope = memory),
        H2b = list(data = h2b_data(d, control), outcome = "correct", terms = "z_memory + z_control",
                   slope = "z_memory + z_control", diff = c("z_memory", "z_control")),
-       H2c = list(data = old[!is.na(old$log_delay_s), ], outcome = "hit",
-                  terms = paste0(memory, " * log_delay_s"), slope = memory))
+       H2c = list(data = old[!is.na(old$log_delay_c), ], outcome = "hit",
+                  terms = paste0(memory, " * log_delay_c"), slope = memory))
 }
 
 fit_h2 <- function(trials, memory = "sig_memory", control = "sig_control_md", per_subject = TRUE) {
@@ -162,6 +167,7 @@ main <- function() {
   files <- list.files(input, pattern = "^subj.*_sess.*\\.csv$", full.names = TRUE)
   trials <- do.call(rbind, lapply(files, read.csv))
   dir.create(output, showWarnings = FALSE, recursive = TRUE)
+  writeLines(format(delay_centre(prepare(trials)), digits = 15), file.path(output, "h2c_delay_centre.txt"))
   write.csv(fit_h2(trials), file.path(output, "h2_results.csv"), row.names = FALSE)
   write.csv(robustness(trials), file.path(output, "h2_robustness.csv"), row.names = FALSE)
   write.csv(perm_test(trials), file.path(output, "permutation.csv"), row.names = FALSE)

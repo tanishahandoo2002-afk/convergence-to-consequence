@@ -42,9 +42,17 @@ stopifnot(r$estimate > 0, r$p < 0.05)
 r <- row_of(fit_h2(sim_trials(slope = 0, seed = 2), per_subject = FALSE), "H2a", "sig_memory")
 stopifnot(r$ci_low < 0, r$ci_high > 0)
 
-# planted H2c interaction -0.2
-r <- row_of(fit_h2(sim_trials(slope = 0.4, inter = -0.2, seed = 3), per_subject = FALSE), "H2c", "sig_memory:log_delay_s")
+# planted H2c interaction -0.2 around delay 4, the median of the simulated delays
+h2c <- fit_h2(sim_trials(slope = 0.4, inter = -0.2, seed = 3), per_subject = FALSE)
+r <- row_of(h2c, "H2c", "sig_memory:log_delay_c")
 stopifnot(r$ci_low < -0.2, r$ci_high > -0.2)
+# centred, the main effect is the slope at the median delay (0.4); uncentred it would be about 1.2
+r <- row_of(h2c, "H2c", "sig_memory")
+stopifnot(r$ci_low < 0.4, r$ci_high > 0.4)
+
+# the centre is the median over old trials only, and new trials can't shift it
+centre_data <- data.frame(is_old = c(1, 1, 1, 1, 0), log_delay_s = c(1, 2, 4, NA, 100))
+stopifnot(delay_centre(centre_data) == 2)
 
 # a model that fails at every step is recorded, not fatal
 bad <- data.frame(y = rbinom(50, 1, 0.5), x = rnorm(50), g = factor("only"))
