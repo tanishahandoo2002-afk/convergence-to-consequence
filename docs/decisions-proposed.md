@@ -1,6 +1,6 @@
 # Decisions (2026-10-27): proposed, then agreed in full
 
-These were prepared on request by an AI assistant, using the judgement a neuroimaging meta-analyst would apply. They were **proposals** until the author agreed to all of them, without changes, on 2026-10-27. The pipeline enforces this, because every extraction row needs `contrast_verified_by` filled in by her. Code changes some of them need are listed but not yet made.
+These were prepared on request by an AI assistant, using the judgement a neuroimaging meta-analyst would apply. They were **proposals** until the author agreed to all of them, without changes, on 2026-10-27. The pipeline enforces this, because every extraction row needs `contrast_verified_by` filled in by her. The code changes they needed were made on 2026-11-06 (`CHANGELOG.md`).
 
 ## 1. BrainMap eligibility review (RQ1)
 
@@ -90,4 +90,5 @@ Keep the eligibility table, and add the three interpretation rules this review n
 - **The review is in the data.** The reviewed contrasts were exported from Sleuth with every ineligible contrast hidden: `/Volumes/C2C/reviewed_{main,recollection,familiarity}_v2.txt`. Each file holds exactly the reviewed contrasts: 35 main (26 subject groups, 397 foci); 21 recollection (16 groups, 276 foci); 9 familiarity (8 groups, 76 foci).
 - **Main map in the sheets.** The main export is imported into `rq1_map/experiments.csv` and `coordinates.csv`. `contrast_type` is pre-filled from the review (14 recollection, 12 success). `contrast_verified_by` is blank until the author checks each row.
 - **Johnson S C, 2006: resolved.** N = 77 is right: it is the healthy reference group. The 14 in the review was the age-matched control group. See `docs/paper-check-rq1.md`.
+- **H1b sheets (2026-11-06).** Built from the `_v2` recollection and familiarity exports: 16 experiments, 276 foci and 8 experiments, 76 foci. Paper-check sample sizes carried over: Eldridge 11, Vilberg 28. H1b reports "not run" at these sizes. `contrast_verified_by` is blank.
 - **Still open for the author:** the 7 foci outside the brain mask; and drawing the 20% spot-check sample once the set is final.

@@ -48,7 +48,7 @@ This registration covers the first part of a three-part project. It builds a cur
 **[OPEN] Familiarity contrasts and H1b.** H1b needs familiarity-based contrasts, such as "know" > miss, or familiar > new with no recollection. None of the four accepted contrast types above is a familiarity contrast. Proposed:
 - Familiarity contrasts are eligible **only for the H1b analysis**, not for the main map.
 - The main map uses the four accepted types.
-- The extraction sheet already records `contrast_type` as success, recollection or familiarity.
+- H1b has its own recollection and familiarity extraction sheets. A subject group may give one experiment to each, because the two maps are estimated separately.
 
 **[OPEN] Languages.** Proposed: English only, stated as a limitation.
 

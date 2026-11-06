@@ -91,6 +91,7 @@ Full-text stage: the same script proposes the contrast table and sample size fro
 **Extraction sheets**
 - `experiments.csv`: `exp_id, study_id, doi, subject_group, table_or_figure, contrast, contrast_type (success|recollection|familiarity), n, mean_age, space (MNI|TAL), source (brainmap|table_tool), contrast_verified_by`.
 - `coordinates.csv`: `exp_id, x, y, z`.
+- H1b has its own pair of sheets per group (`experiments_recollection.csv`, `coordinates_recollection.csv` and the same for familiarity), same columns. A subject group may appear once in each.
 - Coordinates come from BrainMap exports or a table-extraction tool, never typed by an AI.
 - Several eligible contrasts from the same subject group are pooled into one `exp_id`.
 
@@ -101,7 +102,7 @@ Full-text stage: the same script proposes the contrast table and sample size fro
 - ALE with sample-size-based kernels; Monte Carlo FWE: voxel-level cluster-forming p < .001, cluster-level FWE p < .05, `n_iters` from config (5,000; tests use fewer); seed from config.
 - Cluster table with peak coordinates, size and atlas labels (Harvard-Oxford).
 - Jackknife (leave-one-experiment-out) per cluster; fail-safe N by adding generated null experiments until each cluster disappears (Acar et al., 2018 approach).
-- H1b subtraction runs only if each contrast group has ≥ 17 experiments; otherwise logs "not run, k = …".
+- H1b subtraction reads its own two groups of sheets and runs only if each has ≥ 17 experiments; otherwise logs "not run, k = …".
 
 *Known-answer test:* 25 synthetic experiments with foci jittered around one point plus random foci → a significant cluster containing that point; 25 random-only experiments → no significant cluster.
 *Check:* output files exist; parameters in outputs equal config; jackknife covers every experiment; versions recorded.

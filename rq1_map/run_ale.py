@@ -18,9 +18,9 @@ from nimare.dataset import Dataset
 from nimare.diagnostics import Jackknife
 from nimare.meta.cbma.ale import ALE, ALESubtraction
 
-from checks.check_rq1_extraction import validate
+from checks.check_rq1_extraction import validate, validate_h1b
 from rq1_map.coords import random_in_brain, to_mni
-from rq1_map.import_sleuth import SHEETS
+from rq1_map.import_sleuth import H1B_TYPES, SHEETS, read_h1b_sheets
 from tools.common import load_config, record_versions
 
 CLUSTER_MAP = "z_desc-size_level-cluster_corr-FWE_method-montecarlo"
@@ -135,9 +135,10 @@ def failsafe(experiments, coordinates_mni, clusters, cfg):
     return pd.DataFrame(rows, columns=["cluster", "noise_experiments", "survives"]).astype({"survives": bool})
 
 
-def h1b(experiments, coordinates_mni, cfg, out_dir=RESULTS):
-    """Recollection vs familiarity ALE subtraction, run only if each group is large enough."""
-    k = {t: int((experiments.contrast_type == t).sum()) for t in ("recollection", "familiarity")}
+def h1b(sheets, cfg, out_dir=RESULTS):
+    """Recollection vs familiarity ALE subtraction from each group's own sheets, run only if each is large
+    enough. A subject group may be in both: the two maps are estimated separately (decisions-proposed.md §4.1)."""
+    k = {t: len(sheets[t][0]) for t in H1B_TYPES}
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     if min(k.values()) < cfg["h1b_min_per_group"]:
@@ -145,8 +146,7 @@ def h1b(experiments, coordinates_mni, cfg, out_dir=RESULTS):
                   f"(each needs >= {cfg['h1b_min_per_group']})")
         (out_dir / "h1b_status.txt").write_text(status)
         return status
-    groups = [experiments[experiments.contrast_type == t] for t in ("recollection", "familiarity")]
-    dsets = [build_dataset(g, coordinates_mni[coordinates_mni.exp_id.isin(g.exp_id)]) for g in groups]
+    dsets = [build_dataset(e, to_mni(e, c)) for e, c in (sheets[t] for t in H1B_TYPES)]
     res = ALESubtraction(n_iters=cfg["ale"]["n_iters"], n_cores=cfg["ale"]["n_cores"],
                          random_state=cfg["seed"]).fit(*dsets)
     res.get_map("z_desc-group1MinusGroup2").to_filename(out_dir / "h1b_subtraction_z.nii.gz")
@@ -159,7 +159,8 @@ def main():
     cfg = load_config("rq1")
     exps = pd.read_csv(SHEETS / "experiments.csv", dtype=str).fillna("")
     coords = pd.read_csv(SHEETS / "coordinates.csv")
-    errors, _ = validate(exps, coords, cfg)
+    sheets = read_h1b_sheets()
+    errors = validate(exps, coords, cfg)[0] + validate_h1b(sheets, cfg)
     if errors:
         sys.exit("extraction check fails; fix it before running the ALE:\n  " + "\n  ".join(errors))
     coords_mni = to_mni(exps, coords)
@@ -175,7 +176,7 @@ def main():
         failsafe(exps, coords_mni, clusters, cfg).to_csv(RESULTS / "failsafe.csv", index=False)
     else:
         pd.DataFrame(columns=["cluster", "noise_experiments", "survives"]).to_csv(RESULTS / "failsafe.csv", index=False)
-    print(h1b(exps, coords_mni, cfg))
+    print(h1b(sheets, cfg))
     params = {"date": datetime.date.today().isoformat(), "seed": cfg["seed"], "ale": cfg["ale"],
               "n_experiments": len(exps), "n_foci": len(coords), "nimare": nimare.__version__}
     (RESULTS / "params.json").write_text(json.dumps(params, indent=2))

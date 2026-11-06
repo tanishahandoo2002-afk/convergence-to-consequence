@@ -2,9 +2,9 @@ from pathlib import Path
 
 import pandas as pd
 
-from checks.check_rq1_extraction import validate
+from checks.check_rq1_extraction import validate, validate_h1b
 from rq1_map.coords import to_mni
-from rq1_map.import_sleuth import read_sleuth
+from rq1_map.import_sleuth import read_h1b_sheets, read_sleuth
 from rq1_map.spotcheck import make_sample
 
 FIX = Path(__file__).parent / "fixtures"
@@ -138,3 +138,47 @@ def test_drop_duplicate_blocks_keeps_distinct_groups():
     e, c, removed = drop_duplicate_blocks(exps, coords)
     assert list(e.exp_id) == ["a", "c"] and removed == ["b"]          # b repeats a exactly; c is a different group
     assert sorted(c.exp_id.unique()) == ["a", "c"] and len(c) == 3
+
+
+def test_read_sleuth_prefix_keeps_h1b_ids_apart():
+    e, c = read_sleuth(FIX / "sleuth_mni.txt", prefix="rec")
+    assert e.exp_id.str.startswith("rec").all() and c.exp_id.str.startswith("rec").all()
+
+
+def test_read_h1b_sheets_reads_each_group(tmp_path):
+    for t in ("recollection", "familiarity"):
+        (tmp_path / f"experiments_{t}.csv").write_text("exp_id,contrast_type\n" + f"{t[:3]}001,{t}\n")
+        (tmp_path / f"coordinates_{t}.csv").write_text("exp_id,x,y,z\n" + f"{t[:3]}001,1,2,3\n")
+    got = read_h1b_sheets(tmp_path)
+    assert list(got["familiarity"][0].exp_id) == ["fam001"] and got["recollection"][1].x[0] == 1
+
+
+def h1b_sheets(k_rec, k_fam, tmp_path):
+    (tmp_path / "s.csv").write_text(HEADER)
+    return {"recollection": sheets(k_rec, contrast_type="recollection"),
+            "familiarity": sheets(k_fam, contrast_type="familiarity")}
+
+
+def run_h1b(group_sheets, tmp_path):
+    sample = tmp_path / "sample.csv"
+    pd.DataFrame({"exp_id": []}).to_csv(sample, index=False)
+    return validate_h1b(group_sheets, CFG | {"h1b_min_per_group": 17}, tmp_path / "s.csv", sample)
+
+
+def test_validate_h1b_allows_same_subject_group_in_both_sheets(tmp_path):
+    assert run_h1b(h1b_sheets(17, 17, tmp_path), tmp_path) == []
+
+
+def test_validate_h1b_skips_sheets_below_the_gate(tmp_path):
+    group_sheets = h1b_sheets(16, 8, tmp_path)
+    group_sheets["familiarity"][0]["contrast_verified_by"] = ""
+    assert run_h1b(group_sheets, tmp_path) == []
+
+
+def test_validate_h1b_reports_problems_by_sheet(tmp_path):
+    group_sheets = h1b_sheets(17, 17, tmp_path)
+    group_sheets["familiarity"][0]["contrast_type"] = "recollection"
+    group_sheets["recollection"][0]["contrast_verified_by"] = ""
+    errors = run_h1b(group_sheets, tmp_path)
+    assert any(e.startswith("familiarity sheet: contrast_type must be familiarity") for e in errors)
+    assert any(e.startswith("recollection sheet: contrast_verified_by") for e in errors)

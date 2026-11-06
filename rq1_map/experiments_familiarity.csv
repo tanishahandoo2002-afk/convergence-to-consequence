@@ -1,0 +1,9 @@
+exp_id,study_id,doi,subject_group,table_or_figure,contrast,contrast_type,n,mean_age,space,source,contrast_verified_by
+fam001,"Daselaar S M, 2006",,"Daselaar S M, 2006",,Brain Regions Associated with Familiarity,familiarity,14,,TAL,brainmap,
+fam002,"Montaldi D, 2006",,"Montaldi D, 2006",,Linear Increases in Familiarity F1 to F3 | Linear Increases in Familiarity M to F3,familiarity,13,,TAL,brainmap,
+fam003,"Fenker D B, 2005",,"Fenker D B, 2005",,Know vs. New,familiarity,20,,TAL,brainmap,
+fam004,"Henson R N A, 1999",,"Henson R N A, 1999",,"Know > New Responses, (Retrieval + Encoding)",familiarity,12,,TAL,brainmap,
+fam005,"Suchan B, 2008",,"Suchan B, 2008",,Familiarity vs. Correct Rejection,familiarity,10,,TAL,brainmap,
+fam006,"Vilberg K L, 2007",,"Vilberg K L, 2007",,Regions Selectively Sensitive to Familiarity,familiarity,28,,TAL,brainmap,
+fam007,"Weis S, 2004",,"Weis S, 2004",,"Hit, Wrong Source Judgment vs. Misses",familiarity,12,,TAL,brainmap,
+fam008,"Yonelinas A P, 2005",,"Yonelinas A P, 2005",,"Familiarity Confidence, Increasing with Familiarity 1 to 4",familiarity,16,,TAL,brainmap,

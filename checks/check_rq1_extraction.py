@@ -9,7 +9,7 @@ from nilearn.datasets import load_mni152_brain_mask
 
 from checks.signoffs import SIGNOFFS, has_error, missing
 from rq1_map.coords import outside_brain, to_mni
-from rq1_map.import_sleuth import EXP_COLUMNS, SHEETS
+from rq1_map.import_sleuth import EXP_COLUMNS, SHEETS, read_h1b_sheets
 from rq1_map.spotcheck import SAMPLE
 from tools.common import load_config
 
@@ -78,10 +78,28 @@ def validate(experiments, coordinates, cfg, signoff_path=SIGNOFFS, sample_path=S
     return errors, warnings
 
 
+def validate_h1b(sheets, cfg, signoff_path=SIGNOFFS, sample_path=SAMPLE):
+    """Errors in the H1b sheets. Below the size gate H1b is reported as not run, so there is nothing to check."""
+    gate = cfg["h1b_min_per_group"]
+    if min(len(e) for e, _ in sheets.values()) < gate:
+        return []
+    errors = []
+    for contrast_type, (exps, coords) in sheets.items():
+        found, _ = validate(exps, coords, cfg | {"hard_min_experiments": gate, "min_experiments": gate},
+                            signoff_path, sample_path)
+        wrong = sorted(exps.exp_id[exps.contrast_type != contrast_type])
+        if wrong:
+            found.append(f"contrast_type must be {contrast_type}: {wrong}")
+        errors += [f"{contrast_type} sheet: {e}" for e in found]
+    return errors
+
+
 def main():
     exps = pd.read_csv(SHEETS / "experiments.csv", dtype=str).fillna("")
     coords = pd.read_csv(SHEETS / "coordinates.csv")
-    errors, warnings = validate(exps, coords, load_config("rq1"))
+    cfg = load_config("rq1")
+    errors, warnings = validate(exps, coords, cfg)
+    errors += validate_h1b(read_h1b_sheets(), cfg)
     for w in warnings:
         print("WARNING:", w)
     for e in errors:

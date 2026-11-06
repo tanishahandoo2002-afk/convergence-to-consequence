@@ -105,10 +105,11 @@ def test_failsafe_reports_each_cluster(planted):
 
 def test_h1b_gate(tmp_path):
     from rq1_map.run_ale import h1b
-    exps = pd.DataFrame({"exp_id": [f"e{i}" for i in range(30)], "n": "20",
-                         "contrast_type": ["recollection"] * 10 + ["familiarity"] * 20})
-    coords = pd.DataFrame({"exp_id": exps.exp_id, "x": 0.0, "y": -20.0, "z": 10.0})
-    status = h1b(exps, coords, {"h1b_min_per_group": 17, "ale": ALE_CFG, "seed": 1}, out_dir=tmp_path)
+    def sheet(k):
+        e = pd.DataFrame({"exp_id": [f"e{i}" for i in range(k)], "n": "20", "space": "MNI"})
+        return e, pd.DataFrame({"exp_id": e.exp_id, "x": 0.0, "y": -20.0, "z": 10.0})
+    sheets = {"recollection": sheet(10), "familiarity": sheet(20)}
+    status = h1b(sheets, {"h1b_min_per_group": 17, "ale": ALE_CFG, "seed": 1}, out_dir=tmp_path)
     assert status.startswith("not run") and "k=10" in status and "k=20" in status
     assert (tmp_path / "h1b_status.txt").read_text() == status
 
@@ -116,8 +117,12 @@ def test_h1b_gate(tmp_path):
 def test_h1b_runs_when_groups_large_enough(tmp_path):
     from rq1_map.run_ale import h1b
     exps, coords = synth(True, k=34)
-    exps["contrast_type"] = ["recollection"] * 17 + ["familiarity"] * 17
-    status = h1b(exps, coords, {"h1b_min_per_group": 17, "ale": ALE_CFG | {"n_iters": 10}, "seed": 1}, out_dir=tmp_path)
+    exps["space"] = "MNI"
+    def sheet(e):
+        return e, coords[coords.exp_id.isin(e.exp_id)]
+    # exp_ids differ but the groups would overlap in practice; each sheet is estimated on its own
+    sheets = {"recollection": sheet(exps.iloc[:17]), "familiarity": sheet(exps.iloc[17:])}
+    status = h1b(sheets, {"h1b_min_per_group": 17, "ale": ALE_CFG | {"n_iters": 10}, "seed": 1}, out_dir=tmp_path)
     assert status.startswith("run") and (tmp_path / "h1b_subtraction_z.nii.gz").exists()
 
 
