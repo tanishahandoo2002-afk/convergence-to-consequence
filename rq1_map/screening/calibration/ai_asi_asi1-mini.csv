@@ -1,0 +1,121 @@
+record_id,rater,model,prompt_sha256,timestamp,decision,reason,raw
+pmid:32609778,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:24,exclude,"The study focuses on emotional congruity effects during autobiographical memory retrieval rather than contrasting successful episodic retrieval (e.g., hits vs. correct rejections or remembered vs. forgotten) as required by the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on emotional congruity effects during autobiographical memory retrieval rather than contrasting successful episodic retrieval (e.g., hits vs. correct rejections or remembered vs. forgotten) as required by the eligibility criteria.""
+}"
+pmid:23961907,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:25,exclude,"The study focuses on motor sequence learning (a procedural/non-declarative task) rather than episodic retrieval, and the reported contrasts compare learning conditions or awareness states rather than successful versus unsuccessful episodic memory retrieval.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on motor sequence learning (a procedural/non-declarative task) rather than episodic retrieval, and the reported contrasts compare learning conditions or awareness states rather than successful versus unsuccessful episodic memory retrieval.""
+}"
+pmid:39765133,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:26,unsure,"The abstract describes an fMRI study in healthy adults with recollection effects, but it does not specify whether the analysis was whole-brain or ROI-only, nor does it mention if coordinates are reported.","{
+""decision"": ""unsure"",
+""reason"": ""The abstract describes an fMRI study in healthy adults with recollection effects, but it does not specify whether the analysis was whole-brain or ROI-only, nor does it mention if coordinates are reported.""
+}"
+pmid:16839301,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:27,exclude,"The record is a meta-analysis, which is explicitly excluded by the criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The record is a meta-analysis, which is explicitly excluded by the criteria.""
+}"
+pmid:20408236,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:27,unsure,"The abstract describes a PET study of episodic memory retrieval with conditions differing in success, but it does not specify if the analysis was whole-brain or ROI-only, nor does it report coordinates or explicitly define the contrast (e.g., hits > correct rejections) required for eligibility.","{
+""decision"": ""unsure"",
+""reason"": ""The abstract describes a PET study of episodic memory retrieval with conditions differing in success, but it does not specify if the analysis was whole-brain or ROI-only, nor does it report coordinates or explicitly define the contrast (e.g., hits > correct rejections) required for eligibility.""
+}"
+pmid:28029355,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:29,unsure,"The abstract describes an episodic retrieval task with source memory performance, but it does not specify whether the analysis was whole-brain or ROI-only, nor does it report coordinates or confirm the sample consists exclusively of healthy adults.","{
+""decision"": ""unsure"",
+""reason"": ""The abstract describes an episodic retrieval task with source memory performance, but it does not specify whether the analysis was whole-brain or ROI-only, nor does it report coordinates or confirm the sample consists exclusively of healthy adults.""
+}"
+pmid:30621794,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:30,exclude,"The study population consists exclusively of patients with amnestic mild cognitive impairment, which violates the inclusion criterion requiring healthy adults.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists exclusively of patients with amnestic mild cognitive impairment, which violates the inclusion criterion requiring healthy adults.""
+}"
+pmid:23254143,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:31,exclude,"The study investigates resting-state functional connectivity, which is explicitly excluded by the criteria requiring an episodic retrieval contrast.","{
+""decision"": ""exclude"",
+""reason"": ""The study investigates resting-state functional connectivity, which is explicitly excluded by the criteria requiring an episodic retrieval contrast.""
+}"
+pmid:22539776,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:32,unsure,"The study involves healthy adults and uses fMRI, but the abstract does not specify if the analysis was whole-brain or ROI-only, nor does it report coordinates or explicitly define an eligible retrieval success contrast (e.g., hits > correct rejections) rather than a group comparison.","{
+""decision"": ""unsure"",
+""reason"": ""The study involves healthy adults and uses fMRI, but the abstract does not specify if the analysis was whole-brain or ROI-only, nor does it report coordinates or explicitly define an eligible retrieval success contrast (e.g., hits > correct rejections) rather than a group comparison.""
+}"
+pmid:39332662,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:34,unsure,"The abstract describes an fMRI study with healthy adults performing an episodic retrieval task, but it does not specify whether the analysis was whole-brain or ROI-only, nor does it report coordinates, so these key eligibility criteria cannot be assessed from the title and abstract alone.","{
+""decision"": ""unsure"",
+""reason"": ""The abstract describes an fMRI study with healthy adults performing an episodic retrieval task, but it does not specify whether the analysis was whole-brain or ROI-only, nor does it report coordinates, so these key eligibility criteria cannot be assessed from the title and abstract alone.""
+}"
+pmid:11352616,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:35,unsure,"The abstract describes an eligible contrast (hits > correct rejections) in healthy adults using fMRI, but it does not specify whether the analysis was whole-brain or ROI-only, nor does it report coordinates, which are required for final eligibility.","{
+""decision"": ""unsure"",
+""reason"": ""The abstract describes an eligible contrast (hits > correct rejections) in healthy adults using fMRI, but it does not specify whether the analysis was whole-brain or ROI-only, nor does it report coordinates, which are required for final eligibility.""
+}"
+pmid:24615858,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:36,exclude,"The study focuses on subsequent memory effects measured at the encoding (study) phase rather than successful episodic retrieval, and explicitly excludes retrieval contrasts.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on subsequent memory effects measured at the encoding (study) phase rather than successful episodic retrieval, and explicitly excludes retrieval contrasts.""
+}"
+pmid:17604348,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:37,unsure,"The abstract describes an fMRI study with healthy adults involving episodic retrieval, but it does not specify whether the analysis was whole-brain or ROI-only, nor does it mention coordinate data, which are required for final eligibility assessment.","{
+""decision"": ""unsure"",
+""reason"": ""The abstract describes an fMRI study with healthy adults involving episodic retrieval, but it does not specify whether the analysis was whole-brain or ROI-only, nor does it mention coordinate data, which are required for final eligibility assessment.""
+}"
+pmid:10371535,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:38,unsure,"The study includes a healthy adult group and uses PET, but the abstract does not specify if the analysis was whole-brain or ROI-only, nor does it report coordinates or explicitly define an eligible retrieval contrast (e.g., hits > correct rejections) versus other comparisons.","{
+""decision"": ""unsure"",
+""reason"": ""The study includes a healthy adult group and uses PET, but the abstract does not specify if the analysis was whole-brain or ROI-only, nor does it report coordinates or explicitly define an eligible retrieval contrast (e.g., hits > correct rejections) versus other comparisons.""
+}"
+pmid:39829135,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:39,exclude,"The study focuses on memory encoding (scanning during the encoding phase) rather than successful episodic retrieval, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on memory encoding (scanning during the encoding phase) rather than successful episodic retrieval, which is an exclusion criterion.""
+}"
+pmid:30816784,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:40,exclude,The study focuses on patients with Parkinson's disease and uses resting-state fMRI rather than task-based whole-brain fMRI or PET to assess an episodic retrieval contrast.,"{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on patients with Parkinson's disease and uses resting-state fMRI rather than task-based whole-brain fMRI or PET to assess an episodic retrieval contrast.""
+}"
+pmid:23287568,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:41,unsure,"The abstract describes an fMRI study involving healthy adults and episodic retrieval, but it does not specify the contrast type (e.g., hits vs. correct rejections) or mention whether coordinates are reported, which prevents a definitive eligibility assessment at this stage.","{
+""decision"": ""unsure"",
+""reason"": ""The abstract describes an fMRI study involving healthy adults and episodic retrieval, but it does not specify the contrast type (e.g., hits vs. correct rejections) or mention whether coordinates are reported, which prevents a definitive eligibility assessment at this stage.""
+}"
+pmid:27155127,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:42,include,"The study involves healthy adults undergoing whole-brain fMRI during an associative recognition task, with an eligible contrast defined as recollection effects (correctly endorsed intact pairs vs. incorrectly endorsed rearranged pairs) which represents successful retrieval.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults undergoing whole-brain fMRI during an associative recognition task, with an eligible contrast defined as recollection effects (correctly endorsed intact pairs vs. incorrectly endorsed rearranged pairs) which represents successful retrieval.""
+}"
+pmid:34942648,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:43,unsure,"The abstract describes an fMRI study with healthy adults involving episodic retrieval, but it does not specify the statistical contrast used (e.g., hits vs. correct rejections) or mention whether coordinates are reported.","{
+""decision"": ""unsure"",
+""reason"": ""The abstract describes an fMRI study with healthy adults involving episodic retrieval, but it does not specify the statistical contrast used (e.g., hits vs. correct rejections) or mention whether coordinates are reported.""
+}"
+pmid:22731734,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:44,exclude,The study focuses on emotional autobiographical retrieval (positive vs. negative memories) rather than a contrast for successful episodic retrieval such as hits versus correct rejections or remembered versus forgotten items.,"{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on emotional autobiographical retrieval (positive vs. negative memories) rather than a contrast for successful episodic retrieval such as hits versus correct rejections or remembered versus forgotten items.""
+}"
+pmid:31305238,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:45,unsure,"The abstract describes an episodic memory recall task in humans but does not specify the imaging modality (fMRI or PET), whether the analysis was whole-brain, or if coordinates are reported, which prevents a definitive eligibility assessment at this stage.","{
+""decision"": ""unsure"",
+""reason"": ""The abstract describes an episodic memory recall task in humans but does not specify the imaging modality (fMRI or PET), whether the analysis was whole-brain, or if coordinates are reported, which prevents a definitive eligibility assessment at this stage.""
+}"
+pmid:23834024,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:46,exclude,"The study focuses on encoding processes (anticipatory cues and object pairs during study) rather than successful episodic retrieval, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on encoding processes (anticipatory cues and object pairs during study) rather than successful episodic retrieval, which is an exclusion criterion.""
+}"
+pmid:15269349,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:47,exclude,"The study focuses on successful encoding effects and does not report an eligible contrast for successful episodic retrieval (e.g., hits > correct rejections) as the primary analysis of interest.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on successful encoding effects and does not report an eligible contrast for successful episodic retrieval (e.g., hits > correct rejections) as the primary analysis of interest.""
+}"
+pmid:15298780,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:47,exclude,"The study explicitly uses a working memory paradigm, which is an excluded contrast type according to the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study explicitly uses a working memory paradigm, which is an excluded contrast type according to the eligibility criteria.""
+}"
+pmid:25583615,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:49,unsure,"The abstract describes an fMRI study on healthy adults involving source memory retrieval, but it does not specify the exact contrast used (e.g., high vs. low confidence or correct vs. incorrect) nor does it mention whether coordinates are reported or if the analysis was whole-brain.","{
+""decision"": ""unsure"",
+""reason"": ""The abstract describes an fMRI study on healthy adults involving source memory retrieval, but it does not specify the exact contrast used (e.g., high vs. low confidence or correct vs. incorrect) nor does it mention whether coordinates are reported or if the analysis was whole-brain.""
+}"
+pmid:22046159,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:49,unsure,"The abstract describes an fMRI study on healthy adults involving episodic retrieval, but it does not specify the statistical contrast used (e.g., hits vs. correct rejections) or mention whether whole-brain coordinates are reported.","{
+""decision"": ""unsure"",
+""reason"": ""The abstract describes an fMRI study on healthy adults involving episodic retrieval, but it does not specify the statistical contrast used (e.g., hits vs. correct rejections) or mention whether whole-brain coordinates are reported.""
+}"
+pmid:21145314,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:51,unsure,"The abstract describes an episodic source memory task in healthy adults using fMRI, but it does not specify whether the analysis was whole-brain or ROI-only, nor does it mention coordinate data, which are required for final eligibility assessment.","{
+""decision"": ""unsure"",
+""reason"": ""The abstract describes an episodic source memory task in healthy adults using fMRI, but it does not specify whether the analysis was whole-brain or ROI-only, nor does it mention coordinate data, which are required for final eligibility assessment.""
+}"
+pmid:27453565,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:52,exclude,The record is a review or narrative summary of existing literature rather than a primary study reporting specific experimental contrasts with coordinates.,"{
+""decision"": ""exclude"",
+""reason"": ""The record is a review or narrative summary of existing literature rather than a primary study reporting specific experimental contrasts with coordinates.""
+}"
+pmid:15390152,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:53,exclude,"The study focuses exclusively on a single patient with selective hippocampal damage, which violates the inclusion criterion requiring healthy adults.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses exclusively on a single patient with selective hippocampal damage, which violates the inclusion criterion requiring healthy adults.""
+}"
+pmid:19499585,asi,asi1-mini,e07ac48e51d55f95647cc929a9dab2c51a738cf7ca1e0d920613532244d313eb,2026-11-06T23:13:55,exclude,"The study measures prestimulus activity predicting later encoding success (subsequent memory effect at study), which is an encoding contrast, not a retrieval contrast.","{
+""decision"": ""exclude"",
+""reason"": ""The study measures prestimulus activity predicting later encoding success (subsequent memory effect at study), which is an encoding contrast, not a retrieval contrast.""
+}"

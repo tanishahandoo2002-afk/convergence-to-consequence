@@ -83,7 +83,7 @@ def main():
     ap.add_argument("rq", choices=["rq1", "rq3"])
     ap.add_argument("--draw", action="store_true")
     ap.add_argument("--n", type=int, default=30)
-    ap.add_argument("--rater", choices=["gemini", "qwen"])
+    ap.add_argument("--rater", choices=["asi", "gemini", "qwen"])
     ap.add_argument("--model", help="override the configured model, e.g. qwen2.5:7b-instruct")
     ap.add_argument("--report", action="store_true")
     a = ap.parse_args()

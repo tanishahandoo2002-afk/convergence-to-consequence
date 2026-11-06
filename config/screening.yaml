@@ -9,6 +9,10 @@ raters:
     model: "gemini-3.8-flash"   # gemini-2.5-flash is no longer served to new API keys (404, 2026-10-19)
     api_key_env: GEMINI_API_KEY
     min_interval_s: 13           # free tier allows 5 requests/minute per model
+  asi:
+    base_url: "https://api.asi1.ai/v1"
+    model: "asi1-mini"          # no pinned versions offered; asi1 adapts its reasoning per request
+    api_key_env: ASI_API_KEY
   qwen:
     base_url: "http://localhost:11434/v1"
     model: "qwen2.5:7b-instruct"   # calibration: 7B kappa 0.376 vs 3B 0.006 (rq1_map/screening/calibration/kappa.csv); ~42 s/record on an 8 GB Mac

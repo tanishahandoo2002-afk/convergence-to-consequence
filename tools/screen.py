@@ -169,7 +169,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("rq", choices=["rq1", "rq3"])
     ap.add_argument("--stage", default="title_abstract", choices=["title_abstract", "full_text"])
-    ap.add_argument("--rater", choices=["gemini", "qwen"])
+    ap.add_argument("--rater", choices=["asi", "gemini", "qwen"])
     ap.add_argument("--limit", type=int)
     ap.add_argument("--merge", action="store_true")
     a = ap.parse_args()
