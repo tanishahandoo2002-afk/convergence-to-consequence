@@ -13,8 +13,17 @@ stopifnot(nrow(p) == 8)
 # H2b network comparison must not depend on each signal's scale
 r1 <- fit_h2(d, per_subject = FALSE); d10 <- d; d10$sig_control_md <- 10 * d10$sig_control_md
 r2 <- fit_h2(d10, per_subject = FALSE)
-pick <- function(r) r$estimate[r$model == "H2b" & r$term == "sig:networkcontrol_md"]
+pick <- function(r) r$estimate[r$model == "H2b" & r$term == "z_memory - z_control"]
 stopifnot(abs(pick(r1) - pick(r2)) < 1e-6)
+
+# H2b keeps one row per trial, and the Wald contrast equals the same contrast fitted directly:
+# b0 + bm*zm + bc*zc = b0 + (bm - bc)*zm + bc*(zm + zc)
+wide <- h2b_data(prepare(d))
+stopifnot(nrow(wide) == sum(prepare(d)$outcome %in% c("hit", "fa")), !anyDuplicated(rownames(wide)))
+w <- tidy_fit(fit_simplified(list(correct ~ z_memory + z_control), wide), "H2b", "x", c("z_memory", "z_control"))
+w <- w[w$term == "z_memory - z_control", ]
+direct <- coef(summary(glm(correct ~ z_memory + I(z_memory + z_control), data = wide, family = binomial)))["z_memory", ]
+stopifnot(abs(w$estimate - direct[1]) < 1e-5, abs(w$se - direct[2]) < 1e-5, abs(w$p - direct[4]) < 1e-5)
 
 # spec §9 checks: trial counts per participant and outcome; diagnostic plot written
 tc <- trial_counts(d)

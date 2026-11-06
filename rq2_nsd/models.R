@@ -39,12 +39,24 @@ fit_simplified <- function(formulas, data, family = binomial) {
   boundary %||% list(fit = NULL, formula_used = NA_character_, converged = FALSE, singular = NA)
 }
 
-tidy_fit <- function(res, model, subject) {
+# Wald test of beta_a - beta_b, in the columns of a coefficient table.
+wald_diff <- function(fit, a, b) {
+  co <- coef(summary(fit)); v <- as.matrix(vcov(fit))
+  est <- co[a, 1] - co[b, 1]
+  se <- sqrt(v[a, a] + v[b, b] - 2 * v[a, b])
+  c(est, se, est / se, 2 * pnorm(-abs(est / se)))
+}
+
+tidy_fit <- function(res, model, subject, diff = NULL) {
   if (is.null(res$fit)) {
     return(data.frame(model = model, subject = subject, term = NA, estimate = NA, se = NA, or = NA, ci_low = NA,
                       ci_high = NA, p = NA, formula_used = NA, converged = FALSE, singular = NA))
   }
   co <- coef(summary(res$fit))
+  if (!is.null(diff)) {
+    co <- rbind(co, wald_diff(res$fit, diff[1], diff[2]))
+    rownames(co)[nrow(co)] <- paste(diff, collapse = " - ")
+  }
   data.frame(model = model, subject = subject, term = rownames(co), estimate = co[, 1], se = co[, 2],
              or = exp(co[, 1]), ci_low = co[, 1] - 1.96 * co[, 2], ci_high = co[, 1] + 1.96 * co[, 2],
              p = co[, 4], formula_used = res$formula_used, converged = TRUE, singular = res$singular, row.names = NULL)
@@ -59,23 +71,22 @@ prepare <- function(trials) {
 
 zscore <- function(x) (x - mean(x, na.rm = TRUE)) / sd(x, na.rm = TRUE)
 
-# Long format for H2b: trials answered "old" (hits and false alarms), one row per network. Each network's
-# signal is z-scored within participant so the interaction compares associations, not predictor scales.
+# H2b: trials answered "old" (hits and false alarms), one row per trial. Stacking each trial once per network
+# would make the standard error too small. Each signal is z-scored within participant so the difference between
+# the two slopes doesn't depend on predictor scales (docs/decisions-proposed.md §4.3).
 h2b_data <- function(d, control = "sig_control_md") {
   old_resp <- d[d$outcome %in% c("hit", "fa"), ]
   old_resp$z_memory <- ave(old_resp$sig_memory, old_resp$subject, FUN = zscore)
   old_resp$z_control <- ave(old_resp[[control]], old_resp$subject, FUN = zscore)
-  long <- rbind(transform(old_resp, sig = z_memory, network = "memory"),
-                transform(old_resp, sig = z_control, network = "control_md"))
-  long$network <- factor(long$network, levels = c("memory", "control_md"))
-  long$correct <- as.integer(long$outcome == "hit")
-  long
+  old_resp$correct <- as.integer(old_resp$outcome == "hit")
+  old_resp
 }
 
 specs <- function(d, memory = "sig_memory", control = "sig_control_md") {
   old <- d[d$is_old == 1, ]
   list(H2a = list(data = old, outcome = "hit", terms = memory, slope = memory),
-       H2b = list(data = h2b_data(d, control), outcome = "correct", terms = "sig * network", slope = "sig"),
+       H2b = list(data = h2b_data(d, control), outcome = "correct", terms = "z_memory + z_control",
+                  slope = "z_memory + z_control", diff = c("z_memory", "z_control")),
        H2c = list(data = old[!is.na(old$log_delay_s), ], outcome = "hit",
                   terms = paste0(memory, " * log_delay_s"), slope = memory))
 }
@@ -85,10 +96,10 @@ fit_h2 <- function(trials, memory = "sig_memory", control = "sig_control_md", pe
   out <- list()
   for (m in names(sp <- specs(d, memory, control))) {
     s <- sp[[m]]
-    out[[length(out) + 1]] <- tidy_fit(fit_simplified(h2_formulas(s$outcome, s$terms, s$slope), s$data), m, "all")
+    out[[length(out) + 1]] <- tidy_fit(fit_simplified(h2_formulas(s$outcome, s$terms, s$slope), s$data), m, "all", s$diff)
     if (per_subject) for (subj in levels(droplevels(s$data$subject))) {
       sd <- droplevels(s$data[s$data$subject == subj, ])
-      out[[length(out) + 1]] <- tidy_fit(fit_simplified(subject_formulas(s$outcome, s$terms), sd), m, subj)
+      out[[length(out) + 1]] <- tidy_fit(fit_simplified(subject_formulas(s$outcome, s$terms), sd), m, subj, s$diff)
     }
   }
   do.call(rbind, out)

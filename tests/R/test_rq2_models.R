@@ -35,8 +35,8 @@ stopifnot(all(c(as.character(1:8), "all") %in% res$subject[res$model == "H2a"]))
 stopifnot(abs(r$or - exp(r$estimate)) < 1e-12)
 
 # H2b: memory signal separates hits from false alarms more than the control signal
-r <- row_of(res, "H2b", "sig:networkcontrol_md")
-stopifnot(r$estimate < 0)
+r <- row_of(res, "H2b", "z_memory - z_control")
+stopifnot(r$estimate > 0, r$p < 0.05)
 
 # null slope: CI contains 0
 r <- row_of(fit_h2(sim_trials(slope = 0, seed = 2), per_subject = FALSE), "H2a", "sig_memory")
