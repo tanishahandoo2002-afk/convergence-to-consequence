@@ -15,7 +15,8 @@ from tools.common import ROOT, load_config
 
 SECOND_LOOK_SHEET = "human_decisions_second_look.csv"
 SECOND_RATER_SHEET = "second_rater_decisions.csv"
-SHEETS = ("human_decisions.csv", SECOND_LOOK_SHEET, SECOND_RATER_SHEET)
+FULL_TEXT_SHEET = "full_text_check.csv"
+SHEETS = ("human_decisions.csv", SECOND_LOOK_SHEET, SECOND_RATER_SHEET, FULL_TEXT_SHEET)
 
 
 def kappa(a, b):

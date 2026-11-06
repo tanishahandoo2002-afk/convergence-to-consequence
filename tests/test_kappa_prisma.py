@@ -65,6 +65,16 @@ def test_prisma_counts_not_retrieved_apart_from_assessed(tmp_path):
     assert reconcile(c) == []
 
 
+def test_full_text_check_answers_reach_prisma(tmp_path):
+    from tools.kappa import FULL_TEXT_SHEET
+    write_rq(tmp_path, [[r, "title_abstract", "author", "include", "", ""] for r in "abc"])
+    pd.DataFrame({"record_id": list("abc"), "stage": "full_text", "rater": "author",
+                  "ai_suggestion": ["include", "exclude", "include"], "agree": ["yes", "yes", ""], "decision": ""}).to_csv(
+        tmp_path / "screening" / FULL_TEXT_SHEET, index=False)
+    c = counts(tmp_path)
+    assert c["included"] == 1 and c["excluded_full_text"] == 1
+
+
 def test_check_screening_flags_missing_human(tmp_path):
     from checks.check_screening import check
     write_rq(tmp_path, [["a", "title_abstract", "author", "include", "", ""]])
