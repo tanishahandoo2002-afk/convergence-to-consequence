@@ -157,6 +157,17 @@ def merge(a, b, seed, frac):
     return m
 
 
+def write_review_sheet(m, records, path, seed):
+    """The author's sheet, in the human_decisions format: shuffled and without the AI decisions, so
+    neither can anchor her. Never overwritten, because it holds her decisions. Returns whether it wrote."""
+    if path.exists():
+        return False
+    sheet = records[records.record_id.isin(m.index[m.needs_human])].sample(frac=1, random_state=seed)
+    sheet = sheet.assign(stage="title_abstract", rater="author", decision="", reason="", date="")
+    sheet[["record_id", "stage", "rater", "decision", "reason", "date", "title", "abstract", "year", "doi"]].to_csv(path, index=False)
+    return True
+
+
 def client_for(cfg):
     from openai import OpenAI
     key = os.environ.get(cfg["api_key_env"]) if cfg["api_key_env"] else "ollama"
@@ -201,6 +212,8 @@ def main():
                   cfg["seed"], cfg["human_exclude_sample"])
         m.to_csv(scr / "merged.csv")
         print(m.merged.value_counts().to_string(), f"\nneeds human: {int(m.needs_human.sum())}")
+        if not write_review_sheet(m, records, scr / "human_decisions.csv", cfg["seed"]):
+            print("human_decisions.csv exists; left as it is")
 
 
 if __name__ == "__main__":

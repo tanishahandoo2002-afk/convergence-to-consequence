@@ -61,6 +61,26 @@ def test_check_screening_flags_missing_human(tmp_path):
     assert any("second rater" in e for e in errors)
 
 
+def test_review_sheet_is_blind_and_kept(tmp_path):
+    from checks.check_screening import check
+    from tools.screen import merge, write_review_sheet
+    write_rq(tmp_path, [])
+    records = pd.DataFrame({"record_id": list("abcdef"), "title": list("ABCDEF"), "abstract": "x", "year": "2020", "doi": ""})
+    a = pd.Series(["include"] * 2 + ["exclude"] * 4, index=list("abcdef"))
+    m = merge(a, a, seed=1, frac=0.25)
+    path = tmp_path / "screening" / "human_decisions.csv"
+    path.unlink()
+    assert write_review_sheet(m, records, path, seed=1)
+    sheet = pd.read_csv(path, dtype=str)
+    assert set(sheet.record_id) == set(m.index[m.needs_human])
+    assert not {"asi", "qwen", "merged", "needs_human"} & set(sheet.columns)
+    # a blank row is not a decision, so the check still asks for it
+    pd.DataFrame({"record_id": ["a"]}).to_csv(tmp_path / "screening" / "second_rater_sample.csv", index=False)
+    assert any(f"{len(sheet)} records need an author decision" in e for e in check(tmp_path))
+    # a rerun of the merge must not wipe her decisions
+    assert not write_review_sheet(m, records, path, seed=1)
+
+
 def test_low_kappa_does_not_make_the_author_screen_everything(tmp_path):
     """The author reviews AI includes, unsures and a sample of excludes (CHANGELOG 2026-10-27); kappa is reported only."""
     from checks.check_screening import check

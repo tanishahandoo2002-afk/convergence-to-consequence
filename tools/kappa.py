@@ -24,7 +24,7 @@ def human(base, rater, stage="title_abstract"):
     if not p.exists():
         return pd.Series(dtype=str)
     h = pd.read_csv(p, dtype=str)
-    h = h[(h.rater == rater) & (h.stage == stage)]
+    h = h[(h.rater == rater) & (h.stage == stage) & h.decision.notna()]
     return h.drop_duplicates("record_id", keep="last").set_index("record_id").decision
 
 
