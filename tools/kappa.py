@@ -2,6 +2,7 @@
 
 CLI:
   python -m tools.kappa rq1 --make-second-rater-sample   # seeded 20% of records, never overwritten
+  python -m tools.kappa rq1 --make-second-rater-sheet    # their blind sheet for that sample, never overwritten
   python -m tools.kappa rq1                               # writes screening/kappa.csv
 """
 import argparse
@@ -13,7 +14,8 @@ from sklearn.metrics import cohen_kappa_score
 from tools.common import ROOT, load_config
 
 SECOND_LOOK_SHEET = "human_decisions_second_look.csv"
-SHEETS = ("human_decisions.csv", SECOND_LOOK_SHEET)
+SECOND_RATER_SHEET = "second_rater_decisions.csv"
+SHEETS = ("human_decisions.csv", SECOND_LOOK_SHEET, SECOND_RATER_SHEET)
 
 
 def kappa(a, b):
@@ -60,15 +62,33 @@ def make_second_rater_sample(base, seed, frac):
     rec.sample(n=math.ceil(len(rec) * frac), random_state=seed)[["record_id"]].to_csv(path, index=False)
 
 
+def make_second_rater_sheet(base, seed):
+    """The second rater's sheet: title and abstract only, blind to every other decision. Never overwritten,
+    because it holds their answers. Returns whether it wrote."""
+    path = base / "screening" / SECOND_RATER_SHEET
+    if path.exists():
+        return False
+    sample = pd.read_csv(base / "screening" / "second_rater_sample.csv", dtype=str).record_id
+    rec = pd.read_csv(base / "search" / "records.csv", dtype=str).fillna("")
+    sheet = rec[rec.record_id.isin(sample)].sample(frac=1, random_state=seed)
+    sheet = sheet.assign(stage="title_abstract", rater="second", decision="", reason="", date="")
+    sheet[["record_id", "stage", "rater", "year", "doi", "title", "abstract", "decision", "reason", "date"]].to_csv(path, index=False)
+    return True
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("rq", choices=["rq1", "rq3"])
     ap.add_argument("--make-second-rater-sample", action="store_true")
+    ap.add_argument("--make-second-rater-sheet", action="store_true")
     a = ap.parse_args()
     base = ROOT / {"rq1": "rq1_map", "rq3": "rq3_stimulation"}[a.rq]
     cfg = load_config("screening")
     if a.make_second_rater_sample:
         make_second_rater_sample(base, cfg["seed"], cfg["second_rater_sample"])
+    elif a.make_second_rater_sheet:
+        if not make_second_rater_sheet(base, cfg["seed"]):
+            print(f"{SECOND_RATER_SHEET} exists; left as it is")
     else:
         print(report(base).to_string(index=False))
 

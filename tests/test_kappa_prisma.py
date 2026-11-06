@@ -150,6 +150,25 @@ def test_check_asks_for_second_look_decisions(tmp_path):
     assert not any("author decision" in e for e in check(second_look_answered))
 
 
+def test_second_rater_sheet_is_blind_kept_and_counted(tmp_path):
+    from tools.kappa import SECOND_RATER_SHEET, human, make_second_rater_sheet
+    write_rq(tmp_path, [])
+    scr = tmp_path / "screening"
+    pd.DataFrame({"record_id": list("abcdef"), "title": list("ABCDEF"), "abstract": "x", "year": "2020", "doi": ""}).to_csv(
+        tmp_path / "search" / "records.csv", index=False)
+    pd.DataFrame({"record_id": ["a", "e"]}).to_csv(scr / "second_rater_sample.csv", index=False)
+    assert make_second_rater_sheet(tmp_path, seed=1)
+    sheet = pd.read_csv(scr / SECOND_RATER_SHEET, dtype=str)
+    assert set(sheet.record_id) == {"a", "e"} and (sheet.rater == "second").all()
+    assert not {"asi", "qwen", "merged", "needs_human", "ai_suggestion", "ai_confidence", "ai_reasoning", "agree"} & set(sheet.columns)
+    assert human(tmp_path, "second").empty
+    sheet.loc[sheet.record_id == "a", "decision"] = "include"
+    sheet.to_csv(scr / SECOND_RATER_SHEET, index=False)
+    assert human(tmp_path, "second").to_dict() == {"a": "include"}
+    assert not make_second_rater_sheet(tmp_path, seed=1)
+    assert human(tmp_path, "second").to_dict() == {"a": "include"}
+
+
 def test_low_kappa_does_not_make_the_author_screen_everything(tmp_path):
     """The author reviews AI includes, unsures and a sample of excludes (CHANGELOG 2026-10-27); kappa is reported only."""
     from checks.check_screening import check
