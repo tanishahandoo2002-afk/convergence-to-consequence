@@ -159,7 +159,7 @@ Full-text stage: the same script proposes the contrast table and sample size fro
 
 **`simnibs/run_montages.py`**
 - For each montage: SimNIBS session on the Ernie head model, field mapped to MNI, mean field magnitude inside each frozen mask → `fields.csv` (tACS: peak amplitude).
-- Clinical-arm montages repeated on an older-adult head model built with `charm` from an OASIS-3 T1.
+- Clinical-arm montages repeated on an older-adult head model built with `charm` from an OASIS-2 T1 (`config/rq3.yaml`; `CHANGELOG.md`, 2026-11-07).
 - Fallback if SimNIBS is unworkable: electrode-to-mask distance, labelled as a proxy in every output.
 
 *Known-answer tests:* doubling the current doubles the field (linearity); a reference F3–Fp2 1 mA montage on Ernie lands within the published range.

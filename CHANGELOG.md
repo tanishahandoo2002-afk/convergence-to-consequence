@@ -2,6 +2,19 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: older-adult head model from OASIS-2, not OASIS-3 (RQ3)
+
+**Was:** the plan built the older-adult head model from an OASIS-3 T1.
+
+**Now:** it uses OASIS-2 session `OAS2_0181_MR1`, MPRAGE run 1 (`config/rq3.yaml`). The subject is female, 74, CDR 0.5, MMSE 26, nWBV 0.733, at her first visit. Only this session was extracted, and the scan stays in `$C2C_DATA` under the OASIS terms.
+
+**Why:** there is no OASIS-3 access, and OASIS-2 is open. RQ3's clinical trials are in MCI and early Alzheimer's disease, so the team chose a subject with very mild dementia (CDR 0.5) rather than a healthy older adult. Among the 20 first-visit CDR 0.5 subjects aged 70 to 80 in the downloaded half of OASIS-2, she has a typical MMSE and atrophy rather than an extreme value.
+
+**Limits:**
+- One person's anatomy stands in for a clinical group, so field estimates will not generalise to every patient.
+- Only half of OASIS-2 (`OAS2_RAW_PART2`) was screened for a subject.
+- The scan is 1.25 mm in one direction, which `charm` accepts but which is coarser than its preferred 1 mm.
+
 ## 2026-11-07: RQ2 keeps the main memory map, with a verified-only sensitivity check
 
 **Now:** RQ2's primary memory mask stays the main ALE map, which includes the 17 unverified BrainMap experiments, as planned. Two masks are added and frozen with the others: `memory_verified`, from the ALE without those experiments, and `control_md_verified`, its paired control. `rq2_nsd/models.R` refits H2a, H2b and H2c with them as a `verified_only` robustness variant.

@@ -45,7 +45,7 @@ Design: [`docs/design.md`](docs/design.md). Deviations from the protocol: [`CHAN
 | --- | --- |
 | BrainMap (Sleuth) | Account via the BrainMap database application form |
 | Natural Scenes Dataset | NSD Data Access Agreement; raw NSD files are never redistributed |
-| OASIS-3 | Data use agreement via NITRC |
+| OASIS-2 | Open access under the OASIS data use terms; one T1 scan is used, kept outside the repo |
 | PubMed | Open |
 
 ## Use of AI tools
