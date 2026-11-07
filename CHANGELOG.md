@@ -2,6 +2,12 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-08: author accepts every AI suggestion (RQ3)
+
+**Now:** the author answered yes to all 182 AI suggestions on her RQ3 sheet, relayed by the team, as in RQ1. 218 records are excluded at title/abstract and 131 go to full text (`python -m tools.prisma rq3`). Her decisions agree with ASI at κ = 0.610 and with Qwen at κ = 0.287 (n = 182, `kappa.csv`). Because she accepted the 6 include suggestions among the 42 sampled agreed excludes, both AI raters missed records she counts as eligible; the 167 unreviewed agreed excludes stay excluded unless the team asks for a second look.
+
+**Limits:** `make rq3-check-screen` fails on the PRISMA reconcile until full-text decisions exist (131 assessed, 0 decided).
+
 ## 2026-11-07: AI suggestion on each record the author reviews (RQ3)
 
 **Now:** RQ3 title/abstract screening follows the RQ1 method. The ASI and Qwen raters screened all 349 records (κ = 0.439, `rq3_stimulation/screening/kappa.csv`). The merge sends 182 to the author: 55 agreed includes, 85 disagreements and a 20% sample of 42 of the 209 agreed excludes. Each record on her sheet (`rq3_stimulation/screening/human_decisions.csv`) carries an AI suggestion, a confidence level and the reasoning (`rq3_stimulation/screening/ai_suggestions.csv`). She answers yes or no to it, as in RQ1.
