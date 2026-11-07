@@ -9,6 +9,8 @@ from rq3_stimulation.extract_pmc import mean_sd
     (".87 (.09)", (0.87, 0.09)),           # no leading zero
     ("8.05 ± 2.28**ΔΔ", (8.05, 2.28)),     # footnote markers after the SD
     ("−0.50 (1.20)", (-0.50, 1.20)),       # printed minus sign
+    ("2.5 ± 2.1 b , c", (2.5, 2.1)),       # spaced footnote letters
+    ("43.58 (+/−1.49)", (43.58, 1.49)),   # plus-minus written out
 ])
 def test_mean_sd_reads_table_cells(cell, expected):
     assert mean_sd(cell) == pytest.approx(expected)

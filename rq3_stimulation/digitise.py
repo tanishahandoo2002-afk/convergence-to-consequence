@@ -6,6 +6,7 @@ from the PMC CDN in memory and is not saved.
 """
 import io
 import re
+import time
 
 import numpy as np
 import requests
@@ -21,12 +22,16 @@ MARKER_WIDTH = 5  # a row this wide in ink belongs to the marker, not the thin e
 
 def fetch_figure(pmc, href):
     """The figure image from the article page's CDN link, held in memory."""
-    page = requests.get(f"https://pmc.ncbi.nlm.nih.gov/articles/PMC{pmc}/", timeout=60,
-                        headers={"User-Agent": EUTILS_TOOL})
-    page.raise_for_status()
     stem = re.escape(href.rsplit(".", 1)[0])
-    m = re.search(rf'https://cdn\.ncbi\.nlm\.nih\.gov/pmc/blobs/[^"]*/{stem}\.\w+', page.text)
-    if not m:
+    for attempt in range(2):  # the page sometimes comes back without its figure links; one retry has been enough
+        page = requests.get(f"https://pmc.ncbi.nlm.nih.gov/articles/PMC{pmc}/", timeout=60,
+                            headers={"User-Agent": EUTILS_TOOL})
+        page.raise_for_status()
+        m = re.search(rf'https://cdn\.ncbi\.nlm\.nih\.gov/pmc/blobs/[^"]*/{stem}\.\w+', page.text)
+        if m:
+            break
+        time.sleep(5)
+    else:
         raise ValueError(f"no CDN link for {href} on PMC{pmc}")
     r = requests.get(m.group(0), timeout=60, headers={"User-Agent": EUTILS_TOOL})
     r.raise_for_status()
