@@ -33,6 +33,7 @@ REVIEW_COLUMNS = ["es_id", "record_id", "study_id", "link", "table", "active_cel
                   "n_sham", "m_active", "sd_active", "m_sham", "sd_sham", "t_value", "what_to_check", "agree", "reason", "date"]
 EXTRACTED_BY = "extract_pmc.py from AI-chosen table cells"
 DIGITISED_BY = "digitise.py from AI-placed points on the figure"
+BEHALF = "Assistant, on the author's behalf at the team's request"
 TYPED_BY = "typed by an AI assistant from the text or PDF (location on the review sheet)"
 
 
@@ -188,6 +189,9 @@ def apply_review(accepted_by):
     yes = set(review.es_id[(review.agree == "yes") & (review.es_id != "")])
     effects = read("effects.csv")
     effects = effects[effects.es_id.isin(yes)].assign(checked_by=accepted_by)
+    # rows answered by the assistant on the author's behalf must not read as her own check
+    proxy = set(review.es_id[review.reason.str.contains("on the author's behalf", regex=False)])
+    effects.loc[effects.es_id.isin(proxy), "checked_by"] = BEHALF
     montages = read("montages.csv")
     rob = read("rob2.csv")
     effects.to_csv(HERE / "effects.csv", index=False)
