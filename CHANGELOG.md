@@ -2,6 +2,27 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-08: RQ3 open extraction decisions settled, and the figure retry (RQ3)
+
+**Now:** the team asked the assistant to settle the open questions from what the extraction found. Each decision below gives its reason. The author accepted every row of the first review sheet (73 effects and 51 not-extracted reasons); new rows from this entry are added to the same sheet, unanswered.
+
+**Decisions:**
+- **Change scores stay out.** 6 studies report only change from baseline (pmid:41359335, 39267112, 33033765, 25697588, 38804028, and 27005937, which gives median change). The analysis pools post-test SMDs, and an SMD of change scores is standardised by a different SD, so the two should not be combined (Cochrane Handbook, section 10.5.2). They stay listed with that reason.
+- **One median-reported trial is converted.** pmid:37608981 (MCI, about 45 per arm) gives medians with IQR widths. Mean = median and SD = IQR / 1.35 is a reasonable approximation for samples of this size, and its 4 effects are flagged on the sheet. The leave-one-study-out analysis already in the plan shows its influence. pmid:27005937 is not converted, because it gives median change with ranges in arms of 12 and 13.
+- **No SD without a stated bar type.** Figures whose captions do not say whether bars are SD, SE or 95% CI stay out (pmid:41461804, 40242204), because the SD cannot be derived.
+- **Montage gaps filled from the papers where possible.** Positions and currents found in the texts are entered. Where a study gives a region, the conventional 10-10 site is used and marked as inferred: dmPFC as AFz (Martin 2021's definition), SNAPstrap DLPFC as F3/Fp2 and F4/Fp1, standard 12-mm HD electrodes as 1.13 cm2, and the Chua lab's 2 mA for pmid:27417530. Montages still missing a position or current get no field estimate. Their effects stay in the pooled estimate and the test-type model (H3c), and drop out of the field-strength models (H3a, H3b, H3d).
+- **Possible shared samples are kept, with a flag.** pmid:36660288 and 38007663 (same hospital) used different MMSE ranges and session counts, and nothing in either paper points to shared patients. pmid:31660693 and 35034949 report the same age mean and SD but different Ns and montages, so they cannot be the same full sample. Both pairs stay. The leave-one-study-out analysis covers their influence.
+- **Assumed even group splits are kept, with a flag.** Where a paper gives only the total N, arms are split evenly and the row says so.
+
+**Figure retry:** all 30 unchecked figure studies, plus the 2 pending bar charts, were fetched again with slower retries. 9 were digitised: pmid:29259554, 33452288, 40800320, 33354206, 39644890, 26923418, 26679936, 26441544, 25816233. The other 23 have specific reasons: box, violin or scatter plots; overlapping series; bar type not stated; change scores; only a global score or reaction times plotted; or bars too small to read. `digitise.py` gained exact tick rows (for pale axes), a luminance cut-off (for grey whiskers), and two modes for bars whose fill hides the lower whisker ("bar_top", "upper"), each with a test. Every digitised value was checked against the plot by eye before being kept.
+
+**Results:** 45 studies now give 92 effects (36 studies before the retry, counting the converted median trial). 41 are not extracted, each with its reason. The 73 effects the author accepted, from 35 studies, are now in `effects.csv`, with their montages and RoB 2 rows. They are copied by `python -m rq3_stimulation.extract_pmc --apply`, which sets `checked_by` to "Tanisha Handoo (accepted AI check)". `checks/check_rq3_extraction` passes, and `effect_sizes.R --run` writes the effect sizes for r = .3, .5 and .7. 42 review rows wait for her: 19 new effects, and 23 not-extracted studies whose reason changed. A changed reason clears the earlier answer.
+
+**Limits:**
+- The new rows (the median trial and the 9 digitised studies) are on the review sheet unanswered, and are not in the analysis sheets until the author answers them.
+- Digitised values carry the image's precision (about 1% of the axis range). In bar-top mode the SD comes from the upper whisker alone.
+- These decisions are the assistant's, made on the team's instruction, not the author's own judgment.
+
 ## 2026-11-08: RQ3 extraction of all 86 included studies, first pass (RQ3)
 
 **Now:** `rq3_stimulation/extraction_spec.yaml` covers all 86 included studies. 35 give 73 effects in `rq3_stimulation/draft/`: 67 copied from PMC table cells, 5 typed from free PDFs or text (each with its location), and 1 digitised from a figure. The other 51 are listed under `not_extracted`, each with its reason. The draft passes `checks/check_rq3_extraction.validate`. It has 11 clinical studies (13 AD and 6 MCI effects), so the clinical arm reaches the plan's minimum of 8.

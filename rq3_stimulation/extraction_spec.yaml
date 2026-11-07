@@ -128,7 +128,7 @@ studies:
     stim: tACS
     timing: offline
     montages:
-      temporal: {anode: "", cathode: "", other_electrodes: "", size_cm2: 16, current_mA: 2, type: tACS}
+      temporal: {anode: T7, cathode: T8, other_electrodes: "", size_cm2: 16, current_mA: 2, type: tACS}
     rob2: {d1_randomisation: low, d1b_carryover: "", d2_deviations: low, d3_missing: some, d4_measurement: low,
            d5_selection: low, overall: some}
     check: "40 Hz tACS twice daily for 4 weeks; week 4 is the first test after the protocol. Electrode sites for the temporal montage were not found in the methods text (see Figure 1). Sessions taken as 40 (twice a day, 5 days a week); check. Mean MMSE about 22, so check that severity is mild. RoB 2: registered (ChiCTR2300068381), 10% withdrew before week 4."
@@ -143,7 +143,7 @@ studies:
     stim: tDCS
     timing: encoding
     montages:
-      dmpfc: {anode: "", cathode: "", other_electrodes: "focal ring montage over dmPFC", size_cm2: "", current_mA: 1, type: tDCS}
+      dmpfc: {anode: AFz, cathode: "", other_electrodes: "focal ring montage over dmPFC; centre inferred from the same lab's definition (65% from Fz to Fpz, Martin 2021)", size_cm2: "", current_mA: 1, type: tDCS}
       ppc: {anode: "", cathode: "", other_electrodes: "focal ring montage over PPC", size_cm2: "", current_mA: 1, type: tDCS}
     rob2: {d1_randomisation: some, d1b_carryover: "", d2_deviations: low, d3_missing: low, d4_measurement: low,
            d5_selection: some, overall: some}
@@ -204,8 +204,8 @@ studies:
     stim: tDCS
     timing: encoding
     montages:
-      left: {anode: F3, cathode: "AF3, F1, F5, FC3", other_electrodes: "4x1 HD ring", size_cm2: "", current_mA: 2, type: tDCS}
-      right: {anode: F4, cathode: "AF4, F2, F6, FC4", other_electrodes: "4x1 HD ring", size_cm2: "", current_mA: 2, type: tDCS}
+      left: {anode: F3, cathode: "AF3, F1, F5, FC3", other_electrodes: "4x1 HD ring; size taken as the standard 12-mm HD electrode", size_cm2: 1.13, current_mA: 2, type: tDCS}
+      right: {anode: F4, cathode: "AF4, F2, F6, FC4", other_electrodes: "4x1 HD ring; size taken as the standard 12-mm HD electrode", size_cm2: 1.13, current_mA: 2, type: tDCS}
     rob2: {d1_randomisation: some, d1b_carryover: some, d2_deviations: some, d3_missing: low, d4_measurement: low,
            d5_selection: some, overall: some}
     check: "Left DLPFC, right DLPFC and sham HD-tDCS sessions in counterbalanced order, during the associative memory task (encoding and test); sham collapsed over the two montages by the authors. HD electrode size not given. RoB 2: single blind (experimenter aware), no registration found."
@@ -222,8 +222,8 @@ studies:
     stim: tDCS
     timing: encoding
     montages:
-      left: {anode: "", cathode: "", other_electrodes: "left anodal DLPFC, SNAPstrap fixed positions", size_cm2: 25, current_mA: 2, type: tDCS}
-      right: {anode: "", cathode: "", other_electrodes: "right anodal DLPFC, SNAPstrap fixed positions", size_cm2: 25, current_mA: 2, type: tDCS}
+      left: {anode: F3, cathode: Fp2, other_electrodes: "SNAPstrap fixed positions approximated by F3 and the contralateral supraorbital site", size_cm2: 25, current_mA: 2, type: tDCS}
+      right: {anode: F4, cathode: Fp1, other_electrodes: "SNAPstrap fixed positions approximated by F4 and the contralateral supraorbital site", size_cm2: 25, current_mA: 2, type: tDCS}
     rob2: {d1_randomisation: some, d1b_carryover: some, d2_deviations: some, d3_missing: some, d4_measurement: low,
            d5_selection: some, overall: some}
     check: "Remotely supervised tDCS; episodic task sessions with left anodal, right anodal and sham DLPFC stimulation. The SNAPstrap does not align with F3/F4, so electrode positions are left blank. RoB 2: 13 of 49 withdrew, home sessions, no registration found."
@@ -276,7 +276,7 @@ studies:
     stim: tACS
     timing: offline
     montages:
-      pz: {anode: Pz, cathode: "", other_electrodes: "", size_cm2: "", current_mA: "", type: tACS}
+      pz: {anode: Pz, cathode: right deltoid, other_electrodes: "", size_cm2: "", current_mA: "", type: tACS}
     rob2: {d1_randomisation: low, d1b_carryover: some, d2_deviations: low, d3_missing: low, d4_measurement: low,
            d5_selection: low, overall: some}
     check: "Single session of 40 Hz tACS over the precuneus (Pz) vs sham in a randomised crossover; post-tACS testing. Return electrode, size and current not found in the methods excerpt. RoB 2: registered (NCT04842955), computer block randomisation."
@@ -307,8 +307,8 @@ studies:
     stim: tDCS
     timing: encoding
     montages:
-      anodal: {anode: FT10, cathode: left shoulder, other_electrodes: "", size_cm2: 35, current_mA: "", type: tDCS}
-      cathodal: {anode: left shoulder, cathode: FT10, other_electrodes: "", size_cm2: 35, current_mA: "", type: tDCS}
+      anodal: {anode: FT10, cathode: left shoulder, other_electrodes: "", size_cm2: 35, current_mA: 2, type: tDCS}
+      cathodal: {anode: left shoulder, cathode: FT10, other_electrodes: "", size_cm2: 35, current_mA: 2, type: tDCS}
     rob2: {d1_randomisation: some, d1b_carryover: "", d2_deviations: low, d3_missing: low, d4_measurement: low,
            d5_selection: some, overall: some}
     check: "Anodal, cathodal and sham groups (25 each) over the right ATL (FT10) with the return on the contralateral shoulder. Current not found in the excerpt. True recognition of studied words is averaged over the associative and categorical lists. Both active arms compare with the one sham group, so the sham n is split. RoB 2: randomisation method not described."
@@ -324,8 +324,8 @@ studies:
     stim: tDCS
     timing: encoding
     montages:
-      dmpfc: {anode: "", cathode: "", other_electrodes: "focal centre-ring over dmPFC", size_cm2: "", current_mA: 1, type: tDCS}
-      rtpj: {anode: "", cathode: "", other_electrodes: "focal centre-ring over rTPJ", size_cm2: "", current_mA: 1, type: tDCS}
+      dmpfc: {anode: AFz, cathode: "", other_electrodes: "centre-ring; dmPFC at 65% from Fz to Fpz, coded AFz", size_cm2: "", current_mA: 1, type: tDCS}
+      rtpj: {anode: CP6, cathode: "", other_electrodes: "centre-ring over rTPJ", size_cm2: "", current_mA: 1, type: tDCS}
     rob2: {d1_randomisation: some, d1b_carryover: some, d2_deviations: low, d3_missing: low, d4_measurement: low,
            d5_selection: some, overall: some}
     check: "Healthy older adults stratified to a dmPFC or an rTPJ crossover of anodal HD-tDCS and sham; n per site assumed 26 (52 split evenly), so check. Centre electrode positions not given as 10-10 names. Memory scores averaged over self- and other-encoded items. RoB 2: double blind, allocation to site by stratification."
@@ -454,8 +454,8 @@ studies:
     stim: tACS
     timing: encoding
     montages:
-      tacs: {anode: P10, cathode: "Fp1, P2, P3, PO7", other_electrodes: "HD montage", size_cm2: "", current_mA: 2, type: tACS}
-      tdcs: {anode: P10, cathode: "Fp1, P2, P3, PO7", other_electrodes: "HD montage", size_cm2: "", current_mA: 2, type: tDCS}
+      tacs: {anode: P10, cathode: "Fp1, P2, P3, PO7", other_electrodes: "HD montage; size taken as the standard 12-mm HD electrode", size_cm2: 1.13, current_mA: 2, type: tACS}
+      tdcs: {anode: P10, cathode: "Fp1, P2, P3, PO7", other_electrodes: "HD montage; size taken as the standard 12-mm HD electrode", size_cm2: 1.13, current_mA: 2, type: tDCS}
     rob2: {d1_randomisation: some, d1b_carryover: "", d2_deviations: some, d3_missing: low, d4_measurement: low,
            d5_selection: some, overall: some}
     check: "Theta HD-tACS (19), anodal HD-tDCS (21) or sham (19) over the right fusiform cortex; 'Stimulation' column. Spread taken as SEM (the header is cut off), converted to SD; check. The sham n is split between the two arms. One sham participant received tDCS in error."
@@ -471,7 +471,7 @@ studies:
     stim: tDCS
     timing: encoding
     montages:
-      temporal: {anode: "", cathode: "", other_electrodes: "anode left STG, cathode right amPFC", size_cm2: 25, current_mA: 1, type: tDCS}
+      temporal: {anode: CP5, cathode: "", other_electrodes: "anode over left STG at CP5; cathode over right amPFC (no 10-10 site given)", size_cm2: 25, current_mA: 1, type: tDCS}
       occipital: {anode: "", cathode: "", other_electrodes: "anode left V5, cathode right amPFC", size_cm2: 25, current_mA: 1, type: tDCS}
     rob2: {d1_randomisation: some, d1b_carryover: some, d2_deviations: some, d3_missing: low, d4_measurement: low,
            d5_selection: some, overall: some}
@@ -492,7 +492,7 @@ studies:
     stim: tACS
     timing: encoding
     montages:
-      gamma: {anode: "", cathode: "", other_electrodes: "", size_cm2: 35, current_mA: "", type: tACS}
+      gamma: {anode: F3, cathode: left wrist, other_electrodes: "", size_cm2: 35, current_mA: 1.5, type: tACS}
     rob2: {d1_randomisation: some, d1b_carryover: some, d2_deviations: low, d3_missing: low, d4_measurement: low,
            d5_selection: some, overall: some}
     check: "Four independent groups (60-60, 90-90, 60-90, 90-60 Hz at encoding and retrieval), each with an active and a sham session; Ns from the t degrees of freedom (17, 18, 17, 18). Electrode positions and current not found in the methods excerpt. RoB 2: random assignment to groups, no registration found."
@@ -533,8 +533,8 @@ studies:
     stim: tDCS
     timing: encoding
     montages:
-      pfc: {anode: F3, cathode: Fp2, other_electrodes: "", size_cm2: 35, current_mA: "", type: tDCS}
-      ppc: {anode: CP3, cathode: CP4, other_electrodes: "", size_cm2: 35, current_mA: "", type: tDCS}
+      pfc: {anode: F3, cathode: Fp2, other_electrodes: "current taken as the lab's 2 mA (Pergolizzi and Chua 2016, 2017)", size_cm2: 35, current_mA: 2, type: tDCS}
+      ppc: {anode: CP3, cathode: CP4, other_electrodes: "current taken as the lab's 2 mA (Pergolizzi and Chua 2016, 2017)", size_cm2: 35, current_mA: 2, type: tDCS}
     rob2: {d1_randomisation: some, d1b_carryover: "", d2_deviations: low, d3_missing: low, d4_measurement: low,
            d5_selection: some, overall: some}
     check: "Sham, prefrontal and parietal groups of 24 during study; associative recognition one day later (followup_days 1). da (associative sensitivity) used. Current not in the excerpt (the lab uses 2 mA elsewhere). The sham n is split between the two arms."
@@ -603,8 +603,8 @@ studies:
     stim: tDCS
     timing: encoding
     montages:
-      anodal: {anode: "", cathode: "", other_electrodes: "anode over left ATL", size_cm2: "", current_mA: "", type: tDCS}
-      cathodal: {anode: "", cathode: "", other_electrodes: "cathode over left ATL", size_cm2: "", current_mA: "", type: tDCS}
+      anodal: {anode: FT9, cathode: right shoulder, other_electrodes: "", size_cm2: 35, current_mA: 2, type: tDCS}
+      cathodal: {anode: right shoulder, cathode: FT9, other_electrodes: "", size_cm2: 35, current_mA: 2, type: tDCS}
     rob2: {d1_randomisation: some, d1b_carryover: "", d2_deviations: low, d3_missing: low, d4_measurement: low,
            d5_selection: some, overall: some}
     check: "PDF only (gredos.usal.es). Anodal, cathodal or sham tDCS over the left ATL during study; 65 analysed, with group Ns taken as 22, 21 and 22, so check. Montage details not found in the PDF text. The sham n is split between the two arms."
@@ -615,51 +615,228 @@ studies:
       - {montage: cathodal, test_name: "DRM correct recognition (mean of 2 list types)", test_type: recognition, followup_days: 0, sessions: 1,
          n_active: 21, n_sham: 11, higher_is_better: 1, typed: {m_active: 0.725, sd_active: 0.175, m_sham: 0.715, sd_sham: 0.16},
          where: "Table 3, 'Correct recognition' row: associative and categorical columns averaged by hand (cathodal .67/.78, SD .20/.15; sham .66/.77, SD .16/.16)"}
+  - record_id: "pmid:37608981"
+    population: MCI
+    diagnostic_criteria: "MCI (criteria in the paper's methods)"
+    design: parallel
+    stim: tDCS
+    timing: offline
+    montages:
+      f4: {anode: F4, cathode: Fp1, other_electrodes: "anode side inferred from the cathode over the left eyebrow (Fp1)", size_cm2: "", current_mA: 2, type: tDCS}
+    rob2: {d1_randomisation: low, d1b_carryover: "", d2_deviations: some, d3_missing: some, d4_measurement: low,
+           d5_selection: low, overall: some}
+    check: "2 x 2 trial: Tai Chi or walking, each with tDCS or sham tDCS for 12 weeks; the 12-week test is the first after the protocol. Outcomes are medians [IQR width], converted to mean = median and SD = IQR / 1.35 (assumes rough normality). Number of tDCS sessions not found. RoB 2: prospectively registered (ChiCTR1800015629); participants not blind to exercise, assessors blind."
+    effects:
+      - {montage: f4, test_name: "AVLT delayed recall (Tai Chi arms)", test_type: recall, followup_days: 0, sessions: "",
+         n_active: 44, n_sham: 49, higher_is_better: 1, table: "Table 2", active: [16, 1], sham: [16, 2], spread: iqr}
+      - {montage: f4, test_name: "AVLT delayed recall (walking arms)", test_type: recall, followup_days: 0, sessions: "",
+         n_active: 44, n_sham: 43, higher_is_better: 1, table: "Table 2", active: [16, 3], sham: [16, 4], spread: iqr}
+      - {montage: f4, test_name: "ROCF recall (Tai Chi arms)", test_type: recall, followup_days: 0, sessions: "",
+         n_active: 44, n_sham: 49, higher_is_better: 1, table: "Table 2", active: [22, 1], sham: [22, 2], spread: iqr}
+      - {montage: f4, test_name: "ROCF recall (walking arms)", test_type: recall, followup_days: 0, sessions: "",
+         n_active: 44, n_sham: 43, higher_is_better: 1, table: "Table 2", active: [22, 3], sham: [22, 4], spread: iqr}
+  - record_id: "pmid:29259554"
+    population: healthy
+    diagnostic_criteria: "subjective memory complaints with normal test scores"
+    design: parallel
+    stim: tDCS
+    timing: offline
+    montages:
+      f3: {anode: F3, cathode: Fp2, other_electrodes: "", size_cm2: 35, current_mA: 1.5, type: tDCS}
+    rob2: {d1_randomisation: some, d1b_carryover: "", d2_deviations: low, d3_missing: low, d4_measurement: low,
+           d5_selection: some, overall: some}
+    check: "Anodal tDCS or placebo (11 each) on day 2 after a contextual reminder; recognition (hits minus false alarms) on day 3 is the first test after stimulation. Digitised from SE bars; the anodal bar's dark fill hides its lower whisker, so its mean is the bar top and its spread the upper whisker. RoB 2: double blind, randomisation method not described."
+    effects:
+      - {montage: f3, test_name: "recognition hits minus false alarms, day 3", test_type: recognition, followup_days: 1, sessions: 1,
+         n_active: 11, n_sham: 11, higher_is_better: 1, figure: "FIGURE 3", bar: se,
+         ticks: [[60, 11, 18, "exact"], [60, 345, 4, "exact"]], active: [140, 40], sham: [200, 222],
+         active_color: 120, sham_color: 120, active_centre: bar_top, sham_centre: bar}
+  - record_id: "pmid:33452288"
+    population: healthy
+    diagnostic_criteria: ""
+    design: parallel
+    stim: tDCS
+    timing: encoding
+    montages:
+      anodal: {anode: CP5, cathode: left neck, other_electrodes: "", size_cm2: 25, current_mA: 1.5, type: tDCS}
+      cathodal: {anode: left neck, cathode: CP5, other_electrodes: "", size_cm2: 25, current_mA: 1.5, type: tDCS}
+    rob2: {d1_randomisation: some, d1b_carryover: "", d2_deviations: low, d3_missing: low, d4_measurement: low,
+           d5_selection: some, overall: some}
+    check: "Anodal, cathodal or sham tDCS over Wernicke's area (24 each) before learning new words; free recall on day 1, averaged over concrete and abstract words. Digitised from 95% CI bars; the coloured bars hide their lower whiskers, so their means are the bar tops. The sham n is split between the two arms."
+    effects:
+      - {montage: anodal, test_name: "free recall of new words, day 1 (concrete and abstract averaged)", test_type: recall, followup_days: 0,
+         sessions: 1, n_active: 24, n_sham: 12, n_sham_group: 24, higher_is_better: 1, figure: "Figure 2", bar: ci95,
+         ticks: [[60, 14, 100, "exact"], [60, 250, 0, "exact"]], active: [[164, 62], [419, 80]], sham: [[100, 100], [360, 70]],
+         active_color: [150, 150, 150], sham_color: [150, 150, 150], active_centre: upper, sham_centre: bar}
+      - {montage: cathodal, test_name: "free recall of new words, day 1 (concrete and abstract averaged)", test_type: recall, followup_days: 0,
+         sessions: 1, n_active: 24, n_sham: 12, n_sham_group: 24, higher_is_better: 1, figure: "Figure 2", bar: ci95,
+         ticks: [[60, 14, 100, "exact"], [60, 250, 0, "exact"]], active: [[132, 60], [389, 55]], sham: [[100, 100], [360, 70]],
+         active_color: [150, 150, 150], sham_color: [150, 150, 150], active_centre: upper, sham_centre: bar}
+  - record_id: "pmid:40800320"
+    population: healthy
+    diagnostic_criteria: ""
+    design: crossover
+    stim: tACS
+    timing: encoding
+    montages:
+      theta3: {anode: "", cathode: "", other_electrodes: "concentric ring electrodes (position in the paper's Figure 2)", size_cm2: "", current_mA: 2, type: tACS}
+      theta8: {anode: "", cathode: "", other_electrodes: "concentric ring electrodes (position in the paper's Figure 2)", size_cm2: "", current_mA: 2, type: tACS}
+    rob2: {d1_randomisation: some, d1b_carryover: some, d2_deviations: low, d3_missing: low, d4_measurement: low,
+           d5_selection: some, overall: some}
+    check: "3 Hz, 8 Hz and sham tACS during encoding in counterbalanced sessions on one day (24 participants). Temporal accuracy is the absolute placement error, so lower is better; averaged over boundary and non-boundary items. Digitised from SEM bars. Ring electrode position not given as a 10-10 name."
+    effects:
+      - {montage: theta3, test_name: "temporal accuracy (absolute error, items averaged)", test_type: source, followup_days: 0, sessions: 1,
+         n_active: 24, n_sham: 24, higher_is_better: 0, figure: "Fig. 5.", bar: se,
+         ticks: [[182, 96, 25, "exact"], [182, 255, 15, "exact"]], active: [[320, 270], [347, 241]], sham: [[226, 231], [253, 218]],
+         active_color: [0, 0, 0], sham_color: [0, 0, 0], centre: bar}
+      - {montage: theta8, test_name: "temporal accuracy (absolute error, items averaged)", test_type: source, followup_days: 0, sessions: 1,
+         n_active: 24, n_sham: 24, higher_is_better: 0, figure: "Fig. 5.", bar: se,
+         ticks: [[182, 96, 25, "exact"], [182, 255, 15, "exact"]], active: [[413, 228], [440, 225]], sham: [[226, 231], [253, 218]],
+         active_color: [0, 0, 0], sham_color: [0, 0, 0], centre: bar}
+  - record_id: "pmid:33354206"
+    population: healthy
+    diagnostic_criteria: ""
+    design: parallel
+    stim: tDCS
+    timing: offline
+    montages:
+      atdcs: {anode: "", cathode: right deltoid, other_electrodes: "anode site not found in the methods text", size_cm2: 25, current_mA: 2, type: tDCS}
+    rob2: {d1_randomisation: low, d1b_carryover: "", d2_deviations: some, d3_missing: some, d4_measurement: low,
+           d5_selection: some, overall: some}
+    check: "10 daily sessions of anodal tDCS or sham (24 and 25 in the fMRI subset of 64); posttest after the protocol. Digitised from SEM bars (posttest bars). Anode position not found. RoB 2: third-party randomisation, single blind, 15 of 64 left out of this report."
+    effects:
+      - {montage: atdcs, test_name: "item memory (posttest)", test_type: recognition, followup_days: 0, sessions: 10,
+         n_active: 24, n_sham: 25, higher_is_better: 1, figure: "Figure 2", bar: se, centre: bar,
+         ticks: [[57, 44, 0.8, "exact"], [57, 200, 0, "exact"]], active: [145, 39], sham: [277, 48]}
+      - {montage: atdcs, test_name: "source memory (posttest)", test_type: source, followup_days: 0, sessions: 10,
+         n_active: 24, n_sham: 25, higher_is_better: 1, figure: "Figure 2", bar: se, centre: bar,
+         ticks: [[397, 71.5, 1.0, "exact"], [397, 251.5, 0, "exact"]], active: [480, 187], sham: [603, 192]}
+  - record_id: "pmid:39644890"
+    population: healthy
+    diagnostic_criteria: ""
+    design: parallel
+    stim: tDCS
+    timing: retrieval
+    montages:
+      f3: {anode: F3, cathode: Fp2, other_electrodes: "", size_cm2: 35, current_mA: 2, type: tDCS}
+    rob2: {d1_randomisation: some, d1b_carryover: "", d2_deviations: low, d3_missing: low, d4_measurement: low,
+           d5_selection: low, overall: some}
+    check: "Double-blind between-subjects dlPFC tDCS or sham before retrieval, in younger and older adults, each tested AM and PM (averaged). Digitised from SEM bars; Table 1 gives the same means without SDs. Group Ns not given per arm: taken as 75 and 75 (younger, 150) and 46 and 45 (older, 91), so check. RoB 2: registered (NCT03723850)."
+    effects:
+      - {montage: f3, test_name: "recollection accuracy, younger adults (AM and PM averaged)", test_type: recognition, followup_days: 0,
+         sessions: 1, n_active: 75, n_sham: 75, higher_is_better: 1, figure: "Figure 1.", bar: se, centre: bar,
+         ticks: [[160, 20, 0.6, "exact"], [160, 1000, 0, "exact"]], active: [[316, 250], [740, 235]], sham: [[437, 186], [862, 170]],
+         active_color: 60, sham_color: 60}
+      - {montage: f3, test_name: "recollection accuracy, older adults (AM and PM averaged)", test_type: recognition, followup_days: 0,
+         sessions: 1, n_active: 46, n_sham: 45, higher_is_better: 1, figure: "Figure 1.", bar: se, centre: bar,
+         ticks: [[160, 20, 0.6, "exact"], [160, 1000, 0, "exact"]], active: [[1166, 440], [1591, 450]], sham: [[1287, 480], [1712, 450]],
+         active_color: 60, sham_color: 60}
+  - record_id: "pmid:26923418"
+    population: healthy
+    diagnostic_criteria: ""
+    design: parallel
+    stim: tDCS
+    timing: encoding
+    montages:
+      f3: {anode: F3, cathode: Fp2, other_electrodes: "", size_cm2: 35, current_mA: 1.5, type: tDCS}
+    rob2: {d1_randomisation: some, d1b_carryover: "", d2_deviations: low, d3_missing: low, d4_measurement: low,
+           d5_selection: some, overall: some}
+    check: "Anodal or placebo tDCS (14 each) during learning; free recall on day 3 (48 hours later) is the first test after stimulation. Digitised from SE bars. RoB 2: double blind, randomisation method not described."
+    effects:
+      - {montage: f3, test_name: "free recall of object words, day 3", test_type: recall, followup_days: 2, sessions: 1,
+         n_active: 14, n_sham: 14, higher_is_better: 1, figure: "Fig. 2", bar: se, centre: bar,
+         ticks: [[74, 8, 90, "exact"], [74, 390, 0, "exact"]], active: [335, 168], sham: [335, 243], active_color: 115, sham_color: 115}
+  - record_id: "pmid:26679936"
+    population: healthy
+    diagnostic_criteria: ""
+    design: crossover
+    stim: tDCS
+    timing: offline
+    montages:
+      right: {anode: F4, cathode: left shoulder, other_electrodes: "", size_cm2: "", current_mA: "", type: tDCS}
+      left: {anode: F3, cathode: right shoulder, other_electrodes: "", size_cm2: "", current_mA: "", type: tDCS}
+    rob2: {d1_randomisation: some, d1b_carryover: some, d2_deviations: some, d3_missing: low, d4_measurement: low,
+           d5_selection: some, overall: some}
+    check: "Anodal experiment only (Figure 2): each participant had sham and real anodal tDCS over the right or the left DLPFC, during the 20-minute delay before recognition. Group size per side taken as 9 (36 split over two experiments and two sides), so check. The cathodal experiment (Figure 1) is not digitised. Electrode size and current not found."
+    effects:
+      - {montage: right, test_name: "face recognition % hits (right DLPFC)", test_type: recognition, followup_days: 0, sessions: 1,
+         n_active: 9, n_sham: 9, higher_is_better: 1, figure: "Fig 2", bar: se, centre: upper,
+         ticks: [[58, 5.5, 80, "exact"], [58, 416, 50, "exact"]], active: [443, 110], sham: [159, 125], active_color: 170, sham_color: 170}
+      - {montage: left, test_name: "face recognition % hits (left DLPFC)", test_type: recognition, followup_days: 0, sessions: 1,
+         n_active: 9, n_sham: 9, higher_is_better: 1, figure: "Fig 2", bar: se, centre: bar_top,
+         ticks: [[58, 5.5, 80, "exact"], [58, 416, 50, "exact"]], active: [525, 105], sham: [241, 100], active_color: 170, sham_color: 170}
+  - record_id: "pmid:26441544"
+    population: healthy
+    diagnostic_criteria: ""
+    design: crossover
+    stim: tACS
+    timing: encoding
+    montages:
+      ripple: {anode: "", cathode: "", other_electrodes: "two frontal electrodes (25 cm2) and two mastoid electrodes (35 cm2)", size_cm2: 25, current_mA: 1, type: tACS}
+    rob2: {d1_randomisation: some, d1b_carryover: some, d2_deviations: low, d3_missing: low, d4_measurement: low,
+           d5_selection: some, overall: some}
+    check: "140 Hz tACS or sham during word-pair learning, counterbalanced (18 participants); the evening cued recall 10 minutes after learning is the first test. Digitised from SEM bars; the grey active bar hides its lower whisker, so its mean is the bar top. Frontal electrode positions not given as 10-10 names."
+    effects:
+      - {montage: ripple, test_name: "word-pair cued recall, evening", test_type: recall, followup_days: 0, sessions: 1,
+         n_active: 18, n_sham: 18, higher_is_better: 1, figure: "Figure 2", bar: se,
+         ticks: [[50, 9.5, 45, "exact"], [50, 391, 0, "exact"]], active: [267, 100], sham: [92, 95],
+         active_color: 70, sham_color: 150, active_centre: bar_top, sham_centre: upper}
+  - record_id: "pmid:25816233"
+    population: healthy
+    diagnostic_criteria: ""
+    design: parallel
+    stim: tDCS
+    timing: retrieval
+    montages:
+      parietal: {anode: "", cathode: "", other_electrodes: "anode over parietal cortex", size_cm2: 35, current_mA: 1.5, type: tDCS}
+      temporal: {anode: "", cathode: "", other_electrodes: "anode over temporal cortex", size_cm2: 35, current_mA: 1.5, type: tDCS}
+    rob2: {d1_randomisation: some, d1b_carryover: "", d2_deviations: some, d3_missing: low, d4_measurement: low,
+           d5_selection: some, overall: some}
+    check: "Sham (14), parietal (15) or temporal (15) anodal tDCS during recognition; accuracy averaged over new and old items. Digitised from SEM bars; dark bars use the bar top and upper whisker. The sham n is split between the two arms. Electrode positions not found in the methods text. RoB 2: single blind."
+    effects:
+      - {montage: parietal, test_name: "recognition accuracy (new and old averaged)", test_type: recognition, followup_days: 0, sessions: 1,
+         n_active: 15, n_sham: 7, n_sham_group: 14, higher_is_better: 1, figure: "Fig 3", bar: se, centre: bar,
+         ticks: [[60, 161, 70, "exact"], [60, 544.5, 50, "exact"]], active: [[334, 130, "bar_top"], [406, 210]], sham: [[120, 225, "bar_top"], [192, 267]],
+         active_color: 110, sham_color: 110}
+      - {montage: temporal, test_name: "recognition accuracy (new and old averaged)", test_type: recognition, followup_days: 0, sessions: 1,
+         n_active: 15, n_sham: 7, n_sham_group: 14, higher_is_better: 1, figure: "Fig 3", bar: se, centre: bar,
+         ticks: [[60, 161, 70, "exact"], [60, 544.5, 50, "exact"]], active: [[549, 210, "bar_top"], [620, 122]], sham: [[120, 225, "bar_top"], [192, 267]],
+         active_color: 110, sham_color: 110}
 not_extracted:
   - {record_id: "pmid:41668515", reason: "No table of results. Figure 2 shows individual d' values and densities per category and memorability, with no plotted means or error bars, so it cannot be digitised."}
   - {record_id: "pmid:41359335", reason: "Only change from baseline is tabled, as marginal means with SE, and the RAVLT is not in that table. Post-test means and SDs are not reported."}
   - {record_id: "pmid:33029128", reason: "The only table is demographics. Figure 2 plots the means, but the error bars are hidden under the markers and overlapping data points, so they cannot be digitised reliably."}
   - {record_id: "pmid:42131138", reason: "Results only in Figure 3, a raincloud plot with box plots and a mean marker but no error bars, so it cannot be digitised."}
-  - {record_id: "pmid:41461804", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:41414714", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:40800320", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:40283048", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:39644890", reason: "Table 1 gives means without SDs; Figure 1 is a bar chart with SE bars by age and time of day. Digitisable with the bar mode; pending."}
-  - {record_id: "pmid:38804028", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:41461804", reason: "Results only in Figure 5, a bar chart whose caption does not state what the error bars are, so SDs cannot be derived."}
+  - {record_id: "pmid:41414714", reason: "Results only in Figure 2, which plots group means without error bars."}
+  - {record_id: "pmid:40283048", reason: "Figure 3 plots only the ADAS-Cog total, not word recall, so no eligible outcome can be taken."}
+  - {record_id: "pmid:38804028", reason: "Figure 2 plots only change scores (reaction time, correct rate, MMSE)."}
   - {record_id: "pmid:38365886", reason: "Results only in Figure 1, a line plot whose grey error bars overlap across the four groups at the first post-test, so sham cannot be separated."}
-  - {record_id: "pmid:38212815", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:40242204", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:38212815", reason: "Results only as a forest plot of effects and training curves; no group means and SDs for the AVLT."}
+  - {record_id: "pmid:40242204", reason: "Results only in Figure 2, a bar chart whose caption does not state what the error bars are."}
   - {record_id: "pmid:38155843", reason: "Figure 2 plots only the ADAS-Cog total and MMSE, not word recall, so no eligible outcome can be taken."}
   - {record_id: "pmid:36639676", reason: "Results only in Figure 3, a box plot of medians and quartiles, not means and SDs."}
   - {record_id: "pmid:35388106", reason: "Results only in Figure 2, bar charts of error rates split by intrusion and omission and by recall phase; not digitised."}
   - {record_id: "pmid:34381353", reason: "Figure 2 shows overlapping learning curves and box plots for recognition, with no means and SDs at the first post-test."}
-  - {record_id: "pmid:34135392", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:33542344", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:33452288", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:33354206", reason: "Results only in Figure 2, bar charts with SE bars for item and source memory. Digitisable with the bar mode; pending."}
-  - {record_id: "pmid:32280093", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:32256337", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:31790015", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:31031581", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:30109059", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:29375290", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:29259554", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:29163115", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:28848378", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:27845032", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:27433807", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:26923418", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:26679936", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:26441544", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:25816233", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:25697588", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:25368577", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:24324721", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:24062685", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
-  - {record_id: "pmid:19604352", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:34135392", reason: "Results only in Figure 3; the whiskers on the sham-with-music bars cannot be separated from the bar fill, so they were not digitised."}
+  - {record_id: "pmid:33542344", reason: "Figure 2 shows box plots and, for the test after stimulation, points whose error bars overlap across the three conditions."}
+  - {record_id: "pmid:32280093", reason: "Figure 3 is a scatterplot and the tables are mixed-model estimates; no group means and SDs."}
+  - {record_id: "pmid:32256337", reason: "Figure 4 shows box plots with individual points, not means and SDs."}
+  - {record_id: "pmid:31790015", reason: "Only the 2-back change is plotted; ADAS-Cog word recall is not reported per condition."}
+  - {record_id: "pmid:31031581", reason: "Figure 2 shows model-estimated gains only."}
+  - {record_id: "pmid:30109059", reason: "Word recognition is in Figure 5 (by condition and emotion), which was identified too late in this pass to digitise."}
+  - {record_id: "pmid:29375290", reason: "Figure 2 has dense, overlapping points at low resolution; not digitised reliably."}
+  - {record_id: "pmid:29163115", reason: "Figure 2 shows model estimates at moderator values, without error bars."}
+  - {record_id: "pmid:28848378", reason: "Figure 3 shows violin plots and Hedges' g per group, not means with error bars."}
+  - {record_id: "pmid:27845032", reason: "Figure 3 has 18 small bars at low resolution with whiskers of 2-4 pixels; not digitised reliably."}
+  - {record_id: "pmid:27433807", reason: "Figure 1 is a line plot whose three valence series overlap at each condition, with overlapping error bars."}
+  - {record_id: "pmid:25697588", reason: "Figure 3 plots only change from before the nap, a change score."}
+  - {record_id: "pmid:25368577", reason: "Figure 2: at day 3 the two anodal groups overlap and the error bars are faint coloured lines; not digitised reliably."}
+  - {record_id: "pmid:24324721", reason: "Figure 2 plots reaction times only."}
+  - {record_id: "pmid:24062685", reason: "Figure 2 plots d' by age and word type, not by stimulation condition."}
+  - {record_id: "pmid:19604352", reason: "Table 3 gives long-term recall means without SDs, and Figure 2 shows only short-term learning."}
   - {record_id: "pmid:39863318", reason: "Table 2 gives T-score means without SDs (with adjusted differences and effect sizes); no SDs, figures show none.."}
   - {record_id: "pmid:39267112", reason: "Only change from baseline is reported: change from baseline with 95% CI per group only."}
-  - {record_id: "pmid:37608981", reason: "Only medians are reported: outcomes at 12 weeks are medians [IQR]."}
   - {record_id: "pmid:33033765", reason: "Only change from baseline is reported: tables give change scores only."}
   - {record_id: "pmid:29593522", reason: "LTM accuracy is tabled as % with spreads on a proportion scale (e.g. 80.4 (0.02)), so SDs cannot be taken."}
   - {record_id: "pmid:27005937", reason: "Only medians are reported: Table 2 gives medians with ranges of change."}
