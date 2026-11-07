@@ -45,10 +45,9 @@ def test_crossover_needs_d1b():
     assert not any("d1b" in e for e in validate(eff, mont, rob)[0])
 
 
-def test_checked_by_20_percent():
+def test_checked_by_not_required():
     eff, mont, rob = sheets(10)
-    assert any("checked_by" in e for e in validate(eff, mont, rob)[0])
-    eff.loc[1, "checked_by"] = "R2"
+    eff["checked_by"] = ""
     assert not any("checked_by" in e for e in validate(eff, mont, rob)[0])
 
 

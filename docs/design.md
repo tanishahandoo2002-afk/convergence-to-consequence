@@ -155,7 +155,7 @@ Full-text stage: the same script proposes the contrast table and sample size fro
 
 **`effect_sizes.R`** (metafor `escalc`): Hedges' g for parallel designs; for crossover/within designs, the mean difference over the raw-score SD pooled across conditions (`SMCRP`), with sampling variance at r = .5, re-run at .3 and .7; sign set so positive g = better memory.
 *Known-answer test:* g for hand-worked examples matches to 3 decimals.
-*Check:* SD > 0; Ns consistent; recomputed g matches any reported g within tolerance (else flagged); every study fully rated in RoB 2; second-rater 20% sign-off present.
+*Check:* SD > 0; Ns consistent; recomputed g matches any reported g within tolerance (else flagged); every study fully rated in RoB 2. (The second-rater 20% sign-off was dropped: CHANGELOG 2026-11-08.)
 
 **`simnibs/run_montages.py`**
 - For each montage: SimNIBS session on the Ernie head model, field mapped to MNI, mean field magnitude inside each frozen mask → `fields.csv` (tACS: peak amplitude).

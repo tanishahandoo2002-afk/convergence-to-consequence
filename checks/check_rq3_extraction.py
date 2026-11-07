@@ -1,8 +1,8 @@
 """RQ3 extraction check (plan §8.3 steps 5-6, §12): schema and enums, usable statistics per effect,
-montages known, complete RoB 2 per study, second-rater checks on at least 20% of rows.
+montages known, complete RoB 2 per study. There is no second rater, so checked_by is not required
+(CHANGELOG 2026-11-08).
 CLI: python -m checks.check_rq3_extraction
 """
-import math
 import sys
 from pathlib import Path
 
@@ -59,10 +59,6 @@ def validate(effects, montages, rob2):
             errors.append(f"{sid}: RoB 2 domains not rated low/some/high: {bad}")
         if (e.loc[e.study_id == sid, "design"] == "crossover").any() and str(r["d1b_carryover"]) not in ROB_VALUES:
             errors.append(f"{sid}: crossover study needs d1b_carryover rated")
-
-    if len(e) and (~_blank(e.checked_by)).sum() < math.ceil(0.2 * len(e)):
-        errors.append(f"checked_by filled on {(~_blank(e.checked_by)).sum()} of {len(e)} rows; the second rater "
-                      f"must check at least {math.ceil(0.2 * len(e))}")
     return errors, warnings
 
 

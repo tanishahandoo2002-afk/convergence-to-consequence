@@ -2,6 +2,16 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-08: no second-rater check on RQ3 extraction (RQ3)
+
+**Was (plan §12, design §10):** the RQ3 extraction check required `checked_by` on at least 20% of effect rows, filled by a second rater.
+
+**Now:** the check no longer requires `checked_by`. The column stays, and is filled only if someone does check a row.
+
+**Why:** the second rater was dropped for RQ1 (2026-11-07), and the team decided to drop this rule for RQ3 too.
+
+**Limits:** no second person checks any extracted number. Every value still comes from a named table cell copied by script, and the author reviews each row.
+
 ## 2026-11-08: AI check of the full-text proposals before the author reviews them (RQ3)
 
 **Now:** as in RQ1, an AI assistant checked all 96 asi1-mini proposals, and the author reviews its check on `rq3_stimulation/screening/full_text_check.csv`. She answers yes or no for each paper. Yes keeps the suggestion and no reverses it. The sheet gives the suggested population, design, stimulation, memory test and N, with reasons, a link to the text that was read, and the asi1-mini proposal. Her answers count for PRISMA. She answered yes to all 96, relayed by the team, so 86 studies are included and 10 excluded at full text, and `make rq3-check-screen` passes.
