@@ -50,3 +50,17 @@ m048,right shoulder,P7,,35,2,tDCS
 m049,F3,Fp2,,25,2,tDCS
 m050,FT9,right shoulder,,35,2,tDCS
 m051,right shoulder,FT9,,35,2,tDCS
+m052,F4,Fp1,anode side inferred from the cathode over the left eyebrow (Fp1),,2,tDCS
+m053,F3,Fp2,,35,1.5,tDCS
+m054,CP5,left neck,,25,1.5,tDCS
+m055,left neck,CP5,,25,1.5,tDCS
+m056,,,concentric ring electrodes (position in the paper's Figure 2),,2,tACS
+m057,,,concentric ring electrodes (position in the paper's Figure 2),,2,tACS
+m058,,right deltoid,anode site not found in the methods text,25,2,tDCS
+m059,F3,Fp2,,35,2,tDCS
+m060,F3,Fp2,,35,1.5,tDCS
+m061,F4,left shoulder,,,,tDCS
+m062,F3,right shoulder,,,,tDCS
+m063,,,two frontal electrodes (25 cm2) and two mastoid electrodes (35 cm2),25,1,tACS
+m064,,,anode over parietal cortex,35,1.5,tDCS
+m065,,,anode over temporal cortex,35,1.5,tDCS

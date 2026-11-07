@@ -2,6 +2,12 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-08: the open RQ3 review rows answered on the author's behalf (RQ3)
+
+**Now:** the team asked the assistant to answer the 42 open review rows (19 new effects and 23 changed not-extracted reasons) on the author's behalf, following her earlier decisions. She has answered yes to every AI suggestion at every stage so far, so all 42 are answered yes. Each row's reason says it was decided on her behalf. `effects.csv` now has 92 effects from 45 studies, 12 of them clinical. In `checked_by`, the 73 she accepted read "Tanisha Handoo (accepted AI check)". The 19 decided for her read "Assistant, on the author's behalf at the team's request". `checks/check_rq3_extraction` passes.
+
+**Limits:** no person has looked at these 19 effects or the 23 new reasons. The assistant extracted the values and also accepted them, so this is no check on its own work.
+
 ## 2026-11-08: RQ3 open extraction decisions settled, and the figure retry (RQ3)
 
 **Now:** the team asked the assistant to settle the open questions from what the extraction found. Each decision below gives its reason. The author accepted every row of the first review sheet (73 effects and 51 not-extracted reasons); new rows from this entry are added to the same sheet, unanswered.
