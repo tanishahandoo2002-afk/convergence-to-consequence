@@ -12,7 +12,7 @@ Source plan: `From_Convergence_to_Consequence.md` (research questions, hypothese
 | Repo location | `~/convergence-to-consequence` (standalone; GitHub `tanishahandoo2002-afk/convergence-to-consequence`) |
 | Large data | Under `$C2C_DATA` (external drive); never committed |
 | NSD access | Stream each session file from the public S3 bucket `natural-scenes-dataset` into RAM; keep only the trial table. Only after the NSD Data Access Agreement form is submitted |
-| SimNIBS | Local install on the external drive |
+| SimNIBS | 4.6.0, installed on the Mac's internal disk (`config/rq3.yaml`); subject data and outputs stay on the external drive |
 | Screening AI | Two independent raters: ASI:One API (asi1-mini) and a local Qwen model via Ollama, both through the OpenAI-compatible chat endpoint; disagreement = "unsure" |
 | Control network | Multiple-demand parcels (Fedorenko et al., 2013) primary; Yeo 2011 frontoparietal + ventral attention as registered sensitivity mask |
 | RQ2 permutation | Within-session label shuffles (1,000) on a fast statistic: per-participant fixed-effects logistic slope, not a full glmer refit. Stated in registration 2 |

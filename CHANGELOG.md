@@ -2,6 +2,18 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: SimNIBS installed on the internal disk (RQ3)
+
+**Was:** the design put SimNIBS on the external drive.
+
+**Now:** SimNIBS 4.6.0 is installed in `~/Applications/SimNIBS-4.6`, from the official installer. Its checksum matched the release, and it is signed by the SimNIBS developer and notarized by Apple. Subject data and outputs stay on the external drive.
+
+**Why:** the team chose the internal disk, because the USB stick has dropped out several times and SimNIBS would fail whenever it did.
+
+**Limits:**
+- This release's arm64 build ships three Intel-only helpers that `charm` uses (`CAT_Surf2Sphere`, `CAT_WarpSurf`, `mmg3d_O3`; SimNIBS issue #675). They run through Rosetta on this Mac, and the head model build will show whether `charm` completes.
+- The install uses about 2.2 GB of the Mac's limited free space.
+
 ## 2026-11-07: older-adult head model from OASIS-2, not OASIS-3 (RQ3)
 
 **Was:** the plan built the older-adult head model from an OASIS-3 T1.

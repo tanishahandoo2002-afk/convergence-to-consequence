@@ -13,6 +13,9 @@ pubmed_query: >-
 r_values: {primary: 0.5, sensitivity: [0.3, 0.7]}   # assumed pre-post correlation for crossover designs
 min_clinical_trials: 8                               # below this the clinical arm is descriptive
 
+# SimNIBS 4.6.0 from the official notarized installer (CHANGELOG 2026-11-07)
+simnibs: {version: 4.6.0, dir: ~/Applications/SimNIBS-4.6}
+
 # Older-adult head model for the clinical-arm montages (CHANGELOG 2026-11-07). The scan stays in $C2C_DATA
 # under the OASIS terms and is never committed.
 older_adult_t1:
