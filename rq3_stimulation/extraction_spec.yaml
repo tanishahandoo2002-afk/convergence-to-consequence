@@ -30,7 +30,7 @@ studies:
     stim: tACS
     timing: offline
     montages:
-      ppc: {anode: P3, cathode: right cheek, other_electrodes: "", size_cm2: 19.6, current_mA: 2, type: tACS}
+      ppc: {anode: P3, cathode: right cheek, other_electrodes: "current is peak amplitude (paper gives 2 mA peak to peak)", size_cm2: 19.6, current_mA: 1, type: tACS}
     rob2: {d1_randomisation: some, d1b_carryover: "", d2_deviations: low, d3_missing: low, d4_measurement: low,
            d5_selection: some, overall: some}
     check: "Individual theta tACS for 20 min between encoding and recognition. 2 mA is peak to peak; the 5-cm round sponges give 19.6 cm2. RoB 2: randomisation method not described, single blind, no registration found."
@@ -183,8 +183,8 @@ studies:
     stim: tACS
     timing: encoding
     montages:
-      theta: {anode: AF4, cathode: Cz, other_electrodes: P5, size_cm2: 9, current_mA: 2, type: tACS}
-      gamma: {anode: AF4, cathode: Cz, other_electrodes: P5, size_cm2: 9, current_mA: 2, type: tACS}
+      theta: {anode: AF4, cathode: Cz, other_electrodes: "P5; current is peak amplitude (paper gives 2 mA peak to peak)", size_cm2: 9, current_mA: 1, type: tACS}
+      gamma: {anode: AF4, cathode: Cz, other_electrodes: "P5; current is peak amplitude (paper gives 2 mA peak to peak)", size_cm2: 9, current_mA: 1, type: tACS}
     rob2: {d1_randomisation: some, d1b_carryover: some, d2_deviations: low, d3_missing: low, d4_measurement: low,
            d5_selection: some, overall: some}
     check: "Theta (4 Hz), gamma (50 Hz) and sham sessions in counterbalanced order. Active electrodes AF4 and P5 (9 cm2), return over Cz (35 cm2), 2 mA peak to peak. Check whether stimulation was during encoding only. The crossover sham is shared by both arms, so its n is not split (the split rule is for parallel designs). RoB 2: order counterbalanced, no registration found."
@@ -492,7 +492,7 @@ studies:
     stim: tACS
     timing: encoding
     montages:
-      gamma: {anode: F3, cathode: left wrist, other_electrodes: "", size_cm2: 35, current_mA: 1.5, type: tACS}
+      gamma: {anode: F3, cathode: left wrist, other_electrodes: "current is peak amplitude (paper gives 1.5 mA peak to peak)", size_cm2: 35, current_mA: 0.75, type: tACS}
     rob2: {d1_randomisation: some, d1b_carryover: some, d2_deviations: low, d3_missing: low, d4_measurement: low,
            d5_selection: some, overall: some}
     check: "Four independent groups (60-60, 90-90, 60-90, 90-60 Hz at encoding and retrieval), each with an active and a sham session; Ns from the t degrees of freedom (17, 18, 17, 18). Electrode positions and current not found in the methods excerpt. RoB 2: random assignment to groups, no registration found."
@@ -679,8 +679,8 @@ studies:
     stim: tACS
     timing: encoding
     montages:
-      theta3: {anode: "", cathode: "", other_electrodes: "concentric ring electrodes (position in the paper's Figure 2)", size_cm2: "", current_mA: 2, type: tACS}
-      theta8: {anode: "", cathode: "", other_electrodes: "concentric ring electrodes (position in the paper's Figure 2)", size_cm2: "", current_mA: 2, type: tACS}
+      theta3: {anode: "", cathode: "", other_electrodes: "concentric ring electrodes (position in the paper's Figure 2); current is peak amplitude (paper gives 2 mA peak to peak)", size_cm2: "", current_mA: 1, type: tACS}
+      theta8: {anode: "", cathode: "", other_electrodes: "concentric ring electrodes (position in the paper's Figure 2); current is peak amplitude (paper gives 2 mA peak to peak)", size_cm2: "", current_mA: 1, type: tACS}
     rob2: {d1_randomisation: some, d1b_carryover: some, d2_deviations: low, d3_missing: low, d4_measurement: low,
            d5_selection: some, overall: some}
     check: "3 Hz, 8 Hz and sham tACS during encoding in counterbalanced sessions on one day (24 participants). Temporal accuracy is the absolute placement error, so lower is better; averaged over boundary and non-boundary items. Digitised from SEM bars. Ring electrode position not given as a 10-10 name."
@@ -772,7 +772,7 @@ studies:
     stim: tACS
     timing: encoding
     montages:
-      ripple: {anode: "", cathode: "", other_electrodes: "two frontal electrodes (25 cm2) and two mastoid electrodes (35 cm2)", size_cm2: 25, current_mA: 1, type: tACS}
+      ripple: {anode: "", cathode: "", other_electrodes: "two frontal electrodes (25 cm2) and two mastoid electrodes (35 cm2); current is peak amplitude (paper gives 1 mA peak to peak)", size_cm2: 25, current_mA: 0.5, type: tACS}
     rob2: {d1_randomisation: some, d1b_carryover: some, d2_deviations: low, d3_missing: low, d4_measurement: low,
            d5_selection: some, overall: some}
     check: "140 Hz tACS or sham during word-pair learning, counterbalanced (18 participants); the evening cued recall 10 minutes after learning is the first test. Digitised from SEM bars; the grey active bar hides its lower whisker, so its mean is the bar top. Frontal electrode positions not given as 10-10 names."
