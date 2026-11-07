@@ -2,6 +2,18 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-08: second look at the agreed excludes the author does not review (RQ3)
+
+**Was:** the 167 agreed excludes outside the 20% sample stayed excluded on the ASI and Qwen decision, and the RQ1 second look said it did not apply to RQ3.
+
+**Now:** the team asked for the same second look as RQ1. An AI assistant read all 167 once. The 32 it would keep go to the author on a separate sheet (`rq3_stimulation/screening/human_decisions_second_look.csv`, written by `python -m tools.screen rq3 --second-look`). She answers yes or no, as on the main sheet. The other 135 stay excluded. All judgments are in `rq3_stimulation/screening/ai_suggestions_unseen.csv`.
+
+**Why:** the author accepted 6 include suggestions among the 42 sampled agreed excludes, so both AI raters miss records she counts as eligible. Unlike RQ1, this was decided after her main-sheet answers were recorded.
+
+**How they were made:** by the method of the RQ3 main-sheet suggestions, with the same criteria and format. Of the 32, 10 have high confidence, 12 medium and 10 low. Many are healthy-adult memory studies (DRM, source memory, object-location recall) that both raters excluded.
+
+**Limits:** the RQ1 second-look limits apply here: the look was not blind, every suggestion on the sheet is include, the judgments were written by hand in one pass, no person reads the 135, and her answers count towards PRISMA but not towards AI-author κ. `make rq3-check-screen` fails until she answers the 32.
+
 ## 2026-11-08: author accepts every AI suggestion (RQ3)
 
 **Now:** the author answered yes to all 182 AI suggestions on her RQ3 sheet, relayed by the team, as in RQ1. 218 records are excluded at title/abstract and 131 go to full text (`python -m tools.prisma rq3`). Her decisions agree with ASI at κ = 0.610 and with Qwen at κ = 0.287 (n = 182, `kappa.csv`). Because she accepted the 6 include suggestions among the 42 sampled agreed excludes, both AI raters missed records she counts as eligible; the 167 unreviewed agreed excludes stay excluded unless the team asks for a second look.

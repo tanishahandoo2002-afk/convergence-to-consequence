@@ -1,0 +1,168 @@
+record_id,ai_suggestion,ai_confidence,ai_reasoning
+pmid:42939682,exclude,high,A rat study.
+pmid:42855128,exclude,high,"Major depression, an ineligible clinical group, with a face-emotion task."
+pmid:42798437,exclude,high,A systematic review and network meta-analysis.
+pmid:42793424,exclude,medium,"The outcome is the face inversion effect in an old/new face task, used as a perceptual-expertise measure, as for the other Fp3 face inversion studies."
+pmid:42651168,exclude,high,"Facial expression recognition, a perceptual task, not episodic memory."
+pmid:42640828,include,high,"Healthy adults, anodal vs sham tDCS over dmPFC or PPC during incidental encoding, with item and source recognition (d')."
+pmid:42595848,include,low,"PACt-MD secondary analysis: tDCS+CR vs sham, verbal memory outcome. The sample mixes remitted depression with MCI, and the main report is pmid:39476073, so avoid counting the sample twice."
+pmid:42594698,exclude,high,"Post-stroke cognitive impairment, an ineligible group."
+pmid:42482244,exclude,high,"A trial protocol, and the active arm combines rTMS with tACS."
+pmid:42362528,exclude,high,"Fear-extinction recall measured by skin conductance, not an episodic-memory test."
+pmid:42288896,exclude,high,"Post-stroke cognitive impairment, an ineligible group."
+pmid:41996008,exclude,medium,"MCI and AD, but the active arm combines tDCS with intranasal photobiomodulation, so the tDCS effect cannot be separated."
+pmid:41950548,exclude,high,"A neural face-individuation response during viewing, not a memory test."
+pmid:41927837,exclude,medium,Working memory training with working memory outcomes only.
+pmid:41892668,exclude,high,A systematic review in Parkinson's disease.
+pmid:41759354,exclude,high,"PTSD, an ineligible clinical group."
+pmid:41750187,exclude,high,"Schizophrenia, an ineligible clinical group."
+pmid:41514175,exclude,medium,"The outcome is the face inversion effect in an old/new face task, used as a perceptual-expertise measure."
+pmid:41440123,exclude,high,"Emotional prosody recognition, not episodic memory."
+pmid:41435891,include,medium,"Participants randomised to theta tACS, beta tACS or sham after encoding, with old/new recognition of textures two hours later. Check that participants are healthy adults."
+pmid:41387765,exclude,medium,"A delayed match-to-sample face task, which tests short-term discrimination."
+pmid:41205713,exclude,high,"Post-stroke cognitive impairment, with working memory outcomes."
+pmid:41192010,exclude,high,A meta-analysis of rTMS.
+pmid:41173192,include,low,"Pooled reanalysis of 6 sham-controlled tDCS experiments in healthy young adults, with associative memory. The samples overlap the original reports, so prefer those."
+pmid:41046646,exclude,high,A systematic review and meta-analysis.
+pmid:41041883,exclude,high,"The active condition combines iTBS (TMS) with tACS, and there is no tACS-only arm."
+pmid:40992620,exclude,high,A systematic review and meta-analysis.
+pmid:40865406,exclude,medium,"A multi-component intervention (music exercise, training, emotion regulation) with MoCA outcomes; the stimulation effect cannot be separated."
+pmid:40848897,exclude,medium,"Post-COVID cognitive symptoms, an ineligible clinical group."
+pmid:40839521,exclude,medium,"The outcome is the face inversion effect in an old/new face task, used as a perceptual-expertise measure."
+pmid:40446948,exclude,high,A systematic review and meta-analysis.
+pmid:40285586,exclude,high,"Multiple sclerosis, an ineligible clinical group."
+pmid:40228358,exclude,high,"Subthreshold depression, with a self-evaluation outcome."
+pmid:40227131,exclude,high,"Primary progressive aphasia, an ineligible group."
+pmid:40055696,exclude,high,"Schizophrenia, an ineligible clinical group."
+pmid:39711102,exclude,high,"Visual short-term memory precision, not long-term episodic memory."
+pmid:39500573,exclude,high,Visual working memory only.
+pmid:39476073,include,low,"PACt-MD main trial: CR+tDCS vs sham in remitted depression and MCI, with a verbal memory domain as a secondary outcome. Check for MCI-only data; the depression group is ineligible."
+pmid:39393982,exclude,high,"Adolescents with autism, an ineligible group."
+pmid:39362923,exclude,medium,"Healthy older adults, but the outcomes are prospective memory and attentional control, not episodic memory."
+pmid:39267112,include,medium,"Mild AD randomised to 40 Hz tACS or sham, with ADAS-Cog as primary outcome. Check the full text for the word-recall score."
+pmid:39136447,exclude,high,"Dementia with Lewy bodies, an ineligible group."
+pmid:39029954,exclude,high,"Operation span, a working memory task, only."
+pmid:39029652,exclude,high,"Speech perception in noise, not memory."
+pmid:39024741,exclude,high,"Schizophrenia, an ineligible clinical group."
+pmid:38997105,exclude,high,"Fear-extinction recall measured by skin conductance, not an episodic-memory test."
+pmid:38970654,include,low,"Healthy adults, anodal HD-tDCS vs sham, with haptic recognition of novel objects. Check whether the recognition task tests memory for studied objects after a delay."
+pmid:38878152,exclude,high,"Mental-state recognition (mentalizing), not episodic memory."
+pmid:38778042,exclude,high,"Myoelectric pattern recognition, a motor task."
+pmid:38548336,exclude,high,"Children, an ineligible group."
+pmid:38264350,exclude,high,"Fear learning measured by physiological responses, not an episodic-memory test."
+pmid:38219414,include,high,"Anodal vs sham tDCS over left posterior temporal lobe, with DRM true and false recognition. Check that participants are healthy adults and how they were allocated."
+pmid:40242204,include,high,"Healthy adults, anodal vs sham tDCS crossover, with recognition memory for pictures and words."
+pmid:38018085,exclude,medium,"The outcome is the face inversion effect in an old/new face task, used as a perceptual-expertise measure."
+pmid:37750681,exclude,high,"Visual crowding, a perceptual task."
+pmid:37685637,exclude,high,"Adolescents with autism, an ineligible group."
+pmid:37549139,exclude,high,A study protocol with no results.
+pmid:37263069,exclude,high,"Post-stroke memory impairment, with rTMS in the active arms."
+pmid:37259927,exclude,high,A systematic review.
+pmid:36544322,exclude,high,"Multiple sclerosis, an ineligible clinical group."
+pmid:36460293,exclude,medium,"Moderate AD, beyond the mild severity the criteria allow; the primary outcome is neuropsychiatric symptoms."
+pmid:36289659,exclude,high,"Major depression, an ineligible clinical group."
+pmid:36127327,exclude,high,"Fear-extinction recall measured by physiological responses, not an episodic-memory test."
+pmid:35902662,exclude,medium,"The outcome is the face inversion effect in an old/new face task, used as a perceptual-expertise measure."
+pmid:35874155,exclude,high,"Micro-expression recognition, a perceptual task."
+pmid:35780078,exclude,high,"Visual word recognition reaction times, not memory."
+pmid:35737553,exclude,high,"A target detection task, not memory."
+pmid:35654262,exclude,high,A rat study.
+pmid:35587504,exclude,high,"Panic disorder, an ineligible clinical group."
+pmid:35475789,exclude,high,A study protocol with no results.
+pmid:35462028,include,low,"Healthy adults, anodal, cathodal or sham tDCS before contextual word learning, with recognition of the new words at 24 hours. Check whether word learning counts as episodic memory."
+pmid:35368257,include,low,"Reanalysis of earlier tDCS reconsolidation studies in SMC and aMCI. The samples overlap the original reports, so prefer those."
+pmid:35322340,exclude,high,"Parkinson's disease MCI, an ineligible group."
+pmid:35259850,exclude,high,A mouse study.
+pmid:35185754,exclude,high,A systematic review.
+pmid:35181532,exclude,high,"Autism, an ineligible group."
+pmid:35026217,include,low,"Healthy adults, anodal, cathodal or sham tDCS before word-picture association learning. Check whether the word-learning outcome counts as episodic memory; same lab as pmid:35462028."
+pmid:34987350,exclude,high,"Schizophrenia, an ineligible clinical group."
+pmid:34863115,exclude,high,A study protocol with no results.
+pmid:34765784,exclude,high,"Facial expression rating, not memory."
+pmid:34720259,exclude,high,"Reinforcement learning biases, not episodic memory."
+pmid:34509124,include,medium,"Healthy adults, 1 or 1.5 mA tDCS vs sham before learning word pairs, with cued recall at 24 hours and 1 week."
+pmid:34446480,exclude,high,"Traumatic brain injury, an ineligible group."
+pmid:34381353,include,high,"Subjective cognitive decline randomised to tDCS or sham after a reminder, with delayed recall and recognition. Check that SCD counts as healthy under the criteria."
+pmid:34287817,include,medium,"Healthy older adults, anodal HD-tDCS (rTPJ or dmPFC) vs sham, with self-other encoding effects on episodic memory as an outcome. Same lab as pmid:30272127."
+pmid:34223958,exclude,high,Working memory recall precision only.
+pmid:34167659,exclude,high,"Emotion recognition and face detection, not memory."
+pmid:34076917,include,high,"Volunteers randomised to anodal, cathodal or sham tDCS over left ATL during retrieval, with DRM true and false recognition. Check that participants are healthy adults."
+pmid:33961863,exclude,high,"Schizophrenia, an ineligible clinical group."
+pmid:33610616,exclude,high,"Figure-ground perception, not memory."
+pmid:33591114,exclude,high,A rat study.
+pmid:33572164,exclude,medium,"Explicit reproduction of a motor sequence, a motor learning task."
+pmid:33533878,exclude,high,"Visual crowding, a perceptual task."
+pmid:33523702,exclude,high,"Face matching and the composite face effect, perceptual tasks."
+pmid:33316604,exclude,high,"Semantic retrieval and working memory, not episodic memory."
+pmid:32961273,exclude,high,Eye movements to emotional faces in people with high autistic traits.
+pmid:32706780,exclude,high,2-back working memory only.
+pmid:32595486,exclude,high,A mouse study.
+pmid:32497758,exclude,medium,"Famous people recognition and naming, a semantic retrieval task."
+pmid:32315696,exclude,medium,"The outcome is the face inversion effect in an old/new face task, used as a perceptual-expertise measure."
+pmid:32313830,exclude,high,A trial protocol; the results are pmid:39267112.
+pmid:32298870,exclude,high,Working memory training with working memory transfer outcomes only.
+pmid:32109487,exclude,high,"Hand gesture comprehension, not memory."
+pmid:31969588,exclude,high,"Insight problem solving, not memory."
+pmid:31843652,include,high,"Healthy adults, 3.5 Hz and 8 Hz tACS vs sham within subject during retrieval, with item and source memory accuracy."
+pmid:31840247,exclude,high,"Visual selective attention, not memory."
+pmid:31838450,exclude,high,"Primary progressive aphasia, an ineligible group."
+pmid:31739290,exclude,high,"A methods paper on EEG artefact removal, with working memory tasks."
+pmid:31660693,include,medium,"Healthy adults randomised to anodal or sham tDCS, with CANTAB Pattern Recognition Memory during stimulation. Check the delay of the recognition test."
+pmid:31655161,include,medium,"Healthy adults, 40 Hz tACS vs sham, with memory for faces and objects reported alongside perception. Check the memory task."
+pmid:31482268,include,high,"Healthy young and older adults randomised to anodal or sham tDCS during encoding, with free recall 20 minutes later."
+pmid:31196835,include,medium,"Early AD randomised to home tDCS or sham for 6 months, with neuropsychological tests. Check that severity is mild and that a memory test is reported."
+pmid:31062189,include,medium,"MCI randomised to anodal tDCS or sham for 20 days, with a neuropsychological battery. Check for an episodic-memory test."
+pmid:30668274,exclude,high,"Facial emotion attribution, not memory."
+pmid:30555291,exclude,high,"tRNS, which is not tDCS or tACS."
+pmid:30450044,exclude,high,A study protocol with no results.
+pmid:30417751,exclude,high,tRNS with a facial emotion task.
+pmid:30380131,exclude,high,"Anxiety and connectivity outcomes, not memory."
+pmid:30326206,include,medium,"Healthy adults, tDCS over mPFC or STG at encoding or retrieval, with reality-monitoring (source memory) accuracy. Check that a sham condition exists."
+pmid:30272127,include,medium,"Healthy young adults, anodal HD-tDCS (dmPFC or rTPJ) vs sham, with self-other effects on recognition memory. Same lab as pmid:34287817."
+pmid:30144462,exclude,medium,"The outcome is the face inversion effect in an old/new face task, used as a perceptual-expertise measure."
+pmid:30127510,exclude,high,"Fibromyalgia, an ineligible clinical group."
+pmid:30037830,exclude,medium,"Closed-loop tACS during sleep; the outcome is a target detection task, not an episodic-memory test."
+pmid:29658441,exclude,high,A study protocol in AD apathy with no results.
+pmid:29651240,exclude,high,A review of ADHD.
+pmid:29593522,include,low,"Older adults, bifrontal, frontoparietal and sham tDCS sessions; working memory is the focus, but a visual long-term memory task is reported. Check that it is an episodic recognition measure."
+pmid:28681715,exclude,high,"tRNS in fibromyalgia, neither an eligible stimulation nor an eligible group."
+pmid:28647325,include,high,"Anodal, cathodal or sham tDCS over left ATL during study of DRM lists, with true and false recognition. Check that participants are healthy adults."
+pmid:28512443,exclude,high,A study protocol in post-concussion syndrome.
+pmid:28299412,exclude,high,"Humour recognition, not memory."
+pmid:28085735,exclude,high,"Stroke patients, an ineligible group."
+pmid:27951511,exclude,high,"Bipolar disorder, an ineligible clinical group."
+pmid:27832598,exclude,high,"Sensorimotor adaptation, a motor task."
+pmid:27647553,exclude,high,"Cognitive reflection and problem solving, not memory."
+pmid:27733822,exclude,high,"Diabetic polyneuropathy, with visuospatial working memory only."
+pmid:27727241,exclude,high,"Fear-extinction recall measured by skin conductance, not an episodic-memory test."
+pmid:27662113,exclude,high,"Emotion recognition, with a depressed group."
+pmid:27655384,exclude,high,"Self-face discrimination, a perceptual task."
+pmid:27653887,exclude,high,"Vascular dementia, an ineligible group."
+pmid:27555381,include,high,"Healthy young and older adults, anodal tDCS vs sham crossed with SSRI or placebo, with object-location immediate and delayed cued recall. Use the tDCS+placebo vs sham+placebo contrast."
+pmid:27157059,exclude,high,"Motor adaptation and re-learning, not episodic memory."
+pmid:27096945,exclude,medium,"Perceptual learning of masked objects, not an episodic-memory test."
+pmid:27037186,exclude,high,"Fear extinction measured by skin conductance, not an episodic-memory test."
+pmid:26499250,exclude,high,A study protocol with a working memory primary outcome.
+pmid:25971602,exclude,high,"Facial expression recognition, not memory."
+pmid:25959620,include,medium,"Anodal tDCS over right or left PPC vs sham, with recognition memory for melodies (remember and know judgements). Check that participants are healthy adults and how sham was allocated."
+pmid:25951227,exclude,high,"Emotion recognition and perspective taking, not memory."
+pmid:25650106,exclude,high,"Speech recognition, not memory."
+pmid:25647757,include,high,"Healthy young adults, two bipolar parietal montages and sham across counterbalanced sessions, with object-location recall."
+pmid:25621789,exclude,high,A correction notice; the study is pmid:24341718.
+pmid:25538609,exclude,medium,Anodal and cathodal groups with no sham condition; the main task is reading span.
+pmid:25282052,exclude,medium,"Immediate serial recall of nonwords, a short-term memory measure."
+pmid:24770704,exclude,low,Pitch recognition and recall right after tDCS; these tasks are usually short-term comparisons. Check the delay.
+pmid:24695720,exclude,high,Verbal item recognition within a phonological storage (working memory) task.
+pmid:24561155,exclude,high,"Detection of semantic violations in actions, not memory."
+pmid:24508152,include,low,"Healthy adults, cathodal, anodal or sham tDCS over the frontal pole, with a reality filtering task. Check whether this continuous recognition task counts as episodic memory."
+pmid:24341718,exclude,medium,"Target identification training in radar imagery, a perceptual learning task."
+pmid:24324721,include,medium,"Healthy adults, bilateral DLPFC tDCS montages during encoding of unfamiliar faces, with long-term recognition accuracy. Check that the third condition is sham."
+pmid:23968283,exclude,low,"Pitch recognition and recall right after tDCS, which are short-term memory tasks; the face memory control task may count. Check the delay."
+pmid:23811267,include,low,"Healthy men, anodal vs sham tDCS crossover over 4 days, with a One Card Learning recognition task. Check whether it counts as episodic memory."
+pmid:22723786,exclude,high,"Emotional state and face identification, not memory."
+pmid:22683259,exclude,high,A delayed letter discrimination (working memory) task.
+pmid:22579829,exclude,high,"Detection of semantic dissonance, not memory."
+pmid:22511978,exclude,medium,A threat detection perceptual learning task.
+pmid:20844115,exclude,high,"Motor sequence learning, not episodic memory."
+pmid:19620953,exclude,high,"Stroke patients, with a working memory task."
+pmid:18926878,exclude,high,"Facial expression go/no-go, not memory."
