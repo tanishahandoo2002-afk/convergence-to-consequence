@@ -2,6 +2,18 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-07: AI suggestion on each record the author reviews (RQ3)
+
+**Now:** RQ3 title/abstract screening follows the RQ1 method. The ASI and Qwen raters screened all 349 records (κ = 0.439, `rq3_stimulation/screening/kappa.csv`). The merge sends 182 to the author: 55 agreed includes, 85 disagreements and a 20% sample of 42 of the 209 agreed excludes. Each record on her sheet (`rq3_stimulation/screening/human_decisions.csv`) carries an AI suggestion, a confidence level and the reasoning (`rq3_stimulation/screening/ai_suggestions.csv`). She answers yes or no to it, as in RQ1.
+
+**Why:** the team asked for the same review support as RQ1.
+
+**How they were made:** an AI assistant read the RQ3 criteria and each record's title and abstract, without seeing the ASI or Qwen decisions. When an abstract could not settle a record that looked possibly eligible, it suggested include with low confidence. Where two records looked like the same study or the same sample, the reasoning says so, so that full text can check for double counting.
+
+**Limits:**
+- The RQ1 limits apply here too: these are AI suggestions, they can anchor her decisions, and they were written by hand, so the committed file is the only record of them.
+- Of the 42 sampled agreed excludes, the AI suggests include for 6, two of them with high confidence (pmid:26200716, pmid:25697588). If she agrees, both AI raters missed eligible records, and the 167 agreed excludes that nobody reviews may hold more.
+
 ## 2026-11-07: SimNIBS installed on the internal disk (RQ3)
 
 **Was:** the design put SimNIBS on the external drive.
