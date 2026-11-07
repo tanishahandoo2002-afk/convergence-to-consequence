@@ -2,6 +2,20 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-08: AI check of the full-text proposals before the author reviews them (RQ3)
+
+**Now:** as in RQ1, an AI assistant checked all 96 asi1-mini proposals, and the author reviews its check on `rq3_stimulation/screening/full_text_check.csv`. She answers yes or no for each paper. Yes keeps the suggestion and no reverses it. The sheet gives the suggested population, design, stimulation, memory test and N, with reasons, a link to the text that was read, and the asi1-mini proposal. Her answers count for PRISMA.
+
+**Why:** the team asked to mirror the RQ1 method.
+
+**Results:** the check suggests 86 include (57 high, 23 medium, 6 low confidence) and 10 exclude (1 high, 8 medium, 1 low). It agrees with asi1-mini on 73 of the 96 papers. Of the 72 proposed eligible, it keeps 68. Of the 23 proposed ineligible, it keeps 18, mostly papers excluded for non-significant results, or for source, DRM or self-reference memory tests that the criteria allow. It decides the 1 invalid reply (`pmid:38056370`, exclude, low). The excludes are mainly secondary or pooled reanalyses of samples reported elsewhere, one duplicate record (`pmid:38854074` of `pmid:40800986`), and face-inversion and spatial-navigation outcomes. The reasoning flags possible shared samples (for example `pmid:36660288` and `pmid:38007663`, `pmid:32280093` and `pmid:29375290`, `pmid:31660693` and `pmid:35034949`) and severity checks for AD samples.
+
+**Limits:**
+- The RQ1 check limits apply: the assistant read excerpts (participants, design, sham, memory tests and N), not whole papers or supplements. It saw asi1-mini's proposal, and the judgments were written by hand in one pass, so the sheet is the record of them.
+- A yes decides eligibility only. No effect size has been extracted, and nothing enters `effects.csv` until data are taken from each paper.
+- Many includes carry a check (severity, delay, sham arm, shared sample) that only the full paper can settle.
+- 67 records were not retrieved, so these results cover free full texts only.
+
 ## 2026-11-08: RQ3 full texts from PMC and free PDFs (RQ3)
 
 **Was:** the RQ1 full-text method reads PMC's open-access text only, and counts every other record as not retrieved.
