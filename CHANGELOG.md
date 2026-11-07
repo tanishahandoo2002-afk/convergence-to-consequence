@@ -2,6 +2,21 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-08: RQ3 full texts from PMC and free PDFs (RQ3)
+
+**Was:** the RQ1 full-text method reads PMC's open-access text only, and counts every other record as not retrieved.
+
+**Now:** RQ3 follows RQ1, with asi1-mini proposing eligibility, population, design, stimulation, memory test and N for each paper (`rq3_stimulation/screening/trial_proposals.csv`, `make rq3-full-text`). When PMC has no text, the tool also tries each open-access PDF that OpenAlex lists for the PMID. The PDF is read in memory and not saved, and the `source` column records the link. Records with neither are counted as not retrieved (`full_text_not_retrieved.csv`). RQ1 is unchanged.
+
+**Why:** the team asked to look for free copies online before counting a record as not retrieved.
+
+**Results:** text was found for 96 of the 163 records, 86 from PMC and 10 from free PDFs (4 bioRxiv preprints, 3 gredos.usal.es, and one each from nature.com, macau.uni-kiel.de and kar.kent.ac.uk). The other 67 are not retrieved. asi1-mini proposes 72 eligible and 23 ineligible, and gave 1 invalid reply (`pmid:38056370`).
+
+**Limits:**
+- The RQ1 full-text limits apply: the model is not calibrated on full texts, and open-access papers are not a random subset.
+- A preprint can differ from the published paper, so data from the 4 bioRxiv texts need checking against the published version where one exists.
+- Publisher pages that answer with a bot check or HTML are skipped, not bypassed. One repository (osti.gov) refused the connection.
+
 ## 2026-11-08: second look at the agreed excludes the author does not review (RQ3)
 
 **Was:** the 167 agreed excludes outside the 20% sample stayed excluded on the ASI and Qwen decision, and the RQ1 second look said it did not apply to RQ3.

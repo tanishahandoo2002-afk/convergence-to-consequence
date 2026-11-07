@@ -1,0 +1,885 @@
+record_id,rater,model,timestamp,source,eligible,population,design,stim,outcome,n,reason,raw
+pmid:42801558,full_text,asi1-mini,2026-11-08T01:28:24,pmc,True,AD,parallel,tACS,ADAS-Cog word recall,85,"The study is a randomized parallel-controlled trial of tACS vs sham in patients with Alzheimer's disease, reporting the ADAS-Cog memory subscale (word recall) as an objective episodic-memory outcome.","{
+""eligible"": true,
+""population"": ""AD"",
+""design"": ""parallel"",
+""stim"": ""tACS"",
+""outcome"": ""ADAS-Cog word recall"",
+""n"": 85,
+""reason"": ""The study is a randomized parallel-controlled trial of tACS vs sham in patients with Alzheimer's disease, reporting the ADAS-Cog memory subscale (word recall) as an objective episodic-memory outcome.""
+}"
+pmid:42689235,full_text,asi1-mini,2026-11-08T01:28:32,pmc,False,healthy,parallel,tDCS,CFMT,64,"The study uses the Cambridge Face Memory Test (CFMT), which measures face recognition rather than episodic memory (e.g., word or list recall).","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""CFMT"",
+""n"": 64,
+""reason"": ""The study uses the Cambridge Face Memory Test (CFMT), which measures face recognition rather than episodic memory (e.g., word or list recall).""
+}"
+pmid:42640828,full_text,asi1-mini,2026-11-08T01:28:37,pmc,True,healthy,parallel,tDCS,source memory,100,"The study includes healthy adults, uses a parallel randomized design with active tDCS versus sham, and reports source memory sensitivity (d') as an objective episodic-memory outcome.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""source memory"",
+""n"": 100,
+""reason"": ""The study includes healthy adults, uses a parallel randomized design with active tDCS versus sham, and reports source memory sensitivity (d') as an objective episodic-memory outcome.""
+}"
+pmid:42595848,full_text,asi1-mini,2026-11-08T01:28:50,https://www.nature.com/articles/s41386-026-02524-w.pdf,False,MCI,parallel,tDCS,Verbal Memory Composite,260,"The study is a secondary analysis investigating theta-gamma coupling as a moderator of treatment response rather than a primary efficacy trial reporting standardized mean differences for episodic memory outcomes, and the verbal memory outcome is a composite score derived from multiple tests (including CVLT-II) rather than a single standardised episodic memory test score suitable for direct SMD calculation.","{
+""eligible"": false,
+""population"": ""MCI"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""Verbal Memory Composite"",
+""n"": 260,
+""reason"": ""The study is a secondary analysis investigating theta-gamma coupling as a moderator of treatment response rather than a primary efficacy trial reporting standardized mean differences for episodic memory outcomes, and the verbal memory outcome is a composite score derived from multiple tests (including CVLT-II) rather than a single standardised episodic memory test score suitable for direct SMD calculation.""
+}"
+pmid:42131138,full_text,asi1-mini,2026-11-08T01:28:58,pmc,True,healthy,crossover,tACS,sequence memory task,43,"The study involves healthy older adults undergoing a randomized, sham-controlled crossover tACS intervention with an objective episodic memory outcome (sequential/temporal order memory performance).","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tACS"",
+""outcome"": ""sequence memory task"",
+""n"": 43,
+""reason"": ""The study involves healthy older adults undergoing a randomized, sham-controlled crossover tACS intervention with an objective episodic memory outcome (sequential/temporal order memory performance).""
+}"
+pmid:41847588,full_text,asi1-mini,2026-11-08T01:29:03,pmc,True,healthy,parallel,tACS,d-prime,51,"The study involves healthy adults, uses a parallel randomized sham-controlled design with tACS, and reports the objective episodic memory outcome of d-prime (recognition accuracy) for 51 participants.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tACS"",
+""outcome"": ""d-prime"",
+""n"": 51,
+""reason"": ""The study involves healthy adults, uses a parallel randomized sham-controlled design with tACS, and reports the objective episodic memory outcome of d-prime (recognition accuracy) for 51 participants.""
+}"
+pmid:41699869,full_text,asi1-mini,2026-11-08T01:29:11,pmc,True,healthy,parallel,tACS,FAST recognition accuracy,30,"The study involves healthy adults, uses a parallel randomized design with tACS vs. sham stimulation, and measures associative memory (an objective episodic-memory outcome) using the Face and Scene Task.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tACS"",
+""outcome"": ""FAST recognition accuracy"",
+""n"": 30,
+""reason"": ""The study involves healthy adults, uses a parallel randomized design with tACS vs. sham stimulation, and measures associative memory (an objective episodic-memory outcome) using the Face and Scene Task.""
+}"
+pmid:41668515,full_text,asi1-mini,2026-11-08T01:29:16,pmc,True,healthy,crossover,tACS,D prime (D′),33,"The study involves healthy young adults, uses a crossover design with tACS vs. sham stimulation, and measures episodic memory using recognition performance quantified by D-prime.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tACS"",
+""outcome"": ""D prime (D′)"",
+""n"": 33,
+""reason"": ""The study involves healthy young adults, uses a crossover design with tACS vs. sham stimulation, and measures episodic memory using recognition performance quantified by D-prime.""
+}"
+pmid:41620439,full_text,asi1-mini,2026-11-08T01:29:21,pmc,True,AD,parallel,tACS,PVLT,36,The study is a randomized controlled trial of tACS vs sham in mild AD patients with objective episodic memory outcomes (PVLT free/cued recall) reported.,"{
+""eligible"": true,
+""population"": ""AD"",
+""design"": ""parallel"",
+""stim"": ""tACS"",
+""outcome"": ""PVLT"",
+""n"": 36,
+""reason"": ""The study is a randomized controlled trial of tACS vs sham in mild AD patients with objective episodic memory outcomes (PVLT free/cued recall) reported.""
+}"
+pmid:41531787,full_text,asi1-mini,2026-11-08T01:29:26,pmc,False,healthy,parallel,tDCS,ACE-R memory,30,"The study excludes participants with significant cognitive impairment (MMSE < 24) and recruits those with Subjective Cognitive Decline (SCD) or post-COVID complaints who are otherwise healthy; SCD is not MCI or mild AD, and the primary outcome measure ACE-R is a global cognitive screen rather than a specific objective episodic-memory test like RAVLT or CVLT.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""ACE-R memory"",
+""n"": 30,
+""reason"": ""The study excludes participants with significant cognitive impairment (MMSE < 24) and recruits those with Subjective Cognitive Decline (SCD) or post-COVID complaints who are otherwise healthy; SCD is not MCI or mild AD, and the primary outcome measure ACE-R is a global cognitive screen rather than a specific objective episodic-memory test like RAVLT or CVLT.""
+}"
+pmid:41461804,full_text,asi1-mini,2026-11-08T01:29:31,pmc,False,healthy,parallel,tACS,Verbal n-back task,30,"The study's primary objective and main outcomes focus on working memory (verbal n-back task), which is explicitly excluded by the criteria; although an explicit recall task was administered, it was a secondary measure at follow-up and not the primary episodic memory outcome defined in the inclusion criteria.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tACS"",
+""outcome"": ""Verbal n-back task"",
+""n"": 30,
+""reason"": ""The study's primary objective and main outcomes focus on working memory (verbal n-back task), which is explicitly excluded by the criteria; although an explicit recall task was administered, it was a secondary measure at follow-up and not the primary episodic memory outcome defined in the inclusion criteria.""
+}"
+pmid:41414714,full_text,asi1-mini,2026-11-08T01:29:39,pmc,False,MCI,parallel,tACS,AVLT-DR,43,"The study's primary intervention involved synchronous working memory training, and the abstract explicitly states that multi-site tACS demonstrated superior improvements in language (AFT) and recognition memory (AVLT-R), while delayed recall (AVLT-DR) was not significantly different between groups; thus, it does not meet the criterion of having an objective episodic-memory outcome as a primary or significant result compared to sham.","{
+""eligible"": false,
+""population"": ""MCI"",
+""design"": ""parallel"",
+""stim"": ""tACS"",
+""outcome"": ""AVLT-DR"",
+""n"": 43,
+""reason"": ""The study's primary intervention involved synchronous working memory training, and the abstract explicitly states that multi-site tACS demonstrated superior improvements in language (AFT) and recognition memory (AVLT-R), while delayed recall (AVLT-DR) was not significantly different between groups; thus, it does not meet the criterion of having an objective episodic-memory outcome as a primary or significant result compared to sham.""
+}"
+pmid:41359335,full_text,asi1-mini,2026-11-08T01:29:44,pmc,True,AD,parallel,tACS,RAVL,50,"The study is a randomized, sham-controlled trial of gamma tACS in patients with mild Alzheimer's disease that includes the Rey Auditory Verbal Learning Test (RAVL) as an objective episodic-memory outcome measure.","{
+""eligible"": true,
+""population"": ""AD"",
+""design"": ""parallel"",
+""stim"": ""tACS"",
+""outcome"": ""RAVL"",
+""n"": 50,
+""reason"": ""The study is a randomized, sham-controlled trial of gamma tACS in patients with mild Alzheimer's disease that includes the Rey Auditory Verbal Learning Test (RAVL) as an objective episodic-memory outcome measure.""
+}"
+pmid:41173192,full_text,asi1-mini,2026-11-08T01:29:53,https://www.biorxiv.org/content/biorxiv/early/2025/08/21/2025.08.15.670509.full.pdf,False,healthy,crossover,tDCS,working memory and associative memory,144,"The study primarily reports working memory outcomes (3-back tasks) which are excluded by the criteria, and while it includes associative memory, the specific episodic memory test names (e.g., face-word, object-location) are not standardised scales like RAVLT/CVLT/ADAS-Cog word recall, nor is a single primary outcome clearly defined for meta-analysis inclusion under the strict 'episodic-memory outcome' criterion excluding working memory only.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""working memory and associative memory"",
+""n"": 144,
+""reason"": ""The study primarily reports working memory outcomes (3-back tasks) which are excluded by the criteria, and while it includes associative memory, the specific episodic memory test names (e.g., face-word, object-location) are not standardised scales like RAVLT/CVLT/ADAS-Cog word recall, nor is a single primary outcome clearly defined for meta-analysis inclusion under the strict 'episodic-memory outcome' criterion excluding working memory only.""
+}"
+pmid:40800986,full_text,asi1-mini,2026-11-08T01:29:59,pmc,True,healthy,crossover,tACS,item memory accuracy,54,"The study involves healthy adults, uses a crossover design with tACS vs sham, and reports objective episodic memory outcomes (item memory accuracy) sufficient for analysis.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tACS"",
+""outcome"": ""item memory accuracy"",
+""n"": 54,
+""reason"": ""The study involves healthy adults, uses a crossover design with tACS vs sham, and reports objective episodic memory outcomes (item memory accuracy) sufficient for analysis.""
+}"
+pmid:40800320,full_text,asi1-mini,2026-11-08T01:30:05,pmc,False,healthy,crossover,tACS,temporal accuracy (VAS),24,"The study excludes eligible records because the primary outcome is temporal memory (a form of working/serial order memory) rather than standard episodic memory outcomes like free/cued recall, recognition, or source memory.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tACS"",
+""outcome"": ""temporal accuracy (VAS)"",
+""n"": 24,
+""reason"": ""The study excludes eligible records because the primary outcome is temporal memory (a form of working/serial order memory) rather than standard episodic memory outcomes like free/cued recall, recognition, or source memory.""
+}"
+pmid:40283048,full_text,asi1-mini,2026-11-08T01:30:13,pmc,True,AD,crossover,tACS,ADAS-Cog word recall,42,"The study is a sham-controlled crossover trial of gamma-tACS in individuals with dementia (majority AD) who have mild impairment (MoCA 5-25), and it reports ADAS-Cog scores which include a word recall component.","{
+""eligible"": true,
+""population"": ""AD"",
+""design"": ""crossover"",
+""stim"": ""tACS"",
+""outcome"": ""ADAS-Cog word recall"",
+""n"": 42,
+""reason"": ""The study is a sham-controlled crossover trial of gamma-tACS in individuals with dementia (majority AD) who have mild impairment (MoCA 5-25), and it reports ADAS-Cog scores which include a word recall component.""
+}"
+pmid:39883628,full_text,asi1-mini,2026-11-08T01:30:20,pmc,True,healthy,parallel,tDCS,Face Cued Word Recall task (FCWR),59,"The study includes healthy adults, uses a parallel randomized sham-controlled tDCS design, and reports objective episodic memory outcomes (cued recall) with sufficient data for analysis.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""Face Cued Word Recall task (FCWR)"",
+""n"": 59,
+""reason"": ""The study includes healthy adults, uses a parallel randomized sham-controlled tDCS design, and reports objective episodic memory outcomes (cued recall) with sufficient data for analysis.""
+}"
+pmid:39874376,full_text,asi1-mini,2026-11-08T01:30:25,pmc,True,MCI,parallel,tDCS,ADAS-Cog word recall,173,"The study includes adults with mild neurocognitive disorder due to Alzheimer's disease (equivalent to MCI/mild AD), uses a parallel randomized design comparing active tDCS to sham, and reports domain-specific memory outcomes derived from the ADAS-Cog which includes word recall.","{
+""eligible"": true,
+""population"": ""MCI"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""ADAS-Cog word recall"",
+""n"": 173,
+""reason"": ""The study includes adults with mild neurocognitive disorder due to Alzheimer's disease (equivalent to MCI/mild AD), uses a parallel randomized design comparing active tDCS to sham, and reports domain-specific memory outcomes derived from the ADAS-Cog which includes word recall.""
+}"
+pmid:39863318,full_text,asi1-mini,2026-11-08T01:30:30,pmc,True,AD,parallel,tDCS,RAVLT total learning,23,"The study is a randomized, parallel, sham-controlled trial of HD-tDCS in patients with Alzheimer's dementia using the RAVLT, an eligible episodic memory outcome.","{
+""eligible"": true,
+""population"": ""AD"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""RAVLT total learning"",
+""n"": 23,
+""reason"": ""The study is a randomized, parallel, sham-controlled trial of HD-tDCS in patients with Alzheimer's dementia using the RAVLT, an eligible episodic memory outcome.""
+}"
+pmid:39644890,full_text,asi1-mini,2026-11-08T01:30:38,pmc,True,healthy,parallel,tDCS,recollection accuracy,241,"The study includes healthy younger and older adults (MoCA >= 23), uses a parallel-group design with active tDCS vs. sham, and reports an objective episodic memory outcome (recollection accuracy) with sufficient data for analysis.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""recollection accuracy"",
+""n"": 241,
+""reason"": ""The study includes healthy younger and older adults (MoCA >= 23), uses a parallel-group design with active tDCS vs. sham, and reports an objective episodic memory outcome (recollection accuracy) with sufficient data for analysis.""
+}"
+pmid:39267112,full_text,asi1-mini,2026-11-08T01:30:48,pmc,True,AD,parallel,tACS,WHO-UCLA AVLT delayed recall,46,"The study is a randomized parallel sham-controlled trial of 40 Hz tACS in patients with mild AD (CDR 1.0) that reports the WHO-UCLA Auditory Verbal Learning Test delayed recall, an objective episodic memory outcome.","{
+""eligible"": true,
+""population"": ""AD"",
+""design"": ""parallel"",
+""stim"": ""tACS"",
+""outcome"": ""WHO-UCLA AVLT delayed recall"",
+""n"": 46,
+""reason"": ""The study is a randomized parallel sham-controlled trial of 40 Hz tACS in patients with mild AD (CDR 1.0) that reports the WHO-UCLA Auditory Verbal Learning Test delayed recall, an objective episodic memory outcome.""
+}"
+pmid:38966802,full_text,asi1-mini,2026-11-08T01:30:56,pmc,True,MCI,parallel,tDCS,FCSRT-IFR,44,"The study is a parallel RCT involving adults with MCI comparing anodal tDCS to placebo tDCS combined with cognitive training, and it reports the Free and Cued Selective Reminding Test Immediate Free Recall (FCSRT-IFR) scores for the two active tDCS groups (23 + 21 = 44 participants).","{
+""eligible"": true,
+""population"": ""MCI"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""FCSRT-IFR"",
+""n"": 44,
+""reason"": ""The study is a parallel RCT involving adults with MCI comparing anodal tDCS to placebo tDCS combined with cognitive training, and it reports the Free and Cued Selective Reminding Test Immediate Free Recall (FCSRT-IFR) scores for the two active tDCS groups (23 + 21 = 44 participants).""
+}"
+pmid:38854074,full_text,asi1-mini,2026-11-08T01:31:02,pmc,True,healthy,crossover,tACS,item memory accuracy,50,"The study includes healthy adults, uses a crossover design with tACS vs sham, and reports objective episodic memory outcomes (item memory accuracy) sufficient for analysis.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tACS"",
+""outcome"": ""item memory accuracy"",
+""n"": 50,
+""reason"": ""The study includes healthy adults, uses a crossover design with tACS vs sham, and reports objective episodic memory outcomes (item memory accuracy) sufficient for analysis.""
+}"
+pmid:38848375,full_text,asi1-mini,2026-11-08T01:31:08,pmc,True,healthy,crossover,tDCS,recognition,36,"The study involves healthy adults, uses a crossover design with HD-tDCS versus sham, and reports associative recognition performance which is an objective episodic memory outcome.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""recognition"",
+""n"": 36,
+""reason"": ""The study involves healthy adults, uses a crossover design with HD-tDCS versus sham, and reports associative recognition performance which is an objective episodic memory outcome.""
+}"
+pmid:38804028,full_text,asi1-mini,2026-11-08T01:32:19,pmc,True,MCI,crossover,tDCS,visual recognition tasks,12,"The study involves adults with MCI, uses a randomized crossover design comparing active tDCS to sham, and reports an objective episodic memory outcome (visual recognition task reaction time) for the 12 participants included in the efficacy analysis.","{
+""eligible"": true,
+""population"": ""MCI"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""visual recognition tasks"",
+""n"": 12,
+""reason"": ""The study involves adults with MCI, uses a randomized crossover design comparing active tDCS to sham, and reports an objective episodic memory outcome (visual recognition task reaction time) for the 12 participants included in the efficacy analysis.""
+}"
+pmid:38418583,full_text,asi1-mini,2026-11-08T01:32:24,pmc,True,healthy,parallel,tDCS,"RAVLT, delayed recall",80,"The study includes healthy older adults randomized to anodal tDCS or sham in a parallel design, with episodic memory assessed via free recall (specifically RAVLT delayed recall) and sufficient data for analysis.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""RAVLT, delayed recall"",
+""n"": 80,
+""reason"": ""The study includes healthy older adults randomized to anodal tDCS or sham in a parallel design, with episodic memory assessed via free recall (specifically RAVLT delayed recall) and sufficient data for analysis.""
+}"
+pmid:38365886,full_text,asi1-mini,2026-11-08T01:32:29,pmc,True,healthy,parallel,tACS,free recall,72,"The study involves healthy young adults, uses a parallel randomized design with tACS vs sham, and measures episodic memory via free recall.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tACS"",
+""outcome"": ""free recall"",
+""n"": 72,
+""reason"": ""The study involves healthy young adults, uses a parallel randomized design with tACS vs sham, and measures episodic memory via free recall.""
+}"
+pmid:38219414,full_text,asi1-mini,2026-11-08T01:32:51,https://gredos.usal.es/bitstream/10366/157185/1/GIMC_Transcranial%20direct%20current%20stimulation%20over%20the%20left%20posterior%20temporal%20lobe.pdf,False,healthy,parallel,tDCS,DRM false recognition,68,"The study uses the DRM paradigm to measure false memory (semantic control), which is not an objective episodic-memory outcome such as free/cued recall, recognition, or source/associative memory as defined by the eligibility criteria.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""DRM false recognition"",
+""n"": 68,
+""reason"": ""The study uses the DRM paradigm to measure false memory (semantic control), which is not an objective episodic-memory outcome such as free/cued recall, recognition, or source/associative memory as defined by the eligibility criteria.""
+}"
+pmid:38212815,full_text,asi1-mini,2026-11-08T01:32:56,pmc,True,MCI,parallel,tDCS,AVLT,39,"The study includes patients with MCI (and SCD), uses a parallel randomized sham-controlled tDCS design, and reports the Auditory Verbal Learning Test (AVLT) as a secondary episodic memory outcome for the per-protocol sample of 39 participants.","{
+""eligible"": true,
+""population"": ""MCI"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""AVLT"",
+""n"": 39,
+""reason"": ""The study includes patients with MCI (and SCD), uses a parallel randomized sham-controlled tDCS design, and reports the Auditory Verbal Learning Test (AVLT) as a secondary episodic memory outcome for the per-protocol sample of 39 participants.""
+}"
+pmid:38178837,full_text,asi1-mini,2026-11-08T01:33:01,pmc,True,AD,parallel,tDCS,Seoul Verbal Learning Test (SVLT),16,The study is a randomized parallel sham-controlled trial of tDCS in patients with mild Alzheimer's disease that reports episodic memory outcomes using the Seoul Verbal Learning Test.,"{
+""eligible"": true,
+""population"": ""AD"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""Seoul Verbal Learning Test (SVLT)"",
+""n"": 16,
+""reason"": ""The study is a randomized parallel sham-controlled trial of tDCS in patients with mild Alzheimer's disease that reports episodic memory outcomes using the Seoul Verbal Learning Test.""
+}"
+pmid:40242204,full_text,asi1-mini,2026-11-08T01:33:07,pmc,True,healthy,crossover,tDCS,recognition memory tasks,30,"The study involves healthy adults undergoing a randomized crossover tDCS vs. sham design and measures episodic memory using recognition tasks, which fits the inclusion criteria for objective episodic-memory outcomes.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""recognition memory tasks"",
+""n"": 30,
+""reason"": ""The study involves healthy adults undergoing a randomized crossover tDCS vs. sham design and measures episodic memory using recognition tasks, which fits the inclusion criteria for objective episodic-memory outcomes.""
+}"
+pmid:38155843,full_text,asi1-mini,2026-11-08T01:33:12,pmc,True,AD,parallel,tDCS,ADAS-Cog word recall,124,The study is a randomised parallel trial of tDCS vs sham in patients with Alzheimer's disease (mild to moderate) and reports episodic memory outcomes (word recall/recognition) as sub-scores of the ADAS-Cog.,"{
+""eligible"": true,
+""population"": ""AD"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""ADAS-Cog word recall"",
+""n"": 124,
+""reason"": ""The study is a randomised parallel trial of tDCS vs sham in patients with Alzheimer's disease (mild to moderate) and reports episodic memory outcomes (word recall/recognition) as sub-scores of the ADAS-Cog.""
+}"
+pmid:38056370,full_text,asi1-mini,2026-11-08T01:33:23,https://macau.uni-kiel.de/servlets/MCRFileNodeServlet/macau_derivate_00007709/1-s2.0-S138824572300771X-main.pdf,,,,,,,invalid reply,"{
+""eligible"": true,
+""population"": ""MCI and AD"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""Virtual Water Maze (VWM) recall performance (relative dwell time)"",
+""n"": 42,
+""reason"": ""The study is a randomized, double-blind, sham-controlled crossover trial using tDCS in patients with MCI and mild AD, measuring hippocampal place learning (spatial episodic memory) via the Virtual Water Maze.""
+}"
+pmid:38007663,full_text,asi1-mini,2026-11-08T01:33:43,https://gredos.usal.es/bitstream/10366/156596/1/GISE_Transcranial%20Direct%20Current%20Stimulation.pdf,True,AD,parallel,tDCS,TA VEC delayed,18,The study is a randomized parallel-group trial of active vs sham tDCS in patients with early-stage Alzheimer's disease (mild AD) that reports objective episodic memory outcomes (immediate and delayed recall via TA VEC) with sufficient data for analysis.,"{
+""eligible"": true,
+""population"": ""AD"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""TA VEC delayed"",
+""n"": 18,
+""reason"": ""The study is a randomized parallel-group trial of active vs sham tDCS in patients with early-stage Alzheimer's disease (mild AD) that reports objective episodic memory outcomes (immediate and delayed recall via TA VEC) with sufficient data for analysis.""
+}"
+pmid:37635805,full_text,asi1-mini,2026-11-08T01:33:51,pmc,True,healthy,crossover,tDCS,recognition,36,"The study involves healthy adults, uses a crossover design with conventional tDCS vs. sham, and reports recognition memory outcomes which are eligible episodic/semantic memory measures.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""recognition"",
+""n"": 36,
+""reason"": ""The study involves healthy adults, uses a crossover design with conventional tDCS vs. sham, and reports recognition memory outcomes which are eligible episodic/semantic memory measures.""
+}"
+pmid:37608981,full_text,asi1-mini,2026-11-08T01:33:56,pmc,True,MCI,parallel,tDCS,AVLT-IR,180,"The study includes adults with MCI, uses a parallel RCT design comparing active tDCS to sham tDCS, and reports the episodic memory outcome AVLT-immediate recall (AVLT-IR) with sufficient data for analysis.","{
+""eligible"": true,
+""population"": ""MCI"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""AVLT-IR"",
+""n"": 180,
+""reason"": ""The study includes adults with MCI, uses a parallel RCT design comparing active tDCS to sham tDCS, and reports the episodic memory outcome AVLT-immediate recall (AVLT-IR) with sufficient data for analysis.""
+}"
+pmid:36831783,full_text,asi1-mini,2026-11-08T01:34:01,pmc,True,healthy,parallel,tDCS,d-prime (d′),40,"The study involves healthy young adults in a parallel-group, double-blind, sham-controlled tDCS trial measuring verbal episodic memory using recognition sensitivity (d′) and free recall.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""d-prime (d′)"",
+""n"": 40,
+""reason"": ""The study involves healthy young adults in a parallel-group, double-blind, sham-controlled tDCS trial measuring verbal episodic memory using recognition sensitivity (d′) and free recall.""
+}"
+pmid:36669696,full_text,asi1-mini,2026-11-08T01:34:11,https://www.biorxiv.org/content/biorxiv/early/2023/01/04/2023.01.04.522746.full.pdf,True,healthy,parallel,tDCS,recognition memory (d'),63,"The study involves healthy young adults receiving anodal HD-tDCS versus sham in a parallel design, with episodic memory assessed via recognition sensitivity (d').","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""recognition memory (d')"",
+""n"": 63,
+""reason"": ""The study involves healthy young adults receiving anodal HD-tDCS versus sham in a parallel design, with episodic memory assessed via recognition sensitivity (d').""
+}"
+pmid:36660288,full_text,asi1-mini,2026-11-08T01:34:16,pmc,True,AD,parallel,tDCS,TAVEC,33,"The study is a randomized parallel-design trial comparing active anodal tDCS to sham in patients with mild neurocognitive disorder due to possible Alzheimer's disease (mild AD), using the TAVEC verbal learning test as an objective episodic memory outcome.","{
+""eligible"": true,
+""population"": ""AD"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""TAVEC"",
+""n"": 33,
+""reason"": ""The study is a randomized parallel-design trial comparing active anodal tDCS to sham in patients with mild neurocognitive disorder due to possible Alzheimer's disease (mild AD), using the TAVEC verbal learning test as an objective episodic memory outcome.""
+}"
+pmid:36639676,full_text,asi1-mini,2026-11-08T01:34:21,pmc,True,healthy,crossover,tDCS,delayed free recall task,42,"The study includes healthy adults, uses a randomised sham-controlled crossover design with tDCS (and tACS), and reports an objective episodic memory outcome (word recall) sufficient for effect size calculation.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""delayed free recall task"",
+""n"": 42,
+""reason"": ""The study includes healthy adults, uses a randomised sham-controlled crossover design with tDCS (and tACS), and reports an objective episodic memory outcome (word recall) sufficient for effect size calculation.""
+}"
+pmid:35982223,full_text,asi1-mini,2026-11-08T01:34:32,pmc,True,healthy,crossover,tDCS,short-term associative cued recall accuracy,40,"The study includes healthy adults, uses a randomized crossover design with tDCS and sham, and reports an objective episodic memory outcome (associative cued recall) with sufficient data for analysis.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""short-term associative cued recall accuracy"",
+""n"": 40,
+""reason"": ""The study includes healthy adults, uses a randomized crossover design with tDCS and sham, and reports an objective episodic memory outcome (associative cued recall) with sufficient data for analysis.""
+}"
+pmid:35607946,full_text,asi1-mini,2026-11-08T01:34:38,pmc,True,AD,crossover,tACS,RAVLT immediate recall,60,"The study includes adults with mild Alzheimer's disease, uses a randomized crossover design comparing gamma-tACS to sham, and reports objective episodic memory outcomes (RAVLT) with sufficient data for analysis.","{
+""eligible"": true,
+""population"": ""AD"",
+""design"": ""crossover"",
+""stim"": ""tACS"",
+""outcome"": ""RAVLT immediate recall"",
+""n"": 60,
+""reason"": ""The study includes adults with mild Alzheimer's disease, uses a randomized crossover design comparing gamma-tACS to sham, and reports objective episodic memory outcomes (RAVLT) with sufficient data for analysis.""
+}"
+pmid:35388106,full_text,asi1-mini,2026-11-08T01:34:46,pmc,True,healthy,crossover,tDCS,surname recall,27,"The study involves healthy adults undergoing a randomized, sham-controlled crossover tDCS design with an objective episodic memory outcome (surname recall error rates and reaction times).","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""surname recall"",
+""n"": 27,
+""reason"": ""The study involves healthy adults undergoing a randomized, sham-controlled crossover tDCS design with an objective episodic memory outcome (surname recall error rates and reaction times).""
+}"
+pmid:35368257,full_text,asi1-mini,2026-11-08T01:34:50,pmc,True,MCI,parallel,tDCS,Old/New Recognition,40,"The study includes participants with SMC and aMCI (meeting inclusion criteria for MCI/healthy risk groups), uses active vs. sham tDCS in a parallel randomized design, and reports objective episodic memory outcomes (recognition scores) with sufficient data for analysis.","{
+""eligible"": true,
+""population"": ""MCI"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""Old/New Recognition"",
+""n"": 40,
+""reason"": ""The study includes participants with SMC and aMCI (meeting inclusion criteria for MCI/healthy risk groups), uses active vs. sham tDCS in a parallel randomized design, and reports objective episodic memory outcomes (recognition scores) with sufficient data for analysis.""
+}"
+pmid:35250453,full_text,asi1-mini,2026-11-08T01:35:00,pmc,True,MCI,parallel,tDCS,Wechsler Memory Scale (WMS),40,"The study includes MCI patients, uses a parallel randomized design with real vs. sham tDCS, and reports episodic memory outcomes using the Wechsler Memory Scale.","{
+""eligible"": true,
+""population"": ""MCI"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""Wechsler Memory Scale (WMS)"",
+""n"": 40,
+""reason"": ""The study includes MCI patients, uses a parallel randomized design with real vs. sham tDCS, and reports episodic memory outcomes using the Wechsler Memory Scale.""
+}"
+pmid:35053802,full_text,asi1-mini,2026-11-08T01:35:06,pmc,False,healthy,crossover,tDCS,Face–word memory task,83,"The study is excluded because its primary focus is on the placebo effect of blinding rather than the efficacy of tDCS on episodic memory, and it includes working memory outcomes which are an exclusion criterion.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""Face–word memory task"",
+""n"": 83,
+""reason"": ""The study is excluded because its primary focus is on the placebo effect of blinding rather than the efficacy of tDCS on episodic memory, and it includes working memory outcomes which are an exclusion criterion.""
+}"
+pmid:35034949,full_text,asi1-mini,2026-11-08T01:35:11,pmc,False,healthy,parallel,tDCS,Pattern Recognition Memory,30,"The study's primary memory outcome is visual pattern recognition memory, which does not meet the inclusion criteria for objective episodic-memory outcomes such as free/cued recall, recognition of words/lists (e.g., RAVLT, CVLT), or source/associative memory.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""Pattern Recognition Memory"",
+""n"": 30,
+""reason"": ""The study's primary memory outcome is visual pattern recognition memory, which does not meet the inclusion criteria for objective episodic-memory outcomes such as free/cued recall, recognition of words/lists (e.g., RAVLT, CVLT), or source/associative memory.""
+}"
+pmid:34603142,full_text,asi1-mini,2026-11-08T01:35:21,pmc,False,healthy,parallel,tDCS,false recognition,75,"The study's primary outcome is false recognition (a memory illusion/distortion) rather than standard episodic memory performance (such as free/cued recall or true recognition), and it does not report data for eligible outcomes like RAVLT or CVLT word recall.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""false recognition"",
+""n"": 75,
+""reason"": ""The study's primary outcome is false recognition (a memory illusion/distortion) rather than standard episodic memory performance (such as free/cued recall or true recognition), and it does not report data for eligible outcomes like RAVLT or CVLT word recall.""
+}"
+pmid:34381353,full_text,asi1-mini,2026-11-08T01:35:32,pmc,False,SCD,parallel,tDCS,RAVLT recognition,38,"The study population consists of individuals with Subjective Cognitive Decline (SCD), which is not an included clinical group under the specified eligibility criteria (healthy, MCI, or mild AD).","{
+""eligible"": false,
+""population"": ""SCD"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""RAVLT recognition"",
+""n"": 38,
+""reason"": ""The study population consists of individuals with Subjective Cognitive Decline (SCD), which is not an included clinical group under the specified eligibility criteria (healthy, MCI, or mild AD).""
+}"
+pmid:34287817,full_text,asi1-mini,2026-11-08T01:35:37,pmc,False,healthy,crossover,tDCS,Visual Perspective Taking (VPT),52,"The study's primary objective measures are visual perspective taking and source memory, which do not constitute an eligible objective episodic-memory outcome such as free/cued recall, recognition, or standard word-list scores.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""Visual Perspective Taking (VPT)"",
+""n"": 52,
+""reason"": ""The study's primary objective measures are visual perspective taking and source memory, which do not constitute an eligible objective episodic-memory outcome such as free/cued recall, recognition, or standard word-list scores.""
+}"
+pmid:34135392,full_text,asi1-mini,2026-11-08T01:35:46,pmc,True,healthy,crossover,tDCS,auditory word recognition task (WRT),14,"The study includes healthy older adults, uses a crossover design with tDCS vs sham, and measures episodic memory using an auditory word recognition task.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""auditory word recognition task (WRT)"",
+""n"": 14,
+""reason"": ""The study includes healthy older adults, uses a crossover design with tDCS vs sham, and measures episodic memory using an auditory word recognition task.""
+}"
+pmid:33805063,full_text,asi1-mini,2026-11-08T01:35:53,pmc,True,healthy,crossover,tDCS,pair-associate episodic memory task,18,"The study includes healthy adults, uses a randomized crossover design with active tDCS vs. sham, and assesses an objective episodic-memory outcome (face-occupation association recall).","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""pair-associate episodic memory task"",
+""n"": 18,
+""reason"": ""The study includes healthy adults, uses a randomized crossover design with active tDCS vs. sham, and assesses an objective episodic-memory outcome (face-occupation association recall).""
+}"
+pmid:33542344,full_text,asi1-mini,2026-11-08T01:36:04,pmc,True,healthy,crossover,tDCS,Face cued word recall (FCWR),18,"The study includes healthy adults, uses a crossover design with tDCS vs sham, and reports associative memory outcomes via the FCWR task.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""Face cued word recall (FCWR)"",
+""n"": 18,
+""reason"": ""The study includes healthy adults, uses a crossover design with tDCS vs sham, and reports associative memory outcomes via the FCWR task.""
+}"
+pmid:33535690,full_text,asi1-mini,2026-11-08T01:36:10,pmc,True,healthy,parallel,tDCS,true recognition,29,"The study involves healthy older adults randomized to active tDCS or sham in a parallel design, with an objective episodic memory outcome (recognition) and sufficient data for analysis.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""true recognition"",
+""n"": 29,
+""reason"": ""The study involves healthy older adults randomized to active tDCS or sham in a parallel design, with an objective episodic memory outcome (recognition) and sufficient data for analysis.""
+}"
+pmid:33452288,full_text,asi1-mini,2026-11-08T01:36:15,pmc,True,healthy,parallel,tDCS,Free Recall Task,72,"The study involves healthy adults, uses a parallel randomized design with tDCS vs sham, and reports an objective episodic memory outcome (free recall of novel words) with sufficient data for analysis.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""Free Recall Task"",
+""n"": 72,
+""reason"": ""The study involves healthy adults, uses a parallel randomized design with tDCS vs sham, and reports an objective episodic memory outcome (free recall of novel words) with sufficient data for analysis.""
+}"
+pmid:33354206,full_text,asi1-mini,2026-11-08T01:36:23,pmc,True,healthy,parallel,tDCS,Pr-item,49,"The study includes healthy older adults, uses a parallel randomized sham-controlled tDCS design, and reports an objective episodic memory outcome (item memory discrimination index Pr) with sufficient participant data for analysis.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""Pr-item"",
+""n"": 49,
+""reason"": ""The study includes healthy older adults, uses a parallel randomized sham-controlled tDCS design, and reports an objective episodic memory outcome (item memory discrimination index Pr) with sufficient participant data for analysis.""
+}"
+pmid:33033765,full_text,asi1-mini,2026-11-08T01:36:31,pmc,True,healthy,parallel,tDCS,CVLT-II,40,"The study involves healthy adults, uses a parallel randomized design with active vs. placebo tDCS, and reports episodic memory outcomes (immediate/delayed recall and recognition) using the CVLT-II.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""CVLT-II"",
+""n"": 40,
+""reason"": ""The study involves healthy adults, uses a parallel randomized design with active vs. placebo tDCS, and reports episodic memory outcomes (immediate/delayed recall and recognition) using the CVLT-II.""
+}"
+pmid:33029128,full_text,asi1-mini,2026-11-08T01:36:37,pmc,True,healthy,crossover,tDCS,free delayed recall,55,"The study includes healthy young and elderly adults, uses a sham-controlled crossover tDCS design, and reports episodic memory outcomes via free recall.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""free delayed recall"",
+""n"": 55,
+""reason"": ""The study includes healthy young and elderly adults, uses a sham-controlled crossover tDCS design, and reports episodic memory outcomes via free recall.""
+}"
+pmid:32280093,full_text,asi1-mini,2026-11-08T01:36:42,pmc,True,MCI,crossover,tDCS,LOCATO-15 cued recall,16,"The study includes MCI patients, uses a randomized crossover design with atDCS vs sham, and reports episodic memory outcomes (cued recall) with sufficient data for analysis.","{
+""eligible"": true,
+""population"": ""MCI"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""LOCATO-15 cued recall"",
+""n"": 16,
+""reason"": ""The study includes MCI patients, uses a randomized crossover design with atDCS vs sham, and reports episodic memory outcomes (cued recall) with sufficient data for analysis.""
+}"
+pmid:32256337,full_text,asi1-mini,2026-11-08T01:36:47,pmc,True,healthy,crossover,tDCS,cued recall,26,"The study includes healthy elderly adults, uses a crossover design with tDCS and sham, and reports associative memory outcomes via cued recall for the analyzed participants (28 recruited minus 2 excluded).","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""cued recall"",
+""n"": 26,
+""reason"": ""The study includes healthy elderly adults, uses a crossover design with tDCS and sham, and reports associative memory outcomes via cued recall for the analyzed participants (28 recruited minus 2 excluded).""
+}"
+pmid:32218726,full_text,asi1-mini,2026-11-08T01:36:52,pmc,False,healthy,parallel,tDCS,percentage of recalled adjectives,75,"The study excludes eligible records because the primary memory outcome is a self-referential bias task (recall of personality traits) rather than an objective episodic-memory test such as RAVLT, CVLT, or ADAS-Cog word recall.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""percentage of recalled adjectives"",
+""n"": 75,
+""reason"": ""The study excludes eligible records because the primary memory outcome is a self-referential bias task (recall of personality traits) rather than an objective episodic-memory test such as RAVLT, CVLT, or ADAS-Cog word recall.""
+}"
+pmid:32199339,full_text,asi1-mini,2026-11-08T01:37:01,https://kar.kent.ac.uk/80763/11/BRLN_2019_219_R1.pdf,True,healthy,parallel,tDCS,free recall,101,"The study includes healthy young and older adults, uses a parallel-group randomized design with active vs. sham tDCS, and reports an objective episodic memory outcome (free recall of novel associations).","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""free recall"",
+""n"": 101,
+""reason"": ""The study includes healthy young and older adults, uses a parallel-group randomized design with active vs. sham tDCS, and reports an objective episodic memory outcome (free recall of novel associations).""
+}"
+pmid:31790015,full_text,asi1-mini,2026-11-08T01:37:30,pmc,False,MCI,crossover,tDCS,2-back,15,"The study's primary significant finding and main episodic-memory-related outcome reported is the 2-back task, which measures working memory; while ADAS-Cog Word Recall/Recognition were administered, they showed no significant differences, and the inclusion criteria exclude studies with working memory outcomes only or where the primary eligible outcome is not significantly reported.","{
+""eligible"": false,
+""population"": ""MCI"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""2-back"",
+""n"": 15,
+""reason"": ""The study's primary significant finding and main episodic-memory-related outcome reported is the 2-back task, which measures working memory; while ADAS-Cog Word Recall/Recognition were administered, they showed no significant differences, and the inclusion criteria exclude studies with working memory outcomes only or where the primary eligible outcome is not significantly reported.""
+}"
+pmid:31660693,full_text,asi1-mini,2026-11-08T01:37:35,pmc,False,healthy,parallel,tDCS,Pattern Recognition Memory (PRM),36,"The study excludes eligible records because its primary episodic memory outcome is Pattern Recognition Memory (a visual recognition task), which does not meet the inclusion criteria for standardised episodic-memory outcomes such as free/cued recall, source/associative memory, or specific word-list tests like RAVLT, CVLT, or ADAS-Cog.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""Pattern Recognition Memory (PRM)"",
+""n"": 36,
+""reason"": ""The study excludes eligible records because its primary episodic memory outcome is Pattern Recognition Memory (a visual recognition task), which does not meet the inclusion criteria for standardised episodic-memory outcomes such as free/cued recall, source/associative memory, or specific word-list tests like RAVLT, CVLT, or ADAS-Cog.""
+}"
+pmid:31529691,full_text,asi1-mini,2026-11-08T01:37:43,pmc,True,AD,parallel,tDCS,Delayed recall,173,"The study includes adults with mild Alzheimer's disease (NCD-AD), uses a parallel randomized sham-controlled tDCS design, and reports episodic memory outcomes via delayed recall from a word list learning test.","{
+""eligible"": true,
+""population"": ""AD"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""Delayed recall"",
+""n"": 173,
+""reason"": ""The study includes adults with mild Alzheimer's disease (NCD-AD), uses a parallel randomized sham-controlled tDCS design, and reports episodic memory outcomes via delayed recall from a word list learning test.""
+}"
+pmid:31285793,full_text,asi1-mini,2026-11-08T01:37:52,pmc,True,MCI,parallel,tDCS,WLMT-recall,58,"The study includes healthy adults with MCI, uses a parallel randomized design with active tDCS vs sham, and reports the episodic memory outcome WLMT-recall for 58 participants.","{
+""eligible"": true,
+""population"": ""MCI"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""WLMT-recall"",
+""n"": 58,
+""reason"": ""The study includes healthy adults with MCI, uses a parallel randomized design with active tDCS vs sham, and reports the episodic memory outcome WLMT-recall for 58 participants.""
+}"
+pmid:31196835,full_text,asi1-mini,2026-11-08T01:37:59,pmc,True,AD,parallel,tDCS,Seoul Verbal Learning Test (SVLT),18,"The study is a randomized, sham-controlled parallel trial of tDCS in patients with early-stage Alzheimer's disease that reports episodic memory outcomes using the Seoul Verbal Learning Test.","{
+""eligible"": true,
+""population"": ""AD"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""Seoul Verbal Learning Test (SVLT)"",
+""n"": 18,
+""reason"": ""The study is a randomized, sham-controlled parallel trial of tDCS in patients with early-stage Alzheimer's disease that reports episodic memory outcomes using the Seoul Verbal Learning Test.""
+}"
+pmid:31189985,full_text,asi1-mini,2026-11-08T01:38:05,pmc,True,healthy,crossover,tACS,Correct Associative Memory,59,"The study includes healthy adults, uses a crossover design (baseline vs stimulation performance within subjects) with tACS and sham controls, and reports objective associative memory outcomes.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tACS"",
+""outcome"": ""Correct Associative Memory"",
+""n"": 59,
+""reason"": ""The study includes healthy adults, uses a crossover design (baseline vs stimulation performance within subjects) with tACS and sham controls, and reports objective associative memory outcomes.""
+}"
+pmid:31031581,full_text,asi1-mini,2026-11-08T01:38:16,pmc,True,MCI,parallel,tDCS,CVLT,20,"The study includes adults with MCI, uses a parallel randomized design comparing anodal tDCS to sham tDCS combined with cognitive training, and reports objective episodic memory outcomes (CVLT immediate and delayed recall) for the participants who completed post-training assessments.","{
+""eligible"": true,
+""population"": ""MCI"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""CVLT"",
+""n"": 20,
+""reason"": ""The study includes adults with MCI, uses a parallel randomized design comparing anodal tDCS to sham tDCS combined with cognitive training, and reports objective episodic memory outcomes (CVLT immediate and delayed recall) for the participants who completed post-training assessments.""
+}"
+pmid:30326206,full_text,asi1-mini,2026-11-08T01:38:39,pmc,False,healthy,crossover,tDCS,source memory task (reality monitoring accuracy),36,"The study excludes eligible records because the primary outcome is a source monitoring/reality monitoring paradigm rather than an objective episodic-memory test such as free/cued recall, recognition, or standardised lists like RAVLT/CVLT/ADAS-Cog.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""source memory task (reality monitoring accuracy)"",
+""n"": 36,
+""reason"": ""The study excludes eligible records because the primary outcome is a source monitoring/reality monitoring paradigm rather than an objective episodic-memory test such as free/cued recall, recognition, or standardised lists like RAVLT/CVLT/ADAS-Cog.""
+}"
+pmid:30272127,full_text,asi1-mini,2026-11-08T01:38:48,https://www.biorxiv.org/content/biorxiv/early/2018/04/24/306183.1.full.pdf,False,healthy,crossover,tDCS,Self-Reference Effect in Episodic Memory,52,"The study uses healthy young adults and tDCS, but the primary outcomes are visual perspective taking tasks and a self-reference effect task rather than standard objective episodic memory tests (e.g., RAVLT, CVLT) or free/cued recall/recognition of word lists as required by the inclusion criteria.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""Self-Reference Effect in Episodic Memory"",
+""n"": 52,
+""reason"": ""The study uses healthy young adults and tDCS, but the primary outcomes are visual perspective taking tasks and a self-reference effect task rather than standard objective episodic memory tests (e.g., RAVLT, CVLT) or free/cued recall/recognition of word lists as required by the inclusion criteria.""
+}"
+pmid:30109059,full_text,asi1-mini,2026-11-08T01:38:59,pmc,True,healthy,crossover,tDCS,word recognition task (d'),15,"The study uses healthy adults in a crossover tDCS design with an objective episodic memory outcome (word recognition d'), meeting all inclusion criteria.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""word recognition task (d')"",
+""n"": 15,
+""reason"": ""The study uses healthy adults in a crossover tDCS design with an objective episodic memory outcome (word recognition d'), meeting all inclusion criteria.""
+}"
+pmid:29593522,full_text,asi1-mini,2026-11-08T01:39:07,pmc,False,healthy,crossover,tDCS,Visual Working Memory (VWM) task,36,"The study exclusively measures visual working memory outcomes, which is an exclusion criterion.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""Visual Working Memory (VWM) task"",
+""n"": 36,
+""reason"": ""The study exclusively measures visual working memory outcomes, which is an exclusion criterion.""
+}"
+pmid:29375290,full_text,asi1-mini,2026-11-08T01:39:16,pmc,True,healthy,crossover,tDCS,LOCATO (item recognition and 3-alternative forced choice),32,"The study includes healthy older adults, uses a sham-controlled crossover design with anodal tDCS, and assesses episodic memory using object-location association tasks (item recognition and 3-AFC cued recall).","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""LOCATO (item recognition and 3-alternative forced choice)"",
+""n"": 32,
+""reason"": ""The study includes healthy older adults, uses a sham-controlled crossover design with anodal tDCS, and assesses episodic memory using object-location association tasks (item recognition and 3-AFC cued recall).""
+}"
+pmid:29259554,full_text,asi1-mini,2026-11-08T01:39:24,pmc,True,healthy,parallel,tDCS,recognition,22,"The study includes older adults with subjective memory complaints who have normal objective cognitive performance (MMSE 27-30), uses a parallel randomized design comparing anodal tDCS to sham, and reports episodic memory outcomes including recognition.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""recognition"",
+""n"": 22,
+""reason"": ""The study includes older adults with subjective memory complaints who have normal objective cognitive performance (MMSE 27-30), uses a parallel randomized design comparing anodal tDCS to sham, and reports episodic memory outcomes including recognition.""
+}"
+pmid:29163115,full_text,asi1-mini,2026-11-08T01:39:29,pmc,True,healthy,parallel,tDCS,delayed recall,43,"The study includes healthy adults, uses a parallel-group tDCS vs. sham design, and reports an objective episodic memory outcome (delayed recall of words from the CVLT-II).","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""delayed recall"",
+""n"": 43,
+""reason"": ""The study includes healthy adults, uses a parallel-group tDCS vs. sham design, and reports an objective episodic memory outcome (delayed recall of words from the CVLT-II).""
+}"
+pmid:28912159,full_text,asi1-mini,2026-11-08T01:39:39,pmc,True,healthy,crossover,tACS,recognition,70,The study involves healthy adults undergoing a crossover tACS vs. sham design with an objective episodic memory outcome (recognition accuracy/d-prime).,"{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tACS"",
+""outcome"": ""recognition"",
+""n"": 70,
+""reason"": ""The study involves healthy adults undergoing a crossover tACS vs. sham design with an objective episodic memory outcome (recognition accuracy/d-prime).""
+}"
+pmid:28848378,full_text,asi1-mini,2026-11-08T01:39:44,pmc,True,healthy,crossover,tDCS,cued-recall,30,"The study involves healthy adults, uses a randomized double-blind crossover design comparing anodal tDCS to sham, and reports episodic memory outcomes via cued-recall scores for paired-associate learning.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""cued-recall"",
+""n"": 30,
+""reason"": ""The study involves healthy adults, uses a randomized double-blind crossover design comparing anodal tDCS to sham, and reports episodic memory outcomes via cued-recall scores for paired-associate learning.""
+}"
+pmid:28647325,full_text,asi1-mini,2026-11-08T01:40:07,https://gredos.usal.es/bitstream/10366/157225/1/GIMC_The%20processing%20of%20semantic%20relatedness%20in%20the%20brain%20Evidence%20from%20associative%20and%20categorical%20false%20recognition%20effects%20following%20transcranial%20direct%20current%20stimulation%20of%20the%20left%20anterior%20t.pdf,False,healthy,parallel,tDCS,false recognition,65,"The study measures false recognition (a memory illusion) rather than standard episodic memory outcomes like free/cued recall, recognition of studied items, or scores from validated tests such as RAVLT, CVLT, or ADAS-Cog.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""false recognition"",
+""n"": 65,
+""reason"": ""The study measures false recognition (a memory illusion) rather than standard episodic memory outcomes like free/cued recall, recognition of studied items, or scores from validated tests such as RAVLT, CVLT, or ADAS-Cog.""
+}"
+pmid:28528736,full_text,asi1-mini,2026-11-08T01:40:15,https://www.biorxiv.org/content/biorxiv/early/2016/10/03/078964.full.pdf,True,healthy,parallel,tACS,recognition,72,The study involves healthy adults receiving tACS versus sham in a randomized design with an objective episodic memory outcome (recognition confidence).,"{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tACS"",
+""outcome"": ""recognition"",
+""n"": 72,
+""reason"": ""The study involves healthy adults receiving tACS versus sham in a randomized design with an objective episodic memory outcome (recognition confidence).""
+}"
+pmid:27845032,full_text,asi1-mini,2026-11-08T01:40:20,pmc,True,healthy,parallel,tDCS,recognition accuracy (hits and correct rejections),72,"The study uses healthy young adults in a parallel RCT design with active tDCS versus sham, measuring objective episodic memory outcomes (hits and correct rejections) which allow for calculation of standardized mean differences.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""recognition accuracy (hits and correct rejections)"",
+""n"": 72,
+""reason"": ""The study uses healthy young adults in a parallel RCT design with active tDCS versus sham, measuring objective episodic memory outcomes (hits and correct rejections) which allow for calculation of standardized mean differences.""
+}"
+pmid:27474794,full_text,asi1-mini,2026-11-08T01:40:30,pmc,True,healthy,parallel,tDCS,source memory,54,"The study involves healthy adults, uses a parallel randomized design with active tDCS vs sham, and reports source memory outcomes which are eligible episodic memory measures.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""source memory"",
+""n"": 54,
+""reason"": ""The study involves healthy adults, uses a parallel randomized design with active tDCS vs sham, and reports source memory outcomes which are eligible episodic memory measures.""
+}"
+pmid:27433807,full_text,asi1-mini,2026-11-08T01:40:38,pmc,True,healthy,parallel,tDCS,free recall,42,"The study involves healthy adults, uses a randomized parallel design with tDCS vs sham, and measures episodic memory via free recall of images.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""free recall"",
+""n"": 42,
+""reason"": ""The study involves healthy adults, uses a randomized parallel design with tDCS vs sham, and measures episodic memory via free recall of images.""
+}"
+pmid:27417530,full_text,asi1-mini,2026-11-08T01:40:44,pmc,False,healthy,parallel,tDCS,associative recognition,72,"The study uses a healthy young adult sample and tDCS, but the primary objective memory outcome is associative recognition (a form of source/associative memory), which meets the inclusion criteria; however, upon closer inspection of the exclusion criteria provided in the prompt, there are no explicit exclusions for this specific design or population. Wait, let me re-read the exclusion criteria carefully. 'Exclude: Global scores only... Working memory outcomes only... TMS... Other clinical groups'. This study has an episodic memory outcome (associative recognition). It is a randomized parallel design with sham control. The participants are healthy adults. Therefore, it seems eligible based on the text provided. Let me double check the 'unsure' vs 'exclude' rule. The abstract clearly states 'associative recognition' as the test. Is associative recognition considered an 'objective episodic-memory outcome'? Yes, the inclusion criteria lists 'source or associative memory'. So it should be eligible. 
+
+Wait, looking at the JSON output format required: `""population"": ""healthy"" | ""MCI"" | ""AD""`. The participants are 'young adults', which falls under 'healthy'. 
+
+Let's re-evaluate. Is there any reason to exclude? 
+- Adults healthy? Yes. 
+- Active tDCS vs sham? Yes. 
+- Randomised? Yes. 
+- Objective episodic memory outcome? Yes, associative recognition. 
+- Enough data for SMD? The results provide means and SDs for the groups (Table 1 shows Mean (SD) for Associative Hits). So yes. 
+
+Why did I initially think false? I might have confused it with working memory. The discussion mentions WM, but the outcome measured is associative memory/recognition. 
+
+Therefore, the paper IS eligible.
+
+Population: Healthy (young adults)
+Design: Parallel (between-subjects: sham, prefrontal, parietal)
+Stim: tDCS
+Outcome: Associative recognition (or associative hits/recognition)
+n: 72
+Reason: The study involves healthy adults receiving active tDCS versus sham in a randomised parallel design, with associative recognition reported as an objective episodic memory outcome.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""associative recognition"",
+""n"": 72,
+""reason"": ""The study uses a healthy young adult sample and tDCS, but the primary objective memory outcome is associative recognition (a form of source/associative memory), which meets the inclusion criteria; however, upon closer inspection of the exclusion criteria provided in the prompt, there are no explicit exclusions for this specific design or population. Wait, let me re-read the exclusion criteria carefully. 'Exclude: Global scores only... Working memory outcomes only... TMS... Other clinical groups'. This study has an episodic memory outcome (associative recognition). It is a randomized parallel design with sham control. The participants are healthy adults. Therefore, it seems eligible based on the text provided. Let me double check the 'unsure' vs 'exclude' rule. The abstract clearly states 'associative recognition' as the test. Is associative recognition considered an 'objective episodic-memory outcome'? Yes, the inclusion criteria lists 'source or associative memory'. So it should be eligible. \n\nWait, looking at the JSON output format required: `\""population\"": \""healthy\"" | \""MCI\"" | \""AD\""`. The participants are 'young adults', which falls under 'healthy'. \n\nLet's re-evaluate. Is there any reason to exclude? \n- Adults healthy? Yes. \n- Active tDCS vs sham? Yes. \n- Randomised? Yes. \n- Objective episodic memory outcome? Yes, associative recognition. \n- Enough data for SMD? The results provide means and SDs for the groups (Table 1 shows Mean (SD) for Associative Hits). So yes. \n\nWhy did I initially think false? I might have confused it with working memory. The discussion mentions WM, but the outcome measured is associative memory/recognition. \n\nTherefore, the paper IS eligible.\n\nPopulation: Healthy (young adults)\nDesign: Parallel (between-subjects: sham, prefrontal, parietal)\nStim: tDCS\nOutcome: Associative recognition (or associative hits/recognition)\nn: 72\nReason: The study involves healthy adults receiving active tDCS versus sham in a randomised parallel design, with associative recognition reported as an objective episodic memory outcome.""
+}"
+pmid:27005937,full_text,asi1-mini,2026-11-08T01:40:58,pmc,True,AD,parallel,tDCS,CVLT-II delayed recall,25,"The study is a randomized parallel-group trial comparing active tDCS to sham in patients with Alzheimer's disease, using the CVLT-II (an eligible episodic memory test) as an outcome measure.","{
+""eligible"": true,
+""population"": ""AD"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""CVLT-II delayed recall"",
+""n"": 25,
+""reason"": ""The study is a randomized parallel-group trial comparing active tDCS to sham in patients with Alzheimer's disease, using the CVLT-II (an eligible episodic memory test) as an outcome measure.""
+}"
+pmid:26923418,full_text,asi1-mini,2026-11-08T01:41:03,pmc,True,healthy,parallel,tDCS,free recall of object words,28,"The study includes healthy older adults in a randomized parallel design comparing anodal tDCS to sham, with episodic memory assessed via delayed free recall of word lists.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""free recall of object words"",
+""n"": 28,
+""reason"": ""The study includes healthy older adults in a randomized parallel design comparing anodal tDCS to sham, with episodic memory assessed via delayed free recall of word lists.""
+}"
+pmid:26679936,full_text,asi1-mini,2026-11-08T01:41:08,pmc,True,healthy,crossover,tDCS,Recognition Memory Test,36,The study involves healthy adults undergoing randomised tDCS versus sham stimulation in a crossover design and reports an objective episodic memory outcome (recognition memory accuracy).,"{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""Recognition Memory Test"",
+""n"": 36,
+""reason"": ""The study involves healthy adults undergoing randomised tDCS versus sham stimulation in a crossover design and reports an objective episodic memory outcome (recognition memory accuracy).""
+}"
+pmid:26441544,full_text,asi1-mini,2026-11-08T01:41:17,pmc,True,healthy,crossover,tACS,word-pair learning task (cued recall),18,"The study involves healthy adults, uses a crossover design with active vs. sham tACS, and measures episodic memory via cued recall of word pairs.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tACS"",
+""outcome"": ""word-pair learning task (cued recall)"",
+""n"": 18,
+""reason"": ""The study involves healthy adults, uses a crossover design with active vs. sham tACS, and measures episodic memory via cued recall of word pairs.""
+}"
+pmid:25959620,full_text,asi1-mini,2026-11-08T01:41:36,pmc,False,healthy,parallel,tDCS,memory for melodies (dʹ scores),26,"The study investigates recognition memory for melodies, which is a non-verbal auditory memory task, whereas the eligibility criteria require an objective episodic-memory outcome typically associated with verbal recall/recognition tests (e.g., RAVLT, CVLT) or general associative/source memory; furthermore, 'memory for melodies' is not a standard named test listed in the inclusion criteria.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""memory for melodies (dʹ scores)"",
+""n"": 26,
+""reason"": ""The study investigates recognition memory for melodies, which is a non-verbal auditory memory task, whereas the eligibility criteria require an objective episodic-memory outcome typically associated with verbal recall/recognition tests (e.g., RAVLT, CVLT) or general associative/source memory; furthermore, 'memory for melodies' is not a standard named test listed in the inclusion criteria.""
+}"
+pmid:25816233,full_text,asi1-mini,2026-11-08T01:41:42,pmc,True,healthy,parallel,tDCS,"recognition memory performance (d', accuracy)",44,"The study includes healthy adults, uses a parallel tDCS vs sham design, and reports objective episodic memory outcomes (discriminability index d' and recognition accuracy).","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""recognition memory performance (d', accuracy)"",
+""n"": 44,
+""reason"": ""The study includes healthy adults, uses a parallel tDCS vs sham design, and reports objective episodic memory outcomes (discriminability index d' and recognition accuracy).""
+}"
+pmid:25697588,full_text,asi1-mini,2026-11-08T01:41:46,pmc,True,healthy,crossover,tACS,Paired Associate Learning (PAL),8,"The study involves healthy adults, uses a crossover design with tACS vs sham, and measures associative memory using the PAL task.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tACS"",
+""outcome"": ""Paired Associate Learning (PAL)"",
+""n"": 8,
+""reason"": ""The study involves healthy adults, uses a crossover design with tACS vs sham, and measures associative memory using the PAL task.""
+}"
+pmid:25368577,full_text,asi1-mini,2026-11-08T01:41:57,pmc,True,healthy,parallel,tDCS,free recall of object words,36,"The study includes healthy older adults, uses a parallel randomized design with anodal tDCS vs. sham, and reports objective episodic memory outcomes (free recall) with sufficient statistical data for analysis.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""parallel"",
+""stim"": ""tDCS"",
+""outcome"": ""free recall of object words"",
+""n"": 36,
+""reason"": ""The study includes healthy older adults, uses a parallel randomized design with anodal tDCS vs. sham, and reports objective episodic memory outcomes (free recall) with sufficient statistical data for analysis.""
+}"
+pmid:24324721,full_text,asi1-mini,2026-11-08T01:42:06,pmc,False,healthy,crossover,tDCS,N170 amplitude and P3a amplitude (ERP components),11,"The study excludes eligible records because its primary outcomes are electrophysiological ERP components (N170, P3a) rather than objective episodic-memory behavioral scores such as free/cued recall, recognition accuracy, or standard test word recall.","{
+""eligible"": false,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""N170 amplitude and P3a amplitude (ERP components)"",
+""n"": 11,
+""reason"": ""The study excludes eligible records because its primary outcomes are electrophysiological ERP components (N170, P3a) rather than objective episodic-memory behavioral scores such as free/cued recall, recognition accuracy, or standard test word recall.""
+}"
+pmid:24062685,full_text,asi1-mini,2026-11-08T01:42:11,pmc,True,healthy,crossover,tDCS,d prime (d′),64,"The study includes healthy older adults and young controls, uses a randomized crossover design with anodal tDCS versus sham, and measures episodic memory using signal detection theory d-prime for word recognition.","{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""d prime (d′)"",
+""n"": 64,
+""reason"": ""The study includes healthy older adults and young controls, uses a randomized crossover design with anodal tDCS versus sham, and measures episodic memory using signal detection theory d-prime for word recognition.""
+}"
+pmid:19604352,full_text,asi1-mini,2026-11-08T01:42:31,pmc,True,healthy,crossover,tDCS,VLMT,20,The study involves healthy adults undergoing a randomized crossover tDCS trial with an objective episodic memory outcome (VLMT word recall).,"{
+""eligible"": true,
+""population"": ""healthy"",
+""design"": ""crossover"",
+""stim"": ""tDCS"",
+""outcome"": ""VLMT"",
+""n"": 20,
+""reason"": ""The study involves healthy adults undergoing a randomized crossover tDCS trial with an objective episodic memory outcome (VLMT word recall).""
+}"
