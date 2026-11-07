@@ -45,3 +45,8 @@ m043,F3,F4,,35,2,tDCS
 m044,F3,Fp2,,35,,tDCS
 m045,CP3,CP4,,35,,tDCS
 m046,P4,Fp1,,25,2,tDCS
+m047,P7,right shoulder,,35,2,tDCS
+m048,right shoulder,P7,,35,2,tDCS
+m049,F3,Fp2,,25,2,tDCS
+m050,,,anode over left ATL,,,tDCS
+m051,,,cathode over left ATL,,,tDCS

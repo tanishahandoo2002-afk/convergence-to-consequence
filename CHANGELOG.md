@@ -2,6 +2,28 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-08: RQ3 extraction of all 86 included studies, first pass (RQ3)
+
+**Now:** `rq3_stimulation/extraction_spec.yaml` covers all 86 included studies. 35 give 73 effects in `rq3_stimulation/draft/`: 67 copied from PMC table cells, 5 typed from free PDFs or text (each with its location), and 1 digitised from a figure. The other 51 are listed under `not_extracted`, each with its reason. The draft passes `checks/check_rq3_extraction.validate`. It has 11 clinical studies (13 AD and 6 MCI effects), so the clinical arm reaches the plan's minimum of 8.
+
+**Rules added for the cases the pilot did not meet (the assistant's, for review):**
+- When a table gives a test only by within-subject sub-condition (for example list type or valence), the means and SDs are averaged across the cells. This overstates the SD of the averaged score, so g is pulled towards zero.
+- SEs are converted to SDs with sqrt(n), using the whole sham group's n when that n is split between arms.
+- Each arm takes its stimulation type (tDCS or tACS) from its montage, so studies with both arms are coded per arm. Experiments in one paper may differ in timing.
+- In crossover studies, a sham shared by several active arms keeps its full n. The split rule is for parallel designs.
+
+**Why 51 are not extracted:**
+- 40 report results only in figures. Of the 10 figures checked so far, 8 cannot be digitised: box or raincloud plots, overlapping series, hidden error bars, sub-condition bar charts, or only a global score plotted. 2 are bar charts with SE bars that the new bar mode can read, and are pending. The other 30 have not been checked, because PMC served article pages without figure links for long stretches during this pass.
+- 4 PDFs have results only in figures, or only a difference score.
+- 3 report only change from baseline and 2 only medians. Using these needs a decision on change-score SMDs or median conversion.
+- 2 have tables that cannot give an SD: means without SDs, or spreads on a different scale from the means.
+
+**Limits:**
+- Many rows carry a check the assistant could not settle from the text, mainly group Ns not stated per arm, missing electrode positions or currents, AD severity, and possible shared samples. These need the full paper.
+- Montage fields are left blank where the paper does not give 10-10 positions, and SimNIBS needs them.
+- RoB 2 ratings come from methods excerpts. Most studies are "some concerns".
+- `digitise.py` gained a series-colour option and a bar mode (mean at the whisker midpoint), each with a test. Only the pilot figure has been digitised.
+
 ## 2026-11-08: RQ3 results read from figures when no table gives them (RQ3)
 
 **Was:** the pilot entry below left studies with results only in figures as not extracted.

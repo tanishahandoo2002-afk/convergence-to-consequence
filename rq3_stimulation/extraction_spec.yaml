@@ -461,9 +461,9 @@ studies:
     check: "Theta HD-tACS (19), anodal HD-tDCS (21) or sham (19) over the right fusiform cortex; 'Stimulation' column. Spread taken as SEM (the header is cut off), converted to SD; check. The sham n is split between the two arms. One sham participant received tDCS in error."
     effects:
       - {montage: tacs, test_name: "correct associative memory", test_type: recognition, followup_days: 0, sessions: 1,
-         n_active: 19, n_sham: 9, higher_is_better: 1, table: "Table 3", active: [0, 3], sham: [2, 2], spread: se}
+         n_active: 19, n_sham: 9, n_sham_group: 19, higher_is_better: 1, table: "Table 3", active: [0, 3], sham: [2, 2], spread: se}
       - {montage: tdcs, test_name: "correct associative memory", test_type: recognition, followup_days: 0, sessions: 1,
-         n_active: 21, n_sham: 9, higher_is_better: 1, table: "Table 3", active: [1, 2], sham: [2, 2], spread: se}
+         n_active: 21, n_sham: 9, n_sham_group: 19, higher_is_better: 1, table: "Table 3", active: [1, 2], sham: [2, 2], spread: se}
   - record_id: "pmid:30326206"
     population: healthy
     diagnostic_criteria: ""
@@ -519,13 +519,13 @@ studies:
     check: "Sham, parietal and prefrontal groups of 18. 'All' column used; values are SEMs, converted to SDs with sqrt(18). The sham n is split between the two arms. Same lab as pmid:27845032 and pmid:27417530; check that the samples are separate. Item hits are used for item memory because false alarms are reported separately."
     effects:
       - {montage: ppc, test_name: "item hits (all)", test_type: recognition, followup_days: 0, sessions: 1,
-         n_active: 18, n_sham: 9, higher_is_better: 1, table: "Table 1", active: [5, 4], sham: [1, 4], spread: se}
+         n_active: 18, n_sham: 9, n_sham_group: 18, higher_is_better: 1, table: "Table 1", active: [5, 4], sham: [1, 4], spread: se}
       - {montage: ppc, test_name: "source correct (all)", test_type: source, followup_days: 0, sessions: 1,
-         n_active: 18, n_sham: 9, higher_is_better: 1, table: "Table 1", active: [7, 4], sham: [3, 4], spread: se}
+         n_active: 18, n_sham: 9, n_sham_group: 18, higher_is_better: 1, table: "Table 1", active: [7, 4], sham: [3, 4], spread: se}
       - {montage: pfc, test_name: "item hits (all)", test_type: recognition, followup_days: 0, sessions: 1,
-         n_active: 18, n_sham: 9, higher_is_better: 1, table: "Table 1", active: [9, 4], sham: [1, 4], spread: se}
+         n_active: 18, n_sham: 9, n_sham_group: 18, higher_is_better: 1, table: "Table 1", active: [9, 4], sham: [1, 4], spread: se}
       - {montage: pfc, test_name: "source correct (all)", test_type: source, followup_days: 0, sessions: 1,
-         n_active: 18, n_sham: 9, higher_is_better: 1, table: "Table 1", active: [11, 4], sham: [3, 4], spread: se}
+         n_active: 18, n_sham: 9, n_sham_group: 18, higher_is_better: 1, table: "Table 1", active: [11, 4], sham: [3, 4], spread: se}
   - record_id: "pmid:27417530"
     population: healthy
     diagnostic_criteria: ""
@@ -557,7 +557,113 @@ studies:
     effects:
       - {montage: p4, test_name: "melody recognition d' (experiment 1)", test_type: recognition, followup_days: 0, sessions: 1,
          n_active: 13, n_sham: 13, higher_is_better: 1, table: "Table 2", active: [1, 1], sham: [1, 2]}
+  - record_id: "pmid:38219414"
+    study_id: "Alonso M, 2024"
+    population: healthy
+    diagnostic_criteria: ""
+    design: parallel
+    stim: tDCS
+    timing: encoding
+    montages:
+      anodal: {anode: P7, cathode: right shoulder, other_electrodes: "", size_cm2: 35, current_mA: 2, type: tDCS}
+      cathodal: {anode: right shoulder, cathode: P7, other_electrodes: "", size_cm2: 35, current_mA: 2, type: tDCS}
+    rob2: {d1_randomisation: some, d1b_carryover: "", d2_deviations: low, d3_missing: low, d4_measurement: low,
+           d5_selection: some, overall: some}
+    check: "PDF only (gredos.usal.es). Anodal (22), cathodal (23) or sham (23) over T5 (P7 in 10-10 names) with the return on the right shoulder; electrode size taken as 35 cm2 from the lab's other studies, so check. The sham n is split between the two arms."
+    effects:
+      - {montage: anodal, test_name: "DRM correct recognition (mean of 2 list types)", test_type: recognition, followup_days: 0, sessions: 1,
+         n_active: 22, n_sham: 11, n_sham_group: 23, higher_is_better: 1, spread: se,
+         typed: {m_active: 0.715, sd_active: 0.03, m_sham: 0.69, sd_sham: 0.035},
+         where: "Table 2, 'Correct Recognition' row: associative and categorical columns averaged by hand (anodal .64/.79, SE .04/.02; sham .65/.73, SE .03/.04); SEs converted to SDs"}
+      - {montage: cathodal, test_name: "DRM correct recognition (mean of 2 list types)", test_type: recognition, followup_days: 0, sessions: 1,
+         n_active: 23, n_sham: 11, n_sham_group: 23, higher_is_better: 1, spread: se,
+         typed: {m_active: 0.69, sd_active: 0.04, m_sham: 0.69, sd_sham: 0.035},
+         where: "Table 2, 'Correct Recognition' row: associative and categorical columns averaged by hand (cathodal .65/.73, SE .04/.04; sham .65/.73, SE .03/.04); SEs converted to SDs"}
+  - record_id: "pmid:38007663"
+    study_id: "Meléndez J, 2023"
+    population: AD
+    diagnostic_criteria: "probable AD (NIA-AA), MMSE 16-22, GDS 4"
+    design: parallel
+    stim: tDCS
+    timing: offline
+    montages:
+      f3: {anode: F3, cathode: Fp2, other_electrodes: "", size_cm2: 25, current_mA: 2, type: tDCS}
+    rob2: {d1_randomisation: some, d1b_carryover: "", d2_deviations: some, d3_missing: low, d4_measurement: some,
+           d5_selection: some, overall: some}
+    check: "PDF only (gredos.usal.es). Five sessions of anodal tDCS vs sham (9 each); post-intervention is the first test after the protocol. MMSE 16-22 reaches moderate AD. Same team as pmid:36660288, so check for shared patients. RoB 2: single blind."
+    effects:
+      - {montage: f3, test_name: "TAVEC delayed recall", test_type: recall, followup_days: 0, sessions: 5,
+         n_active: 9, n_sham: 9, higher_is_better: 1, typed: {m_active: 1.56, sd_active: 1.9, m_sham: 0.33, sd_sham: 0.7},
+         where: "Table 3, 'TAVEC delayed' row, post-intervention columns (3rd active, 4th sham; columns read as pre, post and follow-up for active then sham)"}
+  - record_id: "pmid:28647325"
+    study_id: "Díez E, 2017"
+    population: healthy
+    diagnostic_criteria: ""
+    design: parallel
+    stim: tDCS
+    timing: encoding
+    montages:
+      anodal: {anode: "", cathode: "", other_electrodes: "anode over left ATL", size_cm2: "", current_mA: "", type: tDCS}
+      cathodal: {anode: "", cathode: "", other_electrodes: "cathode over left ATL", size_cm2: "", current_mA: "", type: tDCS}
+    rob2: {d1_randomisation: some, d1b_carryover: "", d2_deviations: low, d3_missing: low, d4_measurement: low,
+           d5_selection: some, overall: some}
+    check: "PDF only (gredos.usal.es). Anodal, cathodal or sham tDCS over the left ATL during study; 65 analysed, with group Ns taken as 22, 21 and 22, so check. Montage details not found in the PDF text. The sham n is split between the two arms."
+    effects:
+      - {montage: anodal, test_name: "DRM correct recognition (mean of 2 list types)", test_type: recognition, followup_days: 0, sessions: 1,
+         n_active: 22, n_sham: 11, higher_is_better: 1, typed: {m_active: 0.745, sd_active: 0.155, m_sham: 0.715, sd_sham: 0.16},
+         where: "Table 3, 'Correct recognition' row: associative and categorical columns averaged by hand (anodal .70/.79, SD .13/.18; sham .66/.77, SD .16/.16)"}
+      - {montage: cathodal, test_name: "DRM correct recognition (mean of 2 list types)", test_type: recognition, followup_days: 0, sessions: 1,
+         n_active: 21, n_sham: 11, higher_is_better: 1, typed: {m_active: 0.725, sd_active: 0.175, m_sham: 0.715, sd_sham: 0.16},
+         where: "Table 3, 'Correct recognition' row: associative and categorical columns averaged by hand (cathodal .67/.78, SD .20/.15; sham .66/.77, SD .16/.16)"}
 not_extracted:
   - {record_id: "pmid:41668515", reason: "No table of results. Figure 2 shows individual d' values and densities per category and memorability, with no plotted means or error bars, so it cannot be digitised."}
   - {record_id: "pmid:41359335", reason: "Only change from baseline is tabled, as marginal means with SE, and the RAVLT is not in that table. Post-test means and SDs are not reported."}
   - {record_id: "pmid:33029128", reason: "The only table is demographics. Figure 2 plots the means, but the error bars are hidden under the markers and overlapping data points, so they cannot be digitised reliably."}
+  - {record_id: "pmid:42131138", reason: "Results only in Figure 3, a raincloud plot with box plots and a mean marker but no error bars, so it cannot be digitised."}
+  - {record_id: "pmid:41461804", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:41414714", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:40800320", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:40283048", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:39644890", reason: "Table 1 gives means without SDs; Figure 1 is a bar chart with SE bars by age and time of day. Digitisable with the bar mode; pending."}
+  - {record_id: "pmid:38804028", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:38365886", reason: "Results only in Figure 1, a line plot whose grey error bars overlap across the four groups at the first post-test, so sham cannot be separated."}
+  - {record_id: "pmid:38212815", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:40242204", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:38155843", reason: "Figure 2 plots only the ADAS-Cog total and MMSE, not word recall, so no eligible outcome can be taken."}
+  - {record_id: "pmid:36639676", reason: "Results only in Figure 3, a box plot of medians and quartiles, not means and SDs."}
+  - {record_id: "pmid:35388106", reason: "Results only in Figure 2, bar charts of error rates split by intrusion and omission and by recall phase; not digitised."}
+  - {record_id: "pmid:34381353", reason: "Figure 2 shows overlapping learning curves and box plots for recognition, with no means and SDs at the first post-test."}
+  - {record_id: "pmid:34135392", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:33542344", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:33452288", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:33354206", reason: "Results only in Figure 2, bar charts with SE bars for item and source memory. Digitisable with the bar mode; pending."}
+  - {record_id: "pmid:32280093", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:32256337", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:31790015", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:31031581", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:30109059", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:29375290", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:29259554", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:29163115", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:28848378", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:27845032", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:27433807", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:26923418", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:26679936", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:26441544", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:25816233", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:25697588", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:25368577", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:24324721", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:24062685", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:19604352", reason: "Results only in figures (no table of means and SDs). Figure digitising pending: PMC served pages without figure links during this pass."}
+  - {record_id: "pmid:39863318", reason: "Table 2 gives T-score means without SDs (with adjusted differences and effect sizes); no SDs, figures show none.."}
+  - {record_id: "pmid:39267112", reason: "Only change from baseline is reported: change from baseline with 95% CI per group only."}
+  - {record_id: "pmid:37608981", reason: "Only medians are reported: outcomes at 12 weeks are medians [IQR]."}
+  - {record_id: "pmid:33033765", reason: "Only change from baseline is reported: tables give change scores only."}
+  - {record_id: "pmid:29593522", reason: "LTM accuracy is tabled as % with spreads on a proportion scale (e.g. 80.4 (0.02)), so SDs cannot be taken."}
+  - {record_id: "pmid:27005937", reason: "Only medians are reported: Table 2 gives medians with ranges of change."}
+  - {record_id: "pmid:36669696", reason: "bioRxiv PDF with results only in figures; figure digitising covers PMC figures only."}
+  - {record_id: "pmid:32199339", reason: "PDF (kar.kent.ac.uk) with the learning outcomes only in figures; tables hold baseline and transfer tests."}
+  - {record_id: "pmid:30272127", reason: "bioRxiv PDF tables give only the self-reference effect (self minus other), not memory accuracy per condition."}
+  - {record_id: "pmid:28528736", reason: "bioRxiv PDF with results only in figures; trial-level tACS design."}

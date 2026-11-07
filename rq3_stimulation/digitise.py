@@ -18,6 +18,7 @@ from tools.screen import EUTILS_TOOL
 DARK = 100        # luminance below this is ink; light grey individual-data dots stay out
 SEARCH = 4        # pixels either side of a given position to look for ink
 MARKER_WIDTH = 5  # a row this wide in ink belongs to the marker, not the thin error bar
+COLOR_TOLERANCE = 90  # summed RGB distance; JPEG edges blur a series colour by roughly this much
 
 
 def fetch_figure(pmc, href):
@@ -35,11 +36,14 @@ def fetch_figure(pmc, href):
         raise ValueError(f"no CDN link for {href} on PMC{pmc}")
     r = requests.get(m.group(0), timeout=60, headers={"User-Agent": EUTILS_TOOL})
     r.raise_for_status()
-    return ink(Image.open(io.BytesIO(r.content)))
+    return Image.open(io.BytesIO(r.content)).convert("RGB")
 
 
-def ink(image):
-    return np.asarray(image.convert("L")) < DARK
+def ink(image, color=None):
+    """Dark pixels, or with a colour the pixels close to it, for plots whose series differ only by colour."""
+    if color is None:
+        return np.asarray(image.convert("L")) < DARK
+    return np.abs(np.asarray(image, dtype=int) - np.array(color)).sum(axis=2) < COLOR_TOLERANCE
 
 
 def _near(mask, x, y):
@@ -106,9 +110,14 @@ def sd_from_bar(half_width, kind, n):
     raise ValueError(f"unknown error bar: {kind}")
 
 
-def read_point(mask, ticks, point, kind, n):
-    """(mean, sd) of one plotted point. ticks: [[x, y, value], [x, y, value]]; point: [x, y] near the marker."""
-    to_value = axis([(tick_row(mask, x, y), v) for x, y, v in ticks])
+def read_point(image, ticks, point, kind, n, color=None, centre="marker"):
+    """(mean, sd) of one plotted point. ticks: [[x, y, value], [x, y, value]]; point: [x, y] on the error bar;
+    color: the colour of the marker and bar when they are not dark (or of a black whisker on a dark bar fill).
+    centre "marker" takes the mean from the marker; "bar" takes it as the midpoint of a symmetric whisker, for
+    bar charts, where the bar top has no marker."""
+    to_value = axis([(tick_row(ink(image), x, y), v) for x, y, v in ticks])
+    mask = ink(image, color)
     top, bottom = bar_ends(mask, *point)
     half = abs(to_value(top) - to_value(bottom)) / 2
-    return to_value(marker_row(mask, *point)), sd_from_bar(half, kind, n)
+    mean = to_value((top + bottom) / 2) if centre == "bar" else to_value(marker_row(mask, *point))
+    return mean, sd_from_bar(half, kind, n)

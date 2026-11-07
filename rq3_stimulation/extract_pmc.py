@@ -77,20 +77,25 @@ def arm_values(article, pmc, e):
     """Means and SDs (or a t value) from a table cell, a plotted point, or values typed from the text or a PDF
     where neither exists; the review sheet names where each typed value is. Returns (stats, source, extracted_by)."""
     if "typed" in e:
-        return {k: float(v) for k, v in e["typed"].items()}, f"typed: {e['where']}", TYPED_BY
+        stats = {k: float(v) for k, v in e["typed"].items()}
+        if e.get("spread") == "se":
+            stats["sd_active"] = round(stats["sd_active"] * e["n_active"] ** 0.5, 4)
+            stats["sd_sham"] = round(stats["sd_sham"] * e.get("n_sham_group", e["n_sham"]) ** 0.5, 4)
+        return stats, f"typed: {e['where']}", TYPED_BY
     if "table" in e:
         table = find_table(article, e["table"])
         # some papers give each arm its own table (e.g. paired pre/post statistics per group)
         sham_table = find_table(article, e["sham_table"]) if "sham_table" in e else table
         (m_a, s_a), (m_s, s_s) = arm_mean_sd(table, e["active"]), arm_mean_sd(sham_table, e["sham"])
         if e.get("spread") == "se":  # the table gives SEs: SD = SE * sqrt(n)
-            s_a, s_s = round(s_a * e["n_active"] ** 0.5, 4), round(s_s * e["n_sham"] ** 0.5, 4)
+            # a split sham n is for weighting; the SE was computed on the whole sham group
+            s_a, s_s = round(s_a * e["n_active"] ** 0.5, 4), round(s_s * e.get("n_sham_group", e["n_sham"]) ** 0.5, 4)
         source = e["table"] + (" (SE converted to SD)" if e.get("spread") == "se" else "")
         return dict(zip(STATS, (m_a, s_a, m_s, s_s))), source, EXTRACTED_BY
-    mask = fetch_figure(pmc, figure_href(article, e["figure"]))
-    # ponytail: SE/CI bars convert with the n given for the arm; a split sham n would need the plotted n instead
-    active = read_point(mask, e["ticks"], e["active"], e["bar"], e["n_active"])
-    sham = read_point(mask, e["ticks"], e["sham"], e["bar"], e["n_sham"])
+    image = fetch_figure(pmc, figure_href(article, e["figure"]))
+    centre = e.get("centre", "marker")
+    active = read_point(image, e["ticks"], e["active"], e["bar"], e["n_active"], e.get("active_color"), centre)
+    sham = read_point(image, e["ticks"], e["sham"], e["bar"], e.get("n_sham_group", e["n_sham"]), e.get("sham_color"), centre)
     values = (round(float(v), 3) for v in (*active, *sham))
     return dict(zip(STATS, values)), f"{e['figure']} (digitised, {e['bar']} bars)", DIGITISED_BY
 
