@@ -1,0 +1,1397 @@
+record_id,rater,model,prompt_sha256,timestamp,decision,reason,raw
+pmid:42939682,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:19,exclude,"The study involves an animal model (rats) rather than human adults, and the clinical group is traumatic brain injury rather than MCI or mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves an animal model (rats) rather than human adults, and the clinical group is traumatic brain injury rather than MCI or mild AD.""
+}"
+pmid:42924553,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:19,exclude,"The study focuses on perceptual objectification and recognition of sexualized targets rather than objective episodic memory outcomes in healthy adults or those with MCI/AD, and involves a non-eligible clinical context (objectification perception).","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on perceptual objectification and recognition of sexualized targets rather than objective episodic memory outcomes in healthy adults or those with MCI/AD, and involves a non-eligible clinical context (objectification perception).""
+}"
+pmid:42885687,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:20,include,"The study involves adults with mild AD receiving active tDCS versus sham in a randomized design and reports objective episodic memory outcomes (verbal recall, delayed recall) sufficient for effect size calculation.","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with mild AD receiving active tDCS versus sham in a randomized design and reports objective episodic memory outcomes (verbal recall, delayed recall) sufficient for effect size calculation.""
+}"
+pmid:42855128,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:22,exclude,"The study involves patients with major depressive disorder, which is an excluded clinical group according to the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves patients with major depressive disorder, which is an excluded clinical group according to the eligibility criteria.""
+}"
+pmid:42809063,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:23,exclude,"The record is a systematic review and meta-analysis, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The record is a systematic review and meta-analysis, which is an exclusion criterion.""
+}"
+pmid:42801558,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:23,include,"The study is a randomized controlled trial of active versus sham tACS in patients with Alzheimer's disease, reporting specific memory outcomes from the ADAS-Cog scale.","{
+""decision"": ""include"",
+""reason"": ""The study is a randomized controlled trial of active versus sham tACS in patients with Alzheimer's disease, reporting specific memory outcomes from the ADAS-Cog scale.""
+}"
+pmid:42798437,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:24,exclude,"The record is a systematic review and network meta-analysis, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The record is a systematic review and network meta-analysis, which is an exclusion criterion.""
+}"
+pmid:42793424,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:25,exclude,"The study uses a face recognition paradigm which assesses perceptual expertise and general recognition rather than episodic memory outcomes such as free recall, cued recall, or source memory.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses a face recognition paradigm which assesses perceptual expertise and general recognition rather than episodic memory outcomes such as free recall, cued recall, or source memory.""
+}"
+pmid:42790338,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:26,include,The study involves healthy adults receiving active tACS versus sham in a randomised crossover design and reports objective episodic memory outcomes (free recall).,"{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving active tACS versus sham in a randomised crossover design and reports objective episodic memory outcomes (free recall).""
+}"
+pmid:42689235,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:27,exclude,"The study focuses on face recognition skills in healthy participants, which is a working/perceptual memory outcome rather than the required objective episodic-memory outcome (e.g., free recall, recognition of word lists).","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on face recognition skills in healthy participants, which is a working/perceptual memory outcome rather than the required objective episodic-memory outcome (e.g., free recall, recognition of word lists).""
+}"
+pmid:42651168,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:29,exclude,"The study focuses on facial emotion processing and motor/perceptual circuits rather than episodic memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on facial emotion processing and motor/perceptual circuits rather than episodic memory outcomes, which is an exclusion criterion.""
+}"
+pmid:42640828,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:34,exclude,"The study involves healthy participants but uses tDCS to investigate social episodic memory and metacognition rather than targeting clinical groups with MCI or mild AD, and the outcomes focus on self-reference effects in item/source memory sensitivity rather than standard objective episodic-memory outcomes like free/cued recall or recognition scores from specified neuropsychological tests.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves healthy participants but uses tDCS to investigate social episodic memory and metacognition rather than targeting clinical groups with MCI or mild AD, and the outcomes focus on self-reference effects in item/source memory sensitivity rather than standard objective episodic-memory outcomes like free/cued recall or recognition scores from specified neuropsychological tests.""
+}"
+pmid:42595848,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:35,exclude,"The study focuses on global cognition and verbal memory as secondary outcomes rather than providing specific objective episodic-memory outcome data (such as free/cued recall or recognition scores) required for the primary analysis, and it involves a subgroup with remitted major depressive disorder.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on global cognition and verbal memory as secondary outcomes rather than providing specific objective episodic-memory outcome data (such as free/cued recall or recognition scores) required for the primary analysis, and it involves a subgroup with remitted major depressive disorder.""
+}"
+pmid:42594698,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:36,exclude,"The study population consists of patients with post-stroke cognitive impairment, which is a clinical group other than healthy adults, MCI, or mild AD, thus meeting the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with post-stroke cognitive impairment, which is a clinical group other than healthy adults, MCI, or mild AD, thus meeting the exclusion criteria.""
+}"
+pmid:42482244,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:37,exclude,"The study involves combined repetitive transcranial magnetic stimulation (rTMS), which is explicitly excluded by the criteria that only allow tDCS or tACS.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves combined repetitive transcranial magnetic stimulation (rTMS), which is explicitly excluded by the criteria that only allow tDCS or tACS.""
+}"
+pmid:42362528,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:38,exclude,"The study focuses on fear extinction and anxiety-related outcomes rather than objective episodic memory, which is a required inclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on fear extinction and anxiety-related outcomes rather than objective episodic memory, which is a required inclusion criterion.""
+}"
+pmid:42288896,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:39,exclude,"The study focuses on patients with poststroke cognitive impairment (PSCI), which is a non-eligible clinical group, and the primary outcomes are executive function measures rather than objective episodic memory.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on patients with poststroke cognitive impairment (PSCI), which is a non-eligible clinical group, and the primary outcomes are executive function measures rather than objective episodic memory.""
+}"
+pmid:42233442,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:40,exclude,"The study focuses on fear extinction and emotional memory rather than episodic memory outcomes, and it involves a clinical paradigm (fear conditioning) rather than the specified healthy/MCI/AD populations with standard episodic memory measures.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on fear extinction and emotional memory rather than episodic memory outcomes, and it involves a clinical paradigm (fear conditioning) rather than the specified healthy/MCI/AD populations with standard episodic memory measures.""
+}"
+pmid:42203570,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:41,exclude,"The study includes participants with remitted major depressive disorder (rMDD), which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study includes participants with remitted major depressive disorder (rMDD), which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:42131138,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:42,include,"The study involves healthy older adults, uses tACS versus sham in a randomised crossover design, and reports an objective episodic memory outcome (temporal order/sequence memory).","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy older adults, uses tACS versus sham in a randomised crossover design, and reports an objective episodic memory outcome (temporal order/sequence memory).""
+}"
+pmid:42021325,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:43,unsure,"The study involves eligible participants (MCI) and intervention (tDCS vs sham), but the primary outcome measures listed are working memory, executive function, and global cognition, while episodic memory is only mentioned as part of a secondary computer task without specific standardized test names required for inclusion.","{
+""decision"": ""unsure"",
+""reason"": ""The study involves eligible participants (MCI) and intervention (tDCS vs sham), but the primary outcome measures listed are working memory, executive function, and global cognition, while episodic memory is only mentioned as part of a secondary computer task without specific standardized test names required for inclusion.""
+}"
+pmid:41996008,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:44,exclude,"The study reports only global cognitive scores (MMSE and ADAS-Cog total) and does not provide data for specific objective episodic-memory outcomes such as free/cued recall, recognition, or the word recall subscore of ADAS-Cog.","{
+""decision"": ""exclude"",
+""reason"": ""The study reports only global cognitive scores (MMSE and ADAS-Cog total) and does not provide data for specific objective episodic-memory outcomes such as free/cued recall, recognition, or the word recall subscore of ADAS-Cog.""
+}"
+pmid:41950548,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:45,exclude,"The study focuses on neural face recognition (a perceptual/visual processing task) rather than episodic memory outcomes, and the primary outcome is an EEG marker rather than a standardised mean difference for free/cued recall, recognition, or other specified memory scores.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on neural face recognition (a perceptual/visual processing task) rather than episodic memory outcomes, and the primary outcome is an EEG marker rather than a standardised mean difference for free/cued recall, recognition, or other specified memory scores.""
+}"
+pmid:41927837,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:45,exclude,"The study exclusively reports working memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study exclusively reports working memory outcomes, which is an exclusion criterion.""
+}"
+pmid:41918762,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:46,exclude,"The study excludes eligible participants by recruiting only dysphoric individuals with depression characteristics, which falls under the exclusion criterion for other clinical groups.","{
+""decision"": ""exclude"",
+""reason"": ""The study excludes eligible participants by recruiting only dysphoric individuals with depression characteristics, which falls under the exclusion criterion for other clinical groups.""
+}"
+pmid:41892668,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:47,exclude,"The record is a systematic review, which is an exclusion criterion, and it primarily focuses on Parkinson's disease patients, who are not eligible clinical groups.","{
+""decision"": ""exclude"",
+""reason"": ""The record is a systematic review, which is an exclusion criterion, and it primarily focuses on Parkinson's disease patients, who are not eligible clinical groups.""
+}"
+pmid:41847588,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:48,include,"The study involves healthy adults, uses active tACS versus sham in a randomized design, and reports an objective episodic memory outcome (recognition discrimination index).","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses active tACS versus sham in a randomized design, and reports an objective episodic memory outcome (recognition discrimination index).""
+}"
+pmid:41801428,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:49,include,"The study involves healthy adults, uses randomised tACS versus sham design, and reports objective episodic memory outcomes (recognition performance metrics) which are eligible.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses randomised tACS versus sham design, and reports objective episodic memory outcomes (recognition performance metrics) which are eligible.""
+}"
+pmid:41759354,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:50,exclude,"The study population consists of individuals with PTSD, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of individuals with PTSD, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:41750187,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:51,exclude,"The study population consists of patients with schizophrenia, which is an excluded clinical group according to the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with schizophrenia, which is an excluded clinical group according to the eligibility criteria.""
+}"
+pmid:41699869,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:53,include,"The study involves healthy adults, uses randomized tACS versus sham, and assesses associative memory (recognition), which meets all inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses randomized tACS versus sham, and assesses associative memory (recognition), which meets all inclusion criteria.""
+}"
+pmid:41668515,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:54,include,"The study involves healthy adults, uses tACS versus sham in a randomised design, and reports an objective episodic-memory outcome (recognition accuracy).","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses tACS versus sham in a randomised design, and reports an objective episodic-memory outcome (recognition accuracy).""
+}"
+pmid:41620439,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:56,include,"The study involves adults with mild AD, uses active tACS versus sham in a randomized design, and reports episodic memory outcomes (MMSE-recall) which is an objective measure of recall.","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with mild AD, uses active tACS versus sham in a randomized design, and reports episodic memory outcomes (MMSE-recall) which is an objective measure of recall.""
+}"
+pmid:41531787,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:57,include,"The study involves healthy or MCI adults receiving active tDCS versus sham, and reports improvements in episodic memory, which is an eligible objective outcome.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy or MCI adults receiving active tDCS versus sham, and reports improvements in episodic memory, which is an eligible objective outcome.""
+}"
+pmid:41514175,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:29:59,exclude,"The study focuses on face recognition and the face inversion effect, which does not constitute an objective episodic-memory outcome such as free recall, cued recall, or standard word-list memory scores required by the criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on face recognition and the face inversion effect, which does not constitute an objective episodic-memory outcome such as free recall, cued recall, or standard word-list memory scores required by the criteria.""
+}"
+pmid:41461804,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:01,include,"The study is an RCT comparing active tACS to sham in healthy adults and reports episodic memory accuracy as an objective outcome, meeting all inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study is an RCT comparing active tACS to sham in healthy adults and reports episodic memory accuracy as an objective outcome, meeting all inclusion criteria.""
+}"
+pmid:41440123,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:02,exclude,"The study focuses on emotional prosody recognition rather than episodic memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on emotional prosody recognition rather than episodic memory outcomes, which is an exclusion criterion.""
+}"
+pmid:41435891,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:03,exclude,"The study focuses on tactile texture memory rather than episodic memory, and the outcome is recognition accuracy which does not align with the specified objective episodic-memory outcomes such as free/cued recall or standardised word recall scores.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on tactile texture memory rather than episodic memory, and the outcome is recognition accuracy which does not align with the specified objective episodic-memory outcomes such as free/cued recall or standardised word recall scores.""
+}"
+pmid:41414714,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:04,include,"The study involves healthy adults or those with MCI, uses active tACS versus sham in a randomised design, and reports an objective episodic-memory outcome (recognition memory).","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults or those with MCI, uses active tACS versus sham in a randomised design, and reports an objective episodic-memory outcome (recognition memory).""
+}"
+pmid:41387765,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:05,exclude,"The study's primary outcome is face identification (visuospatial processing), which does not meet the inclusion criterion for an objective episodic-memory outcome.","{
+""decision"": ""exclude"",
+""reason"": ""The study's primary outcome is face identification (visuospatial processing), which does not meet the inclusion criterion for an objective episodic-memory outcome.""
+}"
+pmid:41359335,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:06,include,"The study involves patients with mild AD receiving tACS versus sham in a randomized design and reports associative memory outcomes (Face-Name Association Test), which meets the inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study involves patients with mild AD receiving tACS versus sham in a randomized design and reports associative memory outcomes (Face-Name Association Test), which meets the inclusion criteria.""
+}"
+pmid:41283910,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:08,exclude,"The study uses an animal model (rats) and focuses on Parkinson's disease, which violates the inclusion criteria for healthy adults or those with MCI/mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses an animal model (rats) and focuses on Parkinson's disease, which violates the inclusion criteria for healthy adults or those with MCI/mild AD.""
+}"
+pmid:41205713,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:11,exclude,The study focuses exclusively on working memory outcomes and involves a clinical group (post-stroke patients) that is not eligible under the criteria.,"{
+""decision"": ""exclude"",
+""reason"": ""The study focuses exclusively on working memory outcomes and involves a clinical group (post-stroke patients) that is not eligible under the criteria.""
+}"
+pmid:41192010,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:12,exclude,"The record is excluded because it is a meta-analysis (a review) and its primary intervention focus is repetitive transcranial magnetic stimulation (rTMS), which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The record is excluded because it is a meta-analysis (a review) and its primary intervention focus is repetitive transcranial magnetic stimulation (rTMS), which is an exclusion criterion.""
+}"
+pmid:41173192,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:13,exclude,"The study reports working memory outcomes only, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study reports working memory outcomes only, which is an exclusion criterion.""
+}"
+pmid:41046646,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:14,exclude,"The record is a systematic review and meta-analysis, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The record is a systematic review and meta-analysis, which is an exclusion criterion.""
+}"
+pmid:41041883,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:14,exclude,"The study uses repetitive transcranial magnetic stimulation (rTMS/iTBS) as part of the intervention, which is explicitly excluded by the criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses repetitive transcranial magnetic stimulation (rTMS/iTBS) as part of the intervention, which is explicitly excluded by the criteria.""
+}"
+pmid:40992620,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:15,exclude,"The record is a systematic review and meta-analysis, which is an exclusion criterion, and it primarily focuses on theory of mind and emotion processing rather than episodic memory.","{
+""decision"": ""exclude"",
+""reason"": ""The record is a systematic review and meta-analysis, which is an exclusion criterion, and it primarily focuses on theory of mind and emotion processing rather than episodic memory.""
+}"
+pmid:40865406,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:16,exclude,"The study excludes eligible participants by including those with cognitive impairment (CI) who are not specified as having MCI or mild AD, and it reports global cognition scores (MoCA) rather than specific objective episodic-memory outcomes.","{
+""decision"": ""exclude"",
+""reason"": ""The study excludes eligible participants by including those with cognitive impairment (CI) who are not specified as having MCI or mild AD, and it reports global cognition scores (MoCA) rather than specific objective episodic-memory outcomes.""
+}"
+pmid:40848897,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:17,exclude,"The study population consists of patients with post-acute sequelae of SARS-CoV-2 infection, which is a clinical group other than healthy adults, MCI, or mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with post-acute sequelae of SARS-CoV-2 infection, which is a clinical group other than healthy adults, MCI, or mild AD.""
+}"
+pmid:40839521,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:19,exclude,"The study focuses on perceptual learning and face recognition in healthy participants, which does not meet the inclusion criterion for episodic memory outcomes in adults with MCI or mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on perceptual learning and face recognition in healthy participants, which does not meet the inclusion criterion for episodic memory outcomes in adults with MCI or mild AD.""
+}"
+pmid:40800986,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:20,unsure,"The study uses tACS and a source memory paradigm, but the abstract does not specify the clinical status of participants (e.g., healthy, MCI, or AD) nor confirm if it is a randomized controlled trial with an eligible objective episodic-memory outcome.","{
+""decision"": ""unsure"",
+""reason"": ""The study uses tACS and a source memory paradigm, but the abstract does not specify the clinical status of participants (e.g., healthy, MCI, or AD) nor confirm if it is a randomized controlled trial with an eligible objective episodic-memory outcome.""
+}"
+pmid:40800320,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:22,include,"The study uses tACS versus sham in a randomised design and assesses temporal memory, which is a form of episodic/associative memory.","{
+""decision"": ""include"",
+""reason"": ""The study uses tACS versus sham in a randomised design and assesses temporal memory, which is a form of episodic/associative memory.""
+}"
+pmid:40653428,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:23,include,"The study involves non-demented older adults (healthy or MCI), uses active vs. sham tACS in a randomised design, and reports episodic memory outcomes.","{
+""decision"": ""include"",
+""reason"": ""The study involves non-demented older adults (healthy or MCI), uses active vs. sham tACS in a randomised design, and reports episodic memory outcomes.""
+}"
+pmid:40470166,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:24,exclude,"The study population consists of individuals with substance use disorder, which is an excluded clinical group according to the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of individuals with substance use disorder, which is an excluded clinical group according to the eligibility criteria.""
+}"
+pmid:40446948,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:25,exclude,"The record is a systematic review and meta-analysis, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The record is a systematic review and meta-analysis, which is an exclusion criterion.""
+}"
+pmid:40285586,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:25,exclude,"The study population consists of patients with multiple sclerosis, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with multiple sclerosis, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:40283048,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:26,exclude,"The study population consists of individuals with dementia, which is a clinical group other than healthy adults, MCI, or mild AD as specified by the inclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of individuals with dementia, which is a clinical group other than healthy adults, MCI, or mild AD as specified by the inclusion criteria.""
+}"
+pmid:40228358,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:27,exclude,"The study excludes participants because it involves individuals with subthreshold depression, which is a non-eligible clinical group according to the criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study excludes participants because it involves individuals with subthreshold depression, which is a non-eligible clinical group according to the criteria.""
+}"
+pmid:40227131,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:28,exclude,"The study focuses on primary progressive aphasia, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on primary progressive aphasia, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:40095228,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:29,exclude,"The study involves participants with bipolar depression, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves participants with bipolar depression, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:40090877,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:30,exclude,"The study focuses on prospective memory and working memory outcomes, which are excluded as they do not meet the requirement for an objective episodic-memory outcome (e.g., free/cued recall, recognition).","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on prospective memory and working memory outcomes, which are excluded as they do not meet the requirement for an objective episodic-memory outcome (e.g., free/cued recall, recognition).""
+}"
+pmid:40080831,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:31,exclude,"The study focuses exclusively on semantic memory, whereas the eligibility criteria require an objective episodic-memory outcome.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses exclusively on semantic memory, whereas the eligibility criteria require an objective episodic-memory outcome.""
+}"
+pmid:40055696,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:31,exclude,"The study involves patients with schizophrenia, which is an excluded clinical group according to the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves patients with schizophrenia, which is an excluded clinical group according to the eligibility criteria.""
+}"
+pmid:40036945,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:32,exclude,"The study involves patients with schizophrenia, which is an excluded clinical group according to the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves patients with schizophrenia, which is an excluded clinical group according to the eligibility criteria.""
+}"
+pmid:39918556,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:33,include,"The study involves healthy adults receiving gamma-frequency tACS versus sham in a randomised design and reports an objective episodic memory outcome (cued recall of word pairs), meeting all inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving gamma-frequency tACS versus sham in a randomised design and reports an objective episodic memory outcome (cued recall of word pairs), meeting all inclusion criteria.""
+}"
+pmid:39883628,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:34,include,"The study involves healthy adults, uses active tDCS versus sham in a randomized design, and assesses associative memory, which is an eligible objective episodic-memory outcome.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses active tDCS versus sham in a randomized design, and assesses associative memory, which is an eligible objective episodic-memory outcome.""
+}"
+pmid:39874376,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:35,include,"The study involves adults with mild neurocognitive disorder due to Alzheimer's disease, uses active tDCS versus sham in a randomised design, and reports cognitive benefits including memory function improvements.","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with mild neurocognitive disorder due to Alzheimer's disease, uses active tDCS versus sham in a randomised design, and reports cognitive benefits including memory function improvements.""
+}"
+pmid:39863318,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:37,include,"The study involves adults with mild Alzheimer's disease, uses a randomized sham-controlled design with tDCS, and reports an objective episodic memory outcome (RAVLT total learning and delayed recall).","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with mild Alzheimer's disease, uses a randomized sham-controlled design with tDCS, and reports an objective episodic memory outcome (RAVLT total learning and delayed recall).""
+}"
+pmid:39711102,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:38,exclude,"The study exclusively reports visual short-term memory precision as an outcome, which falls under the exclusion criterion for working memory outcomes only and does not meet the requirement for an objective episodic-memory outcome.","{
+""decision"": ""exclude"",
+""reason"": ""The study exclusively reports visual short-term memory precision as an outcome, which falls under the exclusion criterion for working memory outcomes only and does not meet the requirement for an objective episodic-memory outcome.""
+}"
+pmid:39700630,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:41,unsure,"The study involves tDCS and an associative memory outcome, but the abstract does not specify whether the participants are healthy adults or have MCI/mild AD, nor does it confirm if the sample size allows for calculating a standardised mean difference.","{
+""decision"": ""unsure"",
+""reason"": ""The study involves tDCS and an associative memory outcome, but the abstract does not specify whether the participants are healthy adults or have MCI/mild AD, nor does it confirm if the sample size allows for calculating a standardised mean difference.""
+}"
+pmid:39644890,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:41,include,"The study is a randomised controlled trial comparing active tDCS to sham in older adults with normal cognition, and it reports objective episodic memory retrieval outcomes.","{
+""decision"": ""include"",
+""reason"": ""The study is a randomised controlled trial comparing active tDCS to sham in older adults with normal cognition, and it reports objective episodic memory retrieval outcomes.""
+}"
+pmid:39500573,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:42,exclude,"The study focuses exclusively on visual working memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses exclusively on visual working memory outcomes, which is an exclusion criterion.""
+}"
+pmid:39476073,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:44,exclude,"The study includes participants with remitted major depressive disorder (rMDD), which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study includes participants with remitted major depressive disorder (rMDD), which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:39414128,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:45,exclude,"The study focuses on novel word acquisition in healthy adults, which constitutes a working memory or language learning outcome rather than an objective episodic-memory outcome (such as free recall, recognition of previously learned items, or standard neuropsychological test scores) required for the review.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on novel word acquisition in healthy adults, which constitutes a working memory or language learning outcome rather than an objective episodic-memory outcome (such as free recall, recognition of previously learned items, or standard neuropsychological test scores) required for the review.""
+}"
+pmid:39393982,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:46,exclude,"The study involves adolescents with autism spectrum disorder, which is a non-eligible clinical group and does not involve healthy adults or patients with MCI/mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves adolescents with autism spectrum disorder, which is a non-eligible clinical group and does not involve healthy adults or patients with MCI/mild AD.""
+}"
+pmid:39362923,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:47,exclude,"The study evaluates attentional control and prospective memory outcomes, which are excluded as they are not objective episodic-memory outcomes (e.g., free/cued recall, recognition) and the abstract indicates working/attentional memory rather than standard episodic memory tasks.","{
+""decision"": ""exclude"",
+""reason"": ""The study evaluates attentional control and prospective memory outcomes, which are excluded as they are not objective episodic-memory outcomes (e.g., free/cued recall, recognition) and the abstract indicates working/attentional memory rather than standard episodic memory tasks.""
+}"
+pmid:39351069,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:48,exclude,"The study population consists of patients with major depressive disorder, which is an excluded clinical group according to the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with major depressive disorder, which is an excluded clinical group according to the eligibility criteria.""
+}"
+pmid:39276299,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:49,exclude,"The study investigates emotional prosody recognition rather than episodic memory, which does not meet the inclusion criterion for an objective episodic-memory outcome.","{
+""decision"": ""exclude"",
+""reason"": ""The study investigates emotional prosody recognition rather than episodic memory, which does not meet the inclusion criterion for an objective episodic-memory outcome.""
+}"
+pmid:39267112,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:50,exclude,"The study reports only global cognitive scores (ADAS-Cog, MMSE, MoCA) and does not mention specific objective episodic-memory outcomes such as free/cued recall or recognition.","{
+""decision"": ""exclude"",
+""reason"": ""The study reports only global cognitive scores (ADAS-Cog, MMSE, MoCA) and does not mention specific objective episodic-memory outcomes such as free/cued recall or recognition.""
+}"
+pmid:39136447,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:51,exclude,"The study population consists of patients with Dementia with Lewy Bodies, which is a clinical group other than healthy adults, MCI, or mild AD, thus meeting the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with Dementia with Lewy Bodies, which is a clinical group other than healthy adults, MCI, or mild AD, thus meeting the exclusion criteria.""
+}"
+pmid:39029954,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:52,exclude,"The study exclusively investigates working memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study exclusively investigates working memory outcomes, which is an exclusion criterion.""
+}"
+pmid:39029652,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:53,exclude,The study measures speech perception (sentence recognition) rather than an objective episodic-memory outcome such as recall or recognition of word lists.,"{
+""decision"": ""exclude"",
+""reason"": ""The study measures speech perception (sentence recognition) rather than an objective episodic-memory outcome such as recall or recognition of word lists.""
+}"
+pmid:39024741,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:54,exclude,"The study involves patients with schizophrenia, which is an excluded clinical group according to the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves patients with schizophrenia, which is an excluded clinical group according to the eligibility criteria.""
+}"
+pmid:38997105,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:54,exclude,"The study focuses on fear extinction and anxiety-related outcomes rather than episodic memory, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on fear extinction and anxiety-related outcomes rather than episodic memory, which is an exclusion criterion.""
+}"
+pmid:38970654,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:55,exclude,"The study focuses on haptic object recognition rather than episodic memory outcomes such as recall or recognition of previously learned items, and it involves healthy participants without MCI or AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on haptic object recognition rather than episodic memory outcomes such as recall or recognition of previously learned items, and it involves healthy participants without MCI or AD.""
+}"
+pmid:38966802,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:56,include,"The study involves adults with MCI, uses an active tDCS versus sham (placebo tDCS) comparison in a randomized design, and reports improvements in episodic memory.","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with MCI, uses an active tDCS versus sham (placebo tDCS) comparison in a randomized design, and reports improvements in episodic memory.""
+}"
+pmid:38878152,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:57,exclude,"The study assesses mentalizing (socio-cognitive abilities) rather than episodic memory, which is a required objective outcome for inclusion.","{
+""decision"": ""exclude"",
+""reason"": ""The study assesses mentalizing (socio-cognitive abilities) rather than episodic memory, which is a required objective outcome for inclusion.""
+}"
+pmid:38854074,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:30:58,include,"The study uses tACS versus sham in a randomised design and assesses source memory, which is an eligible objective episodic-memory outcome.","{
+""decision"": ""include"",
+""reason"": ""The study uses tACS versus sham in a randomised design and assesses source memory, which is an eligible objective episodic-memory outcome.""
+}"
+pmid:38848375,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:00,include,"The study uses tDCS (a form of transcranial Direct Current Stimulation) versus sham in a design that likely involves healthy adults, and it measures associative memory, which is an eligible objective episodic-memory outcome.","{
+""decision"": ""include"",
+""reason"": ""The study uses tDCS (a form of transcranial Direct Current Stimulation) versus sham in a design that likely involves healthy adults, and it measures associative memory, which is an eligible objective episodic-memory outcome.""
+}"
+pmid:38824804,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:01,include,"The study uses active tDCS versus sham in a randomised design and reports an objective episodic memory outcome (novel-word learning accuracy), which aligns with the inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study uses active tDCS versus sham in a randomised design and reports an objective episodic memory outcome (novel-word learning accuracy), which aligns with the inclusion criteria.""
+}"
+pmid:38804028,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:02,unsure,"The study involves eligible participants (MCI) and intervention (tDCS vs sham), but the abstract only explicitly names MMSE (a global score, which is excluded) and 'visual recognition tasks' without specifying if these constitute a standardised episodic memory outcome like free/cued recall or recognition required for effect size calculation.","{
+""decision"": ""unsure"",
+""reason"": ""The study involves eligible participants (MCI) and intervention (tDCS vs sham), but the abstract only explicitly names MMSE (a global score, which is excluded) and 'visual recognition tasks' without specifying if these constitute a standardised episodic memory outcome like free/cued recall or recognition required for effect size calculation.""
+}"
+pmid:38778042,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:03,exclude,The study focuses on myoelectric pattern recognition and motor learning performance rather than objective episodic memory outcomes.,"{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on myoelectric pattern recognition and motor learning performance rather than objective episodic memory outcomes.""
+}"
+pmid:38672040,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:04,exclude,"The study involves patients with primary progressive aphasia, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves patients with primary progressive aphasia, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:38660096,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:05,unsure,"The study involves eligible participants (MCI due to AD) and an active tDCS vs. sham design, but the abstract only lists global cognitive scores (ADAS-Cog total, MMSE) without specifying whether objective episodic memory outcomes (e.g., word recall) are measured, which is required for inclusion.","{
+""decision"": ""unsure"",
+""reason"": ""The study involves eligible participants (MCI due to AD) and an active tDCS vs. sham design, but the abstract only lists global cognitive scores (ADAS-Cog total, MMSE) without specifying whether objective episodic memory outcomes (e.g., word recall) are measured, which is required for inclusion.""
+}"
+pmid:38548336,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:06,exclude,"The study participants are children, which excludes them from the inclusion criterion requiring adults.","{
+""decision"": ""exclude"",
+""reason"": ""The study participants are children, which excludes them from the inclusion criterion requiring adults.""
+}"
+pmid:38497188,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:07,exclude,"The study uses an animal model (rats) rather than human adults, and the outcomes are not standard episodic memory measures in eligible clinical groups.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses an animal model (rats) rather than human adults, and the outcomes are not standard episodic memory measures in eligible clinical groups.""
+}"
+pmid:38439936,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:08,exclude,"The study exclusively reports working memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study exclusively reports working memory outcomes, which is an exclusion criterion.""
+}"
+pmid:38418583,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:09,include,"The study involves healthy older adults receiving active tDCS versus sham with an objective episodic memory outcome (verbal memory recall), meeting all inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy older adults receiving active tDCS versus sham with an objective episodic memory outcome (verbal memory recall), meeting all inclusion criteria.""
+}"
+pmid:38365886,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:09,include,"The study involves healthy adults receiving active tACS versus sham, with an objective episodic memory outcome (free recall) that allows for calculation of a standardized mean difference.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving active tACS versus sham, with an objective episodic memory outcome (free recall) that allows for calculation of a standardized mean difference.""
+}"
+pmid:38353581,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:10,include,"The study uses anodal tDCS versus sham in a randomised design and reports objective episodic memory outcomes (correct recall), meeting all inclusion criteria without triggering any exclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study uses anodal tDCS versus sham in a randomised design and reports objective episodic memory outcomes (correct recall), meeting all inclusion criteria without triggering any exclusion criteria.""
+}"
+pmid:38264350,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:11,exclude,"The study focuses on fear learning and extinction rather than episodic memory, which does not meet the inclusion criteria for objective episodic-memory outcomes.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on fear learning and extinction rather than episodic memory, which does not meet the inclusion criteria for objective episodic-memory outcomes.""
+}"
+pmid:38219414,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:12,exclude,"The study focuses on semantic control and false recognition (DRM task) rather than objective episodic memory outcomes such as free/cued recall, recognition, or source/associative memory scores required by the criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on semantic control and false recognition (DRM task) rather than objective episodic memory outcomes such as free/cued recall, recognition, or source/associative memory scores required by the criteria.""
+}"
+pmid:38212815,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:13,include,"The study involves adults with cognitive impairment, uses an active tDCS vs. sham randomized design, and reports verbal memory outcomes (verbal learning and memory test) which satisfy the inclusion criteria for objective episodic-memory outcomes.","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with cognitive impairment, uses an active tDCS vs. sham randomized design, and reports verbal memory outcomes (verbal learning and memory test) which satisfy the inclusion criteria for objective episodic-memory outcomes.""
+}"
+pmid:38178837,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:15,include,"The study involves patients with mild Alzheimer's disease receiving active tDCS versus sham in a randomized design, and reports improvements in verbal memory, which satisfies the inclusion criteria for clinical group, intervention, and objective episodic-memory outcome.","{
+""decision"": ""include"",
+""reason"": ""The study involves patients with mild Alzheimer's disease receiving active tDCS versus sham in a randomized design, and reports improvements in verbal memory, which satisfies the inclusion criteria for clinical group, intervention, and objective episodic-memory outcome.""
+}"
+pmid:40242204,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:15,exclude,"The study focuses on visual long-term memory and recognition tasks, which does not meet the inclusion criterion for objective episodic-memory outcomes such as free/cued recall or specific word-list learning scores.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on visual long-term memory and recognition tasks, which does not meet the inclusion criterion for objective episodic-memory outcomes such as free/cued recall or specific word-list learning scores.""
+}"
+pmid:38155843,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:16,include,"The study involves adults with Alzheimer's disease, uses active tDCS versus sham in a randomised design, and reports objective episodic-memory outcomes (word recall and word recognition) as part of the ADAS-Cog assessment.","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with Alzheimer's disease, uses active tDCS versus sham in a randomised design, and reports objective episodic-memory outcomes (word recall and word recognition) as part of the ADAS-Cog assessment.""
+}"
+pmid:38056370,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:17,include,"The study involves adults with MCI or mild AD, uses active tDCS versus sham in a randomized design, and reports an objective episodic memory outcome (recall performance of hippocampal place learning).","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with MCI or mild AD, uses active tDCS versus sham in a randomized design, and reports an objective episodic memory outcome (recall performance of hippocampal place learning).""
+}"
+pmid:38018085,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:18,exclude,"The study focuses on the face inversion effect and perceptual learning rather than episodic memory outcomes such as recall or recognition of word lists, which are required by the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on the face inversion effect and perceptual learning rather than episodic memory outcomes such as recall or recognition of word lists, which are required by the eligibility criteria.""
+}"
+pmid:38007663,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:19,include,"The study involves adults with early-stage AD, uses active versus sham tDCS in a randomized design, and reports episodic memory outcomes (immediate and delayed recall) alongside general cognitive function.","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with early-stage AD, uses active versus sham tDCS in a randomized design, and reports episodic memory outcomes (immediate and delayed recall) alongside general cognitive function.""
+}"
+pmid:37840302,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:20,exclude,"The study assesses face recognition, which is not an objective episodic-memory outcome (such as free recall, recognition of word lists, or source/associative memory) specified in the inclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study assesses face recognition, which is not an objective episodic-memory outcome (such as free recall, recognition of word lists, or source/associative memory) specified in the inclusion criteria.""
+}"
+pmid:37750681,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:21,exclude,"The study focuses on visual crowding and orientation discrimination, which are not episodic memory outcomes.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on visual crowding and orientation discrimination, which are not episodic memory outcomes.""
+}"
+pmid:37729717,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:22,include,"The study involves adults with early-phase AD, uses active tDCS versus placebo (sham), and reports the ADAS-Cog cognitive subscale which includes word recall, an eligible objective episodic-memory outcome.","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with early-phase AD, uses active tDCS versus placebo (sham), and reports the ADAS-Cog cognitive subscale which includes word recall, an eligible objective episodic-memory outcome.""
+}"
+pmid:37685637,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:23,exclude,The study involves a non-eligible clinical group (Autism Spectrum Disorder) and focuses on social attention and emotion recognition rather than objective episodic memory outcomes.,"{
+""decision"": ""exclude"",
+""reason"": ""The study involves a non-eligible clinical group (Autism Spectrum Disorder) and focuses on social attention and emotion recognition rather than objective episodic memory outcomes.""
+}"
+pmid:37635805,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:23,include,"The study involves healthy adults receiving active tDCS versus sham in a randomised design and reports episodic memory outcomes (episodic recognition), which meets all inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving active tDCS versus sham in a randomised design and reports episodic memory outcomes (episodic recognition), which meets all inclusion criteria.""
+}"
+pmid:37620825,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:24,exclude,"The study population consists of patients with chronic schizophrenia, which is an excluded clinical group according to the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with chronic schizophrenia, which is an excluded clinical group according to the eligibility criteria.""
+}"
+pmid:37611740,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:25,exclude,"The study investigates face recognition, which is not an episodic memory outcome, and the participants are healthy adults without specified MCI or mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study investigates face recognition, which is not an episodic memory outcome, and the participants are healthy adults without specified MCI or mild AD.""
+}"
+pmid:37608981,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:26,include,"The study involves adults with MCI, uses active tDCS versus sham in a randomized design, and reports an objective episodic-memory outcome (Auditory Verbal Learning Test-immediate recall).","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with MCI, uses active tDCS versus sham in a randomized design, and reports an objective episodic-memory outcome (Auditory Verbal Learning Test-immediate recall).""
+}"
+pmid:37549139,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:27,exclude,"The study focuses on prospective memory and attentional control rather than the required objective episodic-memory outcomes (e.g., free/cued recall, recognition).","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on prospective memory and attentional control rather than the required objective episodic-memory outcomes (e.g., free/cued recall, recognition).""
+}"
+pmid:37263069,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:28,exclude,"The study involves patients with post-stroke dysmnesia, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves patients with post-stroke dysmnesia, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:37259927,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:29,exclude,"The record is a systematic review, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The record is a systematic review, which is an exclusion criterion.""
+}"
+pmid:37227790,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:30,exclude,"The study exclusively assesses phonological working memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study exclusively assesses phonological working memory outcomes, which is an exclusion criterion.""
+}"
+pmid:36831783,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:31,exclude,"The study population consists of young adults who are not specified as having MCI or mild AD, which excludes them under the criterion requiring healthy older adults or those with specific cognitive decline diagnoses.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of young adults who are not specified as having MCI or mild AD, which excludes them under the criterion requiring healthy older adults or those with specific cognitive decline diagnoses.""
+}"
+pmid:36669696,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:32,include,"The study involves healthy adults, uses tDCS versus sham in a randomised design, and reports objective episodic memory outcomes (free recall and recognition).","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses tDCS versus sham in a randomised design, and reports objective episodic memory outcomes (free recall and recognition).""
+}"
+pmid:36660288,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:33,unsure,"The study involves eligible participants (mild neurocognitive disorder due to possible AD) and an active tDCS vs. sham design, but the abstract does not specify whether the memory outcomes are objective episodic memory measures (e.g., free recall, recognition) sufficient for calculating a standardised mean difference.","{
+""decision"": ""unsure"",
+""reason"": ""The study involves eligible participants (mild neurocognitive disorder due to possible AD) and an active tDCS vs. sham design, but the abstract does not specify whether the memory outcomes are objective episodic memory measures (e.g., free recall, recognition) sufficient for calculating a standardised mean difference.""
+}"
+pmid:36639676,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:35,include,"The study involves healthy adults, uses randomised tDCS and tACS versus sham designs, and reports an objective episodic memory outcome (word recall) sufficient for effect size calculation.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses randomised tDCS and tACS versus sham designs, and reports an objective episodic memory outcome (word recall) sufficient for effect size calculation.""
+}"
+pmid:36585436,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:36,exclude,The study uses tDCS on healthy subjects but measures mental state recognition (social cognition) rather than an objective episodic-memory outcome.,"{
+""decision"": ""exclude"",
+""reason"": ""The study uses tDCS on healthy subjects but measures mental state recognition (social cognition) rather than an objective episodic-memory outcome.""
+}"
+pmid:36544322,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:36,exclude,"The study population consists of patients with multiple sclerosis, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with multiple sclerosis, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:36460293,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:37,exclude,"The study involves a clinical group with moderate Alzheimer's disease, which is excluded as the criteria specify only healthy adults or those with MCI/mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves a clinical group with moderate Alzheimer's disease, which is excluded as the criteria specify only healthy adults or those with MCI/mild AD.""
+}"
+pmid:36410540,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:38,exclude,"The study population consists of children with dyslexia, which is an excluded clinical group as the criteria require healthy adults or those with MCI/mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of children with dyslexia, which is an excluded clinical group as the criteria require healthy adults or those with MCI/mild AD.""
+}"
+pmid:36289659,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:39,exclude,"The study involves patients with Major Depressive Disorder, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves patients with Major Depressive Disorder, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:36272055,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:40,include,"The study is a randomized, sham-controlled trial using tACS on adults with subjective memory complaints (a group often included in MCI/early AD research contexts or considered healthy/mildly impaired depending on specific protocol definitions, but crucially not excluded like depression/schizophrenia), and it reports an objective episodic memory outcome (RAVLT delayed recall) which allows for calculation of standardized mean differences.","{
+""decision"": ""include"",
+""reason"": ""The study is a randomized, sham-controlled trial using tACS on adults with subjective memory complaints (a group often included in MCI/early AD research contexts or considered healthy/mildly impaired depending on specific protocol definitions, but crucially not excluded like depression/schizophrenia), and it reports an objective episodic memory outcome (RAVLT delayed recall) which allows for calculation of standardized mean differences.""
+}"
+pmid:36270464,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:41,exclude,"The study focuses on foreign vocabulary learning, which is not an objective episodic-memory outcome as defined by the specified criteria (e.g., RAVLT, CVLT, ADAS-Cog word recall).","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on foreign vocabulary learning, which is not an objective episodic-memory outcome as defined by the specified criteria (e.g., RAVLT, CVLT, ADAS-Cog word recall).""
+}"
+pmid:36127327,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:42,exclude,"The study focuses on fear extinction and defensive responses rather than episodic memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on fear extinction and defensive responses rather than episodic memory outcomes, which is an exclusion criterion.""
+}"
+pmid:35982223,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:43,include,"The study involves healthy adults, uses active tDCS and tACS versus sham in a randomised crossover design, and reports an objective episodic memory outcome (associative memory with cued recall).","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses active tDCS and tACS versus sham in a randomised crossover design, and reports an objective episodic memory outcome (associative memory with cued recall).""
+}"
+pmid:35902662,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:44,exclude,"The study focuses on face recognition and the other-race effect, which does not constitute an objective episodic-memory outcome as defined by the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on face recognition and the other-race effect, which does not constitute an objective episodic-memory outcome as defined by the eligibility criteria.""
+}"
+pmid:35874155,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:45,exclude,"The study focuses on emotion recognition rather than episodic memory, which is a required objective outcome for inclusion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on emotion recognition rather than episodic memory, which is a required objective outcome for inclusion.""
+}"
+pmid:35862317,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:46,exclude,"The study focuses on emotional prosody recognition, which is not an objective episodic-memory outcome (such as free recall or recognition) as defined by the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on emotional prosody recognition, which is not an objective episodic-memory outcome (such as free recall or recognition) as defined by the eligibility criteria.""
+}"
+pmid:35780078,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:47,exclude,"The study reports motor reaction times as the outcome, which does not meet the inclusion criterion for an objective episodic-memory outcome such as recall or recognition.","{
+""decision"": ""exclude"",
+""reason"": ""The study reports motor reaction times as the outcome, which does not meet the inclusion criterion for an objective episodic-memory outcome such as recall or recognition.""
+}"
+pmid:35737553,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:48,exclude,"The study uses a target detection paradigm measuring decision criterion and perceptual sensitivity, which does not assess episodic memory outcomes as required by the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses a target detection paradigm measuring decision criterion and perceptual sensitivity, which does not assess episodic memory outcomes as required by the eligibility criteria.""
+}"
+pmid:35654262,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:49,exclude,"The study subjects are male Wistar rats, which does not meet the inclusion criterion for adult human participants.","{
+""decision"": ""exclude"",
+""reason"": ""The study subjects are male Wistar rats, which does not meet the inclusion criterion for adult human participants.""
+}"
+pmid:35624949,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:49,exclude,"The record is a systematic review and meta-analysis, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The record is a systematic review and meta-analysis, which is an exclusion criterion.""
+}"
+pmid:35607946,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:50,include,"The study is a randomized, sham-controlled trial using tACS on patients with early Alzheimer's disease (mild AD) and reports objective episodic memory outcomes including RAVLT recall.","{
+""decision"": ""include"",
+""reason"": ""The study is a randomized, sham-controlled trial using tACS on patients with early Alzheimer's disease (mild AD) and reports objective episodic memory outcomes including RAVLT recall.""
+}"
+pmid:35587504,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:51,exclude,"The study involves patients with panic disorder, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves patients with panic disorder, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:35475789,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:52,exclude,"The study population includes individuals with probable early or moderate dementia, which falls outside the eligible criteria of healthy adults, MCI, or mild AD only.","{
+""decision"": ""exclude"",
+""reason"": ""The study population includes individuals with probable early or moderate dementia, which falls outside the eligible criteria of healthy adults, MCI, or mild AD only.""
+}"
+pmid:35462028,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:53,exclude,The study focuses on language acquisition and vocabulary learning in healthy participants rather than episodic memory outcomes in adults with MCI or mild AD.,"{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on language acquisition and vocabulary learning in healthy participants rather than episodic memory outcomes in adults with MCI or mild AD.""
+}"
+pmid:35448003,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:54,unsure,"The record is a study protocol rather than a completed trial with results, and while it mentions eligible outcomes like associative memory, the abstract does not confirm the final participant characteristics or that the intervention was successfully compared against sham in a way that yields extractable data for this review.","{
+""decision"": ""unsure"",
+""reason"": ""The record is a study protocol rather than a completed trial with results, and while it mentions eligible outcomes like associative memory, the abstract does not confirm the final participant characteristics or that the intervention was successfully compared against sham in a way that yields extractable data for this review.""
+}"
+pmid:35388106,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:55,unsure,"The study uses tDCS and an episodic memory outcome (proper name recall), but the abstract does not specify the participant population (e.g., healthy, MCI, or AD) required for eligibility.","{
+""decision"": ""unsure"",
+""reason"": ""The study uses tDCS and an episodic memory outcome (proper name recall), but the abstract does not specify the participant population (e.g., healthy, MCI, or AD) required for eligibility.""
+}"
+pmid:35368257,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:56,exclude,"The study is a reanalysis of previous data rather than a primary randomised controlled trial reporting new intervention outcomes, and it focuses on predicting factors rather than establishing efficacy through a standard RCT design.","{
+""decision"": ""exclude"",
+""reason"": ""The study is a reanalysis of previous data rather than a primary randomised controlled trial reporting new intervention outcomes, and it focuses on predicting factors rather than establishing efficacy through a standard RCT design.""
+}"
+pmid:35339351,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:57,include,"The study involves patients with Alzheimer's disease receiving active tDCS versus sham, and reports ADAS-cog scores which include word recall components that satisfy the objective episodic-memory outcome criterion.","{
+""decision"": ""include"",
+""reason"": ""The study involves patients with Alzheimer's disease receiving active tDCS versus sham, and reports ADAS-cog scores which include word recall components that satisfy the objective episodic-memory outcome criterion.""
+}"
+pmid:35322340,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:57,exclude,"The study population consists of individuals with Parkinson's disease mild cognitive impairment (PD-MCI), which is a non-eligible clinical group distinct from healthy adults, MCI, or mild Alzheimer's disease.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of individuals with Parkinson's disease mild cognitive impairment (PD-MCI), which is a non-eligible clinical group distinct from healthy adults, MCI, or mild Alzheimer's disease.""
+}"
+pmid:35318122,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:58,exclude,"The study uses peripheral nerve stimulation (applied to the occipital nerve) rather than transcranial electrical stimulation (tDCS or tACS applied directly to the scalp), which violates the inclusion criterion for stimulation type.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses peripheral nerve stimulation (applied to the occipital nerve) rather than transcranial electrical stimulation (tDCS or tACS applied directly to the scalp), which violates the inclusion criterion for stimulation type.""
+}"
+pmid:35259850,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:31:59,exclude,"The study uses an animal model (APP/PS1 mice) rather than human adults, which violates the inclusion criterion for healthy adults or those with MCI/mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses an animal model (APP/PS1 mice) rather than human adults, which violates the inclusion criterion for healthy adults or those with MCI/mild AD.""
+}"
+pmid:35253836,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:00,include,"The study is a randomized, sham-controlled trial using tDCS in healthy adults with objective episodic memory outcomes (free recall and recognition).","{
+""decision"": ""include"",
+""reason"": ""The study is a randomized, sham-controlled trial using tDCS in healthy adults with objective episodic memory outcomes (free recall and recognition).""
+}"
+pmid:35250453,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:01,include,"The study involves adults with MCI, uses a randomized tDCS vs. sham design, and reports episodic memory outcomes via the Wechsler Memory Scale.","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with MCI, uses a randomized tDCS vs. sham design, and reports episodic memory outcomes via the Wechsler Memory Scale.""
+}"
+pmid:35185754,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:02,exclude,"The record is a systematic review, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The record is a systematic review, which is an exclusion criterion.""
+}"
+pmid:35181532,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:02,exclude,"The study population consists of patients with autism spectrum disorder (ASD), which is an excluded clinical group according to the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with autism spectrum disorder (ASD), which is an excluded clinical group according to the eligibility criteria.""
+}"
+pmid:35053802,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:03,exclude,"The study focuses exclusively on working memory and associative memory outcomes, but the inclusion criteria require an objective episodic-memory outcome (such as free/cued recall or recognition), and working memory only is an explicit exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses exclusively on working memory and associative memory outcomes, but the inclusion criteria require an objective episodic-memory outcome (such as free/cued recall or recognition), and working memory only is an explicit exclusion criterion.""
+}"
+pmid:35034949,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:04,include,"The study involves healthy adults receiving anodal tDCS versus sham in a randomized design and reports visual recognition memory, which is an eligible objective episodic-memory outcome.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving anodal tDCS versus sham in a randomized design and reports visual recognition memory, which is an eligible objective episodic-memory outcome.""
+}"
+pmid:35026217,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:05,exclude,"The study focuses on novel vocabulary acquisition (language learning) rather than episodic memory in healthy adults or those with MCI/AD, and the outcome is not a standard episodic memory measure like recall of word lists.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on novel vocabulary acquisition (language learning) rather than episodic memory in healthy adults or those with MCI/AD, and the outcome is not a standard episodic memory measure like recall of word lists.""
+}"
+pmid:34987350,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:06,exclude,"The study population consists of patients with schizophrenia, which is an excluded clinical group according to the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with schizophrenia, which is an excluded clinical group according to the eligibility criteria.""
+}"
+pmid:34949566,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:07,include,The study is a randomized controlled trial comparing active tDCS to sham stimulation in healthy adults and reports an objective episodic memory outcome (free recall).,"{
+""decision"": ""include"",
+""reason"": ""The study is a randomized controlled trial comparing active tDCS to sham stimulation in healthy adults and reports an objective episodic memory outcome (free recall).""
+}"
+pmid:34930421,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:08,exclude,"The study is open-label rather than randomised and lacks a sham control condition, which violates the inclusion criteria for study design.","{
+""decision"": ""exclude"",
+""reason"": ""The study is open-label rather than randomised and lacks a sham control condition, which violates the inclusion criteria for study design.""
+}"
+pmid:34863115,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:10,exclude,"The study is a protocol for a randomized trial and does not report any outcome data, making it impossible to calculate a standardized mean difference.","{
+""decision"": ""exclude"",
+""reason"": ""The study is a protocol for a randomized trial and does not report any outcome data, making it impossible to calculate a standardized mean difference.""
+}"
+pmid:34765784,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:11,exclude,"The study's primary outcome is the rating of facial expressions (emotion recognition), which does not meet the inclusion criterion for an objective episodic-memory outcome.","{
+""decision"": ""exclude"",
+""reason"": ""The study's primary outcome is the rating of facial expressions (emotion recognition), which does not meet the inclusion criterion for an objective episodic-memory outcome.""
+}"
+pmid:34720259,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:12,exclude,The study focuses on reinforcement learning biases and emotional transfer rather than objective episodic memory outcomes such as recall or recognition.,"{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on reinforcement learning biases and emotional transfer rather than objective episodic memory outcomes such as recall or recognition.""
+}"
+pmid:34603142,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:17,include,"The study uses tDCS with a sham control group and measures false recognition, which is an objective episodic memory outcome (recognition), in healthy adult participants.","{
+""decision"": ""include"",
+""reason"": ""The study uses tDCS with a sham control group and measures false recognition, which is an objective episodic memory outcome (recognition), in healthy adult participants.""
+}"
+pmid:34530286,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:17,exclude,"The study uses a melody recognition task which does not constitute an objective episodic-memory outcome as defined by the criteria (e.g., free/cued recall, recognition of words/lists like RAVLT/CVLT), and likely falls under non-standard or working memory domains rather than standard clinical episodic memory measures.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses a melody recognition task which does not constitute an objective episodic-memory outcome as defined by the criteria (e.g., free/cued recall, recognition of words/lists like RAVLT/CVLT), and likely falls under non-standard or working memory domains rather than standard clinical episodic memory measures.""
+}"
+pmid:34509124,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:18,exclude,"The study focuses on foreign language vocabulary learning, which is not an objective episodic-memory outcome in healthy adults or those with MCI/mild AD as defined by the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on foreign language vocabulary learning, which is not an objective episodic-memory outcome in healthy adults or those with MCI/mild AD as defined by the eligibility criteria.""
+}"
+pmid:34478816,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:19,exclude,"The study population consists of veterans with chronic traumatic brain injury (TBI), which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of veterans with chronic traumatic brain injury (TBI), which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:34446480,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:20,exclude,"The study population consists of patients with traumatic brain injury, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with traumatic brain injury, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:34381353,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:21,exclude,"The study population consists of individuals with Subjective Cognitive Decline (SCD), which is not an included clinical group under the specified criteria for healthy adults, MCI, or mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of individuals with Subjective Cognitive Decline (SCD), which is not an included clinical group under the specified criteria for healthy adults, MCI, or mild AD.""
+}"
+pmid:34287817,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:22,exclude,"The study excludes eligible participants because it focuses on healthy older adults without MCI or mild AD, and the primary outcomes are social perspective-taking tasks rather than objective episodic memory measures.","{
+""decision"": ""exclude"",
+""reason"": ""The study excludes eligible participants because it focuses on healthy older adults without MCI or mild AD, and the primary outcomes are social perspective-taking tasks rather than objective episodic memory measures.""
+}"
+pmid:34223958,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:23,exclude,"The study exclusively reports working memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study exclusively reports working memory outcomes, which is an exclusion criterion.""
+}"
+pmid:34182233,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:24,include,The study involves healthy adults receiving tDCS versus sham in a randomised design and reports an objective episodic memory outcome (word-association recall).,"{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving tDCS versus sham in a randomised design and reports an objective episodic memory outcome (word-association recall).""
+}"
+pmid:34167659,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:25,exclude,"The study focuses on social-cognitive outcomes (emotion recognition, joint attention) rather than the required objective episodic-memory outcomes.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on social-cognitive outcomes (emotion recognition, joint attention) rather than the required objective episodic-memory outcomes.""
+}"
+pmid:34159563,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:26,exclude,"The study involves Parkinson's disease patients, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves Parkinson's disease patients, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:34135392,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:27,include,"The study is a randomized sham-controlled trial involving healthy older adults using tDCS, and it reports recognition memory outcomes which satisfy the inclusion criteria for objective episodic-memory measures.","{
+""decision"": ""include"",
+""reason"": ""The study is a randomized sham-controlled trial involving healthy older adults using tDCS, and it reports recognition memory outcomes which satisfy the inclusion criteria for objective episodic-memory measures.""
+}"
+pmid:34076917,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:28,exclude,"The study focuses on false recognition and semantic processing rather than objective episodic memory outcomes such as free/cued recall, recognition of true items, or standardised memory scores like RAVLT/CVLT.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on false recognition and semantic processing rather than objective episodic memory outcomes such as free/cued recall, recognition of true items, or standardised memory scores like RAVLT/CVLT.""
+}"
+pmid:34018333,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:29,exclude,"The study involves children with autism spectrum disorder, which is a non-eligible clinical group and falls under the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves children with autism spectrum disorder, which is a non-eligible clinical group and falls under the exclusion criteria.""
+}"
+pmid:33961863,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:32,exclude,"The study population consists of individuals with schizophrenia, which is an excluded clinical group according to the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of individuals with schizophrenia, which is an excluded clinical group according to the eligibility criteria.""
+}"
+pmid:33805063,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:33,include,The study involves healthy adults receiving active tDCS versus sham in a randomized crossover design and reports an objective episodic memory outcome (pair-associate recall).,"{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving active tDCS versus sham in a randomized crossover design and reports an objective episodic memory outcome (pair-associate recall).""
+}"
+pmid:33762220,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:36,include,"The study involves adults with MCI-AD, uses randomized sham-controlled tACS, and reports objective episodic memory outcomes (RAVL recall and face-name associations) which meet the inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with MCI-AD, uses randomized sham-controlled tACS, and reports objective episodic memory outcomes (RAVL recall and face-name associations) which meet the inclusion criteria.""
+}"
+pmid:33610616,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:37,exclude,"The study investigates figure-ground perception rather than episodic memory, which does not meet the inclusion criteria for an objective episodic-memory outcome.","{
+""decision"": ""exclude"",
+""reason"": ""The study investigates figure-ground perception rather than episodic memory, which does not meet the inclusion criteria for an objective episodic-memory outcome.""
+}"
+pmid:33591114,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:39,exclude,"The study subjects are rats, not healthy adults or patients with MCI/AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study subjects are rats, not healthy adults or patients with MCI/AD.""
+}"
+pmid:33572164,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:40,exclude,"The study focuses on motor sequence learning outcomes rather than episodic memory, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on motor sequence learning outcomes rather than episodic memory, which is an exclusion criterion.""
+}"
+pmid:33542344,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:41,include,"The study uses tDCS versus sham in a crossover design and reports an objective episodic memory outcome (cued recall of face-word associations), which meets the inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study uses tDCS versus sham in a crossover design and reports an objective episodic memory outcome (cued recall of face-word associations), which meets the inclusion criteria.""
+}"
+pmid:33535690,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:42,include,"The study involves healthy older adults receiving active tDCS versus a placebo (sham) and reports an objective episodic-memory outcome (true recognition), meeting all inclusion criteria without triggering any exclusions.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy older adults receiving active tDCS versus a placebo (sham) and reports an objective episodic-memory outcome (true recognition), meeting all inclusion criteria without triggering any exclusions.""
+}"
+pmid:33533878,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:43,exclude,"The study focuses on visual crowding and object recognition, which are not episodic memory outcomes, and does not report eligible clinical groups or memory-specific metrics.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on visual crowding and object recognition, which are not episodic memory outcomes, and does not report eligible clinical groups or memory-specific metrics.""
+}"
+pmid:33523702,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:44,exclude,"The study focuses on perceptual learning and face recognition (composite face effect), which does not meet the inclusion criterion for an objective episodic-memory outcome such as free recall, recognition of word lists, or specific memory scores like RAVLT.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on perceptual learning and face recognition (composite face effect), which does not meet the inclusion criterion for an objective episodic-memory outcome such as free recall, recognition of word lists, or specific memory scores like RAVLT.""
+}"
+pmid:33454396,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:45,exclude,"The study uses a preclinical animal model (mice) rather than adult humans with MCI or mild AD, which violates the inclusion criteria for clinical groups.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses a preclinical animal model (mice) rather than adult humans with MCI or mild AD, which violates the inclusion criteria for clinical groups.""
+}"
+pmid:33452288,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:46,exclude,"The study focuses on the acquisition of novel words (learning) rather than episodic memory in adults with MCI or mild AD, and the outcomes are lexical/semantic accuracy and free recall of novel items rather than standardised objective episodic-memory outcomes for clinical populations.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on the acquisition of novel words (learning) rather than episodic memory in adults with MCI or mild AD, and the outcomes are lexical/semantic accuracy and free recall of novel items rather than standardised objective episodic-memory outcomes for clinical populations.""
+}"
+pmid:33432880,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:47,include,"The study uses tDCS versus sham in elderly participants (including those with memory complaints, which may indicate MCI) and assesses word recognition, a form of episodic memory.","{
+""decision"": ""include"",
+""reason"": ""The study uses tDCS versus sham in elderly participants (including those with memory complaints, which may indicate MCI) and assesses word recognition, a form of episodic memory.""
+}"
+pmid:33354206,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:47,include,"The study involves healthy older adults receiving active tDCS versus sham in a randomised design with an objective episodic memory outcome (source memory), meeting all inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy older adults receiving active tDCS versus sham in a randomised design with an objective episodic memory outcome (source memory), meeting all inclusion criteria.""
+}"
+pmid:33316604,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:48,exclude,"The study focuses on semantic memory and working memory outcomes rather than the required objective episodic-memory outcomes such as free recall, recognition, or source memory.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on semantic memory and working memory outcomes rather than the required objective episodic-memory outcomes such as free recall, recognition, or source memory.""
+}"
+pmid:33278591,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:49,exclude,"The study focuses on fear extinction retention in a paradigm involving aversive shocks, which does not meet the inclusion criteria for healthy adults or those with MCI/mild AD, and the primary outcome is skin conductance rather than an objective episodic-memory score.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on fear extinction retention in a paradigm involving aversive shocks, which does not meet the inclusion criteria for healthy adults or those with MCI/mild AD, and the primary outcome is skin conductance rather than an objective episodic-memory score.""
+}"
+pmid:33136142,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:52,include,"The study involves healthy adults, uses active tDCS versus sham in a randomised design, and reports an objective episodic-memory outcome (recall of action sentences).","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses active tDCS versus sham in a randomised design, and reports an objective episodic-memory outcome (recall of action sentences).""
+}"
+pmid:33033765,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:53,include,"The study involves healthy adults, uses active tDCS versus sham (placebo) in a randomised design, and reports objective episodic memory outcomes (immediate/delayed recall and recognition via CVLT-II).","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses active tDCS versus sham (placebo) in a randomised design, and reports objective episodic memory outcomes (immediate/delayed recall and recognition via CVLT-II).""
+}"
+pmid:33029128,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:54,include,"The study is a randomized, sham-controlled trial involving healthy adults using tDCS with verbal episodic memory (delayed recall) as an objective outcome.","{
+""decision"": ""include"",
+""reason"": ""The study is a randomized, sham-controlled trial involving healthy adults using tDCS with verbal episodic memory (delayed recall) as an objective outcome.""
+}"
+pmid:32961273,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:55,exclude,"The study involves individuals with high autistic traits, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves individuals with high autistic traits, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:32706780,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:56,exclude,"The study exclusively reports working memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study exclusively reports working memory outcomes, which is an exclusion criterion.""
+}"
+pmid:32595486,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:57,exclude,"The study uses a transgenic mouse model, which excludes human participants.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses a transgenic mouse model, which excludes human participants.""
+}"
+pmid:32497758,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:58,exclude,"The study uses healthy participants but measures recognition and naming tasks which do not constitute standard episodic memory outcomes (e.g., free/cued recall, recognition of previously learned items) as defined by the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses healthy participants but measures recognition and naming tasks which do not constitute standard episodic memory outcomes (e.g., free/cued recall, recognition of previously learned items) as defined by the eligibility criteria.""
+}"
+pmid:32315696,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:32:59,exclude,"The study focuses on face recognition and perceptual processing rather than episodic memory, which is a required outcome for inclusion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on face recognition and perceptual processing rather than episodic memory, which is a required outcome for inclusion.""
+}"
+pmid:32313830,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:00,exclude,"The primary outcome is global cognitive function (ADAS-Cog subscale) rather than an objective episodic-memory outcome, and the abstract does not specify that any secondary outcomes are episodic memory measures.","{
+""decision"": ""exclude"",
+""reason"": ""The primary outcome is global cognitive function (ADAS-Cog subscale) rather than an objective episodic-memory outcome, and the abstract does not specify that any secondary outcomes are episodic memory measures.""
+}"
+pmid:32298870,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:00,exclude,"The study exclusively reports working memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study exclusively reports working memory outcomes, which is an exclusion criterion.""
+}"
+pmid:32280093,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:01,include,"The study involves healthy older adults and MCI patients, uses active tDCS versus sham in a randomised crossover design, and assesses associative object-location memory which qualifies as an objective episodic-memory outcome.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy older adults and MCI patients, uses active tDCS versus sham in a randomised crossover design, and assesses associative object-location memory which qualifies as an objective episodic-memory outcome.""
+}"
+pmid:32256337,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:02,include,"The study involves healthy older adults, uses randomised tDCS and tACS versus sham designs, and reports objective episodic memory outcomes (cued recall and recognition).","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy older adults, uses randomised tDCS and tACS versus sham designs, and reports objective episodic memory outcomes (cued recall and recognition).""
+}"
+pmid:32218726,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:04,exclude,"The study excludes eligible outcomes because it focuses on self-referential processes and general word recall of personality traits rather than standard objective episodic-memory outcomes like free/cued recall, recognition, or specific neuropsychological test scores (e.g., RAVLT, CVLT).","{
+""decision"": ""exclude"",
+""reason"": ""The study excludes eligible outcomes because it focuses on self-referential processes and general word recall of personality traits rather than standard objective episodic-memory outcomes like free/cued recall, recognition, or specific neuropsychological test scores (e.g., RAVLT, CVLT).""
+}"
+pmid:32199339,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:05,include,The study is a randomized controlled trial comparing active tDCS to sham in healthy adults and reports objective episodic memory outcomes (recall performance).,"{
+""decision"": ""include"",
+""reason"": ""The study is a randomized controlled trial comparing active tDCS to sham in healthy adults and reports objective episodic memory outcomes (recall performance).""
+}"
+pmid:32153497,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:05,exclude,"The study population consists of chronic migraine patients, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of chronic migraine patients, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:32109487,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:06,exclude,"The study focuses on hand gesture comprehension and action recognition rather than episodic memory, which is a required outcome for inclusion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on hand gesture comprehension and action recognition rather than episodic memory, which is a required outcome for inclusion.""
+}"
+pmid:31969588,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:07,exclude,"The study investigates insight problem-solving rather than episodic memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study investigates insight problem-solving rather than episodic memory outcomes, which is an exclusion criterion.""
+}"
+pmid:31843652,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:09,exclude,"The study reports only subjective confidence ratings and accuracy for item/source memory, lacking an objective episodic-memory outcome such as free/cued recall or recognition scores required by the criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study reports only subjective confidence ratings and accuracy for item/source memory, lacking an objective episodic-memory outcome such as free/cued recall or recognition scores required by the criteria.""
+}"
+pmid:31840247,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:10,exclude,"The study focuses on visual selective attention and neural oscillations rather than episodic memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on visual selective attention and neural oscillations rather than episodic memory outcomes, which is an exclusion criterion.""
+}"
+pmid:31838450,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:11,exclude,"The study involves participants with Primary Progressive Aphasia, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves participants with Primary Progressive Aphasia, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:31838223,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:12,exclude,"The study focuses on eyeblink conditioning and extinction renewal rather than episodic memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on eyeblink conditioning and extinction renewal rather than episodic memory outcomes, which is an exclusion criterion.""
+}"
+pmid:31790015,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:13,include,"The study involves adults with MCI or mild AD, uses active tDCS versus sham in a randomised design, and reports objective episodic memory outcomes (ADAS-Cog word recall) sufficient for potential effect size calculation.","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with MCI or mild AD, uses active tDCS versus sham in a randomised design, and reports objective episodic memory outcomes (ADAS-Cog word recall) sufficient for potential effect size calculation.""
+}"
+pmid:31782505,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:14,exclude,"The record is a meta-analysis, which is an excluded study design as the criteria require primary randomised controlled trials.","{
+""decision"": ""exclude"",
+""reason"": ""The record is a meta-analysis, which is an excluded study design as the criteria require primary randomised controlled trials.""
+}"
+pmid:31739290,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:14,exclude,"The study focuses on validating EEG artefact removal algorithms using working memory tasks, rather than evaluating the clinical efficacy of tDCS/tACS on episodic memory outcomes in healthy or MCI/AD populations.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on validating EEG artefact removal algorithms using working memory tasks, rather than evaluating the clinical efficacy of tDCS/tACS on episodic memory outcomes in healthy or MCI/AD populations.""
+}"
+pmid:31660693,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:15,exclude,"The study only reports working memory (Pattern Recognition Memory) and executive function (Stop Signal Task) outcomes, excluding eligible episodic memory measures.","{
+""decision"": ""exclude"",
+""reason"": ""The study only reports working memory (Pattern Recognition Memory) and executive function (Stop Signal Task) outcomes, excluding eligible episodic memory measures.""
+}"
+pmid:31655161,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:16,exclude,"The study reports outcomes related to visual perception and explicitly states that the stimulation did not affect memory, thus failing to include an objective episodic-memory outcome.","{
+""decision"": ""exclude"",
+""reason"": ""The study reports outcomes related to visual perception and explicitly states that the stimulation did not affect memory, thus failing to include an objective episodic-memory outcome.""
+}"
+pmid:31529691,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:17,include,"The study is a randomized controlled trial of tDCS versus sham in adults with mild neurocognitive disorder (mild AD) and reports episodic memory outcomes (delayed recall, logical memory).","{
+""decision"": ""include"",
+""reason"": ""The study is a randomized controlled trial of tDCS versus sham in adults with mild neurocognitive disorder (mild AD) and reports episodic memory outcomes (delayed recall, logical memory).""
+}"
+pmid:31482268,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:18,exclude,"The study population consists of healthy young and elderly individuals, but the results show no significant effect in the elderly group (the target demographic for AD/MCI research), and the primary finding is restricted to young adults, making it ineligible for a review focused on MCI or mild AD populations.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of healthy young and elderly individuals, but the results show no significant effect in the elderly group (the target demographic for AD/MCI research), and the primary finding is restricted to young adults, making it ineligible for a review focused on MCI or mild AD populations.""
+}"
+pmid:31285793,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:19,include,"The study involves healthy or MCI adults, uses active tDCS versus sham in a randomized design, and reports an objective episodic memory outcome (WLMT recall).","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy or MCI adults, uses active tDCS versus sham in a randomized design, and reports an objective episodic memory outcome (WLMT recall).""
+}"
+pmid:31202902,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:20,include,"The study is a randomized, sham-controlled trial of tDCS in healthy older adults that reports an objective episodic memory outcome (verbal recall), meeting all inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study is a randomized, sham-controlled trial of tDCS in healthy older adults that reports an objective episodic memory outcome (verbal recall), meeting all inclusion criteria.""
+}"
+pmid:31196835,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:21,exclude,"The study reports improvements in global cognition (MMSE) and language function, but explicitly states that active tDCS did not improve delayed recall performance, meaning it lacks the required objective episodic-memory outcome.","{
+""decision"": ""exclude"",
+""reason"": ""The study reports improvements in global cognition (MMSE) and language function, but explicitly states that active tDCS did not improve delayed recall performance, meaning it lacks the required objective episodic-memory outcome.""
+}"
+pmid:31189985,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:22,include,"The study involves healthy adults, uses tACS versus sham in a randomised design, and reports associative memory as an objective episodic-memory outcome.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses tACS versus sham in a randomised design, and reports associative memory as an objective episodic-memory outcome.""
+}"
+pmid:31113459,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:23,unsure,"The record describes a study protocol for eligible participants (MCI) and intervention (tDCS vs sham), but the abstract does not specify whether the cognitive outcomes include objective episodic memory measures, which is required for inclusion.","{
+""decision"": ""unsure"",
+""reason"": ""The record describes a study protocol for eligible participants (MCI) and intervention (tDCS vs sham), but the abstract does not specify whether the cognitive outcomes include objective episodic memory measures, which is required for inclusion.""
+}"
+pmid:31062189,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:24,exclude,"The study is a case-control design rather than a randomised controlled trial, which violates the inclusion criterion for randomised designs.","{
+""decision"": ""exclude"",
+""reason"": ""The study is a case-control design rather than a randomised controlled trial, which violates the inclusion criterion for randomised designs.""
+}"
+pmid:31059351,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:24,include,"The study involves healthy adults receiving anodal tDCS versus sham, and reports an objective episodic memory outcome (source memory retrieval) which meets the inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving anodal tDCS versus sham, and reports an objective episodic memory outcome (source memory retrieval) which meets the inclusion criteria.""
+}"
+pmid:31031581,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:25,include,"The study involves adults with MCI, uses a randomized design comparing active tDCS to sham, and reports an objective episodic memory outcome (TOSL).","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with MCI, uses a randomized design comparing active tDCS to sham, and reports an objective episodic memory outcome (TOSL).""
+}"
+pmid:31011766,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:26,include,The study involves healthy adults receiving tACS versus sham in a randomised design and reports an objective episodic memory outcome (recognition accuracy).,"{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving tACS versus sham in a randomised design and reports an objective episodic memory outcome (recognition accuracy).""
+}"
+pmid:30939358,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:27,include,"The study uses tDCS versus sham in healthy adults and reports episodic memory outcomes (surprise recognition test), meeting the inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study uses tDCS versus sham in healthy adults and reports episodic memory outcomes (surprise recognition test), meeting the inclusion criteria.""
+}"
+pmid:30880221,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:28,include,"The study involves healthy adults, uses a randomized sham-controlled tDCS design, and reports an objective associative memory outcome (face-cued word recall), which meets all inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses a randomized sham-controlled tDCS design, and reports an objective associative memory outcome (face-cued word recall), which meets all inclusion criteria.""
+}"
+pmid:30668274,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:29,exclude,"The study focuses on facial emotion processing, which is not an objective episodic-memory outcome as required by the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on facial emotion processing, which is not an objective episodic-memory outcome as required by the eligibility criteria.""
+}"
+pmid:30667248,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:30,include,"The study involves healthy adults (implied by the context of word learning in a non-clinical sample), uses anodal tDCS versus sham, and reports an objective episodic memory outcome (word learning and recall).","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults (implied by the context of word learning in a non-clinical sample), uses anodal tDCS versus sham, and reports an objective episodic memory outcome (word learning and recall).""
+}"
+pmid:30555291,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:31,exclude,"The study uses transcranial random noise stimulation (tRNS), which is not tDCS or tACS, and the outcome is face memory rather than episodic memory.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses transcranial random noise stimulation (tRNS), which is not tDCS or tACS, and the outcome is face memory rather than episodic memory.""
+}"
+pmid:30553021,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:32,include,"The study involves healthy adults, uses an active tDCS versus sham design in a randomised crossover format, and reports an objective associative memory outcome.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses an active tDCS versus sham design in a randomised crossover format, and reports an objective associative memory outcome.""
+}"
+pmid:30538617,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:33,exclude,"The study reports memory outcomes based on a target detection task (correct rate and F1 score) rather than standard episodic memory measures such as free/cued recall, recognition, or scores from validated instruments like RAVLT, CVLT, or ADAS-Cog.","{
+""decision"": ""exclude"",
+""reason"": ""The study reports memory outcomes based on a target detection task (correct rate and F1 score) rather than standard episodic memory measures such as free/cued recall, recognition, or scores from validated instruments like RAVLT, CVLT, or ADAS-Cog.""
+}"
+pmid:30450044,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:34,exclude,"The primary outcome is global cognitive function (ADAS-Cog total score) rather than an objective episodic-memory outcome, and the abstract does not specify that any secondary outcomes are episodic memory measures.","{
+""decision"": ""exclude"",
+""reason"": ""The primary outcome is global cognitive function (ADAS-Cog total score) rather than an objective episodic-memory outcome, and the abstract does not specify that any secondary outcomes are episodic memory measures.""
+}"
+pmid:30417751,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:35,exclude,"The study uses transcranial random noise stimulation (tRNS), which is excluded as it is not tDCS or tACS, and the outcome measures focus on emotion evaluation rather than episodic memory.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses transcranial random noise stimulation (tRNS), which is excluded as it is not tDCS or tACS, and the outcome measures focus on emotion evaluation rather than episodic memory.""
+}"
+pmid:30414699,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:36,include,The study is a randomised controlled trial comparing active tDCS to sham in healthy adults and reports an objective episodic memory outcome (recall).,"{
+""decision"": ""include"",
+""reason"": ""The study is a randomised controlled trial comparing active tDCS to sham in healthy adults and reports an objective episodic memory outcome (recall).""
+}"
+pmid:30395314,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:37,include,"The study involves adults with aMCI, uses active tDCS versus sham in a randomised design, and reports objective episodic memory outcomes (free recall and recognition).","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with aMCI, uses active tDCS versus sham in a randomised design, and reports objective episodic memory outcomes (free recall and recognition).""
+}"
+pmid:30380131,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:38,exclude,The study focuses on anxiety reduction and neural connectivity in a psychiatric context rather than assessing episodic memory outcomes in healthy adults or those with MCI/AD.,"{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on anxiety reduction and neural connectivity in a psychiatric context rather than assessing episodic memory outcomes in healthy adults or those with MCI/AD.""
+}"
+pmid:30326206,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:39,exclude,"The study involves participants with schizophrenia, which is an excluded clinical group according to the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves participants with schizophrenia, which is an excluded clinical group according to the eligibility criteria.""
+}"
+pmid:30272127,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:40,exclude,"The study focuses on social cognition and self-other processing rather than episodic memory outcomes in healthy adults or those with MCI/AD, and it does not report standardised mean differences for eligible memory measures.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on social cognition and self-other processing rather than episodic memory outcomes in healthy adults or those with MCI/AD, and it does not report standardised mean differences for eligible memory measures.""
+}"
+pmid:30144462,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:40,exclude,The study focuses on perceptual learning and face recognition (perceptual memory) rather than episodic memory outcomes such as recall or source memory.,"{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on perceptual learning and face recognition (perceptual memory) rather than episodic memory outcomes such as recall or source memory.""
+}"
+pmid:30142573,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:41,include,"The study involves healthy adults, uses anodal tDCS versus sham in a randomised design, and assesses episodic memory (long-term retention of associative memories) which is sufficient to determine eligibility at the title/abstract stage.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses anodal tDCS versus sham in a randomised design, and assesses episodic memory (long-term retention of associative memories) which is sufficient to determine eligibility at the title/abstract stage.""
+}"
+pmid:30127510,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:42,exclude,"The study population consists of patients with fibromyalgia, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with fibromyalgia, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:30124354,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:43,include,The study involves healthy adults receiving active oscillatory tDCS versus sham in a randomised design and reports an objective episodic memory outcome (source recognition).,"{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving active oscillatory tDCS versus sham in a randomised design and reports an objective episodic memory outcome (source recognition).""
+}"
+pmid:30109059,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:45,include,"The study is a randomised controlled trial comparing cathodal tDCS to sham in healthy adults and reports word recognition, which is an objective episodic memory outcome.","{
+""decision"": ""include"",
+""reason"": ""The study is a randomised controlled trial comparing cathodal tDCS to sham in healthy adults and reports word recognition, which is an objective episodic memory outcome.""
+}"
+pmid:30037830,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:46,exclude,"The study focuses on sleep-dependent memory generalization and target detection accuracy rather than objective episodic-memory outcomes such as free/cued recall, recognition, or source/associative memory.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on sleep-dependent memory generalization and target detection accuracy rather than objective episodic-memory outcomes such as free/cued recall, recognition, or source/associative memory.""
+}"
+pmid:30035659,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:47,include,"The study involves healthy adults receiving active tDCS versus sham stimulation and reports an objective episodic memory outcome (recollection accuracy), which meets the inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving active tDCS versus sham stimulation and reports an objective episodic memory outcome (recollection accuracy), which meets the inclusion criteria.""
+}"
+pmid:29658441,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:48,exclude,"The study population consists of patients with mild-to-moderate Alzheimer's disease, which is excluded by the criterion requiring healthy individuals or those with MCI/mild AD only.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with mild-to-moderate Alzheimer's disease, which is excluded by the criterion requiring healthy individuals or those with MCI/mild AD only.""
+}"
+pmid:29656907,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:49,exclude,"The study focuses on auditory spatial attention rather than episodic memory, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on auditory spatial attention rather than episodic memory, which is an exclusion criterion.""
+}"
+pmid:29651240,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:50,exclude,"The record is a review article and focuses on ADHD, which is an excluded clinical group.","{
+""decision"": ""exclude"",
+""reason"": ""The record is a review article and focuses on ADHD, which is an excluded clinical group.""
+}"
+pmid:29593522,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:51,exclude,"The study exclusively reports working memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study exclusively reports working memory outcomes, which is an exclusion criterion.""
+}"
+pmid:29401230,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:52,unsure,"The study involves tDCS and an associative memory outcome, but the abstract does not specify if participants meet the inclusion criteria for healthy older adults or those with MCI/mild AD, nor does it confirm a randomised design.","{
+""decision"": ""unsure"",
+""reason"": ""The study involves tDCS and an associative memory outcome, but the abstract does not specify if participants meet the inclusion criteria for healthy older adults or those with MCI/mild AD, nor does it confirm a randomised design.""
+}"
+pmid:29375290,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:53,include,"The study involves healthy older adults, uses a randomized sham-controlled crossover design with tDCS, and assesses episodic memory (object-location memory) which qualifies as an objective memory outcome.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy older adults, uses a randomized sham-controlled crossover design with tDCS, and assesses episodic memory (object-location memory) which qualifies as an objective memory outcome.""
+}"
+pmid:29317186,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:54,include,The study uses tACS (an eligible stimulation type) versus a control condition in healthy adults and reports an objective episodic memory outcome (verbal-associative learning performance).,"{
+""decision"": ""include"",
+""reason"": ""The study uses tACS (an eligible stimulation type) versus a control condition in healthy adults and reports an objective episodic memory outcome (verbal-associative learning performance).""
+}"
+pmid:29259554,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:54,exclude,"The study focuses on older adults with Subjective Memory Complaints (SMC), which is not an eligible clinical group under the inclusion criteria requiring healthy, MCI, or mild AD participants.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on older adults with Subjective Memory Complaints (SMC), which is not an eligible clinical group under the inclusion criteria requiring healthy, MCI, or mild AD participants.""
+}"
+pmid:29163115,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:55,include,"The study involves healthy adults receiving real versus sham tDCS and reports an objective episodic memory outcome (delayed recall of words), meeting all inclusion criteria without triggering any exclusions.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving real versus sham tDCS and reports an objective episodic memory outcome (delayed recall of words), meeting all inclusion criteria without triggering any exclusions.""
+}"
+pmid:29067352,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:56,include,"The study involves healthy or MCI adults, uses active vs. sham tDCS in a randomized design, and assesses episodic memory outcomes (face-name and object-location association tasks).","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy or MCI adults, uses active vs. sham tDCS in a randomized design, and assesses episodic memory outcomes (face-name and object-location association tasks).""
+}"
+pmid:29056368,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:57,include,"The study is a randomised controlled trial comparing active tDCS to sham stimulation and reports an objective episodic memory outcome (associative recall), which meets the inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study is a randomised controlled trial comparing active tDCS to sham stimulation and reports an objective episodic memory outcome (associative recall), which meets the inclusion criteria.""
+}"
+pmid:29050849,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:58,unsure,"The study involves tDCS and an episodic memory outcome (recall), but the abstract does not specify whether the participants meet the clinical criteria for healthy, MCI, or mild AD, nor does it confirm if the design is a randomized controlled trial.","{
+""decision"": ""unsure"",
+""reason"": ""The study involves tDCS and an episodic memory outcome (recall), but the abstract does not specify whether the participants meet the clinical criteria for healthy, MCI, or mild AD, nor does it confirm if the design is a randomized controlled trial.""
+}"
+pmid:28934620,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:33:59,exclude,"The study is an observational trial without a sham control group, which violates the inclusion criterion for randomised designs with active tDCS/tACS vs. sham.","{
+""decision"": ""exclude"",
+""reason"": ""The study is an observational trial without a sham control group, which violates the inclusion criterion for randomised designs with active tDCS/tACS vs. sham.""
+}"
+pmid:28912159,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:00,include,"The study uses tACS versus sham in healthy adults and reports declarative memory performance, which meets the inclusion criteria for stimulation type, population, and outcome.","{
+""decision"": ""include"",
+""reason"": ""The study uses tACS versus sham in healthy adults and reports declarative memory performance, which meets the inclusion criteria for stimulation type, population, and outcome.""
+}"
+pmid:28848378,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:01,include,"The study involves healthy adults, uses anodal tDCS versus sham in a randomized design, and assesses episodic memory via delayed cued-recall.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses anodal tDCS versus sham in a randomized design, and assesses episodic memory via delayed cued-recall.""
+}"
+pmid:28709999,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:02,exclude,"The study involves healthy adults rather than individuals with MCI or mild AD, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves healthy adults rather than individuals with MCI or mild AD, which is an exclusion criterion.""
+}"
+pmid:28681715,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:03,exclude,"The study uses transcranial random noise stimulation (tRNS), which is excluded as it is not tDCS or tACS, and the participants have fibromyalgia, a non-eligible clinical group.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses transcranial random noise stimulation (tRNS), which is excluded as it is not tDCS or tACS, and the participants have fibromyalgia, a non-eligible clinical group.""
+}"
+pmid:28647325,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:03,exclude,"The study focuses on semantic memory and false recognition effects rather than objective episodic-memory outcomes such as free recall, cued recall, or recognition of presented items.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on semantic memory and false recognition effects rather than objective episodic-memory outcomes such as free recall, cued recall, or recognition of presented items.""
+}"
+pmid:28528736,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:04,include,"The study involves healthy adults receiving active tACS versus sham stimulation and reports episodic memory outcomes, meeting all inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving active tACS versus sham stimulation and reports episodic memory outcomes, meeting all inclusion criteria.""
+}"
+pmid:28512443,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:05,exclude,"The study population consists of patients with post-concussion syndrome following mild traumatic brain injury, which is a clinical group other than healthy adults, MCI, or mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with post-concussion syndrome following mild traumatic brain injury, which is a clinical group other than healthy adults, MCI, or mild AD.""
+}"
+pmid:28299412,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:06,exclude,"The study uses reaction time as the primary outcome measure, which does not constitute an objective episodic-memory outcome such as recall or recognition.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses reaction time as the primary outcome measure, which does not constitute an objective episodic-memory outcome such as recall or recognition.""
+}"
+pmid:28198386,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:07,exclude,"The study focuses on pitch and rhythm recognition memory, which are auditory/working memory outcomes rather than the required objective episodic-memory outcomes (e.g., free/cued recall, source memory) in healthy adults or those with MCI/mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on pitch and rhythm recognition memory, which are auditory/working memory outcomes rather than the required objective episodic-memory outcomes (e.g., free/cued recall, source memory) in healthy adults or those with MCI/mild AD.""
+}"
+pmid:28085735,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:08,exclude,"The study population consists of stroke patients, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of stroke patients, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:27951511,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:08,exclude,"The study population consists of patients with bipolar disorder, which is a non-eligible clinical group according to the exclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of patients with bipolar disorder, which is a non-eligible clinical group according to the exclusion criteria.""
+}"
+pmid:27876306,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:09,include,"The study uses active HD-tDCS versus sham in a randomised design and reports objective episodic memory outcomes (recall and recognition), meeting all inclusion criteria without triggering any exclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study uses active HD-tDCS versus sham in a randomised design and reports objective episodic memory outcomes (recall and recognition), meeting all inclusion criteria without triggering any exclusion criteria.""
+}"
+pmid:27845032,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:10,include,"The study uses tDCS versus sham in a randomised design and reports an objective episodic-memory outcome (recognition accuracy), which meets the inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study uses tDCS versus sham in a randomised design and reports an objective episodic-memory outcome (recognition accuracy), which meets the inclusion criteria.""
+}"
+pmid:27832598,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:11,exclude,"The study focuses on sensorimotor adaptation and savings rather than episodic memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on sensorimotor adaptation and savings rather than episodic memory outcomes, which is an exclusion criterion.""
+}"
+pmid:27647553,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:12,exclude,"The study assesses inhibitory control and problem-solving performance rather than episodic memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study assesses inhibitory control and problem-solving performance rather than episodic memory outcomes, which is an exclusion criterion.""
+}"
+pmid:27733822,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:12,exclude,"The study focuses exclusively on visuospatial working memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses exclusively on visuospatial working memory outcomes, which is an exclusion criterion.""
+}"
+pmid:27727241,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:13,exclude,"The study focuses on fear extinction processes in healthy humans rather than episodic memory outcomes, and the participants are not individuals with MCI or mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on fear extinction processes in healthy humans rather than episodic memory outcomes, and the participants are not individuals with MCI or mild AD.""
+}"
+pmid:27662113,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:14,exclude,"The study involves depressed patients, which is an excluded clinical group.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves depressed patients, which is an excluded clinical group.""
+}"
+pmid:27655384,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:15,exclude,"The study uses a self-other discrimination task which assesses social cognition rather than episodic memory, and it does not report any standardised episodic-memory outcomes such as recall or recognition.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses a self-other discrimination task which assesses social cognition rather than episodic memory, and it does not report any standardised episodic-memory outcomes such as recall or recognition.""
+}"
+pmid:27653887,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:16,exclude,"The study focuses on vascular dementia, which is a clinical group excluded by the criteria, and the primary memory outcome reported is visual short-term memory rather than episodic memory.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on vascular dementia, which is a clinical group excluded by the criteria, and the primary memory outcome reported is visual short-term memory rather than episodic memory.""
+}"
+pmid:27555381,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:17,exclude,"The study participants are healthy young and older adults, which does not meet the inclusion criterion requiring subjects with MCI or mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study participants are healthy young and older adults, which does not meet the inclusion criterion requiring subjects with MCI or mild AD.""
+}"
+pmid:27474794,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:17,include,"The study uses tDCS versus sham in a design that likely involves healthy adults and reports source memory outcomes, which meets the inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study uses tDCS versus sham in a design that likely involves healthy adults and reports source memory outcomes, which meets the inclusion criteria.""
+}"
+pmid:27452837,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:18,include,"The study involves healthy adults, uses active versus sham tDCS in a randomized crossover design, and assesses source-monitoring (a form of associative/source memory) as an objective episodic-memory outcome.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses active versus sham tDCS in a randomized crossover design, and assesses source-monitoring (a form of associative/source memory) as an objective episodic-memory outcome.""
+}"
+pmid:27433807,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:19,include,"The study involves healthy adults, uses tDCS versus sham in a randomised design, and reports an objective episodic memory outcome (picture recall).","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses tDCS versus sham in a randomised design, and reports an objective episodic memory outcome (picture recall).""
+}"
+pmid:27417530,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:20,include,"The study uses active tDCS versus sham in a randomised design and reports an objective episodic memory outcome (associative recognition), which meets the inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study uses active tDCS versus sham in a randomised design and reports an objective episodic memory outcome (associative recognition), which meets the inclusion criteria.""
+}"
+pmid:27381076,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:21,exclude,"The study's primary objective memory outcomes are visuo-spatial and verbal memory tasks, which do not meet the inclusion criterion for an objective episodic-memory outcome (specifically free/cued recall, recognition, source/associative memory, or RAVLT/CVLT/ADAS-Cog word recall scores).","{
+""decision"": ""exclude"",
+""reason"": ""The study's primary objective memory outcomes are visuo-spatial and verbal memory tasks, which do not meet the inclusion criterion for an objective episodic-memory outcome (specifically free/cued recall, recognition, source/associative memory, or RAVLT/CVLT/ADAS-Cog word recall scores).""
+}"
+pmid:27329808,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:22,include,"The study uses tDCS with a sham control condition and reports source memory, which is an eligible objective episodic-memory outcome.","{
+""decision"": ""include"",
+""reason"": ""The study uses tDCS with a sham control condition and reports source memory, which is an eligible objective episodic-memory outcome.""
+}"
+pmid:27285728,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:23,unsure,"The study uses tDCS and an objective memory outcome (Mnemonic Similarity Task), but the abstract does not specify the clinical status of participants (healthy vs. MCI/AD) or the randomization design, which are required for final eligibility determination.","{
+""decision"": ""unsure"",
+""reason"": ""The study uses tDCS and an objective memory outcome (Mnemonic Similarity Task), but the abstract does not specify the clinical status of participants (healthy vs. MCI/AD) or the randomization design, which are required for final eligibility determination.""
+}"
+pmid:27157059,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:24,exclude,The study focuses on motor memory and error processing in healthy adults rather than episodic memory outcomes in individuals with MCI or mild AD.,"{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on motor memory and error processing in healthy adults rather than episodic memory outcomes in individuals with MCI or mild AD.""
+}"
+pmid:27096945,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:26,exclude,The study focuses on perceptual learning and object recognition rather than episodic memory outcomes such as recall or recognition of word lists.,"{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on perceptual learning and object recognition rather than episodic memory outcomes such as recall or recognition of word lists.""
+}"
+pmid:27037186,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:27,exclude,"The study measures skin conductance reactivity, which is a physiological index of fear conditioning rather than an objective episodic-memory outcome such as recall or recognition.","{
+""decision"": ""exclude"",
+""reason"": ""The study measures skin conductance reactivity, which is a physiological index of fear conditioning rather than an objective episodic-memory outcome such as recall or recognition.""
+}"
+pmid:27005937,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:27,include,"The study involves patients with Alzheimer's disease, uses active tDCS versus sham, and reports objective episodic memory outcomes (CVLT-II recall and recognition) in a randomized design.","{
+""decision"": ""include"",
+""reason"": ""The study involves patients with Alzheimer's disease, uses active tDCS versus sham, and reports objective episodic memory outcomes (CVLT-II recall and recognition) in a randomized design.""
+}"
+pmid:26923418,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:28,include,"The study is a randomized, double-blind trial comparing active tDCS to sham in older adults with an objective episodic memory outcome (delayed recall), meeting all inclusion criteria without obvious exclusions.","{
+""decision"": ""include"",
+""reason"": ""The study is a randomized, double-blind trial comparing active tDCS to sham in older adults with an objective episodic memory outcome (delayed recall), meeting all inclusion criteria without obvious exclusions.""
+}"
+pmid:26679936,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:29,include,"The study involves healthy adults, uses tDCS versus sham in a randomised design, and reports an objective episodic-memory outcome (recognition memory).","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses tDCS versus sham in a randomised design, and reports an objective episodic-memory outcome (recognition memory).""
+}"
+pmid:26499250,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:30,exclude,"The study's primary outcome is working memory performance, which is explicitly excluded by the criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study's primary outcome is working memory performance, which is explicitly excluded by the criteria.""
+}"
+pmid:26457823,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:32,include,"The study uses tDCS versus sham in a randomised design and reports an objective episodic-memory outcome (recollection accuracy), with no exclusion criteria evident in the title or abstract.","{
+""decision"": ""include"",
+""reason"": ""The study uses tDCS versus sham in a randomised design and reports an objective episodic-memory outcome (recollection accuracy), with no exclusion criteria evident in the title or abstract.""
+}"
+pmid:26441544,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:33,include,The study uses tACS versus sham in a randomised design and reports an objective episodic memory outcome (cued recall of word pairs) which meets the inclusion criteria.,"{
+""decision"": ""include"",
+""reason"": ""The study uses tACS versus sham in a randomised design and reports an objective episodic memory outcome (cued recall of word pairs) which meets the inclusion criteria.""
+}"
+pmid:26236022,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:34,include,"The study involves healthy adults receiving active tDCS versus sham stimulation and reports an objective episodic memory outcome (associative recall), meeting all inclusion criteria without triggering any exclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving active tDCS versus sham stimulation and reports an objective episodic memory outcome (associative recall), meeting all inclusion criteria without triggering any exclusion criteria.""
+}"
+pmid:26200716,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:35,exclude,"The study participants are young subjects and older adults without specified MCI or mild AD, which excludes them from the eligible clinical groups.","{
+""decision"": ""exclude"",
+""reason"": ""The study participants are young subjects and older adults without specified MCI or mild AD, which excludes them from the eligible clinical groups.""
+}"
+pmid:25987365,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:37,include,"The study involves healthy adults, uses tDCS versus sham in a randomised crossover design, and reports objective episodic memory outcomes (verbal learning rate and recency effects) alongside working memory.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses tDCS versus sham in a randomised crossover design, and reports objective episodic memory outcomes (verbal learning rate and recency effects) alongside working memory.""
+}"
+pmid:25971602,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:37,exclude,"The study measures facial expression recognition, which is not an objective episodic-memory outcome such as recall or recognition of words/lists.","{
+""decision"": ""exclude"",
+""reason"": ""The study measures facial expression recognition, which is not an objective episodic-memory outcome such as recall or recognition of words/lists.""
+}"
+pmid:25959620,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:38,exclude,"The study focuses on recognition memory for melodies, which is a domain-specific musical memory task rather than the standard episodic-memory outcomes (e.g., word recall) required by the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on recognition memory for melodies, which is a domain-specific musical memory task rather than the standard episodic-memory outcomes (e.g., word recall) required by the eligibility criteria.""
+}"
+pmid:25951227,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:39,exclude,"The study focuses on social cognitive and affective outcomes (emotional facial recognition, perspective taking) rather than objective episodic memory outcomes as required by the inclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on social cognitive and affective outcomes (emotional facial recognition, perspective taking) rather than objective episodic memory outcomes as required by the inclusion criteria.""
+}"
+pmid:25816233,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:41,include,"The study involves healthy adults receiving active tDCS versus sham in a randomised design and reports recognition memory outcomes, which meets the inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults receiving active tDCS versus sham in a randomised design and reports recognition memory outcomes, which meets the inclusion criteria.""
+}"
+pmid:25730820,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:42,exclude,"The study focuses on improving myoelectric control and EMG signal quality in amputees, which does not involve episodic memory outcomes or eligible clinical groups such as healthy adults, MCI, or mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on improving myoelectric control and EMG signal quality in amputees, which does not involve episodic memory outcomes or eligible clinical groups such as healthy adults, MCI, or mild AD.""
+}"
+pmid:25697588,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:43,exclude,"The study involves only eight healthy subjects, which does not meet the inclusion criterion for adults with MCI or mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study involves only eight healthy subjects, which does not meet the inclusion criterion for adults with MCI or mild AD.""
+}"
+pmid:25650106,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:44,exclude,"The study focuses on speech recognition outcomes rather than episodic memory, and it does not report an objective episodic-memory outcome such as recall or recognition of previously learned items.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on speech recognition outcomes rather than episodic memory, and it does not report an objective episodic-memory outcome such as recall or recognition of previously learned items.""
+}"
+pmid:25647757,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:45,exclude,"The study assesses spatial memory (object location associations) rather than episodic memory, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study assesses spatial memory (object location associations) rather than episodic memory, which is an exclusion criterion.""
+}"
+pmid:25621789,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:46,exclude,"The study focuses on spatial recognition and visual search tasks in healthy adults, which does not meet the inclusion criterion for objective episodic-memory outcomes.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on spatial recognition and visual search tasks in healthy adults, which does not meet the inclusion criterion for objective episodic-memory outcomes.""
+}"
+pmid:25570761,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:47,exclude,"The study focuses on myoelectric prosthesis control performance rather than episodic memory outcomes, and the participants are able-bodied individuals and amputees, which does not meet the inclusion criteria for healthy adults with MCI or mild AD.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on myoelectric prosthesis control performance rather than episodic memory outcomes, and the participants are able-bodied individuals and amputees, which does not meet the inclusion criteria for healthy adults with MCI or mild AD.""
+}"
+pmid:25538609,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:47,exclude,"The study focuses on attentional processing and sentence comprehension rather than objective episodic memory outcomes, and it compares active tDCS to cathodal tDCS rather than using a sham control group.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on attentional processing and sentence comprehension rather than objective episodic memory outcomes, and it compares active tDCS to cathodal tDCS rather than using a sham control group.""
+}"
+pmid:25448859,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:48,include,"The study uses active tDCS versus sham in a randomised design and reports an objective episodic-memory outcome (false recognition/recognition), which meets the inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study uses active tDCS versus sham in a randomised design and reports an objective episodic-memory outcome (false recognition/recognition), which meets the inclusion criteria.""
+}"
+pmid:25368577,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:49,include,"The study involves healthy elderly adults, uses anodal tDCS versus sham stimulation in a randomised design, and reports objective episodic memory outcomes (word recall), meeting all inclusion criteria without any exclusion factors.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy elderly adults, uses anodal tDCS versus sham stimulation in a randomised design, and reports objective episodic memory outcomes (word recall), meeting all inclusion criteria without any exclusion factors.""
+}"
+pmid:25282052,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:50,exclude,"The study's primary outcome is immediate serial recall, which is a working memory task rather than an objective episodic-memory outcome such as free/cued recall or recognition.","{
+""decision"": ""exclude"",
+""reason"": ""The study's primary outcome is immediate serial recall, which is a working memory task rather than an objective episodic-memory outcome such as free/cued recall or recognition.""
+}"
+pmid:24770704,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:52,exclude,"The study focuses on pitch memory, which is a domain-specific auditory/verbal memory task rather than the objective episodic-memory outcomes (e.g., free recall, recognition of word lists) specified in the inclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on pitch memory, which is a domain-specific auditory/verbal memory task rather than the objective episodic-memory outcomes (e.g., free recall, recognition of word lists) specified in the inclusion criteria.""
+}"
+pmid:24695720,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:54,exclude,"The study focuses on phonological storage and verbal short-term memory rather than episodic memory, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on phonological storage and verbal short-term memory rather than episodic memory, which is an exclusion criterion.""
+}"
+pmid:24561155,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:55,exclude,"The study uses tDCS and sham but measures response times and error rates for semantic violations in action representation, which are not objective episodic-memory outcomes such as recall or recognition.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses tDCS and sham but measures response times and error rates for semantic violations in action representation, which are not objective episodic-memory outcomes such as recall or recognition.""
+}"
+pmid:24508152,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:56,exclude,"The study focuses on 'reality filtering' rather than standard episodic memory outcomes (e.g., recall, recognition) and does not report eligible objective episodic-memory measures.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on 'reality filtering' rather than standard episodic memory outcomes (e.g., recall, recognition) and does not report eligible objective episodic-memory measures.""
+}"
+pmid:24361739,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:57,exclude,"The study exclusively reports working memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study exclusively reports working memory outcomes, which is an exclusion criterion.""
+}"
+pmid:24341718,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:34:58,exclude,"The study focuses on spatial recognition and visual search in healthy adults rather than episodic memory outcomes, which is a required inclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on spatial recognition and visual search in healthy adults rather than episodic memory outcomes, which is a required inclusion criterion.""
+}"
+pmid:24324721,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:00,exclude,"The study focuses on repetition suppression and recognition of unfamiliar faces, which does not constitute an objective episodic-memory outcome (such as free/cued recall or recognition of learned material) as defined by the eligibility criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on repetition suppression and recognition of unfamiliar faces, which does not constitute an objective episodic-memory outcome (such as free/cued recall or recognition of learned material) as defined by the eligibility criteria.""
+}"
+pmid:24062685,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:00,include,"The study involves healthy adults, uses active tDCS versus sham in a randomized design, and reports verbal episodic memory outcomes.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses active tDCS versus sham in a randomized design, and reports verbal episodic memory outcomes.""
+}"
+pmid:23988131,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:02,include,"The study involves healthy adults, uses randomised tDCS vs. sham design, and reports objective episodic memory outcomes (free recall and recognition) for novel vocabulary learning.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy adults, uses randomised tDCS vs. sham design, and reports objective episodic memory outcomes (free recall and recognition) for novel vocabulary learning.""
+}"
+pmid:23968283,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:03,exclude,"The study focuses on pitch memory, which is not an objective episodic-memory outcome (such as free recall, recognition, or source memory) and does not involve eligible clinical groups.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on pitch memory, which is not an objective episodic-memory outcome (such as free recall, recognition, or source memory) and does not involve eligible clinical groups.""
+}"
+pmid:23811267,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:03,exclude,"The study reports cognitive outcomes using the CogHealth battery, which does not include standard episodic memory measures (e.g., free/cued recall, recognition, source/associative memory) or specified scores from RAVLT, CVLT, or ADAS-Cog word recall.","{
+""decision"": ""exclude"",
+""reason"": ""The study reports cognitive outcomes using the CogHealth battery, which does not include standard episodic memory measures (e.g., free/cued recall, recognition, source/associative memory) or specified scores from RAVLT, CVLT, or ADAS-Cog word recall.""
+}"
+pmid:23137702,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:04,unsure,"The study uses tDCS and an objective episodic memory outcome (recognition), but the abstract does not specify whether participants are healthy adults or have MCI/mild AD, nor does it confirm a randomised design.","{
+""decision"": ""unsure"",
+""reason"": ""The study uses tDCS and an objective episodic memory outcome (recognition), but the abstract does not specify whether participants are healthy adults or have MCI/mild AD, nor does it confirm a randomised design.""
+}"
+pmid:22723786,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:05,exclude,"The study focuses on emotional state and processing rather than episodic memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on emotional state and processing rather than episodic memory outcomes, which is an exclusion criterion.""
+}"
+pmid:22683259,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:06,exclude,"The study uses transcranial alternating current stimulation (tACS) but measures visual memory-matching reaction times, which is a working memory or attention outcome rather than an objective episodic-memory outcome such as recall or recognition.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses transcranial alternating current stimulation (tACS) but measures visual memory-matching reaction times, which is a working memory or attention outcome rather than an objective episodic-memory outcome such as recall or recognition.""
+}"
+pmid:22579829,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:07,exclude,The study focuses on semantic dissonance detection and picture recognition rather than objective episodic memory outcomes such as recall or recognition of word lists.,"{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on semantic dissonance detection and picture recognition rather than objective episodic memory outcomes such as recall or recognition of word lists.""
+}"
+pmid:22511978,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:08,exclude,"The study uses a complex threat detection task measuring perceptual sensitivity, which does not meet the inclusion criterion for an objective episodic-memory outcome.","{
+""decision"": ""exclude"",
+""reason"": ""The study uses a complex threat detection task measuring perceptual sensitivity, which does not meet the inclusion criterion for an objective episodic-memory outcome.""
+}"
+pmid:22483547,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:09,exclude,"The study focuses on executive functions and insight problem solving rather than episodic memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses on executive functions and insight problem solving rather than episodic memory outcomes, which is an exclusion criterion.""
+}"
+pmid:21840288,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:10,include,"The study involves patients with Alzheimer's disease receiving active tDCS versus sham stimulation and reports an objective episodic memory outcome (visual recognition memory), which meets the inclusion criteria.","{
+""decision"": ""include"",
+""reason"": ""The study involves patients with Alzheimer's disease receiving active tDCS versus sham stimulation and reports an objective episodic memory outcome (visual recognition memory), which meets the inclusion criteria.""
+}"
+pmid:21840287,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:11,include,"The study uses active tDCS versus sham in a randomised design and reports an objective episodic-memory outcome (verbal memorization/recognition), with no clear exclusion criteria evident in the abstract.","{
+""decision"": ""include"",
+""reason"": ""The study uses active tDCS versus sham in a randomised design and reports an objective episodic-memory outcome (verbal memorization/recognition), with no clear exclusion criteria evident in the abstract.""
+}"
+pmid:21684040,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:12,include,"The study involves healthy elderly participants, uses a randomized crossover design comparing active tDCS to sham stimulation, and reports objective episodic memory outcomes (free recall) with sufficient detail to suggest eligibility.","{
+""decision"": ""include"",
+""reason"": ""The study involves healthy elderly participants, uses a randomized crossover design comparing active tDCS to sham stimulation, and reports objective episodic memory outcomes (free recall) with sufficient detail to suggest eligibility.""
+}"
+pmid:20844115,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:13,exclude,"The study focuses exclusively on motor sequence learning outcomes, which falls under the exclusion criterion for working memory or non-episodic memory outcomes.","{
+""decision"": ""exclude"",
+""reason"": ""The study focuses exclusively on motor sequence learning outcomes, which falls under the exclusion criterion for working memory or non-episodic memory outcomes.""
+}"
+pmid:20659489,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:14,exclude,"The study population consists of young adults, which excludes healthy older adults or those with MCI/mild AD as required by the inclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study population consists of young adults, which excludes healthy older adults or those with MCI/mild AD as required by the inclusion criteria.""
+}"
+pmid:20570713,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:14,exclude,"The study exclusively reports working memory outcomes, which is an exclusion criterion.","{
+""decision"": ""exclude"",
+""reason"": ""The study exclusively reports working memory outcomes, which is an exclusion criterion.""
+}"
+pmid:19620953,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:15,exclude,The study focuses exclusively on working memory outcomes and involves a clinical group (stroke patients) that is not eligible under the criteria.,"{
+""decision"": ""exclude"",
+""reason"": ""The study focuses exclusively on working memory outcomes and involves a clinical group (stroke patients) that is not eligible under the criteria.""
+}"
+pmid:19604352,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:16,unsure,"The study involves tDCS and an episodic memory outcome, but the abstract does not specify the clinical status of participants (healthy vs. MCI/AD) or confirm that the design is a randomised controlled trial with a sham control group suitable for inclusion.","{
+""decision"": ""unsure"",
+""reason"": ""The study involves tDCS and an episodic memory outcome, but the abstract does not specify the clinical status of participants (healthy vs. MCI/AD) or confirm that the design is a randomised controlled trial with a sham control group suitable for inclusion.""
+}"
+pmid:18977813,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:17,include,"The study involves adults with Alzheimer's disease, uses active tDCS versus sham in a randomised design, and reports an objective episodic-memory outcome (visual recognition memory).","{
+""decision"": ""include"",
+""reason"": ""The study involves adults with Alzheimer's disease, uses active tDCS versus sham in a randomised design, and reports an objective episodic-memory outcome (visual recognition memory).""
+}"
+pmid:18926878,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:18,exclude,"The study investigates facial expression recognition, which is not an objective episodic-memory outcome (such as recall or recognition of words/lists) and thus fails the inclusion criteria.","{
+""decision"": ""exclude"",
+""reason"": ""The study investigates facial expression recognition, which is not an objective episodic-memory outcome (such as recall or recognition of words/lists) and thus fails the inclusion criteria.""
+}"
+pmid:18525028,asi,asi1-mini,92038cb9c202c5f5ae452c3752a9b5b6c07f5e229f35c65065287d0aa95e8b79,2026-11-07T17:35:19,unsure,"The study involves patients with Alzheimer disease, but the abstract does not specify whether they meet the inclusion criteria for 'mild AD' or if they are considered 'healthy', and it is unclear if the design is a randomised controlled trial.","{
+""decision"": ""unsure"",
+""reason"": ""The study involves patients with Alzheimer disease, but the abstract does not specify whether they meet the inclusion criteria for 'mild AD' or if they are considered 'healthy', and it is unclear if the design is a randomised controlled trial.""
+}"
