@@ -54,7 +54,7 @@ rq2:
 	$(PY) -m checks.check_rq2 --dir b3
 	Rscript rq2_nsd/models.R --run --input $$C2C_DATA/rq2/b3 --output rq2_nsd/results
 
-.PHONY: rq3-search rq3-screen rq3-full-text rq3-check-screen
+.PHONY: rq3-search rq3-screen rq3-full-text rq3-check-screen rq3-fields
 rq3-search:
 	$(PY) -m tools.pubmed_search rq3
 	$(PY) -m checks.check_search rq3
@@ -75,6 +75,13 @@ rq3-check-screen:
 rq3-es:
 	$(PY) -m checks.check_rq3_extraction
 	Rscript rq3_stimulation/effect_sizes.R --run
+
+SIMNIBS_PY := $(HOME)/Applications/SimNIBS-4.6/bin/simnibs_python
+
+rq3-fields:
+	$(SIMNIBS_PY) -m rq3_stimulation.simnibs.known_answer
+	$(SIMNIBS_PY) -m rq3_stimulation.simnibs.run_montages ernie
+	$(PY) -m checks.check_rq3_fields
 
 rq3: rq3-es
 	Rscript rq3_stimulation/models.R --run
