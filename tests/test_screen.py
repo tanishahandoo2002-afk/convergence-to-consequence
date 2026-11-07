@@ -155,7 +155,7 @@ def test_run_full_text_falls_back_to_fetch_and_skips_none(tmp_path):
 
     def fetch(rid):
         fetched.append(rid)
-        return "Table 2 from PMC" if rid == "pmid:1" else None
+        return ("Table 2 from PMC", "pmc") if rid == "pmid:1" else None
 
     assert run_full_text(["pmid:1", "pmid:2"], tmp_path, c, "m", "crit", out, fetch=fetch) == 1
     assert "Table 2 from PMC" in c.calls[0]["messages"][1]["content"]
@@ -172,6 +172,56 @@ def test_article_text_keeps_floating_tables_and_drops_empty_articles():
     assert "Methods." in article_text(xml.encode()) and "Table 2" in article_text(xml.encode())
     assert article_text(b"<pmc-articleset><article><front>abstract only</front></article></pmc-articleset>") is None
     assert article_text(b"<pmc-articleset><article><body><p>Too short.</p></body></article></pmc-articleset>") is None
+
+
+TRIAL = {"eligible": True, "population": "MCI", "design": "crossover", "stim": "tDCS",
+         "outcome": "RAVLT delayed recall", "n": 18, "reason": "sham-controlled"}
+
+
+def test_parse_trial_valid_and_ineligible():
+    import json
+    from tools.screen import parse_trial
+    assert parse_trial(json.dumps(TRIAL)) == TRIAL
+    no = {"eligible": False, "population": "", "design": "", "stim": "", "outcome": "", "n": 0, "reason": "TMS"}
+    assert parse_trial(json.dumps(no)) == no
+
+
+def test_parse_trial_rejects_bad_enum_and_n():
+    import json
+    from tools.screen import parse_trial
+    assert parse_trial(json.dumps(TRIAL | {"population": "depression"})) is None
+    assert parse_trial(json.dumps(TRIAL | {"stim": "TMS"})) is None
+    assert parse_trial(json.dumps(TRIAL | {"n": "18"})) is None
+
+
+def test_run_full_text_trial_records_source(tmp_path):
+    import json
+    from tools.screen import TRIAL_COLUMNS, TRIAL_INSTRUCTION, parse_trial, run_full_text
+    out = tmp_path / "trials.csv"
+    c = FakeClient([json.dumps(TRIAL)])
+    assert run_full_text(["pmid:1"], tmp_path, c, "m", "crit", out, fetch=lambda rid: ("text", "https://x/p.pdf"),
+                         instruction=TRIAL_INSTRUCTION, parse=parse_trial, columns=TRIAL_COLUMNS) == 1
+    row = pd.read_csv(out, dtype=str).iloc[0]
+    assert row.source == "https://x/p.pdf" and row.population == "MCI" and "tDCS or tACS" in c.calls[0]["messages"][0]["content"]
+
+
+def test_free_text_falls_back_to_openalex_pdf(monkeypatch):
+    from tools import screen
+    pdf = b"%PDF-1.4 fake"
+
+    def get(url, **kw):
+        if url.startswith(screen.OPENALEX):
+            return SimpleNamespace(status_code=200, raise_for_status=lambda: None, json=lambda: {"locations": [
+                {"is_oa": True, "pdf_url": "https://pub/landing"}, {"is_oa": False, "pdf_url": "https://paywall/p.pdf"},
+                {"is_oa": True, "pdf_url": "https://repo/p.pdf"}]})
+        # the landing page answers with HTML, which must be skipped
+        return SimpleNamespace(status_code=200, content=pdf if url == "https://repo/p.pdf" else b"<html>")
+
+    monkeypatch.setattr(screen, "pmc_only", lambda rid: None)
+    monkeypatch.setattr(screen.requests, "get", get)
+    monkeypatch.setattr(screen, "pdf_text", lambda f: "Methods. " * 400)
+    text, source = screen.free_text("pmid:9")
+    assert source == "https://repo/p.pdf" and "Methods." in text
 
 
 def test_run_rater_throttles_between_requests(tmp_path):

@@ -7,10 +7,12 @@ CLI:
   python -m tools.screen rq1 --stage title_abstract --merge
   python -m tools.screen rq1 --second-look                   # the author's sheet for rescued agreed excludes
   python -m tools.screen rq1 --stage full_text --rater asi   # contrast-table proposals; author confirms each
+  python -m tools.screen rq3 --stage full_text --rater asi   # trial eligibility proposals; author confirms each
 """
 import argparse
 import datetime
 import hashlib
+import io
 import json
 import math
 import os
@@ -22,6 +24,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import requests
+from pypdf.errors import PdfReadError
 
 from tools.common import ROOT, load_config, record_versions
 from tools.kappa import SECOND_LOOK_SHEET
@@ -48,6 +51,17 @@ CONTRAST_INSTRUCTION = (
     '{"eligible": true | false, "table": "<table label>", "contrast": "<contrast as written>", '
     '"contrast_type": "success" | "recollection" | "familiarity", "n": <integer>, "reason": "<one sentence>"}'
 )
+TRIAL_FIELDS = {"population": {"healthy", "MCI", "AD"}, "design": {"parallel", "crossover"}, "stim": {"tDCS", "tACS"}}
+TRIAL_COLUMNS = ["record_id", "rater", "model", "timestamp", "source", "eligible", "population", "design", "stim",
+                 "outcome", "n", "reason", "raw"]
+TRIAL_INSTRUCTION = (
+    "You read the full text of a tDCS or tACS study for a meta-analysis. Using the criteria above, say whether "
+    "the paper is eligible. For an eligible paper give the population, the design, the stimulation type, the "
+    "episodic-memory test and the number of participants analysed. Answer with JSON only: "
+    '{"eligible": true | false, "population": "healthy" | "MCI" | "AD", "design": "parallel" | "crossover", '
+    '"stim": "tDCS" | "tACS", "outcome": "<test name as written>", "n": <integer>, "reason": "<one sentence>"}'
+)
+OPENALEX = "https://api.openalex.org/works"
 
 
 def _clean(v):
@@ -82,6 +96,15 @@ def parse_contrast(text):
     if d["eligible"] and (d.get("contrast_type") not in CONTRAST_TYPES or type(d.get("n")) is not int):
         return None
     return {k: d.get(k, "") for k in ("eligible", "table", "contrast", "contrast_type", "n", "reason")}
+
+
+def parse_trial(text):
+    d = _json(text)
+    if not isinstance(d, dict) or not isinstance(d.get("eligible"), bool):
+        return None
+    if d["eligible"] and (any(d.get(k) not in v for k, v in TRIAL_FIELDS.items()) or type(d.get("n")) is not int):
+        return None
+    return {k: d.get(k, "") for k in ("eligible", "population", "design", "stim", "outcome", "n", "reason")}
 
 
 def pdf_text(path):
@@ -160,9 +183,49 @@ def pmc_text(rid):
     return article_text(r.content)
 
 
-def run_full_text(record_ids, pdf_dir, client, model, criteria, out_path, fetch=lambda rid: None):
-    """Propose the contrast table and N for each paper with a PDF, or else with text from `fetch`; resumable.
-    Returns the count."""
+def pmc_only(rid):
+    text = pmc_text(rid)
+    return (text, "pmc") if text else None
+
+
+def remote_pdf_text(url):
+    """Text of a free PDF, read in memory and not saved; None when the link gives no usable PDF."""
+    try:
+        r = requests.get(url, timeout=60, headers={"User-Agent": EUTILS_TOOL})
+    except requests.RequestException as e:
+        print(f"no PDF from {url}: {e}")
+        return None
+    # publisher pages often answer a PDF link with HTML (a bot check or a landing page)
+    if r.status_code != 200 or not r.content.startswith(b"%PDF"):
+        return None
+    try:
+        text = pdf_text(io.BytesIO(r.content))
+    except PdfReadError as e:
+        print(f"unreadable PDF from {url}: {e}")
+        return None
+    return text if len(text) >= MIN_ARTICLE_CHARS else None
+
+
+def free_text(rid):
+    """PMC's open-access text, else a free PDF that OpenAlex lists for the PMID. Returns (text, source) or None."""
+    got = pmc_only(rid)
+    if got or not rid.startswith("pmid:"):
+        return got
+    r = requests.get(f"{OPENALEX}/pmid:{rid[5:]}", timeout=60)
+    if r.status_code == 404:
+        return None
+    r.raise_for_status()
+    for loc in r.json().get("locations", []):
+        url = loc.get("pdf_url")
+        if loc.get("is_oa") and url and (text := remote_pdf_text(url)):
+            return text, url
+    return None
+
+
+def run_full_text(record_ids, pdf_dir, client, model, criteria, out_path, fetch=lambda rid: None,
+                  instruction=CONTRAST_INSTRUCTION, parse=parse_contrast, columns=CONTRAST_COLUMNS):
+    """Propose eligibility and the key fields for each paper with a PDF, or else with text from `fetch`, which
+    returns (text, source) or None; resumable. Returns the count."""
     out_path = Path(out_path)
     done = set(pd.read_csv(out_path, dtype=str).record_id) if out_path.exists() else set()
     n = 0
@@ -170,15 +233,16 @@ def run_full_text(record_ids, pdf_dir, client, model, criteria, out_path, fetch=
         if rid in done:
             continue
         pdf = Path(pdf_dir) / f"{rid.replace(':', '_').replace('/', '_')}.pdf"
-        text = pdf_text(pdf) if pdf.exists() else fetch(rid)
-        if not text:
+        got = (pdf_text(pdf), "pdf") if pdf.exists() else fetch(rid)
+        if not got or not got[0]:
             continue
-        messages = [{"role": "system", "content": f"{criteria}\n\n{CONTRAST_INSTRUCTION}"},
+        text, source = got
+        messages = [{"role": "system", "content": f"{criteria}\n\n{instruction}"},
                     {"role": "user", "content": text}]
-        out = screen_record(client, model, messages, parse=parse_contrast)
-        row = {"record_id": rid, "rater": "full_text", "model": model,
+        out = screen_record(client, model, messages, parse=parse)
+        row = {"record_id": rid, "rater": "full_text", "model": model, "source": source,
                "timestamp": datetime.datetime.now().isoformat(timespec="seconds")} | out
-        pd.DataFrame([row], columns=CONTRAST_COLUMNS).to_csv(out_path, mode="a", header=not out_path.exists(), index=False)
+        pd.DataFrame([row], columns=columns).to_csv(out_path, mode="a", header=not out_path.exists(), index=False)
         n += 1
     return n
 
@@ -240,11 +304,14 @@ def main():
         ta = title_abstract_decisions(base)
         r = cfg["raters"][a.rater or "asi"]
         kept = list(ta.index[ta != "exclude"])[:a.limit]
-        out = scr / "contrast_proposals.csv"
-        n = run_full_text(kept, data_dir(a.rq, "pdfs"), client_for(r), r["model"],
-                          (scr / "criteria.md").read_text(), out, fetch=pmc_text)
+        # RQ3 also reads free PDFs listed by OpenAlex (CHANGELOG 2026-11-08); RQ1 stays on PMC
+        trial = a.rq == "rq3"
+        out = scr / ("trial_proposals.csv" if trial else "contrast_proposals.csv")
+        n = run_full_text(kept, data_dir(a.rq, "pdfs"), client_for(r), r["model"], (scr / "criteria.md").read_text(),
+                          out, fetch=free_text if trial else pmc_only,
+                          **(dict(instruction=TRIAL_INSTRUCTION, parse=parse_trial, columns=TRIAL_COLUMNS) if trial else {}))
         record_versions(f"{a.rq}_full_text_{a.rater or 'asi'}")
-        print(f"full text: {n} proposals written; the author confirms each in experiments.csv")
+        print(f"full text: {n} proposals written; the author confirms each")
         no_text = sorted(set(kept) - set(pd.read_csv(out, dtype=str).record_id if out.exists() else []))
         print(f"no full text found for {len(no_text)} of {len(kept)}")
         if not a.limit:  # PRISMA counts this list, so a partial run must not replace it
