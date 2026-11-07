@@ -6,13 +6,13 @@ Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project
 
 **Was:** the 167 agreed excludes outside the 20% sample stayed excluded on the ASI and Qwen decision, and the RQ1 second look said it did not apply to RQ3.
 
-**Now:** the team asked for the same second look as RQ1. An AI assistant read all 167 once. The 32 it would keep go to the author on a separate sheet (`rq3_stimulation/screening/human_decisions_second_look.csv`, written by `python -m tools.screen rq3 --second-look`). She answers yes or no, as on the main sheet. The other 135 stay excluded. All judgments are in `rq3_stimulation/screening/ai_suggestions_unseen.csv`.
+**Now:** the team asked for the same second look as RQ1. An AI assistant read all 167 once. The 32 it would keep go to the author on a separate sheet (`rq3_stimulation/screening/human_decisions_second_look.csv`, written by `python -m tools.screen rq3 --second-look`). She answers yes or no, as on the main sheet. The other 135 stay excluded. All judgments are in `rq3_stimulation/screening/ai_suggestions_unseen.csv`. She answered yes to all 32, relayed by the team, so 163 records go to full text and 186 are excluded at title/abstract.
 
 **Why:** the author accepted 6 include suggestions among the 42 sampled agreed excludes, so both AI raters miss records she counts as eligible. Unlike RQ1, this was decided after her main-sheet answers were recorded.
 
 **How they were made:** by the method of the RQ3 main-sheet suggestions, with the same criteria and format. Of the 32, 10 have high confidence, 12 medium and 10 low. Many are healthy-adult memory studies (DRM, source memory, object-location recall) that both raters excluded.
 
-**Limits:** the RQ1 second-look limits apply here: the look was not blind, every suggestion on the sheet is include, the judgments were written by hand in one pass, no person reads the 135, and her answers count towards PRISMA but not towards AI-author κ. `make rq3-check-screen` fails until she answers the 32.
+**Limits:** the RQ1 second-look limits apply here: the look was not blind, every suggestion on the sheet is include, the judgments were written by hand in one pass, no person reads the 135, and her answers count towards PRISMA but not towards AI-author κ. `make rq3-check-screen` now fails only on the PRISMA reconcile, until full-text decisions exist (163 assessed, 0 decided).
 
 ## 2026-11-08: author accepts every AI suggestion (RQ3)
 
