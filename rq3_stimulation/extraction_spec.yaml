@@ -105,8 +105,23 @@ studies:
          n_active: 20, n_sham: 20, higher_is_better: 1, table: "Table 2", active: [4, 13], sham: [1, 13]}
       - {montage: t3, test_name: "WMS visual reproduction delayed", test_type: recall, followup_days: 0, sessions: 5,
          n_active: 20, n_sham: 20, higher_is_better: 1, table: "Table 2", active: [4, 12], sham: [1, 12]}
+  - record_id: "pmid:36831783"
+    population: healthy
+    diagnostic_criteria: ""
+    design: parallel
+    stim: tDCS
+    timing: encoding
+    montages:
+      f3: {anode: F3, cathode: Fp2, other_electrodes: "", size_cm2: 35, current_mA: 1.5, type: tDCS}
+    rob2: {d1_randomisation: low, d1b_carryover: "", d2_deviations: low, d3_missing: low, d4_measurement: low,
+           d5_selection: some, overall: some}
+    check: "Experiment 1 only: tDCS during incidental encoding, recognition on day 1 is the first test. Experiment 2 (recall, Figure 7) is a separate sample still to do; its group Ns were not found. RoB 2: random allocation by stimulation codes for a blind experimenter, no registration found."
+    effects:
+      - {montage: f3, test_name: "word recognition d', day 1 (experiment 1)", test_type: recognition, followup_days: 0,
+         sessions: 1, n_active: 19, n_sham: 21, higher_is_better: 1, figure: "Figure 2",
+         ticks: [[48, 128, 2], [48, 421, 0]], active: [235, 206], sham: [172, 207], bar: ci95,
+         check: "Digitised from points with 95% CI bars; SD back-calculated with the t quantile. Check the points against the figure."}
 not_extracted:
-  - {record_id: "pmid:41668515", reason: "No table of results; d' is given only as means pooled over conditions in the text. Values per condition would need the figures or the authors."}
+  - {record_id: "pmid:41668515", reason: "No table of results. Figure 2 shows individual d' values and densities per category and memorability, with no plotted means or error bars, so it cannot be digitised."}
   - {record_id: "pmid:41359335", reason: "Only change from baseline is tabled, as marginal means with SE, and the RAVLT is not in that table. Post-test means and SDs are not reported."}
-  - {record_id: "pmid:33029128", reason: "The only table is demographics; recall results are in figures."}
-  - {record_id: "pmid:36831783", reason: "No table of memory results in the PMC text; results are in figures or text."}
+  - {record_id: "pmid:33029128", reason: "The only table is demographics. Figure 2 plots the means, but the error bars are hidden under the markers and overlapping data points, so they cannot be digitised reliably."}

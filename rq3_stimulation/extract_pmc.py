@@ -1,7 +1,8 @@
 """Read RQ3 means and SDs straight from PMC table XML into draft sheets, for the author to review.
 
 extraction_spec.yaml names the table cell for each arm of each effect, and gives the study facts, montages and
-RoB 2 ratings. The means and SDs come only from the table XML, so no person or model retypes them. Nothing
+RoB 2 ratings. The means and SDs come only from the table XML, so no person or model retypes them. For results
+shown only in a figure, digitise.py measures the plotted point and error bar from approximate pixel positions. Nothing
 reaches effects.csv until the author has answered the review sheet.
 CLI: python -m rq3_stimulation.extract_pmc
 """
@@ -12,6 +13,7 @@ import pandas as pd
 import yaml
 
 from rq1_map.extract_pmc import cell_text, clean, fetch_article, find_table, first_author
+from rq3_stimulation.digitise import fetch_figure, read_point
 
 HERE = Path(__file__).resolve().parent
 DRAFT = HERE / "draft"
@@ -27,6 +29,7 @@ ROB_COLUMNS = ["study_id", "d1_randomisation", "d1b_carryover", "d2_deviations",
 REVIEW_COLUMNS = ["es_id", "record_id", "study_id", "link", "table", "active_cell", "sham_cell", "test_name", "n_active",
                   "n_sham", "m_active", "sd_active", "m_sham", "sd_sham", "what_to_check", "agree", "reason", "date"]
 EXTRACTED_BY = "extract_pmc.py from AI-chosen table cells"
+DIGITISED_BY = "digitise.py from AI-placed points on the figure"
 
 
 def number(text):
@@ -46,11 +49,31 @@ def table_cell(table, row, col):
     return cell_text(list(table.findall(".//tbody/tr")[row])[col])
 
 
+def figure_href(article, label):
+    figs = [f for f in article.iter("fig") if (f.findtext("label") or "").strip() == label]
+    if len(figs) != 1:
+        raise ValueError(f"expected one {label}, found {len(figs)}")
+    return figs[0].find("graphic").get("{http://www.w3.org/1999/xlink}href")
+
+
+def arm_values(article, pmc, e):
+    """(m_active, sd_active, m_sham, sd_sham) from a table cell or, for figure-only results, a plotted point."""
+    if "table" in e:
+        table = find_table(article, e["table"])
+        return (*mean_sd(table_cell(table, *e["active"])), *mean_sd(table_cell(table, *e["sham"])))
+    mask = fetch_figure(pmc, figure_href(article, e["figure"]))
+    # ponytail: SE/CI bars convert with the n given for the arm; a split sham n would need the plotted n instead
+    active = read_point(mask, e["ticks"], e["active"], e["bar"], e["n_active"])
+    sham = read_point(mask, e["ticks"], e["sham"], e["bar"], e["n_sham"])
+    return tuple(round(float(v), 3) for v in (*active, *sham))
+
+
 def extract(spec, sheet):
     effects, montages, rob, review = [], [], [], []
     for s in spec["studies"]:
         rec = sheet.loc[s["record_id"]]
-        article = fetch_article(re.search(r"PMC(\d+)", rec.link).group(1))
+        pmc = re.search(r"PMC(\d+)", rec.link).group(1)
+        article = fetch_article(pmc)
         study = first_author(article, rec.year)
         ids = {}
         for key, m in s["montages"].items():
@@ -58,18 +81,17 @@ def extract(spec, sheet):
             montages.append({"montage_id": ids[key]} | m)
         rob.append({"study_id": study} | s["rob2"])
         for e in s["effects"]:
-            table = find_table(article, e["table"])
-            m_active, sd_active = mean_sd(table_cell(table, *e["active"]))
-            m_sham, sd_sham = mean_sd(table_cell(table, *e["sham"]))
+            m_active, sd_active, m_sham, sd_sham = arm_values(article, pmc, e)
             es_id = f"es{len(effects) + 1:03d}"
             effects.append({"es_id": es_id, "study_id": study, "montage_id": ids[e["montage"]],
                             "m_active": m_active, "sd_active": sd_active, "m_sham": m_sham, "sd_sham": sd_sham,
-                            "extracted_by": EXTRACTED_BY}
+                            "extracted_by": EXTRACTED_BY if "table" in e else DIGITISED_BY}
                            | {k: s[k] for k in ("population", "diagnostic_criteria", "design", "stim", "timing")}
                            | {k: e[k] for k in ("sessions", "test_name", "test_type", "followup_days", "n_active",
                                                 "n_sham", "higher_is_better")})
+            source = e["table"] if "table" in e else f"{e['figure']} (digitised, {e['bar']} bars)"
             review.append({"es_id": es_id, "record_id": s["record_id"], "study_id": study, "link": rec.link,
-                           "table": e["table"], "active_cell": str(e["active"]), "sham_cell": str(e["sham"]),
+                           "table": source, "active_cell": str(e["active"]), "sham_cell": str(e["sham"]),
                            "what_to_check": "; ".join(filter(None, [s.get("check"), e.get("check")]))}
                           | {k: effects[-1][k] for k in ("test_name", "n_active", "n_sham", "m_active", "sd_active",
                                                          "m_sham", "sd_sham")})

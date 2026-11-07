@@ -2,6 +2,19 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-08: RQ3 results read from figures when no table gives them (RQ3)
+
+**Was:** the pilot entry below left studies with results only in figures as not extracted.
+
+**Now:** the team chose to digitise figures. `rq3_stimulation/digitise.py` reads the figure from the PMC CDN in memory. The spec gives approximate pixel positions for two labelled axis ticks and for each plotted point. The code snaps each one to the ink of the tick mark, marker and error bar, then converts pixel rows to values. An SE bar is converted to SD with sqrt(n), and a 95% CI bar with the t quantile. Rows made this way are marked `digitise.py from AI-placed points on the figure` in `extracted_by`, and the review sheet names the figure and bar type.
+
+**Pilot results:** 1 of the 3 figure-only pilot studies could be digitised (Bartl 2023, experiment 1, d′ on day 1). The other 2 cannot. One plots only individual values and densities, with no means. In the other, the markers hide the error bars. The pilot now has 13 effects from 7 of 10 studies.
+
+**Limits:**
+- Digitised values are approximate. Their precision depends on the image resolution, typically about 1% of the axis range here. The AI chooses which point is which arm, and a wrong choice gives the wrong arm's value.
+- SDs back-calculated from SE or CI bars depend on the n used and on the paper's bar type being stated correctly.
+- Bar charts, and plots where markers hide the error bars, are not handled. Such studies stay not extracted.
+
 ## 2026-11-08: RQ3 means and SDs read from PMC tables by script, pilot of 10 studies (RQ3)
 
 **Now:** as in RQ1, `rq3_stimulation/extract_pmc.py` copies each mean and SD from a named cell of the paper's PMC table XML. An AI assistant chose the cells and wrote the study facts, montages and RoB 2 ratings in `rq3_stimulation/extraction_spec.yaml`. No person or model typed a mean or SD. The output is in `rq3_stimulation/draft/` and is not yet part of the analysis: `effects.csv`, `montages.csv` and `rob2.csv` are unchanged until the author answers `draft/review.csv`.
