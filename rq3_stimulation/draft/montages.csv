@@ -1,0 +1,8 @@
+montage_id,anode,cathode,other_electrodes,size_cm2,current_mA,type
+m001,F3,P3,,35.0,1.5,tACS
+m002,F3,right deltoid,,35.0,1.5,tACS
+m003,P3,right cheek,,19.6,2.0,tACS
+m004,P3,right cheek,,25.0,1.5,tDCS
+m005,F3,Fp2,,35.0,2.0,tDCS
+m006,F3,F4,,28.3,2.0,tDCS
+m007,T7,right deltoid,,35.0,2.0,tDCS

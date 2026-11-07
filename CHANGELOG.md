@@ -2,6 +2,23 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-08: RQ3 means and SDs read from PMC tables by script, pilot of 10 studies (RQ3)
+
+**Now:** as in RQ1, `rq3_stimulation/extract_pmc.py` copies each mean and SD from a named cell of the paper's PMC table XML. An AI assistant chose the cells and wrote the study facts, montages and RoB 2 ratings in `rq3_stimulation/extraction_spec.yaml`. No person or model typed a mean or SD. The output is in `rq3_stimulation/draft/` and is not yet part of the analysis: `effects.csv`, `montages.csv` and `rob2.csv` are unchanged until the author answers `draft/review.csv`.
+
+**Rules the spec follows (the team decided the first; the others are the assistant's, for review):**
+- Each eligible episodic-memory test in a study, at the first test after the stimulation protocol ends. For a multi-session study that is the first assessment after the last session. Later follow-ups are left out.
+- One measure per test: delayed recall for list-learning tests, else the paper's primary measure (for example d' over accuracy).
+- When several active arms share one sham group, the sham n is split evenly between the comparisons, so its participants are not counted twice.
+
+**Pilot results:** 12 effects from 6 of 10 studies, with 7 montages. Recomputed g for Honma 2026 (PFC-PPC vs sham, day 1) is 0.161 against the paper's 0.16. The other 4 studies give no usable means and SDs in tables. One tables only change from baseline with SE; the others report results only in figures or pooled in text.
+
+**Limits:**
+- The RQ1 extraction limits apply: the choice of cell is an AI judgment, and a wrong choice gives a correct number for the wrong arm or test.
+- RoB 2 ratings come from methods excerpts, not whole papers. Most studies are rated "some concerns" because randomisation details or registration were not found.
+- Montage details missing from the text (for example peak-to-peak vs peak current) are flagged on the sheet.
+- If the full set matches the pilot, about 4 in 10 studies will have no table data. Figures, change scores and author contact are not handled yet.
+
 ## 2026-11-08: no second-rater check on RQ3 extraction (RQ3)
 
 **Was (plan §12, design §10):** the RQ3 extraction check required `checked_by` on at least 20% of effect rows, filled by a second rater.
