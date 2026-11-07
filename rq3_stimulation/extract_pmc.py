@@ -5,8 +5,11 @@ RoB 2 ratings. The means and SDs come only from the table XML, so no person or m
 shown only in a figure, digitise.py measures the plotted point and error bar from approximate pixel positions. Nothing
 reaches effects.csv until the author has answered the review sheet.
 CLI: python -m rq3_stimulation.extract_pmc
+     python -m rq3_stimulation.extract_pmc --apply "<who accepted>"   # after the review sheet is answered
 """
+import io
 import re
+import sys
 from pathlib import Path
 
 import pandas as pd
@@ -45,6 +48,18 @@ def mean_sd(cell):
     return number(m.group(1)), number(m.group(2))
 
 
+MEDIAN_IQR = re.compile(rf"^({NUM})\s*\[\s*({NUM})\s*\]$")
+
+
+def median_iqr(cell):
+    """Mean and SD approximated from 'median [IQR width]': mean = median, SD = IQR / 1.35, which assumes a roughly
+    normal distribution (CHANGELOG 2026-11-08)."""
+    m = MEDIAN_IQR.match(clean(cell))
+    if not m:
+        raise ValueError(f"not a median [IQR]: {cell!r}")
+    return number(m.group(1)), round(number(m.group(2)) / 1.35, 4)
+
+
 def table_cell(table, row, col):
     """Cell text at [row, col] of the table body, counting from 0 as the review sheet shows them."""
     return cell_text(list(table.findall(".//tbody/tr")[row])[col])
@@ -64,7 +79,8 @@ def arm_mean_sd(table, cells):
 
 
 def figure_href(article, label):
-    figs = [f for f in article.iter("fig") if (f.findtext("label") or "").strip() == label]
+    norm = lambda t: re.sub(r"\s+", " ", t or "").strip()  # some labels use a non-breaking space
+    figs = [f for f in article.iter("fig") if norm(f.findtext("label")) == norm(label)]
     if len(figs) != 1:
         raise ValueError(f"expected one {label}, found {len(figs)}")
     return figs[0].find("graphic").get("{http://www.w3.org/1999/xlink}href")
@@ -86,16 +102,28 @@ def arm_values(article, pmc, e):
         table = find_table(article, e["table"])
         # some papers give each arm its own table (e.g. paired pre/post statistics per group)
         sham_table = find_table(article, e["sham_table"]) if "sham_table" in e else table
-        (m_a, s_a), (m_s, s_s) = arm_mean_sd(table, e["active"]), arm_mean_sd(sham_table, e["sham"])
+        if e.get("spread") == "iqr":
+            (m_a, s_a), (m_s, s_s) = median_iqr(table_cell(table, *e["active"])), median_iqr(table_cell(sham_table, *e["sham"]))
+        else:
+            (m_a, s_a), (m_s, s_s) = arm_mean_sd(table, e["active"]), arm_mean_sd(sham_table, e["sham"])
         if e.get("spread") == "se":  # the table gives SEs: SD = SE * sqrt(n)
             # a split sham n is for weighting; the SE was computed on the whole sham group
             s_a, s_s = round(s_a * e["n_active"] ** 0.5, 4), round(s_s * e.get("n_sham_group", e["n_sham"]) ** 0.5, 4)
-        source = e["table"] + (" (SE converted to SD)" if e.get("spread") == "se" else "")
+        note = {"se": " (SE converted to SD)", "iqr": " (median and IQR converted to mean and SD)"}.get(e.get("spread"), "")
+        source = e["table"] + note
         return dict(zip(STATS, (m_a, s_a, m_s, s_s))), source, EXTRACTED_BY
     image = fetch_figure(pmc, figure_href(article, e["figure"]))
     centre = e.get("centre", "marker")
-    active = read_point(image, e["ticks"], e["active"], e["bar"], e["n_active"], e.get("active_color"), centre)
-    sham = read_point(image, e["ticks"], e["sham"], e["bar"], e.get("n_sham_group", e["n_sham"]), e.get("sham_color"), centre)
+
+    def arm(points, n, color, how):
+        # a list of points is a test plotted by within-subject sub-condition: means and SDs are averaged, as for tables
+        points = points if isinstance(points[0], list) else [points]
+        # a point given as [x, y, mode] overrides the arm's mode, for bars of different fills in one arm
+        read = [read_point(image, e["ticks"], p[:2], e["bar"], n, color, p[2] if len(p) > 2 else how) for p in points]
+        return sum(r[0] for r in read) / len(read), sum(r[1] for r in read) / len(read)
+
+    active = arm(e["active"], e["n_active"], e.get("active_color"), e.get("active_centre", centre))
+    sham = arm(e["sham"], e.get("n_sham_group", e["n_sham"]), e.get("sham_color"), e.get("sham_centre", centre))
     values = (round(float(v), 3) for v in (*active, *sham))
     return dict(zip(STATS, values)), f"{e['figure']} (digitised, {e['bar']} bars)", DIGITISED_BY
 
@@ -132,7 +160,46 @@ def extract(spec, sheet):
             pd.DataFrame(rob, columns=ROB_COLUMNS), pd.DataFrame(review, columns=REVIEW_COLUMNS))
 
 
+def merge_review(old, new):
+    """Keep every answered row; add rows for new effects and newly listed studies; drop a study's
+    not-extracted row once it has effects, and replace one whose reason has changed. Raises if an answered effect no longer matches its values, which
+    would mean es_ids shifted."""
+    keys = ["test_name", "m_active", "sd_active", "m_sham", "sd_sham"]
+    new_fx, old_fx = new[new.es_id.notna()], old[old.es_id.notna()]
+    both = old_fx.merge(new_fx, on="es_id", suffixes=("", "_new"))
+    for k in keys:
+        changed = both[both[k].astype(str) != both[k + "_new"].astype(str)]
+        if len(changed):
+            raise SystemExit(f"answered rows changed ({k}): {list(changed.es_id)[:5]}")
+    extracted = set(new_fx.record_id)
+    # a not-extracted row keeps its answer only while its reason is unchanged; a new reason needs a new answer
+    reasons = dict(zip(new.record_id[new.es_id.isna()], new.what_to_check[new.es_id.isna()]))
+    old_missing = old[old.es_id.isna() & ~old.record_id.isin(extracted)]
+    old_missing = old_missing[old_missing.what_to_check == old_missing.record_id.map(reasons)]
+    new_missing = new[new.es_id.isna() & ~new.record_id.isin(set(old_missing.record_id))]
+    added = pd.concat([new_fx[~new_fx.es_id.isin(set(old_fx.es_id))], new_missing], ignore_index=True)
+    return pd.concat([old_fx, added[added.es_id.notna()], old_missing, added[added.es_id.isna()]], ignore_index=True)
+
+
+def apply_review(accepted_by):
+    """Copy the effects answered yes, with their montages and RoB 2 rows, into the analysis sheets."""
+    read = lambda f: pd.read_csv(DRAFT / f, dtype=str, keep_default_na=False)
+    review = read("review.csv")
+    yes = set(review.es_id[(review.agree == "yes") & (review.es_id != "")])
+    effects = read("effects.csv")
+    effects = effects[effects.es_id.isin(yes)].assign(checked_by=accepted_by)
+    montages = read("montages.csv")
+    rob = read("rob2.csv")
+    effects.to_csv(HERE / "effects.csv", index=False)
+    montages[montages.montage_id.isin(set(effects.montage_id))].to_csv(HERE / "montages.csv", index=False)
+    rob[rob.study_id.isin(set(effects.study_id))].to_csv(HERE / "rob2.csv", index=False)
+    print(f"{len(effects)} accepted effects from {effects.study_id.nunique()} studies copied to the analysis sheets")
+
+
 def main():
+    if len(sys.argv) == 3 and sys.argv[1] == "--apply":
+        apply_review(sys.argv[2])
+        return
     spec = yaml.safe_load((HERE / "extraction_spec.yaml").read_text())
     sheet = pd.read_csv(HERE / "screening" / "full_text_check.csv", dtype=str, keep_default_na=False).set_index("record_id")
     effects, montages, rob, review = extract(spec, sheet)
@@ -143,10 +210,13 @@ def main():
     montages.to_csv(DRAFT / "montages.csv", index=False)
     rob.to_csv(DRAFT / "rob2.csv", index=False)
     review_path = DRAFT / "review.csv"
-    if review_path.exists():  # her answers are never overwritten
-        print(f"{review_path} exists; left as it is")
-    else:
-        pd.concat([review, missing], ignore_index=True).reindex(columns=REVIEW_COLUMNS).to_csv(review_path, index=False)
+    sheet_new = pd.concat([review, missing], ignore_index=True).reindex(columns=REVIEW_COLUMNS)
+    if review_path.exists():  # her answers are kept; only new rows are added
+        old = pd.read_csv(review_path, dtype=str, keep_default_na=False).replace("", None)
+        # a CSV round trip puts the new rows in the same text form as the saved sheet
+        roundtrip = pd.read_csv(io.StringIO(sheet_new.to_csv(index=False)), dtype=str, keep_default_na=False).replace("", None)
+        sheet_new = merge_review(old, roundtrip)
+    sheet_new.to_csv(review_path, index=False)
     print(f"{len(effects)} effects from {effects.study_id.nunique()} studies, {len(montages)} montages, "
           f"{len(missing)} studies not extracted")
 

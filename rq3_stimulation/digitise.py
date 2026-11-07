@@ -24,14 +24,14 @@ COLOR_TOLERANCE = 90  # summed RGB distance; JPEG edges blur a series colour by 
 def fetch_figure(pmc, href):
     """The figure image from the article page's CDN link, held in memory."""
     stem = re.escape(href.rsplit(".", 1)[0])
-    for attempt in range(2):  # the page sometimes comes back without its figure links; one retry has been enough
+    for attempt in range(6):  # the page often comes back without its figure links for a while; retry patiently
         page = requests.get(f"https://pmc.ncbi.nlm.nih.gov/articles/PMC{pmc}/", timeout=60,
                             headers={"User-Agent": EUTILS_TOOL})
         page.raise_for_status()
         m = re.search(rf'https://cdn\.ncbi\.nlm\.nih\.gov/pmc/blobs/[^"]*/{stem}\.\w+', page.text)
         if m:
             break
-        time.sleep(5)
+        time.sleep(20)
     else:
         raise ValueError(f"no CDN link for {href} on PMC{pmc}")
     r = requests.get(m.group(0), timeout=60, headers={"User-Agent": EUTILS_TOOL})
@@ -40,9 +40,10 @@ def fetch_figure(pmc, href):
 
 
 def ink(image, color=None):
-    """Dark pixels, or with a colour the pixels close to it, for plots whose series differ only by colour."""
-    if color is None:
-        return np.asarray(image.convert("L")) < DARK
+    """Dark pixels, or with a colour the pixels close to it, for plots whose series differ only by colour. A number
+    instead of a colour is a luminance cut-off, for figures drawn in mid-grey."""
+    if color is None or isinstance(color, (int, float)):
+        return np.asarray(image.convert("L")) < (color or DARK)
     return np.abs(np.asarray(image, dtype=int) - np.array(color)).sum(axis=2) < COLOR_TOLERANCE
 
 
@@ -115,9 +116,28 @@ def read_point(image, ticks, point, kind, n, color=None, centre="marker"):
     color: the colour of the marker and bar when they are not dark (or of a black whisker on a dark bar fill).
     centre "marker" takes the mean from the marker; "bar" takes it as the midpoint of a symmetric whisker, for
     bar charts, where the bar top has no marker."""
-    to_value = axis([(tick_row(ink(image), x, y), v) for x, y, v in ticks])
+    # a tick given as [x, y, value, "exact"] is used as placed: for pale ticks or axes labelled without tick marks
+    to_value = axis([(float(t[1]) if len(t) > 3 else tick_row(ink(image), t[0], t[1]), t[2]) for t in ticks])
     mask = ink(image, color)
     top, bottom = bar_ends(mask, *point)
+    if centre == "bar_top":  # dark bar fill hides the lower whisker: mean at the bar's top edge, spread from the upper whisker
+        mean_row = bar_top(mask, point[0], top)
+        return to_value(mean_row), sd_from_bar(abs(to_value(top) - to_value(mean_row)), kind, n)
+    if centre == "upper":  # the fill hides the lower whisker, so the visible whisker ends at the bar's top edge
+        return to_value(bottom), sd_from_bar(abs(to_value(top) - to_value(bottom)), kind, n)
     half = abs(to_value(top) - to_value(bottom)) / 2
     mean = to_value((top + bottom) / 2) if centre == "bar" else to_value(marker_row(mask, *point))
     return mean, sd_from_bar(half, kind, n)
+
+
+def bar_top(mask, x, top):
+    """First row below the whisker top where the ink is as wide as a bar."""
+    for r in range(int(top) + 3, mask.shape[0]):  # skip the whisker cap, which is also wide
+        left = right = x
+        while left > 0 and mask[r, left - 1]:
+            left -= 1
+        while right < mask.shape[1] - 1 and mask[r, right + 1]:
+            right += 1
+        if mask[r, x] and right - left + 1 >= 3 * MARKER_WIDTH:
+            return float(r)
+    raise ValueError(f"no bar below ({x}, {top})")

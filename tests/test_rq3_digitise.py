@@ -41,6 +41,15 @@ def test_read_point_bar_mode_uses_whisker_midpoint():
     assert mean == pytest.approx(1.0, abs=0.02) and sd == pytest.approx(0.2, abs=0.02)
 
 
+def test_bar_top_mode_with_dark_fill_and_exact_ticks():
+    im = Image.new("RGB", (120, 450), "white")
+    d = ImageDraw.Draw(im)
+    d.rectangle([50, 400 - 1.0 * 150, 90, 400], fill=(30, 50, 100))            # dark navy bar of height 1.0
+    d.line([(70, 400 - 1.3 * 150), (70, 400 - 0.7 * 150)], fill="black", width=2)  # whisker 0.7 to 1.3
+    mean, sd = read_point(im, [[13, 100, 2, "exact"], [13, 400, 0, "exact"]], [70, 220], "sd", 20, centre="bar_top")
+    assert mean == pytest.approx(1.0, abs=0.02) and sd == pytest.approx(0.3, abs=0.02)
+
+
 def test_sd_from_se_and_ci():
     assert sd_from_bar(1.0, "se", 16) == pytest.approx(4.0)
     assert sd_from_bar(2.093, "ci95", 20) == pytest.approx(np.sqrt(20), rel=1e-3)
