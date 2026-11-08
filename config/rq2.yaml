@@ -10,8 +10,8 @@ masks: [memory, memory_top50, control_md, control_yeo, memory_verified, control_
 extreme_z: 6
 pilot: {subject: 1, sessions: [1, 2, 3]}
 
-# responses.tsv column names. They are documented only in the NSD Data Manual: check them against
-# the manual once access is granted; check_rq2 fails and lists the real columns if any differ.
+# responses.tsv column names, checked against the NSD Data Manual's Behavioral data page on 2026-11-08
+# (all ten match). check_rq2 still fails and lists the real columns if the file differs.
 behav_columns:
   session: SESSION
   run: RUN
