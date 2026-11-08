@@ -42,7 +42,7 @@ masks:
 	$(PY) -m masks.build_masks
 	$(PY) -m checks.check_masks
 
-all: test rq1 masks rq2 rq3
+all: test rq1 masks rq2 rq3 integration
 
 .PHONY: rq2-pilot rq2
 rq2-pilot:
@@ -85,6 +85,10 @@ rq3-fields:
 
 rq3: rq3-es
 	Rscript rq3_stimulation/models.R --run
+
+.PHONY: integration
+integration:   # needs rq2 and rq3 results
+	Rscript integration.R --run
 
 .PHONY: check-setup
 check-setup:
