@@ -15,7 +15,7 @@ import numpy as np
 from nilearn.image import resample_to_img
 
 from masks.build_masks import verify_frozen
-from rq2_nsd.extract_trials import fetch
+from rq2_nsd.extract_trials import cached
 from tools.common import ROOT, data_dir, load_config
 
 OUTSIDE = 9999
@@ -26,16 +26,6 @@ def support_keys(subject):
     p = f"nsddata/ppdata/subj{subject:02d}"
     return {"transform": f"{p}/transforms/MNI-to-func1pt8.nii.gz", "mean": f"{p}/func1pt8mm/mean.nii.gz",
             "lh": f"{p}/func1pt8mm/roi/lh.HCP_MMP1.nii.gz", "rh": f"{p}/func1pt8mm/roi/rh.HCP_MMP1.nii.gz"}
-
-
-def cached(key, base, cache):
-    path = cache / key
-    if not path.exists():
-        path.parent.mkdir(parents=True, exist_ok=True)
-        part = path.with_name(path.name + ".part")
-        part.write_bytes(fetch(base + key))
-        part.replace(path)
-    return path
 
 
 def to_template(mask_img, template_img):

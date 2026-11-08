@@ -94,9 +94,8 @@ def test_check_tables_quality_report(tmp_path):
     assert q.set_index("file").loc["subj01_sess01.csv", "n_nan_signal"] == 3
 
 
-def test_full_extraction_refused_until_design_check_exists(monkeypatch):
-    import rq2_nsd.extract_trials as et
-    monkeypatch.setattr(et, "verify_frozen", lambda: [])
-    monkeypatch.setattr("sys.argv", ["extract_trials", "--beta", "b3"])
-    with pytest.raises(SystemExit, match="design"):
-        et.main()
+def test_expected_images_follows_masterordering_with_1_based_indices():
+    from rq2_nsd.extract_trials import expected_images
+    design = {"masterordering": np.array([[3, 1, 3, 2]]), "subjectim": np.array([[10, 20, 30], [40, 50, 60]])}
+    assert expected_images(design, 2, 4).tolist() == [60, 40, 60, 50]
+    assert expected_images(design, 1, 2).tolist() == [30, 10]

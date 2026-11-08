@@ -17,6 +17,7 @@ import nibabel as nib
 import numpy as np
 import pandas as pd
 import requests
+import scipy.io
 
 from checks.check_rq2 import check_behaviour
 from masks.build_masks import verify_frozen
@@ -24,6 +25,7 @@ from rq2_nsd.labels import label_trials
 from tools.common import data_dir, load_config, record_versions
 
 HIDDEN_IN_PILOT = ["is_old", "response_old", "outcome", "rt", "log_delay_s", "viewing", "memory_recent"]
+DESIGN = "nsddata/experiments/nsd/nsd_expdesign.mat"
 SCALE = 300  # NSD betas are stored as int16 percent signal change x 300
 
 
@@ -32,6 +34,23 @@ def fetch(url):
     if r.status_code != 200:
         raise RuntimeError(f"GET {url} returned {r.status_code}")
     return r.content
+
+
+def cached(key, base, cache):
+    """Small NSD support file, fetched once into the cache folder (betas are never cached)."""
+    path = cache / key
+    if not path.exists():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        part = path.with_name(path.name + ".part")
+        part.write_bytes(fetch(base + key))
+        part.replace(path)
+    return path
+
+
+def expected_images(design, subject, n_trials):
+    """1-based 73k ids in viewing order for one subject: subjectim(subject, masterordering), per the Data Manual."""
+    order = design["masterordering"].ravel()[:n_trials].astype(int) - 1
+    return design["subjectim"][subject - 1, order]
 
 
 def decode_betas(gz_bytes):
@@ -101,10 +120,8 @@ def main():
     changed = verify_frozen()
     if changed:
         sys.exit(f"frozen masks changed or missing: {changed}")
-    if not a.pilot:
-        # Spec §9: image order must be checked against the experimental design before full extraction.
-        sys.exit("full extraction needs the design-file image-order check (added in the data-access plan); "
-                 "only --pilot can run now")
+    # Spec §9: image order is checked against the experimental design before any session is extracted.
+    design = scipy.io.loadmat(cached(DESIGN, cfg["s3_base"], data_dir("rq2", "nsd_support")))
     subjects = [cfg["pilot"]["subject"]] if a.pilot else (a.subjects or cfg["subjects"])
     out_dir = data_dir("rq2", "pilot" if a.pilot else a.beta)
     manifest = out_dir / "manifest.csv"
@@ -116,7 +133,8 @@ def main():
             sys.exit(f"native masks for subject {s} missing in {native} (built by the nsdcode step)")
         masks = {m: np.asarray(nib.load(p).dataobj) > 0 for m, p in paths.items()}
         behav = pd.read_csv(io.BytesIO(fetch(cfg["s3_base"] + f"nsddata/ppdata/subj{s:02d}/behav/responses.tsv")), sep="\t")
-        problems = check_behaviour(behav, cfg["behav_columns"], trials_per_session=cfg["trials_per_session"])
+        problems = check_behaviour(behav, cfg["behav_columns"], expected_images(design, s, len(behav)),
+                                   trials_per_session=cfg["trials_per_session"])
         if problems:
             sys.exit(f"subject {s} responses.tsv fails the behaviour check:\n  " + "\n  ".join(problems))
         labels = label_trials(behav, cfg["behav_columns"])
