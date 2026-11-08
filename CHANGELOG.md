@@ -2,6 +2,29 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-08: RQ3 meta-regression models fitted (RQ3)
+
+**Now:** `make rq3` runs the extraction check, the effect sizes (r = .3, .5, .7) and `rq3_stimulation/models.R`. It writes `h3_results_r*.csv`, `bias_r*.csv`, `funnel.png` and the RoB 2 plots to `rq3_stimulation/results/`. Every model converged, and every row reports its k effects and k studies.
+
+**Changes to `models.R`:**
+- **Complete rows only.** The models now drop missing rows before fitting: effects with no session count (the 4 Xu 2023 effects) and, for the field models, montages with no field. Before this, `rma.mv` dropped those rows by itself, but the reported k and the CR2 cluster vector still counted them.
+- **H3c uses all effects.** H3c (test type) has no field term, so it keeps the effects whose montage has no field: 88 effects from 44 studies, against 61 from 33 for H3a, H3b and H3d.
+- **Overall effect.** `bias_r*.csv` now starts with the overall pooled g from the same three-level model, and each row carries k. The design had no row for the overall effect.
+
+**Results at r = .5** (CR2 tests, field in V/m, sessions as a covariate):
+- Overall: g = 0.211 (95% CI 0.112-0.310), 92 effects from 45 studies. It is 0.214 at r = .3 and 0.207 at r = .7. Leaving out one study at a time gives 0.158-0.222.
+- H3a: field_map slope 0.311 per V/m (CI -2.900 to 3.521, p = .82).
+- H3b: field_map 0.330 and field_control -0.118. The Wald test of equality gives p = .94.
+- H3c: compared with recall, recognition is -0.205 (p = .11) and source memory -0.216 (p = .09).
+- H3d: 9 clinical studies (15 effects) have fields, which meets the threshold of 8, so the model was fitted. The field x group term is 10.3 (CI -44 to 65, p = .53). The CI is very wide.
+- Small-study tests: the multilevel Egger slope is 0.845 (CI -0.138 to 1.827, p = .09). The PET intercept is -0.024 (CI -0.315 to 0.267), and the PEESE intercept is 0.073 (CI -0.100 to 0.246).
+- The r = .3 and r = .7 runs do not change any of these conclusions.
+
+**Limits:**
+- Mask fields span 0.003-0.172 V/m, so a slope "per V/m" extrapolates well beyond the data. Across the observed range, the H3a CI is about ±0.5 g.
+- Sessions run from 1 to 180 and are skewed: 67 of 88 effects come from single-session studies, and the long courses are all clinical. The covariate enters linearly, as specified.
+- The older-adult fields are not used in any model. The design names them for the clinical-arm comparison, but does not say which model they go into.
+
 ## 2026-11-08: RQ3 electric fields modelled on Ernie and an older-adult head (RQ3)
 
 **Now:** `rq3_stimulation/simnibs/run_montages.py` (SimNIBS 4.6.0) writes `rq3_stimulation/simnibs/fields.csv`: the mean field magnitude (V/m) inside the frozen memory mask (`field_map`) and the multiple-demand control mask (`field_control`), per montage and head model. Each distinct electrode layout is simulated once at 1 mA. The field is mapped to MNI and scaled by the montage's current, since the field is linear in current. The 65 montages reduce to 32 layouts. `make rq3-fields` runs the known-answer checks, the Ernie runs and `checks/check_rq3_fields`.
