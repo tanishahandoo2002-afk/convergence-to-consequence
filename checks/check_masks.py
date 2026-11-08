@@ -13,6 +13,7 @@ from checks.signoffs import SIGNOFFS, has_signoff
 from masks.build_masks import MASKS, NAMES, verify_frozen
 
 MIN_INSIDE = 0.95  # parcels from other templates may graze the brain edge by a voxel
+DISJOINT = (("memory", "control_md"), ("memory", "control_yeo"), ("memory_verified", "control_md_verified"))
 
 
 def check(masks_dir=MASKS, signoff_path=SIGNOFFS):
@@ -34,7 +35,7 @@ def check(masks_dir=MASKS, signoff_path=SIGNOFFS):
         elif (on & brain).sum() / on.sum() < MIN_INSIDE:
             errors.append(f"{n}: only {(on & brain).sum() / on.sum():.0%} of voxels inside the MNI brain mask")
         data[n] = on
-    for mem, ctrl in (("memory", "control_md"), ("memory", "control_yeo"), ("memory_verified", "control_md_verified")):
+    for mem, ctrl in DISJOINT:
         if (data[mem] & data[ctrl]).any():
             errors.append(f"{mem} and {ctrl} overlap in {int((data[mem] & data[ctrl]).sum())} voxels")
     if not (masks_dir / "FROZEN.sha256").exists():

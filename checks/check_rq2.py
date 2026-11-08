@@ -1,14 +1,20 @@
-"""RQ2 check (plan §8.2, §12): trial counts per session and a data-quality report.
+"""RQ2 check (plan §8.2, §12): native masks, trial counts per session and a data-quality report.
 CLI: python -m checks.check_rq2 [--dir b3|b2|pilot]   -> rq2_nsd/results/data_quality_<dir>.csv (counts only)
+     python -m checks.check_rq2 --native              -> native masks (design §9)
 """
 import argparse
 import sys
 from pathlib import Path
 
+import nibabel as nib
+import numpy as np
 import pandas as pd
 
 from scipy.stats import spearmanr
 
+from checks.check_masks import DISJOINT
+from checks.signoffs import SIGNOFFS, missing
+from masks.build_masks import verify_frozen
 from rq2_nsd.labels import label_trials
 from tools.common import ROOT, data_dir, load_config
 
@@ -42,6 +48,32 @@ def check_behaviour(behav, cols, expected_images=None, trials_per_session=750):
     return errors
 
 
+def check_native(native_dir, cfg, signoffs=SIGNOFFS):
+    """Frozen hashes match; every native mask exists and is non-empty; memory and control stay disjoint;
+    the author has signed off each participant's overlay (step rq2_native_masks, item subjNN)."""
+    errors = []
+    changed = verify_frozen()
+    if changed:
+        errors.append(f"frozen masks changed or missing: {changed}")
+    for s in cfg["subjects"]:
+        on = {}
+        for m in cfg["masks"]:
+            p = Path(native_dir) / f"subj{s:02d}_{m}.nii.gz"
+            if not p.exists():
+                errors.append(f"{p.name} missing")
+                continue
+            on[m] = np.asarray(nib.load(p).dataobj) > 0
+            if not on[m].any():
+                errors.append(f"{p.name} is empty")
+        for a, b in DISJOINT:
+            if a in on and b in on and (on[a] & on[b]).any():
+                errors.append(f"subject {s}: {a} and {b} overlap in {int((on[a] & on[b]).sum())} voxels")
+    unsigned = missing("rq2_native_masks", [f"subj{s:02d}" for s in cfg["subjects"]], signoffs)
+    if unsigned:
+        errors.append(f"overlays not signed off (step rq2_native_masks): {unsigned}")
+    return errors
+
+
 def check_tables(out_dir, cfg):
     errors, rows = [], []
     for f in sorted(Path(out_dir).glob("subj*_sess*.csv")):
@@ -61,7 +93,16 @@ def check_tables(out_dir, cfg):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dir", default="b3", choices=["b3", "b2", "pilot"])
+    ap.add_argument("--native", action="store_true")
     a = ap.parse_args()
+    if a.native:
+        errors = check_native(data_dir("rq2", "native_masks"), load_config("rq2"))
+        for e in errors:
+            print("FAIL:", e)
+        if errors:
+            sys.exit(1)
+        print("RQ2 native-mask check OK")
+        return
     errors, q = check_tables(data_dir("rq2", a.dir), load_config("rq2"))
     out = ROOT / "rq2_nsd" / "results"
     out.mkdir(parents=True, exist_ok=True)
