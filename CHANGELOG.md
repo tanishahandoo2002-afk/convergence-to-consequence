@@ -11,7 +11,7 @@ Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project
 - **nsdcode not installed.** The design names nsdcode. Its only release (2021) pins scikit-learn 0.23.2 and nibabel 3.1.0, which cannot be installed on Python 3.12, and its code never imports scikit-learn. The script therefore repeats nsdcode's volume-to-volume arithmetic directly: 1-based coordinates, 9999 means no source, and nearest neighbour rounds half up. Checked against that arithmetic, written out from nsdcode's source, subject 1's six masks match voxel for voxel.
 - **Left-right check.** For every participant, the left half of MNI space (x < -5) lands entirely in NSD's own left-hemisphere ROI (`lh.HCP_MMP1`, share 1.000 for all 8). A flip in the mapping would give about 0.
 - **Results.** Native memory masks have 1,878-3,009 voxels per participant, and `control_md` masks have 23,562-34,801. No mask is empty, and memory and control stay disjoint. Overlays are in `$C2C_DATA/rq2/native_masks/qc` (not committed, because they show NSD images). By eye, the memory mask sits on the medial temporal lobe, posterior cingulate/precuneus, medial prefrontal cortex and angular gyrus, and the control mask on lateral frontal and parietal cortex.
-- **Waiting on the author.** `check_rq2 --native` passes except for the overlay sign-offs, one per participant (step `rq2_native_masks`).
+- **Signed off.** The author signed off all 8 overlays (step `rq2_native_masks`), and `check_rq2 --native` passes.
 
 **Design-file check:**
 - `extract_trials.py` reads `nsd_expdesign.mat`. Each participant's viewing order is `subjectim(subject, masterordering)`, as the Data Manual gives it.
