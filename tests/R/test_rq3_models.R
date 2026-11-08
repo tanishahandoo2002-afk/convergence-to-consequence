@@ -48,6 +48,8 @@ b <- bias(s$es)
 eg <- b[b$test == "egger", ]
 stopifnot(nrow(eg) == 1, eg$ci_low < 0, eg$ci_high > 0)
 stopifnot(sum(b$test == "leave_one_out") == 60, all(c("pet", "peese") %in% b$test))
+ov <- b[b$test == "overall", ]
+stopifnot(nrow(ov) == 1, ov$k_studies == 60, ov$k_effects == nrow(s$es), all(b$k_studies[b$test == "leave_one_out"] == 59))
 
 out <- tempfile(); dir.create(out)
 rob_plots(data.frame(study_id = c("s1", "s2"), d1_randomisation = c("low", "some"), d1b_carryover = "",

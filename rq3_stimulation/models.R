@@ -43,18 +43,20 @@ fit_rq3 <- function(es, fields, min_clinical = 8) {
 bias <- function(es, funnel_png = NULL) {
   row <- function(test, fit, i, extra = "") {
     data.frame(test = test, term = names(coef(fit))[i], estimate = coef(fit)[i], ci_low = fit$ci.lb[i],
-               ci_high = fit$ci.ub[i], p = fit$pval[i], note = extra, row.names = NULL)
+               ci_high = fit$ci.ub[i], p = fit$pval[i], k_effects = fit$k, k_studies = fit$s.nlevels[1],
+               note = extra, row.names = NULL)
   }
   es$sei <- sqrt(es$vi)
+  overall <- fit_mv(~ 1, es)
   pet <- fit_mv(~ sei, es)
   peese <- fit_mv(~ vi, es)
-  out <- list(row("egger", pet, 2), row("pet", pet, 1), row("peese", peese, 1))
+  out <- list(row("overall", overall, 1), row("egger", pet, 2), row("pet", pet, 1), row("peese", peese, 1))
   for (s in unique(es$study_id)) {
     fit <- fit_mv(~ 1, es[es$study_id != s, ])
     out[[length(out) + 1]] <- row("leave_one_out", fit, 1, paste("without", s))
   }
   if (!is.null(funnel_png)) {
-    png(funnel_png, width = 1600, height = 1400, res = 200); funnel(fit_mv(~ 1, es)); dev.off()
+    png(funnel_png, width = 1600, height = 1400, res = 200); funnel(overall); dev.off()
   }
   do.call(rbind, out)
 }
