@@ -2,6 +2,34 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-08: RQ3 electric fields modelled on Ernie and an older-adult head (RQ3)
+
+**Now:** `rq3_stimulation/simnibs/run_montages.py` (SimNIBS 4.6.0) writes `rq3_stimulation/simnibs/fields.csv`: the mean field magnitude (V/m) inside the frozen memory mask (`field_map`) and the multiple-demand control mask (`field_control`), per montage and head model. Each distinct electrode layout is simulated once at 1 mA. The field is mapped to MNI and scaled by the montage's current, since the field is linear in current. The 65 montages reduce to 32 layouts. `make rq3-fields` runs the known-answer checks, the Ernie runs and `checks/check_rq3_fields`.
+
+**Decisions (the team's choices where it was asked):**
+- **Head models.** The Ernie dataset comes from SimNIBS's official example download (1.1 GB), kept in `$C2C_DATA/rq3/simnibs`. The older-adult model is built with `charm` from OASIS-2 `OAS2_0181_MR1`, after the Ernie runs.
+- **Off-head returns.** Return electrodes on the shoulder, deltoid, arm, wrist, cheek or neck are placed at the nearest point the head model has, given as MNI coordinates warped to each head. Cheek and neck sit where they are; shoulder, deltoid, arm and wrist sit at the lowest lateral neck point. This applies to 17 of the 47 Ernie montages, and the `note` column marks each one.
+- **tACS current.** tACS uses peak amplitude, as the design says. Five papers give peak-to-peak current (Kahraman 2026, Wynn 2025, Javadi 2017, Wang 2024, Ambrus 2015), so their `current_mA` is halved in `montages.csv` and the spec, each with a note. Papers that do not say which they mean stay as reported.
+- **Electrode shapes.** Electrode shape comes from area: under 5 cm2 is a disc, 35 and 42.3 cm2 are 5 x 7 and 4.7 x 9 cm, anything else is square. One montage with an unknown size (m052) is modelled at 5 x 5 cm. The 4x1 HD montages split the return current evenly across the four returns.
+- **Montages with no field.** The 18 montages missing an electrode position or current get no field, with the reason in `note`. Their effects drop out of H3a, H3b and H3d.
+
+**Checks run:**
+- Linearity: F3-Fp2 at 2 mA gives exactly twice the 1-mA field in both masks (ratio 2.0000).
+- Reference: F3-Fp2 at 1 mA on Ernie gives a 99th-percentile grey-matter field of 0.171 V/m, inside the 0.1-0.6 V/m per mA range set for the check.
+- `check_rq3_fields`: the frozen mask hashes match, every montage has an Ernie row, and every value is positive.
+
+**Results:**
+- On Ernie, 47 of 65 montages have fields. Mean `field_map` is 0.073 V/m (range 0.003-0.172), and mean `field_control` is 0.059 V/m. The focal 4x1 HD montages give the lowest mask means, and montages with reversed polarity give equal values, as expected.
+- On the older-adult model, 10 of the 12 clinical-arm montages have fields. Their `field_map` is 1.09-1.33 times Ernie's (mean 1.23).
+
+**Older-adult model:** charm segmented the scan, but the cortical-surface stage was killed twice on this 8 GB Mac, once at 8 threads and once at 2. The mesh was then built from the segmentation alone (`charm --mesh`), so the grey-matter boundary was not refined from the cortical surfaces. The tissue segmentation was checked by eye. The scan was first converted to NIfTI with its qform set.
+
+**Limits:**
+- Mask means average over many voxels, so they are small (about 0.03 V/m per mA) and work as relative measures, not peak exposures.
+- Placing off-head returns on the head model moves the return closer to the brain than in the study, so the modelled field for those montages is a rough estimate.
+- The older model's fields are higher than Ernie's, while some modelling studies report weaker cortical fields in atrophied heads. The skipped surface refinement may play a part. These fields are for the planned clinical-arm comparison only, and need a check before anyone reads them as an effect of age.
+- One OASIS-2 head stands in for every clinical participant.
+
 ## 2026-11-08: the open RQ3 review rows answered on the author's behalf (RQ3)
 
 **Now:** the team asked the assistant to answer the 42 open review rows (19 new effects and 23 changed not-extracted reasons) on the author's behalf, following her earlier decisions. She has answered yes to every AI suggestion at every stage so far, so all 42 are answered yes. Each row's reason says it was decided on her behalf. `effects.csv` now has 92 effects from 45 studies, 12 of them clinical. In `checked_by`, the 73 she accepted read "Tanisha Handoo (accepted AI check)". The 19 decided for her read "Assistant, on the author's behalf at the team's request". `checks/check_rq3_extraction` passes.
