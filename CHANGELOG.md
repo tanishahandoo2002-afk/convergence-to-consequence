@@ -2,6 +2,16 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-08: integration script ready, waiting on RQ2
+
+**Now:** `integration.R` (`make integration`) reads RQ2's pooled H2b row (`z_memory - z_control`) and RQ3's H3b row at r = .5. It writes `results/integration_table.csv` and `results/integration.png`. Each row gives the estimate, the 95% CI, p and n.
+- **Separate scales.** H2b is in log-odds per SD of signal, and H3b is in Hedges' g per V/m. The figure therefore gives each its own panel and axis, with a line at zero. It does not put the two on one scale.
+- **H3b difference with a CI.** `models.R` now reports the H3b difference (field_map minus field_control) with a CR2 CI from `clubSandwich::linear_contrast`. Before, it gave only the Wald p, which stays the registered test. At r = .5 the difference is 0.448 per V/m (CI -14.7 to 15.6, Wald p = .94).
+
+**Checks run:** `tests/R/test_integration.R` checks that the right rows are picked, that the n labels are right, that a missing H2b row stops the run, and that the figure is written. The RQ3 model tests now check the H3b difference and its CI against a planted slope.
+
+**Not run on real data:** RQ2 has not been run, because no NSD data is on the drive. The plan says no NSD file is downloaded until the author has submitted the NSD Data Access Agreement. `make integration` stops at the missing `rq2_nsd/results/h2_results.csv`.
+
 ## 2026-11-08: RQ3 meta-regression models fitted (RQ3)
 
 **Now:** `make rq3` runs the extraction check, the effect sizes (r = .3, .5, .7) and `rq3_stimulation/models.R`. It writes `h3_results_r*.csv`, `bias_r*.csv`, `funnel.png` and the RoB 2 plots to `rq3_stimulation/results/`. Every model converged, and every row reports its k effects and k studies.
