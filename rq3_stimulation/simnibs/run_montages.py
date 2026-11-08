@@ -32,6 +32,11 @@ OFF_HEAD = {"cheek": (60, 25, -45), "neck": (45, -45, -85), "shoulder": (60, -30
 FIELD_COLUMNS = ["montage_id", "head_model", "field_map", "field_control", "note"]
 
 
+def files(folder, pattern):
+    """Files matching pattern, without the '._' companions macOS writes on the exFAT data drive."""
+    return [p for p in Path(folder).glob(pattern) if not p.name.startswith("._")]
+
+
 def frozen_ok():
     """Every mask used here must match its frozen hash."""
     frozen = dict(line.split()[::-1] for line in (ROOT / "masks" / "FROZEN.sha256").read_text().splitlines() if line.strip())
@@ -97,7 +102,7 @@ def simulate(sites_a, sites_c, area, m2m, out):
         el.channelnr, el.shape, el.dimensions, el.thickness = channel, form, dims, 5
         el.centre = where if kind == "eeg" else list(mni2subject_coords(where, str(m2m)))
     run_simnibs(s)
-    return next((out / "mni_volumes").glob("*magnE*.nii.gz"))
+    return files(out / "mni_volumes", "*magnE*.nii.gz")[0]
 
 
 def mask_mean(field_path, mask_path):
@@ -135,12 +140,13 @@ def run(head, clinical_only):
         k = key(*plan)
         if k not in cache:
             out = runs / k
-            vol = next((out / "mni_volumes").glob("*magnE*.nii.gz"), None) if out.exists() else None
+            found = files(out / "mni_volumes", "*magnE*.nii.gz") if out.exists() else []
+            vol = found[0] if found else None
             if vol is None:
                 shutil.rmtree(out, ignore_errors=True)
                 vol = simulate(*plan, m2m, out)
-                for msh in out.glob("*.msh"):  # meshes are large; the MNI volume is all the analysis needs
-                    msh.unlink()
+                for msh in files(out, "*.msh"):  # meshes are large; the MNI volume is all the analysis needs
+                    msh.unlink(missing_ok=True)
             cache[k] = {name: mask_mean(vol, path) for name, path in MASKS.items()}
         current = float(m["current_mA"])
         off = [p for p in plan[0] + plan[1] if p[0] == "mni"]

@@ -11,7 +11,7 @@ from pathlib import Path
 import nibabel as nib
 import numpy as np
 
-from rq3_stimulation.simnibs.run_montages import HEADS, MASKS, frozen_ok, mask_mean, simulate
+from rq3_stimulation.simnibs.run_montages import HEADS, MASKS, files, frozen_ok, mask_mean, simulate
 
 LOW, HIGH = 0.1, 0.6
 
@@ -19,7 +19,7 @@ LOW, HIGH = 0.1, 0.6
 def grey_matter_p99(out):
     """99th percentile of the field magnitude over grey-matter elements of the result mesh."""
     from simnibs import mesh_io
-    msh = mesh_io.read_msh(next(out.glob("*.msh")))
+    msh = mesh_io.read_msh(files(out, "*.msh")[0])
     gm = msh.crop_mesh(tags=[2])
     return float(np.percentile(gm.field["magnE"].value, 99))
 
@@ -42,7 +42,7 @@ def main():
         el = tdcs.add_electrode()
         el.channelnr, el.shape, el.dimensions, el.thickness, el.centre = ch, "rect", [50.0, 70.0], 5, name
     run_simnibs(s)
-    two = next((runs / "f3fp2_2mA" / "mni_volumes").glob("*magnE*.nii.gz"))
+    two = files(runs / "f3fp2_2mA" / "mni_volumes", "*magnE*.nii.gz")[0]
     failures = []
     for name, mask in MASKS.items():
         a, b = mask_mean(one, mask), mask_mean(two, mask)
