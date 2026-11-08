@@ -2,6 +2,29 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-08: NSD access, native masks and the design-file check (RQ2)
+
+**Access:** the author agreed to the NSD Terms and Conditions and submitted the NSD Data Access form on 2026-11-08, so NSD files are now read from the public bucket. The terms require citing Allen et al. 2021 (Nature Neuroscience) and acknowledging NSF IIS-1822683 and IIS-1822929 in any presentation of the results.
+
+**Native masks (`rq2_nsd/to_native.py`):**
+- Each frozen mask is resampled onto NSD's 1-mm MNI template by world coordinates. It is then mapped into each participant's func1pt8mm space with NSD's `MNI-to-func1pt8` transform, nearest neighbour. The masks are written to `$C2C_DATA/rq2/native_masks`.
+- **nsdcode not installed.** The design names nsdcode. Its only release (2021) pins scikit-learn 0.23.2 and nibabel 3.1.0, which cannot be installed on Python 3.12, and its code never imports scikit-learn. The script therefore repeats nsdcode's volume-to-volume arithmetic directly: 1-based coordinates, 9999 means no source, and nearest neighbour rounds half up. Checked against that arithmetic, written out from nsdcode's source, subject 1's six masks match voxel for voxel.
+- **Left-right check.** For every participant, the left half of MNI space (x < -5) lands entirely in NSD's own left-hemisphere ROI (`lh.HCP_MMP1`, share 1.000 for all 8). A flip in the mapping would give about 0.
+- **Results.** Native memory masks have 1,878-3,009 voxels per participant, and `control_md` masks have 23,562-34,801. No mask is empty, and memory and control stay disjoint. Overlays are in `$C2C_DATA/rq2/native_masks/qc` (not committed, because they show NSD images). By eye, the memory mask sits on the medial temporal lobe, posterior cingulate/precuneus, medial prefrontal cortex and angular gyrus, and the control mask on lateral frontal and parietal cortex.
+- **Waiting on the author.** `check_rq2 --native` passes except for the overlay sign-offs, one per participant (step `rq2_native_masks`).
+
+**Design-file check:**
+- `extract_trials.py` reads `nsd_expdesign.mat`. Each participant's viewing order is `subjectim(subject, masterordering)`, as the Data Manual gives it.
+- All 8 `responses.tsv` files pass `check_behaviour`: the trial counts are right, the image order matches the design trial by trial, `is_old` agrees with the viewing history, and the computed delay agrees with NSD's MEMORYRECENT.
+- The full extraction is no longer refused. The manual states that the betas are in chronological order, which is the order extraction joins them to the labels in.
+
+**Blind pilot** (`make rq2-pilot`: subject 1, sessions 1-3, b3):
+- Each session has 750 trials. No signal is NaN, and no mask mean exceeds |z| 6.
+- Every native mask voxel gave a finite z-score, so all of them lie inside NSD's brain mask.
+- Per-trial mask means have SDs of 0.19-0.31. No outcome, old/new or response column was written.
+- **Cost.** The run took 273 s for the 3 sessions, mostly download (about 490 MB per session), with a peak memory of 2.8 GB. At that rate the full b3 extraction (314 sessions, 128 GB streamed) takes about 8 hours, and b2 the same again.
+- **HDF5 spike not run.** The design's test of partial HDF5 reads needs h5py, which is not installed. The union of the native masks is 6.6% of subject 1's voxels but touches 52 of 83 slices, so any saving depends on how the HDF5 files are chunked.
+
 ## 2026-11-08: integration script ready, waiting on RQ2
 
 **Now:** `integration.R` (`make integration`) reads RQ2's pooled H2b row (`z_memory - z_control`) and RQ3's H3b row at r = .5. It writes `results/integration_table.csv` and `results/integration.png`. Each row gives the estimate, the 95% CI, p and n.
