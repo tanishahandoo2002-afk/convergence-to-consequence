@@ -30,6 +30,16 @@ stopifnot(r$ci_low < 1.0, r$ci_high > 1.0, r$ci_low > 0, r$k_studies == 60, r$k_
 stopifnot(term(res, "H3b", "field_map = field_control")$p_cr2 < 0.05)
 stopifnot(nrow(res[res$model == "H3c", ]) >= 2, nrow(res[res$model == "H3d", ]) >= 4)
 
+# montages without a field and effects without a session count are left out; H3c keeps the field-less ones
+gap <- s
+gap$fields$field_map[1:2] <- NA
+gap$es$sessions[gap$es$study_id == "s03"] <- NA
+res <- fit_rq3(gap$es, gap$fields, min_clinical = 8)
+no_sessions <- sum(gap$es$study_id == "s03")
+stopifnot(term(res, "H3a", "field_map")$k_studies == 57,
+          term(res, "H3c", "sessions")$k_studies == 59,
+          term(res, "H3c", "sessions")$k_effects == nrow(gap$es) - no_sessions)
+
 few <- sim_es(n_clinical = 5, seed = 2)
 r <- fit_rq3(few$es, few$fields, min_clinical = 8)
 stopifnot(any(r$model == "H3d" & grepl("skipped: 5 clinical studies < 8", r$note)))

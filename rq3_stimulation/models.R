@@ -16,7 +16,10 @@ robust_rows <- function(fit, data, model, note = "") {
 }
 
 fit_rq3 <- function(es, fields, min_clinical = 8) {
+  # Drop rows the models cannot use up front, so k_effects and the CR2 clusters match the fitted data.
+  es <- es[!is.na(es$sessions), ]
   d <- merge(es, fields[fields$head_model == "ernie", ], by = "montage_id")
+  d <- d[!is.na(d$field_map) & !is.na(d$field_control), ]
   d$group <- factor(ifelse(d$population == "healthy", "healthy", "clinical"), levels = c("healthy", "clinical"))
   out <- list(robust_rows(fit_mv(~ field_map + sessions, d), d, "H3a"))
   h3b <- fit_mv(~ field_map + field_control + sessions, d)
@@ -26,7 +29,8 @@ fit_rq3 <- function(es, fields, min_clinical = 8) {
   out[[3]] <- data.frame(model = "H3b", term = "field_map = field_control", estimate = NA, se = NA, ci_low = NA,
                          ci_high = NA, p_cr2 = wald$p_val, k_effects = nrow(d), k_studies = length(unique(d$study_id)),
                          note = sprintf("CR2 Wald F = %.2f", wald$Fstat))
-  out[[4]] <- robust_rows(fit_mv(~ test_type + sessions, d), d, "H3c")
+  # H3c has no field term, so it keeps the effects whose montage could not be modelled.
+  out[[4]] <- robust_rows(fit_mv(~ test_type + sessions, es), es, "H3c")
   n_clin <- length(unique(d$study_id[d$group == "clinical"]))
   out[[5]] <- if (n_clin < min_clinical) {
     data.frame(model = "H3d", term = NA, estimate = NA, se = NA, ci_low = NA, ci_high = NA, p_cr2 = NA,
