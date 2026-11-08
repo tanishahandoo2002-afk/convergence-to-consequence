@@ -26,8 +26,12 @@ fit_rq3 <- function(es, fields, min_clinical = 8) {
   wald <- Wald_test(h3b, constraints = constrain_equal(c("field_map", "field_control")), vcov = "CR2",
                     cluster = d$study_id)
   out[[2]] <- robust_rows(h3b, d, "H3b")
-  out[[3]] <- data.frame(model = "H3b", term = "field_map = field_control", estimate = NA, se = NA, ci_low = NA,
-                         ci_high = NA, p_cr2 = wald$p_val, k_effects = nrow(d), k_studies = length(unique(d$study_id)),
+  # The difference itself, with a CR2 CI, so integration.R can set it beside RQ2's H2b; p stays the Wald test.
+  b <- names(coef(h3b))
+  diff <- linear_contrast(h3b, vcov = "CR2", cluster = d$study_id,
+                          contrasts = matrix((b == "field_map") - (b == "field_control"), nrow = 1))
+  out[[3]] <- data.frame(model = "H3b", term = "field_map = field_control", estimate = diff$Est, se = diff$SE,
+                         ci_low = diff$CI_L, ci_high = diff$CI_U, p_cr2 = wald$p_val, k_effects = nrow(d), k_studies = length(unique(d$study_id)),
                          note = sprintf("CR2 Wald F = %.2f", wald$Fstat))
   # H3c has no field term, so it keeps the effects whose montage could not be modelled.
   out[[4]] <- robust_rows(fit_mv(~ test_type + sessions, es), es, "H3c")

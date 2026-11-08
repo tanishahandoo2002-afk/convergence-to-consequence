@@ -27,7 +27,11 @@ s <- sim_es(n_studies = 60, n_clinical = 20, n_range = c(200, 800))
 res <- fit_rq3(s$es, s$fields, min_clinical = 8)
 r <- term(res, "H3a", "field_map")
 stopifnot(r$ci_low < 1.0, r$ci_high > 1.0, r$ci_low > 0, r$k_studies == 60, r$k_effects == nrow(s$es))
-stopifnot(term(res, "H3b", "field_map = field_control")$p_cr2 < 0.05)
+h3b_diff <- term(res, "H3b", "field_map = field_control")
+coefs <- res[res$model == "H3b", ]
+stopifnot(h3b_diff$p_cr2 < 0.05, h3b_diff$ci_low < 1.0, h3b_diff$ci_high > 1.0, h3b_diff$ci_low > 0,
+          abs(h3b_diff$estimate - (coefs$estimate[coefs$term == "field_map"] -
+                                   coefs$estimate[coefs$term == "field_control"])) < 1e-8)
 stopifnot(nrow(res[res$model == "H3c", ]) >= 2, nrow(res[res$model == "H3d", ]) >= 4)
 
 # montages without a field and effects without a session count are left out; H3c keeps the field-less ones
