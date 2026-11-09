@@ -99,3 +99,30 @@ def test_expected_images_follows_masterordering_with_1_based_indices():
     design = {"masterordering": np.array([[3, 1, 3, 2]]), "subjectim": np.array([[10, 20, 30], [40, 50, 60]])}
     assert expected_images(design, 2, 4).tolist() == [60, 40, 60, 50]
     assert expected_images(design, 1, 2).tolist() == [30, 10]
+
+
+def test_fetch_retries_a_dropped_download_but_not_a_4xx(monkeypatch):
+    import requests
+    from rq2_nsd import extract_trials
+
+    class Reply:
+        def __init__(self, status):
+            self.status_code, self.content = status, b"betas"
+
+    replies = [requests.exceptions.ChunkedEncodingError("dropped"), Reply(503), Reply(200)]
+
+    def get(url, timeout):
+        r = replies.pop(0)
+        if isinstance(r, Exception):
+            raise r
+        return r
+
+    monkeypatch.setattr(extract_trials.requests, "get", get)
+    assert extract_trials.fetch("u", wait_s=0) == b"betas"
+    replies[:] = [Reply(404), Reply(200)]
+    with pytest.raises(RuntimeError, match="404"):
+        extract_trials.fetch("u", wait_s=0)
+    assert len(replies) == 1
+    replies[:] = [requests.ConnectionError("down")] * 4
+    with pytest.raises(RuntimeError, match="failed 4 times"):
+        extract_trials.fetch("u", wait_s=0)

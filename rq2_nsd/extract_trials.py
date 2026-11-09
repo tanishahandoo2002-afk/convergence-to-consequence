@@ -11,6 +11,7 @@ import gzip
 import io
 import os
 import sys
+import time
 from pathlib import Path
 
 import nibabel as nib
@@ -29,11 +30,26 @@ DESIGN = "nsddata/experiments/nsd/nsd_expdesign.mat"
 SCALE = 300  # NSD betas are stored as int16 percent signal change x 300
 
 
-def fetch(url):
-    r = requests.get(url, timeout=600)
-    if r.status_code != 200:
-        raise RuntimeError(f"GET {url} returned {r.status_code}")
-    return r.content
+DROPPED = (requests.ConnectionError, requests.Timeout, requests.exceptions.ChunkedEncodingError)
+
+
+def fetch(url, retries=3, wait_s=30):
+    """GET a whole file. A dropped connection or a 5xx reply is retried, with a longer wait each time: one
+    dropped download stopped the b2 run partway (CHANGELOG 2026-11-10). A 4xx reply fails at once."""
+    for attempt in range(retries + 1):
+        try:
+            r = requests.get(url, timeout=600)
+            if r.status_code == 200:
+                return r.content
+            problem = f"status {r.status_code}"
+            if r.status_code < 500:
+                raise RuntimeError(f"GET {url} returned {r.status_code}")
+        except DROPPED as e:
+            problem = type(e).__name__
+        if attempt == retries:
+            raise RuntimeError(f"GET {url} failed {retries + 1} times, last with {problem}")
+        print(f"retry {attempt + 1}/{retries} in {wait_s * (attempt + 1)} s after {problem}: {url}", flush=True)
+        time.sleep(wait_s * (attempt + 1))
 
 
 def cached(key, base, cache):
