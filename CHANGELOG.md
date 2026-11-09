@@ -2,6 +2,10 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-09: no RQ3 effect comes from a preprint (RQ3)
+
+The 2026-11-08 full-text entry left the 4 bioRxiv texts to be checked against their published versions. Two were proposed ineligible (`pmid:41173192`, `30272127`). The other two (`pmid:36669696`, `28528736`) report their results only in figures, and figure digitising covered PMC figures only, so neither has a row in `effects.csv`. No preprint data reaches the RQ3 models, and nothing needs checking.
+
 ## 2026-11-09: integration run on the b3 results
 
 - `make integration` wrote `results/integration_table.csv` and `results/integration.png` (not committed).
