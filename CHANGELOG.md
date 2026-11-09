@@ -2,6 +2,13 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-09: full b3 extraction done (RQ2)
+
+- `python -m rq2_nsd.extract_trials --beta b3` ran from 2026-11-08 19:39 to 2026-11-09 13:04: 284 sessions (40/40/32/30/40/32/40/30 for subjects 1-8), 750 trials each, no session repeated in the manifest.
+- That is about 221 s per session, against 91 s in the pilot, so the run took about 17.4 hours rather than the 8 estimated. The run needed no restart.
+- `check_rq2 --dir b3` passes. Across 213,000 trials, 626 have no response, no trial has a NaN signal, and no mask mean exceeds |z| 6. The per-session report is `rq2_nsd/results/data_quality_b3.csv` (not committed).
+- The data stick unmounted after the run had finished; the trial tables and manifest were intact when it came back.
+
 ## 2026-11-08: NSD access, native masks and the design-file check (RQ2)
 
 **Access:** the author agreed to the NSD Terms and Conditions and submitted the NSD Data Access form on 2026-11-08, so NSD files are now read from the public bucket. The terms require citing Allen et al. 2021 (Nature Neuroscience) and acknowledging NSF IIS-1822683 and IIS-1822929 in any presentation of the results.
@@ -22,7 +29,7 @@ Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project
 - Each session has 750 trials. No signal is NaN, and no mask mean exceeds |z| 6.
 - Every native mask voxel gave a finite z-score, so all of them lie inside NSD's brain mask.
 - Per-trial mask means have SDs of 0.19-0.31. No outcome, old/new or response column was written.
-- **Cost.** The run took 273 s for the 3 sessions, mostly download (about 490 MB per session), with a peak memory of 2.8 GB. At that rate the full b3 extraction (314 sessions, 128 GB streamed) takes about 8 hours, and b2 the same again.
+- **Cost.** The run took 273 s for the 3 sessions, mostly download (about 490 MB per session), with a peak memory of 2.8 GB. At that rate the full b3 extraction (284 sessions; this line first said 314, a sum error) takes about 8 hours, and b2 the same again.
 - **HDF5 spike not run.** The design's test of partial HDF5 reads needs h5py, which is not installed. The union of the native masks is 6.6% of subject 1's voxels but touches 52 of 83 slices, so any saving depends on how the HDF5 files are chunked.
 
 ## 2026-11-08: integration script ready, waiting on RQ2
