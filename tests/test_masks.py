@@ -5,7 +5,7 @@ import nibabel as nib
 import numpy as np
 import pytest
 
-from masks.build_masks import freeze, subtract, top_half, verify_frozen
+from masks.build_masks import freeze, rebuilt_differ, subtract, top_half, verify_frozen
 
 AFF = np.eye(4)
 
@@ -71,6 +71,13 @@ def test_verify_detects_change(files):
     assert verify_frozen(frozen_path=frozen) == ["m1.nii.gz"]
     paths[0].unlink()
     assert verify_frozen(frozen_path=frozen) == ["m0.nii.gz", "m1.nii.gz"]
+
+
+def test_rebuilt_differ_compares_voxels(files):
+    d, paths = files
+    same = nib.load(paths[1])
+    assert rebuilt_differ({"m1": nib.Nifti1Image(np.asarray(same.dataobj), same.affine)}, d) == []
+    assert rebuilt_differ({"m1": rand_mask(9)}, d) == ["m1"]
 
 
 def test_check_masks_flags_overlap_and_missing_signoff(tmp_path):

@@ -9,7 +9,7 @@
   control_md_verified.nii.gz    multiple-demand parcels minus memory_verified, its paired control [sensitivity]
 
 Once frozen, hashes in masks/FROZEN.sha256 guard every downstream stage.
-CLI: python -m masks.build_masks [--refreeze]
+CLI: python -m masks.build_masks [--refreeze]   (once frozen, without --refreeze: rebuild in memory and compare)
 """
 import argparse
 import datetime
@@ -81,6 +81,18 @@ def verify_frozen(frozen_path=FROZEN):
     return sorted(bad)
 
 
+def rebuilt_differ(masks, masks_dir=MASKS):
+    """Names whose rebuilt voxels or affine differ from the saved mask. Voxels, not file hashes, are compared,
+    so a rebuild that only changes the gzip header still counts as a match."""
+    differ = []
+    for name, img in masks.items():
+        saved = nib.load(Path(masks_dir) / f"{name}.nii.gz")
+        if not (np.array_equal(np.asarray(img.dataobj), np.asarray(saved.dataobj))
+                and np.allclose(img.affine, saved.affine)):
+            differ.append(name)
+    return sorted(differ)
+
+
 def fetch_source(url, expected=None):
     """Download a parcel file once into $C2C_DATA/parcels; record its hash in masks/sources.csv and
     refuse to continue if it differs from the recorded (or configured) hash."""
@@ -135,6 +147,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--refreeze", action="store_true")
     a = ap.parse_args()
+    if FROZEN.exists() and not a.refreeze:
+        # A frozen repo is checked, never overwritten: this is the mask step of `make all` from a fresh clone.
+        differ = rebuilt_differ(build(load_config("rq1")))
+        if differ:
+            raise SystemExit(f"masks rebuilt from the ALE results differ from the frozen ones: {differ}")
+        print("masks rebuilt from the ALE results match the frozen ones voxel for voxel")
+        return
     refreeze_allowed(a.refreeze, FROZEN, CHANGELOG)  # before anything is overwritten
     masks = build(load_config("rq1"))
     (MASKS / "qc").mkdir(exist_ok=True)
