@@ -2,6 +2,24 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-09: RQ2 models fitted on b3; H2b keeps its subject slopes (RQ2)
+
+**Deviation from the simplification order (author's decision).**
+- In pooled H2b, every formula with `(1 | image)` was singular. The image variance was estimated at zero: H2b has 97,031 hit and false-alarm trials over 52,714 images (the image count is from a one-off check, not a committed script).
+- Following the list, the fit fell to `(1 | subject)`, which drops the subject slopes as well. That fit gave memory - control = 0.388 (SE 0.018).
+- `fit_simplified` now drops only `(1 | image)` when a zero image variance is what makes a fit singular, and keeps the subject terms. Any other singular fit still moves down the list. Pooled H2b now uses `(1 + z_memory + z_control | subject)`, not singular: memory - control = 0.447 (SE 0.078, 95% CI 0.294 to 0.601, p = 1.1e-8).
+- The rule changed no other pooled or per-participant row. The Yeo robustness row moved from 0.256 (SE 0.018) to 0.324 (SE 0.071, p = 5.3e-6).
+
+**Results** (`rq2_nsd/results`, not committed). All fits converged, and none is singular.
+- **H2a:** memory signal predicts hits, 0.641 (SE 0.220, 95% CI 0.210 to 1.072, p = .0036). Leaving out each participant in turn gives 0.503 to 0.756, all p < .05. The top-50% mask gives 0.609 and the verified-only mask 0.798.
+- **H2b:** above. Per participant, the difference is positive for all 8 and p < .05 for 7; participant 8 gives 0.025 (p = .52).
+- **H2c:** delay is centred at 6.015 (log seconds, median over old trials). At that delay the memory-signal effect is 0.107 (p = .60). The interaction with delay is -0.228 (SE 0.018, p = 3e-37): the signal predicts hits more at short delays. The verified-only mask gives the same pattern (main effect 0.294, p = .056; interaction -0.180).
+- **Per-participant H2a:** positive with p < .05 for participants 1, 2, 4, 5, 6 and 7. The within-session permutation test agrees for 1, 2, 4 and 7 (p = .001), but not for 5 (p = .085) or 6 (p = .080), whose model p-values are 2.9e-5 and .0039. The per-participant model p-values may therefore be too small; the permutation p is the one to report for single participants.
+
+**renv** warns that the project is out of sync: 11 recommended packages (KernSmooth, mgcv, survival and others) are recorded in the lockfile but not used. No package version differs, so the lockfile is left as it is.
+
+**Not run yet:** b2 robustness extraction, and `make integration` with the new H2b row.
+
 ## 2026-11-09: full b3 extraction done (RQ2)
 
 - `python -m rq2_nsd.extract_trials --beta b3` ran from 2026-11-08 19:39 to 2026-11-09 13:04: 284 sessions (40/40/32/30/40/32/40/30 for subjects 1-8), 750 trials each, no session repeated in the manifest.
