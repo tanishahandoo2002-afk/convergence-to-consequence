@@ -61,6 +61,15 @@ bad <- data.frame(y = rbinom(50, 1, 0.5), x = rnorm(50), g = factor("only"))
 f <- fit_simplified(list(y ~ x + (1 | g)), bad)
 stopifnot(is.null(f$fit), identical(f$converged, FALSE))
 
+# one trial per image and no image effect: the image intercept is zero, so only (1 | image) is dropped and the
+# subject slopes stay in the model
+set.seed(6)
+flat <- data.frame(subject = factor(rep(1:8, each = 800)), image = factor(seq_len(6400)), x = rnorm(6400))
+b <- rnorm(8, 0.5, 0.5)
+flat$y <- rbinom(6400, 1, plogis(b[flat$subject] * flat$x))
+f <- fit_simplified(h2_formulas("y", "x", "x"), flat)
+stopifnot(!grepl("image", f$formula_used), grepl("x \\|+ subject", f$formula_used), isFALSE(f$singular))
+
 # robustness: 8 leave-one-participant-out rows plus top-50%, Yeo and verified-only variants
 rob <- robustness(sim_trials(slope = 0.4, seed = 5, n_trials = 500, n_img = 800))
 stopifnot(sum(grepl("^lopo_", unique(rob$variant))) == 8, all(c("top50", "yeo", "verified_only") %in% rob$variant))

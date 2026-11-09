@@ -16,19 +16,39 @@ subject_formulas <- function(outcome, terms) {
   lapply(c(sprintf("%s ~ %s + (1 | image)", outcome, terms), sprintf("%s ~ %s", outcome, terms)), as.formula)
 }
 
+# NULL on an error or any warning (convergence warnings included).
+try_fit <- function(f, data, family) {
+  warned <- FALSE
+  fit <- tryCatch(suppressMessages(withCallingHandlers(
+    if (is.null(findbars(f))) glm(f, data = data, family = family)
+    else glmer(f, data = data, family = family, control = glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e5))),
+    warning = function(w) { warned <<- TRUE; invokeRestart("muffleWarning") })),
+    error = function(e) NULL)
+  if (warned) NULL else fit
+}
+
+# Same tolerance as lme4's isSingular.
+image_sd_zero <- function(fit) {
+  vc <- as.data.frame(VarCorr(fit))
+  any(vc$grp == "image" & is.na(vc$var2) & vc$sdcor < 1e-4)
+}
+
 # Try each formula in order; the first that fits without a convergence warning or singular fit is used.
-# Singular fits move on to the next (simpler) formula; if every warning-free fit is singular, the last one is
+# A fit that is singular because the image intercept is zero drops only (1 | image) and keeps its subject terms:
+# H2b has about 1.8 trials per image, so its image variance comes out at zero, and moving down the list would also
+# drop the subject slopes and shrink the SE (author's decision, CHANGELOG 2026-11-09).
+# Other singular fits move on to the next (simpler) formula; if every warning-free fit is singular, the last one is
 # kept as a boundary estimate and flagged `singular`, rather than dropping the model.
 fit_simplified <- function(formulas, data, family = binomial) {
   boundary <- NULL
   for (f in formulas) {
-    warned <- FALSE
-    fit <- tryCatch(suppressMessages(withCallingHandlers(
-      if (is.null(findbars(f))) glm(f, data = data, family = family)
-      else glmer(f, data = data, family = family, control = glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e5))),
-      warning = function(w) { warned <<- TRUE; invokeRestart("muffleWarning") })),
-      error = function(e) NULL)
-    if (is.null(fit) || warned) next
+    fit <- try_fit(f, data, family)
+    if (is.null(fit)) next
+    if (inherits(fit, "merMod") && isSingular(fit) && image_sd_zero(fit)) {
+      f <- update(f, . ~ . - (1 | image))
+      fit <- try_fit(f, data, family)
+      if (is.null(fit)) next
+    }
     used <- paste(deparse(f), collapse = "")
     if (inherits(fit, "merMod") && isSingular(fit)) {
       boundary <- list(fit = fit, formula_used = used, converged = TRUE, singular = TRUE)
