@@ -2,6 +2,14 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-10: fresh-clone reproducibility check
+
+The design's pre-preprint test is `make all` from a fresh clone. It was run on a clone of the pushed repo at `b98d908`, plus the two fixes below, with the same `$C2C_DATA`. It covered every stage except `rq2-b2`, whose extraction is still running.
+
+- **Fixes it needed.** `make setup` did not restore the R packages, although the README says it does (fixed in `79254ed`). `make masks` refused to run once the masks were frozen, so `make all` could never pass (fixed in `984abb1`: without `--refreeze` it now rebuilds the masks in memory and compares them with the frozen files).
+- **Results.** `make test` passed (165 Python tests, 5 R files). RQ1's extraction and ALE checks passed. The masks rebuilt from the clone's own ALE match the frozen masks voxel for voxel. Every file the clone wrote to `rq2_nsd/results`, `rq3_stimulation/results` and `results` (17 files, including the H2, H3 and integration tables) is byte-for-byte identical to the original.
+- **Not covered.** The setup check's other failures are expected in a clone: the commit identity and hook are per-clone settings, and Ollama is only needed for screening. Search, screening and field modelling are outside `make all`.
+
 ## 2026-11-09: no RQ3 effect comes from a preprint (RQ3)
 
 The 2026-11-08 full-text entry left the 4 bioRxiv texts to be checked against their published versions. Two were proposed ineligible (`pmid:41173192`, `30272127`). The other two (`pmid:36669696`, `28528736`) report their results only in figures, and figure digitising covered PMC figures only, so neither has a row in `effects.csv`. No preprint data reaches the RQ3 models, and nothing needs checking.
