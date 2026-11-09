@@ -2,6 +2,14 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-09: integration run on the b3 results
+
+- `make integration` wrote `results/integration_table.csv` and `results/integration.png` (not committed).
+- RQ2 H2b, memory-map signal minus control signal: 0.447 log-odds per SD (95% CI 0.294 to 0.601, p = 1.1e-8), from 97,031 trials answered old by 8 participants.
+- RQ3 H3b, memory-map field minus control field: 0.448 g per V/m (95% CI -14.7 to 15.6, p = .94), from 61 effects in 33 studies.
+- The two rows are on different scales, so the figure has one panel per scale; the design leaves the reading of them to the author.
+- The table uses b3. It will be re-run if the b2 robustness run changes the RQ2 row.
+
 ## 2026-11-09: RQ2 models fitted on b3; H2b keeps its subject slopes (RQ2)
 
 **Deviation from the simplification order (author's decision).**

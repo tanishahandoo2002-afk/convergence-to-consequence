@@ -11,9 +11,13 @@ with electric-field modelling (RQ3).
 
 ## Status
 
-RQ1 pipeline built; RQ2 and RQ3 analysis code built and tested on simulated data, waiting for data access.
+RQ1, RQ2 (primary b3 betas) and RQ3 have been run, and the integration table and figure are made.
+The RQ2 robustness run on the b2 betas is in progress.
 A personal project, not a publication: no preprint or OSF registration. The protocol is in
 [`docs/registration-1-rq1.md`](docs/registration-1-rq1.md).
+
+Results are written to `rq2_nsd/results/`, `rq3_stimulation/results/` and `results/` and are not
+committed. The main estimates, and every deviation from the protocol, are in [`CHANGELOG.md`](CHANGELOG.md).
 
 ## How to run
 
@@ -30,9 +34,16 @@ make test     # known-answer tests on synthetic data (Python and R)
 | --- | --- | --- |
 | RQ1 search, screening, ALE | `make rq1-search`, `make rq1-screen`, `make rq1-check-screen`, `make rq1` | PubMed, ASI key, Ollama |
 | Masks (frozen) | `make masks` | RQ1 results |
-| RQ2 blind pilot, extraction, models | `make rq2-pilot`, `make rq2` | NSD access, native masks |
+| RQ2 native masks | `python -m rq2_nsd.to_native`, then `python -m checks.check_rq2 --native` | NSD access, frozen masks, overlay sign-offs |
+| RQ2 blind pilot, extraction, models | `make rq2-pilot`, `make rq2` | native masks |
+| RQ2 b2 robustness extraction | `python -m rq2_nsd.extract_trials --beta b2` | native masks |
 | RQ3 search, screening | `make rq3-search`, `make rq3-screen`, `make rq3-check-screen` | PubMed, ASI key, Ollama |
+| RQ3 electric fields | `make rq3-fields` | SimNIBS 4.6 |
 | RQ3 effect sizes, models | `make rq3-es`, `make rq3` | extraction sheets, field values |
+| Integration (H2b next to H3b) | `make integration` | RQ2 and RQ3 results |
+
+A full extraction streams every NSD session once and takes many hours; re-runs skip sessions already
+listed in the manifest.
 
 Requires Python 3.12 and R 4.5.
 
@@ -47,6 +58,15 @@ Design: [`docs/design.md`](docs/design.md). Deviations from the protocol: [`CHAN
 | Natural Scenes Dataset | NSD Data Access Agreement; raw NSD files are never redistributed |
 | OASIS-2 | Open access under the OASIS data use terms; one T1 scan is used, kept outside the repo |
 | PubMed | Open |
+
+## Natural Scenes Dataset
+
+RQ2 uses the Natural Scenes Dataset: Allen, St-Yves, Wu, Breedlove, Prince, Dowdle, Nau, Caron,
+Pestilli, Charest, Hutchinson, Naselaris and Kay, "A massive 7T fMRI dataset to bridge cognitive
+neuroscience and artificial intelligence", *Nature Neuroscience* 25, 116-126 (2021),
+doi:[10.1038/s41593-021-00962-x](https://doi.org/10.1038/s41593-021-00962-x).
+Collection of the NSD dataset was supported by NSF IIS-1822683 and NSF IIS-1822929.
+No NSD file, trial table or image is in this repository.
 
 ## Use of AI tools
 
