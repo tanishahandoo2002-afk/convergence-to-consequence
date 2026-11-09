@@ -80,4 +80,9 @@ p1 <- perm_test(planted, n_perm = 200, seed = 1)
 stopifnot(nrow(p1) == 8, all(p1$p < 0.05))
 p0 <- perm_test(sim_trials(slope = 0, seed = 4), n_perm = 200, seed = 1)
 stopifnot(sum(p0$p > 0.01) >= 6)
+
+# b2 vs b3: pooled non-intercept rows only, matched on model and term
+cmp <- compare_betas(res, transform(res, estimate = estimate + 1))
+stopifnot(nrow(cmp) == sum(res$subject == "all" & res$term != "(Intercept)"),
+          all(abs(cmp$estimate_b2 - cmp$estimate_b3 - 1) < 1e-12))
 cat("rq2 models: all known-answer tests passed\n")

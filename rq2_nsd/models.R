@@ -184,9 +184,16 @@ diagnostics <- function(trials, out_dir) {
   }
 }
 
+# Robustness (design §9): the pooled H2 rows fitted on the b3 and b2 betas, side by side.
+compare_betas <- function(b3, b2) {
+  keep <- function(r) r[r$subject == "all" & r$term != "(Intercept)", c("model", "term", "estimate", "se", "p", "formula_used")]
+  merge(keep(b3), keep(b2), by = c("model", "term"), suffixes = c("_b3", "_b2"), sort = FALSE)
+}
+
 main <- function() {
   args <- commandArgs(trailingOnly = TRUE)
   input <- args[which(args == "--input") + 1]; output <- args[which(args == "--output") + 1]
+  b3_results <- args[which(args == "--compare-with") + 1]
   files <- list.files(input, pattern = "^subj.*_sess.*\\.csv$", full.names = TRUE)
   trials <- do.call(rbind, lapply(files, read.csv))
   dir.create(output, showWarnings = FALSE, recursive = TRUE)
@@ -196,6 +203,10 @@ main <- function() {
   write.csv(perm_test(trials), file.path(output, "permutation.csv"), row.names = FALSE)
   write.csv(trial_counts(trials), file.path(output, "trial_counts.csv"), row.names = FALSE)
   diagnostics(trials, output)
+  if (length(b3_results)) {
+    write.csv(compare_betas(read.csv(file.path(b3_results, "h2_results.csv")), read.csv(file.path(output, "h2_results.csv"))),
+              file.path(output, "b2_vs_b3.csv"), row.names = FALSE)
+  }
   cat("RQ2 models written to", output, "\n")
 }
 

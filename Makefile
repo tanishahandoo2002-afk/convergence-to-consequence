@@ -42,9 +42,9 @@ masks:
 	$(PY) -m masks.build_masks
 	$(PY) -m checks.check_masks
 
-all: test rq1 masks rq2 rq3 integration
+all: test rq1 masks rq2 rq2-b2 rq3 integration
 
-.PHONY: rq2-pilot rq2
+.PHONY: rq2-pilot rq2 rq2-b2
 rq2-pilot:
 	$(PY) -m rq2_nsd.extract_trials --pilot
 	$(PY) -m checks.check_rq2 --dir pilot
@@ -53,6 +53,11 @@ rq2:
 	$(PY) -m rq2_nsd.extract_trials --beta b3
 	$(PY) -m checks.check_rq2 --dir b3
 	Rscript rq2_nsd/models.R --run --input $$C2C_DATA/rq2/b3 --output rq2_nsd/results
+
+rq2-b2:   # needs rq2 results; robustness: the same models on the b2 betas, compared with b3
+	$(PY) -m rq2_nsd.extract_trials --beta b2
+	$(PY) -m checks.check_rq2 --dir b2
+	Rscript rq2_nsd/models.R --run --input $$C2C_DATA/rq2/b2 --output rq2_nsd/results/b2 --compare-with rq2_nsd/results
 
 .PHONY: rq3-search rq3-screen rq3-full-text rq3-check-screen rq3-fields
 rq3-search:
