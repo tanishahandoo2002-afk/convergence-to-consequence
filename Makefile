@@ -5,6 +5,7 @@ PY := .venv/bin/python
 
 setup:
 	uv venv --python 3.12 --allow-existing && uv pip sync requirements.txt
+	Rscript -e 'renv::restore(prompt = FALSE)'
 	$(PY) -m checks.check_setup
 
 test:
