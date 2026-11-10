@@ -2,6 +2,12 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-10: results write-up drafted by an AI assistant
+
+**Was:** the plan (§8.6) limits AI to language editing in the write-up ("content and claims are hers"), and `docs/design.md` §11 and §13 leave interpretation and writing to the author.
+
+**Now:** at the team's request, an AI assistant drafted `docs/report.md` from the committed scripts' outputs and this changelog. The report says so at the top, and the README's AI-use section says so too. The interpretation in it is the assistant's until the author revises it.
+
 ## 2026-11-10: the older-adult fields enter H3d as a sensitivity fit (RQ3)
 
 **Was:** the older-adult fields were modelled but not used in any model. The design says only that the clinical-arm montages are repeated on an older head (2026-11-08 entry).

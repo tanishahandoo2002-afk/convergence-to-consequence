@@ -11,8 +11,8 @@ with electric-field modelling (RQ3).
 
 ## Status
 
-RQ1, RQ2 (primary b3 betas) and RQ3 have been run, and the integration table and figure are made.
-The RQ2 robustness run on the b2 betas is in progress.
+Every stage has been run, including the RQ2 robustness run on the b2 betas.
+The results are written up in [`docs/report.md`](docs/report.md).
 A personal project, not a publication: no preprint or OSF registration. The protocol is in
 [`docs/registration-1-rq1.md`](docs/registration-1-rq1.md).
 
@@ -36,7 +36,7 @@ make test     # known-answer tests on synthetic data (Python and R)
 | Masks (frozen) | `make masks` | RQ1 results |
 | RQ2 native masks | `python -m rq2_nsd.to_native`, then `python -m checks.check_rq2 --native` | NSD access, frozen masks, overlay sign-offs |
 | RQ2 blind pilot, extraction, models | `make rq2-pilot`, `make rq2` | native masks |
-| RQ2 b2 robustness extraction | `python -m rq2_nsd.extract_trials --beta b2` | native masks |
+| RQ2 b2 robustness (extraction, models, comparison with b3) | `make rq2-b2` | RQ2 b3 results |
 | RQ3 search, screening | `make rq3-search`, `make rq3-screen`, `make rq3-check-screen` | PubMed, ASI key, Ollama |
 | RQ3 electric fields | `make rq3-fields` | SimNIBS 4.6 |
 | RQ3 effect sizes, models | `make rq3-es`, `make rq3` | extraction sheets, field values |
@@ -78,5 +78,6 @@ Extracted contrasts were chosen by an AI assistant, and the author accepted its 
 decision, without a recorded paper-by-paper check. 17 BrainMap experiments stay in unverified,
 because their papers could not be accessed, and a verified-only map is produced alongside the main one.
 An AI assistant also helped draft code; the author ran, read and checked every script.
+At the team's request, an AI assistant drafted `docs/report.md` from the scripts' outputs.
 Coordinates came from BrainMap exports or were read by a script from PMC tables, from those same
 AI-chosen rows (`CHANGELOG.md`, 2026-11-07). No person or model typed them.
