@@ -41,6 +41,7 @@ make test     # known-answer tests on synthetic data (Python and R)
 | RQ3 electric fields | `make rq3-fields` | SimNIBS 4.6 |
 | RQ3 effect sizes, models | `make rq3-es`, `make rq3` | extraction sheets, field values |
 | Integration (H2b next to H3b) | `make integration` | RQ2 and RQ3 results |
+| Explainer page (charts, brain images) | `make page` → `webpage/build/c2c.html` | every stage's results |
 
 A full extraction streams every NSD session once and takes many hours; re-runs skip sessions already
 listed in the manifest.

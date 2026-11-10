@@ -2,6 +2,10 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-10: explainer page built from the results
+
+The plan's deliverables have no web page. At the team's request, an AI assistant drafted a one-page explainer with the charts, PRISMA flows, brain images and integration panels, and published it privately. `make page` (`webpage/build.py` with `webpage/template.html`) reads every number from the stage outputs and writes `webpage/build/c2c.html`, which is not committed because it embeds the RQ2 results. A build from the repo matched the published page, apart from the PNG bytes of the brain images. The page says that an AI assistant drafted it.
+
 ## 2026-11-10: results write-up drafted by an AI assistant
 
 **Was:** the plan (§8.6) limits AI to language editing in the write-up ("content and claims are hers"), and `docs/design.md` §11 and §13 leave interpretation and writing to the author.

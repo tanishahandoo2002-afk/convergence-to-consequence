@@ -1,0 +1,855 @@
+<title>Convergence to Consequence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column (~68ch) with figures that break wider; a sticky section bar; each research
+   question opens with its question set large, then the figures that answer it. */
+:root {
+  --bg: #f4f6f8;
+  --surface: #fcfdfd;
+  --ink: #101720;
+  --ink-2: #4a5462;
+  --muted: #7b8490;
+  --rule: #dde2e8;
+  --axis: #c3c8cf;
+  --mem: #2a78d6;
+  --ctl: #eb6834;
+  --clin: #1baf7a;
+  --other: #9aa2ad;
+  --good: #0ca30c;
+  --warn: #fab219;
+  --crit: #d03b3b;
+  --on-fill: #ffffff;
+  --accent: #1d5fae;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --col: 44rem;
+  --wide: 70rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1115; --surface: #161a1f; --ink: #eef1f4; --ink-2: #b9c0c8; --muted: #8a929c; --rule: #282e36;
+    --axis: #3a414b; --mem: #3987e5; --ctl: #d95926; --clin: #199e70; --other: #6d7580; --accent: #6aa8f0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1115; --surface: #161a1f; --ink: #eef1f4; --ink-2: #b9c0c8; --muted: #8a929c; --rule: #282e36;
+  --axis: #3a414b; --mem: #3987e5; --ctl: #d95926; --clin: #199e70; --other: #6d7580; --accent: #6aa8f0;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.6 var(--body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.col { max-width: var(--col); margin-inline: auto; }
+.wide { max-width: var(--wide); margin-inline: auto; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.3rem, 6vw, 4.1rem); line-height: 1.02; font-weight: 700; }
+h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); line-height: 1.1; font-weight: 700; }
+h3 { font-size: 1.25rem; line-height: 1.25; font-weight: 500; }
+p { margin: 0; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.eyebrow { font: 500 0.75rem/1.2 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.lede { font-size: 1.25rem; line-height: 1.5; color: var(--ink-2); }
+.small { font-size: 0.9rem; color: var(--ink-2); }
+.mono { font-family: var(--mono); font-size: 0.85em; }
+.stack { display: flex; flex-direction: column; gap: 1.1rem; }
+.stack-lg { display: flex; flex-direction: column; gap: 2.75rem; }
+
+header.hero { padding-block: 3.5rem 2rem; }
+.hero .stack { gap: 1.2rem; }
+.byline { font: 400 0.9rem/1.4 var(--mono); color: var(--ink-2); }
+.answers { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0; border-block: 1px solid var(--rule); margin-top: 0.5rem; }
+.answer { padding: 1rem 1.25rem 1.1rem 0; display: flex; flex-direction: column; gap: 0.35rem; min-width: 0; }
+.answer + .answer { padding-left: 1.25rem; border-left: 1px solid var(--rule); }
+.answer .q { font: 500 0.75rem/1.2 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.answer .a { font: 700 1.35rem/1.15 var(--display); }
+.answer .d { font-size: 0.92rem; color: var(--ink-2); line-height: 1.45; }
+@media (max-width: 640px) { .answer + .answer { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); } }
+
+nav.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--rule); }
+nav.bar .inner { display: flex; gap: 1.25rem; overflow-x: auto; padding-block: 0.7rem; scrollbar-width: none; }
+nav.bar a { font: 500 0.8rem/1 var(--mono); letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-2); text-decoration: none; white-space: nowrap; padding-block: 0.25rem; }
+nav.bar a:hover { color: var(--ink); }
+
+section.rq { padding-block: 4rem 1rem; }
+.rq-head { display: flex; flex-direction: column; gap: 0.75rem; }
+.rq-head .verdict { display: inline-flex; align-self: flex-start; gap: 0.5rem; align-items: center; font: 500 0.8rem/1 var(--mono); padding: 0.45rem 0.7rem; border-radius: 999px; border: 1px solid var(--rule); background: var(--surface); color: var(--ink); }
+.dot { width: 0.6rem; height: 0.6rem; border-radius: 50%; display: inline-block; flex: none; }
+
+figure { margin: 0; display: flex; flex-direction: column; gap: 0.75rem; min-width: 0; }
+.plate { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.1rem 0.9rem; min-width: 0; }
+figcaption { font-size: 0.9rem; color: var(--ink-2); line-height: 1.5; max-width: var(--col); }
+figcaption b { color: var(--ink); font-weight: 600; }
+.fig-title { font: 500 1.02rem/1.3 var(--display); color: var(--ink); }
+.chart { width: 100%; min-width: 0; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.scroll { overflow-x: auto; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); gap: 1.25rem; }
+.grid2 > * { min-width: 0; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; font: 400 0.8rem/1.3 var(--mono); color: var(--ink-2); }
+.legend span { display: inline-flex; gap: 0.4rem; align-items: center; }
+.key-fill { width: 0.7rem; height: 0.7rem; border-radius: 50%; display: inline-block; }
+.key-ring { width: 0.7rem; height: 0.7rem; border-radius: 50%; display: inline-block; border: 2px solid currentColor; box-sizing: border-box; }
+.key-diamond { width: 0.62rem; height: 0.62rem; transform: rotate(45deg); display: inline-block; }
+.key-line { width: 1.1rem; height: 2px; display: inline-block; }
+.key-sq { width: 0.75rem; height: 0.75rem; border-radius: 2px; display: inline-block; }
+
+svg text { font-family: var(--mono); font-size: 11px; fill: var(--ink-2); }
+svg .axis-label { fill: var(--muted); font-size: 10.5px; }
+svg .row-label { fill: var(--ink); font-size: 11.5px; }
+svg .val { fill: var(--ink-2); font-size: 10.5px; }
+svg .grid line { stroke: var(--rule); stroke-width: 1; }
+svg .zero { stroke: var(--axis); stroke-width: 1; }
+svg .hit { fill: transparent; cursor: default; }
+
+.tip { position: fixed; z-index: 20; pointer-events: none; background: var(--ink); color: var(--bg); font: 400 0.78rem/1.4 var(--mono); padding: 0.5rem 0.65rem; border-radius: 6px; max-width: 18rem; opacity: 0; transition: opacity 0.12s; }
+.tip b { font-weight: 500; }
+.tip.on { opacity: 1; }
+
+/* PRISMA flow */
+.prisma { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.55rem 1.25rem; font-size: 0.9rem; }
+.prisma .box { border: 1px solid var(--rule); background: var(--surface); border-radius: 8px; padding: 0.55rem 0.75rem; display: flex; justify-content: space-between; gap: 0.75rem; align-items: baseline; min-width: 0; }
+.prisma .box.main { border-color: var(--axis); }
+.prisma .box.out { background: transparent; border-style: solid; color: var(--ink-2); }
+.prisma .box.final { border: 2px solid var(--mem); }
+.prisma .n { font: 500 1rem/1 var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.prisma .empty { visibility: hidden; }
+.flow-label { font: 500 0.72rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+/* cluster table */
+table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+th { text-align: left; font: 500 0.72rem/1.2 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 0.5rem 0.6rem 0.5rem 0; border-bottom: 1px solid var(--axis); white-space: nowrap; }
+td { padding: 0.55rem 0.6rem 0.55rem 0; border-bottom: 1px solid var(--rule); vertical-align: middle; }
+td.num, th.num { font-family: var(--mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.bar-cell { width: 34%; min-width: 7rem; }
+.sizebar { height: 10px; border-radius: 0 4px 4px 0; background: var(--mem); }
+.chip { font: 500 0.72rem/1 var(--mono); padding: 0.28rem 0.45rem; border-radius: 999px; border: 1px solid var(--rule); white-space: nowrap; display: inline-flex; gap: 0.3rem; align-items: center; }
+.chip.yes { color: var(--ink); }
+.chip.no { color: var(--muted); border-style: dashed; }
+details { font-size: 0.88rem; }
+details summary { cursor: pointer; font: 500 0.78rem/1.2 var(--mono); color: var(--accent); letter-spacing: 0.03em; }
+details[open] summary { margin-bottom: 0.6rem; }
+
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: 0.75rem; }
+.step { border-top: 2px solid var(--ink); padding-top: 0.6rem; display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; }
+.step .t { font: 500 1rem/1.25 var(--display); }
+.step .s { font-size: 0.88rem; color: var(--ink-2); line-height: 1.45; }
+
+.toggle { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 2px; gap: 2px; background: var(--surface); }
+.toggle button { font: 500 0.75rem/1 var(--mono); border: 0; background: transparent; color: var(--ink-2); padding: 0.4rem 0.7rem; border-radius: 999px; cursor: pointer; }
+.toggle button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.fig-head { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center; justify-content: space-between; }
+
+.callout { border-left: 3px solid var(--ink); padding: 0.2rem 0 0.2rem 1rem; }
+.limits { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); gap: 1.4rem 2rem; }
+.limits > div { display: flex; flex-direction: column; gap: 0.35rem; min-width: 0; }
+.limits h3 { font-size: 1.05rem; }
+.limits p { font-size: 0.95rem; color: var(--ink-2); }
+footer { padding-block: 3rem 4rem; border-top: 1px solid var(--rule); margin-top: 4rem; }
+.brain { border-radius: 8px; display: block; width: 100%; }
+.brain.dark { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .brain.light { display: none; } :root:not([data-theme="light"]) .brain.dark { display: block; } }
+:root[data-theme="dark"] .brain.light { display: none; }
+:root[data-theme="dark"] .brain.dark { display: block; }
+@media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+</style>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<header class="hero wrap">
+  <div class="wide stack">
+    <div class="eyebrow">Episodic memory · ALE meta-analysis · 7T fMRI · tDCS/tACS</div>
+    <h1>From Convergence<br>to Consequence</h1>
+    <p class="lede col" style="margin-inline:0">Does the brain's episodic-retrieval network predict memory for single events, and does reaching it with electrical stimulation change memory? Each test sets a meta-analytic map of the network against a domain-general control network.</p>
+    <p class="byline">Tanisha Handoo · B.Sc. Neurosciences &amp; Neuropsychology, Amity University · results as of 10 Nov 2026</p>
+    <div class="answers" id="answers">
+      <div class="answer"><span class="q">RQ1 · Map</span><span class="a">8 clusters</span><span class="d">Posterior cingulate, angular gyrus, precuneus, left hippocampus and medial prefrontal cortex, from 57 experiments.</span></div>
+      <div class="answer"><span class="q">RQ2 · Predict</span><span class="a">Yes</span><span class="d">Map signal predicts which images are remembered and separates true from false "old" responses better than the control network.</span></div>
+      <div class="answer"><span class="q">RQ3 · Cause</span><span class="a">No evidence</span><span class="d">How much tDCS/tACS field reaches the map does not explain which trials improved memory. The intervals are wide.</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="bar wrap" aria-label="Sections">
+  <div class="inner wide">
+    <a href="#design">Design</a><a href="#map">1 · Map</a><a href="#predict">2 · Predict</a><a href="#cause">3 · Cause</a><a href="#together">Together</a><a href="#limits">Limits</a>
+  </div>
+</nav>
+
+<main>
+<section class="rq wrap" id="design">
+  <div class="wide stack-lg">
+    <div class="col rq-head" style="margin-inline:0">
+      <div class="eyebrow">Study design</div>
+      <h2>One map, two independent tests</h2>
+      <p>The map was built and its masks were frozen (hashed) before any fMRI trial or stimulation trial was opened. The same frozen masks then go into both tests, so neither test can shape the map it is testing.</p>
+    </div>
+    <figure>
+      <div class="plate scroll"><div id="pipeline" style="min-width:760px"></div></div>
+      <figcaption>Every stage runs from one command and ends with a check script. A fresh clone of the repository rebuilt the masks voxel for voxel and reproduced the RQ2, RQ3 and integration results byte for byte.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="rq wrap" id="map">
+  <div class="wide stack-lg">
+    <div class="col rq-head" style="margin-inline:0">
+      <div class="eyebrow">RQ1 · Map</div>
+      <h2>Where does activity converge when people remember?</h2>
+      <p>Activation likelihood estimation (ALE) treats each published peak coordinate as a blurred probability and asks where the peaks from different experiments pile up more than chance would allow. The input is fMRI and PET contrasts of successful retrieval (remembered &gt; forgotten, or a close equivalent) from healthy adults.</p>
+      <span class="verdict"><span class="dot" style="background:var(--mem)"></span>H1a supported in the main map · H1b not run</span>
+    </div>
+    <div class="grid2">
+      <figure>
+        <div class="fig-title">How the papers were found (PubMed arm)</div>
+        <div id="prisma1"></div>
+        <figcaption>BrainMap experiments were added to the 30 PubMed papers. The ALE uses <b id="nexp"></b> experiments and <b id="nfoci"></b> foci. 17 BrainMap experiments (242 foci) could not be checked against their papers.</figcaption>
+      </figure>
+      <figure>
+        <div class="fig-title">The memory map</div>
+        <div class="plate" style="padding:0.6rem">
+          <img class="brain light" alt="Glass-brain views of the thresholded ALE map: clusters in posterior cingulate, precuneus, left angular gyrus, left hippocampus, caudate and medial prefrontal cortex." src="{{GLASS_LIGHT}}">
+          <img class="brain dark" alt="Glass-brain views of the thresholded ALE map." src="{{GLASS_DARK}}">
+        </div>
+        <figcaption>Significant clusters (cluster-forming p &lt; .001, cluster-level FWE p &lt; .05, 5,000 iterations), binarised as the frozen memory mask. Glass-brain projections, left, front, right and top.</figcaption>
+      </figure>
+    </div>
+    <figure>
+      <div class="fig-head"><div class="fig-title">The eight clusters, and how much each one can be trusted</div></div>
+      <div class="plate scroll"><table id="clusters" style="min-width:640px"></table></div>
+      <figcaption><b>Verified-only map:</b> the ALE re-run without the 17 unchecked experiments. <b>Fail-safe:</b> generated null experiments added until a cluster disappears. Three clusters (hippocampus, paracingulate, middle temporal) need the unchecked experiments. The caudate cluster is lost once 20 null experiments are added.</figcaption>
+    </figure>
+    <figure>
+      <div class="fig-head"><div class="fig-title">The two frozen masks used in RQ2 and RQ3</div>
+        <div class="legend"><span><i class="key-sq" style="background:var(--mem)"></i>Memory map</span><span><i class="key-sq" style="background:var(--ctl)"></i>Control: multiple-demand parcels minus the memory map</span></div></div>
+      <div class="plate" style="padding:0.6rem">
+        <img class="brain light" alt="Axial slices on the MNI template showing the memory mask in blue and the multiple-demand control mask in orange; they do not overlap." src="{{MASKS_LIGHT}}">
+        <img class="brain dark" alt="Axial slices showing the memory and control masks." src="{{MASKS_DARK}}">
+      </div>
+      <figcaption>The control network covers regions active in almost any demanding task (Fedorenko et al., 2013). Any voxel in the memory map is removed from it, so the two never share a voxel. A Yeo 2011 frontoparietal and ventral-attention mask serves as a second control.</figcaption>
+    </figure>
+    <p class="col small" style="margin-inline:0" id="h1b"></p>
+  </div>
+</section>
+
+<section class="rq wrap" id="predict">
+  <div class="wide stack-lg">
+    <div class="col rq-head" style="margin-inline:0">
+      <div class="eyebrow">RQ2 · Predict</div>
+      <h2>Does the map track memory on single trials?</h2>
+      <p>The Natural Scenes Dataset scanned 8 people at 7 tesla over 30 to 40 sessions each while they viewed natural scenes and pressed "old" or "new" for every image. Images came back after seconds, minutes or months, so every repeat is a real memory test.</p>
+      <span class="verdict"><span class="dot" style="background:var(--mem)"></span>H2a, H2b and H2c supported</span>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="eyebrow">Step 1</span><span class="t">Frozen masks to each brain</span><span class="s">Each mask is mapped from MNI into each participant's 1.8 mm functional space with NSD's own transforms.</span></div>
+      <div class="step"><span class="eyebrow">Step 2</span><span class="t">One number per trial per mask</span><span class="s">Single-trial betas are z-scored per voxel within the session and then averaged inside the mask.</span></div>
+      <div class="step"><span class="eyebrow">Step 3</span><span class="t">Label the trial</span><span class="s">From the responses and the design file: hit, miss, false alarm or correct rejection, plus the delay since the last view.</span></div>
+      <div class="step"><span class="eyebrow">Step 4</span><span class="t">Mixed-effects logistic models</span><span class="s">Random effects for participant and image. Pooled across participants and fitted for each participant separately.</span></div>
+    </div>
+    <figure>
+      <div class="fig-head"><div class="fig-title">Who remembered what: hit rate on old images and false-alarm rate on new ones</div>
+        <div class="legend"><span><i class="key-fill" style="background:var(--ink)"></i>Hit rate</span><span><i class="key-ring" style="color:var(--ink-2)"></i>False-alarm rate</span></div></div>
+      <div class="plate"><div class="chart" id="rates"></div></div>
+      <figcaption id="rates-cap"></figcaption>
+    </figure>
+    <figure>
+      <div class="fig-head"><div class="fig-title">Pooled estimates, all 8 participants</div>
+        <div class="legend"><span><i class="key-fill" style="background:var(--mem)"></i>Primary betas (b3)</span><span><i class="key-ring" style="color:var(--mem)"></i>Robustness betas (b2)</span><span><i class="key-sq" style="background:var(--ctl)"></i>Control network term</span></div></div>
+      <div class="plate"><div class="chart" id="h2pooled"></div></div>
+      <figcaption>Log-odds per SD of mask signal, with 95% CIs. <b>H2a:</b> on old images, does map signal predict a hit rather than a miss? <b>H2b:</b> on trials answered "old", do map and control signal separate hits from false alarms, and is the map's term larger? <b>H2c:</b> does the map's link to hits change with log delay (centred at the median delay)?</figcaption>
+      <details><summary>Show the numbers</summary><div class="scroll"><table id="h2table" style="min-width:560px"></table></div></details>
+    </figure>
+    <figure>
+      <div class="fig-title">Participant by participant</div>
+      <div class="grid2">
+        <div class="plate"><div class="fig-title" style="font-size:0.92rem">H2a · map signal, hits vs misses</div><div class="chart" id="h2a-subj"></div></div>
+        <div class="plate"><div class="fig-title" style="font-size:0.92rem">H2b · map minus control, hits vs false alarms</div><div class="chart" id="h2b-subj"></div></div>
+      </div>
+      <figcaption>Per-participant fits on b3. For H2a the right-hand column gives the permutation p (1,000 within-session label shuffles) on b3 and on b2. The model's own p-values were smaller than the permutation ones, so the permutation p is the one to read for a single participant. H2b is positive for all 8 participants.</figcaption>
+    </figure>
+    <figure>
+      <div class="fig-head"><div class="fig-title">H2c · the map predicts memory for recent images, not for old ones</div>
+        <div class="legend"><span><i class="key-line" style="background:var(--mem)"></i>b3</span><span><i class="key-line" style="background:var(--other)"></i>b2</span></div></div>
+      <div class="plate"><div class="chart" id="h2c"></div></div>
+      <figcaption>The fitted effect of map signal on the log-odds of a hit, as a function of time since the image was last seen. The lines come from the H2c coefficients (main effect + interaction × centred log delay), drawn across ±4 log-seconds around the median delay. They show what the fitted coefficients imply, not a separate analysis. The slope is smaller on b2, but its direction is the same.</figcaption>
+    </figure>
+    <figure>
+      <div class="fig-title">Does it depend on one participant, one mask or one control?</div>
+      <div class="plate"><div class="chart" id="h2rob"></div></div>
+      <figcaption>Pooled b3 estimates when each participant is left out in turn, and with alternative masks. The shaded band is the primary estimate's 95% CI. Every variant keeps the same sign and stays clear of zero.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="rq wrap" id="cause">
+  <div class="wide stack-lg">
+    <div class="col rq-head" style="margin-inline:0">
+      <div class="eyebrow">RQ3 · Cause</div>
+      <h2>Does reaching the map with stimulation matter for memory?</h2>
+      <p>For every sham-controlled tDCS or tACS trial of episodic memory, the electrode montage was rebuilt in SimNIBS on a standard head. The mean field strength was measured inside the memory map and inside the control network, and a meta-regression asked whether trials that put more field into the map got larger memory effects.</p>
+      <span class="verdict"><span class="dot" style="background:var(--other)"></span>H3a and H3b not supported · H3c, H3d exploratory, not reliable</span>
+    </div>
+    <div class="grid2">
+      <figure>
+        <div class="fig-title">How the trials were found</div>
+        <div id="prisma3"></div>
+        <figcaption>Of the 86 included studies, 45 reported usable means and SDs, giving 92 effects (Hedges' g, positive = better memory with active stimulation). Crossover studies use the raw-score SD pooled across conditions, at r = .5, re-run at .3 and .7.</figcaption>
+      </figure>
+      <figure>
+        <div class="fig-title">Field in the map vs field in the control network</div>
+        <div class="plate"><div class="chart" id="fields"></div></div>
+        <figcaption>Each dot is one montage on the Ernie head model (mean field magnitude inside each mask, scaled to the trial's current). Most montages put a similar field into both networks: the dots hug the diagonal. That limits how well H3b can tell the two networks apart.</figcaption>
+      </figure>
+    </div>
+    <figure>
+      <div class="fig-head"><div class="fig-title">Effect size against field in the map</div>
+        <div class="legend"><span><i class="key-fill" style="background:var(--other)"></i>Healthy adults</span><span><i class="key-diamond" style="background:var(--clin)"></i>MCI or early AD</span><span><i class="key-line" style="background:var(--ink)"></i>H3a fit (1 session)</span></div></div>
+      <div class="plate"><div class="chart" id="gfield"></div></div>
+      <figcaption>The 61 effects from 33 studies whose montage could be modelled; marker area reflects precision (1/variance). The fitted slope is 0.31 g per V/m (95% CI −2.90 to 3.52, p = .82). The modelled fields only span 0.003–0.172 V/m, so across the range the data cover, the CI is about ±0.5 g.</figcaption>
+    </figure>
+    <figure>
+      <div class="fig-head"><div class="fig-title">Meta-regression results</div>
+        <div class="toggle" role="group" aria-label="Pre-post correlation for crossover studies" id="rtoggle">
+          <button type="button" id="r03" data-r="0.3" aria-pressed="false">r = .3</button>
+          <button type="button" id="r05" data-r="0.5" aria-pressed="true">r = .5</button>
+          <button type="button" id="r07" data-r="0.7" aria-pressed="false">r = .7</button>
+        </div></div>
+      <div class="grid2">
+        <div class="plate"><div class="fig-title" style="font-size:0.92rem">Hedges' g</div><div class="chart" id="h3g"></div></div>
+        <div class="plate"><div class="fig-title" style="font-size:0.92rem">Field slopes, g per V/m</div><div class="chart" id="h3f"></div></div>
+      </div>
+      <figcaption>Three-level random-effects models (effects within studies) with CR2 cluster-robust tests and the number of sessions as a covariate. <b>Left:</b> the overall effect, small-study-adjusted intercepts (PET, PEESE) and test-type contrasts against recall (H3c). <b>Right:</b> field slopes. The H3b row is the map minus control difference, and H3d is the field × clinical-group term, on Ernie and with the clinical fields from an older-adult head. Switch r to see the crossover sensitivity runs.</figcaption>
+      <details><summary>Show the numbers</summary><div class="scroll"><table id="h3table" style="min-width:600px"></table></div></details>
+    </figure>
+    <div class="grid2">
+      <figure>
+        <div class="fig-head"><div class="fig-title">Funnel plot</div>
+          <div class="legend"><span><i class="key-fill" style="background:var(--other)"></i>Healthy</span><span><i class="key-diamond" style="background:var(--clin)"></i>MCI / AD</span></div></div>
+        <div class="plate"><div class="chart" id="funnel"></div></div>
+        <figcaption>All 92 effects. The vertical line is the pooled g, and the funnel marks where 95% of effects would fall without bias or heterogeneity. Small trials with large positive effects pull the multilevel Egger slope to 0.85 (p = .09). The PET intercept, the effect expected from an infinitely large trial, is close to zero.</figcaption>
+      </figure>
+      <figure>
+        <div class="fig-head"><div class="fig-title">Older-adult head vs Ernie, clinical montages</div>
+          <div class="legend"><span><i class="key-fill" style="background:var(--other)"></i>Ernie</span><span><i class="key-fill" style="background:var(--clin)"></i>Older-adult head (OASIS-2)</span></div></div>
+        <div class="plate"><div class="chart" id="older"></div></div>
+        <figcaption>Field in the memory map for the 10 clinical-arm montages that could be modelled on both heads. The older head gives higher fields, while atrophy would predict lower ones. Its mesh skipped the cortical-surface step, so it is used only as a sensitivity check of H3d.</figcaption>
+      </figure>
+    </div>
+    <div class="grid2">
+      <figure>
+        <div class="fig-title">Leave one study out</div>
+        <div class="plate"><div class="chart" id="loo"></div></div>
+        <figcaption>The pooled g with each of the 45 studies removed in turn. No single study carries the overall effect.</figcaption>
+      </figure>
+      <figure>
+        <div class="fig-head"><div class="fig-title">Risk of bias (RoB 2), 45 studies</div>
+          <div class="legend"><span><i class="key-sq" style="background:var(--good)"></i>✓ Low</span><span><i class="key-sq" style="background:var(--warn)"></i>! Some concerns</span><span><i class="key-sq" style="background:var(--crit)"></i>✕ High</span></div></div>
+        <div class="plate"><div class="chart" id="rob"></div></div>
+        <figcaption>Most studies carry some concerns overall, mainly from randomisation detail and selective reporting (no registered analysis plan).</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="rq wrap" id="together">
+  <div class="wide stack-lg">
+    <div class="col rq-head" style="margin-inline:0">
+      <div class="eyebrow">Integration</div>
+      <h2>Map against control, in both tests</h2>
+      <p>The specificity question is the same in both parts: does the memory map do better than domain-general task regions? The two answers sit on different scales, so they are shown side by side rather than on one axis.</p>
+    </div>
+    <div class="grid2">
+      <figure><div class="plate"><div class="fig-title" style="font-size:0.92rem">RQ2 · H2b, fMRI</div><div class="chart" id="int2"></div></div>
+        <figcaption id="int2-cap"></figcaption></figure>
+      <figure><div class="plate"><div class="fig-title" style="font-size:0.92rem">RQ3 · H3b, stimulation</div><div class="chart" id="int3"></div></div>
+        <figcaption id="int3-cap"></figcaption></figure>
+    </div>
+    <div class="col stack" style="margin-inline:0">
+      <p class="callout">The map does better than the control network at predicting memory, but not detectably better as a stimulation target. Its signal tracks whether a single image is remembered and separates true from false "old" responses better than the control network. In published tDCS/tACS trials, how much of the field reaches the map does not explain which trials improved memory.</p>
+      <p>For choosing stimulation targets, the trials give no support for aiming fields at this network rather than at general task regions. That is a lack of evidence, not evidence against it. The montages deliver small, similar mask-averaged fields, many trials are small, and one head model stands in for every participant.</p>
+    </div>
+  </div>
+</section>
+
+<section class="rq wrap" id="limits">
+  <div class="wide stack-lg">
+    <div class="col rq-head" style="margin-inline:0">
+      <div class="eyebrow">Read with care</div>
+      <h2>Limitations</h2>
+    </div>
+    <div class="limits">
+      <div><h3>Screening and extraction relied on AI</h3><p>Title/abstract screening, full-text proposals and contrast choices came from AI raters and an AI assistant. The author accepted the suggestions as one decision rather than item by item, and there was no second human rater. Agreement between the two AI raters was κ = <span id="k1"></span> (RQ1) and <span id="k3"></span> (RQ3).</p></div>
+      <div><h3>Unchecked BrainMap data</h3><p>17 of the 57 RQ1 experiments were not checked against their papers. Three of the eight clusters, including the hippocampus, depend on them. The verified-only map is reported alongside the main one.</p></div>
+      <div><h3>One task, eight people</h3><p>NSD is continuous recognition of natural scenes in 8 participants. The map comes from studies of other materials and tasks. The per-participant model p-values run small, and the permutation p-values are the safer read.</p></div>
+      <div><h3>Modelled fields are approximations</h3><p>One young head (and one older head as a check) stands in for every participant. 18 montages could not be modelled because a position or current was missing. Off-head return electrodes were moved onto the head model, and some effects were read from figures.</p></div>
+      <div><h3>Not run</h3><p>H1b (recollection vs familiarity) had too few experiments. The HDF5 partial-read test was skipped, because h5py is not installed.</p></div>
+      <div><h3>How this page was made</h3><p>The analysis code was drafted with an AI assistant and run and checked by the author. At the team's request, the write-up and this page were also drafted by an AI assistant from the scripts' outputs; the plan had kept the writing to the author. Every number here is read from the project's result files.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <div class="wide stack small">
+    <p><b>Code and protocol:</b> <a href="https://github.com/tanishahandoo2002-afk/convergence-to-consequence">github.com/tanishahandoo2002-afk/convergence-to-consequence</a>. Every deviation from the protocol is dated in its CHANGELOG.</p>
+    <p><b>Natural Scenes Dataset:</b> Allen, St-Yves, Wu, Breedlove, Prince, Dowdle, Nau, Caron, Pestilli, Charest, Hutchinson, Naselaris and Kay (2021). A massive 7T fMRI dataset to bridge cognitive neuroscience and artificial intelligence. <i>Nature Neuroscience</i> 25, 116–126. <a href="https://doi.org/10.1038/s41593-021-00962-x">doi:10.1038/s41593-021-00962-x</a>. Collection of the NSD dataset was supported by NSF IIS-1822683 and NSF IIS-1822929. No NSD image, file or trial table appears on this page.</p>
+    <p><b>Also used:</b> BrainMap (Sleuth), OASIS-2 (one T1 scan for the older-adult head), SimNIBS 4.6 with the Ernie head model, NiMARE, lme4, metafor and clubSandwich, the multiple-demand parcels of Fedorenko et al. (2013) and the Yeo et al. (2011) networks.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const D = /*DATA*/null;
+const tip = document.getElementById("tip");
+const f2 = d3.format(".2f"), f3 = d3.format(".3f"), fc = d3.format(","), pct = d3.format(".0%");
+const fp = p => p == null ? "–" : p < 0.001 ? (p < 1e-4 ? d3.format(".1e")(p) : "< .001") : d3.format(".3f")(p).replace(/^0/, "");
+
+function showTip(ev, html) {
+  tip.innerHTML = html; tip.classList.add("on");
+  const r = tip.getBoundingClientRect(), pad = 12;
+  let x = ev.clientX + pad, y = ev.clientY + pad;
+  if (x + r.width > innerWidth - 8) x = ev.clientX - r.width - pad;
+  if (y + r.height > innerHeight - 8) y = ev.clientY - r.height - pad;
+  tip.style.left = Math.max(8, x) + "px"; tip.style.top = Math.max(8, y) + "px";
+}
+function hideTip() { tip.classList.remove("on"); }
+function hover(sel, html) {
+  sel.on("pointerenter pointermove", (ev, d) => showTip(ev, html(d))).on("pointerleave", hideTip);
+}
+const W = el => Math.max(280, el.getBoundingClientRect().width);
+const ctx2d = document.createElement("canvas").getContext("2d");
+function textW(s, px = 11.5, weight = 600) { ctx2d.font = `${weight} ${px}px "IBM Plex Mono", ui-monospace, monospace`; return ctx2d.measureText(s).width; }
+const fperm = p => d3.format(".3f")(p).replace(/^0/, "");
+
+function svgFor(el, h) {
+  const w = W(el);
+  d3.select(el).selectAll("*").remove();
+  return { svg: d3.select(el).append("svg").attr("viewBox", `0 0 ${w} ${h}`).attr("role", "img"), w, h };
+}
+function xGrid(g, x, y0, y1, ticks, fmt) {
+  const t = g.append("g").attr("class", "grid");
+  x.ticks(ticks).forEach(v => {
+    t.append("line").attr("x1", x(v)).attr("x2", x(v)).attr("y1", y0).attr("y2", y1);
+    g.append("text").attr("class", "axis-label").attr("x", x(v)).attr("y", y1 + 14).attr("text-anchor", "middle").text(fmt ? fmt(v) : v);
+  });
+}
+
+/* Generic forest: rows [{label, est, lo, hi, color, hollow, group, tip}] */
+function forest(el, rows, o = {}) {
+  const narrow = W(el) < 520;
+  const longest = d3.max(rows, r => r.label ? textW(r.label) : 0);
+  const labelW = o.labelW ?? Math.min(W(el) * 0.5, longest + 14), right = o.rightW ?? 16, rh = o.rowH ?? 26, top = o.top ?? 8;
+  const n = d3.max(rows, r => r.slot) + 1;
+  const { svg, w } = svgFor(el, top + n * rh + 26);
+  svg.attr("aria-label", o.aria || "Forest plot");
+  const lo = d3.min(rows, r => r.lo), hi = d3.max(rows, r => r.hi);
+  const dom = o.domain || [Math.min(0, lo), Math.max(0, hi)];
+  const x = d3.scaleLinear().domain(dom).nice().range([labelW, w - right]);
+  const y = i => top + i * rh + rh / 2;
+  if (o.band) svg.append("rect").attr("x", x(o.band[0])).attr("width", x(o.band[1]) - x(o.band[0])).attr("y", top).attr("height", n * rh).attr("fill", "var(--mem)").attr("opacity", 0.09);
+  xGrid(svg, x, top, top + n * rh, narrow ? 4 : 6, o.fmt);
+  svg.append("line").attr("class", "zero").attr("x1", x(0)).attr("x2", x(0)).attr("y1", top).attr("y2", top + n * rh);
+  const labels = [...new Map(rows.filter(r => r.label).map(r => [r.slot, r])).values()];
+  svg.selectAll(".rl").data(labels).join("text").attr("class", "row-label").attr("x", 0).attr("y", r => y(r.slot) + 4)
+    .text(r => r.label).style("font-weight", r => r.bold ? 600 : 400);
+  const g = svg.selectAll(".r").data(rows).join("g").attr("transform", r => `translate(0,${y(r.slot) + (r.dy || 0)})`);
+  g.append("line").attr("x1", r => x(r.lo)).attr("x2", r => x(r.hi)).attr("stroke", r => r.color).attr("stroke-width", 2).attr("stroke-linecap", "round");
+  g.append("circle").attr("cx", r => x(r.est)).attr("r", 4.5).attr("fill", r => r.hollow ? "var(--surface)" : r.color)
+    .attr("stroke", r => r.hollow ? r.color : "var(--surface)").attr("stroke-width", 2);
+  if (o.extra) o.extra(svg, x, y, w);
+  const hit = svg.selectAll(".h").data(rows).join("rect").attr("class", "hit").attr("x", r => x(r.lo) - 6).attr("width", r => Math.max(14, x(r.hi) - x(r.lo) + 12))
+    .attr("y", r => y(r.slot) + (r.dy || 0) - 9).attr("height", 18);
+  hover(hit, r => r.tip || `<b>${r.label || ""}</b><br>${f3(r.est)} [${f3(r.lo)}, ${f3(r.hi)}]`);
+}
+
+/* ---------- design pipeline (static diagram) ---------- */
+function pipeline() {
+  const el = document.getElementById("pipeline");
+  const w = 1040, h = 300;
+  d3.select(el).selectAll("*").remove();
+  const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${w} ${h}`).attr("role", "img")
+    .attr("aria-label", "Pipeline: literature to ALE map, frozen masks, then two tests (NSD single trials and stimulation trials with field models), then a side-by-side comparison.");
+  const node = (x, y, bw, bh, title, sub, color) => {
+    const g = svg.append("g").attr("transform", `translate(${x},${y})`);
+    g.append("rect").attr("width", bw).attr("height", bh).attr("rx", 8).attr("fill", "var(--surface)").attr("stroke", color || "var(--axis)").attr("stroke-width", color ? 2 : 1);
+    g.append("text").attr("x", 12).attr("y", 22).attr("class", "row-label").style("font-weight", 600).text(title);
+    sub.forEach((s, i) => g.append("text").attr("x", 12).attr("y", 40 + i * 15).attr("class", "val").text(s));
+  };
+  const arrow = (x1, y1, x2, y2) => {
+    svg.append("path").attr("d", `M${x1},${y1} C${(x1 + x2) / 2},${y1} ${(x1 + x2) / 2},${y2} ${x2 - 6},${y2}`).attr("fill", "none").attr("stroke", "var(--muted)").attr("stroke-width", 1.5);
+    svg.append("path").attr("d", `M${x2 - 7},${y2 - 4} L${x2},${y2} L${x2 - 7},${y2 + 4}`).attr("fill", "none").attr("stroke", "var(--muted)").attr("stroke-width", 1.5);
+  };
+  node(10, 112, 180, 76, "Literature", [`${fc(D.prisma.rq1.identified)} PubMed records`, "+ BrainMap experiments"]);
+  node(225, 112, 175, 76, "RQ1 · ALE map", [`${D.ale_params.n_experiments} experiments`, `${fc(D.ale_params.n_foci)} foci · ${D.clusters.length} clusters`], "var(--mem)");
+  node(435, 112, 175, 76, "Frozen masks", ["memory + control", "SHA-256 before any trial"]);
+  node(650, 22, 200, 92, "RQ2 · Predict", ["NSD 7T, 8 participants", "284 sessions × 750 trials", "mixed-effects logistic"], "var(--mem)");
+  node(650, 186, 200, 92, "RQ3 · Cause", [`${D.prisma.rq3.included} tDCS/tACS studies`, "SimNIBS field per montage", "multilevel meta-regression"], "var(--clin)");
+  node(885, 112, 145, 76, "Together", ["H2b next to H3b", "map vs control"]);
+  arrow(190, 150, 225, 150); arrow(400, 150, 435, 150); arrow(610, 150, 650, 68); arrow(610, 150, 650, 232);
+  arrow(850, 68, 885, 150); arrow(850, 232, 885, 150);
+  svg.append("text").attr("x", 522).attr("y", 205).attr("text-anchor", "middle").attr("class", "axis-label").text("same masks into both tests");
+}
+
+/* ---------- PRISMA ---------- */
+function prisma(id, c, label) {
+  const el = document.getElementById(id);
+  const rows = [
+    ["Records identified", c.identified, "Duplicates removed", c.duplicates_removed],
+    ["Titles and abstracts screened", c.screened, "Excluded at title/abstract", c.excluded_title_abstract],
+    ["Full texts sought", c.full_text_sought, "Not retrieved", c.not_retrieved],
+    ["Full texts assessed", c.full_text_assessed, "Excluded at full text", c.excluded_full_text],
+    [label, c.included, null, null],
+  ];
+  el.innerHTML = `<div class="prisma"><span class="flow-label">Kept</span><span class="flow-label">Removed</span>${rows.map((r, i) => `
+    <div class="box main ${i === rows.length - 1 ? "final" : ""}"><span>${r[0]}</span><span class="n">${fc(r[1])}</span></div>
+    ${r[2] ? `<div class="box out"><span>${r[2]}</span><span class="n">${fc(r[3])}</span></div>` : `<div class="box out empty" aria-hidden="true"></div>`}`).join("")}</div>`;
+}
+
+/* ---------- clusters ---------- */
+function clusters() {
+  const ver = D.clusters_verified;
+  const near = c => ver.find(v => Math.hypot(v.peak_x - c.peak_x, v.peak_y - c.peak_y, v.peak_z - c.peak_z) <= 4);
+  const fs = cl => { const lost = D.failsafe.filter(r => r.cluster === cl && !r.survives).map(r => r.noise_experiments); return lost.length ? Math.min(...lost) : null; };
+  const maxS = d3.max(D.clusters, c => c.size_mm3);
+  const t = document.getElementById("clusters");
+  t.innerHTML = `<thead><tr><th>Peak region (Harvard-Oxford)</th><th class="num">MNI x, y, z</th><th class="num">z</th><th>Size (mm³)</th><th>Verified-only map</th><th>Fail-safe</th></tr></thead><tbody>${D.clusters.map(c => {
+    const v = near(c), l = fs(c.cluster);
+    return `<tr><td>${c.label}</td><td class="num">${c.peak_x}, ${c.peak_y}, ${c.peak_z}</td><td class="num">${f2(c.peak_z_value)}</td>
+      <td class="bar-cell"><div style="display:flex;gap:0.5rem;align-items:center"><div class="sizebar" style="width:${(c.size_mm3 / maxS) * 75}%"></div><span class="mono">${fc(c.size_mm3)}</span></div></td>
+      <td>${v ? `<span class="chip yes"><span class="dot" style="background:var(--mem)"></span>present</span>` : `<span class="chip no">absent</span>`}</td>
+      <td>${l ? `<span class="chip no">lost at ${l}</span>` : `<span class="chip yes">survives 40</span>`}</td></tr>`;
+  }).join("")}</tbody>`;
+  document.getElementById("nexp").textContent = D.ale_params.n_experiments;
+  document.getElementById("nfoci").textContent = fc(D.ale_params.n_foci);
+  const m = D.h1b.match(/recollection k=(\d+), familiarity k=(\d+)/);
+  document.getElementById("h1b").innerHTML = `<b>H1b</b> (recollection vs familiarity contrasts) was not run. It needed at least 17 experiments per group, and the sheets had ${m[1]} recollection and ${m[2]} familiarity experiments.`;
+}
+
+/* ---------- RQ2 ---------- */
+const subj = d3.range(1, 9).map(String);
+function rates() {
+  const el = document.getElementById("rates");
+  const c = (s, o) => (D.trial_counts.find(r => r.subject == s && r.outcome === o) || { n: 0 }).n;
+  const rows = subj.map(s => ({ s, hit: c(s, "hit") / (c(s, "hit") + c(s, "miss")), fa: c(s, "fa") / (c(s, "fa") + c(s, "cr")),
+    n: ["hit", "miss", "fa", "cr", "none"].reduce((a, o) => a + c(s, o), 0), none: c(s, "none") }));
+  const labelW = 92, rh = 24, top = 6;
+  const { svg, w } = svgFor(el, top + rows.length * rh + 24);
+  svg.attr("aria-label", "Hit and false-alarm rates per participant");
+  const x = d3.scaleLinear().domain([0, 1]).range([labelW, w - 16]);
+  xGrid(svg, x, top, top + rows.length * rh, 5, pct);
+  const g = svg.selectAll(".r").data(rows).join("g").attr("transform", (r, i) => `translate(0,${top + i * rh + rh / 2})`);
+  g.append("text").attr("class", "row-label").attr("y", 4).text(r => `Participant ${r.s}`);
+  g.append("line").attr("x1", r => x(r.fa)).attr("x2", r => x(r.hit)).attr("stroke", "var(--axis)").attr("stroke-width", 2);
+  g.append("circle").attr("cx", r => x(r.fa)).attr("r", 4.5).attr("fill", "var(--surface)").attr("stroke", "var(--ink-2)").attr("stroke-width", 2);
+  g.append("circle").attr("cx", r => x(r.hit)).attr("r", 5).attr("fill", "var(--ink)").attr("stroke", "var(--surface)").attr("stroke-width", 2);
+  hover(g.append("rect").attr("class", "hit").attr("x", labelW).attr("width", w - labelW).attr("y", -rh / 2).attr("height", rh),
+    r => `<b>Participant ${r.s}</b><br>hit rate ${pct(r.hit)} · false-alarm rate ${pct(r.fa)}<br>${fc(r.n)} trials, ${r.none} without a response`);
+  const tot = d3.sum(rows, r => r.n), none = d3.sum(rows, r => r.none);
+  document.getElementById("rates-cap").innerHTML = `${fc(tot)} trials in all (284 sessions × 750), ${none} of them without a response. Every participant remembers well above their false-alarm rate, but the gap varies a lot from person to person, which is why the models give each participant their own intercept and slope.`;
+}
+
+const H = (tag, model, term, s = "all") => D[`h2_${tag}`].find(r => r.model === model && r.term === term && r.subject === s);
+function h2pooled() {
+  const spec = [
+    ["H2a · map signal", "H2a", "sig_memory", "var(--mem)", true],
+    ["H2b · map signal", "H2b", "z_memory", "var(--mem)"],
+    ["H2b · control signal", "H2b", "z_control", "var(--ctl)"],
+    ["H2b · map − control", "H2b", "z_memory - z_control", "var(--mem)", true],
+    ["H2c · map at median delay", "H2c", "sig_memory", "var(--mem)"],
+    ["H2c · map × log delay", "H2c", "sig_memory:log_delay_c", "var(--mem)", true],
+  ];
+  const rows = [];
+  spec.forEach(([label, m, t, color, bold], i) => ["b3", "b2"].forEach((tag, j) => {
+    const r = H(tag, m, t);
+    rows.push({ slot: i, dy: j ? 6 : -4, label, bold, est: r.estimate, lo: r.ci_low, hi: r.ci_high, color, hollow: j === 1,
+      tip: `<b>${label}</b> · ${tag}<br>${f3(r.estimate)} [${f3(r.ci_low)}, ${f3(r.ci_high)}] · p ${fp(r.p)}<br>${r.formula_used}` });
+  }));
+  forest(document.getElementById("h2pooled"), rows, { rowH: 34, aria: "Pooled RQ2 estimates for b3 and b2 betas" });
+  const t = document.getElementById("h2table");
+  t.innerHTML = `<thead><tr><th>Term</th><th class="num">b3 estimate</th><th class="num">95% CI</th><th class="num">p</th><th class="num">b2 estimate</th><th class="num">95% CI</th><th class="num">p</th></tr></thead><tbody>${spec.map(([label, m, tm]) => {
+    const a = H("b3", m, tm), b = H("b2", m, tm);
+    return `<tr><td>${label}</td><td class="num">${f3(a.estimate)}</td><td class="num">${f3(a.ci_low)} to ${f3(a.ci_high)}</td><td class="num">${fp(a.p)}</td><td class="num">${f3(b.estimate)}</td><td class="num">${f3(b.ci_low)} to ${f3(b.ci_high)}</td><td class="num">${fp(b.p)}</td></tr>`;
+  }).join("")}</tbody>`;
+}
+
+function h2subj() {
+  const perm = tag => Object.fromEntries(D[`perm_${tag}`].map(r => [String(r.subject), r.p]));
+  const p3 = perm("b3"), p2 = perm("b2");
+  const mk = (m, t, withPerm) => {
+    const rows = subj.map((s, i) => {
+      const r = H("b3", m, t, s);
+      return { slot: i, label: `P${s}`, est: r.estimate, lo: r.ci_low, hi: r.ci_high, color: "var(--mem)",
+        tip: `<b>Participant ${s}</b><br>${f3(r.estimate)} [${f3(r.ci_low)}, ${f3(r.ci_high)}]<br>model p ${fp(r.p)}${withPerm ? `<br>permutation p: b3 ${fperm(p3[s])}, b2 ${fperm(p2[s])} (1,000 shuffles; .001 is the floor)` : ""}` };
+    });
+    const a = H("b3", m, t);
+    rows.push({ slot: 8, label: "Pooled", bold: true, est: a.estimate, lo: a.ci_low, hi: a.ci_high, color: "var(--ink)" });
+    return rows;
+  };
+  forest(document.getElementById("h2a-subj"), mk("H2a", "sig_memory", true), { labelW: 56, rightW: 104, rowH: 26, top: 22, aria: "H2a per participant",
+    extra: (svg, x, y, w) => {
+      svg.append("text").attr("class", "axis-label").attr("x", w - 96).attr("y", 12).text("perm p  b3 · b2");
+      subj.forEach((s, i) => {
+        const a = p3[s], b = p2[s];
+        const t = svg.append("text").attr("class", "val").attr("x", w - 96).attr("y", y(i) + 4);
+        t.append("tspan").text(fperm(a)).style("font-weight", a < 0.05 ? 600 : 400).style("fill", a < 0.05 ? "var(--ink)" : "var(--muted)");
+        t.append("tspan").text("  ·  ").style("fill", "var(--muted)");
+        t.append("tspan").text(fperm(b)).style("font-weight", b < 0.05 ? 600 : 400).style("fill", b < 0.05 ? "var(--ink)" : "var(--muted)");
+      });
+    } });
+  forest(document.getElementById("h2b-subj"), mk("H2b", "z_memory - z_control", false), { labelW: 56, rowH: 26, aria: "H2b per participant" });
+}
+
+function h2c() {
+  const el = document.getElementById("h2c");
+  const c = D.delay_centre_b3;
+  const line = tag => { const m = H(tag, "H2c", "sig_memory").estimate, b = H(tag, "H2c", "sig_memory:log_delay_c").estimate; return L => m + b * (L - c); };
+  const narrow = W(el) < 520;
+  const { svg, w, h } = svgFor(el, 260);
+  svg.attr("aria-label", "Fitted map-signal effect against delay since last view");
+  const m = { l: 44, r: narrow ? 40 : 56, t: 12, b: 34 };
+  const x = d3.scaleLinear().domain([c - 4, c + 4]).range([m.l, w - m.r]);
+  const lines = { b3: line("b3"), b2: line("b2") };
+  const ys = [].concat(...Object.values(lines).map(f => [f(c - 4), f(c + 4)]));
+  const y = d3.scaleLinear().domain([Math.min(0, d3.min(ys)), d3.max(ys)]).nice().range([h - m.b, m.t]);
+  const g = svg.append("g").attr("class", "grid");
+  y.ticks(5).forEach(v => { g.append("line").attr("x1", m.l).attr("x2", w - m.r).attr("y1", y(v)).attr("y2", y(v)); svg.append("text").attr("class", "axis-label").attr("x", m.l - 6).attr("y", y(v) + 3).attr("text-anchor", "end").text(v); });
+  svg.append("line").attr("class", "zero").attr("x1", m.l).attr("x2", w - m.r).attr("y1", y(0)).attr("y2", y(0));
+  const times = [[10, "10 s"], [60, "1 min"], [600, "10 min"], [3600, "1 h"], [21600, "6 h"]].filter(([s]) => Math.log(s) >= c - 4 && Math.log(s) <= c + 4);
+  times.forEach(([s, lab]) => svg.append("text").attr("class", "axis-label").attr("x", x(Math.log(s))).attr("y", h - m.b + 16).attr("text-anchor", "middle").text(lab));
+  svg.append("line").attr("x1", x(c)).attr("x2", x(c)).attr("y1", m.t).attr("y2", h - m.b).attr("stroke", "var(--axis)").attr("stroke-width", 1);
+  svg.append("text").attr("class", "axis-label").attr("x", x(c) + 5).attr("y", m.t + 10).text(`median delay ≈ ${Math.round(Math.exp(c) / 60)} min`);
+  svg.append("text").attr("class", "axis-label").attr("x", w - m.r).attr("y", h - 2).attr("text-anchor", "end").text("time since last view (log scale)");
+  [["b2", "var(--other)"], ["b3", "var(--mem)"]].forEach(([tag, col]) => {
+    const f = lines[tag];
+    svg.append("line").attr("x1", x(c - 4)).attr("x2", x(c + 4)).attr("y1", y(f(c - 4))).attr("y2", y(f(c + 4))).attr("stroke", col).attr("stroke-width", 2).attr("stroke-linecap", "round");
+    svg.append("circle").attr("cx", x(c + 4)).attr("cy", y(f(c + 4))).attr("r", 4).attr("fill", col).attr("stroke", "var(--surface)").attr("stroke-width", 2);
+    svg.append("text").attr("x", x(c + 4) + 8).attr("y", y(f(c + 4)) + 4).attr("class", "val").text(tag);
+  });
+  const pts = d3.range(c - 4, c + 4.01, 0.25);
+  hover(svg.append("rect").attr("class", "hit").attr("x", m.l).attr("width", w - m.l - m.r).attr("y", m.t).attr("height", h - m.t - m.b)
+    .on("pointermove.v", ev => {}), () => "");
+  svg.select("rect.hit").on("pointermove", ev => {
+    const [px] = d3.pointer(ev); const L = x.invert(px); const s = Math.exp(L);
+    const t = s < 60 ? `${Math.round(s)} s` : s < 3600 ? `${Math.round(s / 60)} min` : `${(s / 3600).toFixed(1)} h`;
+    showTip(ev, `<b>${t} since last view</b><br>b3: ${f3(lines.b3(L))} · b2: ${f3(lines.b2(L))} log-odds per SD`);
+  });
+}
+
+function h2rob() {
+  const R = D.rob_b3, prim = H("b3", "H2a", "sig_memory"), primB = H("b3", "H2b", "z_memory - z_control");
+  const rows = [];
+  let slot = 0;
+  const add = (label, r, color, bold) => rows.push({ slot: slot++, label, bold, est: r.estimate, lo: r.ci_low, hi: r.ci_high, color,
+    tip: `<b>${label}</b><br>${f3(r.estimate)} [${f3(r.ci_low)}, ${f3(r.ci_high)}] · p ${fp(r.p)}` });
+  add("H2a · primary", prim, "var(--ink)", true);
+  subj.forEach(s => add(`H2a · without P${s}`, R.find(r => r.variant === `lopo_${s}` && r.model === "H2a"), "var(--mem)"));
+  add("H2a · top-50% map", R.find(r => r.variant === "top50"), "var(--mem)");
+  add("H2a · verified-only map", R.find(r => r.variant === "verified_only" && r.model === "H2a"), "var(--mem)");
+  add("H2b · primary", primB, "var(--ink)", true);
+  add("H2b · Yeo control mask", R.find(r => r.variant === "yeo" && r.term === "z_memory - z_control"), "var(--mem)");
+  add("H2b · verified-only map", R.find(r => r.variant === "verified_only" && r.term === "z_memory - z_control"), "var(--mem)");
+  forest(document.getElementById("h2rob"), rows, { rowH: 22, aria: "RQ2 robustness estimates", band: [prim.ci_low, prim.ci_high] });
+}
+
+/* ---------- RQ3 ---------- */
+const ernie = Object.fromEntries(D.fields.filter(f => f.head_model === "ernie").map(f => [f.montage_id, f]));
+const olderF = Object.fromEntries(D.fields.filter(f => f.head_model === "older").map(f => [f.montage_id, f]));
+const mont = Object.fromEntries(D.montages.map(m => [m.montage_id, m]));
+const isClin = e => e.population !== "healthy";
+const montTip = id => { const m = mont[id]; return m ? `${m.anode} → ${m.cathode}${m.other_electrodes ? " + " + m.other_electrodes : ""} · ${m.current_mA} mA ${m.type}` : id; };
+
+function scatterAxes(svg, x, y, w, h, m, xl, yl, xf, yf) {
+  const g = svg.append("g").attr("class", "grid");
+  y.ticks(5).forEach(v => { g.append("line").attr("x1", m.l).attr("x2", w - m.r).attr("y1", y(v)).attr("y2", y(v)); svg.append("text").attr("class", "axis-label").attr("x", m.l - 6).attr("y", y(v) + 3).attr("text-anchor", "end").text((yf || String)(v)); });
+  x.ticks(w < 420 ? 4 : 6).forEach(v => { g.append("line").attr("x1", x(v)).attr("x2", x(v)).attr("y1", m.t).attr("y2", h - m.b); svg.append("text").attr("class", "axis-label").attr("x", x(v)).attr("y", h - m.b + 14).attr("text-anchor", "middle").text((xf || String)(v)); });
+  svg.append("text").attr("class", "axis-label").attr("x", w - m.r).attr("y", h - 2).attr("text-anchor", "end").text(xl);
+  svg.append("text").attr("class", "axis-label").attr("x", m.l).attr("y", m.t - 4).text(yl);
+}
+function popMark(sel, size) {
+  sel.each(function (e) {
+    const g = d3.select(this), s = size(e);
+    if (isClin(e)) g.append("rect").attr("x", -s).attr("y", -s).attr("width", 2 * s).attr("height", 2 * s).attr("transform", "rotate(45)").attr("fill", "var(--clin)").attr("stroke", "var(--surface)").attr("stroke-width", 1.5).attr("opacity", 0.9);
+    else g.append("circle").attr("r", s * 1.1).attr("fill", "var(--other)").attr("stroke", "var(--surface)").attr("stroke-width", 1.5).attr("opacity", 0.85);
+  });
+}
+
+function fields() {
+  const el = document.getElementById("fields");
+  const pts = Object.values(ernie).filter(f => f.field_map != null && f.field_control != null);
+  const { svg, w, h } = svgFor(el, 300);
+  svg.attr("aria-label", "Field in memory map against field in control network per montage");
+  const m = { l: 46, r: 14, t: 18, b: 34 };
+  const mx = d3.max(pts, p => Math.max(p.field_map, p.field_control));
+  const x = d3.scaleLinear().domain([0, mx]).nice().range([m.l, w - m.r]);
+  const y = d3.scaleLinear().domain([0, mx]).nice().range([h - m.b, m.t]);
+  scatterAxes(svg, x, y, w, h, m, "field in control network (V/m)", "field in memory map (V/m)", f2, f2);
+  const d1 = Math.min(x.domain()[1], y.domain()[1]);
+  svg.append("line").attr("x1", x(0)).attr("y1", y(0)).attr("x2", x(d1)).attr("y2", y(d1)).attr("stroke", "var(--axis)").attr("stroke-width", 1);
+  svg.append("text").attr("class", "axis-label").attr("x", x(d1 * 0.92)).attr("y", y(d1 * 0.92) + 14).attr("text-anchor", "end").text("equal field");
+  const g = svg.selectAll(".p").data(pts).join("g").attr("transform", p => `translate(${x(p.field_control)},${y(p.field_map)})`);
+  g.append("circle").attr("r", 4.5).attr("fill", "var(--mem)").attr("stroke", "var(--surface)").attr("stroke-width", 2);
+  hover(g.append("circle").attr("class", "hit").attr("r", 9), p => `<b>${p.montage_id}</b> · ${montTip(p.montage_id)}<br>map ${f3(p.field_map)} V/m · control ${f3(p.field_control)} V/m${p.note ? `<br>${p.note}` : ""}`);
+}
+
+function modelData() {
+  return D.effects.filter(e => e.sessions != null && ernie[e.montage_id] && ernie[e.montage_id].field_map != null && ernie[e.montage_id].field_control != null)
+    .map(e => ({ ...e, fm: ernie[e.montage_id].field_map }));
+}
+function h3row(r, model, term) { return D.h3[r].find(x => x.model === model && x.term === term); }
+
+function gfield() {
+  const el = document.getElementById("gfield");
+  const pts = modelData();
+  const { svg, w, h } = svgFor(el, 320);
+  svg.attr("aria-label", "Hedges g against field in the memory map");
+  const m = { l: 40, r: 14, t: 18, b: 34 };
+  const x = d3.scaleLinear().domain([0, d3.max(pts, p => p.fm)]).nice().range([m.l, w - m.r]);
+  const y = d3.scaleLinear().domain(d3.extent(pts, p => p.yi)).nice().range([h - m.b, m.t]);
+  scatterAxes(svg, x, y, w, h, m, "field in memory map (V/m, Ernie)", "Hedges' g", f2, d3.format(".1f"));
+  svg.append("line").attr("class", "zero").attr("x1", m.l).attr("x2", w - m.r).attr("y1", y(0)).attr("y2", y(0));
+  const a = h3row("0.5", "H3a", "intrcpt").estimate, b = h3row("0.5", "H3a", "field_map").estimate, s = h3row("0.5", "H3a", "sessions").estimate;
+  const x0 = x.domain()[0], x1 = x.domain()[1];
+  svg.append("line").attr("x1", x(x0)).attr("x2", x(x1)).attr("y1", y(a + s + b * x0)).attr("y2", y(a + s + b * x1)).attr("stroke", "var(--ink)").attr("stroke-width", 2);
+  const size = d3.scaleSqrt().domain([0, d3.max(pts, p => 1 / p.vi)]).range([0, 9]);
+  const g = svg.selectAll(".p").data(pts.sort((p, q) => q.vi - p.vi)).join("g").attr("transform", p => `translate(${x(p.fm)},${y(p.yi)})`);
+  popMark(g, p => Math.max(3, size(1 / p.vi)));
+  hover(g.append("circle").attr("class", "hit").attr("r", 9), p => `<b>${p.study_id}</b> · ${p.population}<br>g = ${f2(p.yi)} (SE ${f2(Math.sqrt(p.vi))}) · ${p.test_type}<br>${p.stim}, ${p.sessions} session${p.sessions > 1 ? "s" : ""} · map field ${f3(p.fm)} V/m<br>${montTip(p.montage_id)}`);
+}
+
+function funnel() {
+  const el = document.getElementById("funnel");
+  const pts = D.effects.map(e => ({ ...e, se: Math.sqrt(e.vi) }));
+  const ov = D.bias["0.5"].find(r => r.test === "overall").estimate;
+  const { svg, w, h } = svgFor(el, 300);
+  svg.attr("aria-label", "Funnel plot of Hedges g against standard error");
+  const m = { l: 40, r: 14, t: 18, b: 34 };
+  const maxSe = d3.max(pts, p => p.se);
+  const x = d3.scaleLinear().domain(d3.extent(pts.map(p => p.yi).concat([ov - 1.96 * maxSe, ov + 1.96 * maxSe]))).nice().range([m.l, w - m.r]);
+  const y = d3.scaleLinear().domain([0, maxSe]).nice().range([m.t, h - m.b]);
+  scatterAxes(svg, x, y, w, h, m, "Hedges' g", "standard error", d3.format(".1f"), d3.format(".1f"));
+  const se1 = y.domain()[1];
+  svg.append("path").attr("d", `M${x(ov - 1.96 * se1)},${y(se1)} L${x(ov)},${y(0)} L${x(ov + 1.96 * se1)},${y(se1)}`).attr("fill", "var(--mem)").attr("opacity", 0.07).attr("stroke", "var(--axis)");
+  svg.append("line").attr("x1", x(ov)).attr("x2", x(ov)).attr("y1", y(0)).attr("y2", y(se1)).attr("stroke", "var(--ink)").attr("stroke-width", 1.5);
+  svg.append("line").attr("class", "zero").attr("x1", x(0)).attr("x2", x(0)).attr("y1", y(0)).attr("y2", y(se1));
+  const g = svg.selectAll(".p").data(pts).join("g").attr("transform", p => `translate(${x(p.yi)},${y(p.se)})`);
+  popMark(g, () => 3.6);
+  hover(g.append("circle").attr("class", "hit").attr("r", 8), p => `<b>${p.study_id}</b> · ${p.population}<br>g = ${f2(p.yi)}, SE ${f2(p.se)}<br>${p.test_type}, ${p.stim}`);
+}
+
+function older() {
+  const el = document.getElementById("older");
+  const rows = Object.values(olderF).filter(o => o.field_map != null).map(o => ({ id: o.montage_id, e: ernie[o.montage_id].field_map, o: o.field_map }))
+    .sort((a, b) => a.e - b.e);
+  const labelW = 54, rh = 24, top = 6;
+  const { svg, w } = svgFor(el, top + rows.length * rh + 24);
+  svg.attr("aria-label", "Field in memory map per clinical montage on Ernie and on the older-adult head");
+  const x = d3.scaleLinear().domain([0, d3.max(rows, r => r.o)]).nice().range([labelW, w - 16]);
+  xGrid(svg, x, top, top + rows.length * rh, 5, f2);
+  const g = svg.selectAll(".r").data(rows).join("g").attr("transform", (r, i) => `translate(0,${top + i * rh + rh / 2})`);
+  g.append("text").attr("class", "row-label").attr("y", 4).text(r => r.id);
+  g.append("line").attr("x1", r => x(r.e)).attr("x2", r => x(r.o)).attr("stroke", "var(--axis)").attr("stroke-width", 2);
+  g.append("circle").attr("cx", r => x(r.e)).attr("r", 4.5).attr("fill", "var(--other)").attr("stroke", "var(--surface)").attr("stroke-width", 2);
+  g.append("circle").attr("cx", r => x(r.o)).attr("r", 4.5).attr("fill", "var(--clin)").attr("stroke", "var(--surface)").attr("stroke-width", 2);
+  hover(g.append("rect").attr("class", "hit").attr("x", labelW).attr("width", w - labelW).attr("y", -rh / 2).attr("height", rh),
+    r => `<b>${r.id}</b> · ${montTip(r.id)}<br>Ernie ${f3(r.e)} V/m · older ${f3(r.o)} V/m (×${f2(r.o / r.e)})`);
+  svg.append("text").attr("class", "axis-label").attr("x", w - 16).attr("y", top + rows.length * rh + 24).attr("text-anchor", "end").text("V/m in memory map");
+}
+
+let rSel = "0.5";
+function h3() {
+  const r = rSel, B = D.bias[r];
+  const bt = t => B.find(x => x.test === t);
+  const gRows = [], fRows = [];
+  const add = (arr, label, row, color, bold, note) => arr.push({ slot: arr.length, label, bold, est: row.estimate, lo: row.ci_low, hi: row.ci_high, color,
+    tip: `<b>${label}</b> · r = ${r}<br>${f3(row.estimate)} [${f3(row.ci_low)}, ${f3(row.ci_high)}] · p ${fp(row.p ?? row.p_cr2)}<br>${row.k_effects} effects, ${row.k_studies} studies${note ? "<br>" + note : ""}` });
+  add(gRows, "Overall g", bt("overall"), "var(--ink)", true);
+  add(gRows, "PET intercept", bt("pet"), "var(--other)");
+  add(gRows, "PEESE intercept", bt("peese"), "var(--other)");
+  add(gRows, "H3c · recognition", h3row(r, "H3c", "test_typerecognition"), "var(--mem)", false, "contrast against recall");
+  add(gRows, "H3c · source", h3row(r, "H3c", "test_typesource"), "var(--mem)", false, "contrast against recall");
+  add(fRows, "H3a · map field", h3row(r, "H3a", "field_map"), "var(--mem)", true);
+  add(fRows, "H3b · map field", h3row(r, "H3b", "field_map"), "var(--mem)");
+  add(fRows, "H3b · control field", h3row(r, "H3b", "field_control"), "var(--ctl)");
+  add(fRows, "H3b · map − control", h3row(r, "H3b", "field_map = field_control"), "var(--mem)", true, "p is the CR2 Wald test of equality");
+  add(fRows, "H3d · field × clinical", h3row(r, "H3d", "field_map:groupclinical"), "var(--clin)");
+  const older = h3row(r, "H3d_older", "field_map:groupclinical");
+  if (older) add(fRows, "H3d · older head", older, "var(--clin)", false, "clinical fields from the older-adult head");
+  forest(document.getElementById("h3g"), gRows, { rowH: 28, aria: "RQ3 effects on the g scale" });
+  forest(document.getElementById("h3f"), fRows, { rowH: 28, aria: "RQ3 field slopes" });
+  const t = document.getElementById("h3table");
+  t.innerHTML = `<thead><tr><th>Term (r = ${r})</th><th class="num">Estimate</th><th class="num">95% CI</th><th class="num">p</th><th class="num">Effects / studies</th></tr></thead><tbody>${gRows.concat(fRows).map(x => {
+    const m = x.tip.match(/(\d+) effects, (\d+) studies/), p = x.tip.match(/p ([^<]+)/);
+    return `<tr><td>${x.label}</td><td class="num">${f3(x.est)}</td><td class="num">${f3(x.lo)} to ${f3(x.hi)}</td><td class="num">${p[1]}</td><td class="num">${m[1]} / ${m[2]}</td></tr>`;
+  }).join("")}</tbody>`;
+  document.querySelectorAll("#rtoggle button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.r === r)));
+}
+
+function loo() {
+  const el = document.getElementById("loo");
+  const B = D.bias["0.5"], ov = B.find(x => x.test === "overall");
+  const pts = B.filter(x => x.test === "leave_one_out");
+  const { svg, w, h } = svgFor(el, 130);
+  svg.attr("aria-label", "Leave-one-study-out pooled estimates");
+  const m = { l: 12, r: 12 };
+  const x = d3.scaleLinear().domain([0, Math.max(ov.ci_high, d3.max(pts, p => p.estimate))]).nice().range([m.l, w - m.r]);
+  xGrid(svg, x, 14, 96, 6, f2);
+  svg.append("rect").attr("x", x(ov.ci_low)).attr("width", x(ov.ci_high) - x(ov.ci_low)).attr("y", 30).attr("height", 52).attr("fill", "var(--mem)").attr("opacity", 0.09);
+  svg.append("line").attr("x1", x(ov.estimate)).attr("x2", x(ov.estimate)).attr("y1", 24).attr("y2", 88).attr("stroke", "var(--ink)").attr("stroke-width", 1.5);
+  svg.append("text").attr("class", "val").attr("x", x(ov.estimate) + 5).attr("y", 22).text(`all studies ${f3(ov.estimate)}`);
+  const sim = d3.forceSimulation(pts.map(p => ({ ...p, x: x(p.estimate), y: 56 }))).force("x", d3.forceX(d => x(d.estimate)).strength(1)).force("y", d3.forceY(56).strength(0.08)).force("c", d3.forceCollide(4.6)).stop();
+  for (let i = 0; i < 160; i++) sim.tick();
+  const g = svg.selectAll(".p").data(sim.nodes()).join("g").attr("transform", d => `translate(${d.x},${Math.max(32, Math.min(80, d.y))})`);
+  g.append("circle").attr("r", 3.6).attr("fill", "var(--mem)").attr("stroke", "var(--surface)").attr("stroke-width", 1.5);
+  hover(g.append("circle").attr("class", "hit").attr("r", 7), d => `<b>${d.note}</b><br>pooled g ${f3(d.estimate)} [${f3(d.ci_low)}, ${f3(d.ci_high)}]`);
+}
+
+function rob() {
+  const el = document.getElementById("rob");
+  const doms = [["d1_randomisation", "D1 Randomisation"], ["d2_deviations", "D2 Deviations"], ["d3_missing", "D3 Missing data"], ["d4_measurement", "D4 Measurement"], ["d5_selection", "D5 Selective reporting"], ["overall", "Overall"]];
+  const lv = [["low", "var(--good)", "#ffffff", "Low"], ["some", "var(--warn)", "#0b0b0b", "Some concerns"], ["high", "var(--crit)", "#ffffff", "High"]];
+  const labelW = Math.min(W(el) * 0.45, textW("D5 Selective reporting") + 14), rh = 30, top = 4;
+  const { svg, w } = svgFor(el, top + doms.length * rh + 4);
+  svg.attr("aria-label", "Risk of bias by domain");
+  const N = D.rob2_n, x = d3.scaleLinear().domain([0, N]).range([labelW, w - 4]);
+  doms.forEach(([k, name], i) => {
+    const y0 = top + i * rh;
+    svg.append("text").attr("class", "row-label").attr("y", y0 + rh / 2 + 4).text(name).style("font-weight", k === "overall" ? 600 : 400);
+    let acc = 0;
+    lv.forEach(([l, col, ink, lab]) => {
+      const n = D.rob2[k][l] || 0; if (!n) return;
+      const x0 = x(acc) + (acc ? 1 : 0), x1 = x(acc + n) - 1;
+      const seg = svg.append("rect").attr("x", x0).attr("width", Math.max(1, x1 - x0)).attr("y", y0 + 4).attr("height", rh - 8).attr("rx", 3).attr("fill", col);
+      if (x1 - x0 > 26) svg.append("text").attr("x", x0 + 6).attr("y", y0 + rh / 2 + 4).text(n).style("fill", ink).style("font-weight", 500);
+      hover(seg, () => `<b>${name}</b><br>${lab}: ${n} of ${N} studies`);
+      acc += n;
+    });
+  });
+}
+
+function integration() {
+  const [a, b] = D.integration;
+  const draw = (id, r, color) => forest(document.getElementById(id), [{ slot: 0, label: "map − control", est: r.estimate, lo: r.ci_low, hi: r.ci_high, color, bold: true,
+    tip: `<b>${r.hypothesis}</b> · ${r.contrast}<br>${f3(r.estimate)} [${f3(r.ci_low)}, ${f3(r.ci_high)}] · p ${fp(r.p)}<br>${r.n}` }], { rowH: 40, labelW: 104, aria: r.hypothesis });
+  draw("int2", a, "var(--mem)"); draw("int3", b, "var(--clin)");
+  document.getElementById("int2-cap").innerHTML = `${f3(a.estimate)} ${a.scale} (95% CI ${f3(a.ci_low)} to ${f3(a.ci_high)}, p = ${fp(a.p)}), from ${a.n.replace(/\d{4,}/g, m => fc(+m))}. The interval is well clear of zero.`;
+  document.getElementById("int3-cap").innerHTML = `${f3(b.estimate)} ${b.scale} (95% CI ${d3.format(".1f")(b.ci_low)} to ${d3.format(".1f")(b.ci_high)}, p = ${fp(b.p)}), from ${b.n}. The interval is wide enough to include large effects in either direction.`;
+}
+
+function kappas() { document.getElementById("k1").textContent = "0.303"; document.getElementById("k3").textContent = "0.439"; }
+
+const drawers = [pipeline, clusters, rates, h2pooled, h2subj, h2c, h2rob, fields, gfield, funnel, older, h3, loo, rob, integration];
+function drawAll() { drawers.forEach(f => { try { f(); } catch (e) { console.error(f.name, e); } }); }
+prisma("prisma1", D.prisma.rq1, "Papers included");
+prisma("prisma3", D.prisma.rq3, "Studies included");
+kappas();
+drawAll();
+document.getElementById("rtoggle").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; rSel = b.dataset.r; h3(); });
+let lastW = innerWidth, rt;
+addEventListener("resize", () => { if (Math.abs(innerWidth - lastW) < 20) return; lastW = innerWidth; clearTimeout(rt); rt = setTimeout(drawAll, 150); });
+addEventListener("scroll", hideTip, { passive: true });
+</script>

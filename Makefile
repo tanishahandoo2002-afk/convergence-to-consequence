@@ -96,6 +96,10 @@ rq3: rq3-es
 integration:   # needs rq2 and rq3 results
 	Rscript integration.R --run
 
+.PHONY: page
+page:   # needs every stage's results; writes webpage/build/c2c.html (not committed)
+	$(PY) -m webpage.build
+
 .PHONY: check-setup
 check-setup:
 	$(PY) -m checks.check_setup
