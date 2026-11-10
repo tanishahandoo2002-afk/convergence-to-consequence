@@ -15,12 +15,33 @@ robust_rows <- function(fit, data, model, note = "") {
              row.names = NULL)
 }
 
-fit_rq3 <- function(es, fields, min_clinical = 8) {
-  # Drop rows the models cannot use up front, so k_effects and the CR2 clusters match the fitted data.
-  es <- es[!is.na(es$sessions), ]
+with_fields <- function(es, fields, clinical_head = "ernie") {
   d <- merge(es, fields[fields$head_model == "ernie", ], by = "montage_id")
-  d <- d[!is.na(d$field_map) & !is.na(d$field_control), ]
   d$group <- factor(ifelse(d$population == "healthy", "healthy", "clinical"), levels = c("healthy", "clinical"))
+  if (clinical_head != "ernie") {
+    alt <- fields[fields$head_model == clinical_head, ]
+    i <- d$group == "clinical"
+    m <- match(d$montage_id[i], alt$montage_id)
+    d$field_map[i] <- alt$field_map[m]
+    d$field_control[i] <- alt$field_control[m]
+  }
+  # Drop rows the models cannot use up front, so k_effects and the CR2 clusters match the fitted data.
+  d[!is.na(d$field_map) & !is.na(d$field_control), ]
+}
+
+fit_h3d <- function(d, min_clinical, model, note = "") {
+  n_clin <- length(unique(d$study_id[d$group == "clinical"]))
+  if (n_clin < min_clinical) {
+    return(data.frame(model = model, term = NA, estimate = NA, se = NA, ci_low = NA, ci_high = NA, p_cr2 = NA,
+                      k_effects = nrow(d), k_studies = length(unique(d$study_id)),
+                      note = sprintf("skipped: %d clinical studies < %d; clinical arm reported descriptively", n_clin, min_clinical)))
+  }
+  robust_rows(fit_mv(~ field_map * group + sessions, d), d, model, note)
+}
+
+fit_rq3 <- function(es, fields, min_clinical = 8) {
+  es <- es[!is.na(es$sessions), ]
+  d <- with_fields(es, fields)
   out <- list(robust_rows(fit_mv(~ field_map + sessions, d), d, "H3a"))
   h3b <- fit_mv(~ field_map + field_control + sessions, d)
   wald <- Wald_test(h3b, constraints = constrain_equal(c("field_map", "field_control")), vcov = "CR2",
@@ -35,12 +56,12 @@ fit_rq3 <- function(es, fields, min_clinical = 8) {
                          note = sprintf("CR2 Wald F = %.2f", wald$Fstat))
   # H3c has no field term, so it keeps the effects whose montage could not be modelled.
   out[[4]] <- robust_rows(fit_mv(~ test_type + sessions, es), es, "H3c")
-  n_clin <- length(unique(d$study_id[d$group == "clinical"]))
-  out[[5]] <- if (n_clin < min_clinical) {
-    data.frame(model = "H3d", term = NA, estimate = NA, se = NA, ci_low = NA, ci_high = NA, p_cr2 = NA,
-               k_effects = nrow(d), k_studies = length(unique(d$study_id)),
-               note = sprintf("skipped: %d clinical studies < %d; clinical arm reported descriptively", n_clin, min_clinical))
-  } else robust_rows(fit_mv(~ field_map * group + sessions, d), d, "H3d")
+  out[[5]] <- fit_h3d(d, min_clinical, "H3d")
+  # Sensitivity: clinical effects take their field from the older-adult head (CHANGELOG 2026-11-10).
+  if ("older" %in% fields$head_model) {
+    out[[6]] <- fit_h3d(with_fields(es, fields, "older"), min_clinical, "H3d_older",
+                        "clinical fields from the older-adult head")
+  }
   do.call(rbind, out)
 }
 

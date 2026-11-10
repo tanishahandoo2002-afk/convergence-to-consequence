@@ -44,6 +44,19 @@ stopifnot(term(res, "H3a", "field_map")$k_studies == 57,
           term(res, "H3c", "sessions")$k_studies == 59,
           term(res, "H3c", "sessions")$k_effects == nrow(gap$es) - no_sessions)
 
+# older-adult head: with no older rows there is no H3d_older; with clinical fields doubled on it, healthy rows
+# are unchanged and the clinical field slope (field_map + interaction) halves
+stopifnot(!any(res$model == "H3d_older"))
+clin <- s$fields$montage_id %in% s$es$montage_id[s$es$population != "healthy"]
+older <- transform(s$fields[clin, ], head_model = "older", field_map = 2 * field_map, field_control = 2 * field_control)
+both <- fit_rq3(s$es, rbind(s$fields, older), min_clinical = 8)
+h3d <- both[both$model == "H3d", ]
+h3d_o <- both[both$model == "H3d_older", ]
+stopifnot(nrow(h3d_o) == nrow(h3d), all(h3d_o$k_effects == h3d$k_effects),
+          abs(term(both, "H3d_older", "field_map")$estimate - term(both, "H3d", "field_map")$estimate) < 1e-4)
+clin_slope <- function(m) term(both, m, "field_map")$estimate + term(both, m, "field_map:groupclinical")$estimate
+stopifnot(abs(clin_slope("H3d_older") - clin_slope("H3d") / 2) < 1e-4)
+
 few <- sim_es(n_clinical = 5, seed = 2)
 r <- fit_rq3(few$es, few$fields, min_clinical = 8)
 stopifnot(any(r$model == "H3d" & grepl("skipped: 5 clinical studies < 8", r$note)))

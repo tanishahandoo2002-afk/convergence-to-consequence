@@ -2,6 +2,18 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-10: the older-adult fields enter H3d as a sensitivity fit (RQ3)
+
+**Was:** the older-adult fields were modelled but not used in any model. The design says only that the clinical-arm montages are repeated on an older head (2026-11-08 entry).
+
+**Now (decided on the author's behalf at the team's request):** `models.R` fits H3d a second time as `H3d_older`, in which the clinical effects take `field_map` and `field_control` from the older-adult head and the healthy effects keep Ernie's. Primary H3d stays on Ernie for every effect, as specified.
+
+**Why:** the clinical trials are in MCI and early Alzheimer's disease, so an older head is the closer match for their fields. But this head mesh skipped the cortical-surface step, and its fields came out higher than Ernie's where atrophy would predict lower. That makes it unfit to replace Ernie as the primary, so it is used as a sensitivity check.
+
+**Results at r = .5:** the same 61 effects from 33 studies, 9 of them clinical, since every clinical montage with an Ernie field also has an older-head field. The field x group term is 9.5 (95% CI -53.5 to 72.5, p = .59), against 10.3 (-44.4 to 65.1, p = .53) on Ernie. The r = .3 and .7 runs give the same picture. H3a-H3d, the bias tests and the integration table are byte-identical to before.
+
+**Test:** with the clinical fields doubled on a simulated older head, the clinical field slope halves, the healthy slope is unchanged and k is the same.
+
 ## 2026-11-10: RQ2 robustness on the b2 betas (RQ2)
 
 `make rq2-b2` was run step by step: the b2 extraction (`betas_fithrf`), its data check, then the same models with `--compare-with rq2_nsd/results`. The pooled rows for both beta versions are in `rq2_nsd/results/b2/b2_vs_b3.csv` (not committed).
