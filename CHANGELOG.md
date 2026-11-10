@@ -2,6 +2,17 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-10: RQ2 robustness on the b2 betas (RQ2)
+
+`make rq2-b2` was run step by step: the b2 extraction (`betas_fithrf`), its data check, then the same models with `--compare-with rq2_nsd/results`. The pooled rows for both beta versions are in `rq2_nsd/results/b2/b2_vs_b3.csv` (not committed).
+
+- **Extraction.** All 284 sessions, 750 trials each. One download dropped partway (a `ChunkedEncodingError`) and stopped the first attempt. `fetch` now retries a dropped connection or a 5xx reply three times, with a longer wait each time (`0684937`). On restart the manifest skipped the finished sessions, and none was written twice. `checks.check_rq2 --dir b2` passed.
+- **H2a**, memory signal on hits vs misses: b2 0.617 (95% CI 0.232 to 1.002, p = .0017); b3 0.641 (0.210 to 1.072, p = .0036).
+- **H2b**, memory - control on hits vs false alarms: b2 0.590 (0.450 to 0.730, p = 1.2e-16); b3 0.447 (0.294 to 0.601). On b2 the correlated subject-slope formula failed (the script records only that a step failed, not whether it was a warning or a singular fit), so the fit moved one step down the list to uncorrelated slopes, `(1 + z_memory + z_control || subject)`. Most of the difference comes from the control coefficient, which is more negative on b2 (-0.273 vs -0.175).
+- **H2c**: the memory x delay interaction is negative on both, but smaller on b2: -0.122 (-0.153 to -0.090) vs -0.228 (-0.263 to -0.193). The memory slope at the median delay is not significant on either: b2 0.213 (p = .13), b3 0.107 (p = .60).
+- **Per-participant permutation tests** (1,000 permutations): participants 1, 2, 4 and 7 have p = .001 on both. Participants 5 and 6 fall below .05 on b2 (.001, .015) but not on b3 (.085, .080). Participants 3 and 8 are not significant on either.
+- **Integration.** It uses the b3 H2b row, which this run did not change, so it was not re-run.
+
 ## 2026-11-10: fresh-clone reproducibility check
 
 The design's pre-preprint test is `make all` from a fresh clone. It was run on a clone of the pushed repo at `b98d908`, plus the two fixes below, with the same `$C2C_DATA`. It covered every stage except `rq2-b2`, whose extraction is still running.
