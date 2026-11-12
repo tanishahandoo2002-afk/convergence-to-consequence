@@ -23,6 +23,11 @@ OUT = HERE / "build"
 MEM = {"light": "#2a78d6", "dark": "#3987e5"}
 CTL = {"light": "#eb6834", "dark": "#d95926"}
 FACE = {"light": "#fcfcfb", "dark": "#1a1a19"}
+STANDALONE_HEAD = ('<!doctype html>\n<html lang="en">\n<meta charset="utf-8">\n'
+                   '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
+                   '<meta name="description" content="An ALE map of the episodic-retrieval network, tested on single '
+                   '7T fMRI trials and against tDCS/tACS trials with modelled electric fields.">\n'
+                   '<style>body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important; }</style>\n')
 
 
 def brain_images():
@@ -99,7 +104,9 @@ def main():
     if "{{" in page or "/*DATA*/" in page:
         raise SystemExit("a template placeholder was not filled")
     (OUT / "c2c.html").write_text(page)
-    print(f"page written to {OUT / 'c2c.html'} ({len(page) // 1024} KB)")
+    # The artifact viewer wraps c2c.html in a document head; GitHub Pages serves index.html as it is.
+    (OUT / "index.html").write_text(STANDALONE_HEAD + page)
+    print(f"page written to {OUT} as c2c.html and index.html ({len(page) // 1024} KB)")
 
 
 if __name__ == "__main__":

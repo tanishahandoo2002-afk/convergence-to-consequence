@@ -151,6 +151,11 @@ details[open] summary { margin-bottom: 0.6rem; }
 .limits h3 { font-size: 1.05rem; }
 .limits p { font-size: 0.95rem; color: var(--ink-2); }
 footer { padding-block: 3rem 4rem; border-top: 1px solid var(--rule); margin-top: 4rem; }
+.refs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 1.25rem 2.5rem; }
+.refs > div { min-width: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.refs h3 { font-size: 1rem; }
+.refs ol { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.45rem; font-size: 0.84rem; line-height: 1.45; color: var(--ink-2); }
+.refs a { overflow-wrap: anywhere; }
 .brain { border-radius: 8px; display: block; width: 100%; }
 .brain.dark { display: none; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .brain.light { display: none; } :root:not([data-theme="light"]) .brain.dark { display: block; } }
@@ -177,7 +182,7 @@ footer { padding-block: 3rem 4rem; border-top: 1px solid var(--rule); margin-top
 
 <nav class="bar wrap" aria-label="Sections">
   <div class="inner wide">
-    <a href="#design">Design</a><a href="#map">1 · Map</a><a href="#predict">2 · Predict</a><a href="#cause">3 · Cause</a><a href="#together">Together</a><a href="#limits">Limits</a>
+    <a href="#design">Design</a><a href="#map">1 · Map</a><a href="#predict">2 · Predict</a><a href="#cause">3 · Cause</a><a href="#together">Together</a><a href="#limits">Limits</a><a href="#references">References</a>
   </div>
 </nav>
 
@@ -394,11 +399,50 @@ footer { padding-block: 3rem 4rem; border-top: 1px solid var(--rule); margin-top
 </section>
 </main>
 
-<footer class="wrap">
+<footer class="wrap" id="references">
   <div class="wide stack small">
-    <p><b>Code and protocol:</b> <a href="https://github.com/tanishahandoo2002-afk/convergence-to-consequence">github.com/tanishahandoo2002-afk/convergence-to-consequence</a>. Every deviation from the protocol is dated in its CHANGELOG.</p>
-    <p><b>Natural Scenes Dataset:</b> Allen, St-Yves, Wu, Breedlove, Prince, Dowdle, Nau, Caron, Pestilli, Charest, Hutchinson, Naselaris and Kay (2021). A massive 7T fMRI dataset to bridge cognitive neuroscience and artificial intelligence. <i>Nature Neuroscience</i> 25, 116–126. <a href="https://doi.org/10.1038/s41593-021-00962-x">doi:10.1038/s41593-021-00962-x</a>. Collection of the NSD dataset was supported by NSF IIS-1822683 and NSF IIS-1822929. No NSD image, file or trial table appears on this page.</p>
-    <p><b>Also used:</b> BrainMap (Sleuth), OASIS-2 (one T1 scan for the older-adult head), SimNIBS 4.6 with the Ernie head model, NiMARE, lme4, metafor and clubSandwich, the multiple-demand parcels of Fedorenko et al. (2013) and the Yeo et al. (2011) networks.</p>
+    <h2 style="font-size:1.5rem">References and acknowledgements</h2>
+    <div class="col stack" style="margin-inline:0">
+      <p><b>Cite this project:</b> Handoo, T. (2026). <i>From Convergence to Consequence: does the brain's episodic-retrieval network predict and causally support memory?</i> Code, protocol and changelog: <a href="https://github.com/tanishahandoo2002-afk/convergence-to-consequence">github.com/tanishahandoo2002-afk/convergence-to-consequence</a>. Every deviation from the protocol is dated in its CHANGELOG.</p>
+      <p><b>Data acknowledgements.</b> Collection of the NSD dataset was supported by NSF IIS-1822683 and NSF IIS-1822929. No NSD image, file or trial table appears on this page; only model estimates and trial counts derived from it. Data were provided in part by OASIS. OASIS-2: Longitudinal: Principal Investigators: D. Marcus, R. Buckner, J. Csernansky, J. Morris; P50 AG05681, P01 AG03991, P01 AG026276, R01 AG021910, P20 MH071616, U24 RR021382. One OASIS-2 T1 scan was used, only to build the older-adult head model.</p>
+    </div>
+    <div class="refs">
+      <div><h3>Data</h3><ol>
+        <li>Allen, E. J., St-Yves, G., Wu, Y., Breedlove, J. L., Prince, J. S., Dowdle, L. T., Nau, M., Caron, B., Pestilli, F., Charest, I., Hutchinson, J. B., Naselaris, T., &amp; Kay, K. (2021). A massive 7T fMRI dataset to bridge cognitive neuroscience and artificial intelligence. <i>Nature Neuroscience</i>, 25, 116–126. <a href="https://doi.org/10.1038/s41593-021-00962-x">doi:10.1038/s41593-021-00962-x</a></li>
+        <li>Marcus, D. S., Fotenos, A. F., Csernansky, J. G., Morris, J. C., &amp; Buckner, R. L. (2010). Open Access Series of Imaging Studies: longitudinal MRI data in nondemented and demented older adults. <i>Journal of Cognitive Neuroscience</i>, 22, 2677–2684. <a href="https://doi.org/10.1162/jocn.2009.21407">doi:10.1162/jocn.2009.21407</a></li>
+        <li>Fox, P. T., &amp; Lancaster, J. L. (2002). Mapping context and content: the BrainMap model. <i>Nature Reviews Neuroscience</i>, 3, 319–321. <a href="https://doi.org/10.1038/nrn789">doi:10.1038/nrn789</a></li>
+        <li>Fox, P. T., Laird, A. R., Fox, S. P., Fox, P. M., Uecker, A. M., Crank, M., Koenig, S. F., &amp; Lancaster, J. L. (2005). BrainMap taxonomy of experimental design: description and evaluation. <i>Human Brain Mapping</i>, 25, 185–198. <a href="https://doi.org/10.1002/hbm.20141">doi:10.1002/hbm.20141</a></li>
+      </ol></div>
+      <div><h3>Map (RQ1)</h3><ol>
+        <li>Turkeltaub, P. E., Eden, G. F., Jones, K. M., &amp; Zeffiro, T. A. (2002). Meta-analysis of the functional neuroanatomy of single-word reading: method and validation. <i>NeuroImage</i>, 16, 765–780. <a href="https://doi.org/10.1006/nimg.2002.1131">doi:10.1006/nimg.2002.1131</a></li>
+        <li>Eickhoff, S. B., Laird, A. R., Grefkes, C., Wang, L. E., Zilles, K., &amp; Fox, P. T. (2009). Coordinate-based activation likelihood estimation meta-analysis of neuroimaging data. <i>Human Brain Mapping</i>, 30, 2907–2926. <a href="https://doi.org/10.1002/hbm.20718">doi:10.1002/hbm.20718</a></li>
+        <li>Turkeltaub, P. E., Eickhoff, S. B., Laird, A. R., et al. (2012). Minimizing within-experiment and within-group effects in activation likelihood estimation meta-analyses. <i>Human Brain Mapping</i>, 33, 1–13. <a href="https://doi.org/10.1002/hbm.21186">doi:10.1002/hbm.21186</a></li>
+        <li>Eickhoff, S. B., Bzdok, D., Laird, A. R., Kurth, F., &amp; Fox, P. T. (2012). Activation likelihood estimation meta-analysis revisited. <i>NeuroImage</i>, 59, 2349–2361. <a href="https://doi.org/10.1016/j.neuroimage.2011.09.017">doi:10.1016/j.neuroimage.2011.09.017</a></li>
+        <li>Acar, F., Seurinck, R., Eickhoff, S. B., &amp; Moerkerke, B. (2018). Assessing robustness against potential publication bias in activation likelihood estimation (ALE) meta-analyses for fMRI. <i>PLOS ONE</i>, 13, e0208177. <a href="https://doi.org/10.1371/journal.pone.0208177">doi:10.1371/journal.pone.0208177</a></li>
+        <li>Lancaster, J. L., Tordesillas-Gutiérrez, D., Martinez, M., et al. (2007). Bias between MNI and Talairach coordinates analyzed using the ICBM-152 brain template. <i>Human Brain Mapping</i>, 28, 1194–1205. <a href="https://doi.org/10.1002/hbm.20345">doi:10.1002/hbm.20345</a></li>
+        <li>Salo, T., Yarkoni, T., Nichols, T. E., et al. (2023). NiMARE: Neuroimaging Meta-Analysis Research Environment. <i>Aperture Neuro</i>, 3. <a href="https://doi.org/10.52294/001c.87681">doi:10.52294/001c.87681</a></li>
+        <li>Fedorenko, E., Duncan, J., &amp; Kanwisher, N. (2013). Broad domain generality in focal regions of frontal and parietal cortex. <i>PNAS</i>, 110, 16616–16621. <a href="https://doi.org/10.1073/pnas.1315235110">doi:10.1073/pnas.1315235110</a></li>
+        <li>Yeo, B. T. T., Krienen, F. M., Sepulcre, J., et al. (2011). The organization of the human cerebral cortex estimated by intrinsic functional connectivity. <i>Journal of Neurophysiology</i>, 106, 1125–1165. <a href="https://doi.org/10.1152/jn.00338.2011">doi:10.1152/jn.00338.2011</a></li>
+        <li>Desikan, R. S., Ségonne, F., Fischl, B., et al. (2006). An automated labeling system for subdividing the human cerebral cortex on MRI scans into gyral based regions of interest. <i>NeuroImage</i>, 31, 968–980. <a href="https://doi.org/10.1016/j.neuroimage.2006.01.021">doi:10.1016/j.neuroimage.2006.01.021</a> (Harvard-Oxford atlas labels)</li>
+        <li>Fonov, V., Evans, A. C., Botteron, K., et al. (2011). Unbiased average age-appropriate atlases for pediatric studies. <i>NeuroImage</i>, 54, 313–327. <a href="https://doi.org/10.1016/j.neuroimage.2010.07.033">doi:10.1016/j.neuroimage.2010.07.033</a> (MNI152 2009 template)</li>
+        <li>Abraham, A., Pedregosa, F., Eickenberg, M., et al. (2014). Machine learning for neuroimaging with scikit-learn. <i>Frontiers in Neuroinformatics</i>, 8, 14. <a href="https://doi.org/10.3389/fninf.2014.00014">doi:10.3389/fninf.2014.00014</a> (nilearn)</li>
+      </ol></div>
+      <div><h3>Prediction (RQ2)</h3><ol>
+        <li>Bates, D., Mächler, M., Bolker, B., &amp; Walker, S. (2015). Fitting linear mixed-effects models using lme4. <i>Journal of Statistical Software</i>, 67(1). <a href="https://doi.org/10.18637/jss.v067.i01">doi:10.18637/jss.v067.i01</a></li>
+      </ol></div>
+      <div><h3>Stimulation (RQ3)</h3><ol>
+        <li>Thielscher, A., Antunes, A., &amp; Saturnino, G. B. (2015). Field modeling for transcranial magnetic stimulation: a useful tool to understand the physiological effects of TMS? <i>IEEE EMBC 2015</i>, 222–225. <a href="https://doi.org/10.1109/EMBC.2015.7318340">doi:10.1109/EMBC.2015.7318340</a> (SimNIBS; Ernie example head)</li>
+        <li>Puonti, O., Van Leemput, K., Saturnino, G. B., Siebner, H. R., Madsen, K. H., &amp; Thielscher, A. (2020). Accurate and robust whole-head segmentation from magnetic resonance images for individualized head modeling. <i>NeuroImage</i>, 219, 117044. <a href="https://doi.org/10.1016/j.neuroimage.2020.117044">doi:10.1016/j.neuroimage.2020.117044</a> (charm)</li>
+        <li>Viechtbauer, W. (2010). Conducting meta-analyses in R with the metafor package. <i>Journal of Statistical Software</i>, 36(3). <a href="https://doi.org/10.18637/jss.v036.i03">doi:10.18637/jss.v036.i03</a></li>
+        <li>Tipton, E., &amp; Pustejovsky, J. E. (2015). Small-sample adjustments for tests of moderators and model fit using robust variance estimation in meta-regression. <i>Journal of Educational and Behavioral Statistics</i>, 40, 604–634. <a href="https://doi.org/10.3102/1076998615606099">doi:10.3102/1076998615606099</a></li>
+        <li>Pustejovsky, J. E., &amp; Tipton, E. (2018). Small-sample methods for cluster-robust variance estimation and hypothesis testing in fixed effects models. <i>Journal of Business &amp; Economic Statistics</i>, 36, 672–683. <a href="https://doi.org/10.1080/07350015.2016.1247004">doi:10.1080/07350015.2016.1247004</a> (clubSandwich)</li>
+        <li>Stanley, T. D., &amp; Doucouliagos, H. (2014). Meta-regression approximations to reduce publication selection bias. <i>Research Synthesis Methods</i>, 5, 60–78. <a href="https://doi.org/10.1002/jrsm.1095">doi:10.1002/jrsm.1095</a> (PET-PEESE)</li>
+        <li>Sterne, J. A. C., Savović, J., Page, M. J., et al. (2019). RoB 2: a revised tool for assessing risk of bias in randomised trials. <i>BMJ</i>, 366, l4898. <a href="https://doi.org/10.1136/bmj.l4898">doi:10.1136/bmj.l4898</a></li>
+        <li>McGuinness, L. A., &amp; Higgins, J. P. T. (2021). Risk-of-bias VISualization (robvis): an R package and Shiny web app for visualizing risk-of-bias assessments. <i>Research Synthesis Methods</i>, 12, 55–61. <a href="https://doi.org/10.1002/jrsm.1411">doi:10.1002/jrsm.1411</a></li>
+        <li>Page, M. J., McKenzie, J. E., Bossuyt, P. M., et al. (2021). The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. <i>BMJ</i>, 372, n71. <a href="https://doi.org/10.1136/bmj.n71">doi:10.1136/bmj.n71</a></li>
+      </ol></div>
+    </div>
+    <p class="small">Charts drawn with D3.js. Brain images rendered with nilearn on the MNI152 template.</p>
   </div>
 </footer>
 

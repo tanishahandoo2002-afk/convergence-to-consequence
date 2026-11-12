@@ -2,6 +2,22 @@
 
 Deviations from the protocol (`docs/registration-1-rq1.md`) and from the project plan, dated (YYYY-MM-DD), with the reason for each.
 
+## 2026-11-12: project page made public on GitHub Pages
+
+**Was:** results stayed out of the repository (design §9, "until the NSD terms are confirmed to allow sharing derived values"), and the explainer page was private.
+
+**Now (the team's decision):** the page is published at <https://tanishahandoo2002-afk.github.io/convergence-to-consequence/> from the `gh-pages` branch, which holds only `webpage/build/index.html` and `.nojekyll`. The page shows summary estimates, trial counts and modelled fields. No NSD image, beta file or trial table is on it.
+
+**Citations added to the page:**
+- The NSD paper and the NSF acknowledgement that the NSD terms require.
+- The OASIS-2 acknowledgement in the wording the OASIS data use terms give, and the OASIS-2 paper.
+- The BrainMap papers that BrainMap asks Sleuth users to cite.
+- The SimNIBS and charm papers.
+- The methods and software papers: ALE, fail-safe, Lancaster transform, NiMARE, atlases, lme4, metafor, clubSandwich, PET-PEESE, RoB 2, robvis, PRISMA 2020.
+- A line on how to cite the project.
+
+Every DOI was checked against Crossref. `make page` now also writes the standalone `index.html`.
+
 ## 2026-11-10: explainer page built from the results
 
 The plan's deliverables have no web page. At the team's request, an AI assistant drafted a one-page explainer with the charts, PRISMA flows, brain images and integration panels, and published it privately. `make page` (`webpage/build.py` with `webpage/template.html`) reads every number from the stage outputs and writes `webpage/build/c2c.html`, which is not committed because it embeds the RQ2 results. A build from the repo matched the published page, apart from the PNG bytes of the brain images. The page says that an AI assistant drafted it.

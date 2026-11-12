@@ -12,12 +12,13 @@ with electric-field modelling (RQ3).
 ## Status
 
 Every stage has been run, including the RQ2 robustness run on the b2 betas.
-The results are written up in [`docs/report.md`](docs/report.md).
+The results are written up in [`docs/report.md`](docs/report.md), and shown with charts, brain images and
+references on the project page: <https://tanishahandoo2002-afk.github.io/convergence-to-consequence/>.
 A personal project, not a publication: no preprint or OSF registration. The protocol is in
 [`docs/registration-1-rq1.md`](docs/registration-1-rq1.md).
 
 Results are written to `rq2_nsd/results/`, `rq3_stimulation/results/` and `results/` and are not
-committed. The main estimates, and every deviation from the protocol, are in [`CHANGELOG.md`](CHANGELOG.md).
+committed to `main`. The summary estimates shown on the project page are on the `gh-pages` branch. The main estimates, and every deviation from the protocol, are in [`CHANGELOG.md`](CHANGELOG.md).
 
 ## How to run
 
