@@ -1,4 +1,4 @@
-"""Build the one-page explainer from the result files: webpage/build/c2c.html (not committed).
+"""Build the one-page explainer and the README figures from the result files, into webpage/build/ (not committed).
 
 Every number on the page is read here from the outputs of the stage scripts; the template only lays them out.
 CLI: python -m webpage.build   (needs the rq1, masks, rq2, rq2-b2, rq3 and integration results)
@@ -51,6 +51,65 @@ def brain_images():
     return pngs
 
 
+INK = {"light": ("#101720", "#7b8490", "#dde2e8"), "dark": ("#eef1f4", "#8a929c", "#282e36")}  # text, muted, grid
+CLIN = {"light": "#1baf7a", "dark": "#199e70"}
+OTHER = {"light": "#9aa2ad", "dark": "#6d7580"}
+
+
+def results_figure(d):
+    """README figure: the pooled RQ2 estimates (b3 and b2) next to RQ3 effect size against field in the map."""
+    h2 = {beta: {(r["model"], r["term"]): r for r in d[f"h2_{beta}"] if r["subject"] == "all"} for beta in ("b3", "b2")}
+    rows = [("H2a  map signal", "H2a", "sig_memory", MEM), ("H2b  map signal", "H2b", "z_memory", MEM),
+            ("H2b  control signal", "H2b", "z_control", CTL), ("H2b  map − control", "H2b", "z_memory - z_control", MEM),
+            ("H2c  map × log delay", "H2c", "sig_memory:log_delay_c", MEM)]
+    ernie = {f["montage_id"]: f["field_map"] for f in d["fields"] if f["head_model"] == "ernie"}
+    control = {f["montage_id"]: f["field_control"] for f in d["fields"] if f["head_model"] == "ernie"}
+    eff = [e for e in d["effects"] if e["sessions"] is not None and ernie.get(e["montage_id"]) is not None
+           and control.get(e["montage_id"]) is not None]
+    h3a = {r["term"]: r for r in d["h3"]["0.5"] if r["model"] == "H3a"}
+    paths = {}
+    for mode in ("light", "dark"):
+        ink, muted, grid = INK[mode]
+        fig, (a, b) = plt.subplots(1, 2, figsize=(12, 4.2), facecolor=FACE[mode], gridspec_kw={"width_ratios": [1, 1.1]})
+        for ax in (a, b):
+            ax.set_facecolor(FACE[mode])
+            ax.tick_params(colors=muted, labelsize=9)
+            for side in ("top", "right", "left"):
+                ax.spines[side].set_visible(False)
+            ax.spines["bottom"].set_color(grid)
+            ax.grid(axis="x", color=grid, linewidth=0.8)
+            ax.set_axisbelow(True)
+        for i, (label, model, term, colour) in enumerate(rows):
+            for beta, dy, hollow in (("b3", -0.13, False), ("b2", 0.13, True)):
+                r = h2[beta][(model, term)]
+                a.plot([r["ci_low"], r["ci_high"]], [i + dy] * 2, color=colour[mode], linewidth=2, solid_capstyle="round")
+                a.plot(r["estimate"], i + dy, "o", markersize=6.5, color=colour[mode],
+                       markerfacecolor=FACE[mode] if hollow else colour[mode], markeredgewidth=2)
+        a.axvline(0, color=muted, linewidth=1)
+        a.set_yticks(range(len(rows)), [r[0] for r in rows], color=ink, fontsize=9.5)
+        a.tick_params(axis="y", length=0)
+        a.invert_yaxis()
+        a.set_xlabel("log-odds per SD of mask signal, 95% CI  (filled: b3 betas, open: b2)", color=muted, fontsize=9)
+        a.set_title("RQ2 · single 7T fMRI trials, 8 participants", color=ink, fontsize=11, loc="left", pad=10)
+        for clinical, marker, colour in ((False, "o", OTHER), (True, "D", CLIN)):
+            pts = [e for e in eff if (e["population"] != "healthy") == clinical]
+            b.scatter([ernie[e["montage_id"]] for e in pts], [e["yi"] for e in pts], s=[min(140, 6 / e["vi"]) for e in pts],
+                      marker=marker, color=colour[mode], edgecolors=FACE[mode], linewidths=1, alpha=0.9,
+                      label="MCI or early AD" if clinical else "healthy adults")
+        x = [0, max(ernie[e["montage_id"]] for e in eff)]
+        slope, start = h3a["field_map"], h3a["intrcpt"]["estimate"] + h3a["sessions"]["estimate"]
+        b.plot(x, [start + slope["estimate"] * v for v in x], color=ink, linewidth=2)
+        b.axhline(0, color=muted, linewidth=1)
+        b.set_xlabel("modelled field in the memory map (V/m, Ernie head)", color=muted, fontsize=9)
+        b.set_ylabel("Hedges' g", color=muted, fontsize=9)
+        b.set_title(f"RQ3 · {len(eff)} stimulation effects; H3a slope {slope['estimate']:.2f} g per V/m "
+                    f"[{slope['ci_low']:.1f}, {slope['ci_high']:.1f}]", color=ink, fontsize=11, loc="left", pad=10)
+        b.legend(frameon=False, fontsize=9, labelcolor=ink, loc="upper right")
+        fig.tight_layout(w_pad=3)
+        paths[mode] = save(fig, f"results_{mode}.png", mode)
+    return paths
+
+
 def save(fig, name, mode):
     path = OUT / name
     fig.savefig(path, dpi=110, facecolor=FACE[mode], bbox_inches="tight")
@@ -100,7 +159,9 @@ def main():
     page = (HERE / "template.html").read_text()
     for key, path in brain_images().items():
         page = page.replace("{{%s}}" % key, "data:image/png;base64," + base64.b64encode(path.read_bytes()).decode())
-    page = page.replace("/*DATA*/null", json.dumps(page_data(), separators=(",", ":")))
+    data = page_data()
+    results_figure(data)
+    page = page.replace("/*DATA*/null", json.dumps(data, separators=(",", ":")))
     if "{{" in page or "/*DATA*/" in page:
         raise SystemExit("a template placeholder was not filled")
     (OUT / "c2c.html").write_text(page)
